@@ -1,0 +1,2316 @@
+entry	size	name	namespace	callers	callees	imports	strings	caller_names
+10401005	5	thunk_FUN_10424c50	Global	3				FUN_10423ec0,FUN_10424270,FUN_10423cb0
+1040100a	5	thunk_FUN_104031e0	Global	1				FUN_104031b0
+1040100f	5	~R_Exception	RLMFC.DLL::R_Exception	44				Unwind@10460ec3,Unwind@10460503,Unwind@10460f43,Unwind@10460b13,Unwind@10460c08,Unwind@104606ab,Unwind@10460e88,Unwind@10460ad8
+10401014	5	DRV_freeMode	P_D3D	0				
+10401028	5	~P_D3DTriangleMesh	P_D3DTriangleMesh	1				FUN_1040a4d0
+10401037	5	thunk_FUN_104229e0	Global	1				FUN_10420070
+1040103c	5	getUsedCount	P_D3DVertexBufferManager	0				
+10401041	5	thunk_FUN_1042d7e0	Global	1				FUN_1042c950
+10401046	5	DRV_removeFromTextureMemory	P_D3D	0				
+10401055	5	setDiffuseRGBA	P_D3DVertexBuffer	0				
+1040105a	5	thunk_FUN_1040d1f0	Global	2				FUN_1040d760,FUN_1040d210
+1040105f	5	thunk_FUN_10413510	Global	2				FUN_10413940,FUN_10413560
+10401064	5	getTextureCoordinate3D	P_D3DDDVertexBuffer	0				
+10401069	5	thunk_FUN_104108c0	Global	4				FUN_1040de60,FUN_10410750,FUN_10410280,FUN_1040eb50
+1040106e	5	thunk_FUN_1040f150	Global	13				Unwind@104608e0,Unwind@10460a31,Unwind@1046079b,Unwind@104609a0,Unwind@10460869,Unwind@104607a3,Unwind@10460900,Unwind@1046082f
+10401073	5	setTextureCoordinate4D	P_D3DVertexBuffer	0				
+10401078	5	thunk_FUN_10404640	Global	1				FUN_104175c0
+1040107d	5	DRV_deinit	P_D3D	0				
+10401082	5	getAlpha	P_D3DDDVertexBuffer	0				
+10401087	5	thunk_FUN_10404670	Global	1				FUN_104175c0
+10401091	5	thunk_FUN_1040ce70	Global	4				FUN_1040a600,FUN_1040a850,FUN_104186a0,FUN_10425020
+10401096	5	DRV_clearTextureMemory	P_D3D	0				
+104010a0	5	setEndDiffuseRGB	P_D3DLineBuffer	0				
+104010a5	5	thunk_FUN_1042b140	Global	1				FUN_10426b30
+104010aa	5	setFog	P_D3DDDVertexBuffer	0				
+104010b4	5	thunk_FUN_1040e700	Global	1				Unwind@1046087c
+104010be	5	DRV_convertMap	P_D3D	0	FUN_1042d8e0			
+104010c3	5	thunk_FUN_1041f870	Global	1				FUN_1041fb10
+104010c8	5	operator=	P_D3DTriangleMesh	0				
+104010cd	5	operator=	P_D3DVirtualObject	0				
+104010d7	5	thunk_FUN_10407350	Global	6				FUN_1042a100,FUN_1042c950,FUN_1042dd20,FUN_10429d20,FUN_10428600,FUN_10406810
+104010dc	5	thunk_FUN_10411f80	Global	1				FUN_1040e980
+104010e1	5	getFreeCount	P_D3DVertexBufferManager	0				
+104010e6	5	setDiffuseRGB	P_D3DDDVertexBuffer	0				
+104010eb	5	setTextureCoordinate3D	P_D3DVertexBuffer	0				
+104010f0	5	DRV_setViewport	P_D3D	0				
+104010f5	5	thunk_FUN_1041fd00	Global	1				FUN_1041ecf0
+104010fa	5	P_D3DVirtualObject	P_D3DVirtualObject	1				FUN_1040bff0
+104010ff	5	thunk_FUN_1040f010	Global	1				FUN_1040e270
+10401104	5	thunk_FUN_1041e8e0	Global	2				Unwind@1046112b,Unwind@104610bb
+10401113	5	requestVertices	P_D3DOutputPrimitive	0				
+10401118	5	DRV_setWindow	P_D3D	0				
+10401122	5	thunk_FUN_10423350	Global	3				FUN_10423140,FUN_10422030,FUN_1041fe80
+1040112c	5	createOutputPrimitive	P_D3D	0				
+10401131	5	thunk_FUN_10411870	Global	1				FUN_1040ff70
+10401136	5	~P_Buffer	E2MFC.DLL::P_Buffer	2				FUN_1040d1a0,Unwind@10460720
+1040113b	5	setStartAlpha	P_D3DLineBuffer	0				
+10401140	5	getSpecularAddress	P_D3DDDVertexBuffer	0				
+10401145	5	getStartPosition	P_D3DLineBuffer	0				
+1040114a	5	getMatrixIndexAddress	P_D3DDDVertexBuffer	0				
+10401154	5	thunk_FUN_10421fe0	Global	6				FUN_1041f180,FUN_10420a50,FUN_10421fe0,FUN_1041f2c0,FUN_1041f040,FUN_1041fd00
+10401159	5	thunk_FUN_10411e40	Global	3				FUN_1040f190,FUN_10412450,FUN_10411e40
+1040115e	5	~P_Buffer	E2MFC.DLL::P_Buffer	6				Unwind@10460b50,Unwind@104602f0,Unwind@1046060b,Unwind@10460b40,FUN_1040d0a0,Unwind@104602d0
+10401163	5	getZMask	P_D3D	2				FUN_1042aad0,FUN_10425560
+10401172	5	thunk_FUN_10415ef0	Global	1				FUN_10416b30
+10401177	5	thunk_FUN_10422360	Global	1				FUN_1041ecf0
+10401181	5	process	P_D3DTriangleMesh	0				
+10401186	5	thunk_FUN_10410e40	Global	1				FUN_1040e980
+1040118b	5	thunk_FUN_10406df0	Global	1				FUN_10406dc0
+10401195	5	prepareSceneSpotLight	P_D3DCPUDriver	0				
+1040119a	5	createLinePrimitive	P_D3DCPUDriver	0				
+104011a4	5	validate	P_D3DMaterialInfo	0				
+104011a9	5	setPixelShader	P_D3D	0				
+104011b3	5	duplicate	P_D3DVirtualObject	0				
+104011b8	5	thunk_FUN_10406fa0	Global	1				FUN_10402e30
+104011bd	5	setVertexIndex	P_D3DTriangleBuffer	0				
+104011c2	5	thunk_FUN_1040f360	Global	2				FUN_1040dfa0,FUN_1040eb50
+104011cc	5	thunk_FUN_104117a0	Global	1				FUN_1040dbe0
+104011d1	5	thunk_FUN_104120d0	Global	1				FUN_1040ff70
+104011d6	5	thunk_FUN_10428200	Global	1				FUN_104281d0
+104011db	5	thunk_FUN_1040d210	Global	1				FUN_1040d6a0
+104011e0	5	~R_Exception	RLMFC.DLL::R_Exception	24				Unwind@10461918,FUN_104075b0,Unwind@10460168,Unwind@104600f8,Unwind@10461660,Unwind@10461938,Unwind@10461008,Unwind@104618a0
+104011e5	5	thunk_FUN_1042eb70	Global	1				FUN_1042e200
+104011ef	5	setTextureStageState	P_D3D	0				
+104011f9	5	dump	P_D3DVertexBufferManager	2				FUN_1041ea20,FUN_10415b50
+104011fe	5	thunk_FUN_10426180	Global	2				Catch@10426070,FUN_10425dc0
+10401203	5	thunk_FUN_104116b0	Global	1				FUN_1040dfa0
+10401217	5	thunk_FUN_10422860	Global	1				FUN_10420c60
+10401221	5	thunk_FUN_1040bff0	Global	1				FUN_1040b4c0
+10401226	5	thunk_FUN_1040dd20	Global	2				Unwind@10460810,Unwind@10460790
+1040122b	5	getWeight	P_D3DDDVertexBuffer	0				
+10401230	5	getWeightAddress	P_D3DDDVertexBuffer	0				
+10401235	5	thunk_FUN_10412ed0	Global	1				FUN_104127c0
+1040123a	5	thunk_FUN_1042f120	Global	1				FUN_1042c950
+10401249	5	preparePointLight	P_D3DVirtualObject	0				
+1040124e	5	getVSVector2	P_D3DVertexBuffer	0				
+10401253	5	thunk_FUN_10406c60	Global	0				
+10401258	5	thunk_FUN_10425dc0	Global	1				FUN_10455a59
+1040125d	5	createParticleBuffer	P_D3DCPUDriver	0				
+10401262	5	setMatrixIndex	P_D3DVertexBuffer	0				
+10401267	5	thunk_FUN_1042e200	Global	1				FUN_1042c950
+1040126c	5	setPosition	P_D3DVertexBuffer	0				
+10401271	5	getMatrixIndex	P_D3DVertexBuffer	0				
+10401276	5	setStartPosition	P_D3DLineBuffer	0				
+1040127b	5	thunk_FUN_10424920	Global	2				FUN_10424270,FUN_10423ec0
+10401280	5	P_D3DLineBuffer	P_D3DLineBuffer	0				
+10401285	5	getIndexBuffer	P_D3DOutputPrimitive	0				
+1040128a	5	getVSVector1	P_D3DVertexBuffer	0				
+1040128f	5	thunk_FUN_10420a50	Global	1				FUN_1041f5d0
+10401294	5	usesD3DClipping	P_D3DOutputPrimitive	0				
+104012a8	5	thunk_FUN_10410830	Global	1				FUN_1040e980
+104012ad	5	getEndDiffuseRGBA	P_D3DLineBuffer	0				
+104012b2	5	getD3DSkinningMatrices	P_D3DOutputPrimitive	0				
+104012b7	5	thunk_FUN_1040f380	Global	1				FUN_1040e270
+104012bc	5	thunk_FUN_10407430	Global	4				FUN_10407240,FUN_1041ecf0,FUN_1040e270,FUN_10425dc0
+104012c1	5	thunk_FUN_1040c720	Global	1				FUN_1040b5a0
+104012c6	5	thunk_FUN_10422dc0	Global	1				FUN_10420c60
+104012cb	5	setTextureCoordinate2D	P_D3DDDVertexBuffer	0				
+104012df	5	thunk_FUN_1040b1c0	Global	2				FUN_1040b190,Unwind@10460a5b
+104012e4	5	copyContents	P_D3DVirtualObject	1				FUN_10423590
+104012e9	5	thunk_FUN_10420390	Global	1				FUN_1041ecf0
+104012ee	5	requestVertices	P_D3DOutputPrimitive	0				
+104012f8	5	getDriver	P_D3DVertexBufferManager	0				
+104012fd	5	isDeviceDependentValidated	P_D3DTriangleBuffer	0				
+10401302	5	thunk_FUN_1040e5c0	Global	1				Unwind@10460874
+10401311	5	DRV_init	P_D3D	0				
+10401316	5	~P_D3DOutputPrimitive	P_D3DOutputPrimitive	1				FUN_10415b20
+1040131b	5	getTextureCoordinate2D	P_D3DVertexBuffer	0				
+10401320	5	~P_D3DSkinMesh	P_D3DSkinMesh	1				FUN_1040a5a0
+1040132a	5	setD3DProcessing	P_D3DOutputPrimitive	0				
+1040132f	5	convertMatrix	P_D3D	2				FUN_10429850,FUN_10415ef0
+10401334	5	thunk_FUN_1040de60	Global	2				Unwind@1046081b,Unwind@104607ab
+10401339	5	getEndAlpha	P_D3DLineBuffer	0				
+1040133e	5	P_D3DLinePrimitive	P_D3DLinePrimitive	0				
+10401343	5	createVertexBuffer	P_D3DCPUDriver	0				
+10401348	5	deleteAll	P_D3DVertexBufferManager	2				FUN_10418540,FUN_1041ea20
+1040134d	5	DRV_createVertexShader	P_D3D	0				
+10401352	5	thunk_FUN_1042c3b0	Global	1				FUN_1042a680
+10401357	5	getSpecularRGBA	P_D3DVertexBuffer	0				
+1040135c	5	thunk_FUN_1040fee0	Global	3				FUN_1040dd20,FUN_10410960,FUN_1040ee20
+10401366	5	thunk_FUN_10422030	Global	1				FUN_1041f400
+10401375	5	thunk_FUN_10414980	Global	2				FUN_1041c9f0,FUN_1041b290
+1040137f	5	thunk_FUN_10420070	Global	1				FUN_1041ecf0
+10401384	5	P_DriverException_DirectDrawError	P_DriverException_DirectDrawError	22				FUN_1042db00,FUN_1042c950,FUN_104299c0,FUN_1041cf40,FUN_1042dd20,FUN_10428340,FUN_1040d7b0,FUN_10429be0
+10401389	5	thunk_FUN_104186a0	Global	1				FUN_10415ef0
+10401393	5	setEndDiffuseRGBA	P_D3DLineBuffer	0				
+1040139d	5	DRV_getScreen	P_D3D	0				
+104013a2	5	thunk_FUN_104127a0	Global	2				FUN_10412920,FUN_104127c0
+104013a7	5	recycleIndices	P_D3DOutputPrimitive	1				FUN_10415b50
+104013ac	5	thunk_FUN_104112f0	Global	6				FUN_104112f0,FUN_1040e700,FUN_1040e5c0,FUN_1040fd60,FUN_1040f010,FUN_1040e840
+104013b1	5	thunk_FUN_10403e20	Global	2				FUN_10403a40,FUN_10404750
+104013b6	5	prepareSpotLight	P_D3DVirtualObject	0				
+104013bb	5	thunk_FUN_10425260	Global	1				FUN_104235e0
+104013c5	5	DRV_createDriverMap	P_D3D	0				
+104013ca	5	thunk_FUN_10420bd0	Global	3				FUN_10421650,FUN_1041fb10,FUN_1041e7a0
+104013d4	5	isDeviceDependentValidated	P_D3DVertexBuffer	0				
+104013d9	5	thunk_FUN_104281d0	Global	1	FUN_104281d0			FUN_10426b30
+104013de	5	setVSVector2	P_D3DVertexBuffer	0				
+104013e8	5	thunk_FUN_104030f0	Global	1				FUN_10406e40
+104013ed	5	thunk_FUN_10418d60	Global	2				FUN_10418d80,FUN_10418e80
+104013f7	5	setAlpha	P_D3DVertexBuffer	0				
+104013fc	5	thunk_FUN_10425320	Global	1				FUN_104235e0
+10401401	5	createLineBuffer	P_D3DCPUDriver	0				
+10401406	5	thunk_FUN_1041c610	Global	1				FUN_1041b230
+1040140b	5	supportsParticleSystems	P_D3DCPUDriver	0				
+10401410	5	thunk_FUN_10413050	Global	1				FUN_10412c50
+10401415	5	thunk_FUN_10421b30	Global	1				FUN_1041f400
+1040141a	5	getTransformedPosition	P_D3DDDVertexBuffer	0				
+10401424	5	thunk_FUN_1042c710	Global	1				FUN_1042c180
+10401429	5	thunk_FUN_10420c40	Global	2				FUN_1041f5d0,FUN_1041ea20
+1040142e	5	thunk_FUN_10411bf0	Global	1				FUN_1040ff70
+10401438	5	getVertexNormal	P_D3DDDVertexBuffer	0				
+1040143d	5	~P_D3D	P_D3D	1				FUN_10426a30
+10401442	5	setTextureCoordinate3D	P_D3DDDVertexBuffer	0				
+10401447	5	thunk_FUN_1040c440	Global	1				FUN_1040b560
+1040144c	5	createDuplicate	P_D3DLinePrimitive	0				
+10401451	5	getPosition	P_D3DVertexBuffer	0				
+10401456	5	thunk_FUN_10410750	Global	1				FUN_1040eb50
+1040145b	5	thunk_FUN_1040f190	Global	1				FUN_1040e270
+10401460	5	thunk_FUN_1041b690	Global	1				FUN_1041b290
+10401465	5	thunk_FUN_10422c20	Global	2				FUN_1041fe80,FUN_10423140
+1040146a	5	thunk_FUN_104127c0	Global	1				FUN_10412800
+1040146f	5	DRV_createDeviceMaterialInfo	P_D3D	0				
+10401474	5	thunk_FUN_10419290	Global	1				FUN_10419400
+10401479	5	setSpecularRGBA	P_D3DDDVertexBuffer	0				
+10401483	5	dump	P_D3DIndexBufferManager	2				FUN_10415b50,FUN_1040dfa0
+10401488	5	getStencilMask	P_D3D	2				FUN_10425560,FUN_1042aad0
+1040148d	5	setParticleData	P_D3DParticleBuffer	0				
+10401492	5	P_D3DLinePrimitive	P_D3DLinePrimitive	0				
+1040149c	5	thunk_FUN_10404720	Global	1				FUN_104175c0
+104014a1	5	getFreeCount	P_D3DIndexBufferManager	0				
+104014a6	5	thunk_FUN_10424e50	Global	1				FUN_104235e0
+104014ab	5	usesD3DSoftwareProcessing	P_D3DOutputPrimitive	0				
+104014b5	5	thunk_FUN_10423140	Global	2				FUN_10420070,FUN_10421cd0
+104014ba	5	getDiffuseAddress	P_D3DDDVertexBuffer	0				
+104014c9	5	thunk_FUN_10414a00	Global	5				FUN_1041c800,FUN_1041b1b0,FUN_10419340,FUN_104149d0,FUN_10412bd0
+104014ce	5	thunk_FUN_10412680	Global	3				FUN_10411340,FUN_1040f190,FUN_10412450
+104014d8	5	thunk_FUN_1042e7c0	Global	1				FUN_1042e200
+104014dd	5	isDeviceDependentValidated	P_D3DLineBuffer	0				
+104014e2	5	thunk_FUN_10410fe0	Global	1				FUN_1040f380
+104014e7	5	setStartDiffuseRGB	P_D3DLineBuffer	0				
+104014ec	5	thunk_FUN_10407320	Global	7				FUN_10428d60,FUN_10429210,FUN_1042c950,FUN_1042dd20,FUN_1042a100,FUN_1040d210,FUN_10406810
+104014f1	5	thunk_FUN_104041e0	Global	1				FUN_104175c0
+104014f6	5	P_D3DTriangleMesh	P_D3DTriangleMesh	2				FUN_1041cd10,FUN_1040c160
+104014fb	5	~R_Exception	RLMFC.DLL::R_Exception	2				Unwind@10461888,FUN_1042f1a0
+10401500	5	thunk_FUN_10422560	Global	1				FUN_10420c60
+10401505	5	thunk_FUN_10406e40	Global	1				FUN_10402e10
+1040150a	5	thunk_FUN_1040cbb0	Global	1				FUN_1040b600
+1040150f	5	thunk_FUN_1042c790	Global	2				FUN_1042c180,FUN_1042c450
+10401514	5	getGreenMask	P_D3D	3				FUN_10425430,FUN_1042b280,FUN_10426b30
+10401519	5	thunk_FUN_10410960	Global	3				FUN_1040dd20,FUN_1040dfa0,FUN_1040eb50
+1040151e	5	thunk_FUN_1042c180	Global	1				FUN_1042a680
+10401523	5	P_D3DDDIndexBuffer	P_D3DDDIndexBuffer	6				FUN_104188a0,FUN_1040c8b0,FUN_1040a200,FUN_1040e270,FUN_1040d6a0,FUN_10413210
+10401528	5	thunk_FUN_10422a60	Global	1				FUN_10420070
+1040152d	5	thunk_FUN_10411340	Global	1				FUN_1040e980
+10401537	5	getTextureCoordinate4D	P_D3DDDVertexBuffer	0				
+10401546	5	operator=	P_D3DSkinMesh	0				
+1040154b	5	operator=	P_D3DLinePrimitive	0				
+10401555	5	thunk_FUN_104253c0	Global	1				FUN_104235e0
+1040155a	5	DRV_endScene	P_D3D	0				
+10401564	5	resetDriver	P_D3D	0				
+10401569	5	thunk_FUN_1040fd60	Global	1				FUN_1040eb50
+1040156e	5	thunk_FUN_104175c0	Global	4				FUN_104172e0,FUN_104174e0,FUN_104170e0,FUN_10416ca0
+10401573	5	thunk_FUN_10412450	Global	2				FUN_10410fe0,FUN_1040f380
+10401578	5	getStartDiffuseRGBA	P_D3DLineBuffer	0				
+1040157d	5	setSpecularRGBA	P_D3DVertexBuffer	0				
+10401582	5	P_D3DOutputPrimitive	P_D3DOutputPrimitive	1				FUN_10406fa0
+10401587	5	setTransformedPosition	P_D3DDDVertexBuffer	0				
+1040158c	5	getMatrixIndex	P_D3DDDVertexBuffer	0				
+10401591	5	thunk_FUN_1040f760	Global	1				FUN_1040e270
+10401596	5	thunk_FUN_1042c420	Global	2				FUN_1042a680,FUN_1042c180
+1040159b	5	thunk_FUN_10421620	Global	1				FUN_1041ecf0
+104015a0	5	process	P_D3DSkinMesh	0				
+104015a5	5	getPositionAddress	P_D3DDDVertexBuffer	0				
+104015aa	5	createDuplicate	P_D3DSkinMesh	0				
+104015af	5	setWeight	P_D3DDDVertexBuffer	0				
+104015b4	5	P_D3DCPUDriver	P_D3DCPUDriver	1				FUN_10425dc0
+104015b9	5	getEndPosition	P_D3DLineBuffer	0				
+104015be	5	thunk_FUN_1040fe70	Global	7				FUN_1040e700,FUN_1040e5c0,FUN_1040f890,FUN_1040fd60,FUN_1040f010,FUN_1040ee20,FUN_1040e840
+104015c3	5	thunk_FUN_10411df0	Global	1				FUN_1040f380
+104015c8	5	createTriangleBuffer	P_D3DCPUDriver	0				
+104015cd	5	getClipperVertexBuffer	P_D3DOutputPrimitive	0				
+104015d2	5	getTextureCoordinate2D	P_D3DDDVertexBuffer	0				
+104015d7	5	request	P_D3DVertexBufferManager	2				FUN_104182d0,FUN_10417f40
+104015dc	5	verboseStages	P_D3DMaterialInfo	1				FUN_10404750
+104015e6	5	thunk_FUN_10415dd0	Global	1				FUN_10416b30
+104015eb	5	thunk_FUN_10424ca0	Global	1				FUN_104235e0
+104015f0	5	thunk_FUN_104228e0	Global	1				FUN_10420c60
+104015f5	5	getEndDiffuseRGB	P_D3DLineBuffer	0				
+104015ff	5	thunk_FUN_1041f040	Global	1				Unwind@10461184
+10401604	5	recycleVertices	P_D3DOutputPrimitive	1				FUN_10415b50
+10401609	5	getUsedCount	P_D3DIndexBufferManager	0				
+1040160e	5	thunk_FUN_10425020	Global	1				FUN_104235e0
+10401613	5	setVertexNormal	P_D3DDDVertexBuffer	0				
+10401618	5	getTextureCoordinate3D	P_D3DVertexBuffer	0				
+1040161d	5	thunk_FUN_104153e0	Global	1				FUN_10413560
+10401622	5	~R_Exception	RLMFC.DLL::R_Exception	1				FUN_1042f0d0
+10401627	5	thunk_FUN_1040a3c0	Global	2				Unwind@10460b48,FUN_1040a390
+1040162c	5	getAPI_ID	P_D3D	0				
+10401631	5	usesD3DPipeline	P_D3DOutputPrimitive	0				
+10401636	5	thunk_FUN_10407700	Global	1				FUN_10404750
+1040163b	5	getDiffuseRGB	P_D3DVertexBuffer	0				
+10401640	5	~R_Exception	RLMFC.DLL::R_Exception	18				Unwind@10461a00,Unwind@104618a8,Unwind@10460160,Unwind@10461910,Unwind@104618b8,Unwind@10461920,Unwind@10460100,Unwind@104600b0
+10401645	5	thunk_FUN_10424e20	Global	1				FUN_10424950
+1040164a	5	thunk_FUN_1040edf0	Global	1				FUN_1040ee20
+1040164f	5	resetD3DStateInfo	P_D3D	0				
+10401654	5	thunk_FUN_10415270	Global	1				FUN_10413560
+10401659	5	thunk_FUN_1042c400	Global	1				FUN_1042c180
+1040165e	5	thunk_FUN_10412000	Global	1				FUN_1040f380
+10401663	5	P_D3DTriangleMesh	P_D3DTriangleMesh	0				
+10401668	5	thunk_FUN_10407240	Global	4				FUN_1041ecf0,FUN_1040e270,FUN_10405f60,FUN_10406810
+10401672	5	thunk_FUN_10416a60	Global	1				FUN_10416b30
+10401677	5	thunk_FUN_10411750	Global	4				FUN_1040de60,FUN_1040dfa0,FUN_10411750,FUN_10410750
+1040167c	5	thunk_FUN_1040bfd0	Global	7				FUN_1041aba0,FUN_1040a850,FUN_1040a600,FUN_104235e0,FUN_104186a0,FUN_1040ce70,FUN_10419400
+10401681	5	prepareSceneDirectionalLight	P_D3DCPUDriver	0				
+10401686	5	setVSVector4	P_D3DVertexBuffer	0				
+1040168b	5	request	P_D3DIndexBufferManager	3				FUN_104172e0,FUN_10418370,FUN_10416ca0
+10401690	5	P_D3DLinePrimitive	P_D3DLinePrimitive	2				FUN_10413050,FUN_1040c5b0
+10401695	5	createDuplicate	P_D3DParticlePrimitive	0				
+1040169a	5	thunk_FUN_104174e0	Global	1				FUN_10416b30
+104016a9	5	thunk_FUN_10426b30	Global	1				FUN_104261f0
+104016ae	5	thunk_FUN_1042c750	Global	1				FUN_1042c180
+104016b3	5	recycle	P_D3DIndexBufferManager	3				FUN_104172e0,FUN_104184f0,FUN_10416ca0
+104016b8	5	thunk_FUN_1040c5b0	Global	1				FUN_1040b580
+104016bd	5	thunk_FUN_1042f070	Global	1				FUN_1042c950
+104016c2	5	DRV_deallocateMap	P_D3D	0				
+104016c7	5	getBitsPerPixel	P_D3D	3				FUN_10425430,FUN_1042b280,FUN_10426b30
+104016cc	5	thunk_FUN_10425560	Global	1				FUN_1042a680
+104016d1	5	getTextureCoordinateAddress	P_D3DDDVertexBuffer	0				
+104016d6	5	requestIndices	P_D3DOutputPrimitive	0				
+104016db	5	setVertexIndices	P_D3DTriangleBuffer	0				
+104016e0	5	recycleClipperVertices	P_D3DOutputPrimitive	1				FUN_10415b50
+104016e5	5	process	P_D3DLinePrimitive	0				
+104016ea	5	P_D3DVertexBuffer	P_D3DVertexBuffer	0				
+104016ef	5	setTransform	P_D3D	0				
+104016f4	5	getWeight	P_D3DVertexBuffer	0				
+104016fe	5	thunk_FUN_10411c70	Global	1				FUN_1040dfa0
+1040170d	5	getDiffuseRGB	P_D3DDDVertexBuffer	0				
+10401712	5	thunk_FUN_104046c0	Global	1				FUN_104175c0
+10401717	5	getVertexAddress	P_D3DDDVertexBuffer	0				
+10401721	5	thunk_FUN_10422960	Global	1				FUN_1041ea20
+10401726	5	thunk_FUN_104126a0	Global	2				FUN_10411870,FUN_1040ff70
+10401730	5	getIndex	P_D3DDDIndexBuffer	0				
+10401735	5	thunk_FUN_1041f180	Global	1				Unwind@1046118c
+1040173f	5	getStartAlpha	P_D3DLineBuffer	0				
+10401744	5	thunk_FUN_1041cf00	Global	2				FUN_1041cf40,FUN_1041d8b0
+1040174e	5	thunk_FUN_10412b20	Global	1				FUN_10412c90
+10401753	5	getVertexBuffer	P_D3DOutputPrimitive	0				
+10401758	5	getSpecularRGB	P_D3DDDVertexBuffer	0				
+1040175d	5	setTextureCoordinate4D	P_D3DDDVertexBuffer	0				
+10401762	5	getTextureCoordinate4D	P_D3DVertexBuffer	0				
+10401767	5	thunk_FUN_10420b30	Global	1				FUN_1041ecf0
+10401771	5	getNormalAddress	P_D3DDDVertexBuffer	0				
+10401776	5	DRV_setViewMatrix	P_D3D	0				
+1040177b	5	thunk_FUN_10414a20	Global	2				FUN_1041c9f0,FUN_1041b290
+10401780	5	usesD3DTexturePipeline	P_D3DOutputPrimitive	0				
+1040178a	5	thunk_FUN_104170e0	Global	1				FUN_10416b30
+1040178f	5	thunk_FUN_1042c8f0	Global	2				FUN_1042c180,FUN_1042c450
+10401794	5	setVSVector1	P_D3DVertexBuffer	0				
+10401799	5	thunk_FUN_10413560	Global	1				FUN_10413810
+1040179e	5	thunk_FUN_10403350	Global	2				FUN_104032b0,FUN_10404750
+104017a3	5	thunk_FUN_104248d0	Global	2				Unwind@10461399,Unwind@10461369
+104017a8	5	thunk_FUN_10422490	Global	1				FUN_1041e660
+104017b2	5	getVertexIndex	P_D3DTriangleBuffer	0				
+104017b7	5	thunk_FUN_104131e0	Global	1				FUN_10413210
+104017bc	5	thunk_FUN_10412660	Global	2				Unwind@10461330,Unwind@10460a20
+104017c1	5	thunk_FUN_10424950	Global	3				FUN_10424270,FUN_10423ec0,FUN_10423cb0
+104017cb	5	thunk_FUN_10412150	Global	1				FUN_10410fe0
+104017d0	5	thunk_FUN_1041cf40	Global	1				FUN_1041d7f0
+104017da	5	thunk_FUN_10407c70	Global	1				FUN_10407700
+104017df	5	getIBManager	P_D3D	6				FUN_104172e0,FUN_10415b50,FUN_104184f0,FUN_10418370,FUN_104185c0,FUN_10416ca0
+104017f3	5	thunk_FUN_104073b0	Global	4				FUN_104188a0,FUN_10405f60,FUN_10425dc0,FUN_10406810
+10401807	5	setVSVector3	P_D3DVertexBuffer	0				
+1040180c	5	thunk_FUN_1042acd0	Global	1				FUN_10426b30
+10401811	5	setDiffuseRGB	P_D3DVertexBuffer	0				
+10401816	5	thunk_FUN_1040ff50	Global	2				FUN_1040dfa0,FUN_1040eb50
+1040181b	5	thunk_FUN_10413bf0	Global	1				FUN_10413810
+10401820	5	thunk_FUN_10414ca0	Global	4				FUN_10412c90,FUN_1041c9f0,FUN_1041b290,FUN_10419400
+10401825	5	preload	P_D3DTriangleMesh	0				
+1040182a	5	deleteIndexBuffers	P_D3DOutputPrimitive	2				FUN_10415b50,FUN_10428c20
+1040182f	5	thunk_FUN_1040e840	Global	3				FUN_10410ec0,FUN_10410960,Unwind@10460884
+10401839	5	thunk_FUN_10412310	Global	6				FUN_104117a0,FUN_10411f30,FUN_10412080,FUN_10411e40,FUN_1040f760,FUN_10412190
+1040183e	5	setIndex	P_D3DDDIndexBuffer	0				
+10401843	5	thunk_FUN_104034c0	Global	2				FUN_10403830,FUN_10407780
+10401848	5	thunk_FUN_10411b70	Global	1				FUN_1040ff70
+10401852	5	thunk_FUN_1042ed40	Global	1				FUN_1042e200
+10401857	5	thunk_FUN_104121d0	Global	3				FUN_10411df0,FUN_10412150,FUN_10410f10
+10401866	5	thunk_FUN_1041b0b0	Global	3				FUN_104188a0,FUN_10425dc0,FUN_10426b30
+1040186b	5	P_D3DParticlePrimitive	P_D3DParticlePrimitive	0				
+10401870	5	DRV_createPixelShader	P_D3D	0				
+10401875	5	thunk_FUN_10419240	Global	1				FUN_10419400
+1040187a	5	thunk_FUN_1041d900	Global	1				FUN_1041d7f0
+1040187f	5	thunk_FUN_10420050	Global	2				FUN_1041f5d0,FUN_1041ea20
+10401889	5	thunk_FUN_1041cd10	Global	1				FUN_1041c880
+1040188e	5	setEndAlpha	P_D3DLineBuffer	0				
+10401898	5	containsData	P_D3DOutputPrimitive	0				
+1040189d	5	setStartDiffuseRGBA	P_D3DLineBuffer	0				
+104018ac	5	applyD3DStateInfo	P_D3D	0				
+104018b1	5	thunk_FUN_104223c0	Global	2				FUN_1041f5d0,FUN_1041ea20
+104018b6	5	getAlphaMask	P_D3D	2				FUN_10425430,FUN_1042b280
+104018bb	5	createSkinMesh	P_D3DCPUDriver	0				
+104018c0	5	thunk_FUN_10402fd0	Global	1				FUN_10406810
+104018c5	5	thunk_FUN_10411d70	Global	1				FUN_1040f380
+104018ca	5	thunk_FUN_10421cd0	Global	1				FUN_10420070
+104018cf	5	thunk_FUN_10410f10	Global	1				FUN_1040dbe0
+104018d4	5	thunk_FUN_1042c380	Global	1				FUN_1042c180
+104018d9	5	~P_D3DParticleBuffer	P_D3DParticleBuffer	3				Unwind@10460e20,FUN_10418b90,FUN_10418db0
+104018de	5	render	P_D3DOutputPrimitive	0				
+104018e3	5	thunk_FUN_10412190	Global	4				FUN_10411340,FUN_1040f190,FUN_10411870,FUN_10412450
+104018e8	5	prepareScenePointLight	P_D3DCPUDriver	0				
+104018ed	5	createTriangleMesh	P_D3DCPUDriver	0				
+104018f2	5	setSpecularRGB	P_D3DVertexBuffer	0				
+104018f7	5	thunk_FUN_1042aad0	Global	1				FUN_10426b30
+104018fc	5	~P_Buffer	E2MFC.DLL::P_Buffer	6				Unwind@10460a66,FUN_1040ab30,Unwind@104603b0,Unwind@1046069b,Unwind@10460a50,Unwind@104603d0
+10401906	5	validate	P_D3DMaterialInfo	0				
+1040190b	5	thunk_FUN_10425430	Global	2				FUN_1042a680,FUN_1042a100
+10401910	5	thunk_FUN_10422c70	Global	1				FUN_1041f400
+10401915	5	thunk_FUN_10421520	Global	1				FUN_1041f400
+1040191a	5	getVertexSize	P_D3DDDVertexBuffer	0				
+1040191f	5	DRV_clearBuffer	P_D3D	0	FUN_104299c0			
+10401924	5	thunk_FUN_10422440	Global	4				FUN_1041e8e0,FUN_10421440,FUN_10422440,FUN_1041ea20
+10401933	5	thunk_FUN_10420b60	Global	7				FUN_10420a50,FUN_1041fb10,FUN_1041f040,FUN_1041f180,FUN_1041fd00,FUN_1041f2c0,FUN_10420580
+10401938	5	getVSVector3	P_D3DVertexBuffer	0				
+1040193d	5	preload	P_D3DSkinMesh	0				
+10401942	5	P_D3DIndexBufferManager	P_D3DIndexBufferManager	1				FUN_104261f0
+10401947	5	getDriver	P_D3DIndexBufferManager	0				
+10401951	5	thunk_FUN_10422b30	Global	3				FUN_1041fe80,FUN_10423140,FUN_10422b30
+10401960	5	createDeviceDependentBaseObject	P_D3DCPUDriver	0				
+10401965	5	thunk_FUN_10407580	Global	10				FUN_10428d60,FUN_1042db00,FUN_10429d20,FUN_1042c950,FUN_1042dd20,FUN_1042d8e0,FUN_1042a100,FUN_1040d210
+1040196a	5	thunk_FUN_10428c20	Global	3				FUN_104296f0,FUN_104296a0,FUN_10428340
+1040196f	5	setVertexShader	P_D3D	0				
+10401974	5	~R_Exception	RLMFC.DLL::R_Exception	3				Unwind@10460700,Unwind@10461010,FUN_10412750
+1040197e	5	thunk_FUN_1040c8b0	Global	1				FUN_1040b5c0
+10401983	5	createParticlePrimitive	P_D3DCPUDriver	0				
+1040198d	5	thunk_FUN_10423000	Global	6				FUN_10422c20,FUN_10422490,FUN_10422e80,FUN_10422d70,FUN_10422b30,FUN_10420450
+10401997	5	~R_Exception	RLMFC.DLL::R_Exception	2				Unwind@10461880,FUN_1042f150
+1040199c	5	getVBManager	P_D3D	6				FUN_10418460,FUN_104184b0,FUN_10418540,FUN_10415b50,FUN_104182d0,FUN_10417f40
+104019a1	5	DRV_allocateMap	P_D3D	0				
+104019a6	5	DRV_addToTextureMemory	P_D3D	0				
+104019ab	5	thunk_FUN_104116d0	Global	2				FUN_1040dfa0,FUN_1040eb50
+104019b0	5	thunk_FUN_1040f890	Global	6				FUN_1040e700,FUN_1040e5c0,FUN_1040e270,FUN_1040fd60,FUN_1040f010,FUN_1040e840
+104019b5	5	process	P_D3DParticlePrimitive	0				
+104019ba	5	thunk_FUN_1042a680	Global	1				FUN_10426b30
+104019bf	5	thunk_FUN_1042c110	Global	3				Unwind@10461810,Unwind@104617b0,Unwind@10461830
+104019c4	5	thunk_FUN_10420c60	Global	1				FUN_1041ecf0
+104019ce	5	thunk_FUN_10412080	Global	1				FUN_1040ff70
+104019d3	5	thunk_FUN_10403020	Global	1				FUN_10402ff0
+104019d8	5	thunk_FUN_1041adb0	Global	1				FUN_10418d80
+104019dd	5	thunk_FUN_10411f30	Global	2				FUN_1040f190,FUN_10412450
+104019e2	5	DRV_getAvailableVideoMemory	P_D3D	0				
+104019e7	5	usesD3DTesselation	P_D3DOutputPrimitive	0				
+104019ec	5	getVSVectorAddress	P_D3DDDVertexBuffer	0				
+104019f1	5	isDeviceDependentValidated	P_D3DParticleBuffer	0				
+104019f6	5	thunk_FUN_10413340	Global	1				FUN_10413210
+104019fb	5	operator=	P_D3DParticlePrimitive	0				
+10401a00	5	thunk_FUN_10403290	Global	0				
+10401a05	5	getSpecularRGBA	P_D3DDDVertexBuffer	0				
+10401a0a	5	thunk_FUN_10409020	Global	1				FUN_10407c70
+10401a14	5	DRV_setFullscreen	P_D3D	0				
+10401a19	5	thunk_FUN_10418d80	Global	1				FUN_10418db0
+10401a1e	5	thunk_FUN_104256c0	Global	1				FUN_10429210
+10401a23	5	thunk_FUN_10421440	Global	1				FUN_1041f5d0
+10401a2d	5	thunk_FUN_1040cd40	Global	6				FUN_1041aba0,FUN_1040a850,FUN_1040a600,FUN_104186a0,FUN_1040ce70,FUN_10419400
+10401a32	5	thunk_FUN_1041aba0	Global	1				FUN_10419400
+10401a37	5	thunk_FUN_1042c450	Global	3				FUN_1042a680,FUN_1042aad0,FUN_1042b280
+10401a3c	5	thunk_FUN_104250a0	Global	2				FUN_104235e0,FUN_104250a0
+10401a41	5	thunk_FUN_10422e80	Global	4				FUN_1041fe80,FUN_10422030,FUN_10423140,FUN_10422560
+10401a46	5	thunk_FUN_10411cf0	Global	1				FUN_1040f380
+10401a4b	5	thunk_FUN_104076c0	Global	8				FUN_1041aba0,FUN_1040a850,FUN_10424e50,FUN_1040a600,FUN_104235e0,FUN_104186a0,FUN_1040ce70,FUN_10419400
+10401a50	5	setEndPosition	P_D3DLineBuffer	0				
+10401a55	5	setVertices	P_D3DOutputPrimitive	4				FUN_10412c90,FUN_1041c9f0,FUN_1041b290,FUN_10419400
+10401a64	5	getRedMask	P_D3D	3				FUN_10425430,FUN_1042b280,FUN_10426b30
+10401a6e	5	DRV_getAvailableTextureMemory	P_D3D	0				
+10401a73	5	getVertexNormal	P_D3DVertexBuffer	0				
+10401a78	5	thunk_FUN_1040c2d0	Global	1				FUN_1040b530
+10401a7d	5	thunk_FUN_104149b0	Global	10				FUN_1040a850,FUN_1040b230,FUN_1040a600,FUN_1041c780,FUN_1041b130,FUN_1040b2f0,FUN_104192c0,FUN_1040a520
+10401a87	5	recycle	P_D3DVertexBufferManager	2				FUN_10418460,FUN_104184b0
+10401a8c	5	thunk_FUN_10428600	Global	4				FUN_104296f0,FUN_10428d60,FUN_10429210,FUN_10428340
+10401a91	5	verboseStage	P_D3DMaterialInfo	2				FUN_10407780,FUN_10409070
+10401a96	5	thunk_FUN_1041e7a0	Global	2				Unwind@104610a0,Unwind@10461120
+10401a9b	5	thunk_FUN_10402e50	Global	1				FUN_10405f60
+10401aa5	5	createDeviceDependentVirtualObject	P_D3DCPUDriver	0				
+10401aaa	5	thunk_FUN_1040bfb0	Global	4				Unwind@10460359,Unwind@104613c9,Unwind@10460d50,Unwind@10460389
+10401aaf	5	setWeight	P_D3DVertexBuffer	0				
+10401ab4	5	setMatrixIndex	P_D3DDDVertexBuffer	0				
+10401ab9	5	~P_Buffer	E2MFC.DLL::P_Buffer	3				Unwind@10460df0,Unwind@10460d70,FUN_1041b0e0
+10401abe	5	~R_Exception	RLMFC.DLL::R_Exception	5				Unwind@104606f0,Unwind@10461000,Unwind@10461638,Unwind@10461668,FUN_10412700
+10401ac3	5	thunk_FUN_10422330	Global	1				FUN_1041f5d0
+10401ac8	5	thunk_FUN_1041fe40	Global	13				Unwind@10461270,Unwind@1046113f,Unwind@10461100,Unwind@104610ab,Unwind@104611f0,Unwind@10461210,Unwind@104610b3,FUN_1041ea20
+10401acd	5	thunk_FUN_1040a190	Global	2	FUN_1040a190			FUN_1040a160,Unwind@10460b7b
+10401ad2	5	thunk_FUN_10422ae0	Global	1				FUN_10420070
+10401ad7	5	setSpecularRGB	P_D3DDDVertexBuffer	0				
+10401adc	5	setTextureCoordinate2D	P_D3DVertexBuffer	0				
+10401ae1	5	thunk_FUN_1042a5b0	Global	2				FUN_1042a680,FUN_1042b280
+10401ae6	5	thunk_FUN_10407500	Global	13				FUN_1042db00,FUN_1042c950,FUN_1042dd20,FUN_10428340,FUN_1040d7b0,FUN_1041d900,FUN_1042d8e0,FUN_1042a100
+10401aeb	5	thunk_FUN_10402eb0	Global	1				FUN_10402e80
+10401af0	5	thunk_FUN_10415570	Global	1				FUN_10413560
+10401af5	5	thunk_FUN_1042b170	Global	1				FUN_1042b280
+10401afa	5	deleteAll	P_D3DIndexBufferManager	2				FUN_1040dfa0,FUN_104185c0
+10401aff	5	thunk_FUN_10420450	Global	1				FUN_1041ecf0
+10401b04	5	usesD3DLighting	P_D3DOutputPrimitive	0				
+10401b09	5	prepareProcess	P_D3DVirtualObject	0				
+10401b13	5	thunk_FUN_10410280	Global	4				FUN_1040e980,FUN_1040de60,FUN_1040dfa0,FUN_10410750
+10401b18	5	~P_D3DVertexBufferManager	P_D3DVertexBufferManager	1				FUN_1041e770
+10401b1d	5	setPosition	P_D3DDDVertexBuffer	0				
+10401b22	5	deleteDeviceDependentData	P_D3DMaterialInfo	0				
+10401b27	5	setTexture	P_D3DMaterialInfo	0				
+10401b2c	5	DRV_getTotalTextureMemory	P_D3D	0				
+10401b36	5	thunk_FUN_10410ec0	Global	4				FUN_1040dd20,FUN_10410ec0,FUN_1040dfa0,FUN_1040eb50
+10401b40	5	thunk_FUN_10422d70	Global	1				FUN_10420c60
+10401b45	5	thunk_FUN_104172e0	Global	1				FUN_10416b30
+10401b4a	5	thunk_FUN_1042aff0	Global	1				FUN_10426b30
+10401b4f	5	getDiffuseRGBA	P_D3DVertexBuffer	0				
+10401b54	5	thunk_FUN_1042b110	Global	1				FUN_10426b30
+10401b59	5	DRV_unconvertMap	P_D3D	0	FUN_1042db00			
+10401b5e	5	thunk_FUN_10412970	Global	1				FUN_10412800
+10401b68	5	thunk_FUN_10415990	Global	1				FUN_10413560
+10401b6d	5	thunk_FUN_10415130	Global	1				FUN_104131e0
+10401b72	5	thunk_FUN_10416ca0	Global	1				FUN_10416b30
+10401b77	5	thunk_FUN_10422e40	Global	1				FUN_10421cd0
+10401b7c	5	thunk_FUN_10407110	Global	1				FUN_10403e20
+10401b81	5	~P_D3DVirtualObject	P_D3DVirtualObject	1				FUN_10423470
+10401b86	5	setFog	P_D3DVertexBuffer	0				
+10401b8b	5	setRenderState	P_D3D	0				
+10401b90	5	thunk_FUN_1040efd0	Global	5				Unwind@10460780,Unwind@104607d0,Unwind@10460837,FUN_1040dfa0,Unwind@10460788
+10401b95	5	~P_Buffer	E2MFC.DLL::P_Buffer	4		E2MFC.DLL!~P_Buffer		FUN_1041ced0,Unwind@10461030,Unwind@10460d78,Unwind@10460df8
+10401b9a	5	getIndexAddress	P_D3DDDIndexBuffer	0				
+10401b9f	5	DRV_setRenderTarget	P_D3D	0				
+10401ba4	5	convertMatrix	P_D3D	2				FUN_104175c0,FUN_10415ef0
+10401ba9	5	~P_Buffer	E2MFC.DLL::P_Buffer	6				Unwind@10460b86,FUN_1040d050,Unwind@10460b70,Unwind@104602b0,Unwind@10460290,Unwind@104605bb
+10401bae	5	getDriver	P_D3DOutputPrimitive	0				
+10401bc2	5	P_D3DSkinMesh	P_D3DSkinMesh	2				FUN_1041c610,FUN_1040c2d0
+10401bc7	5	~P_D3DLinePrimitive	P_D3DLinePrimitive	1				FUN_1040b360
+10401bcc	5	prepareDirectionalLight	P_D3DVirtualObject	0				
+10401bd1	5	setDiffuseRGBA	P_D3DDDVertexBuffer	0				
+10401bd6	5	thunk_FUN_10403270	Global	1				FUN_10403a40
+10401bdb	5	P_D3DTriangleBuffer	P_D3DTriangleBuffer	0				
+10401be0	5	thunk_FUN_1040fe40	Global	1				FUN_1040e270
+10401be5	5	getBlueMask	P_D3D	3				FUN_10425430,FUN_1042b280,FUN_10426b30
+10401bea	5	~P_D3DParticlePrimitive	P_D3DParticlePrimitive	1				FUN_1040aa80
+10401bf4	5	thunk_FUN_10420580	Global	6				FUN_10420a50,FUN_1041ecf0,FUN_1041f040,FUN_1041f180,FUN_1041fd00,FUN_1041f2c0
+10401bf9	5	validateDevice	P_D3D	0				
+10401bfe	5	~R_Exception	RLMFC.DLL::R_Exception	47				Unwind@10461628,Unwind@104615c0,Unwind@10461595,Unwind@104619e0,Unwind@104619b0,Unwind@10461718,Unwind@10461948,Unwind@10461790
+10401c03	5	convertToDeviceDependentFormat	P_D3DMaterialInfo	0				
+10401c0d	5	deleteVertexBuffers	P_D3DOutputPrimitive	2				FUN_10415b50,FUN_10428c20
+10401c12	5	getPosition	P_D3DDDVertexBuffer	0				
+10401c17	5	getSpecularRGB	P_D3DVertexBuffer	0				
+10401c1c	5	thunk_FUN_104131c0	Global	2				FUN_10413300,FUN_104131e0
+10401c21	5	thunk_FUN_10420f70	Global	4				FUN_1041e8e0,FUN_1041f400,FUN_10421440,FUN_1041ea20
+10401c26	5	thunk_FUN_104223a0	Global	1				FUN_1041ea20
+10401c2b	5	P_D3DDDVertexBuffer	P_D3DDDVertexBuffer	9				FUN_104188a0,FUN_1040c720,FUN_1041ecf0,FUN_10413810,FUN_1040cbb0,FUN_104096c0,FUN_1040aab0,FUN_10412800
+10401c30	5	getDiffuseRGBA	P_D3DDDVertexBuffer	0				
+10401c3a	5	thunk_FUN_1040f6a0	Global	1				FUN_1040e270
+10401c3f	5	thunk_FUN_1042b280	Global	1				FUN_10426b30
+10401c44	5	thunk_FUN_10421c00	Global	1				FUN_1041e660
+10401c49	5	DRV_getBackBuffer	P_D3D	0				
+10401c4e	5	DRV_setFillMode	P_D3D	0				
+10401c53	5	thunk_FUN_10421650	Global	3				FUN_1041f5d0,FUN_1041ea20,FUN_1041e7a0
+10401c58	5	thunk_FUN_10418ec0	Global	1				FUN_10418db0
+10401c5d	5	thunk_FUN_104215b0	Global	4				FUN_1041e8e0,FUN_1041f5d0,FUN_10421440,FUN_10420f70
+10401c62	5	getD3DPassInfo	P_D3DMaterialInfo	0				
+10401c67	5	getFVF	P_D3DDDVertexBuffer	0				
+10401c6c	5	thunk_FUN_10415850	Global	1				FUN_10413560
+10401c71	5	thunk_FUN_1041af40	Global	1				FUN_104193c0
+10401c76	5	thunk_FUN_1041fe80	Global	1				FUN_1041ecf0
+10401c80	5	thunk_FUN_1040ca40	Global	1				FUN_1040b5e0
+10401c85	5	thunk_FUN_1042a600	Global	2				FUN_1042a680,FUN_1042aad0
+10401c8a	5	thunk_FUN_10411640	Global	1				FUN_1040eb50
+10401c94	5	DRV_getTotalVideoMemory	P_D3D	0				
+10401c9e	5	getAlpha	P_D3DVertexBuffer	0				
+10401ca3	5	~P_D3DCPUDriver	P_D3DCPUDriver	1				FUN_1040b410
+10401ca8	5	thunk_FUN_1041f2c0	Global	3				FUN_10421650,FUN_10421bb0,Unwind@10461194
+10401cad	5	P_D3D	P_D3D	1				FUN_10425dc0
+10401cb2	5	setAlpha	P_D3DDDVertexBuffer	0				
+10401cb7	5	getFog	P_D3DVertexBuffer	0				
+10401cc1	5	thunk_FUN_10411670	Global	1				FUN_1040e270
+10401ccb	5	thunk_FUN_104156e0	Global	1				FUN_10413560
+10401cd0	5	thunk_FUN_10422ec0	Global	3				FUN_10422ae0,FUN_10422e40,FUN_10421c00
+10401cd5	5	getVSVector4	P_D3DVertexBuffer	0				
+10401cda	5	setVertexNormal	P_D3DVertexBuffer	0				
+10401ce4	5	thunk_FUN_1040d7b0	Global	1				FUN_1040d6a0
+10401ce9	5	thunk_FUN_10419a80	Global	1				FUN_10419400
+10401cee	5	thunk_FUN_10407380	Global	6				FUN_10429210,FUN_1042db00,FUN_1042c950,FUN_10405f60,FUN_1042d8e0,FUN_10428600
+10401cf3	5	DRV_setGamma	P_D3D	0				
+10401cf8	5	thunk_FUN_1040ff70	Global	1				FUN_1040e270
+10401cfd	5	requestClipperVertices	P_D3DOutputPrimitive	0				
+10401d02	5	thunk_FUN_10407780	Global	1				FUN_10407c70
+10401d07	5	DRV_swapBuffer	P_D3D	0	FUN_1042a420			
+10401d0c	5	thunk_FUN_1041fcc0	Global	5				Unwind@10461147,FUN_1041ea20,Unwind@10461098,Unwind@104610e0,Unwind@10461090
+10401d11	5	getFog	P_D3DDDVertexBuffer	0				
+10401d16	5	thunk_FUN_1040c160	Global	1				FUN_1040b500
+10401d1b	5	P_D3DVertexBufferManager	P_D3DVertexBufferManager	1				FUN_104261f0
+10401d20	5	endValidation	P_D3DMaterialInfo	0				
+10401d25	5	setIndices	P_D3DOutputPrimitive	3				FUN_1041c9f0,FUN_1041b290,FUN_10419400
+10401d2a	5	P_D3DParticleBuffer	P_D3DParticleBuffer	2				FUN_10418db0,FUN_1040ca40
+10401d34	5	P_D3DParticlePrimitive	P_D3DParticlePrimitive	2				FUN_1041af40,FUN_1040c440
+10401d39	5	createDuplicate	P_D3DTriangleMesh	0				
+10401d3e	5	thunk_FUN_10424cc0	Global	1				FUN_10424950
+10401d43	5	thunk_FUN_104255b0	Global	2				FUN_10428d60,FUN_10429210
+10401d48	5	thunk_FUN_10423370	Global	2				FUN_10420c60,FUN_10422560
+10401d4d	5	thunk_FUN_10410930	Global	1				FUN_1040e270
+10401d52	5	thunk_FUN_104134e0	Global	2				FUN_1041c9f0,FUN_1041b290
+10401d57	5	getStartDiffuseRGB	P_D3DLineBuffer	0				
+10401d5c	5	P_D3DSkinMesh	P_D3DSkinMesh	0				
+10401d61	5	~R_Exception	RLMFC.DLL::R_Exception	80				Unwind@1046158b,Unwind@10460ad0,Unwind@10461460,Unwind@104614ec,Unwind@10460b1b,Unwind@1046057b,Unwind@10460c10,Unwind@10460db3
+10401d6b	5	thunk_FUN_104046f0	Global	1				FUN_104175c0
+10401d70	5	thunk_FUN_10422cf0	Global	1				FUN_10420070
+10401d75	5	P_D3DParticlePrimitive	P_D3DParticlePrimitive	0				
+10401d7a	5	thunk_FUN_10421bb0	Global	4				FUN_1041f5d0,FUN_10421bb0,FUN_1041ea20,FUN_1041e7a0
+10401d7f	5	DRV_beginScene	P_D3D	0				
+10401d84	5	~P_D3DIndexBufferManager	P_D3DIndexBufferManager	1				FUN_1040dcf0
+10401d89	5	thunk_FUN_1042f0a0	Global	1				FUN_1042c950
+10401d8e	5	usesD3DFogging	P_D3DOutputPrimitive	0				
+10401d93	5	thunk_FUN_1042c160	Global	1				Unwind@104617d9
+10402b30	7	FUN_10402b30	Global	0				
+10402b50	4	FUN_10402b50	Global	0				
+10402b70	4	FUN_10402b70	Global	0				
+10402b90	11	FUN_10402b90	Global	0				
+10402bb0	11	FUN_10402bb0	Global	0				
+10402bd0	11	FUN_10402bd0	Global	0				
+10402bf0	16	FUN_10402bf0	Global	0				
+10402c10	11	FUN_10402c10	Global	0				
+10402c30	11	FUN_10402c30	Global	0				
+10402c50	11	FUN_10402c50	Global	0				
+10402c70	4	FUN_10402c70	Global	0				
+10402c90	4	FUN_10402c90	Global	0				
+10402cb0	4	FUN_10402cb0	Global	0				
+10402cd0	4	FUN_10402cd0	Global	0				
+10402cf0	4	FUN_10402cf0	Global	0				
+10402d10	4	FUN_10402d10	Global	0				
+10402d30	48	FUN_10402d30	Global	0				
+10402d70	4	FUN_10402d70	Global	0				
+10402d90	4	FUN_10402d90	Global	0				
+10402db0	4	FUN_10402db0	Global	0				
+10402dd0	6	FUN_10402dd0	Global	0				
+10402df0	5	thunk_FUN_10406c60	Global	0				
+10402e10	12	FUN_10402e10	Global	0	thunk_FUN_10406e40			
+10402e30	16	FUN_10402e30	Global	0	thunk_FUN_10406fa0			
+10402e50	17	FUN_10402e50	Global	0				
+10402e80	30	FUN_10402e80	Global	0	thunk_FUN_10402eb0	MFC42.DLL!operator_delete		
+10402eb0	223	FUN_10402eb0	Global	0		MSVCRT.DLL!__RTDynamicCast,E2MFC.DLL!verbose,E2MFC.DLL!getDevice	DeleteVertexShader failed | DeleteVertexShader failed | P_D3DVertexShader destructor - can't delete vertex shader because device has bee	
+10402fd0	16	FUN_10402fd0	Global	0				
+10402ff0	30	FUN_10402ff0	Global	0	thunk_FUN_10403020	MFC42.DLL!operator_delete		
+10403020	158	FUN_10403020	Global	0		MSVCRT.DLL!__RTDynamicCast,E2MFC.DLL!verbose,E2MFC.DLL!getDevice	DeletePixelShader failed | P_D3DPixelShader destructor - can't delete pixel shader because device has been 	
+104030f0	136	FUN_104030f0	Global	0				
+104031b0	30	FUN_104031b0	Global	0	thunk_FUN_104031e0	MFC42.DLL!operator_delete		
+104031e0	50	FUN_104031e0	Global	0		MFC42.DLL!operator_delete		
+10403230	5	thunk_FUN_10403270	Global	0				
+10403250	5	thunk_FUN_10403290	Global	0				
+10403270	1	FUN_10403270	Global	0				
+10403290	1	FUN_10403290	Global	0				
+104032b0	128	FUN_104032b0	Global	0	thunk_FUN_10403350	E2MFC.DLL!getDefaultFilter		
+10403350	274	FUN_10403350	Global	0				
+104034c0	690	FUN_104034c0	Global	0				
+10403830	401	FUN_10403830	Global	0	thunk_FUN_104034c0	RLMFC.DLL!~M_FPUControl,RLMFC.DLL!M_FPUControl		
+104039c1	9	Catch@104039c1	Global	0		MSVCRT.DLL!_CxxThrowException		
+10403a40	749	FUN_10403a40	Global	0	thunk_FUN_10403270,thunk_FUN_10403e20			
+10403df0	22	FUN_10403df0	Global	0				
+10403e20	753	FUN_10403e20	Global	0	thunk_FUN_10407110			
+104041e0	884	FUN_104041e0	Global	0		E2MFC.DLL!getRuntimeFogEnable		
+10404640	25	FUN_10404640	Global	0				
+10404670	62	FUN_10404670	Global	0				
+104046c0	24	FUN_104046c0	Global	0				
+104046f0	25	FUN_104046f0	Global	0				
+10404720	25	FUN_10404720	Global	0				
+10404750	4823	FUN_10404750	Global	0	FUN_10455942,P_D3DMaterialInfo::verboseStages,thunk_FUN_10403e20,thunk_FUN_10407700,thunk_FUN_10403350	E2MFC.DLL!usesTextureProjection,RLMFC.DLL!setError,E2MFC.DLL!materialVerbose,MSVCRT.DLL!_CxxThrowException,E2MFC.DLL!isAssociative,E2MFC.DLL!getDevice,RLMFC.DLL!operator=,E2MFC.DLL!getTextureCoordinateSource,RLMFC.DLL!R_Exception,E2MFC.DLL!usesTextureTransformation	pass %d, layer %d / %d   | trying to combine layer %d / %d into pass %d: |  trying texture  |  trying fog kludge  |  trying DIFFUSE_ADD  |  DIFFUSE_MUL already validated, changing source  |  trying DIFFUSE_MUL  |  trying DIFFUSE_COPY 	
+10405f60	1512	FUN_10405f60	Global	0	FUN_10455942,FUN_1042f889,thunk_FUN_104073b0,thunk_FUN_10407240,thunk_FUN_10407500,thunk_FUN_10407380,thunk_FUN_10402e50,P_DriverException_DirectDrawError::P_DriverException_DirectDrawError	RLMFC.DLL!~R_Exception,RLMFC.DLL!R_STR,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,E2MFC.DLL!getDevice,RLMFC.DLL!operator=,E2MFC.DLL!verbose,RLMFC.DLL!R_Exception	Out of system memory resources | Vertex shader error: %s | Vertex shader assembly failed | CreateVertexShader (software) | CreateVertexShader (hardware) | P_D3D::DRV_createVertexShader - code buffer ref count %d  | P_D3D::DRV_createVertexShader - constant buffer ref count %d  | P_D3D::DRV_createVertexShader - error buffer ref count %d 	
+10406548	156	Catch@10406548	Global	0		MSVCRT.DLL!_CxxThrowException,E2MFC.DLL!verbose,E2MFC.DLL!getDevice	P_D3D::DRV_createVertexShader - code buffer ref count %d  | P_D3D::DRV_createVertexShader - constant buffer ref count %d  | P_D3D::DRV_createVertexShader - error buffer ref count %d 	
+104067c0	30	FUN_104067c0	Global	0		MFC42.DLL!operator_delete,RLMFC.DLL!~R_Exception		
+104067f0	6	~R_Exception	RLMFC.DLL::R_Exception	0				
+10406810	742	FUN_10406810	Global	0	thunk_FUN_10402fd0,FUN_10455942,FUN_1042f889,thunk_FUN_10407350,thunk_FUN_104073b0,thunk_FUN_10407240,thunk_FUN_10407320,thunk_FUN_10407500,thunk_FUN_10407580,P_DriverException_DirectDrawError::P_DriverException_DirectDrawError	RLMFC.DLL!~R_Exception,RLMFC.DLL!R_STR,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,E2MFC.DLL!getDevice,E2MFC.DLL!verbose,RLMFC.DLL!R_Exception	Out of system memory resources | Pixel shader error: %s | Pixel shader assembly failed | CreatePixelShader  | P_D3D::DRV_createPixelShader - code buffer ref count %d  | P_D3D::DRV_createPixelShader - error buffer ref count %d 	
+10406af6	125	Catch@10406af6	Global	0		MSVCRT.DLL!_CxxThrowException,E2MFC.DLL!verbose,E2MFC.DLL!getDevice	P_D3D::DRV_createPixelShader - code buffer ref count %d  | P_D3D::DRV_createPixelShader - error buffer ref count %d 	
+10406c60	267	FUN_10406c60	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+10406dc0	30	FUN_10406dc0	Global	0	thunk_FUN_10406df0	MFC42.DLL!operator_delete		
+10406df0	14	FUN_10406df0	Global	0				
+10406e10	31	FUN_10406e10	Global	0		MFC42.DLL!operator_delete,E2MFC.DLL!~P_DriverMap		
+10406e40	259	FUN_10406e40	Global	0	thunk_FUN_104030f0,FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+10406fa0	279	FUN_10406fa0	Global	0	FUN_10455942,P_D3DOutputPrimitive::P_D3DOutputPrimitive	RLMFC.DLL!operator=,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+10407110	237	FUN_10407110	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+10407240	84	FUN_10407240	Global	0	thunk_FUN_10407430,FUN_10455942	RLMFC.DLL!operator=,MSVCRT.DLL!_CxxThrowException		
+10407320	20	FUN_10407320	Global	0		RLMFC.DLL!operator=		
+10407350	20	FUN_10407350	Global	0		RLMFC.DLL!operator=		
+10407380	20	FUN_10407380	Global	0		RLMFC.DLL!operator=		
+104073b0	19	FUN_104073b0	Global	0		RLMFC.DLL!R_Exception		
+104073e0	30	FUN_104073e0	Global	0		MFC42.DLL!operator_delete,RLMFC.DLL!~R_Exception		
+10407410	6	~R_Exception	RLMFC.DLL::R_Exception	0				
+10407430	82	FUN_10407430	Global	0		RLMFC.DLL!setError,RLMFC.DLL!R_Exception	Out of system memory resources	
+104074b0	30	FUN_104074b0	Global	0		RLMFC.DLL!~R_Exception,MFC42.DLL!operator_delete		
+104074e0	6	~R_Exception	RLMFC.DLL::R_Exception	0				
+10407500	19	FUN_10407500	Global	0		RLMFC.DLL!R_Exception		
+10407530	30	FUN_10407530	Global	0		MFC42.DLL!operator_delete,RLMFC.DLL!~R_Exception		
+10407560	6	~R_Exception	RLMFC.DLL::R_Exception	0				
+10407580	19	FUN_10407580	Global	0		RLMFC.DLL!R_Exception		
+104075b0	30	FUN_104075b0	Global	0		RLMFC.DLL!~R_Exception,MFC42.DLL!operator_delete		
+104075e0	6	~R_Exception	RLMFC.DLL::R_Exception	0				
+104076c0	42	FUN_104076c0	Global	0				
+10407700	94	FUN_10407700	Global	0	thunk_FUN_10407c70	E2MFC.DLL!materialVerbose,E2MFC.DLL!getDevice	 setStages succeeded   |  setStages failed	
+10407780	906	FUN_10407780	Global	0	P_D3DMaterialInfo::verboseStage,thunk_FUN_104034c0	E2MFC.DLL!materialVerbose,E2MFC.DLL!resetCurrentMaterial,E2MFC.DLL!getDevice	    try %d: | D3DERR_UNSUPPORTEDFACTORVALUE  | D3DERR_UNSUPPORTEDTEXTUREFILTER  | D3DERR_CONFLICTINGTEXTUREFILTER  | D3DERR_CONFLICTINGTEXTUREPALETTE  | D3DERR_CONFLICTINGRENDERSTATE  | D3DERR_WRONGTEXTUREFORMAT  | D3DERR_TOOMANYOPERATIONS 	
+10407c70	4031	FUN_10407c70	Global	0	thunk_FUN_10407780,thunk_FUN_10409020	E2MFC.DLL!materialVerbose,E2MFC.DLL!getDevice	 trying to combine diffuse into the first stage  |  trying to combine diffuse into the first stage  |  trying to combine diffuse into the first stage  |  trying to combine diffuse into the first stage  |  trying to emulate by using white diffuse. this counts on that if texture has no |  trying to emulate by using white diffuse. this counts on that if texture has no |  trying separate stages   |  texture alpha succeeded 	
+10409020	56	FUN_10409020	Global	0				
+10409070	303	FUN_10409070	Global	0	P_D3DMaterialInfo::verboseStage	E2MFC.DLL!materialVerbose,E2MFC.DLL!getDevice	 blend:  | ZERO  | SRCCOLOR  | DESTCOLOR  | SRCALPHA  | INVSRCALPHA  | BOTHSRCALPHA  | ZERO 	
+10409270	717	FUN_10409270	Global	0		E2MFC.DLL!materialVerbose,E2MFC.DLL!getDevice	 color:  |  TEXTURE  |  CURRENT  |  DIFFUSE  |  TFACTOR  |     -     |  ~TEXTURE |       DISABLE      	
+10409680	3	FUN_10409680	Global	0				
+104096a0	5	FUN_104096a0	Global	0				
+104096c0	88	FUN_104096c0	Global	0	P_D3DDDVertexBuffer::P_D3DDDVertexBuffer	E2MFC.DLL!P_Buffer		
+10409740	42	FUN_10409740	Global	0				
+10409780	42	FUN_10409780	Global	0				
+104097c0	42	FUN_104097c0	Global	0				
+10409800	44	FUN_10409800	Global	0				
+10409840	32	FUN_10409840	Global	0		GRPHMFC.DLL!operator=		
+10409870	35	FUN_10409870	Global	0		GRPHMFC.DLL!operator=		
+104098b0	102	FUN_104098b0	Global	0				
+10409940	105	FUN_10409940	Global	0				
+104099d0	44	FUN_104099d0	Global	0				
+10409a10	47	FUN_10409a10	Global	0				
+10409a50	52	FUN_10409a50	Global	0				
+10409aa0	54	FUN_10409aa0	Global	0				
+10409af0	79	FUN_10409af0	Global	0				
+10409b60	41	FUN_10409b60	Global	0				
+10409ba0	54	FUN_10409ba0	Global	0				
+10409bf0	57	FUN_10409bf0	Global	0				
+10409c40	62	FUN_10409c40	Global	0				
+10409c90	40	FUN_10409c90	Global	0				
+10409cd0	40	FUN_10409cd0	Global	0				
+10409d10	40	FUN_10409d10	Global	0				
+10409d50	40	FUN_10409d50	Global	0				
+10409d90	95	FUN_10409d90	Global	0				
+10409e10	95	FUN_10409e10	Global	0				
+10409e90	24	FUN_10409e90	Global	0				
+10409ec0	24	FUN_10409ec0	Global	0				
+10409ef0	33	FUN_10409ef0	Global	0				
+10409f30	45	FUN_10409f30	Global	0				
+10409f70	50	FUN_10409f70	Global	0				
+10409fc0	23	FUN_10409fc0	Global	0				
+10409ff0	18	FUN_10409ff0	Global	0				
+1040a020	28	FUN_1040a020	Global	0				
+1040a050	43	FUN_1040a050	Global	0				
+1040a090	55	FUN_1040a090	Global	0				
+1040a0e0	62	FUN_1040a0e0	Global	0				
+1040a130	29	FUN_1040a130	Global	0				
+1040a160	30	FUN_1040a160	Global	0	thunk_FUN_1040a190	MFC42.DLL!operator_delete		
+1040a190	78	FUN_1040a190	Global	1		E2MFC.DLL!~P_Buffer		thunk_FUN_1040a190
+1040a200	88	FUN_1040a200	Global	0	P_D3DDDIndexBuffer::P_D3DDDIndexBuffer	E2MFC.DLL!P_Buffer		
+1040a280	69	FUN_1040a280	Global	0				
+1040a2f0	47	FUN_1040a2f0	Global	0				
+1040a330	27	FUN_1040a330	Global	0				
+1040a360	23	FUN_1040a360	Global	0				
+1040a390	30	FUN_1040a390	Global	0	thunk_FUN_1040a3c0	MFC42.DLL!operator_delete		
+1040a3c0	78	FUN_1040a3c0	Global	0		E2MFC.DLL!~P_Buffer		
+1040a430	5	FUN_1040a430	Global	0				
+1040a450	81	FUN_1040a450	Global	0	thunk_FUN_104149b0			
+1040a4d0	30	FUN_1040a4d0	Global	0	P_D3DTriangleMesh::~P_D3DTriangleMesh	MFC42.DLL!operator_delete		
+1040a500	5	FUN_1040a500	Global	0				
+1040a520	81	FUN_1040a520	Global	0	thunk_FUN_104149b0			
+1040a5a0	30	FUN_1040a5a0	Global	0	P_D3DSkinMesh::~P_D3DSkinMesh	MFC42.DLL!operator_delete		
+1040a5d0	23	FUN_1040a5d0	Global	0				
+1040a600	437	FUN_1040a600	Global	0	FUN_10455942,thunk_FUN_1040ce70,thunk_FUN_1040cd40,thunk_FUN_104076c0,thunk_FUN_1040bfd0,thunk_FUN_104149b0			
+1040a830	5	FUN_1040a830	Global	0				
+1040a850	439	FUN_1040a850	Global	0	FUN_10455942,thunk_FUN_1040ce70,thunk_FUN_1040cd40,thunk_FUN_104076c0,thunk_FUN_1040bfd0,thunk_FUN_104149b0			
+1040aa80	30	FUN_1040aa80	Global	0	P_D3DParticlePrimitive::~P_D3DParticlePrimitive	MFC42.DLL!operator_delete		
+1040aab0	88	FUN_1040aab0	Global	0	P_D3DDDVertexBuffer::P_D3DDDVertexBuffer	E2MFC.DLL!P_Buffer		
+1040ab30	30	FUN_1040ab30	Global	0		MFC42.DLL!operator_delete,E2MFC.DLL!~P_Buffer		
+1040ab60	6	~P_Buffer	E2MFC.DLL::P_Buffer	0				
+1040ab80	46	FUN_1040ab80	Global	0				
+1040abc0	41	FUN_1040abc0	Global	0		GRPHMFC.DLL!operator=		
+1040ac00	41	FUN_1040ac00	Global	0		GRPHMFC.DLL!operator=		
+1040ac40	110	FUN_1040ac40	Global	0				
+1040acd0	48	FUN_1040acd0	Global	0				
+1040ad10	41	FUN_1040ad10	Global	0		GRPHMFC.DLL!operator=		
+1040ad50	41	FUN_1040ad50	Global	0		GRPHMFC.DLL!operator=		
+1040ad90	110	FUN_1040ad90	Global	0				
+1040ae20	41	FUN_1040ae20	Global	0				
+1040ae60	121	FUN_1040ae60	Global	0				
+1040af00	99	FUN_1040af00	Global	0				
+1040af90	27	FUN_1040af90	Global	0				
+1040afc0	41	FUN_1040afc0	Global	0				
+1040b000	121	FUN_1040b000	Global	0				
+1040b0a0	99	FUN_1040b0a0	Global	0				
+1040b130	27	FUN_1040b130	Global	0				
+1040b160	23	FUN_1040b160	Global	0				
+1040b190	30	FUN_1040b190	Global	0	thunk_FUN_1040b1c0	MFC42.DLL!operator_delete		
+1040b1c0	78	FUN_1040b1c0	Global	0		E2MFC.DLL!~P_Buffer		
+1040b230	75	FUN_1040b230	Global	0	thunk_FUN_104149b0			
+1040b2a0	31	FUN_1040b2a0	Global	0		MFC42.DLL!operator_delete,E2MFC.DLL!~P_LinePrimitive		
+1040b2d0	5	FUN_1040b2d0	Global	0				
+1040b2f0	77	FUN_1040b2f0	Global	0	thunk_FUN_104149b0			
+1040b360	30	FUN_1040b360	Global	0	P_D3DLinePrimitive::~P_D3DLinePrimitive	MFC42.DLL!operator_delete		
+1040b390	92	FUN_1040b390	Global	0		E2MFC.DLL!linkCPUDriver,E2MFC.DLL!P_CPUDriver,E2MFC.DLL!initialize		
+1040b410	30	FUN_1040b410	Global	0	P_D3DCPUDriver::~P_D3DCPUDriver	MFC42.DLL!operator_delete		
+1040b440	81	FUN_1040b440	Global	0		E2MFC.DLL!deinitialize,E2MFC.DLL!~P_CPUDriver		
+1040b4c0	12	FUN_1040b4c0	Global	0	thunk_FUN_1040bff0			
+1040b4e0	5	FUN_1040b4e0	Global	0				
+1040b500	22	FUN_1040b500	Global	0	thunk_FUN_1040c160			
+1040b530	22	FUN_1040b530	Global	0	thunk_FUN_1040c2d0			
+1040b560	16	FUN_1040b560	Global	0	thunk_FUN_1040c440			
+1040b580	16	FUN_1040b580	Global	0	thunk_FUN_1040c5b0			
+1040b5a0	16	FUN_1040b5a0	Global	0	thunk_FUN_1040c720			
+1040b5c0	16	FUN_1040b5c0	Global	0	thunk_FUN_1040c8b0			
+1040b5e0	16	FUN_1040b5e0	Global	0	thunk_FUN_1040ca40			
+1040b600	16	FUN_1040b600	Global	0	thunk_FUN_1040cbb0			
+1040b620	665	FUN_1040b620	Global	0	FUN_10455942	MSVCRT.DLL!__RTDynamicCast,E2MFC.DLL!calculateObjectToWorldMatrix		
+1040b990	413	FUN_1040b990	Global	0		MSVCRT.DLL!__RTDynamicCast,E2MFC.DLL!calculateObjectToWorldMatrix,E2MFC.DLL!getAttenuation		
+1040bba0	799	FUN_1040bba0	Global	0	FUN_10455942	E2MFC.DLL!getAttenuation,MSVCRT.DLL!__RTDynamicCast,E2MFC.DLL!calculateObjectToWorldMatrix		
+1040bfb0	1	FUN_1040bfb0	Global	0				
+1040bfd0	13	FUN_1040bfd0	Global	0				
+1040bff0	279	FUN_1040bff0	Global	0	FUN_10455942,P_D3DVirtualObject::P_D3DVirtualObject	RLMFC.DLL!operator=,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+1040c160	283	FUN_1040c160	Global	0	P_D3DTriangleMesh::P_D3DTriangleMesh,FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+1040c2d0	283	FUN_1040c2d0	Global	0	P_D3DSkinMesh::P_D3DSkinMesh,FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+1040c440	279	FUN_1040c440	Global	0	P_D3DParticlePrimitive::P_D3DParticlePrimitive,FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+1040c5b0	279	FUN_1040c5b0	Global	0	P_D3DLinePrimitive::P_D3DLinePrimitive,FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+1040c720	313	FUN_1040c720	Global	0	FUN_10455942,P_D3DDDVertexBuffer::P_D3DDDVertexBuffer	RLMFC.DLL!operator=,E2MFC.DLL!P_Buffer,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+1040c8b0	310	FUN_1040c8b0	Global	0	FUN_10455942,P_D3DDDIndexBuffer::P_D3DDDIndexBuffer	RLMFC.DLL!operator=,E2MFC.DLL!P_Buffer,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+1040ca40	279	FUN_1040ca40	Global	0	FUN_10455942,P_D3DParticleBuffer::P_D3DParticleBuffer	RLMFC.DLL!operator=,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+1040cbb0	310	FUN_1040cbb0	Global	0	FUN_10455942,P_D3DDDVertexBuffer::P_D3DDDVertexBuffer	RLMFC.DLL!operator=,E2MFC.DLL!P_Buffer,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+1040cd40	159	FUN_1040cd40	Global	0	FUN_10455942			
+1040ce70	296	FUN_1040ce70	Global	0	thunk_FUN_1040cd40,thunk_FUN_104076c0,thunk_FUN_1040bfd0			
+1040cff0	31	FUN_1040cff0	Global	0		MFC42.DLL!operator_delete,E2MFC.DLL!~P_Primitive		
+1040d020	31	FUN_1040d020	Global	0		E2MFC.DLL!~P_ParticlePrimitive,MFC42.DLL!operator_delete		
+1040d050	30	FUN_1040d050	Global	0		MFC42.DLL!operator_delete,E2MFC.DLL!~P_Buffer		
+1040d080	6	~P_Buffer	E2MFC.DLL::P_Buffer	0				
+1040d0a0	30	FUN_1040d0a0	Global	0		MFC42.DLL!operator_delete,E2MFC.DLL!~P_Buffer		
+1040d0d0	6	~P_Buffer	E2MFC.DLL::P_Buffer	0				
+1040d0f0	31	FUN_1040d0f0	Global	0		E2MFC.DLL!~P_TriangleMesh,MFC42.DLL!operator_delete		
+1040d120	31	FUN_1040d120	Global	0		E2MFC.DLL!~P_SkinMesh,MFC42.DLL!operator_delete		
+1040d150	28	FUN_1040d150	Global	0		E2MFC.DLL!getD3DCPUDriver,E2MFC.DLL!P_Buffer		
+1040d1a0	30	FUN_1040d1a0	Global	0		E2MFC.DLL!~P_Buffer,MFC42.DLL!operator_delete		
+1040d1d0	6	~P_Buffer	E2MFC.DLL::P_Buffer	0				
+1040d1f0	9	FUN_1040d1f0	Global	0				
+1040d210	917	FUN_1040d210	Global	0	FUN_10455942,thunk_FUN_1040d1f0,thunk_FUN_10407320,thunk_FUN_10407500,thunk_FUN_10407580,P_DriverException_DirectDrawError::P_DriverException_DirectDrawError	E2MFC.DLL!runtimeVerbose,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,E2MFC.DLL!clearTextureMemory,E2MFC.DLL!getDevice,RLMFC.DLL!R_Exception,E2MFC.DLL!deleteOneDeviceDependent	new index buffer size(%d) format( | Dynamic  | Static  | WriteOnly  | Read/Write  | NPatches  | Software  | Hardware 	
+1040d6a0	135	FUN_1040d6a0	Global	0	thunk_FUN_1040d210,P_D3DDDIndexBuffer::P_D3DDDIndexBuffer,thunk_FUN_1040d7b0	E2MFC.DLL!~P_Buffer		
+1040d760	51	FUN_1040d760	Global	0	thunk_FUN_1040d1f0	E2MFC.DLL!verbose,E2MFC.DLL!getDevice	P_D3DDDIndexBuffer::dealloc - index buffer ref count %d 	
+1040d7b0	449	FUN_1040d7b0	Global	0	FUN_10455942,thunk_FUN_10407500,P_DriverException_DirectDrawError::P_DriverException_DirectDrawError	RLMFC.DLL!operator=,MSVCRT.DLL!__RTDynamicCast,MSVCRT.DLL!_CxxThrowException,RLMFC.DLL!copy,E2MFC.DLL!verbose,RLMFC.DLL!R_Exception,E2MFC.DLL!getDevice	P_D3DIndexBufferManager: IndexBuffer->Lock  | P_D3DIndexBufferManager: IndexBuffer->Lock  | P_D3DIndexBufferManager: IndexBuffer->Unlock failed (reallocateIndexs)  | P_D3DIndexBufferManager: IndexBuffer->Unlock failed (reallocateIndexs) 	
+1040db40	46	FUN_1040db40	Global	0		E2MFC.DLL!verbose,E2MFC.DLL!getDevice	P_D3DIndexBufferManager: IndexBuffer->Unlock failed (internalUnlock) 	
+1040db80	19	FUN_1040db80	Global	0				
+1040dbb0	18	FUN_1040dbb0	Global	0				
+1040dbe0	193	FUN_1040dbe0	Global	0	thunk_FUN_104117a0,thunk_FUN_10410f10	RLMFC.DLL!~R_MemoryScope,RLMFC.DLL!R_MemoryScope	E2 Library	
+1040dcf0	30	FUN_1040dcf0	Global	0	P_D3DIndexBufferManager::~P_D3DIndexBufferManager	MFC42.DLL!operator_delete		
+1040dd20	242	FUN_1040dd20	Global	0	thunk_FUN_10410ec0,thunk_FUN_1040fee0,thunk_FUN_10410960	MFC42.DLL!operator_delete		
+1040de60	242	FUN_1040de60	Global	0	thunk_FUN_104108c0,thunk_FUN_10410280,thunk_FUN_10411750	MFC42.DLL!operator_delete		
+1040dfa0	530	FUN_1040dfa0	Global	0	thunk_FUN_10411c70,thunk_FUN_1040f150,thunk_FUN_10410280,thunk_FUN_10410ec0,thunk_FUN_1040ff50,thunk_FUN_10410960,thunk_FUN_104116d0,P_D3DIndexBufferManager::dump,P_D3DIndexBufferManager::deleteAll,thunk_FUN_1040efd0,thunk_FUN_10411750,thunk_FUN_1040f360,thunk_FUN_104116b0	RLMFC.DLL!~R_MemoryScope,RLMFC.DLL!R_MemoryScope	E2 Library	
+1040e250	4	FUN_1040e250	Global	0				
+1040e270	664	FUN_1040e270	Global	0	thunk_FUN_1040f760,thunk_FUN_10407430,thunk_FUN_1040f010,thunk_FUN_1040f190,thunk_FUN_1040f380,thunk_FUN_10411670,thunk_FUN_1040fe40,thunk_FUN_1040f890,thunk_FUN_10407240,thunk_FUN_10410930,thunk_FUN_1040f6a0,thunk_FUN_1040ff70,P_D3DDDIndexBuffer::P_D3DDDIndexBuffer	RLMFC.DLL!~R_Exception,E2MFC.DLL!runtimeVerbose,RLMFC.DLL!~R_MemoryScope,E2MFC.DLL!construct,RLMFC.DLL!R_MemoryScope,MFC42.DLL!operator_new,E2MFC.DLL!getDevice,E2MFC.DLL!P_VertexFormat	E2 Library | P_D3DIndexBufferManager::request - 	
+1040e5c0	242	FUN_1040e5c0	Global	0	thunk_FUN_104112f0,thunk_FUN_1040f890,thunk_FUN_1040fe70	MFC42.DLL!operator_delete		
+1040e700	243	FUN_1040e700	Global	0	thunk_FUN_104112f0,thunk_FUN_1040f890,thunk_FUN_1040fe70	MFC42.DLL!operator_delete		
+1040e840	243	FUN_1040e840	Global	0	thunk_FUN_104112f0,thunk_FUN_1040f890,thunk_FUN_1040fe70	MFC42.DLL!operator_delete		
+1040e980	362	FUN_1040e980	Global	0	thunk_FUN_10410e40,thunk_FUN_10410830,thunk_FUN_10411340,thunk_FUN_10411f80,thunk_FUN_10410280	RLMFC.DLL!~R_MemoryScope,RLMFC.DLL!R_MemoryScope,E2MFC.DLL!less	E2 Library	
+1040eb50	528	FUN_1040eb50	Global	0	thunk_FUN_104108c0,thunk_FUN_104116d0,thunk_FUN_1040fd60,thunk_FUN_10410750,thunk_FUN_10410ec0,thunk_FUN_1040ff50,thunk_FUN_1040f360,thunk_FUN_10411640,thunk_FUN_10410960	RLMFC.DLL!~R_MemoryScope,E2MFC.DLL!destruct,RLMFC.DLL!R_MemoryScope	E2 Library	
+1040edf0	24	FUN_1040edf0	Global	0		E2MFC.DLL!runtimeVerbose,E2MFC.DLL!getDevice	Indices 	
+1040ee20	326	FUN_1040ee20	Global	0	thunk_FUN_1040edf0,thunk_FUN_1040fe70,thunk_FUN_1040fee0	E2MFC.DLL!runtimeVerbose,E2MFC.DLL!getDevice	free index buffer dump  | format  | format 	
+1040efd0	44	FUN_1040efd0	Global	0		MFC42.DLL!operator_delete		
+1040f010	242	FUN_1040f010	Global	0	thunk_FUN_104112f0,thunk_FUN_1040f890,thunk_FUN_1040fe70	MFC42.DLL!operator_delete		
+1040f150	44	FUN_1040f150	Global	0		MFC42.DLL!operator_delete		
+1040f190	354	FUN_1040f190	Global	0	thunk_FUN_10411e40,thunk_FUN_10412190,thunk_FUN_10412680,thunk_FUN_10411f30			
+1040f360	14	FUN_1040f360	Global	0				
+1040f380	636	FUN_1040f380	Global	0	thunk_FUN_10411d70,thunk_FUN_10412000,thunk_FUN_10410fe0,thunk_FUN_10412450,thunk_FUN_10411cf0,thunk_FUN_10411df0	E2MFC.DLL!less		
+1040f6a0	130	FUN_1040f6a0	Global	0		E2MFC.DLL!less		
+1040f760	229	FUN_1040f760	Global	0	thunk_FUN_10412310			
+1040f890	970	FUN_1040f890	Global	0	thunk_FUN_1040fe70			
+1040fd60	164	FUN_1040fd60	Global	0	thunk_FUN_104112f0,thunk_FUN_1040f890,thunk_FUN_1040fe70			
+1040fe40	30	FUN_1040fe40	Global	0		MFC42.DLL!operator_delete		
+1040fe70	67	FUN_1040fe70	Global	0				
+1040fee0	67	FUN_1040fee0	Global	0				
+1040ff50	14	FUN_1040ff50	Global	0				
+1040ff70	611	FUN_1040ff70	Global	0	thunk_FUN_10411b70,thunk_FUN_10411870,thunk_FUN_10411bf0,thunk_FUN_104120d0,thunk_FUN_104126a0,thunk_FUN_10412080			
+10410280	970	FUN_10410280	Global	0	thunk_FUN_104108c0			
+10410750	164	FUN_10410750	Global	0	thunk_FUN_104108c0,thunk_FUN_10410280,thunk_FUN_10411750			
+10410830	102	FUN_10410830	Global	0				
+104108c0	67	FUN_104108c0	Global	0				
+10410930	22	FUN_10410930	Global	0				
+10410960	978	FUN_10410960	Global	0	thunk_FUN_1040e840,thunk_FUN_1040fee0			
+10410e40	81	FUN_10410e40	Global	0		E2MFC.DLL!less		
+10410ec0	63	FUN_10410ec0	Global	0	thunk_FUN_1040e840,thunk_FUN_10410ec0			
+10410f10	159	FUN_10410f10	Global	0	thunk_FUN_104121d0			
+10410fe0	617	FUN_10410fe0	Global	0	thunk_FUN_10412450,thunk_FUN_10412150	E2MFC.DLL!less		
+104112f0	55	FUN_104112f0	Global	0	thunk_FUN_104112f0			
+10411340	608	FUN_10411340	Global	0	thunk_FUN_10412190,thunk_FUN_10412680			
+10411640	25	FUN_10411640	Global	0				
+10411670	45	FUN_10411670	Global	0				
+104116b0	13	FUN_104116b0	Global	0				
+104116d0	86	FUN_104116d0	Global	0				
+10411750	55	FUN_10411750	Global	0	thunk_FUN_10411750			
+104117a0	159	FUN_104117a0	Global	0	thunk_FUN_10412310			
+10411870	608	FUN_10411870	Global	0	thunk_FUN_10412190,thunk_FUN_104126a0			
+10411b70	82	FUN_10411b70	Global	0				
+10411bf0	86	FUN_10411bf0	Global	0				
+10411c70	86	FUN_10411c70	Global	0				
+10411cf0	82	FUN_10411cf0	Global	0				
+10411d70	86	FUN_10411d70	Global	0				
+10411df0	63	FUN_10411df0	Global	0	thunk_FUN_104121d0			
+10411e40	177	FUN_10411e40	Global	0	thunk_FUN_10411e40,thunk_FUN_10412310			
+10411f30	63	FUN_10411f30	Global	0	thunk_FUN_10412310			
+10411f80	81	FUN_10411f80	Global	0				
+10412000	81	FUN_10412000	Global	0				
+10412080	63	FUN_10412080	Global	0	thunk_FUN_10412310			
+104120d0	81	FUN_104120d0	Global	0				
+10412150	48	FUN_10412150	Global	0	thunk_FUN_104121d0			
+10412190	48	FUN_10412190	Global	0	thunk_FUN_10412310			
+104121d0	251	FUN_104121d0	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+10412310	251	FUN_10412310	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+10412450	401	FUN_10412450	Global	0	thunk_FUN_10411e40,thunk_FUN_10412190,thunk_FUN_10412680,thunk_FUN_10411f30			
+10412660	1	FUN_10412660	Global	0				
+10412680	15	FUN_10412680	Global	0				
+104126a0	9	FUN_104126a0	Global	0				
+10412700	30	FUN_10412700	Global	0		MFC42.DLL!operator_delete,RLMFC.DLL!~R_Exception		
+10412730	6	~R_Exception	RLMFC.DLL::R_Exception	0				
+10412750	30	FUN_10412750	Global	0		MFC42.DLL!operator_delete,RLMFC.DLL!~R_Exception		
+10412780	6	~R_Exception	RLMFC.DLL::R_Exception	0				
+104127a0	8	FUN_104127a0	Global	0				
+104127c0	33	FUN_104127c0	Global	0	thunk_FUN_104127a0,thunk_FUN_10412ed0			
+10412800	209	FUN_10412800	Global	0	thunk_FUN_104127c0,thunk_FUN_10412970,P_D3DDDVertexBuffer::P_D3DDDVertexBuffer	E2MFC.DLL!getCPUDriver,E2MFC.DLL!~P_Buffer,E2MFC.DLL!P_Buffer		
+10412920	49	FUN_10412920	Global	0	thunk_FUN_104127a0	MFC42.DLL!operator_delete		
+10412970	62	FUN_10412970	Global	0		MSVCRT.DLL!__RTDynamicCast,RLMFC.DLL!copy		
+104129c0	236	FUN_104129c0	Global	0		E2MFC.DLL!lock,E2MFC.DLL!unlock,E2MFC.DLL!runtimeVerbose,E2MFC.DLL!operator!=,E2MFC.DLL!destruct,RLMFC.DLL!copy,E2MFC.DLL!construct,E2MFC.DLL!getUsageBits,E2MFC.DLL!getDevice,E2MFC.DLL!setUsedCount	P_D3DLineBuffer - vertex buffer fill 	
+10412b20	22	FUN_10412b20	Global	0		E2MFC.DLL!setUsedCount		
+10412b50	82	FUN_10412b50	Global	0	thunk_FUN_104149b0	E2MFC.DLL!P_LinePrimitive		
+10412bd0	83	FUN_10412bd0	Global	0	thunk_FUN_10414a00	E2MFC.DLL!~P_LinePrimitive		
+10412c50	40	FUN_10412c50	Global	0	thunk_FUN_10413050	E2MFC.DLL!getCPUDriver		
+10412c90	418	FUN_10412c90	Global	0	FUN_10455942,thunk_FUN_10412b20,P_D3DOutputPrimitive::setVertices,thunk_FUN_10414ca0	MSVCRT.DLL!__RTDynamicCast,E2MFC.DLL!addPolygonsInViewVolume,E2MFC.DLL!validateDeviceDependent,E2MFC.DLL!getPrimitiveInstance		
+10412ed0	296	FUN_10412ed0	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+10413050	279	FUN_10413050	Global	0	P_D3DLinePrimitive::P_D3DLinePrimitive,FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	
+104131c0	8	FUN_104131c0	Global	0				
+104131e0	27	FUN_104131e0	Global	0	thunk_FUN_10415130,thunk_FUN_104131c0			
+10413210	188	FUN_10413210	Global	0	thunk_FUN_10413340,thunk_FUN_104131e0,P_D3DDDIndexBuffer::P_D3DDDIndexBuffer	E2MFC.DLL!getCPUDriver,E2MFC.DLL!~P_Buffer,E2MFC.DLL!P_Buffer		
+10413300	38	FUN_10413300	Global	0	thunk_FUN_104131c0	MFC42.DLL!operator_delete		
+10413340	64	FUN_10413340	Global	0		MSVCRT.DLL!__RTDynamicCast,RLMFC.DLL!copy		
+10413390	214	FUN_10413390	Global	0		E2MFC.DLL!lock,E2MFC.DLL!unlock,E2MFC.DLL!runtimeVerbose,E2MFC.DLL!operator!=,E2MFC.DLL!destruct,RLMFC.DLL!copy,E2MFC.DLL!construct,E2MFC.DLL!getDevice,E2MFC.DLL!setUsedCount	P_D3DMeshImplementation - triangle buffer fill (%d) 	
+104134e0	23	FUN_104134e0	Global	0		E2MFC.DLL!setUsedCount		
+10413510	60	FUN_10413510	Global	0				
+10413560	513	FUN_10413560	Global	0	thunk_FUN_10413510,thunk_FUN_10415570,thunk_FUN_104156e0,thunk_FUN_104153e0,thunk_FUN_10415850,thunk_FUN_10415990,thunk_FUN_10415270			
+10413810	230	FUN_10413810	Global	0	P_D3DDDVertexBuffer::P_D3DDDVertexBuffer,thunk_FUN_10413560,thunk_FUN_10413bf0	E2MFC.DLL!getCPUDriver,E2MFC.DLL!~P_Buffer,E2MFC.DLL!P_Buffer		
+10413940	530	FUN_10413940	Global	0	thunk_FUN_10413510	MFC42.DLL!operator_delete		
+10413bf0	699	FUN_10413bf0	Global	0		MSVCRT.DLL!__RTDynamicCast,RLMFC.DLL!copy		
+10413f80	1524	FUN_10413f80	Global	0		E2MFC.DLL!lock,E2MFC.DLL!unlock,E2MFC.DLL!runtimeVerbose,E2MFC.DLL!operator!=,E2MFC.DLL!destruct,E2MFC.DLL!construct,E2MFC.DLL!setBoneCount,E2MFC.DLL!getDevice,E2MFC.DLL!setUsedCount	P_D3DMeshImplementation - vertex buffer fill (%d) 	
+10414980	20	FUN_10414980	Global	0		E2MFC.DLL!setUsedCount		
+104149b0	9	FUN_104149b0	Global	0				
+104149d0	30	FUN_104149d0	Global	0	thunk_FUN_10414a00	MFC42.DLL!operator_delete		
+10414a00	7	FUN_10414a00	Global	0				
+10414a20	471	FUN_10414a20	Global	0	FUN_10455942	E2MFC.DLL!addEntry		
+10414ca0	916	FUN_10414ca0	Global	0	FUN_10455942	E2MFC.DLL!usesTextureTransformation,E2MFC.DLL!getTesselation,RLMFC.DLL!operator=,E2MFC.DLL!getTextureCoordinateSource,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,E2MFC.DLL!getPipelineVertexFormat,MSVCRT.DLL!_CxxThrowException,E2MFC.DLL!isLightingEnabled,MSVCRT.DLL!__RTDynamicCast,E2MFC.DLL!getFogSource,E2MFC.DLL!isSpecularEnabled,E2MFC.DLL!getCamera,E2MFC.DLL!getDriverCaps,E2MFC.DLL!getLightingColorSource,E2MFC.DLL!usesTextureProjection	PureDevice: not all required hardware features supported	
+10415130	240	FUN_10415130	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	
+10415270	278	FUN_10415270	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	
+104153e0	308	FUN_104153e0	Global	0	FUN_10455942	GRPHMFC.DLL!G_Color,RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	
+10415570	275	FUN_10415570	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	
+104156e0	280	FUN_104156e0	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	
+10415850	244	FUN_10415850	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	
+10415990	244	FUN_10415990	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	
+10415ad0	59	FUN_10415ad0	Global	0		E2MFC.DLL!P_OutputPrimitive		
+10415b20	30	FUN_10415b20	Global	0	P_D3DOutputPrimitive::~P_D3DOutputPrimitive	MFC42.DLL!operator_delete		
+10415b50	156	FUN_10415b50	Global	0	P_D3DOutputPrimitive::recycleClipperVertices,P_D3DOutputPrimitive::recycleVertices,P_D3D::getIBManager,P_D3DVertexBufferManager::dump,P_D3DIndexBufferManager::dump,P_D3DOutputPrimitive::recycleIndices,P_D3DOutputPrimitive::deleteVertexBuffers,P_D3DOutputPrimitive::deleteIndexBuffers,P_D3D::getVBManager	E2MFC.DLL!~P_OutputPrimitive		
+10415c20	108	FUN_10415c20	Global	0				
+10415cb0	9	FUN_10415cb0	Global	0				
+10415cd0	7	FUN_10415cd0	Global	0				
+10415cf0	8	FUN_10415cf0	Global	0				
+10415d10	9	FUN_10415d10	Global	0				
+10415d30	9	FUN_10415d30	Global	0				
+10415d50	9	FUN_10415d50	Global	0				
+10415d70	9	FUN_10415d70	Global	0				
+10415d90	4	FUN_10415d90	Global	0				
+10415db0	6	FUN_10415db0	Global	0				
+10415dd0	212	FUN_10415dd0	Global	0				
+10415ef0	2237	FUN_10415ef0	Global	0	FUN_10455942,thunk_FUN_104186a0,FUN_10430926,P_D3D::convertMatrix,P_D3D::convertMatrix,FUN_10430a09	E2MFC.DLL!getDeviceMaterial,E2MFC.DLL!getTesselation,E2MFC.DLL!getDeviceDependentVertexShader,E2MFC.DLL!setVertexShaderConstantCount,E2MFC.DLL!getVertexShaderConstants,E2MFC.DLL!getProjectionMatrix,E2MFC.DLL!getBoneMatrices,E2MFC.DLL!getPrimitiveInstance,E2MFC.DLL!calculateObjectToWorldMatrix,E2MFC.DLL!getDetailOffset,GRPHMFC.DLL!operator=,E2MFC.DLL!getMaximumLightsPerObject,MSVCRT.DLL!__RTDynamicCast,E2MFC.DLL!getFogSource,E2MFC.DLL!getVertexShaderConstantCount		
+10416a60	159	FUN_10416a60	Global	0		E2MFC.DLL!getMaximumLightsPerObject,MSVCRT.DLL!__RTDynamicCast		
+10416b30	275	FUN_10416b30	Global	0	thunk_FUN_104174e0,thunk_FUN_10415ef0,thunk_FUN_104172e0,thunk_FUN_10416a60,thunk_FUN_10416ca0,thunk_FUN_10415dd0,thunk_FUN_104170e0	MSVCRT.DLL!__RTDynamicCast,E2MFC.DLL!getPixelShaderConstantCount,E2MFC.DLL!getDeviceDependentPixelShader,E2MFC.DLL!getPrimitiveInstance,E2MFC.DLL!getPixelShaderConstants		
+10416ca0	858	FUN_10416ca0	Global	0	P_D3DIndexBufferManager::recycle,P_D3D::getIBManager,P_D3DIndexBufferManager::request,thunk_FUN_104175c0	E2MFC.DLL!lock,E2MFC.DLL!unlock,E2MFC.DLL!addPolygonsRendered		
+104170e0	385	FUN_104170e0	Global	0	thunk_FUN_104175c0	E2MFC.DLL!addPolygonsRendered		
+104172e0	399	FUN_104172e0	Global	0	P_D3DIndexBufferManager::recycle,P_D3D::getIBManager,P_D3DIndexBufferManager::request,thunk_FUN_104175c0	E2MFC.DLL!constructFromOldVertexFormat,E2MFC.DLL!lock,E2MFC.DLL!unlock,E2MFC.DLL!addPolygonsRendered		
+104174e0	167	FUN_104174e0	Global	0	thunk_FUN_104175c0	E2MFC.DLL!addPolygonsRendered		
+104175c0	1871	FUN_104175c0	Global	0	thunk_FUN_104041e0,thunk_FUN_10404670,FUN_10455942,thunk_FUN_104046f0,P_D3D::convertMatrix,thunk_FUN_10404640,thunk_FUN_104046c0,thunk_FUN_10404720	E2MFC.DLL!getDeviceMaterial,E2MFC.DLL!getEmissiveColor,E2MFC.DLL!usesTextureTransformation,E2MFC.DLL!getMaterialSwitchObjectBefore,E2MFC.DLL!getTextureMatrix,E2MFC.DLL!getAlphaReference,E2MFC.DLL!getPrimitiveInstance,E2MFC.DLL!getSpecularExponent,GRPHMFC.DLL!operator=,E2MFC.DLL!getInfoBlock,E2MFC.DLL!getDiffuseColor,E2MFC.DLL!getTexture,E2MFC.DLL!getLightingColorSource,E2MFC.DLL!getMaterialSwitchObjectAfter,E2MFC.DLL!getAmbientColor,E2MFC.DLL!getRuntimeFogEnable,E2MFC.DLL!getSpecularColor,MSVCRT.DLL!__RTDynamicCast,E2MFC.DLL!getFogColor,E2MFC.DLL!getFactor,E2MFC.DLL!getDepthBufferMode		
+10417f40	361	FUN_10417f40	Global	0	P_D3DVertexBufferManager::request,P_D3D::getVBManager	E2MFC.DLL!operator==,E2MFC.DLL!getDevice,E2MFC.DLL!verbose,E2MFC.DLL!getInfoBlock,E2MFC.DLL!getTextureCoordinateSource,E2MFC.DLL!getPipelineTextureCoordinateCount,E2MFC.DLL!usesTextureProjection	current vb not good: 	
+10418140	296	FUN_10418140	Global	0		E2MFC.DLL!getInfoBlock,E2MFC.DLL!getTextureCoordinateSource,E2MFC.DLL!getPipelineTextureCoordinateCount,E2MFC.DLL!usesTextureProjection		
+104182d0	118	FUN_104182d0	Global	0	P_D3DVertexBufferManager::request,P_D3D::getVBManager	E2MFC.DLL!operator==,E2MFC.DLL!getDevice,E2MFC.DLL!verbose	current vb not good: 	
+10418370	177	FUN_10418370	Global	0	P_D3D::getIBManager,P_D3DIndexBufferManager::request	E2MFC.DLL!operator==,E2MFC.DLL!getDevice,E2MFC.DLL!verbose	current ib not good: 	
+10418460	52	FUN_10418460	Global	0	P_D3DVertexBufferManager::recycle,P_D3D::getVBManager			
+104184b0	38	FUN_104184b0	Global	0	P_D3DVertexBufferManager::recycle,P_D3D::getVBManager			
+104184f0	49	FUN_104184f0	Global	0	P_D3DIndexBufferManager::recycle,P_D3D::getIBManager			
+10418540	92	FUN_10418540	Global	0	P_D3D::getVBManager,P_D3DVertexBufferManager::deleteAll	MSVCRT.DLL!__RTDynamicCast,E2MFC.DLL!getNextOutputPrimitive,E2MFC.DLL!getFirstOutputPrimitive		
+104185c0	81	FUN_104185c0	Global	0	P_D3D::getIBManager,P_D3DIndexBufferManager::deleteAll	MSVCRT.DLL!__RTDynamicCast,E2MFC.DLL!getNextOutputPrimitive,E2MFC.DLL!getFirstOutputPrimitive		
+10418640	30	FUN_10418640	Global	0				
+10418670	23	FUN_10418670	Global	0				
+104186a0	395	FUN_104186a0	Global	0	thunk_FUN_104076c0,thunk_FUN_1040bfd0,thunk_FUN_1040ce70,FUN_10455942,thunk_FUN_1040cd40			
+104188a0	566	FUN_104188a0	Global	0	thunk_FUN_104073b0,P_D3DDDIndexBuffer::P_D3DDDIndexBuffer,P_D3DDDVertexBuffer::P_D3DDDVertexBuffer,FUN_10455942,thunk_FUN_1041b0b0	RLMFC.DLL!setError,E2MFC.DLL!P_Buffer,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources | Out of system memory resources | Out of system memory resources	
+10418b70	6	~P_Buffer	E2MFC.DLL::P_Buffer	1				E2MFC.DLL::P_Buffer::~P_Buffer
+10418b90	30	FUN_10418b90	Global	0	P_D3DParticleBuffer::~P_D3DParticleBuffer	MFC42.DLL!operator_delete		
+10418bc0	168	FUN_10418bc0	Global	0		E2MFC.DLL!~P_Buffer		
+10418ca0	138	FUN_10418ca0	Global	0				
+10418d60	8	FUN_10418d60	Global	0				
+10418d80	24	FUN_10418d80	Global	0	thunk_FUN_1041adb0,thunk_FUN_10418d60			
+10418db0	152	FUN_10418db0	Global	0	P_D3DParticleBuffer::P_D3DParticleBuffer,thunk_FUN_10418d80,thunk_FUN_10418ec0,P_D3DParticleBuffer::~P_D3DParticleBuffer	E2MFC.DLL!getCPUDriver		
+10418e80	38	FUN_10418e80	Global	0	thunk_FUN_10418d60	MFC42.DLL!operator_delete		
+10418ec0	68	FUN_10418ec0	Global	0		MSVCRT.DLL!__RTDynamicCast,RLMFC.DLL!copy		
+10418f30	503	FUN_10418f30	Global	0		E2MFC.DLL!lock,E2MFC.DLL!getDevice,E2MFC.DLL!destruct,E2MFC.DLL!unlock,E2MFC.DLL!operator|=,E2MFC.DLL!construct,E2MFC.DLL!operator!=,E2MFC.DLL!getUsageBits,E2MFC.DLL!runtimeVerbose,E2MFC.DLL!setUsedCount	P_D3DParticleBuffer - vertex buffer allocation (%d)  | P_D3DParticleBuffer - index buffer allocation (%d)  | P_D3DParticleBuffer - index buffer fill 	
+10419240	63	FUN_10419240	Global	0		E2MFC.DLL!setUsedCount		
+10419290	23	FUN_10419290	Global	0		E2MFC.DLL!setUsedCount		
+104192c0	82	FUN_104192c0	Global	0	thunk_FUN_104149b0	E2MFC.DLL!P_ParticlePrimitive		
+10419340	83	FUN_10419340	Global	0	thunk_FUN_10414a00	E2MFC.DLL!~P_ParticlePrimitive		
+104193c0	40	FUN_104193c0	Global	0	thunk_FUN_1041af40	E2MFC.DLL!getCPUDriver		
+10419400	1276	FUN_10419400	Global	0	thunk_FUN_104076c0,thunk_FUN_10419290,P_D3DOutputPrimitive::setIndices,FUN_10455942,thunk_FUN_10414ca0,thunk_FUN_10419a80,thunk_FUN_10419240,P_D3DOutputPrimitive::setVertices,thunk_FUN_1040bfd0,thunk_FUN_1041aba0,thunk_FUN_1040cd40	E2MFC.DLL!lock,E2MFC.DLL!getBackfaceCullingMode,E2MFC.DLL!getDevice,E2MFC.DLL!getPrimitiveInstance,E2MFC.DLL!calculateObjectToWorldMatrix,E2MFC.DLL!validateDeviceDependent,MSVCRT.DLL!__RTDynamicCast,E2MFC.DLL!getCamera,E2MFC.DLL!unlock,E2MFC.DLL!addPolygonsInViewVolume,E2MFC.DLL!runtimeVerbose	P_D3DParticlePrimitive - particle vb fill 	
+10419a80	3281	FUN_10419a80	Global	0	FUN_10455942	E2MFC.DLL!addEntry		
+1041aba0	415	FUN_1041aba0	Global	0	thunk_FUN_104076c0,thunk_FUN_1040bfd0,thunk_FUN_1040cd40			
+1041adb0	318	FUN_1041adb0	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	
+1041af40	279	FUN_1041af40	Global	0	P_D3DParticlePrimitive::P_D3DParticlePrimitive,FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	
+1041b0b0	20	FUN_1041b0b0	Global	0		RLMFC.DLL!operator=		
+1041b0e0	30	FUN_1041b0e0	Global	0		E2MFC.DLL!~P_Buffer,MFC42.DLL!operator_delete		
+1041b110	6	~P_Buffer	E2MFC.DLL::P_Buffer	0				
+1041b130	89	FUN_1041b130	Global	0	thunk_FUN_104149b0	E2MFC.DLL!P_SkinMesh		
+1041b1b0	83	FUN_1041b1b0	Global	0	thunk_FUN_10414a00	E2MFC.DLL!~P_SkinMesh		
+1041b230	43	FUN_1041b230	Global	0	thunk_FUN_1041c610	E2MFC.DLL!getCPUDriver		
+1041b270	1	FUN_1041b270	Global	0				
+1041b290	784	FUN_1041b290	Global	0	P_D3DOutputPrimitive::setIndices,thunk_FUN_10414ca0,FUN_10455942,thunk_FUN_10414980,P_D3DOutputPrimitive::setVertices,thunk_FUN_104134e0,thunk_FUN_1041b690,thunk_FUN_10414a20	E2MFC.DLL!constructFromOldVertexFormat,E2MFC.DLL!getBackfaceCullingMode,E2MFC.DLL!getDevice,E2MFC.DLL!getPrimitiveInstance,E2MFC.DLL!getBoneMatrices,E2MFC.DLL!validateDeviceDependent,MSVCRT.DLL!__RTDynamicCast,E2MFC.DLL!addPolygonsInViewVolume,E2MFC.DLL!runtimeVerbose	P_D3DMeshImplementation - skinning vb fill 	
+1041b690	3060	FUN_1041b690	Global	0	FUN_10455942	E2MFC.DLL!lock,RLMFC.DLL!copy,E2MFC.DLL!unlock		
+1041c610	283	FUN_1041c610	Global	0	FUN_10455942,P_D3DSkinMesh::P_D3DSkinMesh	RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	
+1041c780	89	FUN_1041c780	Global	0	thunk_FUN_104149b0	E2MFC.DLL!P_TriangleMesh		
+1041c800	83	FUN_1041c800	Global	0	thunk_FUN_10414a00	E2MFC.DLL!~P_TriangleMesh		
+1041c880	43	FUN_1041c880	Global	0	thunk_FUN_1041cd10	E2MFC.DLL!getCPUDriver		
+1041c8c0	196	FUN_1041c8c0	Global	0	FUN_10455942	E2MFC.DLL!getDevice,E2MFC.DLL!validateDeviceDependent,E2MFC.DLL!getDriverCaps,E2MFC.DLL!runtimeVerbose	mesh preload 	
+1041c9f0	606	FUN_1041c9f0	Global	0	thunk_FUN_104134e0,thunk_FUN_10414a20,P_D3DOutputPrimitive::setIndices,thunk_FUN_10414ca0,FUN_10455942,thunk_FUN_10414980,P_D3DOutputPrimitive::setVertices	E2MFC.DLL!getBackfaceCullingMode,E2MFC.DLL!getPrimitiveInstance,E2MFC.DLL!validateDeviceDependent,MSVCRT.DLL!__RTDynamicCast,E2MFC.DLL!addPolygonsInViewVolume		
+1041cd10	283	FUN_1041cd10	Global	0	P_D3DTriangleMesh::P_D3DTriangleMesh,FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	
+1041ce80	28	FUN_1041ce80	Global	0		E2MFC.DLL!getD3DCPUDriver,E2MFC.DLL!P_Buffer		
+1041ced0	30	FUN_1041ced0	Global	0		MFC42.DLL!operator_delete,E2MFC.DLL!~P_Buffer		
+1041cf00	47	FUN_1041cf00	Global	0				
+1041cf40	1756	FUN_1041cf40	Global	0	thunk_FUN_1041cf00,P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,FUN_10455942	E2MFC.DLL!getDevice,RLMFC.DLL!operator=,RLMFC.DLL!setError,E2MFC.DLL!clearTextureMemory,RLMFC.DLL!R_Exception,E2MFC.DLL!deleteOneDeviceDependent,E2MFC.DLL!runtimeVerbose,MSVCRT.DLL!_CxxThrowException	new vertex buffer size(%d) format( | Dynamic  | Static  | WriteOnly  | Read/Write  | NPatches  | Software  | Hardware 	
+1041d7f0	137	FUN_1041d7f0	Global	0	P_D3DDDVertexBuffer::P_D3DDDVertexBuffer,thunk_FUN_1041cf40,thunk_FUN_1041d900	E2MFC.DLL!~P_Buffer		
+1041d8b0	51	FUN_1041d8b0	Global	0	thunk_FUN_1041cf00	E2MFC.DLL!getDevice,E2MFC.DLL!verbose	P_D3DDDVertexBuffer::dealloc - vertex buffer ref count %d 	
+1041d900	531	FUN_1041d900	Global	0	P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,thunk_FUN_10407500,FUN_10455942	E2MFC.DLL!getDevice,RLMFC.DLL!operator=,E2MFC.DLL!verbose,MSVCRT.DLL!__RTDynamicCast,RLMFC.DLL!copy,RLMFC.DLL!R_Exception,MSVCRT.DLL!_CxxThrowException	P_D3DVertexBufferManager: VertexBuffer->Lock  | P_D3DVertexBufferManager: VertexBuffer->Lock  | P_D3DVertexBufferManager: VertexBuffer->Unlock failed (reallocateVertices)  | P_D3DVertexBufferManager: VertexBuffer->Unlock failed (reallocateVertices) 	
+1041dd30	46	FUN_1041dd30	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!verbose	P_D3DDDVertexBuffer: VertexBuffer->Unlock failed 	
+1041dd70	39	FUN_1041dd70	Global	0				
+1041ddb0	45	FUN_1041ddb0	Global	0				
+1041ddf0	46	FUN_1041ddf0	Global	0				
+1041de30	44	FUN_1041de30	Global	0				
+1041de70	84	FUN_1041de70	Global	0				
+1041def0	43	FUN_1041def0	Global	0				
+1041df30	44	FUN_1041df30	Global	0				
+1041df70	84	FUN_1041df70	Global	0				
+1041dff0	43	FUN_1041dff0	Global	0				
+1041e030	47	FUN_1041e030	Global	0				
+1041e070	53	FUN_1041e070	Global	0				
+1041e0c0	59	FUN_1041e0c0	Global	0				
+1041e110	51	FUN_1041e110	Global	0				
+1041e160	59	FUN_1041e160	Global	0				
+1041e1b0	45	FUN_1041e1b0	Global	0				
+1041e1f0	50	FUN_1041e1f0	Global	0				
+1041e240	51	FUN_1041e240	Global	0				
+1041e290	53	FUN_1041e290	Global	0				
+1041e2e0	106	FUN_1041e2e0	Global	0				
+1041e370	38	FUN_1041e370	Global	0				
+1041e3b0	53	FUN_1041e3b0	Global	0				
+1041e400	106	FUN_1041e400	Global	0				
+1041e490	38	FUN_1041e490	Global	0				
+1041e4d0	47	FUN_1041e4d0	Global	0				
+1041e510	55	FUN_1041e510	Global	0				
+1041e560	61	FUN_1041e560	Global	0				
+1041e5b0	68	FUN_1041e5b0	Global	0				
+1041e620	41	FUN_1041e620	Global	0				
+1041e660	193	FUN_1041e660	Global	0	thunk_FUN_10422490,thunk_FUN_10421c00	RLMFC.DLL!~R_MemoryScope,RLMFC.DLL!R_MemoryScope	E2 Library	
+1041e770	30	FUN_1041e770	Global	0	P_D3DVertexBufferManager::~P_D3DVertexBufferManager	MFC42.DLL!operator_delete		
+1041e7a0	242	FUN_1041e7a0	Global	0	thunk_FUN_10421650,thunk_FUN_10421bb0,thunk_FUN_10420bd0	MFC42.DLL!operator_delete		
+1041e8e0	242	FUN_1041e8e0	Global	0	thunk_FUN_10420f70,thunk_FUN_10422440,thunk_FUN_104215b0	MFC42.DLL!operator_delete		
+1041ea20	530	FUN_1041ea20	Global	0	thunk_FUN_104223a0,thunk_FUN_10420c40,thunk_FUN_104223c0,thunk_FUN_10421bb0,thunk_FUN_10422440,thunk_FUN_1041fe40,thunk_FUN_10421650,thunk_FUN_10422960,thunk_FUN_10420050,thunk_FUN_10420f70,P_D3DVertexBufferManager::dump,thunk_FUN_1041fcc0,P_D3DVertexBufferManager::deleteAll	RLMFC.DLL!~R_MemoryScope,RLMFC.DLL!R_MemoryScope	E2 Library	
+1041ecd0	4	FUN_1041ecd0	Global	0				
+1041ecf0	660	FUN_1041ecf0	Global	0	thunk_FUN_10421620,thunk_FUN_10407240,thunk_FUN_10420580,thunk_FUN_10420390,thunk_FUN_10422360,thunk_FUN_10420c60,thunk_FUN_1041fd00,thunk_FUN_10420450,thunk_FUN_1041fe80,thunk_FUN_10420b30,thunk_FUN_10420070,thunk_FUN_10407430,P_D3DDDVertexBuffer::P_D3DDDVertexBuffer	E2MFC.DLL!P_VertexFormat,E2MFC.DLL!getDevice,RLMFC.DLL!~R_MemoryScope,E2MFC.DLL!construct,RLMFC.DLL!~R_Exception,RLMFC.DLL!R_MemoryScope,E2MFC.DLL!runtimeVerbose,MFC42.DLL!operator_new	E2 Library | P_D3DVertexBufferManager::request - 	
+1041f040	242	FUN_1041f040	Global	0	thunk_FUN_10420580,thunk_FUN_10421fe0,thunk_FUN_10420b60	MFC42.DLL!operator_delete		
+1041f180	243	FUN_1041f180	Global	0	thunk_FUN_10420580,thunk_FUN_10421fe0,thunk_FUN_10420b60	MFC42.DLL!operator_delete		
+1041f2c0	243	FUN_1041f2c0	Global	0	thunk_FUN_10420580,thunk_FUN_10421fe0,thunk_FUN_10420b60	MFC42.DLL!operator_delete		
+1041f400	362	FUN_1041f400	Global	0	thunk_FUN_10422c70,thunk_FUN_10420f70,thunk_FUN_10421520,thunk_FUN_10421b30,thunk_FUN_10422030	E2MFC.DLL!less,RLMFC.DLL!~R_MemoryScope,RLMFC.DLL!R_MemoryScope	E2 Library	
+1041f5d0	528	FUN_1041f5d0	Global	0	thunk_FUN_10421650,thunk_FUN_10420c40,thunk_FUN_10422330,thunk_FUN_104223c0,thunk_FUN_10420050,thunk_FUN_10421bb0,thunk_FUN_104215b0,thunk_FUN_10421440,thunk_FUN_10420a50	E2MFC.DLL!destruct,RLMFC.DLL!~R_MemoryScope,RLMFC.DLL!R_MemoryScope	E2 Library	
+1041f870	523	FUN_1041f870	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!runtimeVerbose	SysMem  | VidMem  | Software  | Hardware  | Read/Write  | Write only  | Transformed  | Untransformed 	
+1041fb10	326	FUN_1041fb10	Global	0	thunk_FUN_1041f870,thunk_FUN_10420b60,thunk_FUN_10420bd0	E2MFC.DLL!getDevice,E2MFC.DLL!runtimeVerbose	free vertex buffer dump  | format  | format 	
+1041fcc0	44	FUN_1041fcc0	Global	0		MFC42.DLL!operator_delete		
+1041fd00	242	FUN_1041fd00	Global	0	thunk_FUN_10420580,thunk_FUN_10421fe0,thunk_FUN_10420b60	MFC42.DLL!operator_delete		
+1041fe40	44	FUN_1041fe40	Global	0		MFC42.DLL!operator_delete		
+1041fe80	354	FUN_1041fe80	Global	0	thunk_FUN_10422c20,thunk_FUN_10423350,thunk_FUN_10422b30,thunk_FUN_10422e80			
+10420050	14	FUN_10420050	Global	0				
+10420070	636	FUN_10420070	Global	0	thunk_FUN_10422a60,thunk_FUN_10421cd0,thunk_FUN_104229e0,thunk_FUN_10423140,thunk_FUN_10422ae0,thunk_FUN_10422cf0	E2MFC.DLL!less		
+10420390	130	FUN_10420390	Global	0		E2MFC.DLL!less		
+10420450	229	FUN_10420450	Global	0	thunk_FUN_10423000			
+10420580	970	FUN_10420580	Global	0	thunk_FUN_10420b60			
+10420a50	164	FUN_10420a50	Global	0	thunk_FUN_10420580,thunk_FUN_10421fe0,thunk_FUN_10420b60			
+10420b30	30	FUN_10420b30	Global	0		MFC42.DLL!operator_delete		
+10420b60	67	FUN_10420b60	Global	0				
+10420bd0	67	FUN_10420bd0	Global	0				
+10420c40	14	FUN_10420c40	Global	0				
+10420c60	611	FUN_10420c60	Global	0	thunk_FUN_10422560,thunk_FUN_10422d70,thunk_FUN_10423370,thunk_FUN_10422dc0,thunk_FUN_10422860,thunk_FUN_104228e0			
+10420f70	970	FUN_10420f70	Global	0	thunk_FUN_104215b0			
+10421440	164	FUN_10421440	Global	0	thunk_FUN_10420f70,thunk_FUN_10422440,thunk_FUN_104215b0			
+10421520	102	FUN_10421520	Global	0				
+104215b0	67	FUN_104215b0	Global	0				
+10421620	22	FUN_10421620	Global	0				
+10421650	978	FUN_10421650	Global	0	thunk_FUN_1041f2c0,thunk_FUN_10420bd0			
+10421b30	81	FUN_10421b30	Global	0		E2MFC.DLL!less		
+10421bb0	63	FUN_10421bb0	Global	0	thunk_FUN_10421bb0,thunk_FUN_1041f2c0			
+10421c00	159	FUN_10421c00	Global	0	thunk_FUN_10422ec0			
+10421cd0	617	FUN_10421cd0	Global	0	thunk_FUN_10422e40,thunk_FUN_10423140	E2MFC.DLL!less		
+10421fe0	55	FUN_10421fe0	Global	0	thunk_FUN_10421fe0			
+10422030	608	FUN_10422030	Global	0	thunk_FUN_10423350,thunk_FUN_10422e80			
+10422330	25	FUN_10422330	Global	0				
+10422360	45	FUN_10422360	Global	0				
+104223a0	13	FUN_104223a0	Global	0				
+104223c0	86	FUN_104223c0	Global	0				
+10422440	55	FUN_10422440	Global	0	thunk_FUN_10422440			
+10422490	159	FUN_10422490	Global	0	thunk_FUN_10423000			
+10422560	608	FUN_10422560	Global	0	thunk_FUN_10423370,thunk_FUN_10422e80			
+10422860	82	FUN_10422860	Global	0				
+104228e0	86	FUN_104228e0	Global	0				
+10422960	86	FUN_10422960	Global	0				
+104229e0	82	FUN_104229e0	Global	0				
+10422a60	86	FUN_10422a60	Global	0				
+10422ae0	63	FUN_10422ae0	Global	0	thunk_FUN_10422ec0			
+10422b30	177	FUN_10422b30	Global	0	thunk_FUN_10423000,thunk_FUN_10422b30			
+10422c20	63	FUN_10422c20	Global	0	thunk_FUN_10423000			
+10422c70	81	FUN_10422c70	Global	0				
+10422cf0	81	FUN_10422cf0	Global	0				
+10422d70	63	FUN_10422d70	Global	0	thunk_FUN_10423000			
+10422dc0	81	FUN_10422dc0	Global	0				
+10422e40	48	FUN_10422e40	Global	0	thunk_FUN_10422ec0			
+10422e80	48	FUN_10422e80	Global	0	thunk_FUN_10423000			
+10422ec0	251	FUN_10422ec0	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	
+10423000	251	FUN_10423000	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	
+10423140	401	FUN_10423140	Global	0	thunk_FUN_10422c20,thunk_FUN_10423350,thunk_FUN_10422b30,thunk_FUN_10422e80			
+10423350	15	FUN_10423350	Global	0				
+10423370	9	FUN_10423370	Global	0				
+10423390	175	FUN_10423390	Global	0		RLMFC.DLL!~R_MemoryScope,E2MFC.DLL!P_DeviceDependentVirtualObject,RLMFC.DLL!R_MemoryScope	E2 Library	
+10423470	30	FUN_10423470	Global	0	P_D3DVirtualObject::~P_D3DVirtualObject	MFC42.DLL!operator_delete		
+104234a0	187	FUN_104234a0	Global	0		RLMFC.DLL!~R_MemoryScope,MFC42.DLL!operator_delete,E2MFC.DLL!~P_DeviceDependentVirtualObject,RLMFC.DLL!R_MemoryScope	E2 Library	
+10423590	28	FUN_10423590	Global	0	P_D3DVirtualObject::copyContents	E2MFC.DLL!duplicate		
+104235c0	3	FUN_104235c0	Global	0				
+104235e0	1349	FUN_104235e0	Global	0	thunk_FUN_104076c0,thunk_FUN_10424ca0,FUN_10455942,thunk_FUN_104250a0,thunk_FUN_10425320,thunk_FUN_104253c0,thunk_FUN_1040bfd0,thunk_FUN_10424e50,thunk_FUN_10425260,thunk_FUN_10425020	E2MFC.DLL!getNextLightCollision,RLMFC.DLL!~R_MemoryScope,E2MFC.DLL!calculateObjectToWorldMatrix,E2MFC.DLL!getFirstLightCollision,RLMFC.DLL!R_MemoryScope	E2 Library	
+10423cb0	401	FUN_10423cb0	Global	0	thunk_FUN_10424950,thunk_FUN_10424c50	RLMFC.DLL!~R_MemoryScope,RLMFC.DLL!R_MemoryScope	E2 Library	
+10423ec0	712	FUN_10423ec0	Global	0	thunk_FUN_10424950,thunk_FUN_10424920,thunk_FUN_10424c50,FUN_10455942	E2MFC.DLL!calculateObjectToWorldMatrix,E2MFC.DLL!getAttenuation,RLMFC.DLL!~R_MemoryScope,RLMFC.DLL!R_MemoryScope	E2 Library	
+10424270	1246	FUN_10424270	Global	0	thunk_FUN_10424950,thunk_FUN_10424920,thunk_FUN_10424c50,FUN_10455942	E2MFC.DLL!calculateObjectToWorldMatrix,E2MFC.DLL!getAttenuation,RLMFC.DLL!~R_MemoryScope,RLMFC.DLL!R_MemoryScope	E2 Library	
+104248d0	58	FUN_104248d0	Global	0		MFC42.DLL!operator_delete		
+10424920	19	FUN_10424920	Global	0				
+10424950	597	FUN_10424950	Global	0	thunk_FUN_10424e20,thunk_FUN_10424cc0	MFC42.DLL!operator_delete		
+10424c50	56	FUN_10424c50	Global	0				
+10424ca0	3	FUN_10424ca0	Global	0				
+10424cc0	258	FUN_10424cc0	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	
+10424e20	25	FUN_10424e20	Global	0				
+10424e50	366	FUN_10424e50	Global	0	thunk_FUN_104076c0,FUN_10455942			
+10425020	84	FUN_10425020	Global	0	thunk_FUN_1040ce70,FUN_10455942			
+104250a0	337	FUN_104250a0	Global	0	thunk_FUN_104250a0			
+10425260	144	FUN_10425260	Global	0				
+10425320	119	FUN_10425320	Global	0				
+104253c0	72	FUN_104253c0	Global	0				
+10425430	228	FUN_10425430	Global	0	P_D3D::getAlphaMask,P_D3D::getGreenMask,P_D3D::getRedMask,P_D3D::getBlueMask,P_D3D::getBitsPerPixel	E2MFC.DLL!P_TextureFormat		
+10425560	54	FUN_10425560	Global	0	P_D3D::getStencilMask,P_D3D::getZMask	E2MFC.DLL!P_ZBufferFormat		
+104255b0	144	FUN_104255b0	Global	0				
+104256c0	27	FUN_104256c0	Global	0				
+104256f0	61	FUN_104256f0	Global	0				
+104257d0	118	FUN_104257d0	Global	0				
+104258e0	130	FUN_104258e0	Global	0				
+104259d0	130	FUN_104259d0	Global	0				
+10425ac0	122	FUN_10425ac0	Global	0				
+10425bb0	54	FUN_10425bb0	Global	0				
+10425c40	48	FUN_10425c40	Global	0				
+10425cc0	91	FUN_10425cc0	Global	0				
+10425d40	95	FUN_10425d40	Global	0				
+10425dc0	669	FUN_10425dc0	Global	0	FUN_10455942,thunk_FUN_10407430,thunk_FUN_10426180,thunk_FUN_104073b0,thunk_FUN_1041b0b0,P_D3D::P_D3D,P_D3DCPUDriver::P_D3DCPUDriver	KERNEL32.DLL!LoadLibraryA,KERNEL32.DLL!GetProcAddress,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new	D3D8.DLL | Direct3DCreate8 | Out of system memory resources | Out of system memory resources	
+10426043	40	Catch@10426043	Global	0				
+10426070	42	Catch@10426070	Global	0	thunk_FUN_10426180	RLMFC.DLL!verbose	D3D driver dllMain - %s 	
+10426180	80	FUN_10426180	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!verbose,KERNEL32.DLL!FreeLibrary	P_D3D::deinitialize - D3D ref count %d 	
+104261f0	1626	FUN_104261f0	Global	0	P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,FUN_10455942,P_D3DVertexBufferManager::P_D3DVertexBufferManager,P_D3DIndexBufferManager::P_D3DIndexBufferManager,thunk_FUN_10426b30	MSVCRT.DLL!sprintf,E2MFC.DLL!getDevice,RLMFC.DLL!operator=,RLMFC.DLL!setError,E2MFC.DLL!P_Driver,RLMFC.DLL!R_Exception,MSVCRT.DLL!_CxxThrowException,E2MFC.DLL!linkHWAccelerationLevel,E2MFC.DLL!linkDriver,E2MFC.DLL!runtimeVerbose,MFC42.DLL!operator_new	internal error - GetAdapterIdentifier failed |  testing driver:%s  |  REFERENCE  | driver passed tests   | D3D Reference Rasterizer | not supported   |  SOFTWARE  | driver passed tests  	
+1042684a	40	Catch@1042684a	Global	0		RLMFC.DLL!verbose,MSVCRT.DLL!_CxxThrowException	P_D3D constructor - %s 	
+10426a30	30	FUN_10426a30	Global	0	P_D3D::~P_D3D	MFC42.DLL!operator_delete		
+10426a60	152	FUN_10426a60	Global	0		E2MFC.DLL!~P_Driver		
+10426b30	4588	FUN_10426b30	Global	0	thunk_FUN_1042aff0,FUN_10455942,thunk_FUN_1042b280,P_D3D::getBitsPerPixel,thunk_FUN_104281d0,P_D3D::getBlueMask,P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,thunk_FUN_1042b140,thunk_FUN_1042acd0,thunk_FUN_1042a680,thunk_FUN_1042b110,P_D3D::getGreenMask,P_D3D::getRedMask,thunk_FUN_1042aad0,thunk_FUN_1041b0b0	RLMFC.DLL!operator=,E2MFC.DLL!P_DriverCaps,E2MFC.DLL!linkMode,MSVCRT.DLL!_CxxThrowException,E2MFC.DLL!addRefreshRate,E2MFC.DLL!linkWindowMode,MFC42.DLL!operator_new,E2MFC.DLL!runtimeVerbose,E2MFC.DLL!getDevice,RLMFC.DLL!setError,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources | gamma control  | no gamma control  | max texture coordinates %d  | max texture blend stages %d  | max simultaneous textures %d  | failed: must support drawPrimitive 	
+10427d1c	29	Catch@10427d1c	Global	0		MSVCRT.DLL!_CxxThrowException		
+104281d0	30	FUN_104281d0	Global	1	thunk_FUN_10428200	MFC42.DLL!operator_delete		thunk_FUN_104281d0
+10428200	12	FUN_10428200	Global	0				
+10428220	43	FUN_10428220	Global	0		MSVCRT.DLL!__RTDynamicCast		
+10428260	11	FUN_10428260	Global	0				
+10428280	7	FUN_10428280	Global	0				
+104282a0	7	FUN_104282a0	Global	0				
+104282c0	96	FUN_104282c0	Global	0	FUN_1042f995	RLMFC.DLL!setError,RLMFC.DLL!R_Exception	%s : (D3DXGetErrorString failed to return description) | %s : %s	
+10428340	381	FUN_10428340	Global	0	thunk_FUN_10428c20,thunk_FUN_10428600,P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,thunk_FUN_10407500,FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!R_Exception,MSVCRT.DLL!_CxxThrowException	Reset | BeginScene	
+104284bd	39	Catch@104284bd	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!verbose,MSVCRT.DLL!_CxxThrowException	P_D3D::beginScene - %s 	
+10428560	113	FUN_10428560	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!verbose	P_D3D::endScene - EndScene failed 	
+10428600	1235	FUN_10428600	Global	0	P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,thunk_FUN_10407350,FUN_10455942,thunk_FUN_10407580,thunk_FUN_10407380	E2MFC.DLL!getDevice,RLMFC.DLL!operator=,E2MFC.DLL!getNextMap,RLMFC.DLL!R_Exception,E2MFC.DLL!getWidth,MSVCRT.DLL!_CxxThrowException,E2MFC.DLL!getHeight,E2MFC.DLL!getFirstMap,E2MFC.DLL!runtimeVerbose	SetViewport | GetDepthStencilSurface |  video memory total:%d  available: %d  |  texture memory total:%d  available: %d  | rendertarget texture:CreateTexture  | rendertarget texture:CreateTexture 	
+10428c20	242	FUN_10428c20	Global	0	P_D3DOutputPrimitive::deleteVertexBuffers,P_D3DOutputPrimitive::deleteIndexBuffers	E2MFC.DLL!invalidateDeviceDependent,E2MFC.DLL!getFirstMap,E2MFC.DLL!resetCurrentMaterial,E2MFC.DLL!getDevice,E2MFC.DLL!verbose,E2MFC.DLL!setRenderTarget,E2MFC.DLL!getNextBuffer,E2MFC.DLL!clearTextureMemory,E2MFC.DLL!getNextMap,E2MFC.DLL!getFirstBuffer	P_D3D::deleteBuffers - zbuffer->Release ref count = %d 	
+10428d60	884	FUN_10428d60	Global	0	thunk_FUN_10428600,P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,thunk_FUN_10407500,FUN_10455942,thunk_FUN_10407320,thunk_FUN_10407580,thunk_FUN_104255b0	E2MFC.DLL!resetCurrentMaterial,RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,E2MFC.DLL!getWidth,MSVCRT.DLL!_CxxThrowException,E2MFC.DLL!getHeight	setWindow - GetAdapterDisplayMode | setWindow - display mode not supported | Out of video memory when creating the D3D device and opening a display mode | setWindow - creating the device failed	
+104290d4	47	Catch@104290d4	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!verbose,MSVCRT.DLL!_CxxThrowException	P_D3D::DRV_setWindow - %s 	
+10429210	847	FUN_10429210	Global	0	thunk_FUN_10428600,P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,thunk_FUN_10407500,FUN_10455942,thunk_FUN_10407320,thunk_FUN_104255b0,thunk_FUN_10407380,thunk_FUN_104256c0	E2MFC.DLL!resetCurrentMaterial,RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,E2MFC.DLL!getWidth,MSVCRT.DLL!_CxxThrowException,E2MFC.DLL!getHeight	Out of video memory when creating the D3D device and opening a display mode | setFullscreen - creating the device failed | setFullscreen - creating the device failed	
+1042955f	47	Catch@1042955f	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!verbose,MSVCRT.DLL!_CxxThrowException	P_D3D::DRV_setFullscreen - %s 	
+104296a0	62	FUN_104296a0	Global	0	thunk_FUN_10428c20	E2MFC.DLL!getDevice,E2MFC.DLL!verbose	P_D3D::deleteBuffers - device->Release ref count = %d 	
+104296f0	119	FUN_104296f0	Global	0	thunk_FUN_10428c20,thunk_FUN_10428600	RLMFC.DLL!~M_FPUControl,RLMFC.DLL!M_FPUControl		
+10429767	47	Catch@10429767	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!verbose,MSVCRT.DLL!_CxxThrowException	P_D3D::resetDriver - %s 	
+104297d0	96	FUN_104297d0	Global	0				
+10429850	35	FUN_10429850	Global	0	P_D3D::convertMatrix			
+10429890	226	FUN_10429890	Global	0		E2MFC.DLL!getDriverCaps,MSVCRT.DLL!_CIpow		
+104299c0	381	FUN_104299c0	Global	1	P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!R_Exception,MSVCRT.DLL!_CxxThrowException	Clear	P_D3D::DRV_clearBuffer
+10429b2a	39	Catch@10429b2a	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!verbose,MSVCRT.DLL!_CxxThrowException	P_D3D::clear - %s 	
+10429be0	247	FUN_10429be0	Global	0	P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!R_Exception,MSVCRT.DLL!_CxxThrowException	SetViewport	
+10429d20	727	FUN_10429d20	Global	0	P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,thunk_FUN_10407580,thunk_FUN_10407350,FUN_10455942	USER32.DLL!ClientToScreen,RLMFC.DLL!operator=,RLMFC.DLL!copy,RLMFC.DLL!R_Exception,MSVCRT.DLL!_CxxThrowException	P_D3D::getScreen - GetDisplayMode failed | P_D3D::getScreen - CreateImageSurface failed | P_D3D::getScreen - LockRect failed | P_D3D::getScreen - UnlockRect failed	
+10429ff7	52	Catch@10429ff7	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!verbose,MSVCRT.DLL!_CxxThrowException		
+1042a100	580	FUN_1042a100	Global	0	P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,thunk_FUN_10407580,thunk_FUN_10407350,thunk_FUN_10407500,FUN_10455942,thunk_FUN_10425430,thunk_FUN_10407320	E2MFC.DLL!convertTexture,E2MFC.DLL!P_TextureFormat,MSVCRT.DLL!_CxxThrowException	P_D3D::getBackBuffer - GetBackBuffer failed | P_D3D::getBackBuffer - LockRect failed | P_D3D::getBackBuffer - UnlockRect failed	
+1042a344	52	Catch@1042a344	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!verbose,MSVCRT.DLL!_CxxThrowException		
+1042a420	270	FUN_1042a420	Global	1	P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,FUN_10455942	E2MFC.DLL!getHeight,E2MFC.DLL!getDevice,E2MFC.DLL!verbose,RLMFC.DLL!operator=,RLMFC.DLL!R_Exception,E2MFC.DLL!getWidth,MSVCRT.DLL!_CxxThrowException	P_D3D::swapBuffer - device temporarily lost  | swapBuffer:Present	P_D3D::DRV_swapBuffer
+1042a52e	39	Catch@1042a52e	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!verbose,MSVCRT.DLL!_CxxThrowException	P_D3D::swapBuffer - %s 	
+1042a5b0	51	FUN_1042a5b0	Global	0				
+1042a600	95	FUN_1042a600	Global	0				
+1042a680	876	FUN_1042a680	Global	0	thunk_FUN_1042a600,thunk_FUN_1042c180,thunk_FUN_10425560,thunk_FUN_1042c420,thunk_FUN_1042c450,thunk_FUN_1042c3b0,thunk_FUN_1042a5b0,thunk_FUN_10425430	E2MFC.DLL!setRenderTargetFormat,E2MFC.DLL!P_ZBufferFormat,E2MFC.DLL!operator=,MFC42.DLL!operator_delete,E2MFC.DLL!operator=		
+1042aad0	386	FUN_1042aad0	Global	0	thunk_FUN_1042c450,thunk_FUN_1042a600,P_D3D::getStencilMask,P_D3D::getZMask	E2MFC.DLL!linkZBufferFormat,MFC42.DLL!operator_delete		
+1042acd0	634	FUN_1042acd0	Global	0		E2MFC.DLL!addMultiSampleMode		
+1042aff0	217	FUN_1042aff0	Global	0		E2MFC.DLL!setBumpSupport		
+1042b110	23	FUN_1042b110	Global	0		E2MFC.DLL!setCubeMapSupport		
+1042b140	23	FUN_1042b140	Global	0		E2MFC.DLL!setVolumeMapSupport		
+1042b170	199	FUN_1042b170	Global	0				
+1042b280	2938	FUN_1042b280	Global	0	thunk_FUN_1042b170,P_D3D::getBitsPerPixel,thunk_FUN_1042c450,P_D3D::getAlphaMask,thunk_FUN_1042a5b0,P_D3D::getGreenMask,P_D3D::getRedMask,P_D3D::getBlueMask	E2MFC.DLL!linkTextureFormat,E2MFC.DLL!getDevice,E2MFC.DLL!supportsDXT1,E2MFC.DLL!verbose,E2MFC.DLL!supportsCompressedTextures,E2MFC.DLL!supportsDXT3,MFC42.DLL!operator_delete,E2MFC.DLL!supportsDXT5,E2MFC.DLL!runtimeVerbose	texture formats:  |  used texture formats:  | minimum rgb:  | minimum argb:  | normal rgb:  | normal argb:  | maximum rgb:  | maximum argb: 	
+1042c110	58	FUN_1042c110	Global	0		MFC42.DLL!operator_delete		
+1042c160	1	FUN_1042c160	Global	0				
+1042c180	399	FUN_1042c180	Global	0	thunk_FUN_1042c420,thunk_FUN_1042c750,thunk_FUN_1042c380,thunk_FUN_1042c8f0,thunk_FUN_1042c400,thunk_FUN_1042c710,thunk_FUN_1042c790			
+1042c380	19	FUN_1042c380	Global	0				
+1042c3b0	50	FUN_1042c3b0	Global	0				
+1042c400	3	FUN_1042c400	Global	0				
+1042c420	30	FUN_1042c420	Global	0		MFC42.DLL!operator_delete		
+1042c450	545	FUN_1042c450	Global	0	thunk_FUN_1042c8f0,thunk_FUN_1042c790	MFC42.DLL!operator_delete		
+1042c710	46	FUN_1042c710	Global	0				
+1042c750	37	FUN_1042c750	Global	0				
+1042c790	258	FUN_1042c790	Global	0	FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	
+1042c8f0	19	FUN_1042c8f0	Global	0				
+1042c950	2873	FUN_1042c950	Global	0	thunk_FUN_10407500,FUN_10455942,thunk_FUN_1042f120,thunk_FUN_10407380,FUN_104343d8,thunk_FUN_1042f070,P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,thunk_FUN_10407350,thunk_FUN_1042e200,thunk_FUN_10407320,thunk_FUN_10407580,thunk_FUN_1042f0a0,thunk_FUN_1042d7e0	MSVCRT.DLL!ftol,MSVCRT.DLL!_CxxThrowException,E2MFC.DLL!supportsBumpNormalMaps,E2MFC.DLL!supportsEnvBump,E2MFC.DLL!getTextureFormat,E2MFC.DLL!getDriverCaps,E2MFC.DLL!supportsDXT5,E2MFC.DLL!supportsDXT1,RLMFC.DLL!setError,E2MFC.DLL!supportsEnvBumpWithLuminance,E2MFC.DLL!operator=,E2MFC.DLL!supportsDXT3	Unsupported compression type (only DXT1, DXT3 and DXT5 are supported) | Failed to decode DDS image: "%s" | compressed texture:D3DXCreateTextureFromFileInMemoryEx  | P_D3D::DRV_allocateMap - device does not support bump maps | P_D3D::DRV_allocateMap - device does not support luminance bump maps | P_D3D::DRV_allocateMap - device does not support bump normal maps | P_D3D::DRV_allocateMap - device does not support cube maps | P_D3D::DRV_allocateMap - device does not support volume maps	
+1042d489	57	Catch@1042d489	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!verbose,MSVCRT.DLL!_CxxThrowException	P_D3D::allocateMap - %s 	
+1042d7e0	19	FUN_1042d7e0	Global	0		RLMFC.DLL!R_Exception		
+1042d810	156	FUN_1042d810	Global	0		E2MFC.DLL!resetCurrentMaterial,E2MFC.DLL!getDevice,E2MFC.DLL!verbose	P_D3D::DRV_deallocateMap - texture ref count %d  | P_D3D::DRV_deallocateMap - texture zbuffer ref count %d 	
+1042d8e0	367	FUN_1042d8e0	Global	1	P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,thunk_FUN_10407580,thunk_FUN_10407500,thunk_FUN_10407380,FUN_10455942	RLMFC.DLL!operator=,E2MFC.DLL!convertTexture,MSVCRT.DLL!_CxxThrowException	texture:LockRect  | texture:LockRect 	P_D3D::DRV_convertMap
+1042da3c	62	Catch@1042da3c	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!verbose,MSVCRT.DLL!_CxxThrowException	P_D3D::convertMap - %s 	
+1042db00	367	FUN_1042db00	Global	1	P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,thunk_FUN_10407580,thunk_FUN_10407500,thunk_FUN_10407380,FUN_10455942	RLMFC.DLL!operator=,E2MFC.DLL!convertTexture,MSVCRT.DLL!_CxxThrowException	texture:LockRect  | texture:LockRect 	P_D3D::DRV_unconvertMap
+1042dc5c	62	Catch@1042dc5c	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!verbose,MSVCRT.DLL!_CxxThrowException	P_D3D::unconvertMap - %s 	
+1042dd20	577	FUN_1042dd20	Global	0	P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,thunk_FUN_10407580,thunk_FUN_10407350,thunk_FUN_10407500,FUN_10455942,thunk_FUN_10407320	MSVCRT.DLL!_CxxThrowException	GetSurfaceLevel | SetRenderTarget | GetBackBuffer	
+1042e010	138	FUN_1042e010	Global	0	P_DriverException_DirectDrawError::P_DriverException_DirectDrawError,FUN_10455942	RLMFC.DLL!operator=,RLMFC.DLL!R_Exception,MSVCRT.DLL!_CxxThrowException	ResourceManagerDiscardBytes	
+1042e0d0	110	FUN_1042e0d0	Global	0		E2MFC.DLL!getDevice,E2MFC.DLL!runtimeVerbose	map preload begin (%dK) 	
+1042e160	3	FUN_1042e160	Global	0				
+1042e180	13	FUN_1042e180	Global	0				
+1042e1a0	4	FUN_1042e1a0	Global	0				
+1042e1c0	4	FUN_1042e1c0	Global	0				
+1042e1e0	4	FUN_1042e1e0	Global	0				
+1042e200	1136	FUN_1042e200	Global	0	thunk_FUN_1042ed40,thunk_FUN_1042eb70,FUN_10455942,thunk_FUN_1042e7c0	RLMFC.DLL!operator=,RLMFC.DLL!setError,RLMFC.DLL!R_Exception,MSVCRT.DLL!_CxxThrowException	P_D3D::DRV_createAndLoadTexture - an unknown P_Map style 	
+1042e7c0	715	FUN_1042e7c0	Global	0	FUN_104335c6,FUN_10433ff6,FUN_10433ec5			
+1042eb70	338	FUN_1042eb70	Global	0				
+1042ed40	586	FUN_1042ed40	Global	0				
+1042f070	20	FUN_1042f070	Global	0		RLMFC.DLL!operator=		
+1042f0a0	19	FUN_1042f0a0	Global	0		RLMFC.DLL!R_Exception		
+1042f0d0	30	FUN_1042f0d0	Global	0		RLMFC.DLL!~R_Exception,MFC42.DLL!operator_delete		
+1042f100	6	~R_Exception	RLMFC.DLL::R_Exception	0				
+1042f120	19	FUN_1042f120	Global	0		RLMFC.DLL!R_Exception		
+1042f150	30	FUN_1042f150	Global	0		RLMFC.DLL!~R_Exception,MFC42.DLL!operator_delete		
+1042f180	6	~R_Exception	RLMFC.DLL::R_Exception	0				
+1042f1a0	30	FUN_1042f1a0	Global	0		RLMFC.DLL!~R_Exception,MFC42.DLL!operator_delete		
+1042f1d0	6	~R_Exception	RLMFC.DLL::R_Exception	0				
+1042f2f0	142	FUN_1042f2f0	Global	0				
+1042f3b0	133	FUN_1042f3b0	Global	0				
+1042f470	28	FUN_1042f470	Global	0				
+1042f4a0	101	FUN_1042f4a0	Global	0				
+1042f530	101	FUN_1042f530	Global	0				
+1042f5c0	1	FUN_1042f5c0	Global	0				
+1042f5e0	32	FUN_1042f5e0	Global	0				
+1042f610	133	FUN_1042f610	Global	0				
+1042f6c4	28	FUN_1042f6c4	Global	0	FUN_10434fb5	MFC42.DLL!operator_delete		
+1042f6e0	28	FUN_1042f6e0	Global	0	FUN_10435194	MFC42.DLL!operator_delete		
+1042f6fc	28	FUN_1042f6fc	Global	0	FUN_1043591f	MFC42.DLL!operator_delete		
+1042f718	28	FUN_1042f718	Global	0	FUN_10435d7d	MFC42.DLL!operator_delete		
+1042f734	140	FUN_1042f734	Global	0	FUN_10436434,FUN_10436446,FUN_104365a0,FUN_104386e7,FUN_104365ab,FUN_1043664b			
+1042f7c0	201	FUN_1042f7c0	Global	0	FUN_10436434,FUN_10455ac0,FUN_10436446,FUN_104365a0,FUN_104386e7,FUN_104365ab,FUN_1043664b	KERNEL32.DLL!WideCharToMultiByte		
+1042f889	100	FUN_1042f889	Global	2	FUN_104386e7,FUN_104365ab,FUN_1043664b			FUN_10405f60,FUN_10406810
+1042f995	574	FUN_1042f995	Global	2		MSVCRT.DLL!_snprintf	D3DERR_UNSUPPORTEDCOLORARG | D3DERR_UNSUPPORTEDCOLOROPERATION | D3DERR_WRONGTEXTUREFORMAT | D3DERR_OUTOFVIDEOMEMORY | E_OUTOFMEMORY | E_FAIL | E_NOTIMPL | D3DERR_UNSUPPORTEDALPHAOPERATION	FUN_104282c0,FUN_1042fbd3
+1042fbd3	87	FUN_1042fbd3	Global	0	FUN_10455ac0,FUN_1042f995	KERNEL32.DLL!MultiByteToWideChar		
+1042fc2a	116	FUN_1042fc2a	Global	1	FUN_10434fb5,FUN_10435179,FUN_10434ff4	MFC42.DLL!operator_delete,MFC42.DLL!operator_new		FUN_1042fdf9
+1042fc9e	106	FUN_1042fc9e	Global	1	FUN_10435194,FUN_104351e1,FUN_10435901	MFC42.DLL!operator_delete,MFC42.DLL!operator_new		FUN_1043dbc2
+1042fd08	122	FUN_1042fd08	Global	0	FUN_104359a2,FUN_1043591f,FUN_10435d56	MFC42.DLL!operator_delete,MFC42.DLL!operator_new		
+1042fd82	119	FUN_1042fd82	Global	0	FUN_10435d7d,FUN_104363f2,FUN_10435e3c	MFC42.DLL!operator_delete,MFC42.DLL!operator_new		
+1042fdf9	51	FUN_1042fdf9	Global	0	FUN_1042fc2a	GDI32.DLL!GetObjectA		
+1042fe6c	142	FUN_1042fe6c	Global	0				
+1042fefa	175	FUN_1042fefa	Global	0				
+1042ffa9	67	FUN_1042ffa9	Global	0				
+1043008a	174	FUN_1043008a	Global	0				
+10430138	209	FUN_10430138	Global	0				
+1043021e	93	FUN_1043021e	Global	0				
+10430335	95	FUN_10430335	Global	1				FUN_104330c4
+104303e1	240	FUN_104303e1	Global	0				
+10430513	40	FUN_10430513	Global	0				
+1043053b	209	FUN_1043053b	Global	0				
+1043060c	243	FUN_1043060c	Global	0				
+1043071f	119	FUN_1043071f	Global	0				
+10430796	153	FUN_10430796	Global	0				
+1043082f	202	FUN_1043082f	Global	0				
+10430926	227	FUN_10430926	Global	3				FUN_10415ef0,FUN_104311c7,FUN_104329c4
+10430a09	109	FUN_10430a09	Global	2				FUN_10415ef0,FUN_104329c4
+10430a76	909	FUN_10430a76	Global	0		MSVCRT.DLL!_finite		
+10430ebb	122	FUN_10430ebb	Global	0				
+10430f35	123	FUN_10430f35	Global	0				
+10430fb0	124	FUN_10430fb0	Global	0				
+1043104c	226	FUN_1043104c	Global	3				FUN_104311c7,FUN_104329c4,FUN_1043298b
+1043112e	39	FUN_1043112e	Global	1				FUN_10431d98
+10431155	45	FUN_10431155	Global	1				FUN_10431d0c
+104311a2	37	FUN_104311a2	Global	1				FUN_10432dcf
+104311c7	220	FUN_104311c7	Global	0	FUN_1043104c,FUN_10430926			
+104312a3	108	FUN_104312a3	Global	0				
+1043130f	108	FUN_1043130f	Global	0				
+1043137b	148	FUN_1043137b	Global	0				
+1043140f	148	FUN_1043140f	Global	0				
+104314bb	157	FUN_104314bb	Global	0				
+10431558	161	FUN_10431558	Global	0				
+104315f9	114	FUN_104315f9	Global	0				
+104316ab	116	FUN_104316ab	Global	0				
+1043171f	76	FUN_1043171f	Global	3				FUN_10433045,FUN_10432bc3,FUN_10432cc9
+10431790	162	FUN_10431790	Global	0				
+10431832	164	FUN_10431832	Global	0				
+104318d6	55	FUN_104318d6	Global	1				FUN_1043219f
+1043193b	308	FUN_1043193b	Global	0				
+10431a6f	84	FUN_10431a6f	Global	1				FUN_104329c4
+10431ac3	46	FUN_10431ac3	Global	3				FUN_10431d0c,FUN_10432f6c,FUN_10431d98
+10431af1	37	FUN_10431af1	Global	1				FUN_10431f38
+10431b16	217	FUN_10431b16	Global	1				FUN_1043298b
+10431c85	37	FUN_10431c85	Global	1				FUN_10431d98
+10431caa	37	FUN_10431caa	Global	1				FUN_10432dcf
+10431d0c	140	FUN_10431d0c	Global	0	FUN_10431155,FUN_10431ac3			
+10431d98	127	FUN_10431d98	Global	0	FUN_10431c85,FUN_1043112e,FUN_10431ac3			
+10431e17	128	FUN_10431e17	Global	0		MSVCRT.DLL!_CIacos		
+10431e97	161	FUN_10431e97	Global	0				
+10431f38	218	FUN_10431f38	Global	2	FUN_10431af1			FUN_10432012,FUN_10432069
+10432012	87	FUN_10432012	Global	0	FUN_10431f38			
+10432069	140	FUN_10432069	Global	0	FUN_10431f38			
+104320f5	170	FUN_104320f5	Global	3				FUN_104330c4,FUN_10432dcf,FUN_10432ead
+1043219f	141	FUN_1043219f	Global	0	FUN_104318d6	MSVCRT.DLL!_finite		
+10432264	88	FUN_10432264	Global	0				
+104322bc	64	FUN_104322bc	Global	0				
+104322fc	148	FUN_104322fc	Global	0				
+10432390	171	FUN_10432390	Global	0				
+1043243b	167	FUN_1043243b	Global	6				FUN_104330c4,FUN_10433045,FUN_10432889,FUN_10432bc3,FUN_10432cc9,FUN_10432fe9
+104324e2	208	FUN_104324e2	Global	2				FUN_104325b2,FUN_104330c4
+104325b2	193	FUN_104325b2	Global	0	FUN_104324e2			
+10432889	258	FUN_10432889	Global	0	FUN_1043243b			
+1043298b	57	FUN_1043298b	Global	0	FUN_1043104c,FUN_10431b16			
+104329c4	511	FUN_104329c4	Global	1	FUN_10431a6f,FUN_1043104c,FUN_10430926,FUN_10430a09			FUN_1043556b
+10432bc3	262	FUN_10432bc3	Global	0	FUN_1043243b,FUN_1043171f			
+10432cc9	262	FUN_10432cc9	Global	0	FUN_1043243b,FUN_1043171f			
+10432dcf	222	FUN_10432dcf	Global	0	FUN_104320f5,FUN_10431caa,FUN_104311a2			
+10432ead	191	FUN_10432ead	Global	0	FUN_104320f5			
+10432f6c	125	FUN_10432f6c	Global	0	FUN_10431ac3	MSVCRT.DLL!_CIacos		
+10432fe9	92	FUN_10432fe9	Global	0	FUN_1043243b			
+10433045	127	FUN_10433045	Global	0	FUN_1043243b,FUN_1043171f			
+104330c4	124	FUN_104330c4	Global	0	FUN_104324e2,FUN_104320f5,FUN_10430335,FUN_1043243b			
+10433140	36	FUN_10433140	Global	8				FUN_10434148,FUN_104335c6,FUN_104343d8,FUN_104347e9,FUN_10433ff6,FUN_104331e4,FUN_10433ec5,FUN_104337fc
+10433164	128	FUN_10433164	Global	1				FUN_104331e4
+104331e4	994	FUN_104331e4	Global	3	FUN_10433140,FUN_10433164			FUN_10433a12,FUN_10433b27,FUN_10433aa0
+104335c6	566	FUN_104335c6	Global	6	FUN_1043be51,FUN_10433140,FUN_10438b88,FUN_10438b7e			FUN_104343d8,FUN_1042e7c0,FUN_104347e9,FUN_10433bbd,FUN_10433c73,FUN_1043de7f
+104337fc	534	FUN_104337fc	Global	1	FUN_1043be51,FUN_10433140,FUN_10438b88,FUN_10438b7e			FUN_10433d90
+10433a12	40	FUN_10433a12	Global	4	FUN_104331e4			FUN_1043dbc2,FUN_104343d8,FUN_10433a3a,FUN_1043de7f
+10433a3a	102	FUN_10433a3a	Global	2	FUN_10433a12			FUN_1043dbc2,FUN_1043de7f
+10433aa0	40	FUN_10433aa0	Global	2	FUN_104331e4			FUN_10433ac8,FUN_104347e9
+10433ac8	95	FUN_10433ac8	Global	0	FUN_10433aa0			
+10433b27	41	FUN_10433b27	Global	1	FUN_104331e4			FUN_10433b50
+10433b50	109	FUN_10433b50	Global	0	FUN_10433b27			
+10433bbd	182	FUN_10433bbd	Global	4	FUN_1043bf63,FUN_104335c6,FUN_1043d885,FUN_1043bf7c			FUN_10434384,FUN_10434330,FUN_1043428e,FUN_104342df
+10433c73	285	FUN_10433c73	Global	2	FUN_104335c6			FUN_10433ff6,FUN_10433ec5
+10433d90	309	FUN_10433d90	Global	1	FUN_104337fc			FUN_10434148
+10433ec5	305	FUN_10433ec5	Global	2	FUN_10433140,FUN_10433c73			FUN_104343d8,FUN_1042e7c0
+10433ff6	338	FUN_10433ff6	Global	2	FUN_10433140,FUN_10433c73			FUN_1042e7c0,FUN_104347e9
+10434148	326	FUN_10434148	Global	0	FUN_10433140,FUN_10433d90			
+1043428e	81	FUN_1043428e	Global	0	FUN_10436434,FUN_10436446,FUN_104365a0,FUN_10433bbd			
+104342df	81	FUN_104342df	Global	0	FUN_10436434,FUN_10436446,FUN_104365a0,FUN_10433bbd			
+10434330	84	FUN_10434330	Global	0	FUN_1043da19,FUN_1043d9df,FUN_10433bbd,FUN_1043d9ec			
+10434384	84	FUN_10434384	Global	0	FUN_1043da19,FUN_1043d9df,FUN_10433bbd,FUN_1043d9ec			
+104343d8	1041	FUN_104343d8	Global	5	FUN_1043bf63,FUN_10433a12,FUN_10433140,FUN_104335c6,FUN_10433ec5,FUN_1043d885,FUN_1043bf7c			FUN_10434cf1,FUN_10434c8e,FUN_10434d57,FUN_10434c2b,FUN_1042c950
+104347e9	1090	FUN_104347e9	Global	2	FUN_1043bf63,FUN_10433140,FUN_104335c6,FUN_10433ff6,FUN_10433aa0,FUN_1043d885,FUN_1043bf7c			FUN_10434e46,FUN_10434de6
+10434c2b	99	FUN_10434c2b	Global	0	FUN_10436434,FUN_10436446,FUN_104365a0,FUN_104343d8			
+10434c8e	99	FUN_10434c8e	Global	0	FUN_10436434,FUN_10436446,FUN_104365a0,FUN_104343d8			
+10434cf1	102	FUN_10434cf1	Global	0	FUN_1043da19,FUN_1043d9df,FUN_104343d8,FUN_1043d9ec			
+10434d57	102	FUN_10434d57	Global	0	FUN_1043da19,FUN_1043d9df,FUN_104343d8,FUN_1043d9ec			
+10434de6	96	FUN_10434de6	Global	0	FUN_10436434,FUN_10436446,FUN_104365a0,FUN_104347e9			
+10434e46	96	FUN_10434e46	Global	0	FUN_10436434,FUN_10436446,FUN_104365a0,FUN_104347e9			
+10434fb5	50	FUN_10434fb5	Global	3	FUN_1043ddee	GDI32.DLL!DeleteObject		FUN_1042fc2a,FUN_1042f6c4,FUN_10435158
+10434ff4	82	FUN_10434ff4	Global	1	FUN_1043de03	GDI32.DLL!CreateFontIndirectA		FUN_1042fc2a
+10435046	23	FUN_10435046	Global	0				
+10435083	36	FUN_10435083	Global	0				
+104350c5	38	FUN_104350c5	Global	0	FUN_1043de7f			
+104350eb	38	FUN_104350eb	Global	0	FUN_1043de7f			
+10435114	68	FUN_10435114	Global	0				
+10435158	33	FUN_10435158	Global	0	FUN_10434fb5	MFC42.DLL!operator_delete		
+10435179	27	FUN_10435179	Global	1				FUN_1042fc2a
+10435194	64	FUN_10435194	Global	3				FUN_1043554a,FUN_1042fc9e,FUN_1042f6e0
+104351e1	647	FUN_104351e1	Global	1				FUN_1042fc9e
+1043548e	61	FUN_1043548e	Global	0				
+104354d8	43	FUN_104354d8	Global	0				
+10435506	68	FUN_10435506	Global	0				
+1043554a	33	FUN_1043554a	Global	0	FUN_10435194	MFC42.DLL!operator_delete		
+1043556b	215	FUN_1043556b	Global	0	FUN_104329c4			
+10435901	30	FUN_10435901	Global	1				FUN_1042fc9e
+1043591f	131	FUN_1043591f	Global	3				FUN_1042f6fc,FUN_10435d2d,FUN_1042fd08
+104359a2	79	FUN_104359a2	Global	1				FUN_1042fd08
+104359f1	23	FUN_104359f1	Global	0				
+10435a3b	36	FUN_10435a3b	Global	0				
+10435a5f	460	FUN_10435a5f	Global	0				
+10435c2b	184	FUN_10435c2b	Global	0				
+10435ce6	71	FUN_10435ce6	Global	0				
+10435d2d	41	FUN_10435d2d	Global	0	FUN_1043591f	MFC42.DLL!operator_delete		
+10435d56	39	FUN_10435d56	Global	1				FUN_1042fd08
+10435d7d	191	FUN_10435d7d	Global	3				FUN_1042fd82,FUN_1042f718,FUN_104363c9
+10435e3c	84	FUN_10435e3c	Global	1				FUN_1042fd82
+10435e90	120	FUN_10435e90	Global	3				FUN_1043626c,FUN_10436208,FUN_10436161
+10435f08	312	FUN_10435f08	Global	0				
+10436040	114	FUN_10436040	Global	0				
+104360b2	6	FUN_104360b2	Global	0				
+104360b8	6	FUN_104360b8	Global	0				
+104360be	6	FUN_104360be	Global	0				
+104360c4	71	FUN_104360c4	Global	0				
+1043613e	35	FUN_1043613e	Global	0				
+10436161	99	FUN_10436161	Global	0	FUN_10435e90			
+10436208	100	FUN_10436208	Global	0	FUN_10435e90			
+1043626c	105	FUN_1043626c	Global	0	FUN_10435e90			
+104363c9	41	FUN_104363c9	Global	0	FUN_10435d7d	MFC42.DLL!operator_delete		
+104363f2	66	FUN_104363f2	Global	1				FUN_1042fd82
+10436434	18	FUN_10436434	Global	8				FUN_1042f734,FUN_10434c8e,FUN_1043428e,FUN_10434e46,FUN_10434c2b,FUN_10434de6,FUN_104342df,FUN_1042f7c0
+10436446	281	FUN_10436446	Global	8	FUN_10455ac0	KERNEL32.DLL!CreateFileW,KERNEL32.DLL!CreateFileMappingA,KERNEL32.DLL!GetVersionExA,KERNEL32.DLL!GetLastError,KERNEL32.DLL!MapViewOfFile,KERNEL32.DLL!CreateFileA,KERNEL32.DLL!WideCharToMultiByte,KERNEL32.DLL!GetFileSize		FUN_1042f734,FUN_10434c8e,FUN_1043428e,FUN_10434e46,FUN_10434c2b,FUN_10434de6,FUN_104342df,FUN_1042f7c0
+1043655f	65	FUN_1043655f	Global	1		KERNEL32.DLL!UnmapViewOfFile,KERNEL32.DLL!CloseHandle		FUN_104365a0
+104365a0	11	FUN_104365a0	Global	8	FUN_1043655f			FUN_1042f734,FUN_10434c8e,FUN_1043428e,FUN_10434e46,FUN_10434c2b,FUN_10434de6,FUN_104342df,FUN_1042f7c0
+104365ab	160	FUN_104365ab	Global	3	FUN_1043e4e1,FUN_1043e419	MSVCRT.DLL!_EH_prolog		FUN_1042f734,FUN_1042f889,FUN_1042f7c0
+1043664b	128	FUN_1043664b	Global	3	FUN_1043e429,FUN_1043e4f1	MSVCRT.DLL!_EH_prolog		FUN_1042f734,FUN_1042f889,FUN_1042f7c0
+104366cb	28	FUN_104366cb	Global	0	FUN_1043e60d	MFC42.DLL!operator_delete		
+104366e7	156	FUN_104366e7	Global	9	FUN_1043e522	MSVCRT.DLL!_vsnprintf,MSVCRT.DLL!_snprintf	%s(%d) : (Assembly Error) %s	FUN_10436dc0,FUN_10437a88,FUN_10437280,FUN_1043730e,FUN_10437667,FUN_10437390,FUN_1043823d,FUN_10436f0a
+10436783	1597	FUN_10436783	Global	1			texcoord | texcoord | exkill | exbem | exbeml | exreg2ar | exreg2gb | exm3x2pad	FUN_10437667
+10436dc0	169	FUN_10436dc0	Global	1	FUN_104366e7		invalid mask '%s'	FUN_10437a88
+10436e69	161	FUN_10436e69	Global	1	FUN_104366e7		invalid swizzle '%s'	FUN_10437a88
+10436f0a	886	FUN_10436f0a	Global	1	FUN_104366e7	MSVCRT.DLL!isdigit,MSVCRT.DLL!atoi,MSVCRT.DLL!isalpha	invalid register '%s' | invalid register '%s[a0.x + %d]' | invalid register '%s[%d]'	FUN_10437a88
+10437280	142	FUN_10437280	Global	1	FUN_104366e7		source modifiers are not allowed on destination registers | invalid write mask | invalid destination register	FUN_10437a88
+1043730e	130	FUN_1043730e	Global	1	FUN_104366e7		invalid swizzle | invalid source register	FUN_10437a88
+10437390	169	FUN_10437390	Global	1	FUN_1043e437,FUN_104366e7		invalid constant	FUN_10437a88
+10437439	214	FUN_10437439	Global	1	FUN_1043e437			FUN_104386e7
+1043750f	344	FUN_1043750f	Global	1	FUN_1043e437			FUN_10437a88
+10437667	1057	FUN_10437667	Global	1	FUN_10436783,FUN_104366e7	MSVCRT.DLL!isdigit,MSVCRT.DLL!atoi,MSVCRT.DLL!isalnum,MSVCRT.DLL!isspace,MSVCRT.DLL!isalpha	#line | #line | preprocessor directives are not supported.	FUN_1043823d
+10437a88	1807	FUN_10437a88	Global	1	FUN_1043e5d1,FUN_1043750f,FUN_1043e437,FUN_1043e4a5,FUN_10437280,FUN_10437390,FUN_104366e7,FUN_10436f0a,FUN_1043e522,FUN_10436e69,FUN_10436dc0,FUN_1043e4d9,FUN_1043e605,FUN_1043730e	MSVCRT.DLL!sscanf,MSVCRT.DLL!atoi,MFC42.DLL!operator_delete	invalid version | complement not supported in vertex shaders | complement cannot be used with other modifiers | syntax error | illegal register in index expression | syntax error | illegal register in index expression | a0.x can only appear once in an index expression	FUN_1043823d
+1043823d	1002	FUN_1043823d	Global	1	FUN_10437a88,FUN_10437667,FUN_104366e7		syntax error | yacc stack overflow	FUN_104386e7
+104386e7	1175	FUN_104386e7	Global	3	FUN_1043e5d1,FUN_1043e622,FUN_1043e4a5,FUN_1043823d,FUN_1043e522,FUN_1043e60d,FUN_1043e875,FUN_10437439	KERNEL32.DLL!LoadLibraryA,KERNEL32.DLL!GetProcAddress,KERNEL32.DLL!GetModuleHandleA,KERNEL32.DLL!HeapFree,KERNEL32.DLL!GetProcessHeap,MFC42.DLL!operator_delete,MSVCRT.DLL!_EH_prolog,MFC42.DLL!operator_new	D3DX8 Shader Assembler Version 0.91 | D3DX8 Shader Assembler Version 0.91 | d3d8.dll | d3d8.dll | d3d8.dll | ValidatePixelShader | ValidateVertexShader	FUN_1042f734,FUN_1042f889,FUN_1042f7c0
+10438b7e	10	FUN_10438b7e	Global	2				FUN_104335c6,FUN_104337fc
+10438b88	30	FUN_10438b88	Global	2				FUN_104335c6,FUN_104337fc
+10438bba	34	FUN_10438bba	Global	4	FUN_10438bba	MFC42.DLL!operator_delete		FUN_10438bdc,FUN_1043924f,FUN_10438bba,FUN_10438e99
+10438bdc	28	FUN_10438bdc	Global	0	FUN_10438bba	MFC42.DLL!operator_delete		
+10438bf8	673	FUN_10438bf8	Global	2		MSVCRT.DLL!ftol,MSVCRT.DLL!floor,MFC42.DLL!operator_new		FUN_1043924f,FUN_10438e99
+10438e99	950	FUN_10438e99	Global	1	FUN_10438bba,FUN_10438bf8	MFC42.DLL!operator_delete,MFC42.DLL!operator_new		FUN_1043be51
+1043924f	1239	FUN_1043924f	Global	1	FUN_10438bba,FUN_10438bf8	MFC42.DLL!operator_delete,MFC42.DLL!operator_new		FUN_1043be51
+10439772	44	FUN_10439772	Global	0				
+1043979e	385	FUN_1043979e	Global	1				FUN_1043a7d5
+1043991f	6	FUN_1043991f	Global	1				FUN_1043acb4
+10439925	350	FUN_10439925	Global	1				FUN_1043acb4
+10439a83	284	FUN_10439a83	Global	1				FUN_1043acb4
+10439b9f	336	FUN_10439b9f	Global	1				FUN_1043acb4
+10439cef	292	FUN_10439cef	Global	1				FUN_1043acb4
+10439e13	335	FUN_10439e13	Global	1				FUN_1043acb4
+10439f62	339	FUN_10439f62	Global	1				FUN_1043acb4
+1043a0b5	319	FUN_1043a0b5	Global	1				FUN_1043acb4
+1043a1f4	155	FUN_1043a1f4	Global	1				FUN_1043acb4
+1043a28f	332	FUN_1043a28f	Global	1				FUN_1043acb4
+1043a3db	289	FUN_1043a3db	Global	1				FUN_1043acb4
+1043a4fc	6	FUN_1043a4fc	Global	1				FUN_1043acb4
+1043a502	6	FUN_1043a502	Global	1				FUN_1043acb4
+1043a508	332	FUN_1043a508	Global	1				FUN_1043acb4
+1043a654	319	FUN_1043a654	Global	1				FUN_1043acb4
+1043a793	35	FUN_1043a793	Global	1				FUN_1043b3f2
+1043a7c5	16	FUN_1043a7c5	Global	1				FUN_1043b3f2
+1043a7d5	306	FUN_1043a7d5	Global	1	FUN_1043979e			FUN_1043be51
+1043a907	162	FUN_1043a907	Global	1		MFC42.DLL!operator_delete,MFC42.DLL!operator_new		FUN_1043be51
+1043a9a9	373	FUN_1043a9a9	Global	1		MFC42.DLL!operator_delete,MFC42.DLL!operator_new		FUN_1043be51
+1043ab1e	406	FUN_1043ab1e	Global	1		MFC42.DLL!operator_delete,MFC42.DLL!operator_new		FUN_1043be51
+1043acb4	885	FUN_1043acb4	Global	1	FUN_10439925,FUN_1043a654,FUN_1043a1f4,FUN_1043a502,FUN_1043991f,FUN_10439f62,FUN_1043a4fc,FUN_10439a83,FUN_1043a0b5,FUN_1043a508,FUN_1043a28f,FUN_1043a3db,FUN_10439cef,FUN_10439e13,FUN_10439b9f	MFC42.DLL!operator_delete,MFC42.DLL!operator_new		FUN_1043be51
+1043b049	937	FUN_1043b049	Global	1		MFC42.DLL!operator_delete,MFC42.DLL!operator_new		FUN_1043be51
+1043b3f2	209	FUN_1043b3f2	Global	2	FUN_1043a7c5,FUN_1043a793	MSVCRT.DLL!floor,MFC42.DLL!operator_new		FUN_1043b4c3,FUN_1043b804
+1043b4c3	833	FUN_1043b4c3	Global	1	FUN_1043b3f2	MFC42.DLL!operator_delete,MFC42.DLL!operator_new		FUN_1043be51
+1043b804	1613	FUN_1043b804	Global	1	FUN_1043b3f2	MFC42.DLL!operator_delete,MFC42.DLL!operator_new		FUN_1043be51
+1043be51	274	FUN_1043be51	Global	2	FUN_1043b049,FUN_1043924f,FUN_1043a907,FUN_10438e99,FUN_1043a7d5,FUN_1043a9a9,FUN_10441ff8,FUN_1043b4c3,FUN_1043acb4,FUN_1043b804,FUN_1043ab1e			FUN_104335c6,FUN_104337fc
+1043bf63	25	FUN_1043bf63	Global	4				FUN_1043d542,FUN_104343d8,FUN_104347e9,FUN_10433bbd
+1043bf7c	89	FUN_1043bf7c	Global	6	FUN_1043bf7c	MFC42.DLL!operator_delete		FUN_1043bfd5,FUN_104343d8,FUN_104347e9,FUN_10433bbd,FUN_1043d885,FUN_1043bf7c
+1043bfd5	28	FUN_1043bfd5	Global	0	FUN_1043bf7c	MFC42.DLL!operator_delete		
+1043bff1	1595	FUN_1043bff1	Global	2		MFC42.DLL!operator_new		FUN_1043d855,FUN_1043d885
+1043c62c	27	FUN_1043c62c	Global	0		MSVCRT.DLL!longjmp		
+1043c649	29	FUN_1043c649	Global	0				
+1043c68e	597	FUN_1043c68e	Global	1	FUN_10442e79,thunk_FUN_104494fa,FUN_10442ad7,FUN_1044479a,FUN_10442b78,FUN_10442727,FUN_10442c7f	MSVCRT.DLL!setjmp3,MFC42.DLL!operator_new		FUN_1043d885
+1043c8e3	1144	FUN_1043c8e3	Global	1		MFC42.DLL!operator_new		FUN_1043d885
+1043cd5b	642	FUN_1043cd5b	Global	1		MSVCRT.DLL!isdigit,MSVCRT.DLL!isspace,MFC42.DLL!operator_new		FUN_1043d885
+1043d02c	1302	FUN_1043d02c	Global	1	FUN_1044555c,FUN_1044491d,FUN_10447791,FUN_10445458,FUN_10445529,FUN_10444ae0,FUN_10445617,FUN_10444c54,FUN_104450a8,FUN_10445404,FUN_10445e4f,FUN_10445dfe,FUN_104455cc,FUN_104457a2,FUN_1044765a,FUN_1044542d	MSVCRT.DLL!ftol,MFC42.DLL!operator_delete,MFC42.DLL!operator_new,MSVCRT.DLL!setjmp3,MSVCRT.DLL!_CIpow	1.0.5	FUN_1043d885
+1043d542	787	FUN_1043d542	Global	1	FUN_1043bf63	MFC42.DLL!operator_new		FUN_1043d885
+1043d855	48	FUN_1043d855	Global	1	FUN_1043bff1			FUN_1043d885
+1043d885	346	FUN_1043d885	Global	3	FUN_1043d02c,FUN_1043d542,FUN_1043cd5b,FUN_1043c8e3,FUN_1043bff1,FUN_1043d855,FUN_1043c68e,FUN_1043bf7c	MFC42.DLL!operator_delete		FUN_104343d8,FUN_104347e9,FUN_10433bbd
+1043d9df	13	FUN_1043d9df	Global	4				FUN_10434384,FUN_10434cf1,FUN_10434d57,FUN_10434330
+1043d9ec	14	FUN_1043d9ec	Global	4		GDI32.DLL!DeleteObject		FUN_10434384,FUN_10434cf1,FUN_10434d57,FUN_10434330
+1043d9fa	31	FUN_1043d9fa	Global	1		GDI32.DLL!DeleteObject		FUN_1043da19
+1043da19	128	FUN_1043da19	Global	4	FUN_1043d9fa	KERNEL32.DLL!FindResourceW,KERNEL32.DLL!SizeofResource,KERNEL32.DLL!GetLastError,KERNEL32.DLL!FindResourceA,KERNEL32.DLL!LoadResource,KERNEL32.DLL!LockResource		FUN_10434384,FUN_10434cf1,FUN_10434d57,FUN_10434330
+1043da99	63	FUN_1043da99	Global	1				FUN_1043de03
+1043dad8	203	FUN_1043dad8	Global	3		GDI32.DLL!DeleteDC,GDI32.DLL!DeleteObject		FUN_1043ddee,FUN_1043de03,FUN_1043dba6
+1043dba3	3	FUN_1043dba3	Global	1				FUN_1043de03
+1043dba6	28	FUN_1043dba6	Global	0	FUN_1043dad8	MFC42.DLL!operator_delete		
+1043dbc2	442	FUN_1043dbc2	Global	1	FUN_10433a12,FUN_1042fc9e,FUN_10433a3a	GDI32.DLL!CreateDIBSection,GDI32.DLL!SelectObject,GDI32.DLL!SetTextColor,GDI32.DLL!SetBkColor,GDI32.DLL!CreateCompatibleDC,GDI32.DLL!SetBkMode		FUN_1043de03
+1043dd7c	66	FUN_1043dd7c	Global	1				FUN_1043de7f
+1043ddbe	48	FUN_1043ddbe	Global	1				FUN_1043de7f
+1043ddee	21	FUN_1043ddee	Global	1	FUN_1043dad8	MFC42.DLL!operator_delete		FUN_10434fb5
+1043de03	124	FUN_1043de03	Global	1	FUN_1043dad8,FUN_1043da99,FUN_1043dbc2,FUN_1043dba3	MFC42.DLL!operator_delete,MFC42.DLL!operator_new		FUN_10434ff4
+1043de7f	1434	FUN_1043de7f	Global	2	FUN_104335c6,FUN_1043dd7c,FUN_1043ddbe,FUN_10455ac0,FUN_10433a12,FUN_10433a3a	KERNEL32.DLL!GetVersionExA,GDI32.DLL!DeleteObject,GDI32.DLL!CreateDIBSection,KERNEL32.DLL!WideCharToMultiByte,USER32.DLL!DrawTextA,GDI32.DLL!SelectObject,USER32.DLL!DrawTextW		FUN_104350c5,FUN_104350eb
+1043e419	16	FUN_1043e419	Global	1				FUN_104365ab
+1043e429	14	FUN_1043e429	Global	13		MFC42.DLL!operator_delete		Unwind@10461a46,Unwind@10461aa5,Unwind@10461a51,Unwind@10461a5c,FUN_1043664b,Unwind@10461a3b,Unwind@10461a30,Unwind@10461a9a
+1043e437	110	FUN_1043e437	Global	4		MFC42.DLL!operator_delete,MFC42.DLL!operator_new		FUN_1043750f,FUN_10437a88,FUN_10437390,FUN_10437439
+1043e4a5	52	FUN_1043e4a5	Global	2				FUN_10437a88,FUN_104386e7
+1043e4d9	8	FUN_1043e4d9	Global	1				FUN_10437a88
+1043e4e1	16	FUN_1043e4e1	Global	1				FUN_104365ab
+1043e4f1	49	FUN_1043e4f1	Global	3		MFC42.DLL!operator_delete		Unwind@10461a28,Unwind@10461a7c,FUN_1043664b
+1043e522	175	FUN_1043e522	Global	3		MFC42.DLL!operator_delete,MFC42.DLL!operator_new		FUN_10437a88,FUN_104366e7,FUN_104386e7
+1043e5d1	52	FUN_1043e5d1	Global	2				FUN_10437a88,FUN_104386e7
+1043e605	8	FUN_1043e605	Global	1				FUN_10437a88
+1043e60d	21	FUN_1043e60d	Global	3		MFC42.DLL!operator_delete		FUN_1043e830,FUN_104366cb,FUN_104386e7
+1043e622	38	FUN_1043e622	Global	1		MFC42.DLL!operator_new		FUN_104386e7
+1043e6e2	5	thunk_FUN_1043e60d	Global	1				FUN_1043e859
+1043e6e7	255	FUN_1043e6e7	Global	0		MSVCRT.DLL!ftol,MFC42.DLL!operator_delete,MFC42.DLL!operator_new		
+1043e7e9	71	FUN_1043e7e9	Global	0				
+1043e830	41	FUN_1043e830	Global	0	FUN_1043e60d	MFC42.DLL!operator_delete		
+1043e859	28	FUN_1043e859	Global	0	thunk_FUN_1043e60d	MFC42.DLL!operator_delete		
+1043e875	24	FUN_1043e875	Global	1				FUN_104386e7
+1043e8f9	7	FUN_1043e8f9	Global	7				FUN_1043eef1,FUN_10441efc,Unwind@10461b34,FUN_10441eb7,Unwind@10461b20,Unwind@10461af8,Unwind@10461b0c
+1043e906	86	FUN_1043e906	Global	1				FUN_1043ed08
+1043e95c	105	FUN_1043e95c	Global	0				
+1043e9c5	150	FUN_1043e9c5	Global	0				
+1043ea5b	120	FUN_1043ea5b	Global	0				
+1043ead3	126	FUN_1043ead3	Global	0				
+1043eb51	106	FUN_1043eb51	Global	0				
+1043ebbb	159	FUN_1043ebbb	Global	0				
+1043ec5a	44	FUN_1043ec5a	Global	2				FUN_1043f9c8,FUN_1043f8cb
+1043ecc6	35	FUN_1043ecc6	Global	22				FUN_104400f0,FUN_1043f137,FUN_1043f679,FUN_1043fbf0,FUN_104412ab,FUN_1043f5a8,FUN_1043fcb8,FUN_1043f8cb
+1043ecf8	16	FUN_1043ecf8	Global	22				FUN_104400f0,FUN_1043f137,FUN_1043f679,FUN_1043fbf0,FUN_104412ab,FUN_1043f5a8,FUN_1043fcb8,FUN_1043f8cb
+1043ed08	489	FUN_1043ed08	Global	3	FUN_1043e906			FUN_10441ff8,FUN_10440b18,FUN_10441194
+1043eef1	28	FUN_1043eef1	Global	0	FUN_1043e8f9	MFC42.DLL!operator_delete		
+1043ef0d	112	FUN_1043ef0d	Global	15				FUN_1044075c,FUN_10440447,FUN_10440a06,FUN_104406ea,FUN_104403a2,FUN_1044030a,FUN_10440648,FUN_10440599
+1043ef7d	193	FUN_1043ef7d	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043f03e	249	FUN_1043f03e	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043f137	215	FUN_1043f137	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043f20e	215	FUN_1043f20e	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043f2e5	215	FUN_1043f2e5	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043f3bc	243	FUN_1043f3bc	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043f4af	249	FUN_1043f4af	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043f5a8	209	FUN_1043f5a8	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043f679	130	FUN_1043f679	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043f6fb	249	FUN_1043f6fb	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043f7f4	215	FUN_1043f7f4	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043f8cb	253	FUN_1043f8cb	Global	0	FUN_1043ec5a,FUN_1043ecf8,FUN_1043ecc6			
+1043f9c8	186	FUN_1043f9c8	Global	0	FUN_1043ec5a			
+1043fa82	158	FUN_1043fa82	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043fb20	208	FUN_1043fb20	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043fbf0	200	FUN_1043fbf0	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043fcb8	176	FUN_1043fcb8	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043fd68	223	FUN_1043fd68	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043fe47	231	FUN_1043fe47	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1043ff2e	273	FUN_1043ff2e	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+1044003f	177	FUN_1044003f	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+104400f0	236	FUN_104400f0	Global	0	FUN_1043ecf8,FUN_1043ecc6			
+104401dc	140	FUN_104401dc	Global	0	FUN_1043ef0d			
+10440268	162	FUN_10440268	Global	0	FUN_1043ef0d			
+1044030a	152	FUN_1044030a	Global	0	FUN_1043ef0d			
+104403a2	165	FUN_104403a2	Global	0	FUN_1043ef0d			
+10440447	162	FUN_10440447	Global	0	FUN_1043ef0d			
+104404e9	176	FUN_104404e9	Global	0	FUN_1043ef0d			
+10440599	175	FUN_10440599	Global	0	FUN_1043ef0d			
+10440648	162	FUN_10440648	Global	0	FUN_1043ef0d			
+104406ea	114	FUN_104406ea	Global	0	FUN_1043ef0d			
+1044075c	178	FUN_1044075c	Global	0	FUN_1043ef0d			
+1044080e	159	FUN_1044080e	Global	0	FUN_1043ef0d			
+104408ad	135	FUN_104408ad	Global	0	FUN_1043ef0d			
+10440998	110	FUN_10440998	Global	0	FUN_1043ef0d			
+10440a06	137	FUN_10440a06	Global	0	FUN_1043ef0d			
+10440a8f	137	FUN_10440a8f	Global	0	FUN_1043ef0d			
+10440b18	209	FUN_10440b18	Global	1	FUN_1043ed08	MSVCRT.DLL!_EH_prolog,MFC42.DLL!operator_new		FUN_10441ff8
+10440be9	499	FUN_10440be9	Global	2				FUN_10440ddc,FUN_10441eb7
+10440ddc	721	FUN_10440ddc	Global	0	FUN_10440be9			
+10441194	279	FUN_10441194	Global	1	FUN_1043ed08	MSVCRT.DLL!_EH_prolog,MFC42.DLL!operator_new		FUN_10441ff8
+104412ab	813	FUN_104412ab	Global	2	FUN_10448363,FUN_1043ecf8,FUN_104477da,FUN_1043ecc6,FUN_1044830a			FUN_10441efc,FUN_104415d8
+104415d8	679	FUN_104415d8	Global	1	FUN_10447843,FUN_104481d8,FUN_1044818a,FUN_104412ab			FUN_104418bc
+1044189b	28	FUN_1044189b	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+104418b7	5	thunk_FUN_1043e8f9	Global	1				FUN_1044189b
+104418bc	134	FUN_104418bc	Global	0	FUN_104415d8			
+1044195e	28	FUN_1044195e	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+1044197a	5	thunk_FUN_1043e8f9	Global	1				FUN_1044195e
+10441a0f	28	FUN_10441a0f	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441a2b	5	thunk_FUN_1043e8f9	Global	1				FUN_10441a0f
+10441a4c	28	FUN_10441a4c	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441a68	5	thunk_FUN_1043e8f9	Global	1				FUN_10441a4c
+10441a89	28	FUN_10441a89	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441aa5	5	thunk_FUN_1043e8f9	Global	1				FUN_10441a89
+10441ac6	28	FUN_10441ac6	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441ae2	5	thunk_FUN_1043e8f9	Global	1				FUN_10441ac6
+10441b03	28	FUN_10441b03	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441b1f	5	thunk_FUN_1043e8f9	Global	1				FUN_10441b03
+10441b40	28	FUN_10441b40	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441b5c	5	thunk_FUN_1043e8f9	Global	1				FUN_10441b40
+10441b7d	28	FUN_10441b7d	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441b99	5	thunk_FUN_1043e8f9	Global	1				FUN_10441b7d
+10441bba	28	FUN_10441bba	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441bd6	5	thunk_FUN_1043e8f9	Global	1				FUN_10441bba
+10441bf7	28	FUN_10441bf7	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441c13	5	thunk_FUN_1043e8f9	Global	1				FUN_10441bf7
+10441c34	28	FUN_10441c34	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441c50	5	thunk_FUN_1043e8f9	Global	1				FUN_10441c34
+10441c71	28	FUN_10441c71	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441c8d	5	thunk_FUN_1043e8f9	Global	1				FUN_10441c71
+10441cae	28	FUN_10441cae	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441cca	5	thunk_FUN_1043e8f9	Global	1				FUN_10441cae
+10441ceb	28	FUN_10441ceb	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441d07	5	thunk_FUN_1043e8f9	Global	1				FUN_10441ceb
+10441d28	28	FUN_10441d28	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441d44	5	thunk_FUN_1043e8f9	Global	1				FUN_10441d28
+10441d65	28	FUN_10441d65	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441d81	5	thunk_FUN_1043e8f9	Global	1				FUN_10441d65
+10441da2	28	FUN_10441da2	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441dbe	5	thunk_FUN_1043e8f9	Global	1				FUN_10441da2
+10441ddf	28	FUN_10441ddf	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441dfb	5	thunk_FUN_1043e8f9	Global	1				FUN_10441ddf
+10441e1c	28	FUN_10441e1c	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441e38	5	thunk_FUN_1043e8f9	Global	1				FUN_10441e1c
+10441e59	28	FUN_10441e59	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441e75	5	thunk_FUN_1043e8f9	Global	1				FUN_10441e59
+10441e96	28	FUN_10441e96	Global	0	thunk_FUN_1043e8f9	MFC42.DLL!operator_delete		
+10441eb2	5	thunk_FUN_1043e8f9	Global	1				FUN_10441e96
+10441eb7	69	FUN_10441eb7	Global	0	FUN_10440be9,FUN_1043e8f9	MFC42.DLL!operator_delete,MSVCRT.DLL!_EH_prolog		
+10441efc	84	FUN_10441efc	Global	1	FUN_104412ab,FUN_1043e8f9	MFC42.DLL!operator_delete,MSVCRT.DLL!_EH_prolog		FUN_10442624
+10441ff8	1508	FUN_10441ff8	Global	1	FUN_1043ed08,FUN_10440b18,FUN_10441194	MSVCRT.DLL!_EH_prolog,MFC42.DLL!operator_new		FUN_1043be51
+10442624	28	FUN_10442624	Global	0	FUN_10441efc	MFC42.DLL!operator_delete		
+10442640	28	FUN_10442640	Global	0	thunk_FUN_10441eb7	MFC42.DLL!operator_delete		
+1044265c	5	thunk_FUN_10441eb7	Global	1				FUN_10442640
+10442661	28	FUN_10442661	Global	0	thunk_FUN_10441eb7	MFC42.DLL!operator_delete		
+1044267d	5	thunk_FUN_10441eb7	Global	1				FUN_10442661
+10442682	28	FUN_10442682	Global	0	thunk_FUN_10441efc	MFC42.DLL!operator_delete		
+1044269e	5	thunk_FUN_10441efc	Global	1				FUN_10442682
+104426a3	28	FUN_104426a3	Global	0	thunk_FUN_10441efc	MFC42.DLL!operator_delete		
+104426bf	5	thunk_FUN_10441efc	Global	1				FUN_104426a3
+104426c4	28	FUN_104426c4	Global	0	thunk_FUN_10441efc	MFC42.DLL!operator_delete		
+104426e0	5	thunk_FUN_10441efc	Global	1				FUN_104426c4
+104426e5	28	FUN_104426e5	Global	0	thunk_FUN_10441efc	MFC42.DLL!operator_delete		
+10442701	5	thunk_FUN_10441efc	Global	1				FUN_104426e5
+10442706	28	FUN_10442706	Global	0	thunk_FUN_10441efc	MFC42.DLL!operator_delete		
+10442722	5	thunk_FUN_10441efc	Global	1				FUN_10442706
+10442727	192	FUN_10442727	Global	1	FUN_1044460c,FUN_10449424,FUN_10448a6e,FUN_10448565			FUN_1043c68e
+104427e7	5	thunk_FUN_104494fa	Global	1				FUN_1043c68e
+104427f1	93	FUN_104427f1	Global	0				
+1044284e	383	FUN_1044284e	Global	1				FUN_104429cd
+104429cd	154	FUN_104429cd	Global	1	FUN_1044284e			FUN_10442b78
+10442a67	56	FUN_10442a67	Global	0				
+10442a9f	56	FUN_10442a9f	Global	0				
+10442ad7	161	FUN_10442ad7	Global	1	FUN_104494d8			FUN_1043c68e
+10442b78	99	FUN_10442b78	Global	1	FUN_104494d8,FUN_104429cd			FUN_1043c68e
+10442bdb	164	FUN_10442bdb	Global	2				FUN_10442e79,FUN_10442da2
+10442c7f	132	FUN_10442c7f	Global	1				FUN_1043c68e
+10442d03	159	FUN_10442d03	Global	0				
+10442da2	90	FUN_10442da2	Global	0	FUN_10442bdb			
+10442e79	193	FUN_10442e79	Global	1	FUN_10442bdb,FUN_10449b7a			FUN_1043c68e
+10442f3a	142	FUN_10442f3a	Global	0				
+10442fc8	763	FUN_10442fc8	Global	0				
+104432c3	745	FUN_104432c3	Global	0				
+104435ac	572	FUN_104435ac	Global	0				
+104437e8	378	FUN_104437e8	Global	0				
+10443962	343	FUN_10443962	Global	0				
+10443ab9	660	FUN_10443ab9	Global	0	FUN_10449531			
+10443d4d	586	FUN_10443d4d	Global	0	FUN_10449515			
+10443f97	223	FUN_10443f97	Global	0				
+10444076	156	FUN_10444076	Global	0				
+10444112	215	FUN_10444112	Global	1				FUN_10444475
+104441e9	152	FUN_104441e9	Global	0				
+10444475	126	FUN_10444475	Global	0	FUN_10444112			
+104445e2	42	FUN_104445e2	Global	1				FUN_1044460c
+1044460c	125	FUN_1044460c	Global	1	FUN_104445e2			FUN_10442727
+10444689	26	FUN_10444689	Global	0	FUN_104494fa	MSVCRT.DLL!exit		
+1044479a	76	FUN_1044479a	Global	1				FUN_1043c68e
+104447e6	135	FUN_104447e6	Global	2			0123456789ABCDEF1.0.5 | 0123456789ABCDEF1.0.5	FUN_104448d3,FUN_104448f8
+1044486d	11	FUN_1044486d	Global	1		MSVCRT.DLL!longjmp		FUN_1044489b
+10444879	26	FUN_10444879	Global	1				FUN_1044491d
+1044489b	35	FUN_1044489b	Global	16	FUN_1044486d			FUN_1044491d,FUN_1044b1b2,FUN_1044a21c,FUN_1044afc3,FUN_10444ae0,FUN_1044af79,FUN_1044b395,FUN_1044b0c3
+104448be	21	FUN_104448be	Global	10				FUN_1044b0c3,FUN_1044a8b8,FUN_104448f8,FUN_1044744c,FUN_1044b1b2,FUN_1044ae50,FUN_10445458,FUN_1044afc3
+104448d3	37	FUN_104448d3	Global	3	FUN_104447e6,FUN_1044489b			FUN_1044b34b,FUN_1044a379,FUN_1044abcd
+104448f8	37	FUN_104448f8	Global	1	FUN_104447e6,FUN_104448be			FUN_1044abcd
+1044491d	259	FUN_1044491d	Global	1	FUN_1044a1cd,FUN_1044a20f,FUN_10444879,FUN_1044a252,FUN_1044a21c,FUN_1044489b,FUN_10449d0c,FUN_104475e8	MSVCRT.DLL!setjmp3	Incompatible libpng version in application and library | 1.1.3 | Unknown zlib error | zlib memory error | zlib version error	FUN_1043d02c
+10444a20	192	FUN_10444a20	Global	0	FUN_1044489b,FUN_1044a21c,FUN_10449d0c,FUN_104475e8		1.1.3 | Unknown zlib error | zlib memory | zlib version	
+10444ae0	372	FUN_10444ae0	Global	1	FUN_104475c0,FUN_10447712,FUN_1044765a,FUN_1044afc3,FUN_1044b34b,FUN_1044a2c1,FUN_1044ae50,FUN_1044b1b2,FUN_1044b0c3,FUN_1044ac59,FUN_1044489b,FUN_1044a2f7,FUN_1044af79		Not a PNG file | PNG file corrupted by ASCII conversion | Missing IHDR before IDAT | Missing PLTE before IDAT	FUN_1043d02c
+10444c54	32	FUN_10444c54	Global	1	FUN_1044aa31,FUN_10445e58			FUN_1043d02c
+10444c86	936	FUN_10444c86	Global	2	FUN_1044b395,FUN_104475c0,FUN_10447712,FUN_10449d23,FUN_1044a5ef,FUN_1044a2c1,FUN_10447295,FUN_1044a3db,FUN_1044489b,FUN_1044a26b,FUN_1044abcd,FUN_1044a2f7,FUN_1044aa31,FUN_1044a8b8		Invalid attempt to read row data | Not enough image data | Decompression error | Decompression error | Extra compressed data	FUN_1044502e,FUN_104450a8
+1044502e	122	FUN_1044502e	Global	0	FUN_10444c86			
+104450a8	77	FUN_104450a8	Global	1	FUN_104455fe,FUN_10444c86			FUN_1043d02c
+104450f5	256	FUN_104450f5	Global	0	FUN_104475c0,FUN_10447712,FUN_1044afc3,FUN_1044b34b,FUN_1044a2c1,FUN_1044ae50,FUN_1044b1b2,FUN_1044b0c3,FUN_1044ac59,FUN_1044489b,FUN_1044abcd,FUN_1044a2f7,FUN_1044af79		Too many IDAT's found	
+104451f5	291	FUN_104451f5	Global	1	FUN_10447777,FUN_1044a252,thunk_FUN_1044a252,FUN_10449be9			FUN_10445327
+10445327	129	FUN_10445327	Global	1	FUN_104451f5,FUN_1044a20f			FUN_1043d02c
+104453a8	26	FUN_104453a8	Global	1				FUN_1043d02c
+104453c2	22	FUN_104453c2	Global	1				FUN_1043d02c
+104453d8	22	FUN_104453d8	Global	1				FUN_1043d02c
+10445404	41	FUN_10445404	Global	1				FUN_1043d02c
+1044542d	43	FUN_1044542d	Global	1				FUN_1043d02c
+10445458	209	FUN_10445458	Global	1	FUN_104448be		Width too large for libpng to process image data.	FUN_1043d02c
+10445529	51	FUN_10445529	Global	1				FUN_1043d02c
+1044555c	103	FUN_1044555c	Global	1				FUN_1043d02c
+104455c3	9	FUN_104455c3	Global	1				FUN_1043d02c
+104455cc	25	FUN_104455cc	Global	1				FUN_1043d02c
+104455fe	25	FUN_104455fe	Global	1				FUN_104450a8
+10445617	77	FUN_10445617	Global	1				FUN_1043d02c
+10445664	191	FUN_10445664	Global	1				FUN_10447295
+104457a2	9	FUN_104457a2	Global	1				FUN_1043d02c
+104457ab	1619	FUN_104457ab	Global	0	FUN_1044a252,FUN_1044a21c			
+10445dfe	54	FUN_10445dfe	Global	1				FUN_1043d02c
+10445e46	9	FUN_10445e46	Global	1				FUN_1043d02c
+10445e4f	9	FUN_10445e4f	Global	1				FUN_1043d02c
+10445e58	235	FUN_10445e58	Global	1				FUN_10444c54
+10445f43	271	FUN_10445f43	Global	1				FUN_10447295
+10446052	379	FUN_10446052	Global	1				FUN_10447295
+104461cd	68	FUN_104461cd	Global	1				FUN_10447295
+10446211	567	FUN_10446211	Global	1				FUN_10447295
+104464a8	882	FUN_104464a8	Global	1				FUN_10447295
+1044681a	519	FUN_1044681a	Global	1				FUN_10447295
+10446a21	851	FUN_10446a21	Global	1				FUN_10447295
+10446d74	269	FUN_10446d74	Global	1				FUN_10447295
+10446e81	767	FUN_10446e81	Global	1	FUN_1044a21c	MSVCRT.DLL!ftol,MSVCRT.DLL!_CIpow		FUN_10447180
+10447180	277	FUN_10447180	Global	1	FUN_10446e81			FUN_1044aa31
+10447295	412	FUN_10447295	Global	1	FUN_10445f43,FUN_1044489b,FUN_104464a8,FUN_1044681a,FUN_10446052,FUN_10445664,FUN_10446211,FUN_10446a21,FUN_104461cd,FUN_10446d74		NULL row buffer | png_do_dither returned rowbytes=0	FUN_10444c86
+10447431	27	FUN_10447431	Global	2				FUN_1044752d,FUN_1044afc3
+1044744c	162	FUN_1044744c	Global	1	FUN_104448be		Width too large to process image data; rowbytes will overflow.	FUN_1044ac59
+104474ee	36	FUN_104474ee	Global	1				FUN_1044ae50
+10447512	27	FUN_10447512	Global	2				FUN_1043d02c,FUN_1044752d
+1044752d	57	FUN_1044752d	Global	1	FUN_10447431,FUN_10447512			FUN_1044b0c3
+10447566	71	FUN_10447566	Global	1				FUN_1044b1b2
+104475c0	40	FUN_104475c0	Global	6	FUN_1044489b			FUN_1044b395,FUN_104450f5,FUN_1044a2f7,FUN_10444ae0,FUN_1044a31b,FUN_10444c86
+104475e8	63	FUN_104475e8	Global	3	FUN_104448be		It's an error to set both read_data_fn and write_data_fn in the  | same structure.  Resetting write_data_fn to NULL.	FUN_10444a20,FUN_1043d02c,FUN_1044491d
+1044765a	72	FUN_1044765a	Global	2				FUN_1043d02c,FUN_10444ae0
+104476ba	83	FUN_104476ba	Global	1	FUN_1044a21c			FUN_1044ae50
+1044770d	5	thunk_FUN_1044a252	Global	1				FUN_104451f5
+10447712	24	FUN_10447712	Global	4	FUN_1044b5c0			FUN_1044b395,FUN_104450f5,FUN_10444ae0,FUN_10444c86
+1044772a	63	FUN_1044772a	Global	1	FUN_1044b5c0			FUN_1044a2f7
+10447769	14	FUN_10447769	Global	2				FUN_10447777,FUN_10447791
+10447777	11	FUN_10447777	Global	2	FUN_10447769			FUN_104451f5,FUN_104477b3
+10447791	34	FUN_10447791	Global	1	FUN_10447769,FUN_1044a1cd			FUN_1043d02c
+104477b3	39	FUN_104477b3	Global	0	FUN_10447777,FUN_1044a20f			
+104477da	105	FUN_104477da	Global	1	FUN_104482d8,FUN_10447c0a			FUN_104412ab
+10447843	38	FUN_10447843	Global	1	FUN_104480a1			FUN_104415d8
+10447869	50	FUN_10447869	Global	2				FUN_104479ec,FUN_10447c0a
+1044789b	53	FUN_1044789b	Global	1		MSVCRT.DLL!ftol		FUN_104479ec
+104478d0	48	FUN_104478d0	Global	2				FUN_10447ba9,FUN_104479ec
+10447900	77	FUN_10447900	Global	2				FUN_104479ec,FUN_104480a1
+1044794d	159	FUN_1044794d	Global	1				FUN_10447c0a
+104479ec	139	FUN_104479ec	Global	1	FUN_1044789b,FUN_10447869,FUN_10447900,FUN_104478d0			FUN_10447c0a
+10447a77	306	FUN_10447a77	Global	1				FUN_10447c0a
+10447ba9	97	FUN_10447ba9	Global	1	FUN_104478d0			FUN_10447c0a
+10447c0a	1175	FUN_10447c0a	Global	2	FUN_10447869,FUN_10447ba9,FUN_104479ec,FUN_10447a77,FUN_1044794d	MSVCRT.DLL!ftol		FUN_104477da,FUN_104482d8
+104480a1	233	FUN_104480a1	Global	3	FUN_10447900			FUN_10447843,FUN_1044818a,FUN_104481d8
+1044818a	78	FUN_1044818a	Global	1	FUN_104480a1			FUN_104415d8
+104481d8	256	FUN_104481d8	Global	1	FUN_104480a1			FUN_104415d8
+104482d8	50	FUN_104482d8	Global	3	FUN_10447c0a			FUN_1044830a,FUN_104477da,FUN_10448363
+1044830a	89	FUN_1044830a	Global	1	FUN_104482d8			FUN_104412ab
+10448363	342	FUN_10448363	Global	1	FUN_104482d8			FUN_104412ab
+104484b9	16	FUN_104484b9	Global	3				FUN_10448596,FUN_10448751,FUN_104495be
+104484c9	24	FUN_104484c9	Global	3				FUN_1044c88a,FUN_1044e774,FUN_1044e2b4
+104484e1	71	FUN_104484e1	Global	4				FUN_1044ea4f,FUN_1044e560,FUN_1044f35c,FUN_1044e42a
+10448528	34	FUN_10448528	Global	0				
+1044854a	27	FUN_1044854a	Global	7				FUN_1044bd72,FUN_10450efa,FUN_104491f0,FUN_104505e7,FUN_10450d10,FUN_104490d2,FUN_104510b4
+10448565	49	FUN_10448565	Global	1				FUN_10442727
+10448596	443	FUN_10448596	Global	0	FUN_104484b9			
+10448751	374	FUN_10448751	Global	1	FUN_104484b9			FUN_10448959
+104488c7	146	FUN_104488c7	Global	1				FUN_10448959
+10448959	58	FUN_10448959	Global	0	FUN_10448751,FUN_104488c7			
+10448a26	55	FUN_10448a26	Global	0				
+10448a6e	65	FUN_10448a6e	Global	1				FUN_10442727
+10448aaf	21	FUN_10448aaf	Global	2				FUN_10448bc0,FUN_10448ac4
+10448ac4	252	FUN_10448ac4	Global	4	FUN_1044b6c9,FUN_10448aaf			FUN_10448ddf,FUN_10448d7e,FUN_10448c4e,FUN_10448ce0
+10448bc0	142	FUN_10448bc0	Global	2	FUN_10448aaf,FUN_1044b6df			FUN_10448c4e,FUN_10448ce0
+10448c4e	146	FUN_10448c4e	Global	1	FUN_10448bc0,FUN_10448ac4			FUN_10448e40
+10448ce0	158	FUN_10448ce0	Global	1	FUN_10448bc0,FUN_10448ac4			FUN_10448e40
+10448d7e	97	FUN_10448d7e	Global	0	FUN_10448ac4			
+10448ddf	97	FUN_10448ddf	Global	0	FUN_10448ac4			
+10448e40	383	FUN_10448e40	Global	0	FUN_1044b6fa,FUN_10448c4e,FUN_1044b6f5,FUN_10448ce0			
+10448fbf	136	FUN_10448fbf	Global	1				FUN_104490d2
+10449047	139	FUN_10449047	Global	1				FUN_104491f0
+104490d2	286	FUN_104490d2	Global	0	FUN_10448fbf,FUN_1044854a			
+104491f0	291	FUN_104491f0	Global	0	FUN_10449047,FUN_1044854a			
+10449313	225	FUN_10449313	Global	1	FUN_1044b6d4,FUN_1044b6ea			FUN_104493f4
+104493f4	48	FUN_104493f4	Global	0	FUN_1044b6d4,FUN_1044b711,FUN_10449313			
+10449424	180	FUN_10449424	Global	1	FUN_1044b711,FUN_1044b6c9,FUN_1044b70e			FUN_10442727
+104494d8	34	FUN_104494d8	Global	2				FUN_10442ad7,FUN_10442b78
+104494fa	27	FUN_104494fa	Global	1				FUN_10444689
+10449515	28	FUN_10449515	Global	1				FUN_10443d4d
+10449531	28	FUN_10449531	Global	1				FUN_10443ab9
+1044954d	113	FUN_1044954d	Global	2				FUN_1044981c,FUN_104495be
+104495be	495	FUN_104495be	Global	1	FUN_104484b9,FUN_1044954d			FUN_1044981c
+104497ad	111	FUN_104497ad	Global	1				FUN_1044981c
+1044981c	429	FUN_1044981c	Global	1	FUN_1044d24f,FUN_1044e019,FUN_1044de01,FUN_1044bc50,FUN_104497ad,FUN_1044e774,FUN_1044f76f,FUN_1044e2b4,FUN_10451191,FUN_104506f8,FUN_104495be,FUN_1044c88a,FUN_1044f176,FUN_1044954d			FUN_10449b7a
+10449b17	99	FUN_10449b17	Global	0				
+10449b7a	48	FUN_10449b7a	Global	1	FUN_1044981c			FUN_10442e79
+10449baa	63	FUN_10449baa	Global	3	FUN_1045121a			FUN_1044b395,FUN_10449c27,FUN_1044a0fd
+10449be9	62	FUN_10449be9	Global	2	FUN_10451c29			FUN_10449c27,FUN_104451f5
+10449c27	229	FUN_10449c27	Global	1	FUN_10451285,FUN_10451dcb,FUN_10449be9,FUN_10449baa			FUN_10449d0c
+10449d0c	23	FUN_10449d0c	Global	2	FUN_10449c27			FUN_10444a20,FUN_1044491d
+10449d23	809	FUN_10449d23	Global	2	FUN_1045121a,FUN_10451310		unknown compression method | invalid window size | incorrect header check | incorrect data check | need dictionary	FUN_1044b395,FUN_10444c86
+1044a084	121	FUN_1044a084	Global	0	FUN_10451c5d,FUN_10451c9b			
+1044a0fd	174	FUN_1044a0fd	Global	0	FUN_10449baa			
+1044a1cd	66	FUN_1044a1cd	Global	2		MSVCRT.DLL!malloc		FUN_10447791,FUN_1044491d
+1044a20f	13	FUN_1044a20f	Global	3		MSVCRT.DLL!free		FUN_10445327,FUN_1044491d,FUN_104477b3
+1044a21c	54	FUN_1044a21c	Global	7	FUN_1044489b	MSVCRT.DLL!malloc	Out of Memory	FUN_1044b1b2,FUN_10444a20,FUN_1044491d,FUN_104476ba,FUN_1044aa31,FUN_10446e81,FUN_104457ab
+1044a252	25	FUN_1044a252	Global	3		MSVCRT.DLL!free		FUN_1044491d,FUN_104451f5,FUN_104457ab
+1044a26b	35	FUN_1044a26b	Global	1				FUN_10444c86
+1044a28e	51	FUN_1044a28e	Global	2				FUN_1044b395,FUN_1044aa31
+1044a2c1	35	FUN_1044a2c1	Global	7				FUN_1044b395,FUN_104450f5,FUN_1044ac59,FUN_1044afc3,FUN_10444ae0,FUN_1044a31b,FUN_10444c86
+1044a2e4	19	FUN_1044a2e4	Global	1				FUN_1044b1b2
+1044a2f7	36	FUN_1044a2f7	Global	10	FUN_1044772a,FUN_104475c0			FUN_1044ae50,FUN_1044b1b2,FUN_1044b395,FUN_1044b0c3,FUN_104450f5,FUN_1044ac59,FUN_1044abcd,FUN_1044afc3
+1044a31b	94	FUN_1044a31b	Global	1	FUN_104475c0,FUN_1044a2c1			FUN_1044abcd
+1044a379	98	FUN_1044a379	Global	1	FUN_104448d3		invalid chunk type	FUN_1044b34b
+1044a3db	532	FUN_1044a3db	Global	1				FUN_10444c86
+1044a5ef	713	FUN_1044a5ef	Global	1				FUN_10444c86
+1044a8b8	377	FUN_1044a8b8	Global	1	FUN_104448be		Ignoring bad adaptive filter type	FUN_10444c86
+1044aa31	412	FUN_1044aa31	Global	2	FUN_1044a28e,FUN_1044a21c,FUN_10447180			FUN_10444c54,FUN_10444c86
+1044abcd	140	FUN_1044abcd	Global	10	FUN_104448f8,FUN_1044a2f7,FUN_1044a31b,FUN_104448d3		CRC error | CRC error	FUN_1044ae50,FUN_1044b1b2,FUN_1044b395,FUN_1044b0c3,FUN_104450f5,FUN_1044ac59,FUN_1044af79,FUN_1044afc3
+1044ac59	503	FUN_1044ac59	Global	2	FUN_1044744c,FUN_1044489b,FUN_1044abcd,FUN_1044a2f7,FUN_1044a2c1		Out of place IHDR | Invalid IHDR chunk | Invalid image size in IHDR | Invalid bit depth in IHDR | Invalid color type in IHDR | Invalid color type/bit depth combination in IHDR | Unknown interlace method in IHDR | Unknown compression method in IHDR	FUN_104450f5,FUN_10444ae0
+1044ae50	297	FUN_1044ae50	Global	2	FUN_1044489b,FUN_104476ba,FUN_1044abcd,FUN_1044a2f7,FUN_104474ee,FUN_104448be		Missing IHDR before PLTE | Invalid PLTE after IDAT | Duplicate PLTE chunk | Invalid palette chunk | Truncating incorrect tRNS chunk length	FUN_104450f5,FUN_10444ae0
+1044af79	74	FUN_1044af79	Global	2	FUN_1044489b,FUN_1044abcd,FUN_104448be		No image in file | Incorrect IEND chunk length	FUN_104450f5,FUN_10444ae0
+1044afc3	256	FUN_1044afc3	Global	2	FUN_10447431,FUN_1044489b,FUN_1044abcd,FUN_1044a2f7,FUN_1044a2c1,FUN_104448be		Missing IHDR before gAMA | Incorrect gAMA chunk length | Invalid gAMA after IDAT | Out of place gAMA chunk | Ignoring incorrect gAMA value when sRGB is also present	FUN_104450f5,FUN_10444ae0
+1044b0c3	239	FUN_1044b0c3	Global	2	FUN_1044752d,FUN_1044489b,FUN_1044abcd,FUN_1044a2f7,FUN_104448be		Missing IHDR before sRGB | Incorrect sRGB chunk length | Invalid sRGB after IDAT | Out of place sRGB chunk | Duplicate sRGB chunk | Ignoring incorrect gAMA value when sRGB is also present	FUN_104450f5,FUN_10444ae0
+1044b1b2	409	FUN_1044b1b2	Global	2	FUN_10447566,FUN_1044489b,FUN_1044abcd,FUN_1044a2f7,FUN_1044a2e4,FUN_1044a21c,FUN_104448be		Missing IHDR before tRNS | Missing PLTE before tRNS | Zero length tRNS chunk | Invalid tRNS after IDAT | Duplicate tRNS chunk | Incorrect tRNS chunk length | Incorrect tRNS chunk length | tRNS chunk not allowed with alpha channel	FUN_104450f5,FUN_10444ae0
+1044b34b	74	FUN_1044b34b	Global	2	FUN_1044a379,FUN_1044abcd,FUN_104448d3		unknown critical chunk	FUN_104450f5,FUN_10444ae0
+1044b395	549	FUN_1044b395	Global	1	FUN_1044a28e,FUN_104475c0,FUN_10447712,FUN_1044489b,FUN_10449d23,FUN_1044abcd,FUN_1044a2f7,FUN_1044a2c1,FUN_10449baa		Not enough image data | Decompression Error | Decompression Error | Extra compressed data | Extra compressed data | Extra compression data	FUN_10444c86
+1044b5c0	265	FUN_1044b5c0	Global	2				FUN_1044772a,FUN_10447712
+1044b6c9	11	FUN_1044b6c9	Global	2		MSVCRT.DLL!malloc		FUN_10449424,FUN_10448ac4
+1044b6d4	11	FUN_1044b6d4	Global	2		MSVCRT.DLL!free		FUN_10449313,FUN_104493f4
+1044b6df	11	FUN_1044b6df	Global	1		MSVCRT.DLL!malloc		FUN_10448bc0
+1044b6ea	11	FUN_1044b6ea	Global	1		MSVCRT.DLL!free		FUN_10449313
+1044b6f5	5	FUN_1044b6f5	Global	1				FUN_10448e40
+1044b6fa	20	FUN_1044b6fa	Global	1				FUN_10448e40
+1044b70e	3	FUN_1044b70e	Global	1				FUN_10449424
+1044b711	1	FUN_1044b711	Global	2				FUN_10449424,FUN_104493f4
+1044b712	168	FUN_1044b712	Global	1				FUN_1044bc50
+1044b7ba	305	FUN_1044b7ba	Global	0				
+1044b8eb	212	FUN_1044b8eb	Global	1				FUN_1044babd
+1044b9bf	150	FUN_1044b9bf	Global	1				FUN_1044babd
+1044ba55	104	FUN_1044ba55	Global	0				
+1044babd	264	FUN_1044babd	Global	0	FUN_1044b8eb,FUN_1044b9bf			
+1044bc50	211	FUN_1044bc50	Global	1	FUN_1044b712			FUN_1044981c
+1044bd23	63	FUN_1044bd23	Global	2				FUN_1044bf4f,FUN_1044bd72
+1044bd72	474	FUN_1044bd72	Global	0	FUN_1044bd23,FUN_1044854a			
+1044bf4f	415	FUN_1044bf4f	Global	0	FUN_1044bd23			
+1044c0ee	358	FUN_1044c0ee	Global	0				
+1044c254	227	FUN_1044c254	Global	1				FUN_1044c84f
+1044c84f	59	FUN_1044c84f	Global	0	FUN_1044c254			
+1044c88a	248	FUN_1044c88a	Global	1	FUN_104484c9			FUN_1044981c
+1044c982	419	FUN_1044c982	Global	2				FUN_1044d120,FUN_1044db5e
+1044cb25	234	FUN_1044cb25	Global	6				FUN_1044d7f0,FUN_1044cd53,FUN_1044d2e4,FUN_1044cc0f,FUN_1044d4e1,FUN_1044d70e
+1044cc0f	230	FUN_1044cc0f	Global	4	FUN_1044cb25			FUN_1044d7f0,FUN_1044cd53,FUN_1044d2e4,FUN_1044d4e1
+1044ccf5	94	FUN_1044ccf5	Global	1				FUN_1044cd53
+1044cd53	973	FUN_1044cd53	Global	0	FUN_1044cb25,FUN_1044cc0f,FUN_1044ccf5			
+1044d120	303	FUN_1044d120	Global	0	FUN_1044c982			
+1044d24f	58	FUN_1044d24f	Global	1				FUN_1044981c
+1044d289	91	FUN_1044d289	Global	4				FUN_1044d7f0,FUN_1044d2e4,FUN_1044d4e1,FUN_1044d70e
+1044d2e4	509	FUN_1044d2e4	Global	0	FUN_1044d289,FUN_1044cb25,FUN_1044cc0f			
+1044d4e1	557	FUN_1044d4e1	Global	0	FUN_1044d289,FUN_1044cb25,FUN_1044cc0f			
+1044d70e	226	FUN_1044d70e	Global	0	FUN_1044d289,FUN_1044cb25			
+1044d7f0	878	FUN_1044d7f0	Global	0	FUN_1044d289,FUN_1044cb25,FUN_1044cc0f			
+1044db5e	675	FUN_1044db5e	Global	0	FUN_1044c982			
+1044de01	97	FUN_1044de01	Global	1				FUN_1044981c
+1044de62	439	FUN_1044de62	Global	0				
+1044e019	116	FUN_1044e019	Global	1				FUN_1044981c
+1044e08d	101	FUN_1044e08d	Global	0				
+1044e0f2	144	FUN_1044e0f2	Global	0				
+1044e182	140	FUN_1044e182	Global	0				
+1044e2b4	131	FUN_1044e2b4	Global	1	FUN_104484c9			FUN_1044981c
+1044e351	198	FUN_1044e351	Global	0				
+1044e42a	223	FUN_1044e42a	Global	0	FUN_104484e1			
+1044e509	87	FUN_1044e509	Global	0				
+1044e560	106	FUN_1044e560	Global	0	FUN_104484e1			
+1044e5ca	163	FUN_1044e5ca	Global	0				
+1044e66d	263	FUN_1044e66d	Global	0				
+1044e774	449	FUN_1044e774	Global	1	FUN_104484c9			FUN_1044981c
+1044e935	176	FUN_1044e935	Global	1				FUN_1044f176
+1044e9e5	106	FUN_1044e9e5	Global	0				
+1044ea4f	35	FUN_1044ea4f	Global	0	FUN_104484e1			
+1044ea72	306	FUN_1044ea72	Global	0				
+1044eba5	317	FUN_1044eba5	Global	1				FUN_1044ef58
+1044ef58	542	FUN_1044ef58	Global	0	FUN_1044eba5			
+1044f176	289	FUN_1044f176	Global	1	FUN_1044e935			FUN_1044981c
+1044f35c	166	FUN_1044f35c	Global	0	FUN_104484e1			
+1044f402	49	FUN_1044f402	Global	0				
+1044f433	342	FUN_1044f433	Global	0				
+1044f589	486	FUN_1044f589	Global	0				
+1044f76f	293	FUN_1044f76f	Global	1				FUN_1044981c
+1044f7e4	108	FUN_1044f7e4	Global	0				
+1044f850	41	FUN_1044f850	Global	1				FUN_1044fbd4
+1044f879	35	FUN_1044f879	Global	1				FUN_1044fbd4
+1044f89c	824	FUN_1044f89c	Global	2				FUN_1044fe26,FUN_1044fbd4
+1044fbd4	282	FUN_1044fbd4	Global	1	FUN_1044f89c,FUN_1044f850,FUN_1044f879			FUN_1044fe26
+1044fcee	312	FUN_1044fcee	Global	1				FUN_1044fe26
+1044fe26	141	FUN_1044fe26	Global	0	FUN_1044fcee,FUN_1044f89c,FUN_1044fbd4			
+1044feb3	384	FUN_1044feb3	Global	1				FUN_1045014d
+10450033	282	FUN_10450033	Global	1				FUN_1045014d
+1045014d	208	FUN_1045014d	Global	2	FUN_1044feb3,FUN_10450033			FUN_104502c6,FUN_1045021d
+1045021d	169	FUN_1045021d	Global	0	FUN_1045014d			
+104502c6	622	FUN_104502c6	Global	0	FUN_1045014d			
+10450534	144	FUN_10450534	Global	2				FUN_104505e7,FUN_104506f8
+104505e7	258	FUN_104505e7	Global	0	FUN_1044854a,FUN_10450534			
+104506f8	275	FUN_104506f8	Global	1	FUN_10450534			FUN_1044981c
+1045080b	203	FUN_1045080b	Global	1				FUN_10450902
+104508d6	25	FUN_104508d6	Global	1				FUN_10450902
+104508ef	19	FUN_104508ef	Global	1				FUN_10450a1f
+10450902	285	FUN_10450902	Global	1	FUN_1045080b,FUN_104508d6			FUN_10451191
+10450a1f	289	FUN_10450a1f	Global	2	FUN_104508ef			FUN_10451191,FUN_104510b4
+10450b40	98	FUN_10450b40	Global	1				FUN_10450ba2
+10450ba2	89	FUN_10450ba2	Global	1	FUN_10450b40			FUN_104510b4
+10450bfb	136	FUN_10450bfb	Global	0				
+10450c83	141	FUN_10450c83	Global	0				
+10450d10	235	FUN_10450d10	Global	0	FUN_1044854a			
+10450dfb	255	FUN_10450dfb	Global	0				
+10450efa	388	FUN_10450efa	Global	0	FUN_1044854a			
+1045107e	54	FUN_1045107e	Global	2				FUN_10451191,FUN_104510b4
+104510b4	200	FUN_104510b4	Global	0	FUN_1045107e,FUN_10450a1f,FUN_1044854a,FUN_10450ba2			
+10451191	137	FUN_10451191	Global	1	FUN_10450902,FUN_1045107e,FUN_10450a1f			FUN_1044981c
+1045121a	107	FUN_1045121a	Global	4	FUN_10452cf9			FUN_10451285,FUN_10449d23,FUN_10451c29,FUN_10449baa
+10451285	139	FUN_10451285	Global	1	FUN_1045121a			FUN_10449c27
+10451310	2289	FUN_10451310	Global	1	FUN_10453211,FUN_10453240,FUN_104527a3,FUN_1045308f,FUN_1045276f,FUN_10452cf9,FUN_1045310e		invalid block type | invalid stored block lengths | too many length or distance symbols | invalid bit length repeat	FUN_10449d23
+10451c29	52	FUN_10451c29	Global	1	FUN_1045121a			FUN_10449be9
+10451c5d	49	FUN_10451c5d	Global	1				FUN_1044a084
+10451c9b	281	FUN_10451c9b	Global	1				FUN_1044a084
+10451dcb	16	FUN_10451dcb	Global	1		MSVCRT.DLL!calloc		FUN_10449c27
+10451de6	789	FUN_10451de6	Global	0				
+104520fb	446	FUN_104520fb	Global	0				
+104522b9	61	FUN_104522b9	Global	0				
+104522f6	76	FUN_104522f6	Global	0	FUN_10453842,FUN_10453355			
+10452342	76	FUN_10452342	Global	0	FUN_10454376,FUN_10453fcd			
+1045238e	993	FUN_1045238e	Global	0		MSVCRT.DLL!ftol		
+1045276f	52	FUN_1045276f	Global	1				FUN_10451310
+104527a3	1326	FUN_104527a3	Global	1	FUN_10453240,FUN_10455149		invalid literal/length code	FUN_10451310
+10452cf9	17	FUN_10452cf9	Global	2				FUN_1045121a,FUN_10451310
+10452d0a	901	FUN_10452d0a	Global	2				FUN_1045308f,FUN_1045310e
+1045308f	127	FUN_1045308f	Global	1	FUN_10452d0a		oversubscribed dynamic bit lengths tree | incomplete dynamic bit lengths tree	FUN_10451310
+1045310e	259	FUN_1045310e	Global	1	FUN_10452d0a		oversubscribed distance tree | incomplete distance tree | empty distance tree with lengths | oversubscribed literal/length tree | incomplete literal/length tree	FUN_10451310
+10453211	47	FUN_10453211	Global	1				FUN_10451310
+10453240	277	FUN_10453240	Global	2				FUN_104527a3,FUN_10451310
+10453355	1261	FUN_10453355	Global	1				FUN_104522f6
+10453842	1931	FUN_10453842	Global	1				FUN_104522f6
+10453fcd	937	FUN_10453fcd	Global	1				FUN_10452342
+10454376	3539	FUN_10454376	Global	1				FUN_10452342
+10455149	682	FUN_10455149	Global	1			invalid literal/length code	FUN_104527a3
+104558c8	6	operator_delete	MFC42.DLL	183				FUN_10441e1c,FUN_1041b0e0,FUN_10441ddf,FUN_1043b4c3,Unwind@10461b7a,FUN_10441eb7,FUN_10424950,Unwind@10460eb0
+104558ce	6	operator_new	MFC42.DLL	70				FUN_1043b4c3,FUN_1043bff1,FUN_1040c160,FUN_10406fa0,FUN_1040c2d0,FUN_104156e0,FUN_1043c68e,FUN_10406810
+104558df	28	FUN_104558df	Global	0		MSVCRT.DLL!~type_info,MFC42.DLL!operator_delete		
+10455900	6	__RTDynamicCast	MSVCRT.DLL	23				FUN_10419400,FUN_1040b990,FUN_10412970,FUN_104185c0,FUN_10413340,FUN_10402eb0,FUN_104175c0,FUN_10416b30
+10455910	6	_CxxThrowException	MSVCRT.DLL	76				Catch@10406548,Catch@10429767,FUN_1040c160,FUN_10406fa0,FUN_1040c2d0,FUN_104156e0,FUN_10406810,Catch@1042955f
+10455916	44	FUN_10455916	Global	1		MSVCRT.DLL!_onexit,MSVCRT.DLL!__dllonexit		FUN_10455942
+10455942	18	FUN_10455942	Global	81	FUN_10455916			FUN_104235e0,FUN_1040c160,FUN_10406fa0,FUN_1040c2d0,FUN_104156e0,FUN_1041c8c0,FUN_10406810,FUN_10414ca0
+1045595a	6	sprintf	MSVCRT.DLL	0				
+10455960	6	_CIpow	MSVCRT.DLL	3				FUN_1043d02c,FUN_10446e81,FUN_10429890
+10455966	6	ftol	MSVCRT.DLL	8				FUN_1042c950,FUN_1044789b,FUN_1045238e,FUN_1043d02c,FUN_1043e6e7,FUN_10446e81,FUN_10447c0a,FUN_10438bf8
+1045596c	171	FUN_1045596c	Global	2		MSVCRT.DLL!malloc,MSVCRT.DLL!free,MSVCRT.DLL!initterm		FUN_10455a42,FUN_10455a59
+10455a17	24	entry	Global	0	FUN_10461b9c			
+10455a31	2	thunk_FUN_10455a59	Global	1				FUN_10461b9c
+10455a42	23	FUN_10455a42	Global	1	FUN_1045596c			FUN_10461bc0
+10455a59	91	FUN_10455a59	Global	0	FUN_1045596c,thunk_FUN_10425dc0			
+10455ac0	47	FUN_10455ac0	Global	4				FUN_1042f7c0,FUN_1042fbd3,FUN_1043de7f,FUN_10436446
+10455af0	6	_snprintf	MSVCRT.DLL	2				FUN_104366e7,FUN_1042f995
+10455af6	6	_CIacos	MSVCRT.DLL	2				FUN_10431e17,FUN_10432f6c
+10455afc	6	_finite	MSVCRT.DLL	2				FUN_1043219f,FUN_10430a76
+10455b02	6	_EH_prolog	MSVCRT.DLL	8				FUN_1043664b,FUN_10440b18,FUN_104365ab,FUN_10441ff8,FUN_10441eb7,FUN_10441efc,FUN_104386e7,FUN_10441194
+10455b08	6	_vsnprintf	MSVCRT.DLL	1				FUN_104366e7
+10455b0e	6	atoi	MSVCRT.DLL	3				FUN_10436f0a,FUN_10437667,FUN_10437a88
+10455b14	6	isdigit	MSVCRT.DLL	3				FUN_1043cd5b,FUN_10436f0a,FUN_10437667
+10455b1a	6	isalpha	MSVCRT.DLL	2				FUN_10436f0a,FUN_10437667
+10455b20	6	isalnum	MSVCRT.DLL	1				FUN_10437667
+10455b26	6	isspace	MSVCRT.DLL	2				FUN_1043cd5b,FUN_10437667
+10455b2c	6	sscanf	MSVCRT.DLL	1				FUN_10437a88
+10455b32	6	floor	MSVCRT.DLL	2				FUN_1043b3f2,FUN_10438bf8
+10455b38	6	longjmp	MSVCRT.DLL	2				FUN_1044486d,FUN_1043c62c
+10455b3e	6	setjmp3	MSVCRT.DLL	3				FUN_1043d02c,FUN_1044491d,FUN_1043c68e
+10455b44	6	exit	MSVCRT.DLL	1				FUN_10444689
+10455b4a	6	malloc	MSVCRT.DLL	4				FUN_1044b6c9,FUN_1044a21c,FUN_1044a1cd,FUN_1044b6df
+10455b50	6	free	MSVCRT.DLL	4				FUN_1044b6d4,FUN_1044a252,FUN_1044a20f,FUN_1044b6ea
+10455b56	6	calloc	MSVCRT.DLL	1				FUN_10451dcb
+10455b5c	6	~type_info	MSVCRT.DLL::type_info	1				FUN_104558df
+10455b62	6	__dllonexit	MSVCRT.DLL	1				FUN_10455916
+10455b68	6	initterm	MSVCRT.DLL	1				FUN_1045596c
+10460050	9	Unwind@10460050	Global	0				
+10460070	9	Unwind@10460070	Global	0				
+10460090	9	Unwind@10460090	Global	0				
+104600b0	11	Unwind@104600b0	Global	0		RLMFC.DLL!~R_Exception		
+104600bb	11	Unwind@104600bb	Global	0		RLMFC.DLL!~R_Exception		
+104600e0	8	Unwind@104600e0	Global	0		RLMFC.DLL!~R_Exception		
+104600e8	8	Unwind@104600e8	Global	0		RLMFC.DLL!~R_Exception		
+104600f0	8	Unwind@104600f0	Global	0		RLMFC.DLL!~R_Exception		
+104600f8	8	Unwind@104600f8	Global	0		RLMFC.DLL!~R_Exception		
+10460100	8	Unwind@10460100	Global	0		RLMFC.DLL!~R_Exception		
+10460108	8	Unwind@10460108	Global	0		RLMFC.DLL!~R_Exception		
+10460110	8	Unwind@10460110	Global	0		RLMFC.DLL!~R_Exception		
+10460118	8	Unwind@10460118	Global	0		RLMFC.DLL!~R_Exception		
+10460140	8	Unwind@10460140	Global	0		RLMFC.DLL!~R_Exception		
+10460148	8	Unwind@10460148	Global	0		RLMFC.DLL!~R_Exception		
+10460150	8	Unwind@10460150	Global	0		RLMFC.DLL!~R_Exception		
+10460158	8	Unwind@10460158	Global	0		RLMFC.DLL!~R_Exception		
+10460160	8	Unwind@10460160	Global	0		RLMFC.DLL!~R_Exception		
+10460168	8	Unwind@10460168	Global	0		RLMFC.DLL!~R_Exception		
+10460170	8	Unwind@10460170	Global	0		RLMFC.DLL!~R_Exception		
+104601a0	8	Unwind@104601a0	Global	0		RLMFC.DLL!~R_Exception		
+104601a8	8	Unwind@104601a8	Global	0		RLMFC.DLL!~R_Exception		
+104601b0	10	Unwind@104601b0	Global	0		RLMFC.DLL!~R_Exception		
+104601d0	8	Unwind@104601d0	Global	0		RLMFC.DLL!~R_Exception		
+104601d8	8	Unwind@104601d8	Global	0		RLMFC.DLL!~R_Exception		
+104601e0	10	Unwind@104601e0	Global	0		RLMFC.DLL!~R_Exception		
+10460200	11	Unwind@10460200	Global	0		MFC42.DLL!operator_delete		
+1046020b	8	Unwind@1046020b	Global	0		RLMFC.DLL!~R_Exception		
+10460213	8	Unwind@10460213	Global	0		RLMFC.DLL!~R_Exception		
+1046021b	10	Unwind@1046021b	Global	0		RLMFC.DLL!~R_Exception		
+10460240	8	Unwind@10460240	Global	0		RLMFC.DLL!~R_Exception		
+10460248	8	Unwind@10460248	Global	0		RLMFC.DLL!~R_Exception		
+10460250	10	Unwind@10460250	Global	0		RLMFC.DLL!~R_Exception		
+10460270	8	Unwind@10460270	Global	0		RLMFC.DLL!~R_Exception		
+10460290	8	Unwind@10460290	Global	0		E2MFC.DLL!~P_Buffer		
+104602b0	8	Unwind@104602b0	Global	0		E2MFC.DLL!~P_Buffer		
+104602d0	8	Unwind@104602d0	Global	0		E2MFC.DLL!~P_Buffer		
+104602f0	8	Unwind@104602f0	Global	0		E2MFC.DLL!~P_Buffer		
+10460310	9	Unwind@10460310	Global	0				
+10460330	9	Unwind@10460330	Global	0				
+10460350	9	Unwind@10460350	Global	0				
+10460359	8	Unwind@10460359	Global	0	thunk_FUN_1040bfb0			
+10460361	9	Unwind@10460361	Global	0				
+10460380	9	Unwind@10460380	Global	0				
+10460389	8	Unwind@10460389	Global	0	thunk_FUN_1040bfb0			
+10460391	9	Unwind@10460391	Global	0				
+104603b0	8	Unwind@104603b0	Global	0		E2MFC.DLL!~P_Buffer		
+104603d0	8	Unwind@104603d0	Global	0		E2MFC.DLL!~P_Buffer		
+104603f0	9	Unwind@104603f0	Global	0				
+10460410	9	Unwind@10460410	Global	0				
+10460430	9	Unwind@10460430	Global	0				
+10460450	9	Unwind@10460450	Global	0				
+10460470	11	Unwind@10460470	Global	0		MFC42.DLL!operator_delete		
+1046047b	8	Unwind@1046047b	Global	0		RLMFC.DLL!~R_Exception		
+10460483	8	Unwind@10460483	Global	0		RLMFC.DLL!~R_Exception		
+1046048b	10	Unwind@1046048b	Global	0		RLMFC.DLL!~R_Exception		
+104604b0	11	Unwind@104604b0	Global	0		MFC42.DLL!operator_delete		
+104604bb	8	Unwind@104604bb	Global	0		RLMFC.DLL!~R_Exception		
+104604c3	8	Unwind@104604c3	Global	0		RLMFC.DLL!~R_Exception		
+104604cb	10	Unwind@104604cb	Global	0		RLMFC.DLL!~R_Exception		
+104604f0	11	Unwind@104604f0	Global	0		MFC42.DLL!operator_delete		
+104604fb	8	Unwind@104604fb	Global	0		RLMFC.DLL!~R_Exception		
+10460503	8	Unwind@10460503	Global	0		RLMFC.DLL!~R_Exception		
+1046050b	10	Unwind@1046050b	Global	0		RLMFC.DLL!~R_Exception		
+10460530	11	Unwind@10460530	Global	0		MFC42.DLL!operator_delete		
+1046053b	8	Unwind@1046053b	Global	0		RLMFC.DLL!~R_Exception		
+10460543	8	Unwind@10460543	Global	0		RLMFC.DLL!~R_Exception		
+1046054b	10	Unwind@1046054b	Global	0		RLMFC.DLL!~R_Exception		
+10460570	11	Unwind@10460570	Global	0		MFC42.DLL!operator_delete		
+1046057b	8	Unwind@1046057b	Global	0		RLMFC.DLL!~R_Exception		
+10460583	8	Unwind@10460583	Global	0		RLMFC.DLL!~R_Exception		
+1046058b	10	Unwind@1046058b	Global	0		RLMFC.DLL!~R_Exception		
+104605b0	11	Unwind@104605b0	Global	0		MFC42.DLL!operator_delete		
+104605bb	8	Unwind@104605bb	Global	0		E2MFC.DLL!~P_Buffer		
+104605c3	8	Unwind@104605c3	Global	0		RLMFC.DLL!~R_Exception		
+104605cb	8	Unwind@104605cb	Global	0		RLMFC.DLL!~R_Exception		
+104605d3	10	Unwind@104605d3	Global	0		RLMFC.DLL!~R_Exception		
+10460600	11	Unwind@10460600	Global	0		MFC42.DLL!operator_delete		
+1046060b	8	Unwind@1046060b	Global	0		E2MFC.DLL!~P_Buffer		
+10460613	8	Unwind@10460613	Global	0		RLMFC.DLL!~R_Exception		
+1046061b	8	Unwind@1046061b	Global	0		RLMFC.DLL!~R_Exception		
+10460623	10	Unwind@10460623	Global	0		RLMFC.DLL!~R_Exception		
+10460650	11	Unwind@10460650	Global	0		MFC42.DLL!operator_delete		
+1046065b	8	Unwind@1046065b	Global	0		RLMFC.DLL!~R_Exception		
+10460663	8	Unwind@10460663	Global	0		RLMFC.DLL!~R_Exception		
+1046066b	10	Unwind@1046066b	Global	0		RLMFC.DLL!~R_Exception		
+10460690	11	Unwind@10460690	Global	0		MFC42.DLL!operator_delete		
+1046069b	8	Unwind@1046069b	Global	0		E2MFC.DLL!~P_Buffer		
+104606a3	8	Unwind@104606a3	Global	0		RLMFC.DLL!~R_Exception		
+104606ab	8	Unwind@104606ab	Global	0		RLMFC.DLL!~R_Exception		
+104606b3	10	Unwind@104606b3	Global	0		RLMFC.DLL!~R_Exception		
+104606e0	8	Unwind@104606e0	Global	0		RLMFC.DLL!~R_Exception		
+104606e8	8	Unwind@104606e8	Global	0		RLMFC.DLL!~R_Exception		
+104606f0	8	Unwind@104606f0	Global	0		RLMFC.DLL!~R_Exception		
+104606f8	8	Unwind@104606f8	Global	0		RLMFC.DLL!~R_Exception		
+10460700	8	Unwind@10460700	Global	0		RLMFC.DLL!~R_Exception		
+10460720	8	Unwind@10460720	Global	0		E2MFC.DLL!~P_Buffer		
+10460740	8	Unwind@10460740	Global	0		RLMFC.DLL!~R_Exception		
+10460748	8	Unwind@10460748	Global	0		RLMFC.DLL!~R_Exception		
+10460760	8	Unwind@10460760	Global	0		RLMFC.DLL!~R_Exception		
+10460780	8	Unwind@10460780	Global	0	thunk_FUN_1040efd0			
+10460788	8	Unwind@10460788	Global	0	thunk_FUN_1040efd0			
+10460790	11	Unwind@10460790	Global	0	thunk_FUN_1040dd20			
+1046079b	8	Unwind@1046079b	Global	0	thunk_FUN_1040f150			
+104607a3	8	Unwind@104607a3	Global	0	thunk_FUN_1040f150			
+104607ab	11	Unwind@104607ab	Global	0	thunk_FUN_1040de60			
+104607d0	8	Unwind@104607d0	Global	0	thunk_FUN_1040efd0			
+104607f0	8	Unwind@104607f0	Global	0	thunk_FUN_1040f150			
+10460810	11	Unwind@10460810	Global	0	thunk_FUN_1040dd20			
+1046081b	11	Unwind@1046081b	Global	0	thunk_FUN_1040de60			
+10460826	9	Unwind@10460826	Global	0				
+1046082f	8	Unwind@1046082f	Global	0	thunk_FUN_1040f150			
+10460837	8	Unwind@10460837	Global	0	thunk_FUN_1040efd0			
+10460860	9	Unwind@10460860	Global	0				
+10460869	11	Unwind@10460869	Global	0	thunk_FUN_1040f150			
+10460874	8	Unwind@10460874	Global	0	thunk_FUN_1040e5c0			
+1046087c	8	Unwind@1046087c	Global	0	thunk_FUN_1040e700			
+10460884	8	Unwind@10460884	Global	0	thunk_FUN_1040e840			
+1046088c	11	Unwind@1046088c	Global	0		MFC42.DLL!operator_delete		
+10460897	11	Unwind@10460897	Global	0		RLMFC.DLL!~R_Exception		
+104608c0	8	Unwind@104608c0	Global	0	thunk_FUN_1040f150			
+104608e0	8	Unwind@104608e0	Global	0	thunk_FUN_1040f150			
+10460900	8	Unwind@10460900	Global	0	thunk_FUN_1040f150			
+10460920	9	Unwind@10460920	Global	0				
+10460940	9	Unwind@10460940	Global	0				
+10460960	8	Unwind@10460960	Global	0	thunk_FUN_1040f150			
+10460980	8	Unwind@10460980	Global	0	thunk_FUN_1040f150			
+104609a0	8	Unwind@104609a0	Global	0	thunk_FUN_1040f150			
+104609c0	8	Unwind@104609c0	Global	0		RLMFC.DLL!~R_Exception		
+104609c8	8	Unwind@104609c8	Global	0		RLMFC.DLL!~R_Exception		
+104609d0	10	Unwind@104609d0	Global	0		RLMFC.DLL!~R_Exception		
+104609f0	8	Unwind@104609f0	Global	0		RLMFC.DLL!~R_Exception		
+104609f8	8	Unwind@104609f8	Global	0		RLMFC.DLL!~R_Exception		
+10460a00	10	Unwind@10460a00	Global	0		RLMFC.DLL!~R_Exception		
+10460a20	17	Unwind@10460a20	Global	0	thunk_FUN_10412660			
+10460a31	8	Unwind@10460a31	Global	0	thunk_FUN_1040f150			
+10460a50	11	Unwind@10460a50	Global	0		E2MFC.DLL!~P_Buffer		
+10460a5b	11	Unwind@10460a5b	Global	0	thunk_FUN_1040b1c0			
+10460a66	11	Unwind@10460a66	Global	0		E2MFC.DLL!~P_Buffer		
+10460a90	9	Unwind@10460a90	Global	0				
+10460ab0	9	Unwind@10460ab0	Global	0				
+10460ad0	8	Unwind@10460ad0	Global	0		RLMFC.DLL!~R_Exception		
+10460ad8	8	Unwind@10460ad8	Global	0		RLMFC.DLL!~R_Exception		
+10460ae0	10	Unwind@10460ae0	Global	0		RLMFC.DLL!~R_Exception		
+10460b00	11	Unwind@10460b00	Global	0		MFC42.DLL!operator_delete		
+10460b0b	8	Unwind@10460b0b	Global	0		RLMFC.DLL!~R_Exception		
+10460b13	8	Unwind@10460b13	Global	0		RLMFC.DLL!~R_Exception		
+10460b1b	10	Unwind@10460b1b	Global	0		RLMFC.DLL!~R_Exception		
+10460b40	8	Unwind@10460b40	Global	0		E2MFC.DLL!~P_Buffer		
+10460b48	8	Unwind@10460b48	Global	0	thunk_FUN_1040a3c0			
+10460b50	8	Unwind@10460b50	Global	0		E2MFC.DLL!~P_Buffer		
+10460b70	11	Unwind@10460b70	Global	0		E2MFC.DLL!~P_Buffer		
+10460b7b	11	Unwind@10460b7b	Global	0	thunk_FUN_1040a190			
+10460b86	11	Unwind@10460b86	Global	0		E2MFC.DLL!~P_Buffer		
+10460bb0	8	Unwind@10460bb0	Global	0		RLMFC.DLL!~R_Exception		
+10460bb8	8	Unwind@10460bb8	Global	0		RLMFC.DLL!~R_Exception		
+10460bd0	8	Unwind@10460bd0	Global	0		RLMFC.DLL!~R_Exception		
+10460bd8	8	Unwind@10460bd8	Global	0		RLMFC.DLL!~R_Exception		
+10460be0	10	Unwind@10460be0	Global	0		RLMFC.DLL!~R_Exception		
+10460c00	8	Unwind@10460c00	Global	0		RLMFC.DLL!~R_Exception		
+10460c08	8	Unwind@10460c08	Global	0		RLMFC.DLL!~R_Exception		
+10460c10	10	Unwind@10460c10	Global	0		RLMFC.DLL!~R_Exception		
+10460c30	11	Unwind@10460c30	Global	0		MFC42.DLL!operator_delete		
+10460c3b	8	Unwind@10460c3b	Global	0		RLMFC.DLL!~R_Exception		
+10460c43	8	Unwind@10460c43	Global	0		RLMFC.DLL!~R_Exception		
+10460c4b	10	Unwind@10460c4b	Global	0		RLMFC.DLL!~R_Exception		
+10460c70	8	Unwind@10460c70	Global	0		RLMFC.DLL!~R_Exception		
+10460c78	8	Unwind@10460c78	Global	0		RLMFC.DLL!~R_Exception		
+10460c80	10	Unwind@10460c80	Global	0		RLMFC.DLL!~R_Exception		
+10460ca0	8	Unwind@10460ca0	Global	0		RLMFC.DLL!~R_Exception		
+10460ca8	8	Unwind@10460ca8	Global	0		RLMFC.DLL!~R_Exception		
+10460cb0	10	Unwind@10460cb0	Global	0		RLMFC.DLL!~R_Exception		
+10460cd0	8	Unwind@10460cd0	Global	0		RLMFC.DLL!~R_Exception		
+10460cd8	8	Unwind@10460cd8	Global	0		RLMFC.DLL!~R_Exception		
+10460ce0	10	Unwind@10460ce0	Global	0		RLMFC.DLL!~R_Exception		
+10460d00	8	Unwind@10460d00	Global	0		RLMFC.DLL!~R_Exception		
+10460d08	8	Unwind@10460d08	Global	0		RLMFC.DLL!~R_Exception		
+10460d10	10	Unwind@10460d10	Global	0		RLMFC.DLL!~R_Exception		
+10460d30	9	Unwind@10460d30	Global	0				
+10460d50	8	Unwind@10460d50	Global	0	thunk_FUN_1040bfb0			
+10460d70	8	Unwind@10460d70	Global	0		E2MFC.DLL!~P_Buffer		
+10460d78	11	Unwind@10460d78	Global	0		E2MFC.DLL!~P_Buffer		
+10460d83	11	Unwind@10460d83	Global	0		MFC42.DLL!operator_delete		
+10460d8e	8	Unwind@10460d8e	Global	0		RLMFC.DLL!~R_Exception		
+10460d96	8	Unwind@10460d96	Global	0		RLMFC.DLL!~R_Exception		
+10460d9e	10	Unwind@10460d9e	Global	0		RLMFC.DLL!~R_Exception		
+10460da8	11	Unwind@10460da8	Global	0		MFC42.DLL!operator_delete		
+10460db3	8	Unwind@10460db3	Global	0		RLMFC.DLL!~R_Exception		
+10460dbb	8	Unwind@10460dbb	Global	0		RLMFC.DLL!~R_Exception		
+10460dc3	10	Unwind@10460dc3	Global	0		RLMFC.DLL!~R_Exception		
+10460df0	8	Unwind@10460df0	Global	0		E2MFC.DLL!~P_Buffer		
+10460df8	11	Unwind@10460df8	Global	0		E2MFC.DLL!~P_Buffer		
+10460e20	11	Unwind@10460e20	Global	0	P_D3DParticleBuffer::~P_D3DParticleBuffer			
+10460e40	9	Unwind@10460e40	Global	0				
+10460e60	9	Unwind@10460e60	Global	0				
+10460e80	8	Unwind@10460e80	Global	0		RLMFC.DLL!~R_Exception		
+10460e88	8	Unwind@10460e88	Global	0		RLMFC.DLL!~R_Exception		
+10460e90	10	Unwind@10460e90	Global	0		RLMFC.DLL!~R_Exception		
+10460eb0	11	Unwind@10460eb0	Global	0		MFC42.DLL!operator_delete		
+10460ebb	8	Unwind@10460ebb	Global	0		RLMFC.DLL!~R_Exception		
+10460ec3	8	Unwind@10460ec3	Global	0		RLMFC.DLL!~R_Exception		
+10460ecb	10	Unwind@10460ecb	Global	0		RLMFC.DLL!~R_Exception		
+10460ef0	9	Unwind@10460ef0	Global	0				
+10460f10	9	Unwind@10460f10	Global	0				
+10460f30	11	Unwind@10460f30	Global	0		MFC42.DLL!operator_delete		
+10460f3b	8	Unwind@10460f3b	Global	0		RLMFC.DLL!~R_Exception		
+10460f43	8	Unwind@10460f43	Global	0		RLMFC.DLL!~R_Exception		
+10460f4b	10	Unwind@10460f4b	Global	0		RLMFC.DLL!~R_Exception		
+10460f70	9	Unwind@10460f70	Global	0				
+10460f90	9	Unwind@10460f90	Global	0				
+10460fb0	11	Unwind@10460fb0	Global	0		MFC42.DLL!operator_delete		
+10460fbb	8	Unwind@10460fbb	Global	0		RLMFC.DLL!~R_Exception		
+10460fc3	8	Unwind@10460fc3	Global	0		RLMFC.DLL!~R_Exception		
+10460fcb	10	Unwind@10460fcb	Global	0		RLMFC.DLL!~R_Exception		
+10460ff0	8	Unwind@10460ff0	Global	0		RLMFC.DLL!~R_Exception		
+10460ff8	8	Unwind@10460ff8	Global	0		RLMFC.DLL!~R_Exception		
+10461000	8	Unwind@10461000	Global	0		RLMFC.DLL!~R_Exception		
+10461008	8	Unwind@10461008	Global	0		RLMFC.DLL!~R_Exception		
+10461010	8	Unwind@10461010	Global	0		RLMFC.DLL!~R_Exception		
+10461030	8	Unwind@10461030	Global	0		E2MFC.DLL!~P_Buffer		
+10461050	8	Unwind@10461050	Global	0		RLMFC.DLL!~R_Exception		
+10461058	8	Unwind@10461058	Global	0		RLMFC.DLL!~R_Exception		
+10461070	8	Unwind@10461070	Global	0		RLMFC.DLL!~R_Exception		
+10461090	8	Unwind@10461090	Global	0	thunk_FUN_1041fcc0			
+10461098	8	Unwind@10461098	Global	0	thunk_FUN_1041fcc0			
+104610a0	11	Unwind@104610a0	Global	0	thunk_FUN_1041e7a0			
+104610ab	8	Unwind@104610ab	Global	0	thunk_FUN_1041fe40			
+104610b3	8	Unwind@104610b3	Global	0	thunk_FUN_1041fe40			
+104610bb	11	Unwind@104610bb	Global	0	thunk_FUN_1041e8e0			
+104610e0	8	Unwind@104610e0	Global	0	thunk_FUN_1041fcc0			
+10461100	8	Unwind@10461100	Global	0	thunk_FUN_1041fe40			
+10461120	11	Unwind@10461120	Global	0	thunk_FUN_1041e7a0			
+1046112b	11	Unwind@1046112b	Global	0	thunk_FUN_1041e8e0			
+10461136	9	Unwind@10461136	Global	0				
+1046113f	8	Unwind@1046113f	Global	0	thunk_FUN_1041fe40			
+10461147	8	Unwind@10461147	Global	0	thunk_FUN_1041fcc0			
+10461170	9	Unwind@10461170	Global	0				
+10461179	11	Unwind@10461179	Global	0	thunk_FUN_1041fe40			
+10461184	8	Unwind@10461184	Global	0	thunk_FUN_1041f040			
+1046118c	8	Unwind@1046118c	Global	0	thunk_FUN_1041f180			
+10461194	8	Unwind@10461194	Global	0	thunk_FUN_1041f2c0			
+1046119c	11	Unwind@1046119c	Global	0		MFC42.DLL!operator_delete		
+104611a7	11	Unwind@104611a7	Global	0		RLMFC.DLL!~R_Exception		
+104611d0	8	Unwind@104611d0	Global	0	thunk_FUN_1041fe40			
+104611f0	8	Unwind@104611f0	Global	0	thunk_FUN_1041fe40			
+10461210	8	Unwind@10461210	Global	0	thunk_FUN_1041fe40			
+10461230	9	Unwind@10461230	Global	0				
+10461250	9	Unwind@10461250	Global	0				
+10461270	8	Unwind@10461270	Global	0	thunk_FUN_1041fe40			
+10461290	8	Unwind@10461290	Global	0	thunk_FUN_1041fe40			
+104612b0	8	Unwind@104612b0	Global	0	thunk_FUN_1041fe40			
+104612d0	8	Unwind@104612d0	Global	0		RLMFC.DLL!~R_Exception		
+104612d8	8	Unwind@104612d8	Global	0		RLMFC.DLL!~R_Exception		
+104612e0	10	Unwind@104612e0	Global	0		RLMFC.DLL!~R_Exception		
+10461300	8	Unwind@10461300	Global	0		RLMFC.DLL!~R_Exception		
+10461308	8	Unwind@10461308	Global	0		RLMFC.DLL!~R_Exception		
+10461310	10	Unwind@10461310	Global	0		RLMFC.DLL!~R_Exception		
+10461330	17	Unwind@10461330	Global	0	thunk_FUN_10412660			
+10461341	8	Unwind@10461341	Global	0	thunk_FUN_1041fe40			
+10461360	9	Unwind@10461360	Global	0				
+10461369	11	Unwind@10461369	Global	0	thunk_FUN_104248d0			
+10461390	9	Unwind@10461390	Global	0				
+10461399	11	Unwind@10461399	Global	0	thunk_FUN_104248d0			
+104613c0	9	Unwind@104613c0	Global	0				
+104613c9	10	Unwind@104613c9	Global	0	thunk_FUN_1040bfb0			
+104613f0	9	Unwind@104613f0	Global	0				
+10461410	9	Unwind@10461410	Global	0				
+10461430	9	Unwind@10461430	Global	0				
+10461450	8	Unwind@10461450	Global	0		RLMFC.DLL!~R_Exception		
+10461458	8	Unwind@10461458	Global	0		RLMFC.DLL!~R_Exception		
+10461460	10	Unwind@10461460	Global	0		RLMFC.DLL!~R_Exception		
+10461480	11	Unwind@10461480	Global	0		MFC42.DLL!operator_delete		
+1046148b	8	Unwind@1046148b	Global	0		RLMFC.DLL!~R_Exception		
+10461493	8	Unwind@10461493	Global	0		RLMFC.DLL!~R_Exception		
+1046149b	11	Unwind@1046149b	Global	0		MFC42.DLL!operator_delete		
+104614a6	8	Unwind@104614a6	Global	0		RLMFC.DLL!~R_Exception		
+104614ae	8	Unwind@104614ae	Global	0		RLMFC.DLL!~R_Exception		
+104614d0	9	Unwind@104614d0	Global	0				
+104614d9	8	Unwind@104614d9	Global	0		RLMFC.DLL!~R_Exception		
+104614e1	11	Unwind@104614e1	Global	0		MFC42.DLL!operator_delete		
+104614ec	8	Unwind@104614ec	Global	0		RLMFC.DLL!~R_Exception		
+104614f4	8	Unwind@104614f4	Global	0		RLMFC.DLL!~R_Exception		
+104614fc	10	Unwind@104614fc	Global	0		RLMFC.DLL!~R_Exception		
+10461506	11	Unwind@10461506	Global	0		MFC42.DLL!operator_delete		
+10461511	8	Unwind@10461511	Global	0		RLMFC.DLL!~R_Exception		
+10461519	8	Unwind@10461519	Global	0		RLMFC.DLL!~R_Exception		
+10461521	10	Unwind@10461521	Global	0		RLMFC.DLL!~R_Exception		
+10461550	9	Unwind@10461550	Global	0				
+10461570	11	Unwind@10461570	Global	0		MFC42.DLL!operator_delete		
+1046157b	8	Unwind@1046157b	Global	0		RLMFC.DLL!~R_Exception		
+10461583	8	Unwind@10461583	Global	0		RLMFC.DLL!~R_Exception		
+1046158b	10	Unwind@1046158b	Global	0		RLMFC.DLL!~R_Exception		
+10461595	8	Unwind@10461595	Global	0		RLMFC.DLL!~R_Exception		
+1046159d	8	Unwind@1046159d	Global	0		RLMFC.DLL!~R_Exception		
+104615c0	8	Unwind@104615c0	Global	0		RLMFC.DLL!~R_Exception		
+104615c8	8	Unwind@104615c8	Global	0		RLMFC.DLL!~R_Exception		
+104615e0	8	Unwind@104615e0	Global	0		RLMFC.DLL!~R_Exception		
+104615e8	8	Unwind@104615e8	Global	0		RLMFC.DLL!~R_Exception		
+104615f0	8	Unwind@104615f0	Global	0		RLMFC.DLL!~R_Exception		
+104615f8	8	Unwind@104615f8	Global	0		RLMFC.DLL!~R_Exception		
+10461620	8	Unwind@10461620	Global	0		RLMFC.DLL!~R_Exception		
+10461628	8	Unwind@10461628	Global	0		RLMFC.DLL!~R_Exception		
+10461630	8	Unwind@10461630	Global	0		RLMFC.DLL!~R_Exception		
+10461638	8	Unwind@10461638	Global	0		RLMFC.DLL!~R_Exception		
+10461640	8	Unwind@10461640	Global	0		RLMFC.DLL!~R_Exception		
+10461660	8	Unwind@10461660	Global	0		RLMFC.DLL!~R_Exception		
+10461668	8	Unwind@10461668	Global	0		RLMFC.DLL!~R_Exception		
+10461670	8	Unwind@10461670	Global	0		RLMFC.DLL!~R_Exception		
+10461678	8	Unwind@10461678	Global	0		RLMFC.DLL!~R_Exception		
+104616a0	9	Unwind@104616a0	Global	0				
+104616c0	8	Unwind@104616c0	Global	0		RLMFC.DLL!~R_Exception		
+104616e0	8	Unwind@104616e0	Global	0		RLMFC.DLL!~R_Exception		
+10461700	8	Unwind@10461700	Global	0		RLMFC.DLL!~R_Exception		
+10461708	8	Unwind@10461708	Global	0		RLMFC.DLL!~R_Exception		
+10461710	8	Unwind@10461710	Global	0		RLMFC.DLL!~R_Exception		
+10461718	8	Unwind@10461718	Global	0		RLMFC.DLL!~R_Exception		
+10461740	8	Unwind@10461740	Global	0		RLMFC.DLL!~R_Exception		
+10461748	8	Unwind@10461748	Global	0		RLMFC.DLL!~R_Exception		
+10461750	12	Unwind@10461750	Global	0				
+1046175c	9	Unwind@1046175c	Global	0				
+10461765	8	Unwind@10461765	Global	0		RLMFC.DLL!~R_Exception		
+10461790	8	Unwind@10461790	Global	0		RLMFC.DLL!~R_Exception		
+104617b0	11	Unwind@104617b0	Global	0	thunk_FUN_1042c110			
+104617bb	9	Unwind@104617bb	Global	0				
+104617c4	9	Unwind@104617c4	Global	0				
+104617cd	12	Unwind@104617cd	Global	0				
+104617d9	11	Unwind@104617d9	Global	0	thunk_FUN_1042c160			
+104617e4	9	Unwind@104617e4	Global	0				
+10461810	8	Unwind@10461810	Global	0	thunk_FUN_1042c110			
+10461830	8	Unwind@10461830	Global	0	thunk_FUN_1042c110			
+10461850	8	Unwind@10461850	Global	0		RLMFC.DLL!~R_Exception		
+10461858	8	Unwind@10461858	Global	0		RLMFC.DLL!~R_Exception		
+10461860	10	Unwind@10461860	Global	0		RLMFC.DLL!~R_Exception		
+10461880	8	Unwind@10461880	Global	0		RLMFC.DLL!~R_Exception		
+10461888	8	Unwind@10461888	Global	0		RLMFC.DLL!~R_Exception		
+10461890	8	Unwind@10461890	Global	0		RLMFC.DLL!~R_Exception		
+10461898	8	Unwind@10461898	Global	0		RLMFC.DLL!~R_Exception		
+104618a0	8	Unwind@104618a0	Global	0		RLMFC.DLL!~R_Exception		
+104618a8	8	Unwind@104618a8	Global	0		RLMFC.DLL!~R_Exception		
+104618b0	8	Unwind@104618b0	Global	0		RLMFC.DLL!~R_Exception		
+104618b8	8	Unwind@104618b8	Global	0		RLMFC.DLL!~R_Exception		
+104618c0	8	Unwind@104618c0	Global	0		RLMFC.DLL!~R_Exception		
+104618c8	8	Unwind@104618c8	Global	0		RLMFC.DLL!~R_Exception		
+104618d0	8	Unwind@104618d0	Global	0		RLMFC.DLL!~R_Exception		
+104618d8	8	Unwind@104618d8	Global	0		RLMFC.DLL!~R_Exception		
+104618e0	8	Unwind@104618e0	Global	0		RLMFC.DLL!~R_Exception		
+104618e8	8	Unwind@104618e8	Global	0		RLMFC.DLL!~R_Exception		
+104618f0	8	Unwind@104618f0	Global	0		RLMFC.DLL!~R_Exception		
+104618f8	8	Unwind@104618f8	Global	0		RLMFC.DLL!~R_Exception		
+10461900	8	Unwind@10461900	Global	0		RLMFC.DLL!~R_Exception		
+10461908	8	Unwind@10461908	Global	0		RLMFC.DLL!~R_Exception		
+10461910	8	Unwind@10461910	Global	0		RLMFC.DLL!~R_Exception		
+10461918	8	Unwind@10461918	Global	0		RLMFC.DLL!~R_Exception		
+10461920	8	Unwind@10461920	Global	0		RLMFC.DLL!~R_Exception		
+10461928	8	Unwind@10461928	Global	0		RLMFC.DLL!~R_Exception		
+10461930	8	Unwind@10461930	Global	0		RLMFC.DLL!~R_Exception		
+10461938	8	Unwind@10461938	Global	0		RLMFC.DLL!~R_Exception		
+10461940	8	Unwind@10461940	Global	0		RLMFC.DLL!~R_Exception		
+10461948	8	Unwind@10461948	Global	0		RLMFC.DLL!~R_Exception		
+10461990	8	Unwind@10461990	Global	0		RLMFC.DLL!~R_Exception		
+10461998	8	Unwind@10461998	Global	0		RLMFC.DLL!~R_Exception		
+104619b0	8	Unwind@104619b0	Global	0		RLMFC.DLL!~R_Exception		
+104619b8	8	Unwind@104619b8	Global	0		RLMFC.DLL!~R_Exception		
+104619d0	8	Unwind@104619d0	Global	0		RLMFC.DLL!~R_Exception		
+104619d8	8	Unwind@104619d8	Global	0		RLMFC.DLL!~R_Exception		
+104619e0	8	Unwind@104619e0	Global	0		RLMFC.DLL!~R_Exception		
+10461a00	11	Unwind@10461a00	Global	0		RLMFC.DLL!~R_Exception		
+10461a0b	11	Unwind@10461a0b	Global	0		RLMFC.DLL!~R_Exception		
+10461a28	8	Unwind@10461a28	Global	0	FUN_1043e4f1			
+10461a30	11	Unwind@10461a30	Global	0	FUN_1043e429			
+10461a3b	11	Unwind@10461a3b	Global	0	FUN_1043e429			
+10461a46	11	Unwind@10461a46	Global	0	FUN_1043e429			
+10461a51	11	Unwind@10461a51	Global	0	FUN_1043e429			
+10461a5c	11	Unwind@10461a5c	Global	0	FUN_1043e429			
+10461a67	11	Unwind@10461a67	Global	0	FUN_1043e429			
+10461a7c	8	Unwind@10461a7c	Global	0	FUN_1043e4f1			
+10461a84	11	Unwind@10461a84	Global	0	FUN_1043e429			
+10461a8f	11	Unwind@10461a8f	Global	0	FUN_1043e429			
+10461a9a	11	Unwind@10461a9a	Global	0	FUN_1043e429			
+10461aa5	11	Unwind@10461aa5	Global	0	FUN_1043e429			
+10461ab0	11	Unwind@10461ab0	Global	0	FUN_1043e429			
+10461abb	11	Unwind@10461abb	Global	0	FUN_1043e429			
+10461ad0	10	Unwind@10461ad0	Global	0		MFC42.DLL!operator_delete		
+10461ada	10	Unwind@10461ada	Global	0		MFC42.DLL!operator_delete		
+10461ae4	10	Unwind@10461ae4	Global	0		MFC42.DLL!operator_delete		
+10461af8	8	Unwind@10461af8	Global	0	FUN_1043e8f9			
+10461b0c	8	Unwind@10461b0c	Global	0	FUN_1043e8f9			
+10461b20	8	Unwind@10461b20	Global	0	FUN_1043e8f9			
+10461b34	8	Unwind@10461b34	Global	0	FUN_1043e8f9			
+10461b48	10	Unwind@10461b48	Global	0		MFC42.DLL!operator_delete		
+10461b52	10	Unwind@10461b52	Global	0		MFC42.DLL!operator_delete		
+10461b5c	10	Unwind@10461b5c	Global	0		MFC42.DLL!operator_delete		
+10461b66	10	Unwind@10461b66	Global	0		MFC42.DLL!operator_delete		
+10461b70	10	Unwind@10461b70	Global	0		MFC42.DLL!operator_delete		
+10461b7a	10	Unwind@10461b7a	Global	0		MFC42.DLL!operator_delete		
+10461b84	10	Unwind@10461b84	Global	0		MFC42.DLL!operator_delete		
+10461b9c	35	FUN_10461b9c	Global	1	thunk_FUN_10455a59			entry
+10461bc0	33	FUN_10461bc0	Global	0	FUN_10455a42			

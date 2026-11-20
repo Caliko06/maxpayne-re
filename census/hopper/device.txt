@@ -1,0 +1,12 @@
+# The three device calls the engine makes per draw (0x1042f489 SetTransform, 0x10417b11 SetTexture, 0x1041716a SetIndices): which cached state they write and at which addresses, so a rule read out of the engine can be checked against what actually reaches the driver.
+analysis 0 s
+
+==== 0x1042f470 sub_1042f470 (asked 0x1042f489)
+    eax = ecx[0x34];
+    eax = (*(*eax + 0x94))(eax, arg_0, arg_4);
+    return eax;
+
+callers: 0x104016ef in 0x104016ef exp_?setTransform@P_D3D@@UAEJKPBK@Z
+callees: 
+
+DONE 0 s, 1 procedures, 0 data

@@ -1,0 +1,18 @@
+text_bytes: 3969024
+functions: {'total': 46238, 'from_entry_and_calls': 11517, 'from_data_pointers': 34721}
+instructions: 1202157
+distinct_mnemonics: 164
+text_coverage: 0.957
+jump_tables: {'count': 57, 'targets': 595}
+indirect_jmp_unresolved: 21
+indirect_call: {'reg': 4718, 'mem': 6797}
+import_call_sites: 16355
+imports_called: 736
+x87_instructions: 40258
+decode_failures: 102
+data_pointers_into_text: 28447
+data_pointers_mid_instruction: 23
+immediate_pointers_into_text: 5969
+unaligned_pointers_to_code: 358
+imports by dll: {'advapi32.dll': 1, 'dinput.dll': 1, 'gdi32.dll': 9, 'kernel32.dll': 18, 'mfc42.dll': 147, 'msvcp60.dll': 17, 'msvcrt.dll': 51, 'user32.dll': 36, 'e2mfc.dll': 276, 'grphmfc.dll': 17, 'ole32.dll': 2, 'rlmfc.dll': 209, 'sndmfc.dll': 70}
+groups: {'not64bitmode': 422656, 'fpu': 38244, 'privilege': 71, 'iret': 9, 'mmx': 4, 'cmov': 1, 'rtm': 1}

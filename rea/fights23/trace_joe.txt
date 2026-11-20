@@ -1,0 +1,50 @@
+# RN_GHOSTALL trace (rea/fights23/ghostall.patch): frame, name, room (same/diff as Max), horizontal distance to Max, pos, hp | act=AI active (ST+0xae) hit=ST+5 seen=MT+0x3ad perc=MT+0x3af f3ac/f3ae interest=MT+0x3b0 tmo=MT+0x3b4 lastseen=AP+0x5fc nonreact=AP+0x57d iues=AP+0x57e; ">> frame cmd" = RN_JUMP line sent
+## joe2: Max at ::FOYER::w2 (15.9 m), Joe merccombat + vulnerable: the level retreat block makes him nonreactive and walks him away
+2040 ::FOYER::Joe room=diff d 10.4 pos 7.06 2.12 2.88 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -5.21 lastseen 8.21 nonreact 0 iues 1
+   >> 2080 player->c_teleport("::FOYER::w2");
+2100 ::FOYER::Joe room=same d 15.9 pos 7.06 2.12 2.88 hp 104.0 | act 1 hit 0 seen 1 perc 1 f3ac 1 f3ae 0 int 360.00 tmo 360.00 lastseen 0.00 nonreact 0 iues 0
+   >> 2111 ::FOYER::Joe->C_SetStateMachine(merccombat);
+   >> 2142 ::FOYER::Joe->C_SetInvulnerable(false);
+2160 ::FOYER::Joe room=same d 15.9 pos 7.06 2.12 2.88 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.22 lastseen 0.22 nonreact 1 iues 0
+2220 ::FOYER::Joe room=diff d 6.1 pos -6.54 -1.38 7.06 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -1.43 lastseen 1.43 nonreact 1 iues 0
+2280 ::FOYER::Joe room=diff d 7.4 pos -2.37 -1.38 5.11 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -2.71 lastseen 2.71 nonreact 1 iues 0
+2340 ::FOYER::Joe room=diff d 9.5 pos 0.59 -1.38 2.59 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -3.76 lastseen 3.76 nonreact 1 iues 0
+2400 ::FOYER::Joe room=diff d 11.4 pos 2.61 -1.38 0.77 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -4.91 lastseen 4.91 nonreact 0 iues 0
+2460 ::FOYER::Joe room=diff d 11.4 pos 2.61 -1.38 0.77 hp 104.0 | act 1 hit 0 seen 0 perc 1 f3ac 0 f3ae 0 int 360.00 tmo 360.00 lastseen 6.54 nonreact 0 iues 0
+2520 ::FOYER::Joe room=diff d 11.4 pos 2.61 -1.38 0.77 hp 104.0 | act 1 hit 0 seen 0 perc 1 f3ac 0 f3ae 0 int 359.98 tmo 360.00 lastseen 8.22 nonreact 0 iues 0
+2580 ::FOYER::Joe room=diff d 8.8 pos -0.54 -1.38 -1.77 hp 104.0 | act 1 hit 0 seen 0 perc 1 f3ac 0 f3ae 0 int 360.00 tmo 360.00 lastseen 9.56 nonreact 0 iues 0
+2640 ::FOYER::Joe room=diff d 8.7 pos -0.88 -1.38 -2.08 hp 104.0 | act 1 hit 0 seen 0 perc 1 f3ac 0 f3ae 0 int 360.00 tmo 360.00 lastseen 10.56 nonreact 0 iues 0
+2700 ::FOYER::Joe room=diff d 8.7 pos -0.88 -1.38 -2.08 hp 104.0 | act 1 hit 0 seen 0 perc 1 f3ac 0 f3ae 0 int 360.00 tmo 360.00 lastseen 11.57 nonreact 0 iues 0
+2760 ::FOYER::Joe room=diff d 8.7 pos -0.88 -1.38 -2.08 hp 104.0 | act 1 hit 0 seen 0 perc 1 f3ac 0 f3ae 0 int 360.00 tmo 360.00 lastseen 12.56 nonreact 0 iues 0
+## joe4: Max never moves; Joe's flags follow the machine NAME: merccombat 0/0, merccombatdefensive 0/0, idleuntilenemyseen iues=1, nonreactive nonreact=1; Joe not rendered = lastseen/tmo frozen
+   >> 77 maxpayne_gamemode->gm_init(part2_level4);
+   >> 138 x_modeswitch->s_modeswitch(game);
+   >> 2083 ::FOYER::Joe->C_SetStateMachine(merccombat);
+2100 ::FOYER::Joe room=diff d 10.4 pos 7.06 2.12 2.88 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -5.22 lastseen 8.22 nonreact 0 iues 0
+2220 ::FOYER::Joe room=diff d 10.4 pos 7.06 2.12 2.88 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -5.22 lastseen 8.22 nonreact 0 iues 0
+   >> 2265 ::FOYER::Joe->C_SetStateMachine(merccombatdefensive);
+2340 ::FOYER::Joe room=diff d 10.4 pos 7.06 2.12 2.88 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -5.22 lastseen 8.22 nonreact 0 iues 0
+   >> 2447 ::FOYER::Joe->C_SetStateMachine(idleuntilenemyseen);
+2460 ::FOYER::Joe room=diff d 10.4 pos 7.06 2.12 2.88 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo 0.00 lastseen 8.22 nonreact 0 iues 1
+2580 ::FOYER::Joe room=diff d 10.4 pos 7.06 2.12 2.88 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo 0.00 lastseen 8.22 nonreact 0 iues 1
+   >> 2628 ::FOYER::Joe->C_SetStateMachine(nonreactive);
+2700 ::FOYER::Joe room=diff d 10.4 pos 7.06 2.12 2.88 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo 0.00 lastseen 8.22 nonreact 1 iues 0
+   >> 2810 ::FOYER::Joe->C_SetStateMachine(merccombat);
+2820 ::FOYER::Joe room=diff d 10.4 pos 7.06 2.12 2.88 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo 0.00 lastseen 8.22 nonreact 0 iues 0
+2940 ::FOYER::Joe room=diff d 10.4 pos 7.06 2.12 2.88 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo 0.00 lastseen 8.22 nonreact 0 iues 0
+3060 ::FOYER::Joe room=diff d 10.4 pos 7.06 2.12 2.88 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo 0.00 lastseen 8.22 nonreact 0 iues 0
+## joe7: Max immortal at ::gunroom::w1 + ::gunroom::script FSM_Send(start): Joe sees Max, goes nonreactive ~1 s later, ~9 s later (joe_timer) merccombatdefensive: act/seen/perc 1
+2040 ::FOYER::Joe room=diff d 10.4 pos 7.06 2.12 2.88 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -5.21 lastseen 8.21 nonreact 0 iues 1
+   >> 2052 player->C_SetImmortal(true);
+   >> 2083 player->c_teleport("::gunroom::w1");
+2100 ::FOYER::Joe room=diff d 7.6 pos 7.06 2.12 2.88 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.06 lastseen 8.27 nonreact 0 iues 0
+   >> 2114 ::gunroom::script->FSM_Send(start);
+2160 ::FOYER::Joe room=same d 9.3 pos -6.31 -1.38 7.03 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -1.43 lastseen 9.65 nonreact 0 iues 0
+2220 ::FOYER::Joe room=same d 5.6 pos -2.85 -1.38 4.99 hp 104.0 | act 1 hit 0 seen 1 perc 1 f3ac 1 f3ae 0 int 360.00 tmo 360.00 lastseen 0.00 nonreact 0 iues 0
+2280 ::FOYER::Joe room=same d 3.0 pos 0.02 -1.38 3.14 hp 104.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -1.16 lastseen 0.09 nonreact 1 iues 0
+2340 ::FOYER::Joe room=same d 2.0 pos 0.72 -1.38 1.95 hp 34.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.91 lastseen 0.03 nonreact 1 iues 0
+2400 ::FOYER::Joe room=same d 0.8 pos -0.16 -1.39 -0.67 hp 34.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -2.23 lastseen 0.09 nonreact 1 iues 0
+2460 ::FOYER::Joe room=same d 2.4 pos -1.10 -1.38 -1.99 hp 34.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -3.33 lastseen 0.15 nonreact 1 iues 0
+2520 ::FOYER::Joe room=same d 2.4 pos -1.10 -1.38 -1.99 hp 34.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -4.39 lastseen 0.13 nonreact 1 iues 0
+2580 ::FOYER::Joe room=same d 2.4 pos -1.10 -1.38 -1.99 hp 34.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -5.42 lastseen 0.12 nonreact 1 iues 0
+2640 ::FOYER::Joe room=same d 2.4 pos -1.10 -1.38 -1.99 hp 34.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -6.47 lastseen 0.15 nonreact 1 iues 0

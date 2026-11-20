@@ -1,0 +1,124 @@
+{
+ "patches": [
+  "0x8a6307",
+  "0x635698",
+  "0x6356b9",
+  "0x6356bc",
+  "0x6356c9",
+  "0x6356cb",
+  "0x6356cf",
+  "0x4cd61e",
+  "0x4cd66d",
+  "0x1020437f"
+ ],
+ "maxpayne.exe": {
+  "functions": 45048,
+  "data_seeds_inside_instructions": 1190,
+  "failed": {},
+  "trap_sites_by_reason": {
+   "les": 1373,
+   "decode": 46,
+   "in": 18,
+   "retf": 16,
+   "int3": 16,
+   "mov fs": 12,
+   "into": 11,
+   "enter nested": 10,
+   "sti": 9,
+   "reg ss": 9,
+   "outsb": 5,
+   "reg es": 4,
+   "aam": 4,
+   "mov es": 3,
+   "int1": 3,
+   "out": 3,
+   "salc": 3,
+   "cli": 2,
+   "daa": 2,
+   "reg cs": 2,
+   "bound": 2,
+   "fstpnce": 1,
+   "lds": 1,
+   "reg ds": 1,
+   "aaa": 1,
+   "hlt": 1,
+   "insb": 1,
+   "aad": 1
+  }
+ },
+ "rlmfc.dll": {
+  "functions": 1653,
+  "data_seeds_inside_instructions": 0,
+  "failed": {},
+  "trap_sites_by_reason": {
+   "segment gs": 2,
+   "int": 1,
+   "orps": 1
+  }
+ },
+ "e2mfc.dll": {
+  "functions": 2780,
+  "data_seeds_inside_instructions": 6,
+  "failed": {},
+  "trap_sites_by_reason": {}
+ },
+ "grphmfc.dll": {
+  "functions": 410,
+  "data_seeds_inside_instructions": 0,
+  "failed": {},
+  "trap_sites_by_reason": {}
+ },
+ "sndmfc.dll": {
+  "functions": 566,
+  "data_seeds_inside_instructions": 0,
+  "failed": {},
+  "trap_sites_by_reason": {}
+ },
+ "e2_d3d8_driver_mfc.dll": {
+  "functions": 1897,
+  "data_seeds_inside_instructions": 0,
+  "failed": {},
+  "trap_sites_by_reason": {
+   "int3": 15,
+   "decode": 1,
+   "bound": 1,
+   "int": 1
+  }
+ },
+ "mfc42.dll": {
+  "functions": 10439,
+  "data_seeds_inside_instructions": 0,
+  "failed": {},
+  "trap_sites_by_reason": {
+   "segment gs": 6,
+   "int1": 2
+  }
+ },
+ "msvcrt.dll": {
+  "functions": 1411,
+  "data_seeds_inside_instructions": 0,
+  "failed": {},
+  "trap_sites_by_reason": {
+   "int": 32,
+   "in": 3,
+   "out": 3,
+   "int3": 2,
+   "fnsave": 2,
+   "frstor": 2,
+   "fnstenv": 2,
+   "fldenv": 2
+  }
+ },
+ "msvcp60.dll": {
+  "functions": 3453,
+  "data_seeds_inside_instructions": 0,
+  "failed": {},
+  "trap_sites_by_reason": {}
+ },
+ "msvcirt.dll": {
+  "functions": 577,
+  "data_seeds_inside_instructions": 0,
+  "failed": {},
+  "trap_sites_by_reason": {}
+ }
+}

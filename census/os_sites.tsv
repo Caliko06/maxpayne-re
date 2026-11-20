@@ -1,0 +1,569 @@
+# REA 6.7.0 + Ghidra 12.1.4 resolve_containing_procedure on census/import_sites.tsv and special_insns.tsv sites.
+# "NOT IN A FUNCTION" = Ghidra found no function body there: linear-sweep noise (data or padding), not code.
+binary	site	api_or_insn	procedure	name	evidence
+MaxPayne_x.exe	0x401b37	advapi32.dll!RegSetValueA	-	NOT IN A FUNCTION	ev_a94f3322ced8
+MaxPayne_x.exe	0x401e38	advapi32.dll!RegSetValueA	-	NOT IN A FUNCTION	ev_c0f05cf0d23e
+MaxPayne_x.exe	0x4053a8	advapi32.dll!RegSetValueA	-	NOT IN A FUNCTION	ev_5645df93ee3d
+MaxPayne_x.exe	0x405a16	advapi32.dll!RegSetValueA	-	NOT IN A FUNCTION	ev_10f4690a3843
+MaxPayne_x.exe	0x408393	advapi32.dll!RegSetValueA	-	NOT IN A FUNCTION	ev_c9021fa4c154
+MaxPayne_x.exe	0x409046	advapi32.dll!RegSetValueA	-	NOT IN A FUNCTION	ev_8a12dc516178
+MaxPayne_x.exe	0x4099f2	advapi32.dll!RegSetValueA	-	NOT IN A FUNCTION	ev_f11999c11787
+MaxPayne_x.exe	0x40a0c6	advapi32.dll!RegSetValueA	-	NOT IN A FUNCTION	ev_c4c5712ebfab
+MaxPayne_x.exe	0x40affa	advapi32.dll!RegSetValueA	0x40af30	FUN_0040af30	ev_1103d3b183fd
+MaxPayne_x.exe	0x40c415	advapi32.dll!RegSetValueA	-	NOT IN A FUNCTION	ev_bc453460937b
+MaxPayne_x.exe	0x40c996	advapi32.dll!RegSetValueA	-	NOT IN A FUNCTION	ev_cd238cf04004
+MaxPayne_x.exe	0x40cd36	advapi32.dll!RegSetValueA	-	NOT IN A FUNCTION	ev_2b77b3aa759b
+MaxPayne_x.exe	0x401b17	dinput.dll!DirectInputCreateA	-	NOT IN A FUNCTION	ev_2e968fb1faa8
+MaxPayne_x.exe	0x401ce9	dinput.dll!DirectInputCreateA	-	NOT IN A FUNCTION	ev_4b635e250756
+MaxPayne_x.exe	0x404425	dinput.dll!DirectInputCreateA	-	NOT IN A FUNCTION	ev_18e7c59716c6
+MaxPayne_x.exe	0x4045e8	dinput.dll!DirectInputCreateA	-	NOT IN A FUNCTION	ev_5e5216dfb0ea
+MaxPayne_x.exe	0x405708	dinput.dll!DirectInputCreateA	-	NOT IN A FUNCTION	ev_b84d954445ca
+MaxPayne_x.exe	0x407257	dinput.dll!DirectInputCreateA	-	NOT IN A FUNCTION	ev_84a1d48d53f1
+MaxPayne_x.exe	0x408116	dinput.dll!DirectInputCreateA	-	NOT IN A FUNCTION	ev_4e37837d017c
+MaxPayne_x.exe	0x408e25	dinput.dll!DirectInputCreateA	-	NOT IN A FUNCTION	ev_7bcfc12e32a7
+MaxPayne_x.exe	0x409813	dinput.dll!DirectInputCreateA	-	NOT IN A FUNCTION	ev_517b6aad9b3b
+MaxPayne_x.exe	0x40bbe7	dinput.dll!DirectInputCreateA	-	NOT IN A FUNCTION	ev_c4caae56ba40
+MaxPayne_x.exe	0x40bcc7	dinput.dll!DirectInputCreateA	-	NOT IN A FUNCTION	ev_44875a752a47
+MaxPayne_x.exe	0x40c737	dinput.dll!DirectInputCreateA	-	NOT IN A FUNCTION	ev_a95c7b6c4d4b
+MaxPayne_x.exe	0x40e02a	gdi32.dll!BitBlt	-	NOT IN A FUNCTION	ev_ec9dccbbd41c
+MaxPayne_x.exe	0x411488	gdi32.dll!BitBlt	-	NOT IN A FUNCTION	ev_6b1e8cf6c08d
+MaxPayne_x.exe	0x411d84	gdi32.dll!BitBlt	-	NOT IN A FUNCTION	ev_1e3670c3a496
+MaxPayne_x.exe	0x403cd4	gdi32.dll!CreateCompatibleBitmap	-	NOT IN A FUNCTION	ev_728e1cf9fac4
+MaxPayne_x.exe	0x40dfc4	gdi32.dll!CreateCompatibleBitmap	-	NOT IN A FUNCTION	ev_4a062b1b951e
+MaxPayne_x.exe	0x40e577	gdi32.dll!CreateCompatibleBitmap	-	NOT IN A FUNCTION	ev_ad6581cf931c
+MaxPayne_x.exe	0x40a4b4	gdi32.dll!CreateCompatibleDC	-	NOT IN A FUNCTION	ev_a9708261aab2
+MaxPayne_x.exe	0x40dfb1	gdi32.dll!CreateCompatibleDC	-	NOT IN A FUNCTION	ev_a4384c974b5c
+MaxPayne_x.exe	0x40e457	gdi32.dll!CreateCompatibleDC	-	NOT IN A FUNCTION	ev_6fa07037532e
+MaxPayne_x.exe	0x40e044	gdi32.dll!DeleteDC	-	NOT IN A FUNCTION	ev_53c275706c31
+MaxPayne_x.exe	0x4041b5	gdi32.dll!DeleteObject	-	NOT IN A FUNCTION	ev_9acb187153bc
+MaxPayne_x.exe	0x40e03d	gdi32.dll!DeleteObject	-	NOT IN A FUNCTION	ev_8f4f4df64b3b
+MaxPayne_x.exe	0x410cd5	gdi32.dll!DeleteObject	-	NOT IN A FUNCTION	ev_bb9437d4488b
+MaxPayne_x.exe	0x4042d5	gdi32.dll!GetDeviceCaps	-	NOT IN A FUNCTION	ev_50323880a4eb
+MaxPayne_x.exe	0x40b24b	gdi32.dll!GetDeviceCaps	0x40b1b0	FUN_0040b1b0	ev_feffe27d057a
+MaxPayne_x.exe	0x40b257	gdi32.dll!GetDeviceCaps	0x40b1b0	FUN_0040b1b0	ev_2cc4dd236745
+MaxPayne_x.exe	0x40cde6	gdi32.dll!GetDeviceCaps	-	NOT IN A FUNCTION	ev_5dcde5b32bf5
+MaxPayne_x.exe	0x402c26	gdi32.dll!GetMapMode	-	NOT IN A FUNCTION	ev_f79aa5bfc621
+MaxPayne_x.exe	0x4059c4	gdi32.dll!GetMapMode	-	NOT IN A FUNCTION	ev_12cdc3cabef3
+MaxPayne_x.exe	0x40dfa6	gdi32.dll!GetMapMode	-	NOT IN A FUNCTION	ev_929df9672cc5
+MaxPayne_x.exe	0x40e4b7	gdi32.dll!GetMapMode	-	NOT IN A FUNCTION	ev_857caa9be33e
+MaxPayne_x.exe	0x40dfce	gdi32.dll!SelectObject	-	NOT IN A FUNCTION	ev_ee91d392fea3
+MaxPayne_x.exe	0x40e036	gdi32.dll!SelectObject	-	NOT IN A FUNCTION	ev_b4496311a055
+MaxPayne_x.exe	0x412b21	gdi32.dll!SelectObject	-	NOT IN A FUNCTION	ev_406b71683ac6
+MaxPayne_x.exe	0x405bd6	gdi32.dll!SetMapMode	-	NOT IN A FUNCTION	ev_a8a40310af59
+MaxPayne_x.exe	0x40d2c7	gdi32.dll!SetMapMode	-	NOT IN A FUNCTION	ev_da688ed604da
+MaxPayne_x.exe	0x40e00b	gdi32.dll!SetMapMode	-	NOT IN A FUNCTION	ev_97b417d7ddd5
+MaxPayne_x.exe	0x40e517	gdi32.dll!SetMapMode	-	NOT IN A FUNCTION	ev_0e707bf7ee8e
+MaxPayne_x.exe	0x40ce16	kernel32.dll!CopyFileA	-	NOT IN A FUNCTION	ev_b970729ed82c
+MaxPayne_x.exe	0x410486	kernel32.dll!CopyFileA	0x410300	FUN_00410300	ev_dc2c64229fb3
+MaxPayne_x.exe	0x40e869	kernel32.dll!CreateDirectoryA	0x40e810	FUN_0040e810	ev_dcfe898c6995
+MaxPayne_x.exe	0x41069e	kernel32.dll!CreateDirectoryA	0x410300	FUN_00410300	ev_a3e12fde4b0c
+MaxPayne_x.exe	0x674364	kernel32.dll!CreateDirectoryA	0x674300	FUN_00674300	ev_7bfcd3068da7
+MaxPayne_x.exe	0x7351f9	kernel32.dll!CreateDirectoryA	0x7350c0	FUN_007350c0	ev_5663dd5b41f0
+MaxPayne_x.exe	0x40642e	kernel32.dll!FindClose	-	NOT IN A FUNCTION	ev_b3746bc43f4d
+MaxPayne_x.exe	0x40e109	kernel32.dll!FindClose	-	NOT IN A FUNCTION	ev_8ceed0ef700f
+MaxPayne_x.exe	0x40e487	kernel32.dll!FindClose	-	NOT IN A FUNCTION	ev_c96d93367df4
+MaxPayne_x.exe	0x406200	kernel32.dll!FindFirstFileA	-	NOT IN A FUNCTION	ev_183d6c856d10
+MaxPayne_x.exe	0x40cd56	kernel32.dll!FindFirstFileA	-	NOT IN A FUNCTION	ev_e31253a2b4dd
+MaxPayne_x.exe	0x410c23	kernel32.dll!FindFirstFileA	-	NOT IN A FUNCTION	ev_11ab47ae5d1d
+MaxPayne_x.exe	0x40641b	kernel32.dll!FindNextFileA	-	NOT IN A FUNCTION	ev_9396b6ee391a
+MaxPayne_x.exe	0x409a69	kernel32.dll!FindNextFileA	-	NOT IN A FUNCTION	ev_fd345ec86353
+MaxPayne_x.exe	0x40a356	kernel32.dll!FindNextFileA	-	NOT IN A FUNCTION	ev_1b1bcff5f0e5
+MaxPayne_x.exe	0x40cdb6	kernel32.dll!FindNextFileA	-	NOT IN A FUNCTION	ev_22a6446731af
+MaxPayne_x.exe	0x40b983	kernel32.dll!FreeLibrary	0x40b930	FUN_0040b930	ev_df8b8b8c11ae
+MaxPayne_x.exe	0x40fd6d	kernel32.dll!FreeLibrary	0x40f9e0	FUN_0040f9e0	ev_6c3bd4e60985
+MaxPayne_x.exe	0x517ea4	kernel32.dll!GetCurrentThreadId	0x517e70	FUN_00517e70	ev_ff9eabe10146
+MaxPayne_x.exe	0x40af94	kernel32.dll!GetModuleFileNameA	0x40af30	FUN_0040af30	ev_e023c1977d3a
+MaxPayne_x.exe	0x40c9e4	kernel32.dll!GetModuleFileNameA	-	NOT IN A FUNCTION	ev_96ceebd84692
+MaxPayne_x.exe	0x402f26	kernel32.dll!GetModuleHandleA	-	NOT IN A FUNCTION	ev_8fabdbe18561
+MaxPayne_x.exe	0x76fc2c	kernel32.dll!GetModuleHandleA	0x76fb04	entry	ev_863002c742b1
+MaxPayne_x.exe	0x404125	kernel32.dll!GetProcAddress	-	NOT IN A FUNCTION	ev_917c1c6f50a2
+MaxPayne_x.exe	0x40fcc1	kernel32.dll!GetProcAddress	0x40f9e0	FUN_0040f9e0	ev_812c12260a24
+MaxPayne_x.exe	0x40afb3	kernel32.dll!GetShortPathNameA	0x40af30	FUN_0040af30	ev_98257d3d939d
+MaxPayne_x.exe	0x76fc08	kernel32.dll!GetStartupInfoA	0x76fb04	entry	ev_845e2f0266af
+MaxPayne_x.exe	0x40b955	kernel32.dll!LoadLibraryA	0x40b930	FUN_0040b930	ev_346098700469
+MaxPayne_x.exe	0x40fc9d	kernel32.dll!LoadLibraryA	0x40f9e0	FUN_0040f9e0	ev_3d3abbd9f2e2
+MaxPayne_x.exe	0x409252	kernel32.dll!MultiByteToWideChar	-	NOT IN A FUNCTION	ev_3ff4a7d10ea7
+MaxPayne_x.exe	0x409b1c	kernel32.dll!MultiByteToWideChar	0x409ac0	FUN_00409ac0	ev_4f27b4d9ff77
+MaxPayne_x.exe	0x402371	kernel32.dll!OutputDebugStringA	-	NOT IN A FUNCTION	ev_f07a14bacb78
+MaxPayne_x.exe	0x402873	kernel32.dll!OutputDebugStringA	-	NOT IN A FUNCTION	ev_6d90c14d5277
+MaxPayne_x.exe	0x40e427	kernel32.dll!OutputDebugStringA	-	NOT IN A FUNCTION	ev_f49e7a82120f
+MaxPayne_x.exe	0x410f16	kernel32.dll!OutputDebugStringA	-	NOT IN A FUNCTION	ev_ab549361e692
+MaxPayne_x.exe	0x5190a8	kernel32.dll!OutputDebugStringA	0x519070	FUN_00519070	ev_2e36c6fff398
+MaxPayne_x.exe	0x40e3c4	kernel32.dll!SetFileAttributesA	-	NOT IN A FUNCTION	ev_fb40d5e7ac6a
+MaxPayne_x.exe	0x43a4a4	kernel32.dll!SetFileAttributesA	0x43a380	FUN_0043a380	ev_3db6a1ab3a22
+MaxPayne_x.exe	0x40b7c7	kernel32.dll!SetThreadPriority	0x40b7a0	FUN_0040b7a0	ev_458dd61547e3
+MaxPayne_x.exe	0x40bb47	kernel32.dll!SetThreadPriority	-	NOT IN A FUNCTION	ev_c19f93a6565d
+MaxPayne_x.exe	0x40bba6	kernel32.dll!SetThreadPriority	-	NOT IN A FUNCTION	ev_6972a2f3fa06
+MaxPayne_x.exe	0x409f02	kernel32.dll!Sleep	0x409ac0	FUN_00409ac0	ev_c68844cc9bba
+MaxPayne_x.exe	0x402f36	ole32.dll!CoCreateInstance	-	NOT IN A FUNCTION	ev_14df848f775f
+MaxPayne_x.exe	0x4055e6	ole32.dll!CoCreateInstance	-	NOT IN A FUNCTION	ev_be34646ec7e1
+MaxPayne_x.exe	0x409b3a	ole32.dll!CoCreateInstance	0x409ac0	FUN_00409ac0	ev_04dac3151967
+MaxPayne_x.exe	0x40cd66	ole32.dll!CoCreateInstance	-	NOT IN A FUNCTION	ev_350e5e6a4a7f
+MaxPayne_x.exe	0x40cdc6	ole32.dll!CoCreateInstance	-	NOT IN A FUNCTION	ev_27466fb50b26
+MaxPayne_x.exe	0x40ce47	ole32.dll!CoCreateInstance	-	NOT IN A FUNCTION	ev_e1bc2135d380
+MaxPayne_x.exe	0x410c36	ole32.dll!CoCreateInstance	-	NOT IN A FUNCTION	ev_f37ff91ef9c9
+MaxPayne_x.exe	0x402434	ole32.dll!CoInitialize	-	NOT IN A FUNCTION	ev_e2eb767c7ef0
+MaxPayne_x.exe	0x4029d5	ole32.dll!CoInitialize	-	NOT IN A FUNCTION	ev_4dedd2084b2a
+MaxPayne_x.exe	0x404155	ole32.dll!CoInitialize	-	NOT IN A FUNCTION	ev_c5db005b0dde
+MaxPayne_x.exe	0x405b4a	ole32.dll!CoInitialize	-	NOT IN A FUNCTION	ev_2d3662184ea4
+MaxPayne_x.exe	0x409b23	ole32.dll!CoInitialize	0x409ac0	FUN_00409ac0	ev_43b67bef5d42
+MaxPayne_x.exe	0x40adb2	ole32.dll!CoInitialize	-	NOT IN A FUNCTION	ev_743300419c9b
+MaxPayne_x.exe	0x40e3d4	ole32.dll!CoInitialize	-	NOT IN A FUNCTION	ev_2f4b2b2d6fb3
+MaxPayne_x.exe	0x40e437	ole32.dll!CoInitialize	-	NOT IN A FUNCTION	ev_72a31611d836
+MaxPayne_x.exe	0x40e497	ole32.dll!CoInitialize	-	NOT IN A FUNCTION	ev_a5cce039c432
+MaxPayne_x.exe	0x40e4f7	ole32.dll!CoInitialize	-	NOT IN A FUNCTION	ev_b8a8a6220138
+MaxPayne_x.exe	0x40f486	ole32.dll!CoInitialize	-	NOT IN A FUNCTION	ev_7cb2b4cb5a3b
+MaxPayne_x.exe	0x40f88a	ole32.dll!CoInitialize	-	NOT IN A FUNCTION	ev_3bf3a7c90b6a
+MaxPayne_x.exe	0x40a4a9	user32.dll!CallNextHookEx	-	NOT IN A FUNCTION	ev_c4a2e355b041
+MaxPayne_x.exe	0x518382	user32.dll!CallNextHookEx	0x518360	FUN_00518360	ev_5fbbbfb32c3c
+MaxPayne_x.exe	0x4043f6	user32.dll!DispatchMessageA	-	NOT IN A FUNCTION	ev_7196be21bf3c
+MaxPayne_x.exe	0x409eda	user32.dll!DispatchMessageA	0x409ac0	FUN_00409ac0	ev_f2a4332f6abe
+MaxPayne_x.exe	0x40c37c	user32.dll!DispatchMessageA	0x40c020	FUN_0040c020	ev_c6b6fa15b4d5
+MaxPayne_x.exe	0x40c498	user32.dll!DispatchMessageA	0x40c440	FUN_0040c440	ev_d09d5bfc244a
+MaxPayne_x.exe	0x43a821	user32.dll!DispatchMessageA	0x43a7e0	FUN_0043a7e0	ev_ffc38e8f2e35
+MaxPayne_x.exe	0x40dfff	user32.dll!DrawTextA	-	NOT IN A FUNCTION	ev_0003a3f7e34b
+MaxPayne_x.exe	0x404db6	user32.dll!EnableWindow	-	NOT IN A FUNCTION	ev_036714f55f1a
+MaxPayne_x.exe	0x404dc6	user32.dll!EnableWindow	-	NOT IN A FUNCTION	ev_8477e6b4774e
+MaxPayne_x.exe	0x401be7	user32.dll!FillRect	-	NOT IN A FUNCTION	ev_95a8efff4295
+MaxPayne_x.exe	0x40dfe0	user32.dll!FillRect	-	NOT IN A FUNCTION	ev_087b80e1eab4
+MaxPayne_x.exe	0x407f31	user32.dll!FindWindowA	-	NOT IN A FUNCTION	ev_7e7796c46089
+MaxPayne_x.exe	0x40c6e5	user32.dll!FindWindowA	0x40c6d0	FUN_0040c6d0	ev_e733ba37a90a
+MaxPayne_x.exe	0x40a441	user32.dll!GetAsyncKeyState	-	NOT IN A FUNCTION	ev_fc744d1a2f34
+MaxPayne_x.exe	0x43a85b	user32.dll!GetAsyncKeyState	0x43a7e0	FUN_0043a7e0	ev_707752697b4f
+MaxPayne_x.exe	0x409de8	user32.dll!GetClientRect	0x409ac0	FUN_00409ac0	ev_cf355e870871
+MaxPayne_x.exe	0x40d182	user32.dll!GetClientRect	-	NOT IN A FUNCTION	ev_b70ad7fa1043
+MaxPayne_x.exe	0x40d4bd	user32.dll!GetClientRect	-	NOT IN A FUNCTION	ev_6e2a84b57d0a
+MaxPayne_x.exe	0x40df9f	user32.dll!GetClientRect	-	NOT IN A FUNCTION	ev_a317f63b8705
+MaxPayne_x.exe	0x40b240	user32.dll!GetDC	0x40b1b0	FUN_0040b1b0	ev_479720034399
+MaxPayne_x.exe	0x40df8e	user32.dll!GetDC	-	NOT IN A FUNCTION	ev_a148bae7e181
+MaxPayne_x.exe	0x40b237	user32.dll!GetDesktopWindow	0x40b1b0	FUN_0040b1b0	ev_8e4516583461
+MaxPayne_x.exe	0x404658	user32.dll!GetDlgCtrlID	0x404600	FUN_00404600	ev_f8b57ffbbf9e
+MaxPayne_x.exe	0x40b927	user32.dll!GetDlgCtrlID	-	NOT IN A FUNCTION	ev_5e9ded73514b
+MaxPayne_x.exe	0x40e3f4	user32.dll!GetDlgCtrlID	-	NOT IN A FUNCTION	ev_dbddbc8ee834
+MaxPayne_x.exe	0x519beb	user32.dll!GetKeyNameTextA	0x519b80	FUN_00519b80	ev_a2d34bad75ce
+MaxPayne_x.exe	0x519e01	user32.dll!GetKeyNameTextA	0x519b80	FUN_00519b80	ev_3765ee1eac42
+MaxPayne_x.exe	0x5183a6	user32.dll!GetKeyboardState	0x518360	FUN_00518360	ev_4d40b1302377
+MaxPayne_x.exe	0x40c6fc	user32.dll!GetLastActivePopup	0x40c6d0	FUN_0040c6d0	ev_41179b42dda6
+MaxPayne_x.exe	0x43a815	user32.dll!GetMessageA	0x43a7e0	FUN_0043a7e0	ev_b4cf3e317df7
+MaxPayne_x.exe	0x406e3a	user32.dll!GetSystemMetrics	-	NOT IN A FUNCTION	ev_176fe08ff6d1
+MaxPayne_x.exe	0x40a9a8	user32.dll!GetSystemMetrics	0x40a4c0	FUN_0040a4c0	ev_54ac9a529d42
+MaxPayne_x.exe	0x40cee5	user32.dll!GetSystemMetrics	0x40cec0	FUN_0040cec0	ev_c9367a498b52
+MaxPayne_x.exe	0x40cfdb	user32.dll!GetSystemMetrics	0x40cfc0	FUN_0040cfc0	ev_acfc427c19d5
+MaxPayne_x.exe	0x40d11d	user32.dll!GetSystemMetrics	0x40d040	FUN_0040d040	ev_d315e7967b7f
+MaxPayne_x.exe	0x40d7b7	user32.dll!GetSystemMetrics	-	NOT IN A FUNCTION	ev_1720349a1924
+MaxPayne_x.exe	0x413375	user32.dll!GetSystemMetrics	-	NOT IN A FUNCTION	ev_802877853a7e
+MaxPayne_x.exe	0x406608	user32.dll!GetWindowRect	-	NOT IN A FUNCTION	ev_8fb10cf9958b
+MaxPayne_x.exe	0x40d191	user32.dll!GetWindowRect	-	NOT IN A FUNCTION	ev_5fb1fa01d44b
+MaxPayne_x.exe	0x40e663	user32.dll!InvalidateRect	0x40e5d0	FUN_0040e5d0	ev_50f3868f08a6
+MaxPayne_x.exe	0x40e714	user32.dll!InvalidateRect	0x40e690	FUN_0040e690	ev_e32f644bcbce
+MaxPayne_x.exe	0x40bbd7	user32.dll!IsIconic	-	NOT IN A FUNCTION	ev_a16833d46207
+MaxPayne_x.exe	0x40c2eb	user32.dll!IsIconic	0x40c020	FUN_0040c020	ev_a26231227864
+MaxPayne_x.exe	0x40c715	user32.dll!IsIconic	0x40c6d0	FUN_0040c6d0	ev_40115e03145b
+MaxPayne_x.exe	0x40d35f	user32.dll!IsIconic	0x40d340	FUN_0040d340	ev_9a518845126c
+MaxPayne_x.exe	0x40ede9	user32.dll!IsIconic	-	NOT IN A FUNCTION	ev_117895efffc8
+MaxPayne_x.exe	0x40c6eb	user32.dll!IsWindow	0x40c6d0	FUN_0040c6d0	ev_0dcb1826ebf0
+MaxPayne_x.exe	0x40bcb7	user32.dll!LoadAcceleratorsA	-	NOT IN A FUNCTION	ev_6bde014aa06b
+MaxPayne_x.exe	0x40cf4b	user32.dll!LoadAcceleratorsA	0x40cec0	FUN_0040cec0	ev_a7ce2ae928c4
+MaxPayne_x.exe	0x40e5c7	user32.dll!LoadAcceleratorsA	-	NOT IN A FUNCTION	ev_9f89ecb263c2
+MaxPayne_x.exe	0x40d38e	user32.dll!LoadCursorA	0x40d340	FUN_0040d340	ev_cd47f2e27941
+MaxPayne_x.exe	0x405f42	user32.dll!LoadIconA	-	NOT IN A FUNCTION	ev_490395486aa1
+MaxPayne_x.exe	0x40a9ea	user32.dll!LoadIconA	0x40a4c0	FUN_0040a4c0	ev_5cfa09947a19
+MaxPayne_x.exe	0x4129a6	user32.dll!LoadIconA	-	NOT IN A FUNCTION	ev_fcdc81317b5e
+MaxPayne_x.exe	0x409e77	user32.dll!PeekMessageA	0x409ac0	FUN_00409ac0	ev_e30dc1e157bb
+MaxPayne_x.exe	0x40c335	user32.dll!PeekMessageA	0x40c020	FUN_0040c020	ev_3b38f3c3d4fb
+MaxPayne_x.exe	0x40c46d	user32.dll!PeekMessageA	0x40c440	FUN_0040c440	ev_d704b5db91be
+MaxPayne_x.exe	0x43a7fb	user32.dll!PeekMessageA	0x43a7e0	FUN_0043a7e0	ev_dd8431188cb4
+MaxPayne_x.exe	0x40a162	user32.dll!PostQuitMessage	-	NOT IN A FUNCTION	ev_096587218c95
+MaxPayne_x.exe	0x40c798	user32.dll!PostQuitMessage	0x40c740	FUN_0040c740	ev_9b473e5d654f
+MaxPayne_x.exe	0x40c7a7	user32.dll!PostQuitMessage	-	NOT IN A FUNCTION	ev_b6350f317ad6
+MaxPayne_x.exe	0x40b918	user32.dll!RedrawWindow	0x40b900	FUN_0040b900	ev_eceac6549390
+MaxPayne_x.exe	0x412183	user32.dll!RedrawWindow	-	NOT IN A FUNCTION	ev_a850fd072ec3
+MaxPayne_x.exe	0x40b264	user32.dll!ReleaseDC	0x40b1b0	FUN_0040b1b0	ev_994b05200b7d
+MaxPayne_x.exe	0x40e04f	user32.dll!ReleaseDC	-	NOT IN A FUNCTION	ev_acde3917b3b9
+MaxPayne_x.exe	0x402f5a	user32.dll!SendMessageA	0x402f40	FUN_00402f40	ev_9c249ff4d62c
+MaxPayne_x.exe	0x403aeb	user32.dll!SendMessageA	0x403ae0	FUN_00403ae0	ev_681bc8cbe75d
+MaxPayne_x.exe	0x403cfc	user32.dll!SendMessageA	0x403ce0	FUN_00403ce0	ev_bf8d518b0133
+MaxPayne_x.exe	0x404006	user32.dll!SendMessageA	0x403ff0	FUN_00403ff0	ev_75199a880dfb
+MaxPayne_x.exe	0x40461f	user32.dll!SendMessageA	0x404600	FUN_00404600	ev_7b44d24ae1d2
+MaxPayne_x.exe	0x405118	user32.dll!SendMessageA	0x4050c0	FUN_004050c0	ev_58ee676dee87
+MaxPayne_x.exe	0x4053dc	user32.dll!SendMessageA	-	NOT IN A FUNCTION	ev_db969e696e80
+MaxPayne_x.exe	0x405561	user32.dll!SendMessageA	-	NOT IN A FUNCTION	ev_efecd22eb433
+MaxPayne_x.exe	0x405798	user32.dll!SendMessageA	-	NOT IN A FUNCTION	ev_953bc835cd1d
+MaxPayne_x.exe	0x405f4b	user32.dll!SendMessageA	-	NOT IN A FUNCTION	ev_c5981a2d9d52
+MaxPayne_x.exe	0x406219	user32.dll!SendMessageA	-	NOT IN A FUNCTION	ev_f1c4298bf568
+MaxPayne_x.exe	0x4063cf	user32.dll!SendMessageA	-	NOT IN A FUNCTION	ev_17e15e9ac980
+MaxPayne_x.exe	0x40c6c2	user32.dll!SetCursor	-	NOT IN A FUNCTION	ev_a4164b7c386f
+MaxPayne_x.exe	0x40d143	user32.dll!SetCursor	0x40d040	FUN_0040d040	ev_c2913d298964
+MaxPayne_x.exe	0x40d36a	user32.dll!SetCursor	0x40d340	FUN_0040d340	ev_456b30bdf8c2
+MaxPayne_x.exe	0x40d395	user32.dll!SetCursor	0x40d340	FUN_0040d340	ev_fc9cbc385800
+MaxPayne_x.exe	0x40e567	user32.dll!SetCursor	-	NOT IN A FUNCTION	ev_4904ed32b05d
+MaxPayne_x.exe	0x40c70e	user32.dll!SetForegroundWindow	0x40c6d0	FUN_0040c6d0	ev_733c6742c05d
+MaxPayne_x.exe	0x40d14d	user32.dll!SetForegroundWindow	0x40d040	FUN_0040d040	ev_1b09d3305e6a
+MaxPayne_x.exe	0x4045d8	user32.dll!SetWindowsHookExA	-	NOT IN A FUNCTION	ev_1676dc3dc641
+MaxPayne_x.exe	0x40a6d8	user32.dll!SetWindowsHookExA	0x40a4c0	FUN_0040a4c0	ev_e22351c0dba3
+MaxPayne_x.exe	0x40cb37	user32.dll!SetWindowsHookExA	-	NOT IN A FUNCTION	ev_2ff736cfa803
+MaxPayne_x.exe	0x517eb8	user32.dll!SetWindowsHookExA	0x517e70	FUN_00517e70	ev_488f953d5efc
+MaxPayne_x.exe	0x408d16	user32.dll!ShowWindow	-	NOT IN A FUNCTION	ev_fd296aa51936
+MaxPayne_x.exe	0x40c723	user32.dll!ShowWindow	0x40c6d0	FUN_0040c6d0	ev_719da5e4fef4
+MaxPayne_x.exe	0x404523	user32.dll!ToAscii	-	NOT IN A FUNCTION	ev_eea2121d1b19
+MaxPayne_x.exe	0x5183cb	user32.dll!ToAscii	0x518360	FUN_00518360	ev_1d670d0d5b89
+MaxPayne_x.exe	0x40d3e6	user32.dll!TranslateAcceleratorA	-	NOT IN A FUNCTION	ev_69bf40d3336f
+MaxPayne_x.exe	0x40d473	user32.dll!TranslateAcceleratorA	-	NOT IN A FUNCTION	ev_4ecbab7a45f1
+MaxPayne_x.exe	0x40dee3	user32.dll!TranslateAcceleratorA	-	NOT IN A FUNCTION	ev_44e1e40142ad
+MaxPayne_x.exe	0x409532	user32.dll!TranslateMessage	-	NOT IN A FUNCTION	ev_ea48514af0f5
+MaxPayne_x.exe	0x409e7d	user32.dll!TranslateMessage	0x409ac0	FUN_00409ac0	ev_f1482cf359aa
+MaxPayne_x.exe	0x40c353	user32.dll!TranslateMessage	0x40c020	FUN_0040c020	ev_578fab9219f5
+MaxPayne_x.exe	0x40c492	user32.dll!TranslateMessage	0x40c440	FUN_0040c440	ev_68c0f2587a16
+MaxPayne_x.exe	0x43a81b	user32.dll!TranslateMessage	0x43a7e0	FUN_0043a7e0	ev_2a4846e28af1
+MaxPayne_x.exe	0x40ae56	user32.dll!UnhookWindowsHookEx	0x40adc0	FUN_0040adc0	ev_3efe2bf569ee
+MaxPayne_x.exe	0x517d4b	user32.dll!UnhookWindowsHookEx	0x517ce0	FUN_00517ce0	ev_4cc728a030f5
+MaxPayne_x.exe	0x40716c	fldcw	-	NOT IN A FUNCTION	ev_95bc1e015add
+MaxPayne_x.exe	0x40d612	fldcw	0x40d5e0	FUN_0040d5e0	ev_d865cfd199c8
+MaxPayne_x.exe	0x40d627	fldcw	0x40d5e0	FUN_0040d5e0	ev_959d7e574cbc
+MaxPayne_x.exe	0x40d682	fldcw	0x40d650	FUN_0040d650	ev_d7409d2cb048
+MaxPayne_x.exe	0x40d697	fldcw	0x40d650	FUN_0040d650	ev_92a96d7f36ba
+MaxPayne_x.exe	0x40d6f2	fldcw	0x40d6c0	FUN_0040d6c0	ev_96e1dd7f982c
+MaxPayne_x.exe	0x4081f1	in	0x4081f0	FUN_004081f0	ev_b5d4458407ea
+MaxPayne_x.exe	0x770e10	in	-	NOT IN A FUNCTION	ev_c01dda1ce3ef
+MaxPayne_x.exe	0x7716d0	in	-	NOT IN A FUNCTION	ev_c70acfd52f53
+MaxPayne_x.exe	0x771750	in	-	NOT IN A FUNCTION	ev_5fbe0a01417a
+MaxPayne_x.exe	0x771754	in	-	NOT IN A FUNCTION	ev_6f256c5f969a
+MaxPayne_x.exe	0x7717d0	in	-	NOT IN A FUNCTION	ev_4d635b02200d
+MaxPayne_x.exe	0x51a640	hlt	-	NOT IN A FUNCTION	ev_63a617d9292c
+MaxPayne_x.exe	0x770e00	hlt	-	NOT IN A FUNCTION	ev_4f225d582c08
+MaxPayne_x.exe	0x7716c0	hlt	-	NOT IN A FUNCTION	ev_e66614cecf78
+MaxPayne_x.exe	0x771740	hlt	-	NOT IN A FUNCTION	ev_f88e4bf7c517
+MaxPayne_x.exe	0x771794	hlt	-	NOT IN A FUNCTION	ev_70d11b65666e
+MaxPayne_x.exe	0x7717c0	hlt	-	NOT IN A FUNCTION	ev_fc358d9b1bd0
+MaxPayne_x.exe	0x74a5bc	pushfd	-	NOT IN A FUNCTION	ev_6db185cc1a18
+MaxPayne_x.exe	0x74a5c4	pushfd	-	NOT IN A FUNCTION	ev_bd8d6c75a8e4
+MaxPayne_x.exe	0x74a5c8	pushfd	-	NOT IN A FUNCTION	ev_5d0627baa1cb
+MaxPayne_x.exe	0x74a5cc	pushfd	-	NOT IN A FUNCTION	ev_899aa9fe9004
+MaxPayne_x.exe	0x771544	pushfd	-	NOT IN A FUNCTION	ev_55396e73d1b8
+MaxPayne_x.exe	0x40f055	out	-	NOT IN A FUNCTION	ev_f8e7caeb0dc0
+MaxPayne_x.exe	0x5001d0	out	-	NOT IN A FUNCTION	ev_d17ecca1c6d6
+MaxPayne_x.exe	0x6de759	out	-	NOT IN A FUNCTION	ev_bc85217d3829
+MaxPayne_x.exe	0x771554	popfd	-	NOT IN A FUNCTION	ev_bd07af1a19cd
+e2_d3d8_driver_mfc.dll	0x1003dd0b	gdi32.dll!CreateCompatibleDC	0x1003dbc2	FUN_1003dbc2	ev_9231135f29f1
+e2_d3d8_driver_mfc.dll	0x10055c3a	gdi32.dll!CreateCompatibleDC	-	NOT IN A FUNCTION	ev_7956ce133bab
+e2_d3d8_driver_mfc.dll	0x1003dd27	gdi32.dll!CreateDIBSection	0x1003dbc2	FUN_1003dbc2	ev_a44c52e3c67a
+e2_d3d8_driver_mfc.dll	0x1003e098	gdi32.dll!CreateDIBSection	0x1003de7f	FUN_1003de7f	ev_15dcc623c4dc
+e2_d3d8_driver_mfc.dll	0x10055c34	gdi32.dll!CreateDIBSection	-	NOT IN A FUNCTION	ev_6a63743aeeb9
+e2_d3d8_driver_mfc.dll	0x1003501b	gdi32.dll!CreateFontIndirectA	0x10034ff4	FUN_10034ff4	ev_95163392c707
+e2_d3d8_driver_mfc.dll	0x10055c10	gdi32.dll!CreateFontIndirectA	-	NOT IN A FUNCTION	ev_dc8e32c29321
+e2_d3d8_driver_mfc.dll	0x1003db6e	gdi32.dll!DeleteDC	0x1003dad8	FUN_1003dad8	ev_a8b95b5d9452
+e2_d3d8_driver_mfc.dll	0x10055c16	gdi32.dll!DeleteDC	-	NOT IN A FUNCTION	ev_d0808bf2fdf8
+e2_d3d8_driver_mfc.dll	0x10034fc6	gdi32.dll!DeleteObject	0x10034fb5	FUN_10034fb5	ev_0f76a5224259
+e2_d3d8_driver_mfc.dll	0x1003d9f3	gdi32.dll!DeleteObject	0x1003d9ec	FUN_1003d9ec	ev_0db4efc08b07
+e2_d3d8_driver_mfc.dll	0x1003da04	gdi32.dll!DeleteObject	0x1003d9fa	FUN_1003d9fa	ev_dd4ffb06504d
+e2_d3d8_driver_mfc.dll	0x1003db60	gdi32.dll!DeleteObject	0x1003dad8	FUN_1003dad8	ev_90a06641728d
+e2_d3d8_driver_mfc.dll	0x1003e0bd	gdi32.dll!DeleteObject	0x1003de7f	FUN_1003de7f	ev_61a2c4ca4177
+e2_d3d8_driver_mfc.dll	0x10055c0a	gdi32.dll!DeleteObject	-	NOT IN A FUNCTION	ev_f5085f610ce5
+e2_d3d8_driver_mfc.dll	0x1002fe08	gdi32.dll!GetObjectA	0x1002fdf9	FUN_1002fdf9	ev_3f47ae5caaba
+e2_d3d8_driver_mfc.dll	0x10055c04	gdi32.dll!GetObjectA	-	NOT IN A FUNCTION	ev_7e29e4db135d
+e2_d3d8_driver_mfc.dll	0x1003dd6d	gdi32.dll!SelectObject	0x1003dbc2	FUN_1003dbc2	ev_73eff52e7f0e
+e2_d3d8_driver_mfc.dll	0x1003df2f	gdi32.dll!SelectObject	0x1003de7f	FUN_1003de7f	ev_4c7c09c53b5a
+e2_d3d8_driver_mfc.dll	0x1003e0af	gdi32.dll!SelectObject	0x1003de7f	FUN_1003de7f	ev_81194946021f
+e2_d3d8_driver_mfc.dll	0x10055c1c	gdi32.dll!SelectObject	-	NOT IN A FUNCTION	ev_016d05f45abf
+e2_d3d8_driver_mfc.dll	0x1003dd50	gdi32.dll!SetBkColor	0x1003dbc2	FUN_1003dbc2	ev_b6e38407971a
+e2_d3d8_driver_mfc.dll	0x10055c28	gdi32.dll!SetBkColor	-	NOT IN A FUNCTION	ev_95efd7d064ef
+e2_d3d8_driver_mfc.dll	0x1003dd46	gdi32.dll!SetBkMode	0x1003dbc2	FUN_1003dbc2	ev_8b944949d8fc
+e2_d3d8_driver_mfc.dll	0x10055c2e	gdi32.dll!SetBkMode	-	NOT IN A FUNCTION	ev_a370e6444767
+e2_d3d8_driver_mfc.dll	0x1003dd5e	gdi32.dll!SetTextColor	0x1003dbc2	FUN_1003dbc2	ev_16384aa88221
+e2_d3d8_driver_mfc.dll	0x10055c22	gdi32.dll!SetTextColor	-	NOT IN A FUNCTION	ev_468279a0f963
+e2_d3d8_driver_mfc.dll	0x1003657f	kernel32.dll!CloseHandle	0x1003655f	FUN_1003655f	ev_bd4cbe6ffe76
+e2_d3d8_driver_mfc.dll	0x10055bb6	kernel32.dll!CloseHandle	-	NOT IN A FUNCTION	ev_f79029e32ae3
+e2_d3d8_driver_mfc.dll	0x100364f4	kernel32.dll!CreateFileA	0x10036446	FUN_10036446	ev_ca40f138a47a
+e2_d3d8_driver_mfc.dll	0x10055ba4	kernel32.dll!CreateFileA	-	NOT IN A FUNCTION	ev_254401bff424
+e2_d3d8_driver_mfc.dll	0x10036508	kernel32.dll!CreateFileMappingA	0x10036446	FUN_10036446	ev_c88f3c80f826
+e2_d3d8_driver_mfc.dll	0x10055b9e	kernel32.dll!CreateFileMappingA	-	NOT IN A FUNCTION	ev_8b7872806ec6
+e2_d3d8_driver_mfc.dll	0x100364d9	kernel32.dll!CreateFileW	0x10036446	FUN_10036446	ev_037df41526a5
+e2_d3d8_driver_mfc.dll	0x10055baa	kernel32.dll!CreateFileW	-	NOT IN A FUNCTION	ev_a168353e746d
+e2_d3d8_driver_mfc.dll	0x1003da40	kernel32.dll!FindResourceA	0x1003da19	FUN_1003da19	ev_2d6311ca5370
+e2_d3d8_driver_mfc.dll	0x10055be6	kernel32.dll!FindResourceA	-	NOT IN A FUNCTION	ev_b2b1a2f5256a
+e2_d3d8_driver_mfc.dll	0x1003da38	kernel32.dll!FindResourceW	0x1003da19	FUN_1003da19	ev_158caa9eebea
+e2_d3d8_driver_mfc.dll	0x10055bec	kernel32.dll!FindResourceW	-	NOT IN A FUNCTION	ev_2e86c48d8f0e
+e2_d3d8_driver_mfc.dll	0x100261bd	kernel32.dll!FreeLibrary	0x10026180	FUN_10026180	ev_d288868705e8
+e2_d3d8_driver_mfc.dll	0x10055b7a	kernel32.dll!FreeLibrary	-	NOT IN A FUNCTION	ev_820b3243e233
+e2_d3d8_driver_mfc.dll	0x1003652c	kernel32.dll!GetFileSize	0x10036446	FUN_10036446	ev_adaee22d20a3
+e2_d3d8_driver_mfc.dll	0x10055b92	kernel32.dll!GetFileSize	-	NOT IN A FUNCTION	ev_a3c5923bb80d
+e2_d3d8_driver_mfc.dll	0x1003653a	kernel32.dll!GetLastError	0x10036446	FUN_10036446	ev_585e3624adf7
+e2_d3d8_driver_mfc.dll	0x1003da7b	kernel32.dll!GetLastError	0x1003da19	FUN_1003da19	ev_01b3f7cf1b24
+e2_d3d8_driver_mfc.dll	0x10055b8c	kernel32.dll!GetLastError	-	NOT IN A FUNCTION	ev_5e3fa6134c59
+e2_d3d8_driver_mfc.dll	0x10038996	kernel32.dll!GetModuleHandleA	0x100386e7	FUN_100386e7	ev_e630a424fbe2
+e2_d3d8_driver_mfc.dll	0x10055bce	kernel32.dll!GetModuleHandleA	-	NOT IN A FUNCTION	ev_d669d00d86be
+e2_d3d8_driver_mfc.dll	0x10025e27	kernel32.dll!GetProcAddress	0x10025dc0	FUN_10025dc0	ev_7fd5164f2d0f
+e2_d3d8_driver_mfc.dll	0x100389d7	kernel32.dll!GetProcAddress	0x100386e7	FUN_100386e7	ev_ad830c53c97d
+e2_d3d8_driver_mfc.dll	0x100389fe	kernel32.dll!GetProcAddress	0x100386e7	FUN_100386e7	ev_d63a8c7fbbee
+e2_d3d8_driver_mfc.dll	0x10055b6e	kernel32.dll!GetProcAddress	-	NOT IN A FUNCTION	ev_91e05d4598c2
+e2_d3d8_driver_mfc.dll	0x10038a5c	kernel32.dll!GetProcessHeap	0x100386e7	FUN_100386e7	ev_f298401adca6
+e2_d3d8_driver_mfc.dll	0x10055bc8	kernel32.dll!GetProcessHeap	-	NOT IN A FUNCTION	ev_c680e03a35a2
+e2_d3d8_driver_mfc.dll	0x10036477	kernel32.dll!GetVersionExA	0x10036446	FUN_10036446	ev_b2cb498b9440
+e2_d3d8_driver_mfc.dll	0x1003decc	kernel32.dll!GetVersionExA	0x1003de7f	FUN_1003de7f	ev_247a6a7bf027
+e2_d3d8_driver_mfc.dll	0x10055bb0	kernel32.dll!GetVersionExA	-	NOT IN A FUNCTION	ev_3c6c7707774b
+e2_d3d8_driver_mfc.dll	0x10038a63	kernel32.dll!HeapFree	0x100386e7	FUN_100386e7	ev_c1488de3dc73
+e2_d3d8_driver_mfc.dll	0x10055bc2	kernel32.dll!HeapFree	-	NOT IN A FUNCTION	ev_60c22c9bab43
+e2_d3d8_driver_mfc.dll	0x10025dfd	kernel32.dll!LoadLibraryA	0x10025dc0	FUN_10025dc0	ev_c786bd5dc5bf
+e2_d3d8_driver_mfc.dll	0x100389a1	kernel32.dll!LoadLibraryA	0x100386e7	FUN_100386e7	ev_3d1c0ab26feb
+e2_d3d8_driver_mfc.dll	0x10055b74	kernel32.dll!LoadLibraryA	-	NOT IN A FUNCTION	ev_ba4479a42bf6
+e2_d3d8_driver_mfc.dll	0x1003da61	kernel32.dll!LoadResource	0x1003da19	FUN_1003da19	ev_f50b3628e3a6
+e2_d3d8_driver_mfc.dll	0x10055bda	kernel32.dll!LoadResource	-	NOT IN A FUNCTION	ev_56e082a91e43
+e2_d3d8_driver_mfc.dll	0x1003da6e	kernel32.dll!LockResource	0x1003da19	FUN_1003da19	ev_f7780ba1a4ff
+e2_d3d8_driver_mfc.dll	0x10055bd4	kernel32.dll!LockResource	-	NOT IN A FUNCTION	ev_f6001b03e825
+e2_d3d8_driver_mfc.dll	0x1003651c	kernel32.dll!MapViewOfFile	0x10036446	FUN_10036446	ev_dd8e803918e5
+e2_d3d8_driver_mfc.dll	0x10055b98	kernel32.dll!MapViewOfFile	-	NOT IN A FUNCTION	ev_cdc71c3328fd
+e2_d3d8_driver_mfc.dll	0x1002fc16	kernel32.dll!MultiByteToWideChar	0x1002fbd3	FUN_1002fbd3	ev_651aa52f6ec6
+e2_d3d8_driver_mfc.dll	0x10055b86	kernel32.dll!MultiByteToWideChar	-	NOT IN A FUNCTION	ev_c860d7e52a36
+e2_d3d8_driver_mfc.dll	0x1003da50	kernel32.dll!SizeofResource	0x1003da19	FUN_1003da19	ev_b82103e1b413
+e2_d3d8_driver_mfc.dll	0x10055be0	kernel32.dll!SizeofResource	-	NOT IN A FUNCTION	ev_e81a650478b1
+e2_d3d8_driver_mfc.dll	0x1003656b	kernel32.dll!UnmapViewOfFile	0x1003655f	FUN_1003655f	ev_ff9cb680c6ef
+e2_d3d8_driver_mfc.dll	0x10055bbc	kernel32.dll!UnmapViewOfFile	-	NOT IN A FUNCTION	ev_7bab6d4bdae0
+e2_d3d8_driver_mfc.dll	0x1002f80d	kernel32.dll!WideCharToMultiByte	0x1002f7c0	FUN_1002f7c0	ev_1e2e87e2a9f0
+e2_d3d8_driver_mfc.dll	0x10036483	kernel32.dll!WideCharToMultiByte	0x10036446	FUN_10036446	ev_e611ef7e00e5
+e2_d3d8_driver_mfc.dll	0x1003dedb	kernel32.dll!WideCharToMultiByte	0x1003de7f	FUN_1003de7f	ev_1a55e3e8d2bf
+e2_d3d8_driver_mfc.dll	0x10055b80	kernel32.dll!WideCharToMultiByte	-	NOT IN A FUNCTION	ev_21e1eb0dc4f1
+e2_d3d8_driver_mfc.dll	0x10029f12	user32.dll!ClientToScreen	0x10029d20	FUN_10029d20	ev_420d58ba8a0a
+e2_d3d8_driver_mfc.dll	0x10055bf2	user32.dll!ClientToScreen	-	NOT IN A FUNCTION	ev_8913dd33e28e
+e2_d3d8_driver_mfc.dll	0x1003df7b	user32.dll!DrawTextA	0x1003de7f	FUN_1003de7f	ev_bd20fa88bad1
+e2_d3d8_driver_mfc.dll	0x1003e1f2	user32.dll!DrawTextA	0x1003de7f	FUN_1003de7f	ev_9062cbb74019
+e2_d3d8_driver_mfc.dll	0x10055bf8	user32.dll!DrawTextA	-	NOT IN A FUNCTION	ev_8014e29cebeb
+e2_d3d8_driver_mfc.dll	0x1003df63	user32.dll!DrawTextW	0x1003de7f	FUN_1003de7f	ev_74beb2c51d09
+e2_d3d8_driver_mfc.dll	0x1003e1ea	user32.dll!DrawTextW	0x1003de7f	FUN_1003de7f	ev_8ad378abe1f4
+e2_d3d8_driver_mfc.dll	0x10055bfe	user32.dll!DrawTextW	-	NOT IN A FUNCTION	ev_9302e8ac41c5
+e2_d3d8_driver_mfc.dll	0x100098dd	fldcw	0x100098b0	FUN_100098b0	ev_ed9458ea658d
+e2_d3d8_driver_mfc.dll	0x100098f2	fldcw	0x100098b0	FUN_100098b0	ev_9ae9cfd79ac3
+e2_d3d8_driver_mfc.dll	0x1000996d	fldcw	0x10009940	FUN_10009940	ev_a6ed03eca489
+e2_d3d8_driver_mfc.dll	0x10009982	fldcw	0x10009940	FUN_10009940	ev_8c4a77302ebc
+e2_d3d8_driver_mfc.dll	0x1000ac6d	fldcw	0x1000ac40	FUN_1000ac40	ev_36ed1f380316
+e2_d3d8_driver_mfc.dll	0x1000ac82	fldcw	0x1000ac40	FUN_1000ac40	ev_516475ae1494
+e2_d3d8_driver_mfc.dll	0x10005a38	out	-	NOT IN A FUNCTION	ev_be0d9cfc0543
+e2_d3d8_driver_mfc.dll	0x100091bc	out	-	NOT IN A FUNCTION	ev_c5b35d136c3e
+e2_d3d8_driver_mfc.dll	0x100091c8	out	-	NOT IN A FUNCTION	ev_9132e53757ae
+e2_d3d8_driver_mfc.dll	0x10014744	out	-	NOT IN A FUNCTION	ev_97c3723a9f33
+e2_d3d8_driver_mfc.dll	0x1002ef91	out	-	NOT IN A FUNCTION	ev_cd5104a35164
+e2_d3d8_driver_mfc.dll	0x1002ef99	out	-	NOT IN A FUNCTION	ev_2acfcabb5b40
+e2_d3d8_driver_mfc.dll	0x1002efa1	out	-	NOT IN A FUNCTION	ev_bb37345d5359
+e2_d3d8_driver_mfc.dll	0x1003865b	out	-	NOT IN A FUNCTION	ev_d3aa111ca11c
+e2_d3d8_driver_mfc.dll	0x100425ec	out	-	NOT IN A FUNCTION	ev_03a72fb93a16
+e2_d3d8_driver_mfc.dll	0x1002584c	cli	-	NOT IN A FUNCTION	ev_2117e1ca7474
+e2_d3d8_driver_mfc.dll	0x10025964	cli	-	NOT IN A FUNCTION	ev_f335d89494de
+e2_d3d8_driver_mfc.dll	0x10025968	cli	-	NOT IN A FUNCTION	ev_c3ec3d8d6fb2
+e2_d3d8_driver_mfc.dll	0x1002596c	cli	-	NOT IN A FUNCTION	ev_121ba603b6ed
+e2_d3d8_driver_mfc.dll	0x10025998	cli	-	NOT IN A FUNCTION	ev_ff5dcb7ee627
+e2_d3d8_driver_mfc.dll	0x10025a6c	cli	-	NOT IN A FUNCTION	ev_6fb057f9e986
+e2_d3d8_driver_mfc.dll	0x10025a7c	cli	-	NOT IN A FUNCTION	ev_e9de9f158f77
+e2_d3d8_driver_mfc.dll	0x1004a074	cli	-	NOT IN A FUNCTION	ev_7d8785e8fbe2
+e2_d3d8_driver_mfc.dll	0x10029104	popfd	-	NOT IN A FUNCTION	ev_87844397efec
+e2_d3d8_driver_mfc.dll	0x10048573	popfd	0x10048565	FUN_10048565	ev_9194b6c30b8f
+e2_d3d8_driver_mfc.dll	0x1004a04d	popfd	-	NOT IN A FUNCTION	ev_b7765b1b907c
+e2_d3d8_driver_mfc.dll	0x1004a051	popfd	-	NOT IN A FUNCTION	ev_daaefb27c6a7
+e2_d3d8_driver_mfc.dll	0x10005a3c	sti	-	NOT IN A FUNCTION	ev_da0adf67db64
+e2_d3d8_driver_mfc.dll	0x10009578	sti	-	NOT IN A FUNCTION	ev_5e440374d76d
+e2_d3d8_driver_mfc.dll	0x1002565c	sti	-	NOT IN A FUNCTION	ev_1eaa7a104791
+e2_d3d8_driver_mfc.dll	0x1002ecd5	in	-	NOT IN A FUNCTION	ev_06eb2b568e62
+e2_d3d8_driver_mfc.dll	0x1003865f	in	-	NOT IN A FUNCTION	ev_79ec3b81592f
+e2_d3d8_driver_mfc.dll	0x1004a060	in	-	NOT IN A FUNCTION	ev_f29ce9c7b740
+e2_d3d8_driver_mfc.dll	0x1003b02d	pushfd	-	NOT IN A FUNCTION	ev_e0c52ccb74c7
+e2_d3d8_driver_mfc.dll	0x10048568	pushfd	0x10048565	FUN_10048565	ev_b626b66e47c9
+e2_d3d8_driver_mfc.dll	0x10048574	pushfd	0x10048565	FUN_10048565	ev_428b5223f532
+e2_d3d8_driver_mfc.dll	0x1004f093	emms	0x1004ef58	FUN_1004ef58	ev_f23637fb3e7a
+e2_d3d8_driver_mfc.dll	0x10053fc1	emms	0x10053842	FUN_10053842	ev_4da9de68f1db
+e2_d3d8_driver_mfc.dll	0x10055140	emms	0x10054376	FUN_10054376	ev_94352a92c8c8
+e2_d3d8_driver_mfc.dll	0x10009574	hlt	-	NOT IN A FUNCTION	ev_a685a83fcf8f
+e2_d3d8_driver_mfc.dll	0x10038663	hlt	-	NOT IN A FUNCTION	ev_f1ececf1ef03
+e2_d3d8_driver_mfc.dll	0x1002d4c9	int	-	NOT IN A FUNCTION	ev_ed18109694c5
+e2_d3d8_driver_mfc.dll	0x1004857f	cpuid	0x10048565	FUN_10048565	ev_1a67fd0bfae0
+e2mfc.dll	0x1003259f	gdi32.dll!GetDeviceCaps	0x10032460	P_Driver::setWindowMode	ev_edc179930dbe
+e2mfc.dll	0x10033fe0	gdi32.dll!GetDeviceCaps	0x10033fb0	P_DriverCaps::linkWindowMode	ev_81a050d579c9
+e2mfc.dll	0x100458de	kernel32.dll!DisableThreadLibraryCalls	0x100458ca	FUN_100458ca	ev_06a79e13e057
+e2mfc.dll	0x1002dfd0	kernel32.dll!FindClose	0x1002dd70	P_Device::P_Device	ev_0060fcde0ef2
+e2mfc.dll	0x1002e134	kernel32.dll!FindClose	0x1002e10c	FUN_1002e10c	ev_fb39691442b3
+e2mfc.dll	0x1002df50	kernel32.dll!FindFirstFileA	0x1002dd70	P_Device::P_Device	ev_2c7bcc2c20de
+e2mfc.dll	0x1002e0b4	kernel32.dll!FindFirstFileA	0x1002dd70	P_Device::P_Device	ev_8f8fdf18e951
+e2mfc.dll	0x1002dfc5	kernel32.dll!FindNextFileA	0x1002dd70	P_Device::P_Device	ev_3145040a6654
+e2mfc.dll	0x1002e129	kernel32.dll!FindNextFileA	0x1002e10c	FUN_1002e10c	ev_3e324942d573
+e2mfc.dll	0x1002e54e	kernel32.dll!FreeLibrary	0x1002e420	FUN_1002e420	ev_4ec36e92949b
+e2mfc.dll	0x1002def5	kernel32.dll!GetCurrentDirectoryA	0x1002dd70	P_Device::P_Device	ev_febd1208cf9e
+e2mfc.dll	0x1002dee3	kernel32.dll!GetEnvironmentVariableA	0x1002dd70	P_Device::P_Device	ev_76110a1f8333
+e2mfc.dll	0x1002dfa8	kernel32.dll!GetLastError	0x1002dd70	P_Device::P_Device	ev_e965d3cb9bd8
+e2mfc.dll	0x1002e10c	kernel32.dll!GetLastError	0x1002e10c	FUN_1002e10c	ev_e144f2e3f6ab
+e2mfc.dll	0x1002df67	kernel32.dll!LoadLibraryA	0x1002dd70	P_Device::P_Device	ev_b339db5d6bf0
+e2mfc.dll	0x1002e0cb	kernel32.dll!LoadLibraryA	0x1002dd70	P_Device::P_Device	ev_c7e4f70624d7
+e2mfc.dll	0x1002df02	kernel32.dll!SetCurrentDirectoryA	0x1002dd70	P_Device::P_Device	ev_aadf2086758d
+e2mfc.dll	0x1002e141	kernel32.dll!SetCurrentDirectoryA	0x1002e10c	FUN_1002e10c	ev_e0f8da01b039
+e2mfc.dll	0x10032594	user32.dll!GetDC	0x10032460	P_Driver::setWindowMode	ev_3ea2b30edf16
+e2mfc.dll	0x10033fda	user32.dll!GetDC	0x10033fb0	P_DriverCaps::linkWindowMode	ev_5c3bd74d99a5
+e2mfc.dll	0x10033fcc	user32.dll!GetDesktopWindow	0x10033fb0	P_DriverCaps::linkWindowMode	ev_57ae2e42bf72
+e2mfc.dll	0x100325aa	user32.dll!ReleaseDC	0x10032460	P_Driver::setWindowMode	ev_e779c91f5084
+e2mfc.dll	0x10033ffc	user32.dll!ReleaseDC	0x10033fb0	P_DriverCaps::linkWindowMode	ev_72ca5b2afc2e
+e2mfc.dll	0x100021d9	fldcw	0x10001e60	P_Font::validate	ev_33a0d616dc5e
+e2mfc.dll	0x100021ee	fldcw	0x10001e60	P_Font::validate	ev_90da451b7c87
+e2mfc.dll	0x1000b3b6	fldcw	0x1000b0a0	P_TestParticleSystem::executeAlways	ev_1d9decff7d94
+e2mfc.dll	0x1000b3cb	fldcw	0x1000b0a0	P_TestParticleSystem::executeAlways	ev_798ea27dfb58
+e2mfc.dll	0x1000b46d	fldcw	0x1000b0a0	P_TestParticleSystem::executeAlways	ev_00f6ecf46f4a
+e2mfc.dll	0x1000b482	fldcw	0x1000b0a0	P_TestParticleSystem::executeAlways	ev_3ce86e0411f2
+e2mfc.dll	0x1003a08d	popfd	-	NOT IN A FUNCTION	ev_1010cbe75e03
+grphmfc.dll	0x10003286	gdi32.dll!CreateDIBSection	0x10003230	G_Image::makeDIB	ev_ec9f1ad70637
+grphmfc.dll	0x10002d5c	gdi32.dll!DeleteObject	0x10002d30	G_Image::destruct	ev_e7bb69c0965b
+grphmfc.dll	0x10002ad1	gdi32.dll!GetDIBits	0x10002a70	G_Image::construct	ev_3baeb155f6af
+grphmfc.dll	0x10002c1e	gdi32.dll!GetDIBits	0x10002a70	G_Image::construct	ev_64c8b30c94fd
+grphmfc.dll	0x100116fc	kernel32.dll!DisableThreadLibraryCalls	0x100116e8	FUN_100116e8	ev_6afc8b240a56
+grphmfc.dll	0x1000622b	user32.dll!GetActiveWindow	-	NOT IN A FUNCTION	ev_4591c61ae052
+grphmfc.dll	0x10002aa5	user32.dll!GetDC	0x10002a70	G_Image::construct	ev_e5b80741726d
+grphmfc.dll	0x10006232	user32.dll!MessageBoxA	-	NOT IN A FUNCTION	ev_841b842c9d09
+grphmfc.dll	0x10002ae0	user32.dll!ReleaseDC	0x10002a70	G_Image::construct	ev_e9be7d253364
+grphmfc.dll	0x10002c26	user32.dll!ReleaseDC	0x10002a70	G_Image::construct	ev_858543da9e20
+grphmfc.dll	0x10002c46	user32.dll!ReleaseDC	0x10002c3f	Catch@10002c3f	ev_226598446d34
+grphmfc.dll	0x10001446	fldcw	0x10001410	G_Color::G_Color	ev_816b62208ddc
+grphmfc.dll	0x1000145b	fldcw	0x10001410	G_Color::G_Color	ev_855da909241e
+grphmfc.dll	0x10001497	fldcw	0x10001410	G_Color::G_Color	ev_1970e70b7b14
+grphmfc.dll	0x100014ac	fldcw	0x10001410	G_Color::G_Color	ev_ce051cb6e55f
+grphmfc.dll	0x100014e8	fldcw	0x10001410	G_Color::G_Color	ev_504f28864fed
+grphmfc.dll	0x100014fd	fldcw	0x10001410	G_Color::G_Color	ev_93554c29dbb6
+grphmfc.dll	0x100072ac	in	-	NOT IN A FUNCTION	ev_4691ff631f8e
+rlmfc.dll	0x1001266e	kernel32.dll!CloseHandle	0x100125c0	R_File::timeStamp	ev_7d9dc948950c
+rlmfc.dll	0x1001502a	kernel32.dll!CloseHandle	0x10015021	Catch@10015021	ev_efdb43d42561
+rlmfc.dll	0x10015312	kernel32.dll!CloseHandle	0x10015300	R_UnbufferedFileStream::~R_UnbufferedFileStream	ev_c699bee85252
+rlmfc.dll	0x10024c92	kernel32.dll!CloseHandle	0x10024c10	R_System::~R_System	ev_959bb38629d9
+rlmfc.dll	0x10026ec3	kernel32.dll!CloseHandle	0x10026ec0	R_Mutex::~R_Mutex	ev_da668dc4a74d
+rlmfc.dll	0x1000eeee	kernel32.dll!CreateDirectoryA	0x1000ee80	R_File::checkPathExistence	ev_91775253560a
+rlmfc.dll	0x10012602	kernel32.dll!CreateFileA	0x100125c0	R_File::timeStamp	ev_21fb92bc7537
+rlmfc.dll	0x10014972	kernel32.dll!CreateFileA	0x100148f0	R_UnbufferedFileStream::R_UnbufferedFileStream	ev_341c7afe5dce
+rlmfc.dll	0x1001515a	kernel32.dll!CreateFileA	0x100150b0	R_UnbufferedFileStream::R_UnbufferedFileStream	ev_e41d5bdc98ee
+rlmfc.dll	0x10024b13	kernel32.dll!CreateMutexA	0x10024a40	R_System::R_System	ev_40076f8661cc
+rlmfc.dll	0x10026ea9	kernel32.dll!CreateMutexA	0x10026ea0	R_Mutex::R_Mutex	ev_45c430a70de0
+rlmfc.dll	0x10028476	kernel32.dll!DisableThreadLibraryCalls	0x10028462	FUN_10028462	ev_ed14380e1080
+rlmfc.dll	0x10012667	kernel32.dll!FileTimeToSystemTime	0x100125c0	R_File::timeStamp	ev_e21f31f85fe0
+rlmfc.dll	0x1000f077	kernel32.dll!FindClose	0x1000f040	R_File::~R_File	ev_977e8be2515e
+rlmfc.dll	0x1000f29d	kernel32.dll!FindClose	0x1000f1c0	R_File::loadArchives	ev_a70ac03ad1a3
+rlmfc.dll	0x1000f3a6	kernel32.dll!FindClose	0x1000f1c0	R_File::loadArchives	ev_d79df94662a9
+rlmfc.dll	0x100112ec	kernel32.dll!FindClose	0x10011250	R_File::findFirst	ev_b8ec54a8d313
+rlmfc.dll	0x10011543	kernel32.dll!FindClose	0x10011420	R_File::findNext	ev_997326c226eb
+rlmfc.dll	0x10026db7	kernel32.dll!FindClose	0x10026c50	FUN_10026c50	ev_7b63f9192d61
+rlmfc.dll	0x1000f235	kernel32.dll!FindFirstFileA	0x1000f1c0	R_File::loadArchives	ev_ca37d83d13c3
+rlmfc.dll	0x1000f317	kernel32.dll!FindFirstFileA	0x1000f1c0	R_File::loadArchives	ev_1b146c9f253f
+rlmfc.dll	0x10011454	kernel32.dll!FindFirstFileA	0x10011420	R_File::findNext	ev_26943867fe3d
+rlmfc.dll	0x10026d4b	kernel32.dll!FindFirstFileA	0x10026c50	FUN_10026c50	ev_043d744164fb
+rlmfc.dll	0x1000f292	kernel32.dll!FindNextFileA	0x1000f1c0	R_File::loadArchives	ev_355fea4731cf
+rlmfc.dll	0x1000f397	kernel32.dll!FindNextFileA	0x1000f1c0	R_File::loadArchives	ev_697d498c6feb
+rlmfc.dll	0x10011476	kernel32.dll!FindNextFileA	0x10011420	R_File::findNext	ev_b27dd4bc98a1
+rlmfc.dll	0x10026dac	kernel32.dll!FindNextFileA	0x10026c50	FUN_10026c50	ev_fdebe900d9fd
+rlmfc.dll	0x10026df9	kernel32.dll!FreeLibrary	0x10026de0	FUN_10026de0	ev_40e6616c1abb
+rlmfc.dll	0x1000ef7b	kernel32.dll!GetCommandLineA	0x1000ef00	R_File::R_File	ev_286f433207e6
+rlmfc.dll	0x1001b819	kernel32.dll!GetComputerNameA	0x1001b7d0	R_RemedyInit::R_RemedyInit	ev_b6bdab3e41e0
+rlmfc.dll	0x1000ef75	kernel32.dll!GetCurrentDirectoryA	0x1000ef00	R_File::R_File	ev_440f74954f7d
+rlmfc.dll	0x1000f017	kernel32.dll!GetCurrentDirectoryA	0x1000ef00	R_File::R_File	ev_89bc98d24afa
+rlmfc.dll	0x1000f68b	kernel32.dll!GetCurrentDirectoryA	0x1000f5c0	R_File::setFileSystemRoot	ev_247c4084c045
+rlmfc.dll	0x10026d2a	kernel32.dll!GetCurrentDirectoryA	0x10026c50	FUN_10026c50	ev_e7de2ce59fd2
+rlmfc.dll	0x10025524	kernel32.dll!GetCurrentProcess	0x10025500	R_System::determineProcessorSpeed	ev_5af47bb2f32e
+rlmfc.dll	0x10025533	kernel32.dll!GetCurrentThread	0x10025500	R_System::determineProcessorSpeed	ev_f09e6cf4d314
+rlmfc.dll	0x10014d05	kernel32.dll!GetDiskFreeSpaceA	0x100148f0	R_UnbufferedFileStream::R_UnbufferedFileStream	ev_ab136147c890
+rlmfc.dll	0x10026d17	kernel32.dll!GetEnvironmentVariableA	0x10026c50	FUN_10026c50	ev_82e57f19bcd0
+rlmfc.dll	0x1001271e	kernel32.dll!GetFileAttributesA	0x100126f0	R_File::where	ev_a39a54921c73
+rlmfc.dll	0x10012ceb	kernel32.dll!GetFileAttributesA	0x10012cc0	R_File::isDirectory	ev_d94490604a6e
+rlmfc.dll	0x10014a35	kernel32.dll!GetFileSize	0x100148f0	R_UnbufferedFileStream::R_UnbufferedFileStream	ev_03f4e2655569
+rlmfc.dll	0x10012657	kernel32.dll!GetFileTime	0x100125c0	R_File::timeStamp	ev_3d4ccda9d7fd
+rlmfc.dll	0x100103e5	kernel32.dll!GetFullPathNameA	0x100103a0	R_File::loadArchiveHeader	ev_f4faede10716
+rlmfc.dll	0x1002552d	kernel32.dll!GetPriorityClass	0x10025500	R_System::determineProcessorSpeed	ev_a0b42efd651e
+rlmfc.dll	0x10025540	kernel32.dll!GetThreadPriority	0x10025500	R_System::determineProcessorSpeed	ev_403ef165c5cf
+rlmfc.dll	0x10025a06	kernel32.dll!GetVersionExA	0x100255d0	R_System::determineProcessorCaps	ev_2d4abb57724a
+rlmfc.dll	0x10026aa0	kernel32.dll!GlobalMemoryStatus	0x10026a90	R_System::getTotalPhysicalMemory	ev_9a92ea2133f4
+rlmfc.dll	0x10026ac0	kernel32.dll!GlobalMemoryStatus	0x10026ab0	R_System::getAvailablePhysicalMemory	ev_2bd4feca1fcb
+rlmfc.dll	0x10026d65	kernel32.dll!LoadLibraryA	0x10026c50	FUN_10026c50	ev_9afd9925cdfb
+rlmfc.dll	0x10024bcb	kernel32.dll!QueryPerformanceCounter	0x10024a40	R_System::R_System	ev_132e25c48a1c
+rlmfc.dll	0x10026ae8	kernel32.dll!QueryPerformanceCounter	0x10026ad0	R_System::getAppAge	ev_a5d4055bbc23
+rlmfc.dll	0x10026ba2	kernel32.dll!QueryPerformanceCounter	0x10026b90	R_System::getPerformanceCounter	ev_b58f2c741a9b
+rlmfc.dll	0x10024bb9	kernel32.dll!QueryPerformanceFrequency	0x10024a40	R_System::R_System	ev_03c3b580bd06
+rlmfc.dll	0x10015486	kernel32.dll!ReadFile	0x100153f0	R_UnbufferedFileStream::read	ev_dfbdaf894e82
+rlmfc.dll	0x10025441	kernel32.dll!ReleaseMutex	0x100253e0	R_STR	ev_bab91f38dbe5
+rlmfc.dll	0x10026ee3	kernel32.dll!ReleaseMutex	0x10026ee0	R_Mutex::unlock	ev_8cad67a66524
+rlmfc.dll	0x1000f007	kernel32.dll!SetCurrentDirectoryA	0x1000ef00	R_File::R_File	ev_eb9049e219d1
+rlmfc.dll	0x1000f5e6	kernel32.dll!SetCurrentDirectoryA	0x1000f5c0	R_File::setFileSystemRoot	ev_1307da847e09
+rlmfc.dll	0x10026d35	kernel32.dll!SetCurrentDirectoryA	0x10026c50	FUN_10026c50	ev_445d2108c4bf
+rlmfc.dll	0x10026dc6	kernel32.dll!SetCurrentDirectoryA	0x10026c50	FUN_10026c50	ev_ab0f9637a232
+rlmfc.dll	0x100153bb	kernel32.dll!SetFilePointer	0x10015360	R_UnbufferedFileStream::seek	ev_233fab328630
+rlmfc.dll	0x10025552	kernel32.dll!SetPriorityClass	0x10025500	R_System::determineProcessorSpeed	ev_2338145b59b6
+rlmfc.dll	0x10025580	kernel32.dll!SetPriorityClass	0x10025500	R_System::determineProcessorSpeed	ev_bc0c7d06d389
+rlmfc.dll	0x1002555d	kernel32.dll!SetThreadPriority	0x10025500	R_System::determineProcessorSpeed	ev_abe62846d5db
+rlmfc.dll	0x1002558e	kernel32.dll!SetThreadPriority	0x10025500	R_System::determineProcessorSpeed	ev_ef146d199049
+rlmfc.dll	0x100253ef	kernel32.dll!WaitForSingleObject	0x100253e0	R_STR	ev_9cbe617e90e0
+rlmfc.dll	0x10026ed5	kernel32.dll!WaitForSingleObject	0x10026ed0	R_Mutex::lock	ev_0b951d3756e8
+rlmfc.dll	0x1000edb2	user32.dll!MessageBoxA	0x1000eda0	R_Exception::ReportError	ev_f28b73b2d83d
+rlmfc.dll	0x10025232	user32.dll!MessageBoxA	0x10025210	R_System::terminate	ev_f0e9f4d6eae6
+rlmfc.dll	0x10025505	user32.dll!SystemParametersInfoA	0x10025500	R_System::determineProcessorSpeed	ev_472484af4c0f
+rlmfc.dll	0x1001baf9	winmm.dll!timeGetTime	0x1001bae0	M_MathInit::M_MathInit	ev_b42f64dcc34e
+rlmfc.dll	0x10024bd3	winmm.dll!timeGetTime	0x10024a40	R_System::R_System	ev_da1d40aa3c64
+rlmfc.dll	0x10026b2f	winmm.dll!timeGetTime	0x10026ad0	R_System::getAppAge	ev_6036a13bf693
+rlmfc.dll	0x10026bb4	winmm.dll!timeGetTime	0x10026b90	R_System::getPerformanceCounter	ev_2eaf3ff6ac63
+rlmfc.dll	0x10006486	fldcw	0x10006430	M_ScalarArray::allocate	ev_94633df8e71f
+rlmfc.dll	0x1000649b	fldcw	0x10006430	M_ScalarArray::allocate	ev_a45d1a743c41
+rlmfc.dll	0x10006512	fldcw	0x10006430	M_ScalarArray::allocate	ev_b8cb116cee74
+rlmfc.dll	0x10006527	fldcw	0x10006430	M_ScalarArray::allocate	ev_03b6316b0ca6
+rlmfc.dll	0x100065b8	fldcw	0x10006430	M_ScalarArray::allocate	ev_b027027b2983
+rlmfc.dll	0x100065cd	fldcw	0x10006430	M_ScalarArray::allocate	ev_7a14abd3a56b
+rlmfc.dll	0x100256b0	cpuid	0x100255d0	R_System::determineProcessorCaps	ev_f32efd03be8c
+rlmfc.dll	0x10025705	cpuid	0x100255d0	R_System::determineProcessorCaps	ev_aa15dbfb5fab
+rlmfc.dll	0x1002593a	cpuid	0x100255d0	R_System::determineProcessorCaps	ev_0abb3aec30ef
+rlmfc.dll	0x10025951	cpuid	0x100255d0	R_System::determineProcessorCaps	ev_51a71256de2a
+rlmfc.dll	0x10026299	cpuid	0x100255d0	R_System::determineProcessorCaps	ev_9b7e64d7044e
+rlmfc.dll	0x100262b4	cpuid	0x100255d0	R_System::determineProcessorCaps	ev_298cae4c9ccb
+rlmfc.dll	0x100262cf	cpuid	0x100255d0	R_System::determineProcessorCaps	ev_099c513afa56
+rlmfc.dll	0x10026328	cpuid	0x100255d0	R_System::determineProcessorCaps	ev_e2a28c933296
+rlmfc.dll	0x1002639d	cpuid	0x100255d0	R_System::determineProcessorCaps	ev_f63c21c4a1fe
+rlmfc.dll	0x100263ed	cpuid	0x100255d0	R_System::determineProcessorCaps	ev_875b5d0ec5fa
+rlmfc.dll	0x100263ff	cpuid	0x100255d0	R_System::determineProcessorCaps	ev_bc2893468de9
+rlmfc.dll	0x10026448	cpuid	0x100255d0	R_System::determineProcessorCaps	ev_fb3395dc6508
+rlmfc.dll	0x100264aa	cpuid	0x100255d0	R_System::determineProcessorCaps	ev_1b223f908ca2
+rlmfc.dll	0x10025681	pushfd	0x100255d0	R_System::determineProcessorCaps	ev_dba6283b1e9b
+rlmfc.dll	0x10025684	pushfd	0x100255d0	R_System::determineProcessorCaps	ev_bcf26bee4715
+rlmfc.dll	0x1002568f	pushfd	0x100255d0	R_System::determineProcessorCaps	ev_b48ec0f9e4b3
+rlmfc.dll	0x100166da	emms	0x10016610	R_Memory::set	ev_cbc4497829ed
+rlmfc.dll	0x100167a1	emms	0x10016730	R_Memory::copy	ev_c23ac9fc85fa
+rlmfc.dll	0x1001d6bd	int	-	NOT IN A FUNCTION	ev_4f4c5f9f5cf1
+rlmfc.dll	0x1001d6c9	int	-	NOT IN A FUNCTION	ev_0ad480dbe8c3
+rlmfc.dll	0x1002568e	popfd	0x100255d0	R_System::determineProcessorCaps	ev_4893e3bf1781
+rlmfc.dll	0x1002569b	popfd	0x100255d0	R_System::determineProcessorCaps	ev_7e481df16f94
+rlmfc.dll	0x1001ab98	rdtsc	0x1001ab90	R_Profile::readTickCount	ev_e2303489233a
+sndmfc.dll	0x1000e4b0	dsound.dll!#2	0x1000e4b0	DSOUND.DLL::Ordinal_2	ev_b31fe9743b46
+sndmfc.dll	0x10002a44	kernel32.dll!CloseHandle	0x10002830	S_Listener::destruct	ev_2cda33ab61ef
+sndmfc.dll	0x100022be	kernel32.dll!CreateEventA	0x10001f50	S_Listener::construct	ev_ff346fa751f7
+sndmfc.dll	0x100022ab	kernel32.dll!CreateMutexA	0x10001f50	S_Listener::construct	ev_573c0114749d
+sndmfc.dll	0x1000e7ae	kernel32.dll!DisableThreadLibraryCalls	0x1000e79a	FUN_1000e79a	ev_23252b37fda7
+sndmfc.dll	0x100025d3	kernel32.dll!ReleaseMutex	0x10001f50	S_Listener::construct	ev_30abd7b546cc
+sndmfc.dll	0x100027fc	kernel32.dll!ReleaseMutex	0x10002640	S_Listener::construct	ev_3417720fa697
+sndmfc.dll	0x10002a27	kernel32.dll!ReleaseMutex	0x10002830	S_Listener::destruct	ev_7b1c1382c0b8
+sndmfc.dll	0x1000328d	kernel32.dll!ReleaseMutex	0x10002d70	FUN_10002d70	ev_e664516c83fa
+sndmfc.dll	0x1000377a	kernel32.dll!ReleaseMutex	0x100036c0	S_Listener::setProgramFocus	ev_e9ff8c1cab71
+sndmfc.dll	0x10003838	kernel32.dll!ReleaseMutex	0x10003790	S_Listener::killProgramFocus	ev_ad6a2747732b
+sndmfc.dll	0x100038a4	kernel32.dll!ReleaseMutex	0x10003850	S_Listener::getSoundOnChannel	ev_c98272082f1e
+sndmfc.dll	0x100038b9	kernel32.dll!ReleaseMutex	0x10003850	S_Listener::getSoundOnChannel	ev_91c25f1a41ad
+sndmfc.dll	0x10003a02	kernel32.dll!ReleaseMutex	0x10003900	S_Listener::setDoppler	ev_b617df44d280
+sndmfc.dll	0x10003eea	kernel32.dll!ReleaseMutex	0x10003e60	S_Listener::setGlobalMusicVolume	ev_510345efc033
+sndmfc.dll	0x10003f9a	kernel32.dll!ReleaseMutex	0x10003f10	S_Listener::setGlobalEffectsVolume	ev_3dddb31ccb4b
+sndmfc.dll	0x10004228	kernel32.dll!ReleaseMutex	0x10004200	S_Listener::setActive	ev_5303d78371e3
+sndmfc.dll	0x10003344	kernel32.dll!SetEvent	0x10003330	FUN_10003330	ev_94ac1e9ee81c
+sndmfc.dll	0x10003324	kernel32.dll!SetThreadPriority	0x10003300	FUN_10003300	ev_330fca22cb20
+sndmfc.dll	0x100036a2	kernel32.dll!SetThreadPriority	0x10003680	S_Listener::setThreadPriority	ev_d74ad076c214
+sndmfc.dll	0x100022e0	kernel32.dll!WaitForSingleObject	0x10001f50	S_Listener::construct	ev_6ae9fa6b615d
+sndmfc.dll	0x10002692	kernel32.dll!WaitForSingleObject	0x10002640	S_Listener::construct	ev_46ef9745a35f
+sndmfc.dll	0x10002872	kernel32.dll!WaitForSingleObject	0x10002830	S_Listener::destruct	ev_9ba62d4dc6d0
+sndmfc.dll	0x10002d8a	kernel32.dll!WaitForSingleObject	0x10002d70	FUN_10002d70	ev_320e6177c108
+sndmfc.dll	0x1000336b	kernel32.dll!WaitForSingleObject	-	NOT IN A FUNCTION	ev_95db02db02d0
+sndmfc.dll	0x100036da	kernel32.dll!WaitForSingleObject	0x100036c0	S_Listener::setProgramFocus	ev_2c83bb22641b
+sndmfc.dll	0x100037b2	kernel32.dll!WaitForSingleObject	0x10003790	S_Listener::killProgramFocus	ev_35da4c4860de
+sndmfc.dll	0x1000386a	kernel32.dll!WaitForSingleObject	0x10003850	S_Listener::getSoundOnChannel	ev_abaf799cf550
+sndmfc.dll	0x1000392b	kernel32.dll!WaitForSingleObject	0x10003900	S_Listener::setDoppler	ev_4ba75239b952
+sndmfc.dll	0x10003e6d	kernel32.dll!WaitForSingleObject	0x10003e60	S_Listener::setGlobalMusicVolume	ev_d644b84afe8a
+sndmfc.dll	0x10003f1d	kernel32.dll!WaitForSingleObject	0x10003f10	S_Listener::setGlobalEffectsVolume	ev_1acac4df5257
+sndmfc.dll	0x1000420b	kernel32.dll!WaitForSingleObject	0x10004200	S_Listener::setActive	ev_192bc7496d90
+sndmfc.dll	0x10001658	ole32.dll!CoCreateInstance	0x10001590	FUN_10001590	ev_7489a5ac73cb
+sndmfc.dll	0x100019a2	ole32.dll!CoCreateInstance	0x10001950	FUN_10001950	ev_7d62b9e79cf5
+sndmfc.dll	0x10001652	ole32.dll!CoInitialize	0x10001590	FUN_10001590	ev_02a53a2de125
+sndmfc.dll	0x10001985	ole32.dll!CoInitialize	0x10001950	FUN_10001950	ev_ad34377b7641
+sndmfc.dll	0x1000188e	ole32.dll!CoUninitialize	0x10001590	FUN_10001590	ev_1813faba793c
+sndmfc.dll	0x10001a02	ole32.dll!CoUninitialize	0x10001950	FUN_10001950	ev_4fe9b7897326
+sndmfc.dll	0x10001a70	ole32.dll!CoUninitialize	0x10001a30	FUN_10001a30	ev_52a83546ecfb
+sndmfc.dll	0x1000171c	user32.dll!GetDesktopWindow	0x10001590	FUN_10001590	ev_8f60320577f2
+sndmfc.dll	0x1000356a	user32.dll!GetDesktopWindow	0x10003540	S_Listener::testOutputDeviceFunctionality	ev_ef16eb475df5
+sndmfc.dll	0x1000bd33	fldcw	0x1000bc60	FUN_1000bc60	ev_a82bac397238
+sndmfc.dll	0x1000bd48	fldcw	0x1000bc60	FUN_1000bc60	ev_97a16c84fd62

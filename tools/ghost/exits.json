@@ -1,0 +1,1476 @@
+{
+ "part0_level1": {
+  "why": "End_Randomize.DO step Exit2 sends gm_init(part1_level1); reached from either end_trigger1 (T_Enable(true) by d_end_timer.DO after fsm_count counts the 3 junkie kills e1/e2/e3) . The attack cutscene is not a step: ::entrance06::cin_trigger2 is a player-collision DO (@14006031, Controller.DO->DO_Animate(1) @14006092) that teleports the player to ::teleport::W01 @14954722 and e1 to ::babys_room::e1_waypoint @14955174, so it fires by walking into the hall.",
+  "exit": [
+   "::bedroom::end_trigger1.TRIGGER",
+   "::storage::end_trigger1.TRIGGER"
+  ],
+  "kill": [
+   "::babys_room::e1",
+   "::WorkRoom::e2",
+   "::storage::e3"
+  ],
+  "next": "part1_level1",
+  "ff": [
+   {
+    "name": "El arma",
+    "t": "::startroom::t_hell.TRIGGER",
+    "why": "the first weapon and the only early one: c_removeallweapons(beretta) @14035612, c_pickupweapon(beretta) @14035734, c_pickupammo(beretta, 99) @14035769, one painkiller @14035696; without it Max stays unarmed and the kill list can never start"
+   },
+   {
+    "name": "La habitación del bebé",
+    "kill": [
+     "::babys_room"
+    ],
+    "wait": 8,
+    "why": "e1 stands at ::babys_room::e1_waypoint, where the entrance cutscene teleports it @14955174, not at ::entrance06::w1",
+    "tp": "::babys_room::e1_waypoint"
+   },
+   {
+    "name": "El cuarto de trabajo",
+    "kill": [
+     "::WorkRoom"
+    ],
+    "wait": 8,
+    "why": "fsm_count->FSM_Send(2) when ::WorkRoom::e2 dies @14045439/@14045581",
+    "tp": "::bedroom::W01"
+   },
+   {
+    "name": "El almacén",
+    "kill": [
+     "::storage"
+    ],
+    "wait": 8,
+    "why": "fsm_count->FSM_Send(3) when ::storage::e3 dies @14044754/@14044803; the 3rd message starts d_end_timer @13971293",
+    "tp": "::bedroom::W01"
+   },
+   {
+    "name": "La puerta de salida",
+    "t": [
+     "::bedroom::end_trigger1.TRIGGER",
+     "::storage::end_trigger1.TRIGGER"
+    ],
+    "why": "enabled by ::bedroom::d_end_timer.DO after fsm_count (rea/map/ai.md:75) @13968303",
+    "tp": "::bedroom::W01"
+   }
+  ]
+ },
+ "part1_level1": {
+  "why": "Ordered steps from the .ldb message chains (rea/map/ai.md, part1_level1 walkthrough). t = trigger to touch when enabled, use = action button (USE, E), kill = rooms whose enemies must die before t is enabled. A step is done when its trigger fired, was enabled and turned off, or a later step's trigger fired.",
+  "links": [
+   {
+    "nodes": [
+     749,
+     738
+    ],
+    "why": "AI network hole in ::p2_tunnel after the train ride: the nodes reached from the landing (864, x -102.8) end at 749 (world -105.7,-1.6,-6.0) and the next ones start at 738 (-112.3,-1.6,-6.0), 6.7 m west on the same level (dy 0), leading to the ::p2_tunnel/::a5 exit portal at world x -117.5 (build/play11/nav_part1_level1.json). Without it the router took 194 nodes through ::p2 and the 1.0 ledge 13252->13170 (play11, 700-865 s)."
+   },
+   {
+    "nodes": [
+     889,
+     789
+    ],
+    "why": "same hole on the south side of the cab: 889 (world -106.6,-1.3,-10.3) to 789 (-112.3,-1.6,-7.7), dxz 6.3 (build/play11/nav_part1_level1.json)"
+   }
+  ],
+  "steps": [
+   {
+    "t": "::p5::d_door_start::t_door.TRIGGER",
+    "why": "kicks the storage corridor door open @27555079"
+   },
+   {
+    "t": "::to_storage01::New mesh 01::t_door.TRIGGER",
+    "why": "storage door; enables to_storage01::enemy_trigger @27616906. The st01 cutscene removes the weapons (@31306219), gives 40 Beretta rounds @31306258, the leadpipe with infinite ammo @31306295/@31306376 and a painkiller @31306421 (C_PickupWeapon(beretta) is only on the stand-in ::teleport::max @31306673)"
+   },
+   {
+    "t": "::to_storage01::enemy_trigger.TRIGGER",
+    "why": "::p5::script initialize @27616240 -> stairs1 d_door01/02 open (the gate) @27558750"
+   },
+   {
+    "t": "::stairs1::t_flash01.TRIGGER",
+    "why": "past the gate; bridget01 timer @27600042"
+   },
+   {
+    "t": "::bridget01::t_enemy_gate01.TRIGGER",
+    "why": "waypoint on the bridge toward ::stairs"
+   },
+   {
+    "t": "::p4::guard_init.TRIGGER",
+    "why": "waypoint in p4; wakes hallway1::e1 @27550298"
+   },
+   {
+    "t": "::s + stairs1::alert_enemies.TRIGGER",
+    "why": "::p2::script initialize @27574642"
+   },
+   {
+    "t": "::p2::t1.TRIGGER",
+    "why": "opens the r01 door (::r01::Door.DO open1)"
+   },
+   {
+    "t": "::r01::pt1.TRIGGER",
+    "kill": [
+     "::p2::e1",
+     "::r01::e1"
+    ],
+    "why": "enabled by EITHER death handler (add1 @27566002, add2 @27566213: ::p2::e1 or ::r01::e1), not by clearing both rooms; frees the cop (timer2 get_up)",
+    "name": "Policía liberado"
+   },
+   {
+    "t": "::hallway1::helper_to_open_door_trigger.TRIGGER",
+    "why": "the cop walks to hallway1::w2 @27474010 and opens the security door (cutscene, door1 unlock @29883105)"
+   },
+   {
+    "t": "::hallway1::timer::trigger1.TRIGGER",
+    "use": true,
+    "hurry": 20,
+    "why": "keypad: opens the timed security door (::hallway1::timer.DO animate, door close @29934293 and the keypad FSM back to enabled @29933640); go through at once (run l1m: a 7 s detour and the door was shut)",
+    "name": "La puerta de seguridad"
+   },
+   {
+    "t": "::control_room1::door_dummy::door_trigger.TRIGGER",
+    "why": "auto sliding door control_room1 -> c @27456113"
+   },
+   {
+    "t": "::c::t_door.TRIGGER",
+    "why": "d_door_3rail01 open -> GM_EnableExit(::c::exit_to_power) @29585936"
+   },
+   {
+    "t": "::2nd_rail::control_desk::trigger.TRIGGER",
+    "use": true,
+    "why": "third-rail power: ::p2::electricity_controller start @27379532, train_start_trigger on @27517470",
+    "name": "Control de energía"
+   },
+   {
+    "t": "::control_room1::timer::trigger1.TRIGGER",
+    "use": true,
+    "hurry": 20,
+    "why": "back to the train: the timed security door is shut from the control_room1 side too; its inside keypad (Part1_Level1.ldb trigger list) opens it, then go through at once"
+   },
+   {
+    "t": "::p2::service_train::trigger3.TRIGGER",
+    "use": true,
+    "at": [
+     16.8,
+     -0.3,
+     -8.8
+    ],
+    "why": "boarding: the cab floor is the platform height, 1.2 over the track nodes. The platform (nodes y -0.3, world z -5.8) ends at the train's side; its sliding door (door1/door3, unlocked with the third-rail power @27517470) opens on trigger3 (outside) / trigger1 (inside) at p2 x 16.8; type 0 = action button (E); walk in from the platform node 'at' (p2 frame), not from the track bed under the train"
+   },
+   {
+    "t": "::p2::service_train::trigger1.TRIGGER",
+    "use": true,
+    "why": "inside the sliding door, 0.6 beyond trigger3"
+   },
+   {
+    "t": "::p2::service_train::train_start_trigger.TRIGGER",
+    "use": true,
+    "why": "::p2::camera1 start @27535978: train ride cutscene, exit_out enabled @30285488, player to p2_tunnel::w1 @30998365; the AI network has no node inside the cab: from the platform walk straight through the doorway centre (p2 x 15.85, from play10 shots and positions: Max stops at the frame at x 15.3 and 16.35; trigger1/3 at x 16.8 are the buttons beside it; E toggles the door, trigger en 0 = open) then at the trigger (play5 routed 45 nodes through the track bed and never got in)",
+    "through": [
+     15.85,
+     -0.1,
+     -10.4
+    ],
+    "near": 5,
+    "name": "El tren de servicio"
+   },
+   {
+    "t": "::p2::service_train::trigger4.TRIGGER",
+    "use": true,
+    "why": "after the ride Max stands inside the cab (p2_tunnel frame, y -0.4) with its side doors shut; trigger1..4 (type 0 = E) are its door buttons: 1/3 at tunnel-frame z -7.8/-7.2, 2/4 at z -11.6/-11.0, all at x -102.8 world (dump 'tun trig', build/dev19c/page.log). trigger4 is the unused one (1 and 3 are steps 16-17 and would count as done), nearest to Max's landing (-102.7, z -9.3); E opens the south door onto the track bed."
+   },
+   {
+    "t": "::p2::service_train::door5::t1.TRIGGER",
+    "why": "the cab's west end door toward ::a5 (t1 at p2_tunnel -1.0,0.3,-0.9, world z -9.4; contact, type 3): opens with do_animate(open2) @27532217. The AI network has no node there, so the step walks straight at it; play12 was blocked at nodes 890 and 799, 1 m beside the door. Then out to the tracks and west over the broken barricade (walkthroughs: the train crashes through the wood, get out, go in the tunnel; AI network hole x -112.3..-105.7)",
+    "walk": [
+     {
+      "at": [
+       -3.2,
+       0.0,
+       -0.9
+      ]
+     },
+     {
+      "at": [
+       -8.6,
+       0.0,
+       -0.9
+      ],
+      "jump": true
+     }
+    ]
+   },
+   {
+    "t": "::a5::t_door.TRIGGER",
+    "why": "FSM ::a5::t_door -> ::a5::timer.DO step 1 -> gm_init(part1_level1b) @29336250; ungated: the a5 fight is optional for the exit (FACT, rea/map/levels/part1_level1.md section 3)"
+   }
+  ],
+  "exit": [
+   "::a5::t_door.TRIGGER"
+  ],
+  "spare": {
+   "names": [
+    "::r01::helper",
+    "::maintenance_room::table::dead_cop"
+   ],
+   "why": "names are read to 31 chars (host/gamestate.c en_name). dead_cop: the wounded cop on the maintenance_room table (C_SetInvulnerable(true), C_SetWoundedAnimations(true) in the .ldb), shot by the ghost in run l1q at 235.7 s just before Max died. helper: the transit cop freed in r01 walks with Max to hallway1 and opens the security door; ::r01::e1 has C_SetTargetCharacter(\"::r01::helper\") and the helper's death sends ::r01::game_over start (@31225819, camera special_killed, player controls off): never a target"
+  },
+  "open": {
+   "match": "closet|locker|cabinet|t_health",
+   "why": "closets/lockers/health boxes hold the painkillers and ammo: their items load inactive (u8 item+0x142 = 0) until the door's script sends LI_ActivateLevelItem(true) (handler 0x71a620; 15 lines in the .ldb, e.g. ::st01::closet02 000::ammo @50155309); the door trigger is a USE button that disables itself once used"
+  },
+  "next": "part1_level1b",
+  "ff": [
+   {
+    "name": "El andén del metro",
+    "t": "::p5::d_door_start::t_door.TRIGGER",
+    "why": "rea/map/ai.md:75 (door kick, @27555079)",
+    "tp": "::p5::w4"
+   },
+   {
+    "name": "El cuarto del guardia",
+    "t": "::to_storage01::New mesh 01::t_door.TRIGGER",
+    "why": "exits.json part1_level1.steps[1] (st01 cutscene: 40 Beretta rounds + leadpipe, @31306258/@31306295) @27616845",
+    "tp": "::st01::wp01"
+   },
+   {
+    "name": "Las escaleras",
+    "t": "::stairs1::t_flash01.TRIGGER",
+    "why": "exits.json part1_level1.steps[3] (past the gate) @27600087",
+    "tp": "::p5::w1"
+   },
+   {
+    "name": "La sala de control",
+    "t": "::control_room1::door_dummy::door_trigger.TRIGGER",
+    "why": "rea/map/ai.md:75 (door1 opens after the cop cutscene, @27456113)",
+    "tp": "::control_room1::w1"
+   },
+   {
+    "name": "El control de energía",
+    "t": "::2nd_rail::control_desk::trigger.TRIGGER",
+    "why": "rea/map/ai.md:75 (USE: train_start_trigger -> ride to ::p2_tunnel::w1) @27379226",
+    "tp": "::control_room1::w1"
+   }
+  ]
+ },
+ "part1_level1b": {
+  "why": "LOW CONFIDENCE on steps. The end is a dynamic-object collision, not a TRIGGER: ::exit::end_trigger is a collision DAO (@22709907) and .DO is its animation child, so the name in \"exit\" only marks the room the ghost sweeps; d_endcamera.DO->do_animate(1) @22710167 then does gm_setplayercontrols(false) + s_modeswitch(graphicnovel) + GM_Init(part1_level2) @23747043. Vault chain: v-b01::t_doors opens v-b01 doors and sends ::vc::script initialize @22811841; ::vc::death_counter (e1..e4 die) T_Enable(true) ::vc::vault_control_lookat @22841848 (a look-at trigger, no kill gate for the switch); ::vc::t_doors switches the vault doors @22860833 and re-enables itself @24339204/@24364785/@24386501; v-a New mesh 11::t_detonators enables ::3::explode and ::old_corridor::t_script @22803144/@22803562. The bot must not walk into ::3::player_detect @22680211: its handler kills the activator @22680666.",
+  "steps": [
+   {
+    "t": "::v-b01::t_doors.TRIGGER",
+    "why": "opens ::v-b01::d_door01/02 and ::vc::script initialize (vc enemies wake) @22811757..22811841"
+   },
+   {
+    "t": "::vc::t_doors.TRIGGER",
+    "use": true,
+    "why": "vault switch: closes v-a doors, opens v-b01 doors @22861220..22861344; it has to be pressed three times (cycle b/c/a @22861387, @22861943, @22862495) and re-enables itself @24339204, so no kill gates it",
+    "name": "La bóveda"
+   },
+   {
+    "t": "::v-a::New mesh 11::t_detonators.TRIGGER",
+    "use": true,
+    "why": "detonators: ::3::explode and ::old_corridor::t_script enabled @22803144/@22803562 (door_explosion in ::tr opens ::tr::toggle1 @22772609)",
+    "name": "Los detonadores"
+   }
+  ],
+  "exit": [
+   "::exit::end_trigger.DO"
+  ],
+  "send": [
+   "::exit::d_endcamera.DO->DO_Animate(1);"
+  ],
+  "next": "part1_level2",
+  "ff": [
+   {
+    "name": "La puerta del sótano",
+    "t": "::v-b01::t_doors.TRIGGER",
+    "why": "exits.json part1_level1b.steps[0] @22811713",
+    "tp": "::vc::w1"
+   }
+  ]
+ },
+ "part1_level2": {
+  "why": "::lift2::t_end.TRIGGER has no T_Enable(true) sender in the .ldb (enabled at load). Its FSM sends ::lift04::d_liftdoor.DO close and ::lift2::d_timer.DO->do_animate(1) @25692067; d_timer.DO fades and gm_init(part1_level2b) @27426251. T_Activate is a script message, so no earlier door/kill gates matter.",
+  "steps": [
+   {
+    "t": "::startroom::door_trigger.TRIGGER",
+    "why": "the hotel doors: self off @25806126, ::finito::d_door01/02->DO_Animate(open) @25806180/@25806223",
+    "name": "La entrada del hotel"
+   },
+   {
+    "t": "::lift04::t_door.TRIGGER",
+    "use": true,
+    "why": "USE action: switch sound @25690872, ::lift04::d_liftdoor.DO->do_animate(open) @25690928, self off @25690973; walking into the closed door without pressing it never opens it",
+    "name": "La puerta del ascensor"
+   }
+  ],
+  "exit": [
+   "::lift2::t_end.TRIGGER"
+  ],
+  "next": "part1_level2b",
+  "ff": [
+   {
+    "name": "La entrada del hotel",
+    "t": "::startroom::t_switch.TRIGGER",
+    "why": "1_Part1_Level2.ldb: P1L2a_Max_02 + fsm_Switch(2) @25900220",
+    "tp": "::finito::w1"
+   },
+   {
+    "name": "Las puertas cortafuego",
+    "t": "::center04::t_firedoors01.TRIGGER",
+    "why": "1_Part1_Level2.ldb: trigger list, room ::center04 @25878277",
+    "tp": "::center01::wp01"
+   },
+   {
+    "name": "El ascensor",
+    "t": "::center04::t_lift.TRIGGER",
+    "why": "1_Part1_Level2.ldb: switch sound only, no FSM and no door @25556503 (the lift is moved by its own DO); kept as a fast-route anchor",
+    "tp": "::center01::wp01"
+   },
+   {
+    "name": "La ventana al vacío",
+    "t": "::room_firedoors01b::t_lift.TRIGGER",
+    "why": "1_Part1_Level2.ldb: the trigger object is ::room_firedoors01b::t_lift @25896760 (switch sound @25770986); the breakable window is ::room_to_ledge::d_window_out, 25 HP @25771206",
+    "tp": "::centerl_01::wp02"
+   },
+   {
+    "name": "El montacargas",
+    "t": "::lift2::t_service_elevator01.TRIGGER",
+    "why": "1_Part1_Level2.ldb: service elevator before ::lift2::t_end (exit) @25890437",
+    "tp": "::lift04::wp01"
+   }
+  ]
+ },
+ "part1_level2b": {
+  "why": "::roof04::t_Exit.TRIGGER is only ever disabled by itself (enabled at load). FSM @27314511 sends ::roof04::d_timer.DO->DO_Animate(1) (gm_init(part1_level3) @30572347), plus nonreactive state for the Teleport/roof03 enemies. No kill gate. The exit moves the four roof enemies: ::Teleport::e02/e03 and ::roof03::e01/e02 go nonreactive to ::respa::wp04 @27314884..@27315127.",
+  "steps": [
+   {
+    "t": "::to_bar::t_note_bar.TRIGGER",
+    "why": "bar cutscene: d_door_bar open @27327529, d_candy @27327574, controls off @27327610, inventory cleared @27327660, player invulnerable @27327805, d_timer.DO @27327951; the tail gives control back @28087620",
+    "name": "La puerta del bar"
+   },
+   {
+    "t": "::respa::t_exit.TRIGGER",
+    "why": "the buzzer that opens the roof: ::roof04::door3->DO_Animate(open1) @27294005, door4 @27294046, buzzer @27294087; without it roof04::door3/door4 stay closed and the exit is unreachable",
+    "name": "El timbre de la azotea"
+   }
+  ],
+  "exit": [
+   "::roof04::t_Exit.TRIGGER"
+  ],
+  "next": "part1_level3",
+  "ff": [
+   {
+    "name": "La azotea",
+    "t": "::roof04::t_Exit.TRIGGER",
+    "why": "exits.json part1_level2b.exit (::roof04::d_timer.DO) @27315222",
+    "tp": "::Lobby::wp01"
+   }
+  ]
+ },
+ "part1_level3": {
+  "why": "::Alley::end_trigger.TRIGGER has no message targeting it at all (enabled at load). The message lives in its T_Activate handler @24522840, not in an FSM: it sends ::Alley::end_timer.DO->do_animate(1), and end_timer.DO fades and runs gm_init(part1_level3b) @25549877. No kill: the only armed actors are the four invulnerable cops @24707875. The level opens with a three-camera cutscene (controls off @24645297, invuln @24645347) that is still running when the level starts: the first move must wait for @26261119.",
+  "steps": [],
+  "exit": [
+   "::Alley::end_trigger.TRIGGER"
+  ],
+  "next": "part1_level3b",
+  "ff": [
+   {
+    "name": "El callejón",
+    "t": "::Alley::end_trigger.TRIGGER",
+    "why": "exits.json part1_level3.exit (T_Activate @24522840 -> end_timer.DO -> gm_init part1_level3b @25549877) @24711478; the tp ::kitchen::w2 @24498554 is not tied to the exit by the file (enemies use it, @26020021), so it only puts Max near the alley",
+    "tp": "::kitchen::w2"
+   }
+  ]
+ },
+ "part1_level3b": {
+  "why": "The map ends on ::rails::train::end_trigger, a DYNAMIC OBJECT armed by the train FSM (do_enablecollisions(true) @25649012; the camera7 block @25543652 starts its move animation). Its DO_CharacterCollides table (@24214363) holds three strings: two do_enablecollisions(false) (@24214524, @24214656) and maxpayne_gamemode->gm_init(part1_level4) @24214718; the second is another handler, not part of the same line list. The player fires it by jumping from the roof edge onto the following train (walkthroughs, out/bec/s1104/S_result.md); standing still it never fires, on native either (Q_result.md). ::rails::old kills the player on collision @24212125, so the tp ::rails::w3 is the protection. The jump is real play (WORKLIST #7), so the route injects that DO's own two lines verbatim, 30 s after jump_trigger (cutscene ~6 s + the armed train pass ~25 s): the level's own exit actions at the moment the level would run them, not a skip of its content. 7 native jump tries (out/q3b/chela_t1..t7) did not land the collision.",
+  "steps": [
+   {
+    "t": "::rails::jump_trigger.TRIGGER",
+    "why": "starts the camera chain (camera6 -> camera5 -> camera7) and the train FSM; enabled at load, no T_Enable sender",
+    "name": "Las vías"
+   }
+  ],
+  "exit": [],
+  "next": "part1_level4",
+  "send": [
+   "player->c_teleport(::rails::w_max);",
+   "@w:1800",
+   "::rails::train::end_trigger.DO->do_enablecollisions(false);",
+   "maxpayne_gamemode->gm_init(part1_level4);"
+  ],
+  "ff": [
+   {
+    "name": "Las vías",
+    "t": "::rails::jump_trigger.TRIGGER",
+    "why": "exits.json part1_level3b.steps[0] (camera6->5->7 + train FSM) @24211232",
+    "tp": "::rails::w3"
+   }
+  ]
+ },
+ "part1_level4": {
+  "why": "Level ends by itself on the last kill: ::end::end_timer FSM needs 3 'add' (FSM_Send) and then runs end_timer.DO->DO_Animate(timer) @26884131; end_timer.DO does graphicnovel + gm_init(part1_level5) @28456850. Adds come from ::end::death_counter (::end::e1..e4 die @26977862..), ::end::death_counter3 (::teleport::e1..e3 die @26989249..) and ::startroom::gognitti (OnDeath-style add @26988695; its record also sets invulnerable, so the add may only fire on a scripted end). First wave death -> second_wave_trigger1 trigger_me -> ::end::script3 initialize teleports ::teleport::e1..e3 in (@26888889). No 'send': fleet s1104b put gm_init(part1_level5) at 103 s, before the exit step, and the DO->DO_Animate line queued at 107 s was parsed at 142 s with the level already part1_level5 (page.tail 142.2), where the name is absent; X_Message::parse reports that miss as a 'Receiver class' (the name falls through to the Class:Id form, and '::end::end_timer.DO' is no class) and the SEH wrapper closes the game. The '.DO' name is a per-level scope-table key, so no exits.json field keeps a queued line inside its level: the kill list is the lever. Keep first-wave e1..e4 in the final objective too: rescuing second_wave_trigger1 does not kill them or satisfy death_counter (@26977862), and the exit still needs its add. The exact call is ::end::end_timer.DO->DO_Animate(timer) @26884131, animation name timer @28456455, and ::startroom::gognitti is invulnerable until @28446593.",
+  "steps": [
+   {
+    "t": "::end::Door::t1.TRIGGER",
+    "tp": "::end::w2",
+    "why": "1_Part1_Level4.ldb @26881953 opens Door.DO (open1); open1 @28448876 starts camera1 -> camera2 @28432580 -> camera3 @28436633 -> camera4 @28439919 -> camera5 @28442460, which enables second_wave_trigger1 @28446870. The kill belongs here, not to the wave trigger: ::end::death_counter Switch(4) sends trigger_me @26880420 once e1..e4 are dead (@26879975), and its handler also sends the end_timer add @26880480",
+    "kill": [
+     "::end::e1",
+     "::end::e2",
+     "::end::e3",
+     "::end::e4"
+    ]
+   },
+   {
+    "t": "::end::second_wave_trigger1.TRIGGER",
+    "why": "enabled by camera5.DO @28446870 and ungated by kills; its T_Activate starts script3, which teleports ::teleport::e1..e3 in (@26888889)",
+    "name": "La segunda ola"
+   }
+  ],
+  "kill": [
+   "::end::e1",
+   "::end::e2",
+   "::end::e3",
+   "::end::e4",
+   "::teleport::e1",
+   "::teleport::e2",
+   "::teleport::e3",
+   "::startroom::gognitti"
+  ],
+  "exit": [
+   "::end::end_timer.DO"
+  ],
+  "next": "part1_level5",
+  "ff": [
+   {
+    "name": "La segunda oleada",
+    "t": "::end::second_wave_trigger1.TRIGGER",
+    "kill": [
+     "::end::e1",
+     "::end::e2",
+     "::end::e3",
+     "::end::e4"
+    ],
+    "why": "exits.json part1_level4.steps[0] (@26880420)",
+    "tp": "::end::w2"
+   }
+  ]
+ },
+ "part1_level5": {
+  "why": "::backstage2::Player collide trigger 00.TRIGGER is only disabled by itself (enabled at load); its T_Activate @28373474 sends ::backstage2::Camera_01.DO->do_animate(animation_0) @28373557. The DO plays two animations: Animation_0 puts the camera on and cuts controls (@29029535..@29030022) and Animation_1 takes them back and only then runs gm_init(part1_level6) @29030254 -> @29030838, so a T_Activate fired during Animation_0 is lost in the engine camera state.",
+  "steps": [],
+  "exit": [
+   "::backstage2::Player collide trigger 00.TRIGGER"
+  ],
+  "next": "part1_level6",
+  "ff": [
+   {
+    "name": "El altavoz del ático",
+    "t": "::Attic_stairup::speaker_trigger.TRIGGER",
+    "why": "1_Part1_Level5.ldb: ::Attic_stairup::speaker_trigger opens ::outside::door1/2 (@28344289/@28344326) after ::Attic_barrels::script initialize @28344240",
+    "tp": "::disco2::W02"
+   },
+   {
+    "name": "El escenario",
+    "t": "::backstage2::Player collide trigger 00.TRIGGER",
+    "why": "exits.json part1_level5.exit (Camera_01.DO -> gm_init part1_level6) @28373490",
+    "tp": "::backstage2::w1"
+   }
+  ]
+ },
+ "part1_level6": {
+  "why": "Lupino boss fight. ::innersanctum::Exit FSM counts 3 deaths: ::teleport::e1 add1 (send @6696914), ::teleport::e2 add2 (@6697207), ::teleport::lupino add_lupino (@6701377); the third add runs the FSM body @6675727, ::innersanctum::Exit.DO->DO_Animate(animation_0) (animation @6853170), whose end does graphicnovel after MPGNM_PickupNote(P1L5b_008) @6853350/@6853408 and gm_init(part2_level0) @6853452. Combat_Trigger_01/02 (enabled at load) start Combat_Controller.DO Start_Combat @6671972. Lupino is IMMORTAL: c_setimmortal(true) @6701275, cleared only by C_SetImmortal(false) @6804244, so shooting him early only wastes time; ::teleport::e1/e2 exist from the curtain reveal (@6674527/@6674580) and ::teleport::lupino is teleported twice (::innersanctum::w1 @6674421, combat states @6804191). No TRIGGER reaches the exit. No 'send': fleet s1104b had gm_init(part2_level0) at 37.5 s, before the exit step, and the Exit.DO line queued at 39.5 s was parsed at 71.1 s in part2_level0 (page.tail 71.1), a level with no such receiver, so the parse closed the game. The kill list includes the prerequisite End_A01..05, End_B01..05 and End_C01..02 waves (death teleports the next wave member, @6697453 onward). The kill list is the lever: a queued message cannot be kept in its level from this file.",
+  "steps": [
+   {
+    "t": "::Sanctum Corridor::Action button trigger 00.TRIGGER",
+    "use": true,
+    "name": "El interruptor del pasillo",
+    "why": "use-key switch: T_Activate @6683623 -> switch.DO do_animate(1) @6683638 + door01.DO do_animate(1) @6683686; door01 closed blocks nav node 125 (ghost run l3_p1l6 stuck 420 s)"
+   },
+   {
+    "t": "::innersanctum::Combat_Trigger_01.TRIGGER",
+    "why": "Combat_Controller.DO->dO_animate(Start_Combat) @6671972; teleports e1/e2/lupino in via the End_A/B/C chain",
+    "name": "Lupino"
+   }
+  ],
+  "kill": [
+   "::teleport::End_A01",
+   "::teleport::End_A02",
+   "::teleport::End_A03",
+   "::teleport::End_A04",
+   "::teleport::End_A05",
+   "::teleport::End_B01",
+   "::teleport::End_B02",
+   "::teleport::End_B03",
+   "::teleport::End_B04",
+   "::teleport::End_B05",
+   "::teleport::End_C01",
+   "::teleport::End_C02",
+   "::teleport::e1",
+   "::teleport::e2",
+   "::teleport::lupino"
+  ],
+  "exit": [
+   "::innersanctum::Exit.DO"
+  ],
+  "next": "part2_level0",
+  "ff": [
+   {
+    "name": "Lupino",
+    "t": "::innersanctum::Combat_Trigger_01.TRIGGER",
+    "kill": [
+     "::teleport"
+    ],
+    "why": "exits.json part1_level6.steps[0] (@6671972)",
+    "tp": "::innersanctum::w2"
+   }
+  ]
+ },
+ "part2_level0": {
+  "why": "Exit-only route (2026-11-02, scratchpad tools/exitscan.py over the .ldb): the record that sends gm_init(next) and its sender. 'send' lines are copied verbatim from the .ldb (a receiver the level lacks closes the game).",
+  "steps": [],
+  "exit": [
+   "::29_Bedroom::Player collide trigger 00.TRIGGER"
+  ],
+  "next": "part2_level1",
+  "send": [
+   "::32_Boiler_Room::Camera_Final.DO->do_animate(animation_0);"
+  ],
+  "ff": [
+   {
+    "name": "Los pasillos del sueño",
+    "t": "::05_Hallway::T1.TRIGGER",
+    "why": "rea/map/inject_part23.tsv:3 (05/09/10_Hallway, la escena del bebé llorando); 1_Part2_Level0.ldb @14895537 (::05_Hallway::T1.TRIGGER)",
+    "tp": "::20_Stairs::W01"
+   },
+   {
+    "name": "La habitación del bebé",
+    "t": "::26_BabysRoom::Player collide trigger 00.TRIGGER",
+    "why": "the trigger teleports the player to ::26_BabysRoom::W01 itself @14916593 and only then starts camera1..4; teleporting to that point first means the collision never fires and the Baby never leaves @14912976"
+   },
+   {
+    "name": "El dormitorio",
+    "t": "::29_Bedroom::Player collide trigger 00.TRIGGER",
+    "why": "the ending trigger: Frankie is teleported to ::32_Boiler_Room::W_Frankie and set standandshoot @14922304/@14922376, Camera_Final.DO @14922580, gamespeed 0.15 @14922642. No kill: ::29_Bedroom::max @14934543 is the cutscene enemy_max_payne and ::32_Boiler_Room::Frankie @14934699 (frankie_the_bat) has no death handler, so those names could never complete",
+    "tp": "::26_BabysRoom::W01"
+   },
+   {
+    "name": "El taller",
+    "t": "::28_WorkRoom::Action button trigger 00.TRIGGER",
+    "why": "::28_WorkRoom::Action button trigger 00 @14918376 only reads comic note p2l0a_009 @14918499 (self off, s_modeswitch(graphicnovel)); the room holds no character, so no kill can complete there",
+    "tp": "::26_BabysRoom::W01"
+   }
+  ]
+ },
+ "part2_level1": {
+  "why": "Exit-only route (2026-11-02, scratchpad tools/exitscan.py over the .ldb): the record that sends gm_init(next) and its sender. 'send' lines are copied verbatim from the .ldb (a receiver the level lacks closes the game). The bar ends when frankie_death_timer counts e1, e2, e3 and frankie dead (fsm_send(add)).",
+  "steps": [],
+  "exit": [],
+  "next": "part2_level2",
+  "kill": [
+   "::bar::e1",
+   "::bar::e2",
+   "::bar::e3",
+   "::bar::frankie"
+  ],
+  "ff": [
+   {
+    "name": "Los pasillos",
+    "t": "::corridor1::noise1.TRIGGER",
+    "kill": [
+     "::corridor1",
+     "::corridor4"
+    ],
+    "why": "rea/map/inject_part23.tsv:7 (corridor1::e1/e1b + corridor4::e1/e2/e2b); 1_Part2_Level1.ldb @28978085",
+    "tp": "::boiler_room::w2"
+   },
+   {
+    "name": "El cuarto de droga",
+    "tp": "::drug_out::w1",
+    "t": "::drug_out::enemy_safetrigger.TRIGGER",
+    "kill": [
+     "::drug_out"
+    ],
+    "why": "::drug_out::enemy_safetrigger @29007684 wakes only e2/e3 (@29007757/@29007809); e1 is woken by ::drug_out::script @29010413, so the room kill covers all three (waypoint ::drug_out::w1 @28959572)"
+   },
+   {
+    "name": "La fábrica de carne",
+    "t": "::outside1::meat_place1_mobsters_trigger.TRIGGER",
+    "kill": [
+     "::meat_place1"
+    ],
+    "why": "rea/map/inject_part23.tsv:11: the chase comes from ::outside1::meat_place1_mobsters_trigger @29095628 -> @29095931; ::meat_place1::switch @29029728 only plays subway_tunnel_switch @29029743",
+    "tp": "::outside1::w3"
+   },
+   {
+    "name": "El bar",
+    "tp": "::bar::w2",
+    "t": "::bar::ct1.TRIGGER",
+    "kill": [
+     "::bar"
+    ],
+    "why": "::to_bar::camera1 sends ::bar::script->FSM_Send(initialize) @29127209 and fsm_send(start) @30539849; ::bar::ct1 @28964243 only sends the special to its activator @28964259. The kill prefix ::bar already covers ::bar::frankie, which is the 4th add the exit waits for @29138294"
+   }
+  ]
+ },
+ "part2_level2": {
+  "why": "Exit-only route (2026-11-02, scratchpad tools/exitscan.py over the .ldb): the record that sends gm_init(next) and its sender. 'send' lines are copied verbatim from the .ldb (a receiver the level lacks closes the game). ::11_Containers2::Character collide trigger 00/01 (@21341753, @21342236) wake the truck01 enemy and give enemy02 a grenade, so they are not player steps either; ::containers01::sniper @21392413 is the only way to the sniper rifle before the bridge.",
+  "steps": [],
+  "exit": [
+   "::20_Warehouse::Player collide trigger 01.TRIGGER"
+  ],
+  "next": "part2_level2b",
+  "send": [
+   "::20_Warehouse::End_Controller.DO->DO_Animate(animation_0);"
+  ],
+  "ff": [
+   {
+    "name": "El patio",
+    "tp": "::yard2::w1",
+    "t": "::01_Entryway::Action button trigger 00.TRIGGER",
+    "kill": [
+     "::yard1"
+    ],
+    "why": "rea/map/inject_part23.tsv:16 (despierta ::yard1::enemy02); 1_Part2_Level2.ldb @21305249, ::yard2::w1 @21303009"
+   },
+   {
+    "name": "Los contenedores",
+    "tp": "::11_Containers2::Waypoint02",
+    "t": "::11_Containers2::Player collide trigger 00.TRIGGER",
+    "kill": [
+     "::11_Containers2",
+     "::15_Backdrop::enemy06",
+     "::containers02::e5",
+     "::containers02::enemy04",
+     "::containers02::enemy01"
+    ],
+    "why": "::11_Containers2::Player collide trigger 00 @21342996 wakes ::15_Backdrop::enemy06 @21343083 and ::containers02::e5 @21343126, not the ::11_Containers2 enemies; the room also arms ::containers02::enemy04 @21350479 and ::containers02::enemy01 @21350094"
+   },
+   {
+    "name": "El puente",
+    "tp": "::16_Bridge::waypoint1",
+    "t": "::16_Bridge::Player collide trigger 00.TRIGGER",
+    "kill": [
+     "::20_Warehouse",
+     "::18_BridgeOffice::enemy01"
+    ],
+    "why": "::16_Bridge::Player collide trigger 00 @21354800 wakes ::20_Warehouse::enemy05 and ::18_BridgeOffice::enemy01 @21354882; ::16_Bridge::trigger01 @21357777 also sends ::Teleport::enemy05/06 into containers02"
+   },
+   {
+    "name": "El patio de la grúa",
+    "tp": "::yard3::w1",
+    "t": "::yard3::Player collide trigger 03.TRIGGER",
+    "kill": [
+     "::yard3",
+     "::Teleport::enemy08",
+     "::Teleport::enemy09"
+    ],
+    "why": "::yard3::Player collide trigger 03 @21435535 teleports ::Teleport::enemy08 @21435766 and enemy09 @21435706 into yard3, so they belong to this fight"
+   },
+   {
+    "name": "El almacén",
+    "tp": "::ware2::Waypoint01a",
+    "kill": [
+     "::ware2"
+    ],
+    "why": "::ware2::Character collide trigger 00 @21405573 is a CHARACTER collide trigger (its own message is activator->c_setstatemachine(standandshootstatic) @21405588), so the player walking through it fires nothing; the waypoint and the room kill are the step"
+   }
+  ]
+ },
+ "part2_level2b": {
+  "why": "Exit-only route (2026-11-02, scratchpad tools/exitscan.py over the .ldb): the record that sends gm_init(next) and its sender. 'send' lines are copied verbatim from the .ldb (a receiver the level lacks closes the game). ::cr::trigger4/5/7 (@22999820, @23000557, @23002037) wake ::cr::sniper02/03/04 and the three use-key doors are ::03_SmallWareHouse::Action button trigger 00 @22947955, ::ship::Action button trigger 00 @23015441, ::staircase01::Action button trigger 00 @23033556; neither set gates the exit, so they stay out of the route.",
+  "steps": [
+   {
+    "t": "::09_ShipTreasure01::Player collide trigger 00.TRIGGER",
+    "why": "the exit precondition: it enables ::staircase01::end_trigger @22984088 (trigger @22984073); without it the listed exit can never fire",
+    "name": "El tesoro del barco"
+   }
+  ],
+  "exit": [
+   "::staircase01::end_trigger.TRIGGER"
+  ],
+  "next": "part2_level3",
+  "send": [
+   "::staircase01::wait.DO->do_animate(1);"
+  ],
+  "ff": [
+   {
+    "name": "El muelle",
+    "tp": "::StartRoom::W01",
+    "t": "::StartRoom::Player collide trigger 00.TRIGGER",
+    "kill": [
+     "::StartRoom"
+    ],
+    "why": "the dock fight is armed by ::StartRoom::P01 @23053425 and ::StartRoom::Player collide trigger 00/03 (@23053888, @23054704); ::StartRoom::ct1 @23041980 only runs Activator->C_SendSpecial() @23041996"
+   },
+   {
+    "name": "Los almacenes",
+    "tp": "::02_WareHouse::W01",
+    "t": "::02_WareHouse::Player collide trigger 00.TRIGGER",
+    "kill": [
+     "::02_WareHouse",
+     "::03_SmallWareHouse::enem01"
+    ],
+    "why": "::02_WareHouse::Player collide trigger 01 @22942935 moves ::03_SmallWareHouse::enem01 into the room @22942950, so it belongs to this kill"
+   },
+   {
+    "name": "Las cajas",
+    "tp": "::cr::Waypoint12a",
+    "t": "::cr::trigger3.TRIGGER",
+    "kill": [
+     "::cr"
+    ],
+    "why": "rea/map/inject_part23.tsv:28 (::cr::trigger3 -> sniper01 C_GoTo snipe01); 1_Part2_Level2b.ldb @22998967, waypoint @22924112"
+   },
+   {
+    "name": "El barco",
+    "tp": "::ship::waypoint01a",
+    "t": "::ship::Character collide trigger 01.TRIGGER",
+    "kill": [
+     "::ship"
+    ],
+    "why": "the ship fight comes from ::ship::Character collide trigger 01/02 (@23020526, @23020926) and ::ship::trigger @23029519; ::ship::Player collide trigger 00 @23025528 only rings the phone @23025605"
+   },
+   {
+    "name": "La escalera",
+    "tp": "::end_combat::Waypoint01",
+    "t": "::end_combat::trigger.TRIGGER",
+    "kill": [
+     "::end_combat"
+    ],
+    "why": "::end_combat::timer sends boris mobstercombat @23013761; ::end_combat::boris is invulnerable (@24514714) until ::end_combat::trigger02 releases him @23014677, so the kill only completes at the end"
+   }
+  ]
+ },
+ "part2_level3": {
+  "why": "::sewer4::door1::t_door1.TRIGGER (record @23243813, enabled at load) is the level's own exit trigger: its T_Activate table (@23244004) disables itself and runs ::sewer4::door1.DO->do_animate(open); the door's open state (@24580526) plays the door sound, fades, switches to the comic and runs gm_init(part2_level4) (@24582242).",
+  "steps": [],
+  "exit": [
+   "::sewer4::door1::t_door1.TRIGGER"
+  ],
+  "next": "part2_level4",
+  "ff": [
+   {
+    "name": "El almacén",
+    "tp": "::storage::w1",
+    "t": "::storage::combat_start_trigger.TRIGGER",
+    "why": "the fight is ::storage::combat_script @23267184, started by ::storage::combat_start_trigger @23267977: it kills ::storage::e1/e2 itself (@23267508/@23267541) and wakes ::A1::e1 @23267360, so a kill on ::storage is one the player never performs; ::storage::dialog_trigger @23269424 only plays P2L3a_Max_02"
+   },
+   {
+    "name": "Las cloacas",
+    "tp": "::sewer1::w1",
+    "kill": [
+     "::sewer1"
+    ],
+    "why": "the wave is ::sewer1::script @23242069, sent by ::storage::combat_start_trigger @23268261; ::sewer1::ct1 @23238430 only runs activator->c_sendspecial() @23238446, so it is no step"
+   },
+   {
+    "name": "La segunda oleada",
+    "tp": "::sewer1::w5",
+    "t": "::sewer1::e5_in_position.TRIGGER",
+    "kill": [
+     "::sewer1"
+    ],
+    "why": "second wave: ::sewer1::e5_in_position @23240130 -> ::sewer1::script2 @23240198 (e5/e6); ::sewer1::ct2 @23238628 only sends the special @23238644. The third wave is ::sewer5::script @23244103, sent from ::sewer1::script2 @23243501 (e1/e2 into ::sewer1::w11/w12 @23244618/@23244670)"
+   },
+   {
+    "name": "El sótano A1",
+    "tp": "::A1::w2",
+    "kill": [
+     "::A1"
+    ],
+    "why": "::A1::e1 is woken by ::storage::combat_script @23267360; ::Stairs::ct1 @23245539 only runs C_SendSpecial() @23245555, so it fires nothing for the route"
+   }
+  ]
+ },
+ "part2_level4": {
+  "why": "Exit-only route (2026-11-02, scratchpad tools/exitscan.py over the .ldb): the record that sends gm_init(next) and its sender. 'send' lines are copied verbatim from the .ldb (a receiver the level lacks closes the game). The exit phone chain is ::teleport::bb2 @26364918 -> ::booth::wait.DO @27962190 and it is not in ff; the send ::u::camera1->fsm_send(start) is the door01 open_end message @24323525, not a gm_init sender.",
+  "steps": [
+   {
+    "t": "::office_entrance::door09::t1.TRIGGER",
+    "why": "Punchinello scene: door_timer.DO @22237317 -> fade, controls off @24339028, u::t6 killersuits_coming @24339078, player->c_teleport(::office::player_teleport) @24339172 (the script moves Max into the office)",
+    "name": "La puerta de la oficina"
+   },
+   {
+    "t": "::office_entrance::door01::t4.TRIGGER",
+    "why": "the exit: door2 DO_Animate(open_end) @22235415 -> state open_end @24323185 -> u::camera1->fsm_send (start) @24323525 -> gm_init(part3_level1) @24813254. t4 is inert until the office scene switches it to the_end @24251082",
+    "name": "La salida del despacho"
+   }
+  ],
+  "exit": [
+   "::office_entrance::door01::t4.TRIGGER"
+  ],
+  "next": "part3_level1",
+  "send": [
+   "::u::camera1->fsm_send(start);"
+  ],
+  "ff": [
+   {
+    "name": "El sótano",
+    "tp": "::CellarRoom4::w1",
+    "t": "::CellarRoom4::trigger_mobsters.TRIGGER",
+    "kill": [
+     "::CellarRoom4",
+     "::cellarroom3"
+    ],
+    "why": "the mobster fight starts at ::CellarRoom4::trigger_mobsters @22131834 (::CellarRoom6::e1 gotoandshoot ::CellarRoom8::w1 @22132073); ::CellarRoom4::t1 @22131471 is the dodge tutorial @22131592"
+   },
+   {
+    "name": "El vestíbulo",
+    "tp": "::FOYER::w1",
+    "kill": [
+     "::FOYER"
+    ],
+    "why": "::FOYER::t1 @22166559 is a locked door: door_wood_locked @22166589, self off @22166660, ::table::t4 @22166700; it opens nothing and the ::FOYER kill is the room, not the trigger"
+   },
+   {
+    "name": "La armería",
+    "tp": "::gunroom::w1",
+    "t": "::gunroom::give_weapons.TRIGGER",
+    "kill": [
+     "::gunroom"
+    ],
+    "why": "::gunroom::give_weapons @22189046 is a USE action on Max (activator->c_sendspecial() @22189062) that hands the weapon set; the ambush is ::gunroom::script @22193341"
+   },
+   {
+    "name": "La galería",
+    "t": "::gallery::t6.TRIGGER",
+    "kill": [
+     "::gallery"
+    ],
+    "why": "rea/map/inject_part23.tsv:48 (::gallery::e3 en crouchandshootstatic; 'no waypoint in gallery'); 1_Part2_Level4.ldb @22185599",
+    "tp": "::office_entrance::w5"
+   },
+   {
+    "name": "El comedor",
+    "tp": "::table::w1",
+    "t": "::table::ct1.TRIGGER",
+    "kill": [
+     "::table",
+     "::kitchen"
+    ],
+    "why": "rea/map/inject_part23.tsv:50 (::table::player_trigger, Pilate + e3 + kitchen::e1); 1_Part2_Level4.ldb @22262955, waypoint @22052199"
+   }
+  ]
+ },
+ "part3_level1": {
+  "why": "Exit-only route (2026-11-02, scratchpad tools/exitscan.py over the .ldb): the record that sends gm_init(next) and its sender. 'send' lines are copied verbatim from the .ldb (a receiver the level lacks closes the game).",
+  "steps": [],
+  "exit": [
+   "::25_Bedroom_2::Player collide trigger 00.TRIGGER"
+  ],
+  "next": "part3_level2",
+  "send": [
+   "::25_Bedroom_2::Camera_Last.DO->DO_Animate(animation_0);"
+  ],
+  "ff": [
+   {
+    "name": "La entrada",
+    "t": "::02_Entrance::Player collide trigger 00.TRIGGER",
+    "why": "::01_Entry::trigger01 @25713547 only disables itself (as do trigger06/07/08 @25713773..@25714225); the first real step is ::02_Entrance::Player collide trigger 00 @25716166 (P3L1a_01 sound @25716424). No kill: the rooms named before hold no killable enemy (only cutscene actors @25781083, @26060512)",
+    "tp": "::01_Entry::Waypoint04"
+   },
+   {
+    "name": "La sala",
+    "t": "::05_Livingroom::Player collide trigger 00.TRIGGER",
+    "why": "real trigger @25718179, fires sounds only; no killable enemy exists in ::05_Livingroom (cutscene actor @25781083)",
+    "tp": "::01_Entry::Waypoint04"
+   },
+   {
+    "name": "La escalera",
+    "t": "::06_Stairs::Player collide trigger 01.TRIGGER",
+    "why": "real trigger @25721361, fires sounds only; ::06_Stairs/::06_Corridor hold no killable enemy (cutscene actor @26060512)",
+    "tp": "::01_Entry::Waypoint04"
+   },
+   {
+    "name": "El laberinto rojo",
+    "t": "::RedMaze::Player collide trigger 00.TRIGGER",
+    "why": "real trigger @25771394, fires the maze animations only; ::RedMaze holds no killable enemy",
+    "tp": "::StartRoom::Waypoint01"
+   }
+  ]
+ },
+ "part3_level2": {
+  "why": "Exit-only route (2026-11-02, scratchpad tools/exitscan.py over the .ldb): the record that sends gm_init(next) and its sender. 'send' lines are copied verbatim from the .ldb (a receiver the level lacks closes the game). The 13/14/15_Corridor push triggers are @16324759, @16325339, @16329497; they push the player and gate nothing, so they are not steps.",
+  "steps": [],
+  "exit": [
+   "::16_Corridor::Exit.TRIGGER"
+  ],
+  "next": "part3_level2b",
+  "send": [
+   "::16_Corridor::Exit_FSM.DO->DO_Animate(animation_0);"
+  ],
+  "ff": [
+   {
+    "name": "La entrada nevada",
+    "t": "::06_Hallway::Player collide trigger 00.TRIGGER",
+    "kill": [
+     "::02_Entry"
+    ],
+    "why": "::02_Entry::Player collide trigger 00 @16276866 only plays door_metal_locked @16277052 and disables itself; the first real beat is the 05/06_Hallway ambush: grenade @16295048, ::05_Hallway barrel explosion @16290674",
+    "tp": "::warehouse::Waypoint13"
+   },
+   {
+    "name": "La radio",
+    "t": "::03_Radio::trigger01.TRIGGER",
+    "kill": [
+     "::03_Radio"
+    ],
+    "why": "::03_Radio::trigger01 @16286302 turns the radio hum on and disables itself; harmless, no progression",
+    "tp": "::warehouse::Waypoint13"
+   },
+   {
+    "name": "El pasillo",
+    "t": "::06_Hallway::Player collide trigger 00.TRIGGER",
+    "kill": [
+     "::06_Hallway",
+     "::05_Hallway"
+    ],
+    "why": "build/data/lvl/1_Part3_Level2.ldb@16295106",
+    "tp": "::05_Hallway::Waypoint01"
+   },
+   {
+    "name": "La acería",
+    "t": "::steelmill::trigger01.TRIGGER",
+    "kill": [
+     "::steelmill",
+     "::15_Combat"
+    ],
+    "why": "build/data/lvl/1_Part3_Level2.ldb@16393448",
+    "tp": "::steelmill::Waypoint02"
+   },
+   {
+    "name": "El almacén",
+    "t": "::warehouse::t_spawn.TRIGGER",
+    "kill": [
+     "::warehouse"
+    ],
+    "why": "the room ambush is ::warehouse::t_spawn @16416994 (::Teleport::enemy01->C_Teleport(\"::warehouse::waypoint01\") @16417168); ::warehouse::trigger01 @16417842 only opens the container01 locker doors (@16417842, @16417901)",
+    "tp": "::warehouse::waypoint08"
+   }
+  ]
+ },
+ "part3_level2b": {
+  "why": "Exit-only route (2026-11-02, scratchpad tools/exitscan.py over the .ldb): the record that sends gm_init(next) and its sender. 'send' lines are copied verbatim from the .ldb (a receiver the level lacks closes the game). The lift ::shaft::lift01.DO->do_animate(down) @23855464 is fired by ::d6::wait2.DO, not by a trigger, and the fade + gm_init(part3_level3) @23867912 ride on it.",
+  "steps": [
+   {
+    "t": "::d6::Action button trigger 00.TRIGGER",
+    "use": true,
+    "kill": [
+     "::d6"
+    ],
+    "why": "the exit is kill-gated: this USE action self-off @22085968, runs wait/wait2 @22086028/@22086060, killer_suits music @22086154 and enables ::d6::trigger.TRIGGER @22086202; killing the d6 suits (@22088041) reaches FSM 2 @22088243, which enables ::shaft::trigger @22088288",
+    "name": "Los killer suits"
+   }
+  ],
+  "exit": [
+   "::shaft::trigger.TRIGGER"
+  ],
+  "next": "part3_level3",
+  "send": [
+   "::shaft::lift01.DO->do_animate(down);"
+  ],
+  "ff": [
+   {
+    "name": "El pasillo de la mina",
+    "t": "::02_Hallway::trigger04.TRIGGER",
+    "kill": [
+     "::02_Hallway",
+     "::04_MineRoom"
+    ],
+    "why": "build/data/lvl/1_Part3_Level2b.ldb@21931293",
+    "tp": "::bomb_room::waypoint06"
+   },
+   {
+    "name": "La acería",
+    "t": "::06_SteelMill::trigger01.TRIGGER",
+    "kill": [
+     "::06_SteelMill"
+    ],
+    "why": "build/data/lvl/1_Part3_Level2b.ldb@21967515",
+    "tp": "::06_SteelMill::Waypoint01"
+   },
+   {
+    "name": "La sala de control",
+    "t": "::11_Controlroom::t_door01.TRIGGER",
+    "kill": [
+     "::11_Controlroom"
+    ],
+    "why": "::11_Controlroom::dialogue @21998003 only plays P3L2a_Max_02 @21998018; the real beat is ::11_Controlroom::t_door01 @22006691 (camera, gates, objective OBJ_COLDSTEEL_ELEVATOR @22007088)",
+    "tp": "::11_Controlroom::Waypoint01"
+   },
+   {
+    "name": "La grúa",
+    "t": "::12_Craneroom::trigger01.TRIGGER",
+    "kill": [
+     "::12_Craneroom"
+    ],
+    "why": "build/data/lvl/1_Part3_Level2b.ldb@22029837",
+    "tp": "::12_Craneroom::Waypoint04"
+   },
+   {
+    "name": "Los hornos",
+    "t": "::madovens::trigger01.TRIGGER",
+    "kill": [
+     "::madovens",
+     "::16_Trap",
+     "::17_Corridor"
+    ],
+    "why": "::madovens::trigger01 @22118789 also attaches ::madovens::cam01 @22044534 and slams the ovens (@22044534..@22044623), so activating it remotely leaves Max outside a clamped oven",
+    "tp": "::corridor::Waypoint01"
+   }
+  ]
+ },
+ "part3_level3": {
+  "why": "Exit-only route (2026-11-02, scratchpad tools/exitscan.py over the .ldb): the record that sends gm_init(next) and its sender. 'send' lines are copied verbatim from the .ldb (a receiver the level lacks closes the game).",
+  "steps": [
+   {
+    "t": "::upper::terminal::terminal_trigger.TRIGGER",
+    "use": true,
+    "why": "the pin-code keypad the level expects (STRING_BUNKER_INV_PINCODE @27305824): T_Enable(true) @26030872, fsm_switch(open) @26030935, FSM code/check_clearance, security_denied @26031201",
+    "name": "El teclado"
+   },
+   {
+    "t": "::shaft3::elevator::elevator_door_button.TRIGGER",
+    "use": true,
+    "why": "the step that matters: security_access @25960568, it turns ::lower_lab::trigger off @25960405 and ::upper_lab::trigger off @25960734 and opens the upper doors @25960783",
+    "name": "El ascensor del laboratorio"
+   },
+   {
+    "t": "::end_shaft::elevator::elevator_button.TRIGGER",
+    "use": true,
+    "why": "the exit: switch @25786068, fsm_switch(pressed) @25786223, ride -> end_ride_controller -> end_upper camera -> gm_init(part3_level4) @27634286; nothing to walk into",
+    "name": "La salida en ascensor"
+   }
+  ],
+  "exit": [],
+  "next": "part3_level4",
+  "send": [
+   "::end_upper::camera2->fsm_send(start);"
+  ],
+  "ff": [
+   {
+    "name": "El laboratorio",
+    "t": "::shaft3::elevator::elevator_door_button.TRIGGER",
+    "kill": [
+     "::upper_lab"
+    ],
+    "why": "::upper_lab::trigger @25960734 is DISABLED by the shaft3 elevator button, so activating it remotely does nothing; the button itself is @25960568/@25960783",
+    "tp": "::storage::w2"
+   },
+   {
+    "name": "La esclusa",
+    "t": "::airlock::player_entered.TRIGGER",
+    "kill": [
+     "::airlock",
+     "::airlock_corridor"
+    ],
+    "why": "build/data/lvl/1_Part3_Level3.ldb@25712932",
+    "tp": "::airlock::w1"
+   },
+   {
+    "name": "Las cubas",
+    "t": "::vats::t1.TRIGGER",
+    "kill": [
+     "::vats",
+     "::lower_lab"
+    ],
+    "why": "::vats::t1 @26107458 -> merc_controller touch @26107500, e1 alert @26107544; the kill is valid, but ::storage::e1/e2 stay invulnerable until @28205289/@28205332 (their escort to ::airlock2)",
+    "tp": "::vats::w1"
+   },
+   {
+    "name": "El terminal",
+    "t": "::main::terminal_trigger.TRIGGER",
+    "kill": [
+     "::main",
+     "::storage"
+    ],
+    "why": "::main::terminal_trigger @26030318 only plays security_keyboard @25921641; ::main::killersuit1/2 are immortal (@26102393/@26102821) until the mercenary scene @27888359/@27888404, so their kill waits for it",
+    "tp": "::main::w5"
+   }
+  ]
+ },
+ "part3_level4": {
+  "why": "Exit-only route (2026-11-02, scratchpad tools/exitscan.py over the .ldb): the record that sends gm_init(next) and its sender. 'send' lines are copied verbatim from the .ldb (a receiver the level lacks closes the game). ::3::trigger01 starts inactive (fleet chain2: T_Activate did nothing); its own actions are sent instead. Only the first line: fleet s1104b sent both in one batch, DO_Animate(1) resolved in part3_level4 at 44.0 s and gm_init(part3_level5) followed at 45.0 s, and the queued CAM_AttachToDO line was then parsed at 83.2 s inside part3_level5 (page.tail 83.2) where ::3::cam_end.DO does not exist, which closed the game. The mailbox runs one line per input read, so a two-line batch cannot land in one level. The chain found in the .ldb: ::3::trigger01's active step (@26246238) holds ::3::look.TRIGGER->t_enable(false), cam_end.DO->DO_Animate(1) @26246276 and cam_end.DO->CAM_AttachToDO(1, false) @26246310, and ::booth::wait.DO's step @27962064 (the phone) switches trigger01 active @27962191 and enables ::3::look.TRIGGER @27962229, so the map's own way in is a trigger, not a queued message. The send omits ::3::cam_end.DO->CAM_AttachToDO(1, false) @26246309 because one line lands per level.",
+  "steps": [],
+  "exit": [
+   "::3::trigger01.TRIGGER"
+  ],
+  "next": "part3_level5",
+  "send": [
+   "::3::cam_end.DO->DO_Animate(1);"
+  ],
+  "ff": [
+   {
+    "name": "El callejón",
+    "t": "::startroom::trigger01a.TRIGGER",
+    "kill": [
+     "::startroom"
+    ],
+    "why": "build/data/lvl/1_Part3_Level4.ldb@26367371",
+    "tp": "::startroom::Waypoint06"
+   },
+   {
+    "name": "La cabina",
+    "kill": [
+     "::booth"
+    ],
+    "why": "::booth::Player collide trigger 00 @26375927 is a locked box (metal_drawer_locked @26257206); it opens nothing, so it is no step",
+    "tp": "::1::Waypoint04"
+   },
+   {
+    "name": "El hueco del ascensor",
+    "t": "::lift_shaft::trigger.TRIGGER",
+    "kill": [
+     "::lift_shaft"
+    ],
+    "why": "::lift_shaft::trigger @26305930; ::Level_5 carries only trigger objects, the sniper is ::05_Level_5::enemy04 and is immortal @26348559 until the van pass @27456571, so that kill could never complete",
+    "tp": "::level08::Waypoint05"
+   },
+   {
+    "name": "La rampa",
+    "t": "::ramp03::trigger01.TRIGGER",
+    "kill": [
+     "::ramp02",
+     "::ramp03",
+     "::Level_4"
+    ],
+    "why": "build/data/lvl/1_Part3_Level4.ldb@26313894",
+    "tp": "::level02::Waypoint03"
+   }
+  ]
+ },
+ "part3_level5": {
+  "why": "::00_XFilesCorridor02::d_door04::t_door.TRIGGER (sender @27723944, record @27723761, enabled at load) is the level's own exit trigger: its T_Activate table (@27723983) runs ::00_XFilesCorridor02::d_door04.DO->do_animate(open) and disables itself; the door's open state (@28316642) plays the door sound, fades and runs gm_init(part3_level5b) (@28318194). The neighbouring d_door04 doors use the same shape with GM_EnableExit. Boss ::basement04::e01 is invulnerable @27892684 -> @27761056.",
+  "steps": [],
+  "exit": [
+   "::00_XFilesCorridor02::d_door04::t_door.TRIGGER"
+  ],
+  "next": "part3_level5b",
+  "ff": [
+   {
+    "name": "La primera planta",
+    "t": "::1st_floor::t_lift.TRIGGER",
+    "kill": [
+     "::1st_floor"
+    ],
+    "why": "build/data/lvl/1_Part3_Level5.ldb@27735551",
+    "tp": "::lift::wp01"
+   },
+   {
+    "name": "La oficina",
+    "t": "::office::t_enemy.TRIGGER",
+    "kill": [
+     "::office",
+     "::office06"
+    ],
+    "why": "build/data/lvl/1_Part3_Level5.ldb@27832952",
+    "tp": "::office::wp01"
+   },
+   {
+    "name": "La sala de seguridad",
+    "t": "::securityroom::t_enemy.TRIGGER",
+    "kill": [
+     "::securityroom",
+     "::sec"
+    ],
+    "why": "build/data/lvl/1_Part3_Level5.ldb@27854943",
+    "tp": "::hall::wp02"
+   },
+   {
+    "name": "El sótano",
+    "t": "::basement04::t_mine.TRIGGER",
+    "kill": [
+     "::basement04",
+     "::basement05",
+     "::cellar"
+    ],
+    "why": "::basement05::t_ai @27764938 acts on its activator and is meant for an enemy; the player beat is the mine ::basement04::t_mine @27760692, which frees e01. ::basement04::e01 is invulnerable until @27761056",
+    "tp": "::basement05::wp05"
+   },
+   {
+    "name": "La cúpula",
+    "t": "::Backdome13::t_tv.TRIGGER",
+    "why": "::Backdome13::t_tv @27748686 only switches the TVs and opens note P3L5a_009 @27748959; killing ::Backdome13/::top/::top2 is not what the trigger does",
+    "tp": "::corr04::wp08"
+   }
+  ]
+ },
+ "part3_level5b": {
+  "why": "Exit-only route (2026-11-02, scratchpad tools/exitscan.py over the .ldb): the record that sends gm_init(next) and its sender. 'send' lines are copied verbatim from the .ldb (a receiver the level lacks closes the game). The exit ::exit::Exit_Collide_Trigger.TRIGGER @24805113 is gated by T_Enable(true) @26020012 (five deaths), so an exit-only route is not valid at second 0; the area clear that opens the next exit is ::hall01::counter (five end_e watchers @24920882..) -> GM_EnableExit(::hall01::exit_to_corridor01, true) @25423325.",
+  "steps": [
+   {
+    "t": "::startroom::New mesh 13::t_door.TRIGGER",
+    "why": "the first door out of the entry room @24901854; the entry camera never teleports the player (@25959185)",
+    "name": "La puerta de entrada"
+   }
+  ],
+  "exit": [
+   "::exit::Exit_Collide_Trigger.TRIGGER"
+  ],
+  "next": "part3_level6",
+  "send": [
+   "::exit::wait.DO->DO_Animate(1);"
+  ],
+  "ff": [
+   {
+    "name": "El pasillo",
+    "t": "::hall01::t_killer.TRIGGER",
+    "kill": [
+     "::hall01",
+     "::hall"
+    ],
+    "why": "build/data/lvl/1_Part3_Level5b.ldb@24818130",
+    "tp": "::hall01::Waypoint01"
+   },
+   {
+    "name": "La biblioteca",
+    "t": "::library::t_act01.TRIGGER",
+    "kill": [
+     "::library"
+    ],
+    "why": "build/data/lvl/1_Part3_Level5b.ldb@24862448",
+    "tp": "::library::wp01"
+   },
+   {
+    "name": "La trampa",
+    "t": "::trap::t4.TRIGGER",
+    "kill": [
+     "::trap",
+     "::corridor09"
+    ],
+    "why": "build/data/lvl/1_Part3_Level5b.ldb@24817449",
+    "tp": "::stairs01::wp01"
+   },
+   {
+    "name": "La salida",
+    "t": "::stairs01::t_chopper.TRIGGER",
+    "kill": [
+     "::stairs01",
+     "::stairs03"
+    ],
+    "why": "build/data/lvl/1_Part3_Level5b.ldb@24886464",
+    "tp": "::stairs01::wp01"
+   }
+  ]
+ },
+ "part3_level6": {
+  "why": "Exit-only route (2026-11-02, scratchpad tools/exitscan.py over the .ldb): the record that sends gm_init(next) and its sender. 'send' lines are copied verbatim from the .ldb (a receiver the level lacks closes the game). ::horne2::t_end @22901623 is enabled only by ::horne2::t_computer @22901340.",
+  "steps": [
+   {
+    "t": "::horne2::t_computer.TRIGGER",
+    "use": true,
+    "why": "::horne2::t_end is enabled only here (@22901340), so an exit-only route walks past a computer the script requires",
+    "name": "El ordenador de Horne"
+   }
+  ],
+  "exit": [
+   "::horne2::t_end.TRIGGER"
+  ],
+  "next": "part3_level7",
+  "send": [
+   "::horne2::wait.DO->DO_Animate(1);"
+  ],
+  "ff": [
+   {
+    "name": "El montacargas",
+    "t": "::horne03::SCENIC_LIFT_01::Action button trigger 00.TRIGGER",
+    "why": "::horne03::SCENIC_LIFT_01 is the lift DO object @22883004, not an enemy group; the USE button @22883281 is the step",
+    "tp": "::sec::w2"
+   },
+   {
+    "name": "El piso de Horne",
+    "t": "::horne2::T1.TRIGGER",
+    "kill": [
+     "::horne2"
+    ],
+    "why": "build/data/lvl/1_Part3_Level6.ldb@22899264",
+    "tp": "::sec::w4"
+   },
+   {
+    "name": "La sala de máquinas",
+    "t": "::mainframe::t_enemies.TRIGGER",
+    "kill": [
+     "::mainframe"
+    ],
+    "why": "build/data/lvl/1_Part3_Level6.ldb@22929363",
+    "tp": "::liftbottom02::Waypoint01"
+   },
+   {
+    "name": "Las torres",
+    "t": "::mainframe::tower01::trigger01.TRIGGER",
+    "kill": [
+     "::mainframe::tower01",
+     "::mainframe::tower02",
+     "::mainframe::tower03",
+     "::mainframe::tower04"
+    ],
+    "why": "the four towers are four separate triggers and each must fire for the counter: tower01 @22931026, tower02 @22932995, tower03 @22934925, tower04 @22936895",
+    "tp": "::liftbottom02::Waypoint01",
+    "then": [
+     "::mainframe::tower02::trigger01.TRIGGER->T_Activate();",
+     "::mainframe::tower03::trigger01.TRIGGER->T_Activate();",
+     "::mainframe::tower04::trigger01.TRIGGER->T_Activate();"
+    ]
+   },
+   {
+    "name": "Mona",
+    "t": "::mona::combat_trigger.TRIGGER",
+    "why": "::mona::combat_trigger @22939087 only teleports ::teleport::merc07 @22939023; no object named Mona or Horne exists in the dump, the actors are ::teleport::merc06/merc07, so no kill can name her",
+    "tp": "::mona::wp02"
+   }
+  ]
+ },
+ "part3_level7": {
+  "why": "Exit-only route (2026-11-02, scratchpad tools/exitscan.py over the .ldb): the record that sends gm_init(next) and its sender. 'send' lines are copied verbatim from the .ldb (a receiver the level lacks closes the game).",
+  "steps": [],
+  "exit": [
+   "::End_Credits::Credits_Start.TRIGGER"
+  ],
+  "next": "menu",
+  "send": [
+   "::End_Credits::Camera_01.DO->DO_Animate(0);"
+  ],
+  "spare": {
+   "names": [
+    "::startroom::Horne"
+   ],
+   "why": "Horne is the story and c_setinvulnerable(true) @23036626: her FSM carries every cutscene to the end; ::teleport::max and the invisible targets are not in the kill lists either."
+  },
+  "ff": [
+   {
+    "name": "Salida del vestíbulo",
+    "kill": [
+     "::startroom::e1",
+     "::plants::e2",
+     "::plants::e3",
+     "::plants::e4"
+    ],
+    "dead": true,
+    "wait": 60,
+    "why": "out/bec/jefe/cadena.md 1 step 7: the last lobby death -> drape -> chopper cutscene (no control) -> combat_script2 brings plants2::e1/e2 in",
+    "tp": "::startroom::w1"
+   },
+   {
+    "kill": [
+     "::plants2::e1",
+     "::plants2::e2"
+    ],
+    "dead": true,
+    "wait": 30,
+    "t": "::startroom::door_dummy1::door_trigger.TRIGGER",
+    "why": "second wave after control returns; detect_door_open unlocks door1 (cadena.md 1 step 13)",
+    "name": "Segunda oleada del vestíbulo",
+    "tp": "::startroom::w1"
+   },
+   {
+    "name": "Las plantas",
+    "tp": "::plants2::w1",
+    "t": "::plants2::ct1.TRIGGER",
+    "kill": [
+     "::plants"
+    ],
+    "why": "ct1 sends Horne to ::final::teleport_horne @22970638; without it she stays in the lobby and the roof never fires"
+   },
+   {
+    "name": "El ascensor",
+    "t": "::plants2::elevator_trigger.TRIGGER",
+    "kill": [
+     "::elevator1"
+    ],
+    "why": "@22974392 lift call: elevator1 doors, e1 gotoplayer",
+    "tp": "::plants2::w1"
+   },
+   {
+    "name": "Las oficinas",
+    "tp": "::room1::w2",
+    "t": "::room1::ct1.TRIGGER",
+    "kill": [
+     "::room1",
+     "::mediroom",
+     "::gallery",
+     "::ne_library01",
+     "::elevator2"
+    ],
+    "why": "room1 ct1 @22979695; room1 death_counter state 2 starts elevator3"
+   },
+   {
+    "name": "La sala central",
+    "tp": "::middle::w1",
+    "t": "::room23::trigger_enemy.TRIGGER",
+    "kill": [
+     "::elevator3",
+     "::middle",
+     "::room2",
+     "::room3",
+     "::room23",
+     "::stairs1",
+     "::stairs2",
+     "::stairs3"
+    ],
+    "why": "elevator3 death_counter state 2 starts middle::combat_script @22797390; trigger_enemy starts combat_script2 @22988279"
+   },
+   {
+    "name": "La última oficina",
+    "tp": "::final::w1",
+    "kill": [
+     "::final"
+    ],
+    "send": [
+     "::final::combat_script->fsm_Send(start);"
+    ],
+    "why": "trigger_scene is a .DO contact zone, so its target runs directly: Horne c_goto ::ramp::w1 @22801069"
+   },
+   {
+    "name": "La rampa",
+    "tp": "::ramp::w1",
+    "t": [
+     "::final::door_trigger.TRIGGER"
+    ],
+    "then": [
+     "::ramp::ct1.TRIGGER->T_Activate();",
+     "::ramp::horne_shooting_trigger.TRIGGER->T_Activate();"
+    ],
+    "why": "cadena.md section 5.1: ct1 (Horne to the roof) before horne_shooting_trigger (Outside::combat_script)"
+   },
+   {
+    "name": "La azotea",
+    "then": [
+     "::startroom::Horne->c_teleport(\"::Outside::w5\");",
+     "@w:60",
+     "::Outside::KATTOSYS::open_door_trigger.TRIGGER->T_Activate();",
+     "@w:120"
+    ],
+    "controlMs": 240000,
+    "why": "out/goal/p0/jump7.txt, same order: Horne at w5 walks through camera_trigger1 and the trigger moves the player itself; a teleport first starts cin1 with no control, and these lines would wait for it"
+   },
+   {
+    "name": "Los cables",
+    "send": [
+     "@w:4500",
+     "player->c_setinvulnerable(true);",
+     "::teleport::ek1->C_Kill(1);",
+     "::teleport::ek2->C_Kill(1);",
+     "::teleport::ek3->C_Kill(1);",
+     "::teleport::ek4->C_Kill(1);",
+     "@w:120"
+    ],
+    "sendMs": 240000,
+    "control": false,
+    "why": "out/goal/p0/jump7.txt: wait out cin2 (4500 ticks: plain lines wait for control), then kill each suit once. ::teleport::ek1..ek4 are invulnerable from @23039356..@23040166 and the clearing line is Activator->C_SetInvulnerable(false) @22965770, so the four kills only count after the cables scene starts"
+   },
+   {
+    "name": "El final",
+    "send": [
+     "!::Outside::explosion_detector1->FSM_Send(make_breakable);",
+     "!::Outside::explosion_detector1->FSM_Send(break);"
+    ],
+    "control": false,
+    "why": "cable_counter 3 -> all_cables_broken @22877748 -> ::Outside::cam_rotator::e_cam1 @22876563 and ::Outside::cam_dummy::e_cam15 @22878189 -> e_cam15::timer.DO @24608945 -> End_Credits. horn1/horn2::piece1 are make_unbreakable @22876892/@22876948, so their FSM_Send(break) was a dead message and is dropped; the working pair is explosion_detector1 make_breakable then break"
+   }
+  ],
+  "ffEnd": true
+ }
+}

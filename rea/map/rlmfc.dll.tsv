@@ -1,0 +1,1474 @@
+entry	size	name	namespace	callers	callees	imports	strings	caller_names
+10001000	23	M_RAND_01	Global	0		MSVCRT.DLL!rand		
+10001020	29	M_RAND	Global	0		MSVCRT.DLL!rand		
+10001040	7	processorSpeedDetermined	R_System	0				
+10001050	13	operator=	R_Mutex	0				
+10001060	16	rs	std::rs	1				FUN_1001e1d0
+10001070	307	rs	std::rs	0	std::rs::_Split,std::rs::_Grow,std::rs::_Tidy,std::rs::_Eos	MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+100011b0	412	rs	std::rs	0	std::rs::_Split,std::rs::_Grow,std::rs::_Tidy,std::rs::_Eos	MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10001350	239	rs	std::rs	0	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen		
+10001440	211	rs	std::rs	0	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen		
+10001520	224	rs	std::rs	0	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen		
+10001600	214	rs	std::rs	0	std::rs::_Freeze,std::rs::_Split,std::rs::_Grow,std::rs::_Eos	MSVCP60.DLL!_Xlen,MSVCRT.DLL!memmove		
+100016e0	76	~rs	std::rs	19	FUN_10028130			Unwind@100298a8,Unwind@10028c08,FUN_100244e0,FUN_1001ea20,Unwind@10028b78,FUN_10022550,FUN_10022930,Unwind@10028bd8
+10001730	99	operator=	std::rs	0	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen		
+100017a0	200	operator+=	std::rs	0	std::rs::_Copy,std::rs::_Eos	MSVCP60.DLL!_Xlen		
+10001870	154	operator+=	std::rs	0	std::rs::_Copy,std::rs::_Eos	MSVCP60.DLL!_Xlen		
+10001910	202	operator+=	std::rs	0	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen		
+100019e0	228	append	std::rs	0	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran		
+10001ad0	188	append	std::rs	0	std::rs::_Copy,std::rs::_Eos	MSVCP60.DLL!_Xlen		
+10001b90	201	append	std::rs	2	std::rs::_Copy,std::rs::_Eos	MSVCP60.DLL!_Xlen		operator>>,FUN_1001faf0
+10001c60	512	append	std::rs	0	std::rs::_Freeze,std::rs::_Grow,std::rs::_Tidy,std::rs::assign,std::rs::_Eos	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10001e60	315	operator=	std::rs	0	std::rs::_Split,std::rs::_Grow,std::rs::_Eos,FUN_1000a850	MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10001fa0	531	assign	std::rs	8	FUN_10028130,std::rs::_Split,std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy,std::rs::_Eos,std::rs::max_size	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		R_MemoryFile::construct,std::operator+,std::operator+,std::operator+,R_FileDirectoryChange::construct,std::operator+,std::rs::substr,std::operator+
+100021c0	157	assign	std::rs	10	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen		R_Script::R_Script,std::rs::insert,std::rs::erase,operator>>,R_FileDirectoryChange::construct,std::rs::replace,std::operator+,std::rs::append
+10002260	171	operator=	std::rs	0	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen		
+10002310	185	assign	std::rs	1	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen		std::operator+
+100023d0	476	assign	std::rs	0	std::rs::_Freeze,std::rs::_Split,std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy,std::rs::max_size,std::rs::_Eos	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+100025b0	252	insert	std::rs	0	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+100026b0	273	insert	std::rs	0	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+100027d0	222	insert	std::rs	0	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+100028b0	234	insert	std::rs	0	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+100029a0	235	insert	std::rs	0	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10002a90	292	insert	std::rs	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy,std::rs::max_size,std::rs::_Eos	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10002bc0	273	insert	std::rs	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10002ce0	408	insert	std::rs	0	std::rs::_Grow,std::rs::_Tidy,std::rs::assign	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10002e80	280	erase	std::rs	1	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy,std::rs::_Eos	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		FUN_1001faf0
+10002fa0	224	erase	std::rs	0	std::rs::_Grow,std::rs::_Tidy,std::rs::assign	MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10003080	236	erase	std::rs	0	std::rs::_Grow,std::rs::_Tidy,std::rs::assign	MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10003170	461	replace	std::rs	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy,std::rs::_Eos,std::rs::max_size	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10003340	451	replace	std::rs	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10003510	399	replace	std::rs	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+100036a0	446	replace	std::rs	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy,std::rs::_Eos	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10003860	400	replace	std::rs	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+100039f0	476	replace	std::rs	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy,std::rs::assign,std::rs::max_size,std::rs::_Eos	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10003bd0	486	replace	std::rs	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy,std::rs::_Eos,std::rs::max_size	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10003dc0	518	replace	std::rs	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy,std::rs::_Eos,std::rs::max_size	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10003fd0	481	replace	std::rs	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy,std::rs::_Eos,std::rs::max_size	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+100041c0	492	replace	std::rs	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy,std::rs::assign,std::rs::max_size,std::rs::_Eos	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+100043b0	123	begin	std::rs	0	std::rs::_Copy	MSVCP60.DLL!_Xlen		
+10004430	4	begin	std::rs	0				
+10004440	135	end	std::rs	0	std::rs::_Copy,std::rs::_Tidy,std::rs::_Eos	MSVCP60.DLL!_Xlen		
+100044d0	16	end	std::rs	0				
+100044e0	77	rbegin	std::rs	0	std::rs::_Grow			
+10004530	32	rbegin	std::rs	0				
+10004550	129	rend	std::rs	0	std::rs::_Copy,std::rs::_Tidy,std::rs::_Eos	MSVCP60.DLL!_Xlen		
+100045e0	12	rend	std::rs	0				
+100045f0	146	at	std::rs	0	std::rs::_Copy	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran		
+10004690	31	at	std::rs	0		MSVCP60.DLL!_Xran		
+100046b0	151	operator[]	std::rs	0	std::rs::_Copy	MSVCP60.DLL!_Xlen		
+10004750	24	operator[]	std::rs	0				
+10004770	13	c_str	std::rs	0				
+10004780	4	length	std::rs	0				
+10004790	6	max_size	std::rs	11				std::rs::assign,std::rs::assign,std::rs::replace,std::rs::insert,std::rs::replace,std::rs::replace,std::rs::replace,R_File::getFilename
+100047a0	413	resize	std::rs	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy,std::rs::_Eos	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10004940	408	resize	std::rs	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy,std::rs::_Eos	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10004ae0	4	capacity	std::rs	0				
+10004af0	105	reserve	std::rs	0	std::rs::_Copy	MSVCP60.DLL!_Xlen		
+10004b60	11	empty	std::rs	0				
+10004b70	70	copy	std::rs	0		MSVCP60.DLL!_Xran		
+10004bc0	80	swap	std::rs	1				swap
+10004c10	7	swap	Global	0	std::rs::swap			
+10004c20	190	find	std::rs	0		MSVCRT.DLL!memchr		
+10004ce0	131	find	std::rs	0		MSVCRT.DLL!memchr		
+10004d70	180	find	std::rs	0		MSVCRT.DLL!memchr		
+10004e30	116	find	std::rs	0		MSVCRT.DLL!memchr		
+10004eb0	133	rfind	std::rs	0				
+10004f40	111	rfind	std::rs	0				
+10004fb0	128	rfind	std::rs	0				
+10005030	112	find_first_of	std::rs	0		MSVCRT.DLL!memchr		
+100050a0	109	find_first_of	std::rs	0		MSVCRT.DLL!memchr		
+10005110	111	find_first_of	std::rs	0		MSVCRT.DLL!memchr		
+10005180	134	find_last_of	std::rs	0		MSVCRT.DLL!memchr		
+10005210	114	find_last_of	std::rs	0		MSVCRT.DLL!memchr		
+10005290	122	find_last_of	std::rs	0		MSVCRT.DLL!memchr		
+10005310	68	find_last_of	std::rs	0				
+10005360	121	find_first_not_of	std::rs	0		MSVCRT.DLL!memchr		
+100053e0	88	find_first_not_of	std::rs	0		MSVCRT.DLL!memchr		
+10005440	102	find_first_not_of	std::rs	0		MSVCRT.DLL!memchr		
+100054b0	85	find_first_not_of	std::rs	0		MSVCRT.DLL!memchr		
+10005510	130	find_last_not_of	std::rs	0		MSVCRT.DLL!memchr		
+100055a0	119	find_last_not_of	std::rs	0		MSVCRT.DLL!memchr		
+10005620	118	find_last_not_of	std::rs	0		MSVCRT.DLL!memchr		
+100056a0	103	find_last_not_of	std::rs	0		MSVCRT.DLL!memchr		
+10005710	88	substr	std::rs	0	std::rs::assign			
+10005770	80	compare	std::rs	0				
+100057c0	160	compare	std::rs	0		MSVCP60.DLL!_Xran		
+10005860	176	compare	std::rs	0		MSVCP60.DLL!_Xran		
+10005910	83	compare	std::rs	0				
+10005970	131	compare	std::rs	0		MSVCP60.DLL!_Xran		
+10005a00	108	compare	std::rs	0		MSVCP60.DLL!_Xran		
+10005a70	17	get_allocator	std::rs	0				
+10005a90	223	_Copy	std::rs	48	FUN_1000aa10,FUN_10005c80,FUN_10005ca0,FUN_100281de,R_Exception::setError,FUN_10005be7	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources	std::rs::_Freeze,std::rs::replace,std::rs::insert,std::rs::operator=,std::rs::assign,std::rs::replace,std::rs::resize,std::rs::replace
+10005b6f	114	Catch@10005b6f	Global	0	FUN_10005c80,R_Exception::~R_Exception,R_Exception::setError,FUN_1000a970	MFC42.DLL!operator_new	Out of system memory resources	
+10005be7	150	FUN_10005be7	Global	1	FUN_10028130			std::rs::_Copy
+10005c80	18	FUN_10005c80	Global	14	R_Exception::R_Exception			FUN_1001088b,R_Script::R_Script,FUN_1001ecc0,Catch@10019d1f,R_UnbufferedFileStream::R_UnbufferedFileStream,FUN_10019c40,FUN_1001faf0,R_File::load
+10005ca0	80	FUN_10005ca0	Global	12	R_Exception::setError,R_Exception::R_Exception		Out of system memory resources	R_MemoryFile::construct,R_File::load,R_Script::R_Script,R_FileStream::R_FileStream,std::rs::_Copy,FUN_1001f230,FUN_1000a970,operator>>
+10005cf0	17	_Eos	std::rs	33				std::rs::_Freeze,std::rs::replace,FUN_10023b60,std::rs::assign,std::rs::resize,std::rs::replace,std::rs::rs,std::rs::replace
+10005d10	119	_Freeze	std::rs	4	std::rs::_Copy,std::rs::_Eos	MSVCP60.DLL!_Xlen		std::rs::assign,std::rs::rs,std::rs::append,FUN_1001faf0
+10005d90	311	_Grow	std::rs	36	FUN_10028130,std::rs::_Copy	MSVCP60.DLL!_Xlen		std::rs::replace,FUN_10023b60,std::rs::insert,std::rs::assign,std::rs::insert,std::rs::replace,std::rs::resize,std::rs::replace
+10005ed0	6	_Nullstr	std::rs	0				
+10005ee0	12	_Pdif	std::rs	0				
+10005ef0	11	_Psum	std::rs	0				
+10005f00	8	_Refcnt	std::rs	0				
+10005f10	202	_Split	std::rs	8	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen		FUN_10023b60,std::rs::assign,std::rs::operator=,std::rs::assign,operator>>,std::rs::rs,std::rs::rs,std::rs::rs
+10005fe0	12	`default_constructor_closure'	std::rs	0				
+10005ff0	39	operator=	R_FileStream	0				
+10006020	17	`copy_constructor_closure'	R_FileStream	0	R_FileStream::R_FileStream			
+10006040	93	operator=	R_UnbufferedFileStream	0				
+100060a0	17	`copy_constructor_closure'	R_UnbufferedFileStream	0	R_UnbufferedFileStream::R_UnbufferedFileStream			
+100060c0	15	operator=	M_Float16	0				
+100060d0	8	M_Float16	M_Float16	0				
+100060e0	158	M_Float16	M_Float16	0				
+10006180	150	operator=	M_Float16	0				
+10006220	152	operator_float	M_Float16	0				
+100062c0	11	`default_constructor_closure'	R_MemoryFile	0	R_MemoryFile::R_MemoryFile			
+100062e0	9	R_CPUDriver	R_CPUDriver	0				
+100062f0	11	R_CPUDriver	R_CPUDriver	0				
+10006300	5	operator=	R_CPUDriver	0				
+10006310	9	R_CPUReference	R_CPUReference	0				
+10006320	11	R_CPUReference	R_CPUReference	0				
+10006330	8	`default_constructor_closure'	M_ScalarArray	0	M_ScalarArray::M_ScalarArray			
+10006340	8	`default_constructor_closure'	M_Vector2Array	0	M_Vector2Array::M_Vector2Array			
+10006350	8	`default_constructor_closure'	M_Vector3Array	0	M_Vector3Array::M_Vector3Array			
+10006360	8	`default_constructor_closure'	M_Vector4Array	0	M_Vector4Array::M_Vector4Array			
+10006370	31	M_ScalarArray	M_ScalarArray	1	M_ScalarArray::allocate			M_ScalarArray::`default_constructor_closure'
+10006390	56	~M_ScalarArray	M_ScalarArray	0	FUN_10028130			
+100063d0	87	M_ScalarArray	M_ScalarArray	0	M_ScalarArray::getCurrentSize,M_ScalarArray::allocate,M_ScalarArray::set,M_ScalarArray::get			
+10006430	507	allocate	M_ScalarArray	3	FUN_1000a870,FUN_10028130,R_System::getActiveCPUDriver,M_ScalarArray::null			M_ScalarArray::M_ScalarArray,M_ScalarArray::M_ScalarArray,M_ScalarArray::resize
+10006630	28	resize	M_ScalarArray	2	M_ScalarArray::allocate			M_ScalarArray::operator=,operator>>
+10006650	95	setMemory	M_ScalarArray	0	FUN_10028130,R_System::getActiveCPUDriver			
+100066b0	17	set	M_ScalarArray	3				operator>>,M_ScalarArray::null,M_ScalarArray::M_ScalarArray
+100066d0	13	get	M_ScalarArray	4				operator<<,operator<<,operator<<,M_ScalarArray::M_ScalarArray
+100066e0	34	null	M_ScalarArray	1	M_ScalarArray::set			M_ScalarArray::allocate
+10006710	67	add	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006760	67	subtract	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+100067b0	70	multiply	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006800	70	divide	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006850	70	divide_lo	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+100068a0	62	add	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+100068e0	62	subtract	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006920	65	multiply	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006970	65	divide	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+100069c0	39	dotProduct	M_ScalarArray	0	R_System::getActiveCPUDriver			
+100069f0	39	dotProduct	M_ScalarArray	0	R_System::getActiveCPUDriver			
+10006a20	39	dotProduct	M_ScalarArray	0	R_System::getActiveCPUDriver			
+10006a50	47	length	M_ScalarArray	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006a80	47	length_lo	M_ScalarArray	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006ab0	47	length_hi	M_ScalarArray	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006ae0	47	length	M_ScalarArray	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006b10	47	length_lo	M_ScalarArray	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006b40	47	length_hi	M_ScalarArray	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006b70	47	length	M_ScalarArray	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006ba0	47	length_lo	M_ScalarArray	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006bd0	47	length_hi	M_ScalarArray	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006c00	48	reciprocal_0	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006c30	48	reciprocal_lo_0	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006c60	48	reciprocal_hi_0	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006c90	60	reciprocal_0	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006cd0	60	reciprocal_lo_0	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006d10	60	reciprocal_hi_0	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006d50	48	sqrt	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006d80	48	sqrt_lo	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006db0	48	sqrt_hi	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006de0	60	sqrt	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006e20	60	sqrt_lo	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006e60	60	sqrt_hi	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006ea0	48	invsqrt	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006ed0	48	invsqrt_lo	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006f00	48	invsqrt_hi	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006f30	60	invsqrt	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006f70	60	invsqrt_lo	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006fb0	60	invsqrt_hi	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10006ff0	48	negate	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007020	48	abs	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007050	60	clamp	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007090	55	clampMin	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+100070d0	55	clampMax	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007110	60	minimum	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007150	70	minimum	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+100071a0	60	maximum	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+100071e0	70	maximum	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007230	71	operator=	M_ScalarArray	0	M_ScalarArray::getCurrentSize,M_ScalarArray::resize			
+10007280	59	operator+=	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+100072c0	59	operator-=	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007300	62	operator*=	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007340	62	operator/=	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007380	54	operator+=	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+100073c0	54	operator-=	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007400	57	operator*=	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007440	57	operator/=	M_ScalarArray	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007480	162	operator<<	Global	0	M_ScalarArray::getCurrentSize,M_ScalarArray::get	MSVCIRT.DLL!operator<<,MSVCIRT.DLL!operator<<,MSVCIRT.DLL!operator<<		
+10007530	133	operator<<	Global	0	M_ScalarArray::getCurrentSize,M_ScalarArray::get	MFC42.DLL!Flush		
+100075c0	129	operator>>	Global	0	M_ScalarArray::getCurrentSize,M_ScalarArray::resize,M_ScalarArray::set	MFC42.DLL!FillBuffer		
+10007650	85	operator<<	Global	0	M_ScalarArray::getCurrentSize,operator<<,operator<<,M_ScalarArray::get			
+100076b0	31	M_Vector2Array	M_Vector2Array	1	M_Vector2Array::allocate			M_Vector2Array::`default_constructor_closure'
+100076d0	95	M_Vector2Array	M_Vector2Array	0	M_ScalarArray::getCurrentSize,M_Vector2Array::allocate,M_Vector2Array::get,M_Vector2Array::set			
+10007730	524	allocate	M_Vector2Array	3	FUN_1000a870,M_Vector2Array::null,FUN_10028130,R_System::getActiveCPUDriver			M_Vector2Array::resize,M_Vector2Array::M_Vector2Array,M_Vector2Array::M_Vector2Array
+10007940	28	resize	M_Vector2Array	2	M_Vector2Array::allocate			M_Vector2Array::operator=,operator>>
+10007960	39	set	M_Vector2Array	3	R_System::getActiveCPUDriver			M_Vector2Array::null,M_Vector2Array::M_Vector2Array,operator>>
+10007990	94	get	M_Vector2Array	4	R_System::getActiveCPUDriver			operator<<,M_Vector2Array::M_Vector2Array,operator<<,operator<<
+100079f0	39	get	M_Vector2Array	0	R_System::getActiveCPUDriver			
+10007a20	59	null	M_Vector2Array	1	M_Vector2Array::set			M_Vector2Array::allocate
+10007a60	39	dotProduct	M_Vector2Array	0	R_System::getActiveCPUDriver			
+10007a90	69	add	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007ae0	69	subtract	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007b30	36	multiply	M_Vector2Array	0	R_System::getActiveCPUDriver			
+10007b60	67	multiply	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007bb0	36	multiply	M_Vector2Array	0	R_System::getActiveCPUDriver			
+10007be0	39	divide	M_Vector2Array	0	R_System::getActiveCPUDriver			
+10007c10	39	divide_lo	M_Vector2Array	0	R_System::getActiveCPUDriver			
+10007c40	67	divide	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007c90	67	divide_lo	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007ce0	28	normalize_0	M_Vector2Array	0	R_System::getActiveCPUDriver			
+10007d00	28	normalize_lo_0	M_Vector2Array	0	R_System::getActiveCPUDriver			
+10007d20	28	normalize_hi_0	M_Vector2Array	0	R_System::getActiveCPUDriver			
+10007d40	34	normalize_0	M_Vector2Array	0	R_System::getActiveCPUDriver			
+10007d70	34	normalize_lo_0	M_Vector2Array	0	R_System::getActiveCPUDriver			
+10007da0	34	normalize_hi_0	M_Vector2Array	0	R_System::getActiveCPUDriver			
+10007dd0	45	length	M_Vector2Array	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007e00	45	length_lo	M_Vector2Array	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007e30	45	length_hi	M_Vector2Array	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007e60	50	negate	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007ea0	62	clamp	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007ee0	57	clampMin	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007f20	57	clampMax	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007f60	62	minimum	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007fa0	72	minimum	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10007ff0	62	maximum	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008030	72	maximum	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008080	75	operator=	M_Vector2Array	0	M_ScalarArray::getCurrentSize,M_Vector2Array::resize			
+100080d0	61	operator+=	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008110	61	operator-=	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008150	34	operator*=	M_Vector2Array	0	R_System::getActiveCPUDriver			
+10008180	59	operator*=	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+100081c0	34	operator*=	M_Vector2Array	0	R_System::getActiveCPUDriver			
+100081f0	37	operator/=	M_Vector2Array	0	R_System::getActiveCPUDriver			
+10008220	59	operator/=	M_Vector2Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008260	338	operator<<	Global	0	M_ScalarArray::getCurrentSize,M_Vector2Array::get	MSVCIRT.DLL!operator<<,MSVCIRT.DLL!operator<<,MSVCIRT.DLL!operator<<		
+100083c0	203	operator<<	Global	0	M_ScalarArray::getCurrentSize,M_Vector2Array::get	MFC42.DLL!Flush		
+10008490	197	operator>>	Global	0	M_ScalarArray::getCurrentSize,M_Vector2Array::resize,M_Vector2Array::set	MFC42.DLL!FillBuffer		
+10008560	127	operator<<	Global	0	M_ScalarArray::getCurrentSize,operator<<,operator<<,M_Vector2Array::get			
+100085e0	31	M_Vector3Array	M_Vector3Array	1	M_Vector3Array::allocate			M_Vector3Array::`default_constructor_closure'
+10008600	95	M_Vector3Array	M_Vector3Array	0	M_ScalarArray::getCurrentSize,M_Vector3Array::set,M_Vector3Array::allocate,M_Vector3Array::get			
+10008660	528	allocate	M_Vector3Array	3	FUN_1000a870,M_Vector3Array::null,FUN_10028130,R_System::getActiveCPUDriver			M_Vector3Array::M_Vector3Array,M_Vector3Array::M_Vector3Array,M_Vector3Array::resize
+10008870	28	resize	M_Vector3Array	2	M_Vector3Array::allocate			M_Vector3Array::operator=,operator>>
+10008890	39	set	M_Vector3Array	3	R_System::getActiveCPUDriver			M_Vector3Array::null,M_Vector3Array::M_Vector3Array,operator>>
+100088c0	119	get	M_Vector3Array	4	R_System::getActiveCPUDriver			operator<<,operator<<,operator<<,M_Vector3Array::M_Vector3Array
+10008940	39	get	M_Vector3Array	0	R_System::getActiveCPUDriver			
+10008970	67	null	M_Vector3Array	1	M_Vector3Array::set			M_Vector3Array::allocate
+100089c0	39	vectorProduct	M_Vector3Array	0	R_System::getActiveCPUDriver			
+100089f0	39	dotProduct	M_Vector3Array	0	R_System::getActiveCPUDriver			
+10008a20	70	add	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008a70	70	subtract	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008ac0	36	multiply	M_Vector3Array	0	R_System::getActiveCPUDriver			
+10008af0	68	multiply	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008b40	36	multiply	M_Vector3Array	0	R_System::getActiveCPUDriver			
+10008b70	36	multiply	M_Vector3Array	0	R_System::getActiveCPUDriver			
+10008ba0	39	divide	M_Vector3Array	0	R_System::getActiveCPUDriver			
+10008bd0	39	divide_lo	M_Vector3Array	0	R_System::getActiveCPUDriver			
+10008c00	68	divide	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008c50	68	divide_lo	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008ca0	28	normalize_0	M_Vector3Array	0	R_System::getActiveCPUDriver			
+10008cc0	28	normalize_lo_0	M_Vector3Array	0	R_System::getActiveCPUDriver			
+10008ce0	28	normalize_hi_0	M_Vector3Array	0	R_System::getActiveCPUDriver			
+10008d00	34	normalize_0	M_Vector3Array	0	R_System::getActiveCPUDriver			
+10008d30	34	normalize_lo_0	M_Vector3Array	0	R_System::getActiveCPUDriver			
+10008d60	34	normalize_hi_0	M_Vector3Array	0	R_System::getActiveCPUDriver			
+10008d90	45	length	M_Vector3Array	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008dc0	45	length_lo	M_Vector3Array	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008df0	45	length_hi	M_Vector3Array	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008e20	51	negate	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008e60	63	clamp	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008ea0	58	clampMin	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008ee0	58	clampMax	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008f20	63	minimum	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008f60	73	minimum	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008fb0	63	maximum	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10008ff0	73	maximum	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009040	77	operator=	M_Vector3Array	0	M_ScalarArray::getCurrentSize,M_Vector3Array::resize			
+10009090	62	operator+=	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+100090d0	62	operator-=	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009110	34	operator*=	M_Vector3Array	0	R_System::getActiveCPUDriver			
+10009140	60	operator*=	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009180	34	operator*=	M_Vector3Array	0	R_System::getActiveCPUDriver			
+100091b0	34	operator*=	M_Vector3Array	0	R_System::getActiveCPUDriver			
+100091e0	37	operator/=	M_Vector3Array	0	R_System::getActiveCPUDriver			
+10009210	60	operator/=	M_Vector3Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009250	435	operator<<	Global	0	M_ScalarArray::getCurrentSize,M_Vector3Array::get	MSVCIRT.DLL!operator<<,MSVCIRT.DLL!operator<<,MSVCIRT.DLL!operator<<		
+10009410	267	operator<<	Global	0	M_ScalarArray::getCurrentSize,M_Vector3Array::get	MFC42.DLL!Flush		
+10009520	251	operator>>	Global	0	M_ScalarArray::getCurrentSize,M_Vector3Array::set,M_Vector3Array::resize	MFC42.DLL!FillBuffer		
+10009620	158	operator<<	Global	0	M_ScalarArray::getCurrentSize,operator<<,operator<<,M_Vector3Array::get			
+100096c0	31	M_Vector4Array	M_Vector4Array	1	M_Vector4Array::allocate			M_Vector4Array::`default_constructor_closure'
+100096e0	95	M_Vector4Array	M_Vector4Array	0	M_Vector4Array::get,M_ScalarArray::getCurrentSize,M_Vector4Array::allocate,M_Vector4Array::set			
+10009740	532	allocate	M_Vector4Array	3	FUN_1000a870,FUN_10028130,M_Vector4Array::null,R_System::getActiveCPUDriver			M_Vector4Array::M_Vector4Array,M_Vector4Array::M_Vector4Array,M_Vector4Array::resize
+10009960	28	resize	M_Vector4Array	2	M_Vector4Array::allocate			M_Vector4Array::operator=,operator>>
+10009980	4	getErrorMessage	R_Exception	151				M_ScalarArray::clampMin,M_ScalarArray::operator+=,M_ScalarArray::operator+=,R_CPUReference::length_lo,M_Vector3Array::length,M_Vector3Array::operator/=,M_Vector3Array::divide_lo,M_ScalarArray::subtract
+10009990	3	getAllocatedSize	M_ScalarArray	0				
+100099a0	4	getCurrentSize	M_ScalarArray	151				operator>>,M_ScalarArray::clampMin,M_ScalarArray::operator+=,M_ScalarArray::operator+=,R_CPUReference::length_lo,M_Vector3Array::operator/=,M_Vector3Array::divide_lo,M_ScalarArray::subtract
+100099b0	39	set	M_Vector4Array	3	R_System::getActiveCPUDriver			M_Vector4Array::M_Vector4Array,M_Vector4Array::null,operator>>
+100099e0	142	get	M_Vector4Array	4	R_System::getActiveCPUDriver			operator<<,operator<<,M_Vector4Array::M_Vector4Array,operator<<
+10009a70	39	get	M_Vector4Array	0	R_System::getActiveCPUDriver			
+10009aa0	75	null	M_Vector4Array	1	M_Vector4Array::set			M_Vector4Array::allocate
+10009af0	39	dotProduct	M_Vector4Array	0	R_System::getActiveCPUDriver			
+10009b20	70	add	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009b70	70	subtract	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009bc0	36	multiply	M_Vector4Array	0	R_System::getActiveCPUDriver			
+10009bf0	68	multiply	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009c40	36	multiply	M_Vector4Array	0	R_System::getActiveCPUDriver			
+10009c70	39	divide	M_Vector4Array	0	R_System::getActiveCPUDriver			
+10009ca0	39	divide_lo	M_Vector4Array	0	R_System::getActiveCPUDriver			
+10009cd0	68	divide	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009d20	68	divide_lo	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009d70	28	normalize_0	M_Vector4Array	0	R_System::getActiveCPUDriver			
+10009d90	28	normalize_lo_0	M_Vector4Array	0	R_System::getActiveCPUDriver			
+10009db0	28	normalize_hi_0	M_Vector4Array	0	R_System::getActiveCPUDriver			
+10009dd0	34	normalize_0	M_Vector4Array	0	R_System::getActiveCPUDriver			
+10009e00	34	normalize_lo_0	M_Vector4Array	0	R_System::getActiveCPUDriver			
+10009e30	34	normalize_hi_0	M_Vector4Array	0	R_System::getActiveCPUDriver			
+10009e60	45	length	M_Vector4Array	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009e90	45	length_lo	M_Vector4Array	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009ec0	45	length_hi	M_Vector4Array	0	R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009ef0	51	negate	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009f30	63	clamp	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009f70	58	clampMin	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009fb0	58	clampMax	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+10009ff0	63	minimum	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+1000a030	73	minimum	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+1000a080	63	maximum	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+1000a0c0	73	maximum	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+1000a110	77	operator=	M_Vector4Array	0	M_ScalarArray::getCurrentSize,M_Vector4Array::resize			
+1000a160	62	operator+=	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+1000a1a0	62	operator-=	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+1000a1e0	34	operator*=	M_Vector4Array	0	R_System::getActiveCPUDriver			
+1000a210	60	operator*=	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+1000a250	34	operator*=	M_Vector4Array	0	R_System::getActiveCPUDriver			
+1000a280	37	operator/=	M_Vector4Array	0	R_System::getActiveCPUDriver			
+1000a2b0	60	operator/=	M_Vector4Array	0	M_ScalarArray::getCurrentSize,R_System::getActiveCPUDriver,R_Exception::getErrorMessage			
+1000a2f0	531	operator<<	Global	0	M_Vector4Array::get,M_ScalarArray::getCurrentSize	MSVCIRT.DLL!operator<<,MSVCIRT.DLL!operator<<,MSVCIRT.DLL!operator<<		
+1000a510	318	operator<<	Global	0	M_Vector4Array::get,M_ScalarArray::getCurrentSize	MFC42.DLL!Flush		
+1000a650	297	operator>>	Global	0	M_ScalarArray::getCurrentSize,M_Vector4Array::set,M_Vector4Array::resize	MFC42.DLL!FillBuffer		
+1000a780	197	operator<<	Global	0	M_Vector4Array::get,M_ScalarArray::getCurrentSize,operator<<,operator<<			
+1000a850	31	FUN_1000a850	Global	9	FUN_10028130			R_MemoryFile::construct,R_Script::R_Script,std::rs::operator=,R_Script::parse,FUN_10021650,R_MemoryFile::createChunk,R_Profile::insert,R_FileDirectoryChange::construct
+1000a870	243	FUN_1000a870	Global	4	FUN_100281de,R_Exception::operator=,R_Exception::setError,R_Exception::R_Exception	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	M_Vector4Array::allocate,M_Vector3Array::allocate,M_Vector2Array::allocate,M_ScalarArray::allocate
+1000a970	83	FUN_1000a970	Global	12	FUN_10005ca0,FUN_100281de,R_Exception::operator=	MSVCRT.DLL!_CxxThrowException		R_File::load,FUN_1001088b,R_File::load,Catch@10005b6f,R_File::loadArchiveHeader,R_FileStream::R_FileStream,FUN_1001ecc0,Catch@10019d1f
+1000a9e0	42	FUN_1000a9e0	Global	4				R_CPUReference::multiply,R_CPUReference::invert,R_CPUReference::multiply,R_CPUReference::multiply
+1000aa10	19	FUN_1000aa10	Global	15	R_Exception::operator=			FUN_1001088b,R_MemoryFile::construct,R_File::load,R_Script::R_Script,FUN_1001ecc0,R_UnbufferedFileStream::R_UnbufferedFileStream,FUN_10019c40,R_Script::blockCheck
+1000aa30	70	M_funcMakeInverseSqrtLUT	Global	1				M_MathInit::M_MathInit
+1000aa80	7	getAbsoluteMaximumValue	M_Float16	0				
+1000aa90	14	M_FPUControl	M_FPUControl	0	M_FPUControl::readState			
+1000aaa0	28	M_FPUControl	M_FPUControl	0	M_FPUControl::setRounding,M_FPUControl::readState			
+1000aac0	28	M_FPUControl	M_FPUControl	0	M_FPUControl::setPrecision,M_FPUControl::readState			
+1000aae0	40	M_FPUControl	M_FPUControl	0	M_FPUControl::setRounding,M_FPUControl::setPrecision,M_FPUControl::readState			
+1000ab10	9	~M_FPUControl	M_FPUControl	0	M_FPUControl::storeState			
+1000ab20	27	getRounding	M_FPUControl	1				M_FPUControl::setRounding
+1000ab40	27	getPrecision	M_FPUControl	1				M_FPUControl::setPrecision
+1000ab60	47	setRounding	M_FPUControl	2	M_FPUControl::getRounding			M_FPUControl::M_FPUControl,M_FPUControl::M_FPUControl
+1000ab90	47	setPrecision	M_FPUControl	2	M_FPUControl::getPrecision			M_FPUControl::M_FPUControl,M_FPUControl::M_FPUControl
+1000abc0	16	readState	M_FPUControl	4				M_FPUControl::M_FPUControl,M_FPUControl::M_FPUControl,M_FPUControl::M_FPUControl,M_FPUControl::M_FPUControl
+1000abd0	11	storeState	M_FPUControl	1				M_FPUControl::~M_FPUControl
+1000abe0	6	getName	R_CPUReference	0			Reference CPU	
+1000abf0	3	getID	R_CPUReference	0				
+1000ac00	6	getSIMDSize	R_CPUReference	0				
+1000ac10	6	getStructureGranularity	R_CPUReference	0				
+1000ac20	6	getMemoryAlignment	R_CPUReference	0				
+1000ac30	91	add	R_CPUReference	0				
+1000ac90	30	add	R_CPUReference	0				
+1000acb0	29	add	R_CPUReference	0				
+1000acd0	26	add	R_CPUReference	0				
+1000acf0	91	subtract	R_CPUReference	0				
+1000ad50	30	subtract	R_CPUReference	0				
+1000ad70	29	subtract	R_CPUReference	0				
+1000ad90	26	subtract	R_CPUReference	0				
+1000adb0	91	multiply	R_CPUReference	0				
+1000ae10	33	multiply	R_CPUReference	0				
+1000ae40	32	multiply	R_CPUReference	0				
+1000ae60	29	multiply	R_CPUReference	0				
+1000ae80	91	divide	R_CPUReference	0				
+1000aee0	33	divide	R_CPUReference	0				
+1000af10	32	divide	R_CPUReference	0				
+1000af30	29	divide	R_CPUReference	0				
+1000af50	36	divide_lo	R_CPUReference	0				
+1000af80	33	divide_lo	R_CPUReference	0				
+1000afb0	32	divide_lo	R_CPUReference	0				
+1000afd0	29	divide_lo	R_CPUReference	0				
+1000aff0	77	add	R_CPUReference	0				
+1000b040	30	add	R_CPUReference	0				
+1000b060	29	add	R_CPUReference	0				
+1000b080	26	add	R_CPUReference	0				
+1000b0a0	76	subtract	R_CPUReference	0				
+1000b0f0	30	subtract	R_CPUReference	0				
+1000b110	29	subtract	R_CPUReference	0				
+1000b130	26	subtract	R_CPUReference	0				
+1000b150	77	multiply	R_CPUReference	0				
+1000b1a0	33	multiply	R_CPUReference	0				
+1000b1d0	32	multiply	R_CPUReference	0				
+1000b1f0	29	multiply	R_CPUReference	0				
+1000b210	76	divide	R_CPUReference	0				
+1000b260	33	divide	R_CPUReference	0				
+1000b290	32	divide	R_CPUReference	0				
+1000b2b0	29	divide	R_CPUReference	0				
+1000b2d0	36	divide_lo	R_CPUReference	0				
+1000b300	33	divide_lo	R_CPUReference	0				
+1000b330	32	divide_lo	R_CPUReference	0				
+1000b350	29	divide_lo	R_CPUReference	0				
+1000b370	106	multiply_then_add	R_CPUReference	0				
+1000b3e0	106	multiply_then_subtract	R_CPUReference	0				
+1000b450	94	reciprocal_0	R_CPUReference	0				
+1000b4b0	26	reciprocal_hi_0	R_CPUReference	0				
+1000b4d0	22	reciprocal_0	R_CPUReference	0				
+1000b4f0	65	sqrt	R_CPUReference	0				
+1000b540	22	sqrt	R_CPUReference	0				
+1000b560	22	sqrt_lo	R_CPUReference	0				
+1000b580	26	sqrt_hi	R_CPUReference	0				
+1000b5a0	22	sqrt_hi	R_CPUReference	0				
+1000b5c0	71	invsqrt	R_CPUReference	0				
+1000b610	22	invsqrt	R_CPUReference	0				
+1000b630	22	invsqrt_lo	R_CPUReference	0				
+1000b650	26	invsqrt_hi	R_CPUReference	0				
+1000b670	22	invsqrt_hi	R_CPUReference	0				
+1000b690	65	negate	R_CPUReference	0				
+1000b6e0	22	negate	R_CPUReference	0				
+1000b700	65	abs	R_CPUReference	0				
+1000b750	22	abs	R_CPUReference	0				
+1000b770	106	clamp	R_CPUReference	0				
+1000b7e0	32	clamp	R_CPUReference	0				
+1000b800	85	clampMin	R_CPUReference	0				
+1000b860	27	clampMin	R_CPUReference	0				
+1000b880	85	clampMax	R_CPUReference	0				
+1000b8e0	27	clampMax	R_CPUReference	0				
+1000b900	110	minimum	R_CPUReference	0				
+1000b970	27	minimum	R_CPUReference	0				
+1000b990	110	maximum	R_CPUReference	0				
+1000ba00	27	maximum	R_CPUReference	0				
+1000ba20	149	invert	R_CPUReference	0	FUN_1000e8d0			
+1000bac0	414	invert	R_CPUReference	0	FUN_1000e8f0,FUN_1000a9e0,FUN_1000e920			
+1000bc60	91	invert	R_CPUReference	0				
+1000bcc0	212	invert	R_CPUReference	0	FUN_1000bda0,FUN_1000c190			
+1000bda0	867	FUN_1000bda0	Global	1	FUN_1000c110			R_CPUReference::invert
+1000c110	90	FUN_1000c110	Global	2	FUN_1000c170			FUN_1000bda0,FUN_1000c190
+1000c170	21	FUN_1000c170	Global	1				FUN_1000c110
+1000c190	318	FUN_1000c190	Global	1	FUN_1000c110			R_CPUReference::invert
+1000c2d0	170	multiply	R_CPUReference	0	FUN_1000e8d0,FUN_1000eb50,FUN_1000a9e0			
+1000c380	421	multiply	R_CPUReference	0	FUN_1000e8f0,FUN_1000a9e0,FUN_1000e920			
+1000c530	103	multiply	R_CPUReference	0				
+1000c5a0	726	multiply	R_CPUReference	0	FUN_1000e900,FUN_1000e860,FUN_1000a9e0,FUN_1000e9c0			
+1000c880	45	multiply	R_CPUReference	0				
+1000c8b0	93	multiply	R_CPUReference	0				
+1000c910	102	multiply	R_CPUReference	0				
+1000c980	157	multiply	R_CPUReference	0				
+1000ca20	136	multiply	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000cab0	219	multiply	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000cb90	228	multiply	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000cc80	278	multiply	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000cda0	151	multiply	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000ce40	172	multiply	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000cef0	152	multiply	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000cf90	151	divide	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000d030	172	divide	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000d0e0	152	divide	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000d180	26	divide_lo	R_CPUReference	0				
+1000d1a0	26	divide_lo	R_CPUReference	0				
+1000d1c0	26	divide_lo	R_CPUReference	0				
+1000d1e0	165	normalize_0	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000d290	256	normalize_lo_0	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000d390	300	normalize_hi_0	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000d4c0	200	normalize_0	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000d590	283	normalize_lo_0	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000d6b0	327	normalize_hi_0	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000d800	213	normalize_0	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000d8e0	298	normalize_lo_0	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000da10	342	normalize_hi_0	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000db70	96	length	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000dbd0	229	length_lo	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000dcc0	277	length_hi	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000dde0	110	length	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000de50	242	length_lo	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000df50	286	length_hi	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000e070	116	length	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000e0f0	248	length_lo	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000e1f0	292	length_hi	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000e320	308	vectorProduct	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000e460	150	dotProduct	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000e500	153	dotProduct	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000e5a0	145	dotProduct	R_CPUReference	0	M_ScalarArray::getCurrentSize,R_Exception::getErrorMessage			
+1000e640	44	set	R_CPUReference	0	R_Exception::getErrorMessage			
+1000e670	52	set	R_CPUReference	0	R_Exception::getErrorMessage			
+1000e6b0	56	set	R_CPUReference	0	R_Exception::getErrorMessage			
+1000e6f0	45	get	R_CPUReference	0	R_Exception::getErrorMessage			
+1000e720	53	get	R_CPUReference	0	R_Exception::getErrorMessage			
+1000e760	57	get	R_CPUReference	0	R_Exception::getErrorMessage			
+1000e7a0	33	memcpy	R_CPUReference	0				
+1000e7d0	46	memset	R_CPUReference	0				
+1000e800	87	convertToInt	R_CPUReference	0		MSVCRT.DLL!ftol		
+1000e860	103	FUN_1000e860	Global	1				R_CPUReference::multiply
+1000e8d0	31	FUN_1000e8d0	Global	2				R_CPUReference::invert,R_CPUReference::multiply
+1000e8f0	13	FUN_1000e8f0	Global	2				R_CPUReference::multiply,R_CPUReference::invert
+1000e900	16	FUN_1000e900	Global	2				R_CPUReference::multiply,FUN_1000e9c0
+1000e920	159	FUN_1000e920	Global	2	FUN_100281de			R_CPUReference::multiply,R_CPUReference::invert
+1000e9c0	396	FUN_1000e9c0	Global	1	FUN_1000e900,FUN_100281de			R_CPUReference::multiply
+1000eb50	102	FUN_1000eb50	Global	1	FUN_100281de			R_CPUReference::multiply
+1000ebc0	1	FUN_1000ebc0	Global	34				Unwind@10029938,Unwind@10029950,Unwind@100284b0,Unwind@10028490,Unwind@10028b70,Unwind@10028a30,Unwind@10029381,Unwind@100298d8
+1000ebd0	27	R_Exception	R_Exception	59		MFC42.DLL!CException	Unspecified R_Exception	FUN_1001088b,R_MemoryFile::construct,FUN_10015ee0,R_REALLOCATE_implementation,R_File::load,FUN_1000a870,FUN_10015b60,R_MemoryFile::construct
+1000ec50	80	R_Exception	R_Exception	0	R_Exception::operator=	MFC42.DLL!CException		
+1000eca0	19	operator=	R_Exception	44				operator>>,R_UnbufferedFileStream::read,FUN_10015ee0,operator>>,FUN_10015c80,R_REALLOCATE_implementation,R_MemoryFile::seek,FUN_1000aa10
+1000ecc0	7	~R_Exception	R_Exception	13				FUN_1001088b,R_File::load,FUN_1001ecc0,Catch@10019d1f,operator>>,R_UnbufferedFileStream::R_UnbufferedFileStream,R_Script::blockCheck,FUN_1001faf0
+1000ecd0	115	setError	R_Exception	58		MSVCRT.DLL!_vsnprintf		FUN_1001088b,R_MemoryFile::construct,FUN_10015ee0,Catch@10019d1f,R_REALLOCATE_implementation,FUN_10019c40,R_Script::blockCheck,R_File::load
+1000ed50	7	setLocalizationCallback	R_Exception	0				
+1000ed60	11	clearLocalizationCallback	R_Exception	0				
+1000ed70	47	GetErrorMessage	R_Exception	0		MSVCRT.DLL!strncpy		
+1000eda0	27	ReportError	R_Exception	0		USER32.DLL!MessageBoxA	R_Exception	
+1000ede0	7	FUN_1000ede0	Global	1				Unwind@10028600
+1000edf0	131	xstricmp	R_File	2	R_File::xstricmp	MSVCRT.DLL!toupper		R_File::findNext,R_File::xstricmp
+1000ee80	123	checkPathExistence	R_File	2		KERNEL32.DLL!CreateDirectoryA		R_File::save,R_File::append
+1000ef00	311	R_File	R_File	1	FUN_10015b60,R_File::loadArchives,R_File::setOverride,FUN_10015c80,FUN_10015de0	MSVCRT.DLL!strchr,KERNEL32.DLL!SetCurrentDirectoryA,KERNEL32.DLL!GetCommandLineA,MSVCRT.DLL!strncpy,KERNEL32.DLL!GetCurrentDirectoryA		R_RemedyInit::R_RemedyInit
+1000f040	376	~R_File	R_File	1	FUN_10028130,R_File::unloadArchives,FUN_10016430,R_REALLOCATE_DELETE_implementation	KERNEL32.DLL!FindClose		R_RemedyInit::~R_RemedyInit
+1000f1c0	518	loadArchives	R_File	3	R_File::loadArchiveHeader,R_File::setArchiveHandling,R_STR	KERNEL32.DLL!FindNextFileA,KERNEL32.DLL!FindFirstFileA,KERNEL32.DLL!FindClose		R_File::R_File,R_File::setFileSystemRoot,R_File::setSecondaryArchiveSearchPath
+1000f3d0	482	unloadArchives	R_File	3	FUN_10028130,FUN_10015dc0,FUN_1001b770			R_File::~R_File,R_File::setFileSystemRoot,R_File::setSecondaryArchiveSearchPath
+1000f5c0	235	setFileSystemRoot	R_File	0	R_File::loadArchives,FUN_100281de,R_Exception::operator=,R_File::unloadArchives,R_Exception::setError,R_Exception::R_Exception	KERNEL32.DLL!SetCurrentDirectoryA,KERNEL32.DLL!GetCurrentDirectoryA,MSVCRT.DLL!_CxxThrowException	Directory %s not found	
+1000f6b0	134	setSecondaryArchiveSearchPath	R_File	0	R_File::loadArchives,R_File::unloadArchives			
+1000f740	6	getSecondaryArchiveSearchPath	R_File	0				
+1000f750	29	initTree	R_File	1				R_File::compress
+1000f770	322	insertNode	R_File	1				R_File::compress
+1000f8c0	238	deleteNode	R_File	1				R_File::compress
+1000f9b0	150	absolutePathToDirStructure	R_File	12				R_File::load,R_File::save,R_File::timeStamp,R_File::isDirectory,R_File::size,R_File::append,R_FileStream::R_FileStream,R_File::findFirst
+1000fa50	515	relativeToAbsolutePath	R_File	17		MSVCRT.DLL!strncpy		R_File::load,R_File::append,R_File::getMethod,R_File::where,R_UnbufferedFileStream::R_UnbufferedFileStream,R_File::load,R_File::save,R_File::timeStamp
+1000fc60	495	changeDirectory	R_File	2	R_File::isDirectory,FUN_100281de,R_Exception::operator=,R_Exception::setError,R_File::relativeToAbsolutePath,R_Exception::R_Exception	MSVCRT.DLL!_CxxThrowException	Directory %s not found	R_FileDirectoryChange::construct,R_FileDirectoryChange::destruct
+1000fe4f	9	Catch@1000fe4f	Global	0		MSVCRT.DLL!_CxxThrowException		
+1000fe60	920	searchFile	R_File	8	FUN_10015860,FUN_1001ada0,FUN_10015fd0	MSVCRT.DLL!sprintf,MSVCRT.DLL!strncat,MSVCRT.DLL!bsearch	%05i%s	R_File::load,R_File::timeStamp,R_File::load,R_File::size,R_FileStream::R_FileStream,R_File::getMethod,R_File::where,R_UnbufferedFileStream::R_UnbufferedFileStream
+10010179	16	Catch@10010179	Global	0		MSVCRT.DLL!_CxxThrowException		
+10010230	365	searchDir	R_File	2	FUN_10028130,FUN_10015ee0	MSVCRT.DLL!bsearch		R_File::isDirectory,R_File::where
+100103a0	1194	loadArchiveHeader	R_File	2	FUN_1001088b,FUN_10011220,R_Exception::~R_Exception,R_Exception::setError,FUN_1000aa10,FUN_10005c80,FUN_100281de,FUN_1000a970,R_File::CRC32,R_Exception::R_Exception,R_File::decryptWithSeed	MSVCRT.DLL!floor,MSVCRT.DLL!sprintf,KERNEL32.DLL!GetFullPathNameA,MSVCRT.DLL!fread,MSVCRT.DLL!fopen,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Archive %s not found | Unable to read data from "%s" | Archive "%s" is corrupted | Archive "%s" is v%1.2f and RL-module is v%1.2f - Update your archive | R_File: Archive %s | Out of system memory resources | R_File: Archive %s: File info | Out of system memory resources	R_File::loadArchives,R_File::enablePriorityArchive
+1001084a	62	Catch@1001084a	Global	0	FUN_10028130			
+1001088b	1905	FUN_1001088b	Global	1	FUN_10028130,FUN_10011220,R_Exception::~R_Exception,R_Exception::setError,FUN_1000aa10,FUN_10005c80,FUN_100281de,FUN_1000a970,R_File::CRC32,R_Exception::R_Exception,R_File::decryptWithSeed	MSVCRT.DLL!sprintf,MSVCRT.DLL!strncpy,MSVCRT.DLL!fread,MSVCRT.DLL!ftell,MSVCRT.DLL!fclose,MFC42.DLL!operator_new,MSVCRT.DLL!strncat,MSVCRT.DLL!qsort,MSVCRT.DLL!_CxxThrowException	Unable to read data from "%s" | Archive "%s" is corrupted | R_File: Archive %s: File names | Out of system memory resources | R_File: Archive %s: Directory info | Out of system memory resources | Out of system memory resources | Unable to read data from "%s"	R_File::loadArchiveHeader
+10010ffc	146	Catch@10010ffc	Global	0	FUN_10028130	MSVCRT.DLL!_CxxThrowException		
+1001108e	119	Catch@1001108e	Global	0	FUN_10028130	MSVCRT.DLL!_CxxThrowException		
+10011105	92	Catch@10011105	Global	0	FUN_10028130	MSVCRT.DLL!_CxxThrowException		
+10011161	92	Catch@10011161	Global	0	FUN_10028130	MSVCRT.DLL!_CxxThrowException		
+100111bd	38	Catch@100111bd	Global	0	FUN_10028130	MSVCRT.DLL!_CxxThrowException		
+100111e3	53	Catch@100111e3	Global	0	FUN_10028130	MSVCRT.DLL!fclose,MSVCRT.DLL!_CxxThrowException		
+10011220	18	FUN_10011220	Global	6	R_Exception::R_Exception			R_File::load,FUN_1001088b,R_File::load,R_File::loadArchiveHeader,R_FileStream::R_FileStream,R_UnbufferedFileStream::R_UnbufferedFileStream
+10011240	13	setOverride	R_File	1				R_File::R_File
+10011250	458	findFirst	R_File	0	R_File::findNext,R_File::absolutePathToDirStructure,R_File::relativeToAbsolutePath	KERNEL32.DLL!FindClose		
+10011420	1428	findNext	R_File	1	R_File::xstricmp	MSVCRT.DLL!strncmp,KERNEL32.DLL!FindNextFileA,MSVCRT.DLL!sprintf,MSVCRT.DLL!_stricmp,KERNEL32.DLL!FindFirstFileA,MSVCRT.DLL!strstr,KERNEL32.DLL!FindClose	XXXXX	R_File::findFirst
+100119d0	31	free	R_File	1	FUN_10028130			FUN_1001faf0
+100119f0	23	load	R_File	0	R_File::load		Remedy Library	
+10011a10	961	load	R_File	2	FUN_10015b30,FUN_10011220,R_Exception::~R_Exception,R_Exception::setError,R_File::searchFile,R_File::relativeToAbsolutePath,FUN_1000aa10,R_File::load,FUN_10015860,R_File::size,FUN_10005ca0,FUN_100281de,FUN_1000a970,R_Exception::R_Exception	MSVCRT.DLL!sprintf,MSVCRT.DLL!_strupr,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	File [%s] %s | File %s | File %s is corrupted | File %s is corrupted	R_File::load,FUN_1001faf0
+10011dd1	36	Catch@10011dd1	Global	0	FUN_10028130	MSVCRT.DLL!_CxxThrowException		
+10011df5	36	Catch@10011df5	Global	0	FUN_10028130	MSVCRT.DLL!_CxxThrowException		
+10011e20	1046	load	R_File	2	FUN_10012270,FUN_10028130,FUN_10011220,R_Exception::~R_Exception,R_Exception::setError,R_File::decompress,R_File::searchFile,R_File::relativeToAbsolutePath,FUN_1000aa10,FUN_10005c80,FUN_100281de,FUN_1000a970,R_File::absolutePathToDirStructure,R_Exception::R_Exception,R_File::decryptWithSeed	MSVCRT.DLL!fseek,MSVCRT.DLL!fread,MSVCRT.DLL!ftell,MSVCRT.DLL!fclose,MSVCRT.DLL!fopen,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	File %s not found | Out of system memory resources | Unable to read data from "%s" | Archive %s not found | Unable to read data from "%s"	R_File::load,R_MemoryFile::construct
+10012219	53	Catch@10012219	Global	0	FUN_10028130	MSVCRT.DLL!fclose,MSVCRT.DLL!_CxxThrowException		
+10012270	18	FUN_10012270	Global	1	R_Exception::R_Exception			R_File::load
+10012290	195	save	R_File	3	R_File::checkPathExistence,R_File::del,R_File::where,R_File::absolutePathToDirStructure,R_File::relativeToAbsolutePath	MSVCRT.DLL!fwrite,MSVCRT.DLL!fopen,MSVCRT.DLL!fclose		R_File::append,R_MemoryFile::save,R_MemoryFile::save
+10012360	181	append	R_File	0	R_File::save,R_File::checkPathExistence,R_File::absolutePathToDirStructure,R_File::relativeToAbsolutePath	MSVCRT.DLL!fwrite,MSVCRT.DLL!fopen,MSVCRT.DLL!fseek,MSVCRT.DLL!fclose		
+10012420	63	del	R_File	1	R_File::absolutePathToDirStructure,R_File::relativeToAbsolutePath	MSVCRT.DLL!remove		R_File::save
+10012460	330	size	R_File	3	R_Exception::setError,R_File::searchFile,R_File::relativeToAbsolutePath,FUN_100281de,R_Exception::operator=,R_File::absolutePathToDirStructure,R_Exception::R_Exception	MSVCRT.DLL!fseek,MSVCRT.DLL!ftell,MSVCRT.DLL!fclose,MSVCRT.DLL!_strupr,MSVCRT.DLL!fopen,MSVCRT.DLL!_CxxThrowException	File %s not found	R_File::load,R_MemoryFile::construct,FUN_1001faf0
+10012577	9	Catch@10012577	Global	0		MSVCRT.DLL!_CxxThrowException		
+100125c0	215	timeStamp	R_File	0	FUN_100126a0,R_File::where,R_File::absolutePathToDirStructure,R_File::searchFile,R_File::relativeToAbsolutePath	KERNEL32.DLL!CreateFileA,KERNEL32.DLL!FileTimeToSystemTime,KERNEL32.DLL!CloseHandle,KERNEL32.DLL!GetFileTime		
+100126a0	79	FUN_100126a0	Global	1				R_File::timeStamp
+100126f0	146	where	R_File	5	R_File::searchDir,R_File::absolutePathToDirStructure,R_File::searchFile,R_File::relativeToAbsolutePath	KERNEL32.DLL!GetFileAttributesA		R_File::save,R_File::timeStamp,R_File::tmpName,R_File::exists,R_File::getMethod
+10012790	25	exists	R_File	0	R_File::where			
+100127b0	132	getMethod	R_File	0	R_File::where,R_File::absolutePathToDirStructure,R_File::searchFile,R_File::relativeToAbsolutePath			
+10012840	514	getPath	R_File	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy,std::rs::_Eos,std::rs::max_size,R_File::relativeToAbsolutePath	MSVCP60.DLL!_Xlen,MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		
+10012a50	473	getFilename	R_File	0	std::rs::_Copy,std::rs::_Grow,std::rs::_Tidy,std::rs::_Eos,std::rs::max_size,R_File::relativeToAbsolutePath	MSVCP60.DLL!_Xlen,MSVCRT.DLL!memmove		
+10012c30	124	getFullPathName	R_File	2	R_REALLOCATE_implementation,R_File::relativeToAbsolutePath			FUN_1001e1d0,FUN_1001faf0
+10012cb0	6	getCurrentDirectory	R_File	1				R_FileDirectoryChange::construct
+10012cc0	105	isDirectory	R_File	1	R_File::searchDir,R_File::absolutePathToDirStructure,R_File::relativeToAbsolutePath	KERNEL32.DLL!GetFileAttributesA		R_File::changeDirectory
+10012d30	409	setArchiveHandling	R_File	1				R_File::loadArchives
+10012ed0	6	getArchiveHandling	R_File	0				
+10012ee0	188	enablePriorityArchive	R_File	0	R_File::loadArchiveHeader,R_File::isPriorityArchiveEnabled,R_File::disablePriorityArchive			
+10012f9c	182	Catch@10012f9c	Global	0	FUN_10028130	MSVCRT.DLL!_CxxThrowException		
+10013060	249	disablePriorityArchive	R_File	1	FUN_10028130,R_File::isPriorityArchiveEnabled			R_File::enablePriorityArchive
+10013160	15	getPriorityArchive	R_File	0	R_File::isPriorityArchiveEnabled			
+10013170	6	isPriorityArchiveEnabled	R_File	3				R_File::getPriorityArchive,R_File::enablePriorityArchive,R_File::disablePriorityArchive
+10013180	6	getStartupDirectory	R_File	0				
+10013190	237	verifyArchiverID	R_File	0	FUN_100281de,R_Exception::operator=,R_Exception::setError,R_Exception::R_Exception	MSVCRT.DLL!_CxxThrowException	Archive "%s" is not compatible with this program	
+10013280	272	tmpName	R_File	0	FUN_10028130,FUN_10015ee0,R_File::where	MSVCRT.DLL!sprintf		
+10013390	229	encrypt	R_File	1	FUN_10015ee0	MSVCRT.DLL!rand,MSVCRT.DLL!strncpy		R_File::encrypt
+10013480	23	encrypt	R_File	0	R_File::encrypt		Remedy Library	
+100134a0	155	decryptWithSeed	R_File	3				R_File::load,FUN_1001088b,R_File::loadArchiveHeader
+10013540	186	decrypt	R_File	1	FUN_10015ee0			R_File::decrypt
+10013600	18	decrypt	R_File	0	R_File::decrypt		Remedy Library	
+10013620	667	compress	R_File	1	FUN_10015ee0,R_File::initTree,R_File::deleteNode,R_REALLOCATE_implementation,R_File::insertNode	MSVCRT.DLL!strncpy,MSVCRT.DLL!ftol		R_File::compress
+100138c0	23	compress	R_File	0	R_File::compress		Remedy Library	
+100138e0	260	decompress	R_File	2				R_File::load,R_File::decompress
+100139f0	36	decompress	R_File	1	FUN_10015ee0,R_File::decompress			R_File::decompress
+10013a20	18	decompress	R_File	0	R_File::decompress		Remedy Library	
+10013a40	66	CRC32	R_File	2				FUN_1001088b,R_File::loadArchiveHeader
+10013a90	63	FUN_10013a90	Global	2				R_FileStream::R_FileStream,R_UnbufferedFileStream::R_UnbufferedFileStream
+10013ad0	325	FUN_10013ad0	Global	1				R_FileStream::read
+10013c20	23	R_FileStream	R_FileStream	2				R_UnbufferedFileStream::R_UnbufferedFileStream,R_UnbufferedFileStream::R_UnbufferedFileStream
+10013ca0	1388	R_FileStream	R_FileStream	1	FUN_10011220,R_Exception::~R_Exception,R_Exception::setError,R_File::searchFile,R_File::relativeToAbsolutePath,FUN_10013a90,FUN_1000aa10,FUN_10005c80,FUN_10005ca0,FUN_100281de,FUN_1000a970,R_File::absolutePathToDirStructure,R_Exception::R_Exception	MSVCRT.DLL!fseek,MSVCRT.DLL!ftell,MSVCRT.DLL!fopen,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	File %s not found | Out of system memory resources | Archive %s not found | Out of system memory resources | Out of system memory resources | Out of system memory resources | Out of system memory resources	R_MemoryFile::construct
+1001420c	35	Catch@1001420c	Global	0		MSVCRT.DLL!fclose,MSVCRT.DLL!_CxxThrowException		
+10014230	325	R_FileStream	R_FileStream	3	FUN_100281de,R_Exception::operator=,R_Exception::setError,R_Exception::R_Exception	MSVCRT.DLL!_CxxThrowException	Cannot copy construct compressed file stream "%s"	R_MemoryFile::construct,R_MemoryFile::construct,R_FileStream::`copy_constructor_closure'
+10014380	170	~R_FileStream	R_FileStream	3	FUN_10028130	MSVCRT.DLL!fclose		Unwind@100289a0,R_UnbufferedFileStream::~R_UnbufferedFileStream,Unwind@10028900
+10014430	299	seek	R_FileStream	0	FUN_100281de,R_Exception::operator=,R_Exception::setError,R_Exception::R_Exception	MSVCRT.DLL!_CxxThrowException	Cannot seek compressed file stream "%s"	
+10014560	7	getPosition	R_FileStream	0				
+10014570	7	size	R_FileStream	0				
+10014580	14	getName	R_FileStream	0				
+10014590	853	read	R_FileStream	0	FUN_100281de,R_Exception::operator=,R_Exception::setError,FUN_10013ad0,R_Exception::R_Exception	MSVCRT.DLL!fseek,MSVCRT.DLL!fread,MSVCRT.DLL!_CxxThrowException	Unable to read data from "%s" | Unable to read data from "%s"	
+100148f0	1841	R_UnbufferedFileStream	R_UnbufferedFileStream	0	R_Exception::~R_Exception,FUN_10011220,R_Exception::setError,R_File::searchFile,R_File::relativeToAbsolutePath,FUN_10013a90,FUN_1000aa10,FUN_10005c80,FUN_10005ca0,FUN_100281de,R_FileStream::R_FileStream,FUN_1000a970,R_File::absolutePathToDirStructure,R_UnbufferedFileStream::seek,R_Exception::R_Exception	KERNEL32.DLL!CreateFileA,KERNEL32.DLL!GetDiskFreeSpaceA,KERNEL32.DLL!GetFileSize,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | File %s not found | File %s is not a stream | Out of system memory resources | Out of system memory resources | Out of system memory resources | Out of system memory resources | Archive %s not found	
+10015021	36	Catch@10015021	Global	0		KERNEL32.DLL!CloseHandle,MSVCRT.DLL!_CxxThrowException		
+100150b0	592	R_UnbufferedFileStream	R_UnbufferedFileStream	1	R_FileStream::R_FileStream,R_UnbufferedFileStream::seek,FUN_10005c80,R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MFC42.DLL!operator_new,KERNEL32.DLL!CreateFileA,MSVCRT.DLL!_CxxThrowException	File %s not found | Out of system memory resources | Out of system memory resources	R_UnbufferedFileStream::`copy_constructor_closure'
+10015300	81	~R_UnbufferedFileStream	R_UnbufferedFileStream	0	FUN_10028130,R_FileStream::~R_FileStream	KERNEL32.DLL!CloseHandle		
+10015360	130	seek	R_UnbufferedFileStream	2		KERNEL32.DLL!SetFilePointer		R_UnbufferedFileStream::R_UnbufferedFileStream,R_UnbufferedFileStream::R_UnbufferedFileStream
+100153f0	340	read	R_UnbufferedFileStream	0	R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	KERNEL32.DLL!ReadFile,MSVCRT.DLL!_CxxThrowException	Overreading stream %s	
+10015550	23	R_FileDirectoryChange	R_FileDirectoryChange	0	R_FileDirectoryChange::initializeMembers			
+10015570	81	R_FileDirectoryChange	R_FileDirectoryChange	1	R_FileDirectoryChange::initializeMembers,R_FileDirectoryChange::construct			R_Script::R_Script
+100155d0	117	~R_FileDirectoryChange	R_FileDirectoryChange	2	FUN_10028130,R_FileDirectoryChange::destruct			Unwind@1002929b,R_Script::R_Script
+10015650	255	construct	R_FileDirectoryChange	1	R_File::getCurrentDirectory,std::rs::assign,M_FPUControl::M_FPUControl,R_File::changeDirectory,R_Memory::~R_Memory,R_FileDirectoryChange::destruct,std::rs::assign,FUN_1000a850		Remedy Library	R_FileDirectoryChange::R_FileDirectoryChange
+1001574f	17	Catch@1001574f	Global	0	R_FileDirectoryChange::destruct	MSVCRT.DLL!_CxxThrowException		
+10015760	45	destruct	R_FileDirectoryChange	3	R_FileDirectoryChange::isConstructed,R_File::changeDirectory,R_FileDirectoryChange::initializeMembers			Catch@1001574f,R_FileDirectoryChange::construct,R_FileDirectoryChange::~R_FileDirectoryChange
+10015790	4	isConstructed	R_FileDirectoryChange	1				R_FileDirectoryChange::destruct
+100157a0	165	initializeMembers	R_FileDirectoryChange	3	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen		R_FileDirectoryChange::destruct,R_FileDirectoryChange::R_FileDirectoryChange,R_FileDirectoryChange::R_FileDirectoryChange
+10015850	16	R_FileDirectoryChange	R_FileDirectoryChange	0				
+10015860	461	FUN_10015860	Global	3	FUN_10015a30,FUN_10028130			R_File::searchFile,R_File::load,FUN_1001faf0
+10015a30	250	FUN_10015a30	Global	3	R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	FUN_10015860,FUN_10021650,R_Script::parse
+10015b30	48	FUN_10015b30	Global	2				R_File::load,FUN_1001faf0
+10015b60	283	FUN_10015b60	Global	1	R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	R_File::R_File
+10015c80	283	FUN_10015c80	Global	1	R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	R_File::R_File
+10015dc0	25	FUN_10015dc0	Global	13				R_Profile::insert,R_Profile::deinit,R_Script::lock,R_File::unloadArchives,R_Script::isParent,FUN_1001e8a0,FUN_10024110,FUN_1001e730
+10015de0	255	FUN_10015de0	Global	2	R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	R_File::R_File,FUN_1001e1d0
+10015ee0	236	FUN_10015ee0	Global	6	R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	R_File::compress,R_File::decompress,R_File::decrypt,R_File::encrypt,R_File::tmpName,R_File::searchDir
+10015fd0	25	FUN_10015fd0	Global	1				R_File::searchFile
+100160b0	30	FUN_100160b0	Global	0	FUN_100160d0,FUN_10028130			
+100160d0	244	FUN_100160d0	Global	1	FUN_10028130,FUN_100271b0			FUN_100160b0
+100161d0	147	FUN_100161d0	Global	0	FUN_10028130,FUN_100271b0			
+10016270	30	FUN_10016270	Global	0	FUN_10028130,FUN_10016290			
+10016290	244	FUN_10016290	Global	1	FUN_10028130,FUN_100271b0			FUN_10016270
+10016390	147	FUN_10016390	Global	0	FUN_10028130,FUN_100271b0			
+10016430	59	FUN_10016430	Global	8	FUN_10028130			R_File::~R_File,FUN_1001ea20,Unwind@10028b83,Unwind@10028c13,Unwind@10028e98,FUN_100244c0,Unwind@10028bb3,Unwind@10028be3
+10016470	22	dump	R_Memory	0	R_System::verbose		Memory dump only available in debug builds  	
+10016490	3	operator=	R_Memory	0				
+100164a0	284	R_REALLOCATE_implementation	Global	6	R_REALLOCATE_DELETE_implementation,R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	R_File::compress,R_MemoryFile::construct,R_File::getFullPathName,R_MemoryFile::construct,R_MemoryFile::construct,R_MemoryFile::write
+100165c0	25	R_REALLOCATE_DELETE_implementation	Global	3	FUN_10028130			R_File::~R_File,R_MemoryFile::destruct,R_REALLOCATE_implementation
+100165e0	6	getNewCount	R_Memory	2				R_Profile::insert,R_Profile::~R_Profile
+100165f0	6	getDeleteCount	R_Memory	2				R_Profile::insert,R_Profile::~R_Profile
+10016600	13	resetNewDeleteCounts	R_Memory	0				
+10016610	284	set	R_Memory	0	R_System::getProcessorCaps			
+10016730	268	copy	R_Memory	1	R_System::getProcessorCaps			R_MemoryFile::construct
+10016840	93	compare	R_Memory	0				
+100168a0	46	R_MemoryFile	R_MemoryFile	5	R_MemoryFile::construct,R_MemoryFile::initializeMembers			R_MemoryFile::Chunk::Chunk,R_MemoryFile::Chunk::Chunk,R_MemoryFile::Chunk::Chunk,R_MemoryFile::Chunk::Chunk,R_MemoryFile::`default_constructor_closure'
+100168d0	100	R_MemoryFile	R_MemoryFile	0	R_MemoryFile::initializeMembers,R_MemoryFile::construct			
+10016940	105	R_MemoryFile	R_MemoryFile	0	R_MemoryFile::construct,R_MemoryFile::initializeMembers			
+100169b0	105	R_MemoryFile	R_MemoryFile	0	R_MemoryFile::initializeMembers,R_MemoryFile::construct			
+10016a20	126	~R_MemoryFile	R_MemoryFile	1	FUN_10028130,R_MemoryFile::destruct			R_MemoryFile::Chunk::~Chunk
+10016aa0	95	R_MemoryFile	R_MemoryFile	0	R_MemoryFile::initializeMembers,R_MemoryFile::construct			
+10016b00	19	operator=	R_MemoryFile	2	R_MemoryFile::construct			R_MemoryFile::Chunk::Chunk,R_MemoryFile::Chunk::operator=
+10016b20	97	initializeMembers	R_MemoryFile	6				R_MemoryFile::R_MemoryFile,R_MemoryFile::R_MemoryFile,R_MemoryFile::R_MemoryFile,R_MemoryFile::destruct,R_MemoryFile::R_MemoryFile,R_MemoryFile::R_MemoryFile
+10016b90	3	FUN_10016b90	Global	2				operator>>,R_MemoryFile::destruct
+10016ba0	39	construct	R_MemoryFile	1	R_MemoryFile::destruct			R_MemoryFile::R_MemoryFile
+10016bd0	419	construct	R_MemoryFile	1	R_MemoryFile::destruct,R_FileStream::R_FileStream,R_Exception::R_Exception,R_Exception::setError,R_File::load,R_REALLOCATE_implementation,R_Exception::operator=,R_File::size,R_MemoryFile::setFilename,FUN_100281de	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	R_MemoryFile::R_MemoryFile
+10016d73	17	Catch@10016d73	Global	0	R_MemoryFile::destruct	MSVCRT.DLL!_CxxThrowException		
+10016d90	171	construct	R_MemoryFile	3	R_MemoryFile::destruct,R_REALLOCATE_implementation,R_Memory::copy			R_MemoryFile::R_MemoryFile,R_MemoryFile::Chunk::construct,operator>>
+10016e22	17	Catch@10016e22	Global	0	R_MemoryFile::destruct	MSVCRT.DLL!_CxxThrowException		
+10016e50	333	construct	R_MemoryFile	2	R_MemoryFile::destruct,R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,R_FileStream::R_FileStream,R_MemoryFile::setFilename,FUN_100281de	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	R_MemoryFile::R_MemoryFile,R_MemoryFile::Chunk::construct
+10016f9d	17	Catch@10016f9d	Global	0	R_MemoryFile::destruct	MSVCRT.DLL!_CxxThrowException		
+10016fb0	680	construct	R_MemoryFile	2	R_Exception::setError,FUN_10005ca0,FUN_1001ada0,FUN_100198c0,R_REALLOCATE_implementation,FUN_1000a850,R_FileStream::R_FileStream,FUN_100281de,FUN_1000aa10,FUN_100197b0,FUN_10019790,FUN_10019770,FUN_10019f60,R_MemoryFile::destruct,R_Exception::R_Exception,std::rs::assign	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources	R_MemoryFile::R_MemoryFile,R_MemoryFile::operator=
+10017258	17	Catch@10017258	Global	0	R_MemoryFile::destruct	MSVCRT.DLL!_CxxThrowException		
+10017270	62	destruct	R_MemoryFile	11	FUN_10016b90,R_REALLOCATE_DELETE_implementation,R_MemoryFile::initializeMembers			R_MemoryFile::construct,Catch@10016d73,R_MemoryFile::construct,R_MemoryFile::~R_MemoryFile,R_MemoryFile::construct,operator>>,Catch@10016f9d,R_MemoryFile::construct
+100172b0	166	setFilename	R_MemoryFile	2	std::rs::_Copy,std::rs::_Tidy	MSVCP60.DLL!_Xlen		R_MemoryFile::construct,R_MemoryFile::construct
+10017360	13	getFilename	R_MemoryFile	13				R_MemoryFile::readTag,operator>>,operator>>,operator>>,R_MemoryFile::seek,operator>>,R_MemoryFile::read,operator>>
+10017370	287	seek	R_MemoryFile	4	R_Exception::R_Exception,R_Exception::setError,R_MemoryFile::getFilename,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!_CxxThrowException	R_MemoryFile seek out of range("%s") | R_MemoryFile seek out of range(memoryfile not named yet)	R_MemoryFile::peekChunk,R_MemoryFile::openChunk,R_MemoryFile::toRead,R_MemoryFile::skipChunk
+10017490	4	getAddress	R_MemoryFile	4				R_MemoryFile::peekChunk,operator<<,R_MemoryFile::openChunk,FUN_100194c0
+100174a0	4	getPosition	R_MemoryFile	4				R_MemoryFile::peekChunk,R_MemoryFile::openChunk,R_MemoryFile::createChunk,R_MemoryFile::closeChunk
+100174b0	4	getSize	R_MemoryFile	1				operator<<
+100174c0	27	save	R_MemoryFile	0	R_File::save			
+100174e0	26	save	R_MemoryFile	0	R_MemoryFile::getFilename,R_File::save			
+10017500	17	toRead	R_MemoryFile	0	R_MemoryFile::seek			
+10017520	301	read	R_MemoryFile	16	R_Exception::R_Exception,R_Exception::setError,R_MemoryFile::getFilename,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!_CxxThrowException	Read of the end of an R_MemoryFile("%s") | Read of the end of an R_MemoryFile(memoryfile not named yet)	R_MemoryFile::readTagged,R_MemoryFile::readTag,operator>>,R_MemoryFile::peekChunk,operator>>,operator>>,operator>>,operator>>
+10017650	113	write	R_MemoryFile	12	R_REALLOCATE_implementation			operator<<,R_MemoryFile::writeTag,operator<<,operator<<,operator<<,operator<<,operator<<,operator<<
+100176d0	10	enableTags	R_MemoryFile	0				
+100176e0	5	disableTags	R_MemoryFile	0				
+100176f0	4	areTagsEnabled	R_MemoryFile	13				R_MemoryFile::readTag,operator>>,operator>>,operator>>,operator>>,R_MemoryFile::writeTag,operator<<,operator>>
+10017700	262	readTag	R_MemoryFile	8	R_MemoryFile::read,R_MemoryFile::areTagsEnabled,R_Exception::R_Exception,R_Exception::setError,R_MemoryFile::getFilename,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!_CxxThrowException	Invalid data read from an R_MemoryFile("%s") | Invalid data read from an R_MemoryFile(memoryfile not named yet)	R_MemoryFile::readTagged,Catch@10018b3e,operator>>,Catch@1001894f,R_MemoryFile::openChunk,operator>>,Catch@10018d5e,operator>>
+10017810	38	writeTag	R_MemoryFile	11	R_MemoryFile::areTagsEnabled,R_MemoryFile::write			operator<<,operator<<,operator<<,operator<<,operator<<,operator<<,operator<<,operator<<
+10017840	34	readTagged	R_MemoryFile	11	R_MemoryFile::readTag,R_MemoryFile::read			operator>>,operator>>,operator>>,operator>>,operator>>,operator>>,operator>>,operator>>
+10017870	34	writeTagged	R_MemoryFile	14	R_MemoryFile::writeTag,R_MemoryFile::write			operator<<,operator<<,operator<<,operator<<,R_MemoryFile::createChunk,operator<<,operator<<,operator<<
+100178a0	17	operator<<	Global	0	R_MemoryFile::writeTagged			
+100178c0	17	operator<<	Global	0	R_MemoryFile::writeTagged			
+100178e0	17	operator<<	Global	0	R_MemoryFile::writeTagged			
+10017900	17	operator<<	Global	0	R_MemoryFile::writeTagged			
+10017920	17	operator<<	Global	0	R_MemoryFile::writeTagged			
+10017940	17	operator<<	Global	0	R_MemoryFile::writeTagged			
+10017960	17	operator<<	Global	0	R_MemoryFile::writeTagged			
+10017980	17	operator<<	Global	4	R_MemoryFile::writeTagged			operator<<,operator<<,operator<<,operator<<
+100179a0	17	operator<<	Global	0	R_MemoryFile::writeTagged			
+100179c0	17	operator<<	Global	0	R_MemoryFile::writeTagged			
+100179e0	128	operator<<	Global	7	R_MemoryFile::areTagsEnabled,R_MemoryFile::writeTagged	MSVCRT.DLL!ftol		operator<<,operator<<,operator<<,operator<<,operator<<,operator<<,operator<<
+10017a60	116	operator<<	Global	0	R_MemoryFile::areTagsEnabled,R_MemoryFile::writeTagged			
+10017ae0	28	operator<<	Global	0	R_MemoryFile::writeTag,R_MemoryFile::write			
+10017b00	28	operator<<	Global	0	R_MemoryFile::writeTag,R_MemoryFile::write			
+10017b20	28	operator<<	Global	0	R_MemoryFile::writeTag,R_MemoryFile::write			
+10017b40	28	operator<<	Global	0	R_MemoryFile::writeTag,R_MemoryFile::write			
+10017b60	28	operator<<	Global	0	R_MemoryFile::writeTag,R_MemoryFile::write			
+10017b80	28	operator<<	Global	0	R_MemoryFile::writeTag,R_MemoryFile::write			
+10017ba0	28	operator<<	Global	0	R_MemoryFile::writeTag,R_MemoryFile::write			
+10017bc0	17	operator<<	Global	0	R_MemoryFile::writeTagged			
+10017be0	61	operator<<	Global	0	R_MemoryFile::writeTag,operator<<,R_MemoryFile::write			
+10017c20	67	operator<<	Global	0	R_MemoryFile::writeTag,operator<<,R_MemoryFile::write			
+10017c70	67	operator<<	Global	0	R_MemoryFile::writeTag,operator<<,R_MemoryFile::write			
+10017cc0	17	operator>>	Global	0	R_MemoryFile::readTagged			
+10017ce0	17	operator>>	Global	0	R_MemoryFile::readTagged			
+10017d00	17	operator>>	Global	0	R_MemoryFile::readTagged			
+10017d20	17	operator>>	Global	0	R_MemoryFile::readTagged			
+10017d40	17	operator>>	Global	3	R_MemoryFile::readTagged			Catch@10018b3e,Catch@1001894f,Catch@10018d5e
+10017d60	17	operator>>	Global	0	R_MemoryFile::readTagged			
+10017d80	17	operator>>	Global	0	R_MemoryFile::readTagged			
+10017da0	17	operator>>	Global	0	R_MemoryFile::readTagged			
+10017dc0	17	operator>>	Global	0	R_MemoryFile::readTagged			
+10017de0	17	operator>>	Global	0	R_MemoryFile::readTagged			
+10017e00	440	operator>>	Global	6	R_MemoryFile::read,R_MemoryFile::areTagsEnabled,R_Exception::R_Exception,R_Exception::setError,R_MemoryFile::getFilename,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!_CxxThrowException	Invalid data read from an R_MemoryFile("%s") | Invalid data read from an R_MemoryFile(memoryfile not named yet)	Catch@10018b3e,operator>>,Catch@1001894f,operator>>,Catch@10018d5e,operator>>
+10017fe0	265	operator>>	Global	0	R_MemoryFile::read,R_MemoryFile::areTagsEnabled,R_Exception::R_Exception,R_Exception::setError,R_MemoryFile::getFilename,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!_CxxThrowException	Invalid data read from an R_MemoryFile("%s") | Invalid data read from an R_MemoryFile(memoryfile not named yet)	
+10018140	267	operator>>	Global	0	R_MemoryFile::read,R_MemoryFile::areTagsEnabled,R_Exception::R_Exception,R_Exception::setError,R_MemoryFile::getFilename,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!_CxxThrowException	Invalid data read from an R_MemoryFile("%s") | Invalid data read from an R_MemoryFile(memoryfile not named yet)	
+10018250	267	operator>>	Global	0	R_MemoryFile::read,R_MemoryFile::areTagsEnabled,R_Exception::R_Exception,R_Exception::setError,R_MemoryFile::getFilename,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!_CxxThrowException	Invalid data read from an R_MemoryFile("%s") | Invalid data read from an R_MemoryFile(memoryfile not named yet)	
+10018360	267	operator>>	Global	0	R_MemoryFile::read,R_MemoryFile::areTagsEnabled,R_Exception::R_Exception,R_Exception::setError,R_MemoryFile::getFilename,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!_CxxThrowException	Invalid data read from an R_MemoryFile("%s") | Invalid data read from an R_MemoryFile(memoryfile not named yet)	
+10018470	267	operator>>	Global	0	R_MemoryFile::read,R_MemoryFile::areTagsEnabled,R_Exception::R_Exception,R_Exception::setError,R_MemoryFile::getFilename,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!_CxxThrowException	Invalid data read from an R_MemoryFile("%s") | Invalid data read from an R_MemoryFile(memoryfile not named yet)	
+10018580	267	operator>>	Global	0	R_MemoryFile::read,R_MemoryFile::areTagsEnabled,R_Exception::R_Exception,R_Exception::setError,R_MemoryFile::getFilename,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!_CxxThrowException	Invalid data read from an R_MemoryFile("%s") | Invalid data read from an R_MemoryFile(memoryfile not named yet)	
+10018690	267	operator>>	Global	0	R_MemoryFile::read,R_MemoryFile::areTagsEnabled,R_Exception::R_Exception,R_Exception::setError,R_MemoryFile::getFilename,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!_CxxThrowException	Invalid data read from an R_MemoryFile("%s") | Invalid data read from an R_MemoryFile(memoryfile not named yet)	
+100187a0	267	operator>>	Global	0	R_MemoryFile::read,R_MemoryFile::areTagsEnabled,R_Exception::R_Exception,R_Exception::setError,R_MemoryFile::getFilename,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!_CxxThrowException	Invalid data read from an R_MemoryFile("%s") | Invalid data read from an R_MemoryFile(memoryfile not named yet)	
+100188b0	17	operator>>	Global	0	R_MemoryFile::readTagged			
+100188d0	146	operator>>	Global	0	R_MemoryFile::readTag,R_MemoryFile::read,operator>>	MFC42.DLL!operator=,MFC42.DLL!GetBufferSetLength		
+1001894f	69	Catch@1001894f	Global	0	R_MemoryFile::readTag,operator>>,operator>>	MFC42.DLL!operator+=		
+100189b0	398	operator>>	Global	0	std::rs::assign,R_MemoryFile::readTag,std::rs::append,R_MemoryFile::read,std::rs::_Grow,std::rs::_Eos,operator>>,std::rs::_Split,std::rs::_Tidy	MSVCRT.DLL!memmove,MSVCP60.DLL!_Xran		
+10018b3e	140	Catch@10018b3e	Global	0	R_MemoryFile::readTag,std::rs::_Grow,operator>>,operator>>	MSVCP60.DLL!_Xlen		
+10018bd0	398	operator>>	Global	0	FUN_10019b30,FUN_100199f0,FUN_10019e90,R_MemoryFile::readTag,R_MemoryFile::read,std::rs::_Eos,operator>>,std::rs::_Tidy,FUN_10019920	MSVCRT.DLL!memmove,MSVCP60.DLL!_Xran		
+10018d5e	140	Catch@10018d5e	Global	0	FUN_100199f0,R_MemoryFile::readTag,operator>>,operator>>	MSVCP60.DLL!_Xlen		
+10018df0	79	operator<<	Global	0	R_MemoryFile::getAddress,R_MemoryFile::getSize	MFC42.DLL!Flush,MFC42.DLL!Write		
+10018e40	303	operator>>	Global	0	R_Exception::~R_Exception,R_MemoryFile::construct,FUN_10016b90,FUN_10028130,R_MemoryFile::destruct,FUN_10005ca0,FUN_1000a970,FUN_10019c00	MFC42.DLL!Read,MFC42.DLL!FillBuffer,MFC42.DLL!operator_new		
+10018f70	445	createChunk	R_MemoryFile	0	FUN_100197b0,FUN_10019790,FUN_100198f0,R_MemoryFile::getPosition,FUN_100198c0,FUN_1001ada0,FUN_10019c20,FUN_1000a850,R_MemoryFile::writeTagged			
+10019130	81	closeChunk	R_MemoryFile	0	R_MemoryFile::getPosition,FUN_100194c0			
+10019190	180	openChunk	R_MemoryFile	2	R_MemoryFile::readTag,R_MemoryFile::read,R_MemoryFile::Chunk::construct,R_MemoryFile::getPosition,R_MemoryFile::getAddress,R_MemoryFile::seek,R_MemoryFile::Chunk::construct			R_MemoryFile::openChunk,R_MemoryFile::Chunk::openChunk
+10019250	114	openChunk	R_MemoryFile	1	R_MemoryFile::Chunk::Chunk,R_MemoryFile::Chunk::~Chunk,R_MemoryFile::openChunk,R_MemoryFile::Chunk::Chunk			R_MemoryFile::Chunk::openChunk
+100192d0	254	peekChunk	R_MemoryFile	3	R_MemoryFile::read,R_MemoryFile::Chunk::construct,R_MemoryFile::Chunk::~Chunk,R_MemoryFile::getPosition,R_MemoryFile::Chunk::Chunk,R_MemoryFile::Chunk::operator=,R_MemoryFile::getAddress,R_MemoryFile::Chunk::construct,R_MemoryFile::seek			R_MemoryFile::peekChunk,R_MemoryFile::Chunk::peekChunk,R_MemoryFile::skipChunk
+100193d0	109	peekChunk	R_MemoryFile	1	R_MemoryFile::Chunk::Chunk,R_MemoryFile::peekChunk,R_MemoryFile::Chunk::~Chunk,R_MemoryFile::Chunk::Chunk			R_MemoryFile::Chunk::peekChunk
+10019440	116	skipChunk	R_MemoryFile	1	R_MemoryFile::Chunk::isValid,R_MemoryFile::Chunk::getSize,R_MemoryFile::peekChunk,R_MemoryFile::Chunk::~Chunk,R_MemoryFile::Chunk::Chunk,R_MemoryFile::seek			R_MemoryFile::Chunk::skipChunk
+100194c0	16	FUN_100194c0	Global	1	R_MemoryFile::getAddress			R_MemoryFile::closeChunk
+100194d0	33	Chunk	R_MemoryFile::Chunk	4	R_MemoryFile::R_MemoryFile			R_MemoryFile::peekChunk,R_MemoryFile::peekChunk,R_MemoryFile::openChunk,R_MemoryFile::skipChunk
+10019500	44	Chunk	R_MemoryFile::Chunk	0	R_MemoryFile::R_MemoryFile,R_MemoryFile::Chunk::construct			
+10019530	49	Chunk	R_MemoryFile::Chunk	0	R_MemoryFile::R_MemoryFile,R_MemoryFile::Chunk::construct			
+10019570	65	Chunk	R_MemoryFile::Chunk	2	R_MemoryFile::R_MemoryFile,R_MemoryFile::operator=			R_MemoryFile::peekChunk,R_MemoryFile::openChunk
+100195c0	8	~Chunk	R_MemoryFile::Chunk	8	R_MemoryFile::~R_MemoryFile			R_MemoryFile::peekChunk,R_MemoryFile::peekChunk,R_MemoryFile::openChunk,Unwind@10028ef0,R_MemoryFile::skipChunk,Unwind@10028eb0,Unwind@10028ed0,Unwind@10028f10
+100195d0	49	operator=	R_MemoryFile::Chunk	1	R_MemoryFile::operator=			R_MemoryFile::peekChunk
+10019610	51	construct	R_MemoryFile::Chunk	3	R_MemoryFile::construct			R_MemoryFile::peekChunk,R_MemoryFile::openChunk,R_MemoryFile::Chunk::Chunk
+10019650	54	construct	R_MemoryFile::Chunk	3	R_MemoryFile::construct			R_MemoryFile::peekChunk,R_MemoryFile::openChunk,R_MemoryFile::Chunk::Chunk
+10019690	4	isValid	R_MemoryFile::Chunk	1				R_MemoryFile::skipChunk
+100196a0	7	getSize	R_MemoryFile::Chunk	1				R_MemoryFile::skipChunk
+100196b0	4	getMemoryFile	R_MemoryFile::Chunk	0				
+100196c0	35	openChunk	R_MemoryFile::Chunk	0	R_MemoryFile::openChunk			
+100196f0	21	openChunk	R_MemoryFile::Chunk	0	R_MemoryFile::openChunk			
+10019710	30	peekChunk	R_MemoryFile::Chunk	0	R_MemoryFile::peekChunk			
+10019730	16	peekChunk	R_MemoryFile::Chunk	0	R_MemoryFile::peekChunk			
+10019740	8	skipChunk	R_MemoryFile::Chunk	0	R_MemoryFile::skipChunk			
+10019750	7	setDefaultAccessMethod	R_MemoryFile	0				
+10019760	6	getDefaultAccessMethod	R_MemoryFile	0				
+10019770	19	FUN_10019770	Global	1				R_MemoryFile::construct
+10019790	19	FUN_10019790	Global	2				R_MemoryFile::construct,R_MemoryFile::createChunk
+100197b0	257	FUN_100197b0	Global	2	R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	R_MemoryFile::construct,R_MemoryFile::createChunk
+100198c0	46	FUN_100198c0	Global	2				R_MemoryFile::construct,R_MemoryFile::createChunk
+100198f0	37	FUN_100198f0	Global	1				R_MemoryFile::createChunk
+10019920	201	FUN_10019920	Global	1	FUN_10019c40,std::rs::_Eos	MSVCP60.DLL!_Xlen		operator>>
+100199f0	311	FUN_100199f0	Global	2	FUN_10019c40,FUN_10028130	MSVCP60.DLL!_Xlen		operator>>,Catch@10018d5e
+10019b30	202	FUN_10019b30	Global	1	FUN_10019c40,std::rs::_Tidy	MSVCP60.DLL!_Xlen		operator>>
+10019c00	19	FUN_10019c00	Global	3				operator>>,FUN_10021650,R_Script::parse
+10019c20	19	FUN_10019c20	Global	1				R_MemoryFile::createChunk
+10019c40	223	FUN_10019c40	Global	4	FUN_10019d97,FUN_10005c80,R_Exception::setError,FUN_10005ca0,FUN_100281de,FUN_1000aa10	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources	FUN_10019b30,FUN_100199f0,FUN_10019e90,FUN_10019920
+10019d1f	114	Catch@10019d1f	Global	0	R_Exception::~R_Exception,FUN_10005c80,R_Exception::setError,FUN_1000a970	MFC42.DLL!operator_new	Out of system memory resources	
+10019d97	150	FUN_10019d97	Global	1	FUN_10028130			FUN_10019c40
+10019e30	86	_Tidy	std::rs	50	FUN_10028130			std::rs::replace,std::rs::assign,FUN_10019e90,std::rs::assign,std::rs::rs,std::rs::_Split,std::rs::insert,FUN_10019b30
+10019e90	157	FUN_10019e90	Global	1	FUN_10019c40,std::rs::_Tidy	MSVCP60.DLL!_Xlen		operator>>
+10019f60	34	FUN_10019f60	Global	1				R_MemoryFile::construct
+10019f90	6	getFrameCount	R_Profile	0				
+10019ff0	143	R_Profile	R_Profile	1	R_Profile::insert,M_FPUControl::M_FPUControl,R_Memory::~R_Memory		Remedy Library	R_System::processorSpeedTest
+1001a080	638	~R_Profile	R_Profile	2	M_FPUControl::M_FPUControl,R_Memory::~R_Memory,R_Profile::readCyrixCount,R_Profile::readTickCount,R_Profile::calcCyrixDiff,R_Memory::getDeleteCount,R_System::getProcessorCaps,R_System::getProcessorSpeed,R_Profile::calcDiff,R_Memory::getNewCount,FUN_1001a300,R_Profile::calcCyrixCycles,R_Profile::calcCycles		Remedy Library	R_System::processorSpeedTest,Unwind@10029850
+1001a300	67	FUN_1001a300	Global	2				R_Profile::startFrame,R_Profile::~R_Profile
+1001a350	109	find	R_Profile	5				R_Profile::request,R_Profile::insert,R_Profile::getCycleCount,R_Profile::clearEntry,R_Profile::requestTime
+1001a3c0	693	insert	R_Profile	1	FUN_1001ad70,R_Profile::find,FUN_1001adf0,FUN_1001b4d0,R_Profile::readCyrixCount,R_Profile::readTickCount,FUN_1001ada0,R_Memory::getDeleteCount,FUN_1000a850,R_System::getProcessorCaps,R_Memory::getNewCount,FUN_1001ae20,FUN_100249a0,FUN_10015dc0,FUN_1001b770,FUN_1001b480	MSVCRT.DLL!strncpy		R_Profile::R_Profile
+1001a680	159	reset	R_Profile	2				R_Profile::deinit,R_System::determineProcessorSpeed
+1001a720	175	deinit	R_Profile	1	FUN_10015dc0,FUN_1001b770,R_Profile::endFrame,R_Profile::reset			R_RemedyInit::~R_RemedyInit
+1001a7d0	291	calcPercentage	R_Profile	2	R_System::getProcessorCaps,R_System::getProcessorSpeed,R_Profile::getLastFrameTime			R_Profile::request,R_Profile::request
+1001a900	71	request	R_Profile	0	R_Profile::calcPercentage			
+1001a950	37	request	R_Profile	0	R_Profile::find,R_Profile::calcPercentage			
+1001a980	9	requestTime	R_Profile	0	R_Profile::find			
+1001a990	9	getCycleCount	R_Profile	1	R_Profile::find			R_System::determineProcessorSpeed
+1001a9a0	245	startFrame	R_Profile	1	FUN_1001a300,R_Profile::readCyrixCount,R_Profile::readTickCount,R_System::getProcessorCaps			R_System::determineProcessorSpeed
+1001aaa0	138	endFrame	R_Profile	2	R_Profile::readCyrixCount,R_Profile::readTickCount,R_Profile::calcCyrixDiff,R_System::getProcessorCaps,R_Profile::calcCyrixCycles,R_Profile::calcDiff,R_Profile::calcCycles			R_Profile::deinit,R_System::determineProcessorSpeed
+1001ab30	40	getTotalTime	R_Profile	0	R_System::getProcessorCaps,R_System::getProcessorSpeed			
+1001ab60	40	getLastFrameTime	R_Profile	1	R_System::getProcessorCaps,R_System::getProcessorSpeed			R_Profile::calcPercentage
+1001ab90	23	readTickCount	R_Profile	4				R_Profile::startFrame,R_Profile::insert,R_Profile::~R_Profile,R_Profile::endFrame
+1001abb0	18	readCyrixCount	R_Profile	4	R_System::getAppAge			R_Profile::startFrame,R_Profile::insert,R_Profile::~R_Profile,R_Profile::endFrame
+1001abd0	13	calcCyrixDiff	R_Profile	2				R_Profile::~R_Profile,R_Profile::endFrame
+1001abe0	3	calcCyrixCycles	R_Profile	2				R_Profile::~R_Profile,R_Profile::endFrame
+1001abf0	24	calcDiff	R_Profile	2				R_Profile::~R_Profile,R_Profile::endFrame
+1001ac10	3	calcCycles	R_Profile	2				R_Profile::~R_Profile,R_Profile::endFrame
+1001ac20	17	clearEntry	R_Profile	0	R_Profile::find,R_Profile::clearEntry			
+1001ac40	255	clearEntry	R_Profile	2				R_Profile::insert,R_Profile::clearEntry
+1001ad40	7	enableProfiling	R_Profile	1				R_Profile::disableProfiling
+1001ad50	7	disableProfiling	R_Profile	0	R_Profile::enableProfiling			
+1001ad60	6	isProfilingEnabled	R_Profile	0				
+1001ad70	33	FUN_1001ad70	Global	1				R_Profile::insert
+1001ada0	3	FUN_1001ada0	Global	6				R_Profile::insert,R_MemoryFile::construct,R_File::searchFile,FUN_10021650,R_MemoryFile::createChunk,R_Script::parse
+1001adb0	60	FUN_1001adb0	Global	1	FUN_1001af30			R_Profile::insert
+1001adf0	44	FUN_1001adf0	Global	1	FUN_1001af30			R_Profile::insert
+1001ae20	256	FUN_1001ae20	Global	1	R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	R_Profile::insert
+1001af30	73	FUN_1001af30	Global	2				FUN_1001adf0,FUN_1001adb0
+1001b0e0	43	FUN_1001b0e0	Global	1	FUN_1001b710,FUN_10028130			FUN_1001b310
+1001b110	477	FUN_1001b110	Global	0	FUN_10015dc0,FUN_100249a0,FUN_1001b770,FUN_10027050,FUN_10028130,FUN_10024920,FUN_1001b750,FUN_1001b7a0			
+1001b310	355	FUN_1001b310	Global	3	FUN_10015dc0,FUN_1001b0e0,FUN_1001b770,FUN_10028130,FUN_100271b0			FUN_1001b6f0,Unwind@10029038,Unwind@10029030
+1001b480	78	FUN_1001b480	Global	1				R_Profile::insert
+1001b4d0	89	FUN_1001b4d0	Global	1				R_Profile::insert
+1001b530	147	FUN_1001b530	Global	0	FUN_10028130,FUN_100271b0			
+1001b5d0	30	FUN_1001b5d0	Global	0	FUN_1001b5f0,FUN_10028130			
+1001b5f0	244	FUN_1001b5f0	Global	1	FUN_10028130,FUN_100271b0			FUN_1001b5d0
+1001b6f0	30	FUN_1001b6f0	Global	0	FUN_10028130,FUN_1001b310			
+1001b710	59	FUN_1001b710	Global	1	FUN_10028130			FUN_1001b0e0
+1001b750	25	FUN_1001b750	Global	5	FUN_10028130			R_System::~R_System,FUN_1001b110,Catch@1001e6dc,FUN_1001faf0,FUN_1001e1d0
+1001b770	42	FUN_1001b770	Global	10				FUN_1001e730,FUN_1001b110,R_Profile::insert,Catch@100214df,R_Profile::deinit,FUN_1001faf0,FUN_1001b310,R_File::unloadArchives
+1001b7a0	44	FUN_1001b7a0	Global	1				FUN_1001b110
+1001b7d0	670	R_RemedyInit	R_RemedyInit	0	R_File::R_File,FUN_10028130,FUN_10026c50,R_System::R_System	MSVCP60.DLL!assign,MSVCP60.DLL!operator+,MSVCP60.DLL!operator+,MSVCP60.DLL!_Eos,MSVCP60.DLL!_Tidy,MSVCP60.DLL!_Grow,MFC42.DLL!operator_new,KERNEL32.DLL!GetComputerNameA	verbose_ | verbose.txt | verbose.txt | verbose.txt | verbose.txt	
+1001ba70	110	~R_RemedyInit	R_RemedyInit	0	R_File::~R_File,R_System::~R_System,FUN_10028130,R_Memory::~R_Memory,FUN_10026de0,R_Profile::deinit			
+1001bae0	45	M_MathInit	M_MathInit	0	M_funcMakeInverseSqrtLUT	WINMM.DLL!timeGetTime,MSVCRT.DLL!srand		
+1001bb10	7	~M_MathInit	M_MathInit	0				
+1001bb20	25	R_ScriptLock	R_ScriptLock	2	R_Script::lock			R_Script::parse,R_Script::blockCheck
+1001bb40	30	R_ScriptLock	R_ScriptLock	2	R_Script::lock			R_Script::parse,R_Script::blockCheck
+1001bb60	18	~R_ScriptLock	R_ScriptLock	8	R_Script::unlock			Unwind@10029120,Unwind@10029100,Unwind@10029200,R_Script::parse,R_Script::parse,Unwind@100291e0,R_Script::blockCheck,R_Script::blockCheck
+1001bb80	21	FUN_1001bb80	Global	3		MSVCRT.DLL!_stricmp		FUN_10021f90,FUN_100222b0,FUN_10021c40
+1001bba0	22	getScriptName	R_Script	0				
+1001bbc0	194	staticNesting	R_Script	5		MSVCRT.DLL!sprintf		R_Script::getBlockIndex,R_Script::blockCheck,R_Script::lock,R_Script::lock,R_Script::parse
+1001bc90	6	getBlockName	R_Script	0				
+1001bca0	239	getBlockName	R_Script	0				
+1001bd90	7	getIndent	R_Script	0				
+1001bda0	16	isParent	R_Script	0				
+1001bdb0	257	isParent	R_Script	0	FUN_10015dc0			
+1001bec0	39	isParent	R_Script	0	R_Script::findNthBlock			
+1001bef0	16	isData	R_Script	0				
+1001bf00	259	isData	R_Script	0				
+1001c010	39	isData	R_Script	0	R_Script::findNthBlock			
+1001c040	7	count	R_Script	0				
+1001c050	200	count	R_Script	1		MSVCRT.DLL!tolower		R_Script::blockCheck
+1001c120	427	lock	R_Script	1	FUN_10015dc0,R_Script::staticNesting,R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!_CxxThrowException	R_Script: There is no block number %u in %s!	R_ScriptLock::R_ScriptLock
+1001c2d0	230	lock	R_Script	1	R_Script::findNthBlock,R_Script::staticNesting,R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!_CxxThrowException	R_Script: There is no block number %u named "%s" in %s!	R_ScriptLock::R_ScriptLock
+1001c3c0	19	unlock	R_Script	1				R_ScriptLock::~R_ScriptLock
+1001c3e0	444	getBlockIndex	R_Script	0	R_Script::staticNesting,R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!tolower,MSVCRT.DLL!_CxxThrowException	R_Script: There is no block number %u named "%s" in %s!	
+1001c5a0	7	countLvalues	R_Script	0				
+1001c5b0	147	countLvalues	R_Script	0		MSVCRT.DLL!tolower		
+1001c650	26	getLvalue	R_Script	0				
+1001c670	26	getAssignment	R_Script	0				
+1001c690	169	getAssignment	R_Script	0		MSVCRT.DLL!tolower		
+1001c740	91	parse	R_Script	0	R_ScriptLock::R_ScriptLock,R_Script::parse,R_ScriptLock::~R_ScriptLock			
+1001c7a0	96	parse	R_Script	0	R_ScriptLock::R_ScriptLock,R_Script::parse,R_ScriptLock::~R_ScriptLock			
+1001c800	3768	parse	R_Script	2	R_Exception::setError,FUN_1001ada0,FUN_1000a850,FUN_100281de,FUN_1000aa10,FUN_10015a30,FUN_1001d6f0,R_Script::staticNesting,R_Exception::R_Exception,FUN_10019c00	MSVCRT.DLL!sscanf,MSVCRT.DLL!tolower,MSVCRT.DLL!_CxxThrowException	R_Script: Unknown variable "%s" in %s! | R_Script: Double variables named "%s" in %s! | false | false | false | false | R_Script: Variables "%s" doesn't have a default value in %s! You have to assign  | R_Script: Can't parse assignment to variable "%s" in %s! Assignment: "%s"  Forma	R_Script::parse,R_Script::parse
+1001d6f0	18	FUN_1001d6f0	Global	5	R_Exception::R_Exception			R_Script::blockCheck,FUN_1001ecc0,FUN_1001f230,FUN_1001faf0,R_Script::parse
+1001d710	91	blockCheck	R_Script	0	R_ScriptLock::R_ScriptLock,R_Script::blockCheck,R_ScriptLock::~R_ScriptLock			
+1001d770	96	blockCheck	R_Script	0	R_ScriptLock::R_ScriptLock,R_Script::blockCheck,R_ScriptLock::~R_ScriptLock			
+1001d7d0	1034	blockCheck	R_Script	2	R_Script::count,FUN_10023570,R_Exception::setError,FUN_1001dc00,FUN_100281de,FUN_1000aa10,R_Exception::~R_Exception,FUN_10015dc0,FUN_1001d6f0,FUN_100235f0,R_Script::staticNesting,FUN_1001dbe0,FUN_100249d0	MSVCRT.DLL!tolower,MSVCRT.DLL!_CxxThrowException	R_Script: Block "%s" has to appear at least %u times in %s! | R_Script: A block "%s" should not exist in %s!	R_Script::blockCheck,R_Script::blockCheck
+1001dbe0	18	FUN_1001dbe0	Global	1	R_Exception::R_Exception			R_Script::blockCheck
+1001dc00	97	FUN_1001dc00	Global	1	R_Exception::R_Exception,R_Exception::setError		R_Script: Block "%s" has to appear at maximum %u times in %s!	R_Script::blockCheck
+1001dc70	33	isNumber	R_Script	0				
+1001dca0	33	isText	R_Script	0				
+1001dcd0	45	isFloat	R_Script	0				
+1001dd00	33	isHex	R_Script	0				
+1001dd30	99	lwrstrequal	R_Script	0		MSVCRT.DLL!tolower		
+1001dda0	124	blkstrequal	R_Script	0		MSVCRT.DLL!tolower		
+1001de20	223	findNthBlock	R_Script	3		MSVCRT.DLL!tolower		R_Script::isData,R_Script::lock,R_Script::isParent
+1001df00	605	R_Script	R_Script	0	std::rs::assign,FUN_10005c80,R_Exception::setError,FUN_10005ca0,R_FileDirectoryChange::R_FileDirectoryChange,FUN_1000a850,R_FileDirectoryChange::~R_FileDirectoryChange,FUN_100281de,FUN_1000aa10,R_Memory::R_Memory,FUN_1001e1d0	MSVCRT.DLL!_splitpath,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources	
+1001e15d	50	Catch@1001e15d	Global	0	FUN_10028130,FUN_1001e8a0	MSVCRT.DLL!_CxxThrowException		
+1001e190	53	~R_Script	R_Script	0	FUN_10028130,FUN_1001e8a0			
+1001e1d0	1292	FUN_1001e1d0	Global	1	std::rs::rs,FUN_100237e0,FUN_10023930,M_FPUControl::M_FPUControl,FUN_100248e0,R_Memory::~R_Memory,FUN_1001b750,FUN_10005ca0,FUN_10024700,FUN_100248f0,FUN_10015de0,FUN_100247f0,R_Exception::~R_Exception,R_File::getFullPathName,FUN_10021b10,FUN_10021650	MFC42.DLL!operator_new	RL ScriptLoader	R_Script::R_Script
+1001e6dc	35	Catch@1001e6dc	Global	0	FUN_1001ea20,FUN_1001b750,FUN_1001fa00	MSVCRT.DLL!_CxxThrowException		
+1001e6ff	39	Catch@1001e6ff	Global	0	FUN_10021b10,FUN_1001ea20,FUN_10021ef0	MSVCRT.DLL!_CxxThrowException		
+1001e730	356	FUN_1001e730	Global	2	FUN_10023540,FUN_10015dc0,FUN_1001b770,FUN_10028130,FUN_100271b0			FUN_10023540,Unwind@100292d0
+1001e8a0	371	FUN_1001e8a0	Global	2	FUN_10023540,FUN_10015dc0,FUN_1001ea20,FUN_1001b770,FUN_10028130,FUN_100271b0,FUN_1001fa00			R_Script::~R_Script,Catch@1001e15d
+1001ea20	477	FUN_1001ea20	Global	3	FUN_100244e0,FUN_10024500,FUN_10024600,FUN_10028130,std::rs::~rs,FUN_10016430,FUN_100244c0			Catch@1001e6ff,Catch@1001e6dc,FUN_1001e8a0
+1001ec00	184	FUN_1001ec00	Global	2		MSVCRT.DLL!sprintf		FUN_1001ecc0,FUN_1001f230
+1001ecc0	1339	FUN_1001ecc0	Global	2	FUN_1001fab0,FUN_10005c80,R_Exception::setError,FUN_1001f230,FUN_100281de,FUN_1000aa10,R_Exception::~R_Exception,FUN_100249a0,FUN_1001d6f0,FUN_1001ecc0,FUN_1001ec00,R_Exception::R_Exception,FUN_1001f200,FUN_1000a970	MSVCRT.DLL!strncpy,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | R_ScriptLoader: Tag brackets [ ] cannot be empty: block [%s]! | R_ScriptLoader: Either { } nesting or data must follow each tag in block [%s]! | R_ScriptLoader: There can't be a nested block without tag inside block [%s]! | R_ScriptLoader: There can't be data without tag inside block [%s]!	FUN_1001ecc0,FUN_1001e1d0
+1001f200	18	FUN_1001f200	Global	3	R_Exception::R_Exception			FUN_1001ecc0,FUN_1001f230,FUN_1001faf0
+1001f220	5	FUN_1001f220	Global	274				Unwind@10029168,Unwind@100287c0,Unwind@10029240,Unwind@100295a0,Unwind@10029574,Unwind@10029400,Unwind@10028d10,Unwind@10028690
+1001f230	1993	FUN_1001f230	Global	1	FUN_1001fab0,FUN_1001d6f0,FUN_10005c80,R_Exception::setError,FUN_10005ca0,FUN_1001ec00,R_Exception::R_Exception,FUN_1001f200,FUN_100281de,FUN_1000aa10	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | R_ScriptLoader: Left side of an assignment operator = is missing in block [%s]! | R_ScriptLoader: Right side of assignment "%s=" in block [%s] cannot be empty! | R_ScriptLoader: Right side of an assignment can't contain spaces! Check "%s=..." | R_ScriptLoader: Only single assignments are supported! Check "%s=..." in block [ | R_ScriptLoader: Left side of an assignment can't contain spaces! Check "%s=..."  | R_ScriptLoader: Statements separating semicolon missing inside block [%s]!	FUN_1001ecc0
+1001fa00	171	FUN_1001fa00	Global	3	FUN_10028130,FUN_1001fa00			Catch@1001e6dc,FUN_1001fa00,FUN_1001e8a0
+1001fab0	41	FUN_1001fab0	Global	3				FUN_1001ecc0,FUN_1001f230,FUN_1001faf0
+1001fae0	15	FUN_1001fae0	Global	1				FUN_1001faf0
+1001faf0	6639	FUN_1001faf0	Global	2	std::rs::append,FUN_10005c80,R_Exception::setError,FUN_100281de,FUN_100249f0,FUN_10015dc0,R_File::getFullPathName,FUN_1001d6f0,FUN_1001b770,FUN_10015860,std::rs::_Freeze,FUN_100249d0,R_File::free,FUN_1001faf0,FUN_1000a970,FUN_1001fae0	MSVCRT.DLL!tolower,MSVCRT.DLL!_CxxThrowException,MSVCRT.DLL!strncmp,MSVCRT.DLL!strncpy,MFC42.DLL!operator_new	RL ScriptLoader | R_ScriptLoader: Block comment /*...*/ starting in line %u of "%s" doesn't end! | R_ScriptLoader: String marking "..." starting in line %u of "%s" doesn't end! | R_ScriptLoader: String marking "..." starting in line %u of "%s" doesn't end! | R_ScriptLoader: Closing bracket "%c" in line %u of "%s" doesn't fit bracket in l | R_ScriptLoader: Closing bracket "%c" in line %u of "%s" found without opening br | R_ScriptLoader: #define directive in line %u of "%s" can't be used inside a brac | R_ScriptLoader: Attempt to re-#define "%s" (originally "%s") as "%s" in line %u 	FUN_1001faf0,FUN_1001e1d0
+100214df	230	Catch@100214df	Global	0	FUN_10015dc0,FUN_1001b770	MSVCRT.DLL!_CxxThrowException		
+100215d0	30	FUN_100215d0	Global	0	FUN_1001f220,FUN_10028130			
+100215f0	54	FUN_100215f0	Global	1				FUN_1001faf0
+10021630	4	FUN_10021630	Global	5				Unwind@10029532,Unwind@100295f2,Unwind@1002953d,Unwind@10029527,Unwind@10029553
+10021640	11	FUN_10021640	Global	4				FUN_10022f10,FUN_10022ad0,Unwind@10029548,FUN_10021ef0
+10021650	502	FUN_10021650	Global	1	FUN_10015a30,FUN_10022010,FUN_10021850,FUN_1001ada0,FUN_1000a850,FUN_10019c00			FUN_1001e1d0
+10021850	35	FUN_10021850	Global	1				FUN_10021650
+10021880	641	FUN_10021880	Global	1	FUN_10022a30,FUN_10022a70,FUN_10022040,FUN_100229d0,std::operator<,FUN_10022970,FUN_10023b60			FUN_1001faf0
+10021b10	160	FUN_10021b10	Global	2	FUN_10022930,std::rs::~rs,FUN_10023220,FUN_10022550			Catch@1001e6ff,FUN_1001e1d0
+10021bb0	134	FUN_10021bb0	Global	1	std::operator<			FUN_1001faf0
+10021c40	674	FUN_10021c40	Global	1	FUN_10023060,FUN_10023cd0,FUN_100222b0,FUN_1001bb80,FUN_10023010,FUN_10022fb0,FUN_10022f50			FUN_1001faf0
+10021ef0	160	FUN_10021ef0	Global	2	FUN_10022f10,FUN_10022ad0,FUN_10021640,FUN_10023370			Catch@1001e6ff,FUN_1001e1d0
+10021f90	128	FUN_10021f90	Global	1	FUN_1001bb80			FUN_1001faf0
+10022010	35	FUN_10022010	Global	1				FUN_10021650
+10022040	618	FUN_10022040	Global	1	std::operator<,FUN_10023b60,FUN_100230c0			FUN_10021880
+100222b0	663	FUN_100222b0	Global	1	FUN_10023cd0,FUN_1001bb80,FUN_100230f0			FUN_10021c40
+10022550	978	FUN_10022550	Global	2	std::rs::~rs,FUN_10023220			FUN_10024500,FUN_10021b10
+10022930	63	FUN_10022930	Global	3	FUN_10022930,std::rs::~rs			FUN_10024500,FUN_10021b10,FUN_10022930
+10022970	82	FUN_10022970	Global	1				FUN_10021880
+100229d0	86	FUN_100229d0	Global	1				FUN_10021880
+10022a30	63	FUN_10022a30	Global	1	FUN_10023120			FUN_10021880
+10022a70	81	FUN_10022a70	Global	1				FUN_10021880
+10022ad0	1074	FUN_10022ad0	Global	2	FUN_10023370,FUN_10021640			FUN_10024600,FUN_10021ef0
+10022f10	63	FUN_10022f10	Global	3	FUN_10022f10,FUN_10021640			FUN_10024600,FUN_10022f10,FUN_10021ef0
+10022f50	82	FUN_10022f50	Global	1				FUN_10021c40
+10022fb0	86	FUN_10022fb0	Global	1				FUN_10021c40
+10023010	69	FUN_10023010	Global	1	FUN_10023270			FUN_10021c40
+10023060	84	FUN_10023060	Global	1				FUN_10021c40
+100230c0	48	FUN_100230c0	Global	1	FUN_10023120			FUN_10022040
+100230f0	48	FUN_100230f0	Global	1	FUN_10023270			FUN_100222b0
+10023120	250	FUN_10023120	Global	3	R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	FUN_10022a30,FUN_10024700,FUN_100230c0
+10023220	67	FUN_10023220	Global	3				FUN_10024500,FUN_10021b10,FUN_10022550
+10023270	250	FUN_10023270	Global	3	R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	FUN_10023010,FUN_100230f0,FUN_100247f0
+10023370	67	FUN_10023370	Global	3				FUN_10024600,FUN_10022ad0,FUN_10021ef0
+100233e0	48	FUN_100233e0	Global	1				FUN_1001e1d0
+10023540	43	FUN_10023540	Global	3	FUN_1001e730,FUN_10028130			FUN_1001e730,FUN_1001e8a0,FUN_10024110
+10023570	83	FUN_10023570	Global	1	FUN_100235d0,R_Exception::operator=,FUN_100281de	MSVCRT.DLL!_CxxThrowException		R_Script::blockCheck
+100235d0	18	FUN_100235d0	Global	1	R_Exception::R_Exception			FUN_10023570
+100235f0	83	FUN_100235f0	Global	1	R_Exception::operator=,FUN_10023650,FUN_100281de	MSVCRT.DLL!_CxxThrowException		R_Script::blockCheck
+10023650	18	FUN_10023650	Global	1	R_Exception::R_Exception			FUN_100235f0
+10023690	48	FUN_10023690	Global	1				FUN_1001e1d0
+100236c0	244	FUN_100236c0	Global	2	FUN_10028130,FUN_100271b0			FUN_10024320,Unwind@100294a0
+100237e0	48	FUN_100237e0	Global	1				FUN_1001e1d0
+10023810	244	FUN_10023810	Global	2	FUN_10028130,FUN_100271b0			Unwind@100294ab,FUN_100243e0
+10023930	48	FUN_10023930	Global	1				FUN_1001e1d0
+10023960	244	FUN_10023960	Global	2	FUN_10028130,FUN_100271b0			FUN_100244a0,Unwind@100294b6
+10023a60	255	FUN_10023a60	Global	1	R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	FUN_1001e1d0
+10023b60	360	FUN_10023b60	Global	2	std::rs::_Grow,std::rs::_Eos,std::rs::_Split,std::rs::_Tidy	MSVCP60.DLL!_Xran,MSVCRT.DLL!memmove		FUN_10022040,FUN_10021880
+10023cd0	93	FUN_10023cd0	Global	2				FUN_100222b0,FUN_10021c40
+10023f30	147	FUN_10023f30	Global	0	FUN_10028130,FUN_100271b0			
+10023fd0	30	FUN_10023fd0	Global	0	FUN_10023ff0,FUN_10028130			
+10023ff0	244	FUN_10023ff0	Global	1	FUN_10028130,FUN_100271b0			FUN_10023fd0
+100240f0	30	FUN_100240f0	Global	0	FUN_10028130,FUN_10024110			
+10024110	355	FUN_10024110	Global	1	FUN_10023540,FUN_10015dc0,FUN_1001b770,FUN_10028130,FUN_100271b0			FUN_100240f0
+10024280	147	FUN_10024280	Global	0	FUN_10028130,FUN_100271b0			
+10024320	30	FUN_10024320	Global	0	FUN_10028130,FUN_100236c0			
+10024340	147	FUN_10024340	Global	0	FUN_10028130,FUN_100271b0			
+100243e0	30	FUN_100243e0	Global	0	FUN_10028130,FUN_10023810			
+10024400	147	FUN_10024400	Global	0	FUN_10028130,FUN_100271b0			
+100244a0	30	FUN_100244a0	Global	0	FUN_10028130,FUN_10023960			
+100244c0	30	FUN_100244c0	Global	1	FUN_10028130,FUN_10016430			FUN_1001ea20
+100244e0	30	FUN_100244e0	Global	1	FUN_10028130,std::rs::~rs			FUN_1001ea20
+10024500	243	FUN_10024500	Global	1	FUN_10022930,FUN_10028130,FUN_10023220,FUN_10022550			FUN_1001ea20
+10024600	243	FUN_10024600	Global	1	FUN_10022f10,FUN_10028130,FUN_10022ad0,FUN_10023370			FUN_1001ea20
+10024700	227	FUN_10024700	Global	1	FUN_10023120			FUN_1001e1d0
+100247f0	239	FUN_100247f0	Global	1	FUN_10023270			FUN_1001e1d0
+100248e0	16	FUN_100248e0	Global	1				FUN_1001e1d0
+100248f0	45	FUN_100248f0	Global	7	FUN_10028130			Unwind@10029730,Unwind@1002933f,Unwind@10029750,Unwind@10029770,Unwind@10029790,FUN_1001e1d0,Unwind@10029315
+10024920	121	FUN_10024920	Global	2	FUN_10028130			FUN_1001b110,FUN_1001faf0
+100249a0	39	FUN_100249a0	Global	4				FUN_1001b110,R_Profile::insert,FUN_1001ecc0,FUN_1001faf0
+100249d0	23	FUN_100249d0	Global	2				R_Script::blockCheck,FUN_1001faf0
+100249f0	40	FUN_100249f0	Global	1				FUN_1001faf0
+10024a20	6	_GetBaseClass	R_Exception	0				
+10024a30	6	GetRuntimeClass	R_Exception	0				
+10024a40	451	R_System	R_System	1	R_System::determineProcessorCaps	KERNEL32.DLL!QueryPerformanceFrequency,WINMM.DLL!timeGetTime,MSVCIRT.DLL!ofstream,MFC42.DLL!operator_new,KERNEL32.DLL!QueryPerformanceCounter,KERNEL32.DLL!CreateMutexA		R_RemedyInit::R_RemedyInit
+10024c10	585	~R_System	R_System	1	FUN_10027050,FUN_10028130,R_System::verbose,FUN_1001b750,R_System::deinits	MSVCIRT.DLL!close,MSVCIRT.DLL!~ofstream,KERNEL32.DLL!CloseHandle,MSVCIRT.DLL!~ios	==============================================================================	R_RemedyInit::~R_RemedyInit
+10024e60	207	add	R_System	0		MFC42.DLL!operator_new		
+10024f30	73	remove	R_System	0	R_System::free			
+10024f80	220	dump	R_System	0	R_System::verbose		System Object  | ------------------------------------------------------------------------------ |   Deinit routines:   |                     |                     | %8x - " | ------------------------------------------------------------------------------	
+10025060	13	setVerboseDoesTRACE	R_System	0				
+10025070	12	setAssertionCreatesException	R_System	0				
+10025080	256	verbose	R_System	4	R_System::verbose	MSVCRT.DLL!localtime,MSVCRT.DLL!asctime,MSVCRT.DLL!_vsnprintf,MSVCIRT.DLL!flush,MSVCRT.DLL!time,MSVCIRT.DLL!open,MSVCIRT.DLL!operator<<	==============================================================================	R_System::~R_System,R_System::verbose,R_System::dump,R_Memory::dump
+10025180	63	ceaseVerbose	R_System	0		MSVCIRT.DLL!close,MSVCRT.DLL!remove		
+100251c0	76	clearVerbose	R_System	0		MSVCIRT.DLL!close,MSVCIRT.DLL!open		
+10025210	47	terminate	R_System	0	R_System::deinits	USER32.DLL!MessageBoxA,MFC42.DLL!AfxAbort	Critical Error	
+10025240	59	deinits	R_System	2	R_System::free			R_System::~R_System,R_System::terminate
+10025280	80	free	R_System	2	FUN_10028130			R_System::remove,R_System::deinits
+100252d0	19	setVerboseCallback	R_System	0				
+100252f0	228	R_System	R_System	0		MSVCIRT.DLL!ofstream		
+100253e0	107	R_STR	Global	1		MSVCRT.DLL!_vsnprintf,KERNEL32.DLL!WaitForSingleObject,KERNEL32.DLL!ReleaseMutex		R_File::loadArchives
+10025450	161	processorSpeedTest	R_System	1	R_System::getAppAge,R_Profile::~R_Profile,R_Profile::R_Profile		Processor speed	R_System::determineProcessorSpeed
+10025500	204	determineProcessorSpeed	R_System	1	R_Profile::startFrame,R_Profile::getCycleCount,R_Profile::endFrame,R_Profile::reset,R_System::processorSpeedTest	USER32.DLL!SystemParametersInfoA,KERNEL32.DLL!GetCurrentThread,KERNEL32.DLL!GetThreadPriority,KERNEL32.DLL!GetPriorityClass,KERNEL32.DLL!SetPriorityClass,KERNEL32.DLL!GetCurrentProcess,KERNEL32.DLL!SetThreadPriority	Processor speed	R_System::getProcessorSpeed
+100255d0	5058	determineProcessorCaps	R_System	1		KERNEL32.DLL!GetVersionExA	No CPUID !! | Unknown | Unknown | GenuineIntel | GenuineIntel | Intel unknown |  UMC UMC | UMC unknown	R_System::R_System
+100269a0	7	getProcessorCaps	R_System	10				R_Profile::startFrame,R_Profile::insert,R_Profile::getTotalTime,R_Memory::set,R_Profile::~R_Profile,R_Profile::endFrame,R_Profile::calcPercentage,R_Memory::copy
+100269b0	7	getProcessorVendor	R_System	0				
+100269c0	7	getProcessorType	R_System	0				
+100269d0	45	getProcessorSpeed	R_System	4	R_System::determineProcessorSpeed,R_System::getProcessorCaps			R_Profile::getTotalTime,R_Profile::~R_Profile,R_Profile::calcPercentage,R_Profile::getLastFrameTime
+10026a00	7	getL1CodeCacheSize	R_System	0				
+10026a10	7	getL1DataCacheSize	R_System	0				
+10026a20	13	getL1CacheSize	R_System	0				
+10026a30	7	getL2CacheSize	R_System	0				
+10026a40	7	getL3CacheSize	R_System	0				
+10026a50	7	getL1TraceCacheSize	R_System	0				
+10026a60	7	getTLBCodeCacheSize	R_System	0				
+10026a70	7	getTLBDataCacheSize	R_System	0				
+10026a80	7	getProcessorModel	R_System	0				
+10026a90	30	getTotalPhysicalMemory	R_System	0		KERNEL32.DLL!GlobalMemoryStatus		
+10026ab0	30	getAvailablePhysicalMemory	R_System	0		KERNEL32.DLL!GlobalMemoryStatus		
+10026ad0	148	getAppAge	R_System	2		WINMM.DLL!timeGetTime,KERNEL32.DLL!QueryPerformanceCounter		R_Profile::readCyrixCount,R_System::processorSpeedTest
+10026b70	31	getPerformanceFrequency	R_System	2				R_Timer::getAge,R_Timer::setAge
+10026b90	48	getPerformanceCounter	R_System	2		WINMM.DLL!timeGetTime,KERNEL32.DLL!QueryPerformanceCounter		R_Timer::getAge,R_Timer::setAge
+10026bc0	23	getFirstCPUDriver	R_System	0				
+10026be0	75	getNextCPUDriver	R_System	0				
+10026c30	10	setActiveCPUDriver	R_System	1				FUN_10026c50
+10026c40	4	getActiveCPUDriver	R_System	175				M_ScalarArray::reciprocal_0,M_ScalarArray::invsqrt,M_Vector3Array::normalize_lo_0,M_Vector4Array::clampMin,M_ScalarArray::reciprocal_0,M_ScalarArray::add,M_Vector2Array::length_lo,M_Vector3Array::normalize_hi_0
+10026c50	390	FUN_10026c50	Global	1	R_System::setActiveCPUDriver,FUN_100272e0	KERNEL32.DLL!FindNextFileA,KERNEL32.DLL!FindClose,KERNEL32.DLL!SetCurrentDirectoryA,MSVCRT.DLL!stat,KERNEL32.DLL!GetEnvironmentVariableA,KERNEL32.DLL!FindFirstFileA,KERNEL32.DLL!GetCurrentDirectoryA,KERNEL32.DLL!LoadLibraryA	*_mfcrel.dll | *_mfcrel.dll | rldriver | rldriver | RLDRIVERPATH	R_RemedyInit::R_RemedyInit
+10026de0	190	FUN_10026de0	Global	1	FUN_10028130	KERNEL32.DLL!FreeLibrary		R_RemedyInit::~R_RemedyInit
+10026ea0	21	R_Mutex	R_Mutex	0		KERNEL32.DLL!CreateMutexA		
+10026ec0	10	~R_Mutex	R_Mutex	0		KERNEL32.DLL!CloseHandle		
+10026ed0	12	lock	R_Mutex	1		KERNEL32.DLL!WaitForSingleObject		R_MutexLock::R_MutexLock
+10026ee0	10	unlock	R_Mutex	1		KERNEL32.DLL!ReleaseMutex		R_MutexLock::~R_MutexLock
+10026ef0	20	R_MutexLock	R_MutexLock	0	R_Mutex::lock			
+10026f10	7	~R_MutexLock	R_MutexLock	0	R_Mutex::unlock			
+10026f20	3	R_Memory	R_Memory	1				R_Script::R_Script
+10026f50	244	FUN_10026f50	Global	4	FUN_10028130,FUN_100271b0			FUN_10027480,Unwind@10029830,Unwind@100297f0,Unwind@100297b0
+10027050	61	FUN_10027050	Global	3				R_System::~R_System,FUN_1001b110,FUN_1001faf0
+10027090	244	FUN_10027090	Global	4	FUN_10028130,FUN_100271b0			Unwind@100297b8,Unwind@100297f8,Unwind@10029838,FUN_10027540
+100271b0	34	FUN_100271b0	Global	24	FUN_10028130			FUN_100271e0,FUN_10024400,FUN_100273e0,FUN_100161d0,FUN_10023ff0,FUN_100274a0,FUN_1001b530,FUN_100236c0
+100271e0	244	FUN_100271e0	Global	3	FUN_10028130,FUN_100271b0			FUN_10027600,Unwind@100297cf,Unwind@1002980f
+100272e0	251	FUN_100272e0	Global	1	R_Exception::R_Exception,R_Exception::setError,R_Exception::operator=,FUN_100281de	MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources	FUN_10026c50
+100273e0	147	FUN_100273e0	Global	0	FUN_10028130,FUN_100271b0			
+10027480	30	FUN_10027480	Global	0	FUN_10028130,FUN_10026f50			
+100274a0	147	FUN_100274a0	Global	0	FUN_10028130,FUN_100271b0			
+10027540	30	FUN_10027540	Global	0	FUN_10028130,FUN_10027090			
+10027560	147	FUN_10027560	Global	0	FUN_10028130,FUN_100271b0			
+10027600	30	FUN_10027600	Global	0	FUN_100271e0,FUN_10028130			
+10027620	12	R_Timer	R_Timer	0	R_Timer::reset			
+10027630	1	~R_Memory	R_Memory	9				Unwind@10028f90,Unwind@10028fb0,R_Profile::~R_Profile,Unwind@10028a20,R_Profile::R_Profile,R_FileDirectoryChange::construct,R_RemedyInit::~R_RemedyInit,FUN_1001e1d0
+10027640	89	getAge	R_Timer	2	R_System::getPerformanceCounter,R_System::getPerformanceFrequency			R_Timer::pause,R_Timer::sample
+100276a0	74	setAge	R_Timer	2	R_System::getPerformanceCounter,R_System::getPerformanceFrequency	MSVCRT.DLL!ftol		R_Timer::resume,R_Timer::reset
+100276f0	22	sample	R_Timer	0	R_Timer::getAge			
+10027710	7	getDelta	R_Timer	0				
+10027720	12	reset	R_Timer	1	R_Timer::setAge			R_Timer::R_Timer
+10027730	4	isPaused	R_Timer	0				
+10027740	30	pause	R_Timer	0	R_Timer::getAge			
+10027760	34	resume	R_Timer	0	R_Timer::setAge			
+10027790	5	M_FPUControl	M_FPUControl	4				R_Profile::~R_Profile,R_Profile::R_Profile,R_FileDirectoryChange::construct,FUN_1001e1d0
+100277a0	302	operator+	std	0	std::rs::_Grow,FUN_10028130,std::rs::assign	MSVCP60.DLL!_Xlen		
+100278d0	317	operator+	std	0	std::rs::assign,std::rs::_Grow,std::rs::_Eos,std::rs::assign,FUN_1000a850	MSVCP60.DLL!_Xlen		
+10027a10	255	operator+	std	0	std::rs::_Grow,std::rs::_Eos,std::rs::assign,std::rs::assign,std::rs::_Tidy	MSVCP60.DLL!_Xlen		
+10027b10	311	operator+	std	0	std::rs::_Grow,FUN_10028130,std::rs::assign	MSVCP60.DLL!_Xlen		
+10027c50	276	operator+	std	0	std::rs::_Grow,FUN_10028130,std::rs::assign	MSVCP60.DLL!_Xlen		
+10027d70	95	operator==	std	1				std::operator!=
+10027dd0	92	operator==	std	1				std::operator!=
+10027e30	92	operator==	std	1				std::operator!=
+10027e90	24	operator!=	std	0	std::operator==			
+10027eb0	24	operator!=	std	0	std::operator==			
+10027ed0	24	operator!=	std	0	std::operator==			
+10027ef0	95	operator<	std	6				std::operator<=,std::operator>,FUN_10022040,FUN_10021bb0,FUN_10021880,std::operator>=
+10027f50	92	operator<	std	3				std::operator<=,std::operator>,std::operator>=
+10027fb0	92	operator<	std	3				std::operator<=,std::operator>,std::operator>=
+10028010	19	operator>	std	0	std::operator<			
+10028030	19	operator>	std	0	std::operator<			
+10028050	19	operator>	std	0	std::operator<			
+10028070	24	operator<=	std	0	std::operator<			
+10028090	24	operator<=	std	0	std::operator<			
+100280b0	24	operator<=	std	0	std::operator<			
+100280d0	24	operator>=	std	0	std::operator<			
+100280f0	24	operator>=	std	0	std::operator<			
+10028110	24	operator>=	std	0	std::operator<			
+10028130	11	FUN_10028130	Global	113		MSVCRT.DLL!free		R_System::~R_System,FUN_10027600,Unwind@100292e0,Unwind@10029376,Unwind@10028c70,FUN_100236c0,FUN_1000a850,FUN_10027090
+1002813c	6	operator+	MSVCP60.DLL::std	1				R_RemedyInit::R_RemedyInit
+10028142	6	operator+	MSVCP60.DLL::std	1				R_RemedyInit::R_RemedyInit
+10028148	6	operator_new	MFC42.DLL	36				R_MemoryFile::construct,FUN_10015b60,operator>>,FUN_10015c80,R_FileStream::R_FileStream,FUN_1001f230,R_File::load,R_REALLOCATE_implementation
+1002814e	6	Flush	MFC42.DLL::CArchive	5				operator<<,operator<<,operator<<,operator<<,operator<<
+10028154	6	FillBuffer	MFC42.DLL::CArchive	5				operator>>,operator>>,operator>>,operator>>,operator>>
+1002815a	6	CException	MFC42.DLL::CException	1				R_Exception::R_Exception
+10028160	6	CException	MFC42.DLL::CException	1				R_Exception::R_Exception
+1002816c	6	operator+=	MFC42.DLL::CString	1				Catch@1001894f
+10028172	6	GetBufferSetLength	MFC42.DLL::CString	1				operator>>
+10028178	6	operator=	MFC42.DLL::CString	1				operator>>
+1002817e	6	Write	MFC42.DLL::CArchive	1				operator<<
+10028184	6	Read	MFC42.DLL::CArchive	1				operator>>
+1002818a	6	AfxAbort	MFC42.DLL	1				R_System::terminate
+100281b2	44	FUN_100281b2	Global	1		MSVCRT.DLL!_onexit,MSVCRT.DLL!__dllonexit		FUN_100281de
+100281de	18	FUN_100281de	Global	60	FUN_100281b2			R_MemoryFile::construct,FUN_10015b60,FUN_1000e9c0,operator>>,FUN_10015c80,R_FileStream::R_FileStream,R_File::load,FUN_100272e0
+100281f0	6	_CxxThrowException	MSVCRT.DLL	81				Catch@1001e6ff,R_MemoryFile::construct,Catch@1001574f,FUN_10015b60,Catch@1001e6dc,operator>>,FUN_10015c80,R_FileStream::R_FileStream
+100281fc	6	ftol	MSVCRT.DLL	4				R_File::compress,operator<<,R_CPUReference::convertToInt,R_Timer::setAge
+10028202	104	FUN_10028202	Global	0	FUN_1002826a			
+1002826a	24	FUN_1002826a	Global	1	FUN_10028282			FUN_10028202
+10028282	81	FUN_10028282	Global	1				FUN_1002826a
+100282f6	171	FUN_100282f6	Global	1		MSVCRT.DLL!free,MSVCRT.DLL!malloc,MSVCRT.DLL!initterm		entry
+100283a1	157	entry	Global	0	FUN_10028462,FUN_100282f6			
+1002843e	6	free	MSVCRT.DLL	1				FUN_10028130
+10028444	6	~type_info	MSVCRT.DLL::type_info	0				
+1002844a	6	__dllonexit	MSVCRT.DLL	1				FUN_100281b2
+1002845c	6	initterm	MSVCRT.DLL	1				FUN_100282f6
+10028462	32	FUN_10028462	Global	1		KERNEL32.DLL!DisableThreadLibraryCalls		entry
+10028490	8	Unwind@10028490	Global	0	FUN_1000ebc0			
+100284b0	8	Unwind@100284b0	Global	0	FUN_1000ebc0			
+100284d0	8	Unwind@100284d0	Global	0	FUN_1000ebc0			
+100284f0	8	Unwind@100284f0	Global	0	FUN_1000ebc0			
+10028510	8	Unwind@10028510	Global	0	FUN_1000ebc0			
+10028530	8	Unwind@10028530	Global	0	FUN_1000ebc0			
+10028560	8	Unwind@10028560	Global	0	FUN_1000ebc0			
+10028568	8	Unwind@10028568	Global	0	FUN_1000ebc0			
+10028580	8	Unwind@10028580	Global	0	FUN_1001f220			
+10028588	8	Unwind@10028588	Global	0	FUN_1001f220			
+10028590	8	Unwind@10028590	Global	0	FUN_1001f220			
+10028598	8	Unwind@10028598	Global	0	FUN_1001f220			
+100285b0	8	Unwind@100285b0	Global	0	FUN_1001f220			
+100285d0	8	Unwind@100285d0	Global	0	FUN_1001f220			
+100285d8	8	Unwind@100285d8	Global	0	FUN_1001f220			
+100285e0	10	Unwind@100285e0	Global	0	FUN_1001f220			
+10028600	8	Unwind@10028600	Global	0	FUN_1000ede0			
+10028620	8	Unwind@10028620	Global	0	FUN_1001f220			
+10028628	8	Unwind@10028628	Global	0	FUN_1001f220			
+10028640	8	Unwind@10028640	Global	0	FUN_1001f220			
+10028648	8	Unwind@10028648	Global	0	FUN_1001f220			
+10028670	8	Unwind@10028670	Global	0	FUN_1001f220			
+10028678	8	Unwind@10028678	Global	0	FUN_1001f220			
+10028680	8	Unwind@10028680	Global	0	FUN_1001f220			
+10028688	8	Unwind@10028688	Global	0	FUN_1001f220			
+10028690	8	Unwind@10028690	Global	0	FUN_1001f220			
+10028698	8	Unwind@10028698	Global	0	FUN_1001f220			
+100286a0	8	Unwind@100286a0	Global	0	FUN_1001f220			
+100286a8	8	Unwind@100286a8	Global	0	FUN_1001f220			
+100286b0	8	Unwind@100286b0	Global	0	FUN_1001f220			
+100286b8	8	Unwind@100286b8	Global	0	FUN_1001f220			
+100286c0	8	Unwind@100286c0	Global	0	FUN_1001f220			
+100286c8	8	Unwind@100286c8	Global	0	FUN_1001f220			
+100286d0	8	Unwind@100286d0	Global	0	FUN_1001f220			
+100286d8	8	Unwind@100286d8	Global	0	FUN_1001f220			
+100286e0	8	Unwind@100286e0	Global	0	FUN_1001f220			
+100286e8	8	Unwind@100286e8	Global	0	FUN_1001f220			
+100286f0	8	Unwind@100286f0	Global	0	FUN_1001f220			
+100286f8	8	Unwind@100286f8	Global	0	FUN_1001f220			
+10028700	8	Unwind@10028700	Global	0	FUN_1001f220			
+10028708	8	Unwind@10028708	Global	0	FUN_1001f220			
+10028710	8	Unwind@10028710	Global	0	FUN_1001f220			
+10028718	8	Unwind@10028718	Global	0	FUN_1001f220			
+10028720	8	Unwind@10028720	Global	0	FUN_1001f220			
+10028728	8	Unwind@10028728	Global	0	FUN_1001f220			
+10028730	8	Unwind@10028730	Global	0	FUN_1001f220			
+10028738	8	Unwind@10028738	Global	0	FUN_1001f220			
+10028740	8	Unwind@10028740	Global	0	FUN_1001f220			
+10028748	8	Unwind@10028748	Global	0	FUN_1001f220			
+10028750	8	Unwind@10028750	Global	0	FUN_1001f220			
+10028758	8	Unwind@10028758	Global	0	FUN_1001f220			
+10028770	8	Unwind@10028770	Global	0	FUN_1001f220			
+10028778	8	Unwind@10028778	Global	0	FUN_1001f220			
+10028780	8	Unwind@10028780	Global	0	FUN_1001f220			
+10028788	8	Unwind@10028788	Global	0	FUN_1001f220			
+10028790	8	Unwind@10028790	Global	0	FUN_1001f220			
+100287b0	8	Unwind@100287b0	Global	0	FUN_1001f220			
+100287b8	8	Unwind@100287b8	Global	0	FUN_1001f220			
+100287c0	8	Unwind@100287c0	Global	0	FUN_1001f220			
+100287c8	8	Unwind@100287c8	Global	0	FUN_1001f220			
+100287d0	8	Unwind@100287d0	Global	0	FUN_1001f220			
+100287d8	8	Unwind@100287d8	Global	0	FUN_1001f220			
+100287e0	8	Unwind@100287e0	Global	0	FUN_1001f220			
+100287e8	8	Unwind@100287e8	Global	0	FUN_1001f220			
+100287f0	8	Unwind@100287f0	Global	0	FUN_1001f220			
+100287f8	8	Unwind@100287f8	Global	0	FUN_1001f220			
+10028810	8	Unwind@10028810	Global	0	FUN_1001f220			
+10028818	8	Unwind@10028818	Global	0	FUN_1001f220			
+10028840	8	Unwind@10028840	Global	0	FUN_1001f220			
+10028848	8	Unwind@10028848	Global	0	FUN_1001f220			
+10028860	8	Unwind@10028860	Global	0	FUN_1001f220			
+10028868	8	Unwind@10028868	Global	0	FUN_1001f220			
+10028870	8	Unwind@10028870	Global	0	FUN_1001f220			
+10028878	8	Unwind@10028878	Global	0	FUN_1001f220			
+10028880	8	Unwind@10028880	Global	0	FUN_1001f220			
+10028888	8	Unwind@10028888	Global	0	FUN_1001f220			
+10028890	8	Unwind@10028890	Global	0	FUN_1001f220			
+10028898	8	Unwind@10028898	Global	0	FUN_1001f220			
+100288a0	8	Unwind@100288a0	Global	0	FUN_1001f220			
+100288a8	8	Unwind@100288a8	Global	0	FUN_1001f220			
+100288b0	8	Unwind@100288b0	Global	0	FUN_1001f220			
+100288b8	8	Unwind@100288b8	Global	0	FUN_1001f220			
+100288c0	8	Unwind@100288c0	Global	0	FUN_1001f220			
+100288c8	8	Unwind@100288c8	Global	0	FUN_1001f220			
+100288e0	8	Unwind@100288e0	Global	0	FUN_1001f220			
+100288e8	8	Unwind@100288e8	Global	0	FUN_1001f220			
+10028900	8	Unwind@10028900	Global	0	R_FileStream::~R_FileStream			
+10028908	8	Unwind@10028908	Global	0	FUN_1001f220			
+10028910	8	Unwind@10028910	Global	0	FUN_1001f220			
+10028918	8	Unwind@10028918	Global	0	FUN_1001f220			
+10028920	8	Unwind@10028920	Global	0	FUN_1001f220			
+10028928	8	Unwind@10028928	Global	0	FUN_1001f220			
+10028930	8	Unwind@10028930	Global	0	FUN_1001f220			
+10028938	8	Unwind@10028938	Global	0	FUN_1001f220			
+10028940	8	Unwind@10028940	Global	0	FUN_1001f220			
+10028948	8	Unwind@10028948	Global	0	FUN_1001f220			
+10028950	8	Unwind@10028950	Global	0	FUN_1001f220			
+10028958	8	Unwind@10028958	Global	0	FUN_1001f220			
+10028960	8	Unwind@10028960	Global	0	FUN_1001f220			
+10028968	8	Unwind@10028968	Global	0	FUN_1001f220			
+10028970	8	Unwind@10028970	Global	0	FUN_1001f220			
+10028978	8	Unwind@10028978	Global	0	FUN_1001f220			
+10028980	8	Unwind@10028980	Global	0	FUN_1001f220			
+100289a0	8	Unwind@100289a0	Global	0	R_FileStream::~R_FileStream			
+100289a8	8	Unwind@100289a8	Global	0	FUN_1001f220			
+100289b0	8	Unwind@100289b0	Global	0	FUN_1001f220			
+100289b8	8	Unwind@100289b8	Global	0	FUN_1001f220			
+100289c0	8	Unwind@100289c0	Global	0	FUN_1001f220			
+100289c8	10	Unwind@100289c8	Global	0	FUN_1001f220			
+100289e0	8	Unwind@100289e0	Global	0	std::rs::~rs			
+10028a00	8	Unwind@10028a00	Global	0	std::rs::~rs			
+10028a20	8	Unwind@10028a20	Global	0	R_Memory::~R_Memory			
+10028a28	8	Unwind@10028a28	Global	0	FUN_1000ebc0			
+10028a30	8	Unwind@10028a30	Global	0	FUN_1000ebc0			
+10028a38	8	Unwind@10028a38	Global	0	std::rs::~rs			
+10028a50	8	Unwind@10028a50	Global	0	FUN_1001f220			
+10028a58	8	Unwind@10028a58	Global	0	FUN_1001f220			
+10028a60	10	Unwind@10028a60	Global	0	FUN_1001f220			
+10028a80	8	Unwind@10028a80	Global	0	FUN_1001f220			
+10028a88	8	Unwind@10028a88	Global	0	FUN_1001f220			
+10028a90	10	Unwind@10028a90	Global	0	FUN_1001f220			
+10028ab0	8	Unwind@10028ab0	Global	0	FUN_1001f220			
+10028ab8	8	Unwind@10028ab8	Global	0	FUN_1001f220			
+10028ac0	10	Unwind@10028ac0	Global	0	FUN_1001f220			
+10028ae0	8	Unwind@10028ae0	Global	0	FUN_1001f220			
+10028ae8	8	Unwind@10028ae8	Global	0	FUN_1001f220			
+10028af0	10	Unwind@10028af0	Global	0	FUN_1001f220			
+10028b10	8	Unwind@10028b10	Global	0	FUN_1001f220			
+10028b18	8	Unwind@10028b18	Global	0	FUN_1001f220			
+10028b20	10	Unwind@10028b20	Global	0	FUN_1001f220			
+10028b40	8	Unwind@10028b40	Global	0	FUN_1001f220			
+10028b48	8	Unwind@10028b48	Global	0	FUN_1001f220			
+10028b50	10	Unwind@10028b50	Global	0	FUN_1001f220			
+10028b70	8	Unwind@10028b70	Global	0	FUN_1000ebc0			
+10028b78	11	Unwind@10028b78	Global	0	std::rs::~rs			
+10028b83	11	Unwind@10028b83	Global	0	FUN_10016430			
+10028ba0	8	Unwind@10028ba0	Global	0	FUN_1000ebc0			
+10028ba8	11	Unwind@10028ba8	Global	0	std::rs::~rs			
+10028bb3	11	Unwind@10028bb3	Global	0	FUN_10016430			
+10028bd0	8	Unwind@10028bd0	Global	0	FUN_1000ebc0			
+10028bd8	11	Unwind@10028bd8	Global	0	std::rs::~rs			
+10028be3	11	Unwind@10028be3	Global	0	FUN_10016430			
+10028c00	8	Unwind@10028c00	Global	0	FUN_1000ebc0			
+10028c08	11	Unwind@10028c08	Global	0	std::rs::~rs			
+10028c13	11	Unwind@10028c13	Global	0	FUN_10016430			
+10028c30	11	Unwind@10028c30	Global	0	FUN_10028130			
+10028c3b	8	Unwind@10028c3b	Global	0	FUN_1001f220			
+10028c43	8	Unwind@10028c43	Global	0	FUN_1001f220			
+10028c4b	10	Unwind@10028c4b	Global	0	FUN_1001f220			
+10028c70	11	Unwind@10028c70	Global	0	FUN_10028130			
+10028c7b	8	Unwind@10028c7b	Global	0	FUN_1001f220			
+10028c83	8	Unwind@10028c83	Global	0	FUN_1001f220			
+10028c8b	10	Unwind@10028c8b	Global	0	FUN_1001f220			
+10028ca0	11	Unwind@10028ca0	Global	0	FUN_10028130			
+10028cab	8	Unwind@10028cab	Global	0	FUN_1001f220			
+10028cb3	8	Unwind@10028cb3	Global	0	FUN_1001f220			
+10028cd0	8	Unwind@10028cd0	Global	0	FUN_1001f220			
+10028cd8	8	Unwind@10028cd8	Global	0	FUN_1001f220			
+10028cf0	8	Unwind@10028cf0	Global	0	FUN_1001f220			
+10028cf8	8	Unwind@10028cf8	Global	0	FUN_1001f220			
+10028d10	8	Unwind@10028d10	Global	0	FUN_1001f220			
+10028d18	8	Unwind@10028d18	Global	0	FUN_1001f220			
+10028d30	8	Unwind@10028d30	Global	0	FUN_1001f220			
+10028d38	8	Unwind@10028d38	Global	0	FUN_1001f220			
+10028d50	8	Unwind@10028d50	Global	0	FUN_1001f220			
+10028d58	8	Unwind@10028d58	Global	0	FUN_1001f220			
+10028d70	8	Unwind@10028d70	Global	0	FUN_1001f220			
+10028d78	8	Unwind@10028d78	Global	0	FUN_1001f220			
+10028d90	8	Unwind@10028d90	Global	0	FUN_1001f220			
+10028d98	8	Unwind@10028d98	Global	0	FUN_1001f220			
+10028db0	8	Unwind@10028db0	Global	0	FUN_1001f220			
+10028db8	8	Unwind@10028db8	Global	0	FUN_1001f220			
+10028dd0	8	Unwind@10028dd0	Global	0	FUN_1001f220			
+10028dd8	8	Unwind@10028dd8	Global	0	FUN_1001f220			
+10028df0	8	Unwind@10028df0	Global	0	FUN_1001f220			
+10028df8	8	Unwind@10028df8	Global	0	FUN_1001f220			
+10028e10	8	Unwind@10028e10	Global	0	FUN_1001f220			
+10028e18	8	Unwind@10028e18	Global	0	FUN_1001f220			
+10028e30	8	Unwind@10028e30	Global	0	FUN_1001f220			
+10028e38	8	Unwind@10028e38	Global	0	FUN_1001f220			
+10028e80	8	Unwind@10028e80	Global	0	FUN_1000ebc0			
+10028e88	8	Unwind@10028e88	Global	0	FUN_1000ebc0			
+10028e90	8	Unwind@10028e90	Global	0	FUN_1001f220			
+10028e98	8	Unwind@10028e98	Global	0	FUN_10016430			
+10028eb0	8	Unwind@10028eb0	Global	0	R_MemoryFile::Chunk::~Chunk			
+10028ed0	8	Unwind@10028ed0	Global	0	R_MemoryFile::Chunk::~Chunk			
+10028ef0	8	Unwind@10028ef0	Global	0	R_MemoryFile::Chunk::~Chunk			
+10028f10	8	Unwind@10028f10	Global	0	R_MemoryFile::Chunk::~Chunk			
+10028f30	8	Unwind@10028f30	Global	0	FUN_1001f220			
+10028f38	8	Unwind@10028f38	Global	0	FUN_1001f220			
+10028f40	10	Unwind@10028f40	Global	0	FUN_1001f220			
+10028f60	8	Unwind@10028f60	Global	0	FUN_1001f220			
+10028f68	8	Unwind@10028f68	Global	0	FUN_1001f220			
+10028f70	8	Unwind@10028f70	Global	0	FUN_1001f220			
+10028f78	8	Unwind@10028f78	Global	0	FUN_1001f220			
+10028f90	8	Unwind@10028f90	Global	0	R_Memory::~R_Memory			
+10028fb0	8	Unwind@10028fb0	Global	0	R_Memory::~R_Memory			
+10028fd0	8	Unwind@10028fd0	Global	0	FUN_1001f220			
+10028fd8	8	Unwind@10028fd8	Global	0	FUN_1001f220			
+10028fe0	10	Unwind@10028fe0	Global	0	FUN_1001f220			
+10029000	8	Unwind@10029000	Global	0	FUN_1001f220			
+10029008	8	Unwind@10029008	Global	0	FUN_1001f220			
+10029010	8	Unwind@10029010	Global	0	FUN_1001f220			
+10029030	8	Unwind@10029030	Global	0	FUN_1001b310			
+10029038	11	Unwind@10029038	Global	0	FUN_1001b310			
+10029050	9	Unwind@10029050	Global	0				
+10029059	9	Unwind@10029059	Global	0				
+10029062	9	Unwind@10029062	Global	0				
+1002906b	9	Unwind@1002906b	Global	0				
+10029074	11	Unwind@10029074	Global	0	FUN_10028130			
+1002907f	11	Unwind@1002907f	Global	0	FUN_10028130			
+100290a0	8	Unwind@100290a0	Global	0	FUN_1001f220			
+100290a8	8	Unwind@100290a8	Global	0	FUN_1001f220			
+100290c0	8	Unwind@100290c0	Global	0	FUN_1001f220			
+100290c8	8	Unwind@100290c8	Global	0	FUN_1001f220			
+100290e0	8	Unwind@100290e0	Global	0	FUN_1001f220			
+100290e8	8	Unwind@100290e8	Global	0	FUN_1001f220			
+10029100	8	Unwind@10029100	Global	0	R_ScriptLock::~R_ScriptLock			
+10029120	8	Unwind@10029120	Global	0	R_ScriptLock::~R_ScriptLock			
+10029140	8	Unwind@10029140	Global	0	FUN_1001f220			
+10029148	8	Unwind@10029148	Global	0	FUN_1001f220			
+10029150	8	Unwind@10029150	Global	0	FUN_1001f220			
+10029158	8	Unwind@10029158	Global	0	FUN_1001f220			
+10029160	8	Unwind@10029160	Global	0	FUN_1001f220			
+10029168	8	Unwind@10029168	Global	0	FUN_1001f220			
+10029170	8	Unwind@10029170	Global	0	FUN_1001f220			
+10029178	8	Unwind@10029178	Global	0	FUN_1001f220			
+10029180	8	Unwind@10029180	Global	0	FUN_1001f220			
+10029188	8	Unwind@10029188	Global	0	FUN_1001f220			
+10029190	8	Unwind@10029190	Global	0	FUN_1001f220			
+10029198	8	Unwind@10029198	Global	0	FUN_1001f220			
+100291a0	8	Unwind@100291a0	Global	0	FUN_1001f220			
+100291a8	8	Unwind@100291a8	Global	0	FUN_1001f220			
+100291b0	8	Unwind@100291b0	Global	0	FUN_1001f220			
+100291b8	8	Unwind@100291b8	Global	0	FUN_1001f220			
+100291c0	8	Unwind@100291c0	Global	0	FUN_1001f220			
+100291c8	8	Unwind@100291c8	Global	0	FUN_1001f220			
+100291e0	8	Unwind@100291e0	Global	0	R_ScriptLock::~R_ScriptLock			
+10029200	8	Unwind@10029200	Global	0	R_ScriptLock::~R_ScriptLock			
+10029220	8	Unwind@10029220	Global	0	FUN_1001f220			
+10029228	8	Unwind@10029228	Global	0	FUN_1001f220			
+10029230	8	Unwind@10029230	Global	0	FUN_1001f220			
+10029238	8	Unwind@10029238	Global	0	FUN_1001f220			
+10029240	8	Unwind@10029240	Global	0	FUN_1001f220			
+10029260	8	Unwind@10029260	Global	0	FUN_1001f220			
+10029280	11	Unwind@10029280	Global	0	FUN_1000ebc0			
+1002928b	8	Unwind@1002928b	Global	0	FUN_1000ebc0			
+10029293	8	Unwind@10029293	Global	0	std::rs::~rs			
+1002929b	8	Unwind@1002929b	Global	0	R_FileDirectoryChange::~R_FileDirectoryChange			
+100292a3	11	Unwind@100292a3	Global	0	FUN_10028130			
+100292ae	8	Unwind@100292ae	Global	0	FUN_1001f220			
+100292b6	8	Unwind@100292b6	Global	0	FUN_1001f220			
+100292d0	8	Unwind@100292d0	Global	0	FUN_1001e730			
+100292d8	8	Unwind@100292d8	Global	0	R_Memory::~R_Memory			
+100292e0	11	Unwind@100292e0	Global	0	FUN_10028130			
+100292eb	23	Unwind@100292eb	Global	0	FUN_1000ebc0			
+10029302	8	Unwind@10029302	Global	0	FUN_1001f220			
+1002930a	11	Unwind@1002930a	Global	0	FUN_10028130			
+10029315	23	Unwind@10029315	Global	0	FUN_100248f0			
+1002932c	8	Unwind@1002932c	Global	0	FUN_1001f220			
+10029334	11	Unwind@10029334	Global	0	FUN_10028130			
+1002933f	23	Unwind@1002933f	Global	0	FUN_100248f0			
+10029356	8	Unwind@10029356	Global	0	FUN_1001f220			
+1002935e	8	Unwind@1002935e	Global	0	FUN_1001f220			
+10029366	8	Unwind@10029366	Global	0	FUN_1001f220			
+1002936e	8	Unwind@1002936e	Global	0	FUN_1001f220			
+10029376	11	Unwind@10029376	Global	0	FUN_10028130			
+10029381	23	Unwind@10029381	Global	0	FUN_1000ebc0			
+10029398	8	Unwind@10029398	Global	0	FUN_1001f220			
+100293a0	8	Unwind@100293a0	Global	0	FUN_1001f220			
+100293a8	8	Unwind@100293a8	Global	0	FUN_1001f220			
+100293c0	8	Unwind@100293c0	Global	0	FUN_1001f220			
+100293c8	8	Unwind@100293c8	Global	0	FUN_1001f220			
+100293d0	8	Unwind@100293d0	Global	0	FUN_1001f220			
+100293d8	8	Unwind@100293d8	Global	0	FUN_1001f220			
+100293e0	8	Unwind@100293e0	Global	0	FUN_1001f220			
+100293e8	8	Unwind@100293e8	Global	0	FUN_1001f220			
+100293f0	8	Unwind@100293f0	Global	0	FUN_1001f220			
+100293f8	8	Unwind@100293f8	Global	0	FUN_1001f220			
+10029400	8	Unwind@10029400	Global	0	FUN_1001f220			
+10029408	8	Unwind@10029408	Global	0	FUN_1001f220			
+10029420	8	Unwind@10029420	Global	0	FUN_1001f220			
+10029428	8	Unwind@10029428	Global	0	FUN_1001f220			
+10029430	8	Unwind@10029430	Global	0	FUN_1001f220			
+10029438	8	Unwind@10029438	Global	0	FUN_1001f220			
+10029440	8	Unwind@10029440	Global	0	FUN_1001f220			
+10029448	8	Unwind@10029448	Global	0	FUN_1001f220			
+10029450	8	Unwind@10029450	Global	0	FUN_1001f220			
+10029458	8	Unwind@10029458	Global	0	FUN_1001f220			
+10029460	8	Unwind@10029460	Global	0	FUN_1001f220			
+10029468	8	Unwind@10029468	Global	0	FUN_1001f220			
+10029470	8	Unwind@10029470	Global	0	FUN_1001f220			
+10029478	8	Unwind@10029478	Global	0	FUN_1001f220			
+10029480	8	Unwind@10029480	Global	0	FUN_1001f220			
+10029488	8	Unwind@10029488	Global	0	FUN_1001f220			
+100294a0	11	Unwind@100294a0	Global	0	FUN_100236c0			
+100294ab	11	Unwind@100294ab	Global	0	FUN_10023810			
+100294b6	11	Unwind@100294b6	Global	0	FUN_10023960			
+100294c1	8	Unwind@100294c1	Global	0	FUN_1001f220			
+100294c9	8	Unwind@100294c9	Global	0	FUN_1001f220			
+100294d1	8	Unwind@100294d1	Global	0	FUN_1001f220			
+100294d9	8	Unwind@100294d9	Global	0	FUN_1001f220			
+100294e1	8	Unwind@100294e1	Global	0	FUN_1001f220			
+100294e9	8	Unwind@100294e9	Global	0	FUN_1001f220			
+100294f1	8	Unwind@100294f1	Global	0	FUN_1001f220			
+100294f9	8	Unwind@100294f9	Global	0	FUN_1001f220			
+10029501	8	Unwind@10029501	Global	0	FUN_1001f220			
+10029509	8	Unwind@10029509	Global	0	FUN_1001f220			
+10029511	11	Unwind@10029511	Global	0	FUN_1001f220			
+1002951c	11	Unwind@1002951c	Global	0	FUN_1001f220			
+10029527	11	Unwind@10029527	Global	0	FUN_10021630			
+10029532	11	Unwind@10029532	Global	0	FUN_10021630			
+1002953d	11	Unwind@1002953d	Global	0	FUN_10021630			
+10029548	11	Unwind@10029548	Global	0	FUN_10021640			
+10029553	11	Unwind@10029553	Global	0	FUN_10021630			
+1002955e	11	Unwind@1002955e	Global	0	FUN_1001f220			
+10029569	11	Unwind@10029569	Global	0	FUN_1001f220			
+10029574	11	Unwind@10029574	Global	0	FUN_1001f220			
+1002957f	11	Unwind@1002957f	Global	0	FUN_1001f220			
+1002958a	11	Unwind@1002958a	Global	0	FUN_1001f220			
+10029595	11	Unwind@10029595	Global	0	FUN_1001f220			
+100295a0	11	Unwind@100295a0	Global	0	FUN_1001f220			
+100295ab	11	Unwind@100295ab	Global	0	FUN_1001f220			
+100295b6	11	Unwind@100295b6	Global	0	FUN_1001f220			
+100295c1	11	Unwind@100295c1	Global	0	FUN_1001f220			
+100295cc	11	Unwind@100295cc	Global	0	FUN_1001f220			
+100295d7	11	Unwind@100295d7	Global	0	FUN_1001f220			
+100295e2	8	Unwind@100295e2	Global	0	FUN_1001f220			
+100295ea	8	Unwind@100295ea	Global	0	FUN_1001f220			
+100295f2	11	Unwind@100295f2	Global	0	FUN_10021630			
+100295fd	8	Unwind@100295fd	Global	0	FUN_1001f220			
+10029605	8	Unwind@10029605	Global	0	FUN_1001f220			
+1002960d	8	Unwind@1002960d	Global	0	FUN_1001f220			
+10029615	11	Unwind@10029615	Global	0	FUN_1001f220			
+10029620	11	Unwind@10029620	Global	0	FUN_1001f220			
+10029640	8	Unwind@10029640	Global	0	FUN_1001f220			
+10029648	8	Unwind@10029648	Global	0	FUN_1001f220			
+10029650	10	Unwind@10029650	Global	0	FUN_1001f220			
+10029670	8	Unwind@10029670	Global	0	FUN_1001f220			
+10029678	8	Unwind@10029678	Global	0	FUN_1001f220			
+10029680	10	Unwind@10029680	Global	0	FUN_1001f220			
+100296a0	8	Unwind@100296a0	Global	0	FUN_1001f220			
+100296a8	8	Unwind@100296a8	Global	0	FUN_1001f220			
+100296b0	8	Unwind@100296b0	Global	0	FUN_1001f220			
+100296d0	8	Unwind@100296d0	Global	0	FUN_1001f220			
+100296d8	8	Unwind@100296d8	Global	0	FUN_1001f220			
+100296e0	10	Unwind@100296e0	Global	0	FUN_1001f220			
+10029700	17	Unwind@10029700	Global	0	FUN_1000ebc0			
+10029711	8	Unwind@10029711	Global	0	FUN_1000ebc0			
+10029730	8	Unwind@10029730	Global	0	FUN_100248f0			
+10029750	8	Unwind@10029750	Global	0	FUN_100248f0			
+10029770	8	Unwind@10029770	Global	0	FUN_100248f0			
+10029790	8	Unwind@10029790	Global	0	FUN_100248f0			
+100297b0	8	Unwind@100297b0	Global	0	FUN_10026f50			
+100297b8	11	Unwind@100297b8	Global	0	FUN_10027090			
+100297c3	12	Unwind@100297c3	Global	0				
+100297cf	14	Unwind@100297cf	Global	0	FUN_100271e0			
+100297f0	8	Unwind@100297f0	Global	0	FUN_10026f50			
+100297f8	11	Unwind@100297f8	Global	0	FUN_10027090			
+10029803	12	Unwind@10029803	Global	0				
+1002980f	14	Unwind@1002980f	Global	0	FUN_100271e0			
+10029830	8	Unwind@10029830	Global	0	FUN_10026f50			
+10029838	11	Unwind@10029838	Global	0	FUN_10027090			
+10029850	8	Unwind@10029850	Global	0	R_Profile::~R_Profile			
+10029870	8	Unwind@10029870	Global	0	FUN_1001f220			
+10029878	8	Unwind@10029878	Global	0	FUN_1001f220			
+10029880	10	Unwind@10029880	Global	0	FUN_1001f220			
+100298a0	8	Unwind@100298a0	Global	0	FUN_1000ebc0			
+100298a8	8	Unwind@100298a8	Global	0	std::rs::~rs			
+100298b0	8	Unwind@100298b0	Global	0	FUN_1000ebc0			
+100298d0	8	Unwind@100298d0	Global	0	FUN_1000ebc0			
+100298d8	8	Unwind@100298d8	Global	0	FUN_1000ebc0			
+100298e0	8	Unwind@100298e0	Global	0	std::rs::~rs			
+100298e8	8	Unwind@100298e8	Global	0	FUN_1000ebc0			
+100298f0	23	Unwind@100298f0	Global	0	std::rs::~rs			
+10029920	8	Unwind@10029920	Global	0	FUN_1000ebc0			
+10029928	8	Unwind@10029928	Global	0	FUN_1000ebc0			
+10029930	8	Unwind@10029930	Global	0	std::rs::~rs			
+10029938	8	Unwind@10029938	Global	0	FUN_1000ebc0			
+10029950	8	Unwind@10029950	Global	0	FUN_1000ebc0			
+10029958	8	Unwind@10029958	Global	0	std::rs::~rs			
+10029960	8	Unwind@10029960	Global	0	FUN_1000ebc0			
+10029980	8	Unwind@10029980	Global	0	FUN_1000ebc0			
+10029988	8	Unwind@10029988	Global	0	std::rs::~rs			
+10029990	8	Unwind@10029990	Global	0	FUN_1000ebc0			

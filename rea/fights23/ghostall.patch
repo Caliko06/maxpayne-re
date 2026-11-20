@@ -1,0 +1,40 @@
+diff --git a/host/gamestate.c b/host/gamestate.c
+index 3a47074..e2e8b9e 100644
+--- a/host/gamestate.c
++++ b/host/gamestate.c
+@@ -162,7 +162,7 @@ static void player(Ctx *c, uint32_t cell, uint32_t ch) {
+     }
+ }
+ 
+-static int32_t en_base[GS_ENEMIES], en_weap[GS_ENEMIES];
++static int32_t en_base[GS_ENEMIES], en_weap[GS_ENEMIES]; static uint32_t en_ai[GS_ENEMIES], en_ch[GS_ENEMIES];
+ static void enemies(Ctx *c, uint32_t gm) {
+     uint32_t b = rd(c, gm + 0x24c), e = rd(c, gm + 0x250);              // vector of MaxPayne_ArtificialPlayerInput* (0x450287)
+     if (!b || e < b || e - b > 4096 * 4) return;
+@@ -176,7 +176,7 @@ static void enemies(Ctx *c, uint32_t gm) {
+         memcpy(x->pos, c->mem + ch + 0x72, 12);
+         x->health = ldf(c, ch + 0x2b3);
+         x->flags = (dead ? GSE_DEAD : 0) | (c->mem[ch + 0x2dc] ? GSE_AI_ACTIVE : 0);
+-        x->room = rd(c, ch + 0x7e);
++        x->room = rd(c, ch + 0x7e); en_ai[gs.enemies - 1] = ai; en_ch[gs.enemies - 1] = ch;
+         uint32_t prm = rd(c, ch + 0x718);
+         en_base[gs.enemies - 1] = prm ? (int32_t)rd(c, prm + 0x5d) : 0; en_weap[gs.enemies - 1] = (int32_t)rd(c, ch + 0x2a9);
+         uint32_t id = rd(c, ch + 0x198), tab = rd(c, 0x8b84cd), nm = 0;   /* 0x683f79, 0x459590 */
+@@ -448,6 +448,17 @@ void gamestate_frame(Ctx *c) {
+                 rd(c, 0x8a6338 + 0xc8), rd(c, rd(c, 0x8a6338 + 0xc8) + 0x19), gm, gm ? rd(c, gm + 0x1074) : 0,
+                 gm ? rd(c, gm + 0x1080) : 0, ch, ch ? (int32_t)rd(c, ch + 0x35b) : 0, ch ? (int32_t)rd(c, ch + 0x363) : 0,
+                 gs.vel[0], gs.vel[1], gs.vel[2], gs.pitch * 57.29578f);   // pitch in degrees, for input parity
++        { const char *pat = getenv("RN_GHOSTALL");   // SCRATCH: perception of the named foes (MT = AP+0x157)
++          for (uint32_t k = 0; pat && k < gs.enemies && k < GS_ENEMIES; k++) {
++            if (gs.en[k].health <= 0 || !(pat[0] == '*' || strstr(en_name[k], pat))) continue;
++            uint32_t ai = en_ai[k], ch = en_ch[k], mt = ai + 0x157; float in, tmo, ls;
++            memcpy(&in, c->mem + mt + 0x3b0, 4); memcpy(&tmo, c->mem + mt + 0x3b4, 4); memcpy(&ls, c->mem + ai + 0x5fc, 4);
++            float dx = gs.en[k].pos[0] - gs.pos[0], dz = gs.en[k].pos[2] - gs.pos[2];
++            fprintf(stderr, "ghost   AI%u %s room %u/%u d %.1f pos %.2f %.2f %.2f hp %.1f act %d hit %d seen %d perc %d f3ac %d f3ae %d int %.2f tmo %.2f lastseen %.2f nonreact %d iues %d\n",
++                    k, en_name[k], gs.en[k].room, gs.room, sqrtf(dx * dx + dz * dz), gs.en[k].pos[0], gs.en[k].pos[1], gs.en[k].pos[2], gs.en[k].health,
++                    c->mem[ch + 0x2dc], c->mem[ch + 0x22e + 5], c->mem[mt + 0x3ad], c->mem[mt + 0x3af], c->mem[mt + 0x3ac], c->mem[mt + 0x3ae], in, tmo, ls,
++                    c->mem[ai + 0x57d], c->mem[ai + 0x57e]);
++          } }
+         for (uint32_t k = 0, shown = 0; k < gs.enemies && k < GS_ENEMIES && shown < 6; k++) {   // the live ones near the player
+             float dx = gs.en[k].pos[0] - gs.pos[0], dy = gs.en[k].pos[1] - gs.pos[1], dz = gs.en[k].pos[2] - gs.pos[2];
+             if (gs.en[k].health <= 0 || gs.en[k].room != gs.room || dx * dx + dy * dy + dz * dz > 30.f * 30.f) continue;

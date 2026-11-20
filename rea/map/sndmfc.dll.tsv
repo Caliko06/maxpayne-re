@@ -1,0 +1,467 @@
+entry	size	name	namespace	callers	callees	imports	strings	caller_names
+10301000	7	isConstructed	S_Listener	0				
+10301010	403	`default_constructor_closure'	S_Listener	0	S_Listener::S_Listener,FUN_10304520,FUN_1030e5b4			
+103011b0	6	getObjectType	S_Listener	0			S_Listener	
+103011c0	7	isConstructed	S_Sound	0				
+103011d0	6	getObjectType	S_Sound	0			S_Sound	
+103011f0	18	FUN_103011f0	Global	0				
+10301210	12	FUN_10301210	Global	0	FUN_1030e5b4			
+10301250	11	FUN_10301250	Global	0				
+10301260	12	FUN_10301260	Global	0	FUN_1030e5b4			
+10301290	762	FUN_10301290	Global	0	FUN_10305210,FUN_10304360,FUN_103054b0,FUN_10304620,FUN_103056f0,FUN_10304c90,FUN_103045b0,FUN_10304380,FUN_10305190,S_Device::~S_Device,FUN_10304ce0,FUN_103054d0,FUN_10304440,S_Device::S_Device	RLMFC.DLL!~R_Exception,RLMFC.DLL!R_MemoryScope,RLMFC.DLL!~R_MemoryScope,MFC42.DLL!operator_new	Sound Library	
+10301590	812	FUN_10301590	Global	4	S_Device::getGUID,FUN_10304360,FUN_10301a30,FUN_10305270,FUN_10304620,S_Device::getNullDeviceGUID,FUN_10304660,FUN_10301950,FUN_10305e80,FUN_10304380,S_Device::~S_Device,S_Device::S_Device	OLE32.DLL!CoUninitialize,DSOUND.DLL!Ordinal_2,RLMFC.DLL!M_FPUControl,RLMFC.DLL!R_MemoryScope,USER32.DLL!GetDesktopWindow,RLMFC.DLL!~R_MemoryScope,OLE32.DLL!CoInitialize,RLMFC.DLL!~M_FPUControl,OLE32.DLL!CoCreateInstance	Sound Library | Null Audio Device	FUN_10301950,S_Listener::getFirstDevice,S_Listener::getNextDevice,S_Listener::testOutputDeviceFunctionality
+103018c0	21	getFirstDevice	S_Listener	1	FUN_10301590			S_Listener::testOutputDeviceFunctionality
+103018e0	87	getNextDevice	S_Listener	1	FUN_10301590			S_Listener::testOutputDeviceFunctionality
+10301940	6	FUN_10301940	Global	1				FUN_1030b380
+10301950	214	FUN_10301950	Global	3	S_Device::getGUID,S_Device::getNullDeviceGUID,FUN_10301590	RLMFC.DLL!M_FPUControl,OLE32.DLL!CoUninitialize,OLE32.DLL!CoInitialize,RLMFC.DLL!~M_FPUControl,OLE32.DLL!CoCreateInstance		S_Listener::construct,S_Listener::testOutputDeviceFunctionality,FUN_10301590
+10301a30	82	FUN_10301a30	Global	3	S_Device::getGUID,S_Device::getNullDeviceGUID	RLMFC.DLL!M_FPUControl,OLE32.DLL!CoUninitialize,RLMFC.DLL!~M_FPUControl		S_Listener::destruct,S_Listener::testOutputDeviceFunctionality,FUN_10301590
+10301a90	589	S_Listener	S_Listener	1	FUN_103050b0,FUN_10304520,FUN_10306aa0,S_Listener::construct,FUN_10305010	E2MFC.DLL!P_BaseObject		S_Listener::`default_constructor_closure'
+10301ce0	30	FUN_10301ce0	Global	0	S_Listener::~S_Listener	MFC42.DLL!operator_delete		
+10301d00	527	S_Listener	S_Listener	0	FUN_103050b0,FUN_10304520,FUN_10306aa0,FUN_10305010,S_Listener::construct	E2MFC.DLL!P_BaseObject		
+10301f10	31	~S_Listener	S_Listener	1	S_Listener::destruct	E2MFC.DLL!~P_BaseObject		FUN_10301ce0
+10301f30	19	operator=	S_Listener	0	S_Listener::construct			
+10301f50	1708	construct	S_Listener	1	FUN_10305210,S_Listener::setScaleFactor,FUN_10305170,FUN_10306a10,FUN_10302c90,S_Listener::setActive,FUN_10306a50,S_Listener::destruct,FUN_103061c0,FUN_103085c0,FUN_1030be20,FUN_10303300,FUN_103069b0,FUN_1030e5b4,FUN_10306710,FUN_103062f0	KERNEL32.DLL!WaitForSingleObject,RLMFC.DLL!setError,KERNEL32.DLL!CreateEventA,KERNEL32.DLL!ReleaseMutex,E2MFC.DLL!calculateObjectToWorldMatrix,MFC42.DLL!operator_new,RLMFC.DLL!~R_Exception,KERNEL32.DLL!CreateMutexA,RLMFC.DLL!M_FPUControl,RLMFC.DLL!R_Exception,MSVCRT.DLL!_CxxThrowException,RLMFC.DLL!~M_FPUControl	Could not initialize sound system | Could not initialize sound system | Remedy sound mutex | Out of system memory resources | Out of system memory resources	S_Listener::S_Listener
+103025fc	17	Catch@103025fc	Global	0	S_Listener::destruct	MSVCRT.DLL!_CxxThrowException		
+10302610	19	FUN_10302610	Global	1		RLMFC.DLL!R_Exception		S_Listener::construct
+10302630	6	~R_Exception	RLMFC.DLL::R_Exception	49				Unwind@1030e889,Unwind@1030e9b0,Unwind@1030e866,Unwind@1030eed8,Unwind@1030ef38,Unwind@1030e940,Unwind@1030e829,Unwind@1030e849
+10302640	469	construct	S_Listener	2	S_Listener::setScaleFactor,S_Listener::destruct,FUN_10306980,FUN_103069b0,FUN_10305150	KERNEL32.DLL!WaitForSingleObject,KERNEL32.DLL!ReleaseMutex		S_Listener::S_Listener,S_Listener::operator=
+10302815	17	Catch@10302815	Global	0	S_Listener::destruct	MSVCRT.DLL!_CxxThrowException		
+10302830	1118	destruct	S_Listener	5	FUN_10301a30,FUN_103069b0,FUN_10306a10,FUN_10306770,FUN_10306530,FUN_10306980,FUN_10303330,FUN_103069e0,FUN_10308370,FUN_10305150	KERNEL32.DLL!WaitForSingleObject,KERNEL32.DLL!CloseHandle,KERNEL32.DLL!ReleaseMutex,RLMFC.DLL!M_FPUControl,MFC42.DLL!operator_delete,RLMFC.DLL!~M_FPUControl		Catch@10302815,Catch@103025fc,S_Listener::~S_Listener,S_Listener::construct,S_Listener::construct
+10302c90	222	FUN_10302c90	Global	2		RLMFC.DLL!M_FPUControl,RLMFC.DLL!~M_FPUControl		S_Listener::construct,FUN_1030aad0
+10302d70	1328	FUN_10302d70	Global	1	FUN_1030b380,S_Sound::stop,FUN_1030a8f0,FUN_1030ae20,FUN_1030b6e0,FUN_1030e5b4,FUN_1030bda0,FUN_10304a60,FUN_1030bb60,FUN_1030ba90,FUN_1030a140,FUN_1030bc60,FUN_10304650	KERNEL32.DLL!WaitForSingleObject,KERNEL32.DLL!ReleaseMutex,RLMFC.DLL!M_FPUControl,RLMFC.DLL!~M_FPUControl,RLMFC.DLL!getAppAge,MSVCRT.DLL!qsort		S_Listener::update
+10303300	43	FUN_10303300	Global	2		KERNEL32.DLL!SetThreadPriority,MFC42.DLL!AfxBeginThread		S_Listener::construct,S_Listener::setUpdateMechanism
+10303330	44	FUN_10303330	Global	2		KERNEL32.DLL!SetEvent		S_Listener::destruct,S_Listener::setUpdateMechanism
+103033c0	236	executeAlways	S_Listener	0	FUN_10303fc0	E2MFC.DLL!calculateObjectToWorldMatrix		
+103034b0	68	addTo	S_Listener	0		E2MFC.DLL!calculateObjectToWorldMatrix,E2MFC.DLL!addTo		
+10303500	59	setProperties	S_Listener	0				
+10303540	152	testOutputDeviceFunctionality	S_Listener	0	S_Device::getGUID,FUN_10301950,S_Listener::getFirstDevice,FUN_10301a30,S_Device::getNullDeviceGUID,S_Listener::getNextDevice,FUN_10301590	USER32.DLL!GetDesktopWindow		
+103035e0	85	setUpdateMechanism	S_Listener	0	S_Listener::update,FUN_10303330,FUN_10303300			
+10303640	6	getUpdateMechanism	S_Listener	0				
+10303650	19	setUpdateInterval	S_Listener	0				
+10303670	7	getUpdateInterval	S_Listener	0				
+10303680	41	setThreadPriority	S_Listener	0		KERNEL32.DLL!SetThreadPriority		
+103036b0	6	getThreadPriority	S_Listener	0				
+103036c0	194	setProgramFocus	S_Listener	0	S_Sound::isSoundPaused,S_Sound::play,FUN_1030ae20,S_Sound::isSoundPlaying	KERNEL32.DLL!WaitForSingleObject,KERNEL32.DLL!ReleaseMutex		
+10303790	178	killProgramFocus	S_Listener	0	S_Sound::pause,S_Sound::isSoundPaused,S_Sound::isSoundPlaying	KERNEL32.DLL!WaitForSingleObject,KERNEL32.DLL!ReleaseMutex		
+10303850	117	getSoundOnChannel	S_Listener	0		KERNEL32.DLL!WaitForSingleObject,KERNEL32.DLL!ReleaseMutex		
+103038d0	6	getChannelCount	S_Listener	0				
+103038e0	12	mute	S_Listener	0	FUN_10303fc0			
+103038f0	12	unmute	S_Listener	0	FUN_10303fc0			
+10303900	310	setDoppler	S_Listener	0		KERNEL32.DLL!WaitForSingleObject,KERNEL32.DLL!ReleaseMutex		
+10303a40	7	getDoppler	S_Listener	0				
+10303a50	100	setScaleFactor	S_Listener	2		RLMFC.DLL!M_FPUControl,RLMFC.DLL!~M_FPUControl		S_Listener::construct,S_Listener::construct
+10303ac0	7	getScaleFactor	S_Listener	0				
+10303ad0	32	setPosition	S_Listener	0	FUN_10303fc0	E2MFC.DLL!setPosition		
+10303af0	141	setMatrix	S_Listener	0		E2MFC.DLL!invalidateMatrices		
+10303b80	93	setRotation	S_Listener	0	FUN_10303fc0	E2MFC.DLL!invalidateMatrices		
+10303be0	66	setVelocity	S_Listener	0	FUN_10303fc0			
+10303c30	33	getVelocity	S_Listener	0				
+10303c60	90	setMusicVolume	S_Listener	0	FUN_10303fc0			
+10303cc0	7	getMusicVolume	S_Listener	0				
+10303cd0	90	setEffectsVolume	S_Listener	0	FUN_10303fc0			
+10303d30	7	getEffectsVolume	S_Listener	0				
+10303d40	41	setFrequency	S_Listener	0	S_Listener::setMusicFrequency,S_Listener::set3DSoundFrequency,S_Listener::set2DSoundFrequency			
+10303d70	61	set2DSoundFrequency	S_Listener	1	FUN_10303fc0			S_Listener::setFrequency
+10303db0	7	get2DSoundFrequency	S_Listener	0				
+10303dc0	61	set3DSoundFrequency	S_Listener	1	FUN_10303fc0			S_Listener::setFrequency
+10303e00	7	get3DSoundFrequency	S_Listener	0				
+10303e10	61	setMusicFrequency	S_Listener	1	FUN_10303fc0			S_Listener::setFrequency
+10303e50	7	getMusicFrequency	S_Listener	0				
+10303e60	147	setGlobalMusicVolume	S_Listener	0	FUN_10303fc0	KERNEL32.DLL!WaitForSingleObject,KERNEL32.DLL!ReleaseMutex		
+10303f00	7	getGlobalMusicVolume	S_Listener	1				FUN_1030ae20
+10303f10	147	setGlobalEffectsVolume	S_Listener	0	FUN_10303fc0	KERNEL32.DLL!WaitForSingleObject,KERNEL32.DLL!ReleaseMutex		
+10303fb0	7	getGlobalEffectsVolume	S_Listener	1				FUN_1030ae20
+10303fc0	54	FUN_10303fc0	Global	14				S_Listener::setRotation,S_Listener::set3DSoundFrequency,S_Listener::executeAlways,S_Listener::setEffectsVolume,S_Listener::setGlobalMusicVolume,S_Listener::setActive,S_Listener::setMusicFrequency,S_Listener::setPosition
+10304000	19	setPriorityFormula	S_Listener	0				
+10304020	7	getPriorityFormula	S_Listener	0				
+10304030	19	setPriorityTimeFactor	S_Listener	0				
+10304050	19	setPriorityVolumeFactor	S_Listener	0				
+10304070	7	getAmbient	S_SoundSpot	0				
+10304080	151	pause	S_Listener	0	S_Sound::pause,S_Sound::getType			
+10304120	136	resume	S_Listener	0	S_Sound::isSoundPaused,S_Sound::play,S_Sound::isSoundPlaying			
+103041b0	80	stop	S_Listener	0	S_Sound::stop			
+10304200	48	setActive	S_Listener	1	FUN_10303fc0	KERNEL32.DLL!WaitForSingleObject,KERNEL32.DLL!ReleaseMutex		S_Listener::construct
+10304230	57	update	S_Listener	1	FUN_10302d70	RLMFC.DLL!getAge		S_Listener::setUpdateMechanism
+10304270	59	S_Device	S_Device	2		RLMFC.DLL!_Tidy		FUN_10301590,FUN_10301290
+103042b0	30	FUN_103042b0	Global	0	S_Device::~S_Device	MFC42.DLL!operator_delete		
+103042d0	141	~S_Device	S_Device	4		MFC42.DLL!operator_delete		FUN_103042b0,Unwind@1030e7cc,FUN_10301590,FUN_10301290
+10304360	10	FUN_10304360	Global	2				FUN_10301590,FUN_10301290
+10304370	4	getGUID	S_Device	5				FUN_1030b380,FUN_10301950,FUN_10301a30,S_Listener::testOutputDeviceFunctionality,FUN_10301590
+10304380	169	FUN_10304380	Global	2		RLMFC.DLL!_Tidy,MSVCP60.DLL!_Xlen,RLMFC.DLL!_Copy		FUN_10301590,FUN_10301290
+10304430	13	getDescription	S_Device	0				
+10304440	169	FUN_10304440	Global	1		RLMFC.DLL!_Tidy,MSVCP60.DLL!_Xlen,RLMFC.DLL!_Copy		FUN_10301290
+103044f0	13	getDriverName	S_Device	0				
+10304500	4	getCaps	S_Device	0				
+10304510	6	getNullDeviceGUID	S_Device	5				FUN_1030b380,FUN_10301950,FUN_10301a30,S_Listener::testOutputDeviceFunctionality,FUN_10301590
+10304520	13	FUN_10304520	Global	4				S_Listener::S_Listener,S_Listener::S_Listener,FUN_103061c0,S_Listener::`default_constructor_closure'
+10304530	119	FUN_10304530	Global	0		MFC42.DLL!operator_delete		
+103045b0	33	FUN_103045b0	Global	1				FUN_10301290
+10304620	37	FUN_10304620	Global	2				FUN_10301590,FUN_10301290
+10304650	3	FUN_10304650	Global	2				FUN_10302d70,FUN_1030aad0
+10304660	1021	FUN_10304660	Global	1	FUN_10304d10,FUN_10304f30	MFC42.DLL!operator_delete,RLMFC.DLL!assign		FUN_10301590
+10304a60	545	FUN_10304a60	Global	2	FUN_10304ff0,FUN_10304e20	MFC42.DLL!operator_delete		FUN_10302d70,FUN_1030aad0
+10304c90	66	FUN_10304c90	Global	1	FUN_10304f30			FUN_10301290
+10304ce0	47	FUN_10304ce0	Global	1	FUN_10304f30			FUN_10301290
+10304d10	261	FUN_10304d10	Global	1	FUN_1030e5b4	RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,RLMFC.DLL!operator=	Out of system memory resources | Out of system memory resources	FUN_10304660
+10304e20	258	FUN_10304e20	Global	1	FUN_1030e5b4	RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,RLMFC.DLL!operator=	Out of system memory resources | Out of system memory resources	FUN_10304a60
+10304f30	175	FUN_10304f30	Global	3		RLMFC.DLL!assign		FUN_10304660,FUN_10304c90,FUN_10304ce0
+10304fe0	1	FUN_10304fe0	Global	16				Unwind@1030eb19,Unwind@1030e981,Unwind@1030ebb9,Unwind@1030ebc1,Unwind@1030eb69,Unwind@1030e7f9,Unwind@1030e801,Unwind@1030e970
+10304ff0	19	FUN_10304ff0	Global	1				FUN_10304a60
+10305010	159	FUN_10305010	Global	3	FUN_1030e5b4			S_Listener::S_Listener,S_Listener::S_Listener,FUN_103061c0
+103050b0	84	FUN_103050b0	Global	2	FUN_103061c0,FUN_1030e5b4			S_Listener::S_Listener,S_Listener::S_Listener
+10305110	32	FUN_10305110	Global	1	FUN_103060d0			S_Listener::construct
+10305130	32	FUN_10305130	Global	1	FUN_103060d0			S_Listener::construct
+10305150	25	FUN_10305150	Global	6				S_Loader::destruct,S_Loader::exportPlaylist,FUN_10306530,S_Listener::destruct,S_Listener::construct,FUN_10306770
+10305170	19	FUN_10305170	Global	3		RLMFC.DLL!R_Exception		S_Listener::construct,FUN_1030cac0,FUN_1030d050
+10305190	82	FUN_10305190	Global	5		RLMFC.DLL!R_Exception,RLMFC.DLL!setError	Out of system memory resources	FUN_10305210,S_Sound::construct,S_Listener::construct,FUN_1030cac0,FUN_10301290
+103051f0	30	FUN_103051f0	Global	0		MFC42.DLL!operator_delete,RLMFC.DLL!~R_Exception		
+10305210	84	FUN_10305210	Global	3	FUN_10305190,FUN_1030e5b4	MSVCRT.DLL!_CxxThrowException,RLMFC.DLL!operator=		S_Listener::construct,FUN_1030cac0,FUN_10301290
+10305270	576	FUN_10305270	Global	1	FUN_103054b0	RLMFC.DLL!_Grow,RLMFC.DLL!_Eos,RLMFC.DLL!erase		FUN_10301590
+103054b0	30	FUN_103054b0	Global	6		MFC42.DLL!operator_delete		FUN_10305270,FUN_103056f0,FUN_103054d0,S_Loader::construct,S_Loader::~S_Loader,FUN_10301290
+103054d0	541	FUN_103054d0	Global	1	FUN_103054b0	RLMFC.DLL!_Grow,RLMFC.DLL!_Eos,RLMFC.DLL!erase		FUN_10301290
+103056f0	579	FUN_103056f0	Global	1	FUN_103054b0	RLMFC.DLL!_Grow,RLMFC.DLL!_Eos,RLMFC.DLL!erase		FUN_10301290
+10305970	145	FUN_10305970	Global	0	FUN_103085e0	MFC42.DLL!operator_delete		
+10305a10	30	FUN_10305a10	Global	0	FUN_10305a30	MFC42.DLL!operator_delete		
+10305a30	240	FUN_10305a30	Global	3	FUN_103085e0	MFC42.DLL!operator_delete		Unwind@1030ea20,FUN_10305a10,Unwind@1030ea28
+10305b20	145	FUN_10305b20	Global	0	FUN_103085e0	MFC42.DLL!operator_delete		
+10305bc0	30	FUN_10305bc0	Global	0	FUN_10305be0	MFC42.DLL!operator_delete		
+10305be0	240	FUN_10305be0	Global	1	FUN_103085e0	MFC42.DLL!operator_delete		FUN_10305bc0
+10305cd0	145	FUN_10305cd0	Global	0	FUN_103085e0	MFC42.DLL!operator_delete		
+10305d70	30	FUN_10305d70	Global	0	FUN_10305d90	MFC42.DLL!operator_delete		
+10305d90	240	FUN_10305d90	Global	1	FUN_103085e0	MFC42.DLL!operator_delete		FUN_10305d70
+10305e80	577	FUN_10305e80	Global	1		MSVCP60.DLL!_Xran,RLMFC.DLL!_Split,RLMFC.DLL!_Tidy,RLMFC.DLL!_Grow,RLMFC.DLL!_Eos,RLMFC.DLL!erase,MSVCRT.DLL!memmove		FUN_10301590
+103060d0	237	FUN_103060d0	Global	5	FUN_1030e5b4	RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,RLMFC.DLL!operator=	Out of system memory resources | Out of system memory resources	S_Sound::saveRaw,FUN_10305110,FUN_10305130,S_Loader::importPlaylist,FUN_103085c0
+103061c0	296	FUN_103061c0	Global	2	FUN_10304520,FUN_10306aa0,FUN_10305010			FUN_103050b0,S_Listener::construct
+103062f0	41	FUN_103062f0	Global	1				S_Listener::construct
+10306320	92	FUN_10306320	Global	1				S_Listener::construct
+10306380	30	FUN_10306380	Global	0	FUN_103063a0	MFC42.DLL!operator_delete		
+103063a0	240	FUN_103063a0	Global	3	FUN_103085e0	MFC42.DLL!operator_delete		Unwind@1030ea00,Unwind@1030ea08,FUN_10306380
+10306490	145	FUN_10306490	Global	0	FUN_103085e0	MFC42.DLL!operator_delete		
+10306530	478	FUN_10306530	Global	1	FUN_10306980,FUN_10306950,FUN_103069b0,FUN_10305150,FUN_10308370	MFC42.DLL!operator_delete		S_Listener::destruct
+10306710	92	FUN_10306710	Global	1				S_Listener::construct
+10306770	478	FUN_10306770	Global	1	FUN_10306980,FUN_10306950,FUN_103069b0,FUN_10305150,FUN_10308370	MFC42.DLL!operator_delete		S_Listener::destruct
+10306950	44	FUN_10306950	Global	2				FUN_10306530,FUN_10306770
+10306980	42	FUN_10306980	Global	7				S_Loader::destruct,FUN_10308700,FUN_10306530,S_Listener::destruct,FUN_103084a0,S_Listener::construct,FUN_10306770
+103069b0	39	FUN_103069b0	Global	5				FUN_10306530,S_Listener::destruct,S_Listener::construct,S_Listener::construct,FUN_10306770
+103069e0	42	FUN_103069e0	Global	1				S_Listener::destruct
+10306a10	62	FUN_10306a10	Global	2				S_Listener::destruct,S_Listener::construct
+10306a50	40	FUN_10306a50	Global	1				S_Listener::construct
+10306aa0	42	FUN_10306aa0	Global	3				S_Listener::S_Listener,S_Listener::S_Listener,FUN_103061c0
+10306ad0	236	S_Loader	S_Loader	1	FUN_10307020			S_WaveLoader::S_WaveLoader
+10306bc0	30	FUN_10306bc0	Global	0	S_Loader::~S_Loader	MFC42.DLL!operator_delete		
+10306be0	294	S_Loader	S_Loader	1	FUN_10307020,S_Loader::construct			S_WaveLoader::S_WaveLoader
+10306d10	289	S_Loader	S_Loader	1	FUN_10307020,S_Loader::construct			S_WaveLoader::S_WaveLoader
+10306e40	420	~S_Loader	S_Loader	4	S_Loader::destruct,FUN_103054b0,FUN_10308800,FUN_10308370	MFC42.DLL!operator_delete		S_WaveLoader::~S_WaveLoader,Unwind@1030ee90,Unwind@1030eeb0,FUN_10306bc0
+10306ff0	19	operator=	S_Loader	0	S_Loader::construct			
+10307010	4	FUN_10307010	Global	1				S_Loader::destruct
+10307020	243	FUN_10307020	Global	4				S_Loader::S_Loader,S_Loader::destruct,S_Loader::S_Loader,S_Loader::S_Loader
+10307120	301	construct	S_Loader	2	S_Loader::destruct	RLMFC.DLL!_Tidy,RLMFC.DLL!getFullPathName,MSVCP60.DLL!_Xlen,RLMFC.DLL!_Copy	Unknown | Unknown | Unknown | Unknown	S_Loader::S_Loader,S_WaveLoader::construct
+1030724d	17	Catch@1030724d	Global	0	S_Loader::destruct	MSVCRT.DLL!_CxxThrowException		
+10307260	531	construct	S_Loader	3	S_Loader::destruct,FUN_10308700,FUN_103054b0,FUN_103084a0	MSVCP60.DLL!_Xran,RLMFC.DLL!_Split,RLMFC.DLL!_Grow,RLMFC.DLL!_Eos,MSVCRT.DLL!memmove		S_Loader::operator=,S_Loader::S_Loader,S_WaveLoader::construct
+10307480	390	destruct	S_Loader	5	FUN_10307010,FUN_10306980,FUN_10307020,FUN_10305150	MFC42.DLL!operator_delete		S_WaveLoader::destruct,Catch@1030724d,S_Loader::construct,S_Loader::~S_Loader,S_Loader::construct
+10307610	1318	importPlaylist	S_Loader	1	FUN_103060d0	RLMFC.DLL!load,RLMFC.DLL!size,MSVCRT.DLL!_strnicmp,RLMFC.DLL!free,RLMFC.DLL!where		FUN_1030cac0
+10307b40	1932	exportPlaylist	S_Loader	0	FUN_10308a80,FUN_103089a0,FUN_1030e610,FUN_10305150	RLMFC.DLL!append,RLMFC.DLL!del,RLMFC.DLL!where		
+103082d0	13	setLoopStart	S_Loader	2				S_Sound::setLoopStart,FUN_1030cac0
+103082e0	13	setLoopEnd	S_Loader	1				S_Sound::setLoopEnd
+103082f0	13	setLoopCount	S_Loader	3				FUN_1030cac0,FUN_1030bc60,S_Sound::setRepeatCount
+10308300	7	getLoopsLeft	S_Loader	3				FUN_1030b380,FUN_1030bb60,FUN_1030b6e0
+10308310	10	getBitsPerSample	S_Loader	7				S_Sound::construct,S_WaveLoader::getData,S_Sound::construct,S_WaveLoader::getDataOffset,S_Sound::getBytesPerSample,S_WaveLoader::setDataOffset,S_WaveLoader::getWaveLength
+10308320	10	getChannels	S_Loader	9				S_Sound::construct,S_Sound::getBytesPerSecond,S_WaveLoader::getData,S_Sound::construct,S_Sound::saveRaw,S_WaveLoader::getDataOffset,S_WaveLoader::setDataOffset,S_WaveLoader::getWaveLength
+10308330	7	getSamplesPerSecond	S_Loader	4				S_Sound::construct,S_Sound::getBytesPerSecond,S_Sound::construct,S_Sound::getSamplesPerSecond
+10308340	7	getAvgBytesPerSecond	S_Loader	2				S_Sound::construct,S_Sound::construct
+10308370	61	FUN_10308370	Global	4				FUN_10306530,S_Listener::destruct,S_Loader::~S_Loader,FUN_10306770
+103083b0	240	FUN_103083b0	Global	3	FUN_103085e0	MFC42.DLL!operator_delete		Unwind@1030ea90,FUN_103088c0,Unwind@1030ea40
+103084a0	213	FUN_103084a0	Global	1	FUN_10306980			S_Loader::construct
+10308560	66	Catch@10308560	Global	0		MSVCRT.DLL!_CxxThrowException		
+103085c0	32	FUN_103085c0	Global	1	FUN_103060d0			S_Listener::construct
+103085e0	33	FUN_103085e0	Global	12		MFC42.DLL!operator_delete		FUN_10305cd0,FUN_103083b0,FUN_10306490,FUN_103088e0,FUN_10305d90,FUN_10308820,FUN_10305b20,FUN_10305970
+10308610	240	FUN_10308610	Global	5	FUN_103085e0	MFC42.DLL!operator_delete		FUN_10308980,Unwind@1030eac8,Unwind@1030eaba,Unwind@1030ea78,Unwind@1030ea6a
+10308700	184	FUN_10308700	Global	1	FUN_10306980			S_Loader::construct
+103087a3	66	Catch@103087a3	Global	0		MSVCRT.DLL!_CxxThrowException		
+10308800	24	FUN_10308800	Global	1		MFC42.DLL!operator_delete		S_Loader::~S_Loader
+10308820	145	FUN_10308820	Global	0	FUN_103085e0	MFC42.DLL!operator_delete		
+103088c0	30	FUN_103088c0	Global	0	FUN_103083b0	MFC42.DLL!operator_delete		
+103088e0	145	FUN_103088e0	Global	0	FUN_103085e0	MFC42.DLL!operator_delete		
+10308980	30	FUN_10308980	Global	0	FUN_10308610	MFC42.DLL!operator_delete		
+103089a0	220	FUN_103089a0	Global	1				S_Loader::exportPlaylist
+10308a80	23	FUN_10308a80	Global	1				S_Loader::exportPlaylist
+10308ab0	11	FUN_10308ab0	Global	0				
+10308ac0	12	FUN_10308ac0	Global	0	FUN_1030e5b4			
+10308af0	11	FUN_10308af0	Global	0				
+10308b00	12	FUN_10308b00	Global	0	FUN_1030e5b4			
+10308b20	538	S_Sound	S_Sound	1	S_Sound::construct	E2MFC.DLL!P_BaseObject,RLMFC.DLL!R_Timer,RLMFC.DLL!_Tidy,RLMFC.DLL!reset		S_SoundOmni::S_SoundOmni
+10308d40	30	FUN_10308d40	Global	0	S_Sound::~S_Sound	MFC42.DLL!operator_delete		
+10308d60	570	S_Sound	S_Sound	1	S_Sound::construct	E2MFC.DLL!P_BaseObject,RLMFC.DLL!R_Timer,RLMFC.DLL!_Tidy,RLMFC.DLL!reset		S_SoundOmni::S_SoundOmni
+10308fa0	545	S_Sound	S_Sound	1	S_Sound::construct	E2MFC.DLL!P_BaseObject,RLMFC.DLL!R_Timer,RLMFC.DLL!_Tidy,RLMFC.DLL!reset		S_SoundOmni::S_SoundOmni
+103091d0	186	~S_Sound	S_Sound	5	S_Sound::destruct	MFC42.DLL!operator_delete,RLMFC.DLL!~R_Timer,E2MFC.DLL!~P_BaseObject		Unwind@1030edf0,S_SoundOmni::~S_SoundOmni,Unwind@1030edd0,FUN_10308d40,Unwind@1030ee10
+10309290	19	operator=	S_Sound	0	S_Sound::construct			
+103092b0	348	construct	S_Sound	1		RLMFC.DLL!reset		S_Sound::S_Sound
+10309410	1021	construct	S_Sound	2	FUN_1030be20,S_Sound::destruct,S_Sound::setPriorityOverride,S_Loader::getAvgBytesPerSecond,S_Loader::getChannels,S_WaveLoader::S_WaveLoader,FUN_1030e5b4,S_Sound::setRepeatCount,S_Loader::getBitsPerSample,S_Sound::setPriority,S_Sound::attach,FUN_10305190,S_Loader::getSamplesPerSecond	RLMFC.DLL!setError,RLMFC.DLL!_Grow,RLMFC.DLL!R_Exception,RLMFC.DLL!reset,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException,MSVCRT.DLL!_stricmp,RLMFC.DLL!operator=	Out of system memory resources | Unsupported audio format in %s	S_SoundOmni::construct,S_Sound::S_Sound
+1030980d	17	Catch@1030980d	Global	0	S_Sound::destruct	MSVCRT.DLL!_CxxThrowException		
+10309820	995	construct	S_Sound	3	S_Sound::destruct,S_Loader::getAvgBytesPerSecond,S_Loader::getChannels,FUN_1030e5b4,S_Loader::getBitsPerSample,S_Sound::attach,S_WaveLoader::S_WaveLoader,S_Loader::getSamplesPerSecond	RLMFC.DLL!_Tidy,RLMFC.DLL!setError,RLMFC.DLL!_Grow,RLMFC.DLL!erase,RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException,RLMFC.DLL!operator=	Out of system memory resources | Out of system memory resources	S_Sound::S_Sound,S_Sound::operator=,S_SoundOmni::construct
+10309c03	17	Catch@10309c03	Global	0	S_Sound::destruct	MSVCRT.DLL!_CxxThrowException		
+10309c20	475	destruct	S_Sound	6	S_Sound::stop,S_Sound::attach	KERNEL32.DLL!WaitForSingleObject,RLMFC.DLL!reset,KERNEL32.DLL!ReleaseMutex		S_Sound::construct,S_Sound::~S_Sound,S_Sound::construct,S_SoundOmni::destruct,Catch@1030980d,Catch@10309c03
+10309e00	294	attach	S_Sound	3		KERNEL32.DLL!WaitForSingleObject,KERNEL32.DLL!ReleaseMutex		S_Sound::construct,S_Sound::construct,S_Sound::destruct
+10309f30	307	saveRaw	S_Sound	0	S_Sound::stop,S_Sound::getRepeatCount,S_Loader::getChannels,S_Sound::getSoundLength,FUN_103060d0,S_Sound::getBytesPerSample,S_Sound::getSamplesPerSecond,S_Sound::setRepeatCount	RLMFC.DLL!save,MSVCRT.DLL!ftol,MFC42.DLL!operator_delete		
+1030a070	50	destroy	S_Sound	0				
+1030a0b0	139	executeAlways	S_Sound	0		E2MFC.DLL!calculateObjectToWorldMatrix		
+1030a140	473	FUN_1030a140	Global	3		RLMFC.DLL!M_FPUControl,KERNEL32.DLL!WaitForSingleObject,RLMFC.DLL!~M_FPUControl,KERNEL32.DLL!ReleaseMutex		S_Sound::setPlayingPosition,FUN_10302d70,FUN_1030b260
+1030a320	68	addTo	S_Sound	0		E2MFC.DLL!calculateObjectToWorldMatrix,E2MFC.DLL!addTo		
+1030a370	13	setID	S_Sound	0				
+1030a380	7	getID	S_Sound	0				
+1030a390	193	setPlayingPosition	S_Sound	1	FUN_1030a140,S_Sound::getPlayingPosition	RLMFC.DLL!M_FPUControl,KERNEL32.DLL!WaitForSingleObject,RLMFC.DLL!~M_FPUControl,KERNEL32.DLL!ReleaseMutex		S_Sound::restart
+1030a460	280	getPlayingPosition	S_Sound	5	S_Loader::getChannels,S_Sound::getBytesPerSample	RLMFC.DLL!M_FPUControl,KERNEL32.DLL!WaitForSingleObject,MSVCRT.DLL!ftol,RLMFC.DLL!~M_FPUControl,KERNEL32.DLL!ReleaseMutex		FUN_1030b380,FUN_1030bb60,S_Sound::enumTagsPassed,S_Sound::setPlayingPosition,FUN_1030b6e0
+1030a580	13	setPlayStart	S_Sound	0				
+1030a590	7	getPlayStart	S_Sound	0				
+1030a5a0	25	setLoopStart	S_Sound	0	S_Loader::setLoopStart			
+1030a5c0	7	getLoopStart	S_Sound	1				FUN_1030bc60
+1030a5d0	25	setLoopEnd	S_Sound	0	S_Loader::setLoopEnd			
+1030a5f0	7	getLoopEnd	S_Sound	1				FUN_1030bc60
+1030a600	39	isSoundPlaying	S_Sound	5				FUN_1030b380,S_Listener::killProgramFocus,S_Listener::resume,S_Listener::setProgramFocus,FUN_1030b6e0
+1030a630	7	isSoundPaused	S_Sound	3				S_Listener::killProgramFocus,S_Listener::resume,S_Listener::setProgramFocus
+1030a640	11	getSoundLength	S_Sound	2				S_Sound::saveRaw,FUN_1030bc60
+1030a650	37	getBytesPerSample	S_Sound	3	S_Loader::getBitsPerSample			S_Sound::getBytesPerSecond,S_Sound::saveRaw,S_Sound::getPlayingPosition
+1030a680	71	getBytesPerSecond	S_Sound	0	S_Loader::getChannels,S_Sound::getBytesPerSample,S_Loader::getSamplesPerSecond			
+1030a6d0	11	getSamplesPerSecond	S_Sound	2	S_Loader::getSamplesPerSecond			S_Sound::saveRaw,FUN_1030bc60
+1030a6e0	35	setRepeatCount	S_Sound	4	S_Loader::setLoopCount			FUN_1030b380,S_Sound::construct,S_Sound::saveRaw,FUN_1030b6e0
+1030a710	7	getRepeatCount	S_Sound	3				FUN_1030b380,S_Sound::saveRaw,FUN_1030b6e0
+1030a720	19	setType	S_Sound	0				
+1030a740	7	getType	S_Sound	1				S_Listener::pause
+1030a750	82	setVolume	S_Sound	0				
+1030a7b0	7	getVolume	S_Sound	0				
+1030a7c0	53	setFrequency	S_Sound	0				
+1030a800	7	getFrequency	S_Sound	0				
+1030a810	13	setListenerFrequencyAffects	S_Sound	0				
+1030a820	7	getListenerFrequencyAffects	S_Sound	0				
+1030a830	11	getFormatString	S_Sound	0				
+1030a840	7	getFileName	S_Sound	0				
+1030a850	19	setPriority	S_Sound	1				S_Sound::construct
+1030a870	7	getPriority	S_Sound	0				
+1030a880	19	setPriorityOverride	S_Sound	1				S_Sound::construct
+1030a8a0	7	getPriorityOverride	S_Sound	0				
+1030a8b0	7	getInternalPriority	S_Sound	0				
+1030a8c0	7	enablePlaying	S_Sound	0				
+1030a8d0	8	disablePlaying	S_Sound	0				
+1030a8e0	6	isPlayingEnabled	S_Sound	1				S_Sound::play
+1030a8f0	480	FUN_1030a8f0	Global	2	FUN_1030bda0	RLMFC.DLL!getAppAge		FUN_10302d70,FUN_1030aad0
+1030aad0	562	FUN_1030aad0	Global	2	FUN_1030bda0,FUN_10304a60,FUN_10302c90,FUN_1030bb60,FUN_1030a8f0,FUN_10304650,FUN_1030e5b4	RLMFC.DLL!M_FPUControl,KERNEL32.DLL!WaitForSingleObject,RLMFC.DLL!~M_FPUControl,KERNEL32.DLL!ReleaseMutex,MSVCRT.DLL!qsort		FUN_1030b380,FUN_1030ba90
+1030ad60	96	enumTagsPassed	S_Sound	0	S_Sound::getPlayingPosition			
+1030adc0	89	enumAllTags	S_Sound	0				
+1030ae20	1081	FUN_1030ae20	Global	4	FUN_1030bda0,S_Listener::getGlobalMusicVolume,S_Listener::getGlobalEffectsVolume	RLMFC.DLL!M_FPUControl,KERNEL32.DLL!WaitForSingleObject,MSVCRT.DLL!ftol,RLMFC.DLL!~M_FPUControl,KERNEL32.DLL!ReleaseMutex		FUN_1030b380,FUN_1030ba90,FUN_10302d70,S_Listener::setProgramFocus
+1030b260	275	FUN_1030b260	Global	3	FUN_1030a140	RLMFC.DLL!M_FPUControl,KERNEL32.DLL!WaitForSingleObject,RLMFC.DLL!~M_FPUControl,KERNEL32.DLL!ReleaseMutex		FUN_1030b380,FUN_1030ba90,FUN_1030b6e0
+1030b380	857	FUN_1030b380	Global	2	S_Device::getGUID,S_Sound::stop,S_Sound::getRepeatCount,FUN_10301940,S_Device::getNullDeviceGUID,FUN_1030b260,FUN_1030ae20,S_Sound::isSoundPlaying,S_Sound::setRepeatCount,FUN_1030bda0,FUN_1030aad0,S_Loader::getLoopsLeft,S_Sound::getPlayingPosition	RLMFC.DLL!pause,RLMFC.DLL!setAge,RLMFC.DLL!resume,RLMFC.DLL!M_FPUControl,RLMFC.DLL!reset,RLMFC.DLL!~M_FPUControl,RLMFC.DLL!getAppAge		FUN_10302d70,S_Sound::play
+1030b6e0	488	FUN_1030b6e0	Global	1	S_Sound::stop,S_Sound::getRepeatCount,FUN_1030b260,S_Sound::isSoundPlaying,S_Sound::setRepeatCount,FUN_1030bda0,S_Loader::getLoopsLeft,S_Sound::getPlayingPosition	RLMFC.DLL!pause,RLMFC.DLL!setAge,RLMFC.DLL!resume,RLMFC.DLL!M_FPUControl,RLMFC.DLL!reset,RLMFC.DLL!~M_FPUControl,RLMFC.DLL!getAppAge		FUN_10302d70
+1030b8d0	91	play	S_Sound	2	FUN_1030bda0,FUN_1030b380,S_Sound::isPlayingEnabled	RLMFC.DLL!getAppAge		S_Listener::resume,S_Listener::setProgramFocus
+1030b930	111	pause	S_Sound	2	FUN_1030bb60	RLMFC.DLL!pause,KERNEL32.DLL!WaitForSingleObject,KERNEL32.DLL!ReleaseMutex		S_Listener::pause,S_Listener::killProgramFocus
+1030b9a0	160	stop	S_Sound	7		RLMFC.DLL!M_FPUControl,KERNEL32.DLL!WaitForSingleObject,RLMFC.DLL!~M_FPUControl,KERNEL32.DLL!ReleaseMutex		FUN_1030b380,S_Sound::saveRaw,S_Sound::destruct,FUN_10302d70,FUN_1030bc60,FUN_1030b6e0,S_Listener::stop
+1030ba40	70	restart	S_Sound	0	S_Sound::setPlayingPosition	KERNEL32.DLL!WaitForSingleObject,KERNEL32.DLL!ReleaseMutex		
+1030ba90	198	FUN_1030ba90	Global	1	FUN_1030aad0,FUN_1030b260,FUN_1030ae20	RLMFC.DLL!M_FPUControl,KERNEL32.DLL!WaitForSingleObject,RLMFC.DLL!~M_FPUControl,KERNEL32.DLL!ReleaseMutex		FUN_10302d70
+1030bb60	241	FUN_1030bb60	Global	4	S_Loader::getLoopsLeft,S_Sound::getPlayingPosition	RLMFC.DLL!M_FPUControl,RLMFC.DLL!pause,RLMFC.DLL!setAge,KERNEL32.DLL!WaitForSingleObject,RLMFC.DLL!reset,RLMFC.DLL!~M_FPUControl,KERNEL32.DLL!ReleaseMutex		S_Sound::pause,FUN_10302d70,FUN_1030aad0,S_Sound::setAudibility
+1030bc60	317	FUN_1030bc60	Global	1	S_Sound::getLoopEnd,S_Sound::stop,S_Sound::getSoundLength,S_Sound::getLoopStart,S_Sound::getSamplesPerSecond,S_Loader::setLoopCount	RLMFC.DLL!getAge		FUN_10302d70
+1030bda0	23	FUN_1030bda0	Global	7				FUN_1030b380,FUN_1030a8f0,FUN_10302d70,FUN_1030aad0,S_Sound::play,FUN_1030ae20,FUN_1030b6e0
+1030bdc0	52	setAudibility	S_Sound	0	FUN_1030bb60			
+1030be00	7	getAudibility	S_Sound	0				
+1030be20	20	FUN_1030be20	Global	4		RLMFC.DLL!operator=		S_Sound::construct,S_Listener::construct,FUN_1030cac0,FUN_1030d050
+1030be50	6	getObjectType	S_SoundOmni	0			S_SoundOmni	
+1030be60	7	isConstructed	S_SoundOmni	1				S_SoundOmni::destruct
+1030be70	8	FUN_1030be70	Global	4				S_SoundOmni::destruct,S_SoundOmni::S_SoundOmni,S_SoundOmni::S_SoundOmni,S_SoundOmni::S_SoundOmni
+1030be80	87	S_SoundOmni	S_SoundOmni	1	S_Sound::S_Sound,FUN_1030be70,S_SoundOmni::construct			S_SoundSpot::S_SoundSpot
+1030bee0	30	FUN_1030bee0	Global	0	S_SoundOmni::~S_SoundOmni	MFC42.DLL!operator_delete		
+1030bf00	141	S_SoundOmni	S_SoundOmni	1	FUN_1030c0d0,S_Sound::S_Sound,FUN_1030be70			S_SoundSpot::S_SoundSpot
+1030bf90	97	S_SoundOmni	S_SoundOmni	1	S_Sound::S_Sound,FUN_1030c1e0,FUN_1030be70			S_SoundSpot::S_SoundSpot
+1030c000	30	~S_SoundOmni	S_SoundOmni	4	S_Sound::~S_Sound,S_SoundOmni::destruct			S_SoundSpot::~S_SoundSpot,Unwind@1030ee50,FUN_1030bee0,Unwind@1030ee70
+1030c020	19	operator=	S_SoundOmni	0	S_SoundOmni::construct			
+1030c040	1	construct	S_SoundOmni	1				S_SoundOmni::S_SoundOmni
+1030c050	76	construct	S_SoundOmni	1	S_Sound::construct,S_SoundOmni::destruct,FUN_1030c0d0			S_SoundSpot::construct
+1030c0a0	38	construct	S_SoundOmni	2	S_Sound::construct,S_SoundOmni::destruct,FUN_1030c1e0			S_SoundOmni::operator=,S_SoundSpot::construct
+1030c0d0	249	FUN_1030c0d0	Global	2	S_SoundOmni::setHotspot,S_SoundOmni::setVelocity,S_SoundOmni::setFalloff	E2MFC.DLL!calculateObjectToWorldMatrix		S_SoundOmni::construct,S_SoundOmni::S_SoundOmni
+1030c1c9	17	Catch@1030c1c9	Global	0	S_SoundOmni::destruct	MSVCRT.DLL!_CxxThrowException		
+1030c1e0	227	FUN_1030c1e0	Global	2	S_SoundOmni::setHotspot,S_SoundOmni::setVelocity,S_SoundOmni::setFalloff			S_SoundOmni::S_SoundOmni,S_SoundOmni::construct
+1030c2c3	17	Catch@1030c2c3	Global	0	S_SoundOmni::destruct	MSVCRT.DLL!_CxxThrowException		
+1030c2e0	28	destruct	S_SoundOmni	6	S_Sound::destruct,S_SoundOmni::isConstructed,FUN_1030be70			Catch@1030c1c9,Catch@1030c2c3,S_SoundOmni::~S_SoundOmni,S_SoundOmni::construct,S_SoundSpot::destruct,S_SoundOmni::construct
+1030c300	32	setPosition	S_SoundOmni	0		E2MFC.DLL!setPosition		
+1030c320	43	setPosition	S_SoundOmni	0				
+1030c350	53	setHotspot	S_SoundOmni	2				FUN_1030c0d0,FUN_1030c1e0
+1030c390	7	getHotspot	S_SoundOmni	0				
+1030c3a0	53	setFalloff	S_SoundOmni	2				FUN_1030c0d0,FUN_1030c1e0
+1030c3e0	7	getFalloff	S_SoundOmni	0				
+1030c3f0	68	setVelocity	S_SoundOmni	2				FUN_1030c0d0,FUN_1030c1e0
+1030c440	33	getVelocity	S_SoundOmni	0				
+1030c480	6	getObjectType	S_SoundSpot	0			S_SoundSpot	
+1030c490	7	isConstructed	S_SoundSpot	1				S_SoundSpot::destruct
+1030c4a0	8	FUN_1030c4a0	Global	4				S_SoundSpot::destruct,S_SoundSpot::S_SoundSpot,S_SoundSpot::S_SoundSpot,S_SoundSpot::S_SoundSpot
+1030c4b0	32	S_SoundSpot	S_SoundSpot	0	FUN_1030c4a0,S_SoundOmni::S_SoundOmni			
+1030c4d0	30	FUN_1030c4d0	Global	0	S_SoundSpot::~S_SoundSpot	MFC42.DLL!operator_delete		
+1030c4f0	156	S_SoundSpot	S_SoundSpot	0	FUN_1030c4a0,S_SoundOmni::S_SoundOmni,FUN_1030c6d0			
+1030c590	97	S_SoundSpot	S_SoundSpot	0	S_SoundOmni::S_SoundOmni,FUN_1030c4a0,FUN_1030c710			
+1030c600	30	~S_SoundSpot	S_SoundSpot	1	S_SoundSpot::destruct,S_SoundOmni::~S_SoundOmni			FUN_1030c4d0
+1030c620	19	operator=	S_SoundSpot	0	S_SoundSpot::construct			
+1030c640	91	construct	S_SoundSpot	0	S_SoundSpot::destruct,S_SoundOmni::construct,FUN_1030c6d0			
+1030c6a0	38	construct	S_SoundSpot	1	S_SoundSpot::destruct,FUN_1030c710,S_SoundOmni::construct			S_SoundSpot::operator=
+1030c6d0	58	FUN_1030c6d0	Global	2				S_SoundSpot::S_SoundSpot,S_SoundSpot::construct
+1030c710	70	FUN_1030c710	Global	2				S_SoundSpot::construct,S_SoundSpot::S_SoundSpot
+1030c760	28	destruct	S_SoundSpot	3	S_SoundOmni::destruct,FUN_1030c4a0,S_SoundSpot::isConstructed			S_SoundSpot::~S_SoundSpot,S_SoundSpot::construct,S_SoundSpot::construct
+1030c780	68	setSpotOrientation	S_SoundSpot	0				
+1030c7d0	33	getSpotOrientation	S_SoundSpot	0				
+1030c800	26	setSpotCone	S_SoundSpot	0				
+1030c820	7	getPriorityTimeFactor	S_Listener	0				
+1030c830	26	setAmbient	S_SoundSpot	0				
+1030c860	25	S_WaveLoader	S_WaveLoader	0	S_Loader::S_Loader,FUN_1030c9b0			
+1030c880	30	FUN_1030c880	Global	0	S_WaveLoader::~S_WaveLoader	MFC42.DLL!operator_delete		
+1030c8a0	94	S_WaveLoader	S_WaveLoader	1	S_Loader::S_Loader,FUN_1030c9b0,FUN_1030cac0			S_Sound::construct
+1030c900	90	S_WaveLoader	S_WaveLoader	1	FUN_1030ce10,FUN_1030c9b0,S_Loader::S_Loader			S_Sound::construct
+1030c960	23	~S_WaveLoader	S_WaveLoader	1	S_WaveLoader::destruct,S_Loader::~S_Loader			FUN_1030c880
+1030c980	19	operator=	S_WaveLoader	0	S_WaveLoader::construct			
+1030c9a0	7	FUN_1030c9a0	Global	1				S_WaveLoader::destruct
+1030c9b0	164	FUN_1030c9b0	Global	4				S_WaveLoader::S_WaveLoader,S_WaveLoader::destruct,S_WaveLoader::S_WaveLoader,S_WaveLoader::S_WaveLoader
+1030ca60	36	construct	S_WaveLoader	0	S_WaveLoader::destruct,FUN_1030cac0,S_Loader::construct			
+1030ca90	38	construct	S_WaveLoader	1	FUN_1030ce10,S_WaveLoader::destruct,S_Loader::construct			S_WaveLoader::operator=
+1030cac0	831	FUN_1030cac0	Global	2	FUN_10305210,FUN_1030e470,FUN_1030be20,FUN_10305170,S_Loader::setLoopStart,S_Loader::importPlaylist,FUN_1030d050,S_Loader::setLoopCount,FUN_1030e5b4,FUN_10305190	RLMFC.DLL!~R_Exception,RLMFC.DLL!setError,RLMFC.DLL!R_FileStream,RLMFC.DLL!R_UnbufferedFileStream,RLMFC.DLL!_Grow,MFC42.DLL!operator_new,MSVCRT.DLL!_CxxThrowException	Out of system memory resources | Out of system memory resources | Out of system memory resources | Microsoft ADPCM | Microsoft ADPCM | Microsoft ADPCM | Microsoft ADPCM	S_WaveLoader::construct,S_WaveLoader::S_WaveLoader
+1030cdff	17	Catch@1030cdff	Global	0	S_WaveLoader::destruct	MSVCRT.DLL!_CxxThrowException		
+1030ce10	339	FUN_1030ce10	Global	2	FUN_1030e330			S_WaveLoader::S_WaveLoader,S_WaveLoader::construct
+1030cf70	209	destruct	S_WaveLoader	4	S_Loader::destruct,FUN_1030c9b0,FUN_1030c9a0	RLMFC.DLL!R_REALLOCATE_DELETE_implementation,MFC42.DLL!operator_delete		S_WaveLoader::~S_WaveLoader,Catch@1030cdff,S_WaveLoader::construct,S_WaveLoader::construct
+1030d050	1646	FUN_1030d050	Global	1	FUN_1030be20,FUN_1030d6f0,FUN_10305170,FUN_1030e610,FUN_1030e5b4	RLMFC.DLL!R_STR,RLMFC.DLL!R_Exception,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!operator=,MSVCRT.DLL!_strnicmp	Only PCM and ADPCM formats are supported in %s | %s it not in valid ADPCM format | %s it not in valid ADPCM format | Out of system memory resources | Out of system memory resources | %s it not a valid WAVE-file	FUN_1030cac0
+1030d6be	45	Catch@1030d6be	Global	0		MSVCRT.DLL!_CxxThrowException		
+1030d6f0	19	FUN_1030d6f0	Global	1		RLMFC.DLL!R_Exception		FUN_1030d050
+1030d710	1025	FUN_1030d710	Global	1				S_WaveLoader::getData
+1030db20	37	getDataOffset	S_WaveLoader	0	S_Loader::getBitsPerSample,S_Loader::getChannels			
+1030db50	493	setDataOffset	S_WaveLoader	0	S_Loader::getBitsPerSample,S_Loader::getChannels			
+1030dd40	1369	getData	S_WaveLoader	0	S_Loader::getBitsPerSample,FUN_1030d710,S_Loader::getChannels	RLMFC.DLL!R_REALLOCATE_implementation		
+1030e2a0	117	getWaveLength	S_WaveLoader	0	S_Loader::getBitsPerSample,S_Loader::getChannels			
+1030e320	16	getFormatString	S_WaveLoader	0				
+1030e330	291	FUN_1030e330	Global	1	FUN_1030e5b4	RLMFC.DLL!R_Exception,MFC42.DLL!operator_new,RLMFC.DLL!setError,MSVCRT.DLL!_CxxThrowException,RLMFC.DLL!R_UnbufferedFileStream,RLMFC.DLL!operator=	Out of system memory resources | Out of system memory resources	FUN_1030ce10
+1030e470	31	FUN_1030e470	Global	1		MFC42.DLL!operator_delete,RLMFC.DLL!~R_UnbufferedFileStream		FUN_1030cac0
+1030e490	31	FUN_1030e490	Global	0		RLMFC.DLL!~R_FileStream,MFC42.DLL!operator_delete		
+1030e4b0	6	Ordinal_2	DSOUND.DLL	1				FUN_10301590
+1030e576	6	operator_new	MFC42.DLL	10				S_Sound::construct,S_Sound::construct,S_Listener::construct,FUN_103060d0,FUN_1030cac0,FUN_1030d050,FUN_10304d10,FUN_1030e330
+1030e57c	6	operator_delete	MFC42.DLL	50				FUN_10301ce0,FUN_10308980,FUN_1030e470,FUN_1030c880,FUN_10308d40,FUN_1030c4d0,FUN_10306770,FUN_10306490
+1030e582	6	AfxBeginThread	MFC42.DLL	1				FUN_10303300
+1030e588	44	FUN_1030e588	Global	1		MSVCRT.DLL!_onexit,MSVCRT.DLL!__dllonexit		FUN_1030e5b4
+1030e5b4	18	FUN_1030e5b4	Global	19	FUN_1030e588			FUN_10305210,S_Sound::construct,FUN_10308ac0,S_Listener::construct,FUN_1030cac0,FUN_1030d050,FUN_10301260,S_Sound::construct
+1030e5f2	6	_CxxThrowException	MSVCRT.DLL	21				FUN_10305210,Catch@10302815,S_Sound::construct,S_Listener::construct,FUN_1030cac0,FUN_1030d050,Catch@1030724d,S_Sound::construct
+1030e5f8	6	ftol	MSVCRT.DLL	3				S_Sound::saveRaw,FUN_1030ae20,S_Sound::getPlayingPosition
+1030e610	47	FUN_1030e610	Global	2				S_Loader::exportPlaylist,FUN_1030d050
+1030e63f	171	FUN_1030e63f	Global	1		MSVCRT.DLL!malloc,MSVCRT.DLL!free,MSVCRT.DLL!initterm		entry
+1030e6ea	157	entry	Global	0	FUN_1030e79a,FUN_1030e63f			
+1030e788	6	__dllonexit	MSVCRT.DLL	1				FUN_1030e588
+1030e78e	6	~type_info	MSVCRT.DLL::type_info	0				
+1030e794	6	initterm	MSVCRT.DLL	1				FUN_1030e63f
+1030e79a	32	FUN_1030e79a	Global	1		KERNEL32.DLL!DisableThreadLibraryCalls		entry
+1030e7c0	12	Unwind@1030e7c0	Global	0				
+1030e7cc	11	Unwind@1030e7cc	Global	0	S_Device::~S_Device			
+1030e7d7	11	Unwind@1030e7d7	Global	0		RLMFC.DLL!~R_Exception		
+1030e7f0	9	Unwind@1030e7f0	Global	0				
+1030e7f9	8	Unwind@1030e7f9	Global	0	FUN_10304fe0			
+1030e801	14	Unwind@1030e801	Global	0	FUN_10304fe0			
+1030e820	9	Unwind@1030e820	Global	0				
+1030e829	8	Unwind@1030e829	Global	0		RLMFC.DLL!~R_Exception		
+1030e831	8	Unwind@1030e831	Global	0		RLMFC.DLL!~R_Exception		
+1030e839	8	Unwind@1030e839	Global	0		RLMFC.DLL!~R_Exception		
+1030e841	8	Unwind@1030e841	Global	0		RLMFC.DLL!~R_Exception		
+1030e849	8	Unwind@1030e849	Global	0		RLMFC.DLL!~R_Exception		
+1030e851	10	Unwind@1030e851	Global	0		RLMFC.DLL!~R_Exception		
+1030e85b	11	Unwind@1030e85b	Global	0		MFC42.DLL!operator_delete		
+1030e866	8	Unwind@1030e866	Global	0		RLMFC.DLL!~R_Exception		
+1030e86e	8	Unwind@1030e86e	Global	0		RLMFC.DLL!~R_Exception		
+1030e876	11	Unwind@1030e876	Global	0		MFC42.DLL!operator_delete		
+1030e881	8	Unwind@1030e881	Global	0		RLMFC.DLL!~R_Exception		
+1030e889	8	Unwind@1030e889	Global	0		RLMFC.DLL!~R_Exception		
+1030e8b0	9	Unwind@1030e8b0	Global	0				
+1030e8d0	9	Unwind@1030e8d0	Global	0				
+1030e8f0	8	Unwind@1030e8f0	Global	0	FUN_10304fe0			
+1030e910	8	Unwind@1030e910	Global	0		RLMFC.DLL!~R_Exception		
+1030e918	8	Unwind@1030e918	Global	0		RLMFC.DLL!~R_Exception		
+1030e920	10	Unwind@1030e920	Global	0		RLMFC.DLL!~R_Exception		
+1030e940	8	Unwind@1030e940	Global	0		RLMFC.DLL!~R_Exception		
+1030e948	8	Unwind@1030e948	Global	0		RLMFC.DLL!~R_Exception		
+1030e950	10	Unwind@1030e950	Global	0		RLMFC.DLL!~R_Exception		
+1030e970	17	Unwind@1030e970	Global	0	FUN_10304fe0			
+1030e981	8	Unwind@1030e981	Global	0	FUN_10304fe0			
+1030e989	12	Unwind@1030e989	Global	0				
+1030e995	8	Unwind@1030e995	Global	0	FUN_10304fe0			
+1030e9b0	8	Unwind@1030e9b0	Global	0		RLMFC.DLL!~R_Exception		
+1030e9d0	8	Unwind@1030e9d0	Global	0		RLMFC.DLL!~R_Exception		
+1030e9d8	8	Unwind@1030e9d8	Global	0		RLMFC.DLL!~R_Exception		
+1030e9e0	10	Unwind@1030e9e0	Global	0		RLMFC.DLL!~R_Exception		
+1030ea00	8	Unwind@1030ea00	Global	0	FUN_103063a0			
+1030ea08	11	Unwind@1030ea08	Global	0	FUN_103063a0			
+1030ea20	8	Unwind@1030ea20	Global	0	FUN_10305a30			
+1030ea28	11	Unwind@1030ea28	Global	0	FUN_10305a30			
+1030ea40	11	Unwind@1030ea40	Global	0	FUN_103083b0			
+1030ea4b	8	Unwind@1030ea4b	Global	0	FUN_10304fe0			
+1030ea53	8	Unwind@1030ea53	Global	0	FUN_10304fe0			
+1030ea5b	15	Unwind@1030ea5b	Global	0				
+1030ea6a	14	Unwind@1030ea6a	Global	0	FUN_10308610			
+1030ea78	14	Unwind@1030ea78	Global	0	FUN_10308610			
+1030ea90	11	Unwind@1030ea90	Global	0	FUN_103083b0			
+1030ea9b	8	Unwind@1030ea9b	Global	0	FUN_10304fe0			
+1030eaa3	8	Unwind@1030eaa3	Global	0	FUN_10304fe0			
+1030eaab	15	Unwind@1030eaab	Global	0				
+1030eaba	14	Unwind@1030eaba	Global	0	FUN_10308610			
+1030eac8	14	Unwind@1030eac8	Global	0	FUN_10308610			
+1030eb10	9	Unwind@1030eb10	Global	0				
+1030eb19	8	Unwind@1030eb19	Global	0	FUN_10304fe0			
+1030eb21	8	Unwind@1030eb21	Global	0	FUN_10304fe0			
+1030eb29	15	Unwind@1030eb29	Global	0				
+1030eb38	15	Unwind@1030eb38	Global	0				
+1030eb60	9	Unwind@1030eb60	Global	0				
+1030eb69	8	Unwind@1030eb69	Global	0	FUN_10304fe0			
+1030eb71	8	Unwind@1030eb71	Global	0	FUN_10304fe0			
+1030eb79	15	Unwind@1030eb79	Global	0				
+1030eb88	15	Unwind@1030eb88	Global	0				
+1030ebb0	9	Unwind@1030ebb0	Global	0				
+1030ebb9	8	Unwind@1030ebb9	Global	0	FUN_10304fe0			
+1030ebc1	8	Unwind@1030ebc1	Global	0	FUN_10304fe0			
+1030ebc9	15	Unwind@1030ebc9	Global	0				
+1030ebd8	15	Unwind@1030ebd8	Global	0				
+1030ec00	9	Unwind@1030ec00	Global	0				
+1030ec09	15	Unwind@1030ec09	Global	0				
+1030ec18	15	Unwind@1030ec18	Global	0				
+1030ec40	11	Unwind@1030ec40	Global	0		MFC42.DLL!operator_delete		
+1030ec4b	8	Unwind@1030ec4b	Global	0		RLMFC.DLL!~R_Exception		
+1030ec53	8	Unwind@1030ec53	Global	0		RLMFC.DLL!~R_Exception		
+1030ec5b	8	Unwind@1030ec5b	Global	0		RLMFC.DLL!~R_Exception		
+1030ec63	8	Unwind@1030ec63	Global	0		RLMFC.DLL!~R_Exception		
+1030ec80	11	Unwind@1030ec80	Global	0		MFC42.DLL!operator_delete		
+1030ec8b	8	Unwind@1030ec8b	Global	0		RLMFC.DLL!~R_Exception		
+1030ec93	8	Unwind@1030ec93	Global	0		RLMFC.DLL!~R_Exception		
+1030ec9b	10	Unwind@1030ec9b	Global	0		RLMFC.DLL!~R_Exception		
+1030ecb0	9	Unwind@1030ecb0	Global	0				
+1030ecd0	9	Unwind@1030ecd0	Global	0				
+1030ecf0	9	Unwind@1030ecf0	Global	0				
+1030ed10	9	Unwind@1030ed10	Global	0				
+1030ed30	9	Unwind@1030ed30	Global	0				
+1030ed50	9	Unwind@1030ed50	Global	0				
+1030ed70	9	Unwind@1030ed70	Global	0				
+1030ed90	9	Unwind@1030ed90	Global	0				
+1030edb0	9	Unwind@1030edb0	Global	0				
+1030edd0	8	Unwind@1030edd0	Global	0	S_Sound::~S_Sound			
+1030edf0	8	Unwind@1030edf0	Global	0	S_Sound::~S_Sound			
+1030ee10	8	Unwind@1030ee10	Global	0	S_Sound::~S_Sound			
+1030ee50	8	Unwind@1030ee50	Global	0	S_SoundOmni::~S_SoundOmni			
+1030ee70	8	Unwind@1030ee70	Global	0	S_SoundOmni::~S_SoundOmni			
+1030ee90	8	Unwind@1030ee90	Global	0	S_Loader::~S_Loader			
+1030eeb0	8	Unwind@1030eeb0	Global	0	S_Loader::~S_Loader			
+1030eed0	8	Unwind@1030eed0	Global	0		RLMFC.DLL!~R_Exception		
+1030eed8	8	Unwind@1030eed8	Global	0		RLMFC.DLL!~R_Exception		
+1030eee0	11	Unwind@1030eee0	Global	0		MFC42.DLL!operator_delete		
+1030eeeb	8	Unwind@1030eeeb	Global	0		RLMFC.DLL!~R_Exception		
+1030eef3	8	Unwind@1030eef3	Global	0		RLMFC.DLL!~R_Exception		
+1030eefb	11	Unwind@1030eefb	Global	0		MFC42.DLL!operator_delete		
+1030ef06	8	Unwind@1030ef06	Global	0		RLMFC.DLL!~R_Exception		
+1030ef0e	8	Unwind@1030ef0e	Global	0		RLMFC.DLL!~R_Exception		
+1030ef20	8	Unwind@1030ef20	Global	0		RLMFC.DLL!~R_Exception		
+1030ef28	8	Unwind@1030ef28	Global	0		RLMFC.DLL!~R_Exception		
+1030ef30	8	Unwind@1030ef30	Global	0		RLMFC.DLL!~R_Exception		
+1030ef38	8	Unwind@1030ef38	Global	0		RLMFC.DLL!~R_Exception		
+1030ef40	8	Unwind@1030ef40	Global	0		RLMFC.DLL!~R_Exception		
+1030ef48	8	Unwind@1030ef48	Global	0		RLMFC.DLL!~R_Exception		
+1030ef50	8	Unwind@1030ef50	Global	0		RLMFC.DLL!~R_Exception		
+1030ef58	8	Unwind@1030ef58	Global	0		RLMFC.DLL!~R_Exception		
+1030ef60	10	Unwind@1030ef60	Global	0		RLMFC.DLL!~R_Exception		
+1030ef6a	8	Unwind@1030ef6a	Global	0		RLMFC.DLL!~R_Exception		
+1030ef72	8	Unwind@1030ef72	Global	0		RLMFC.DLL!~R_Exception		
+1030ef90	11	Unwind@1030ef90	Global	0		MFC42.DLL!operator_delete		
+1030ef9b	8	Unwind@1030ef9b	Global	0		RLMFC.DLL!~R_Exception		
+1030efa3	8	Unwind@1030efa3	Global	0		RLMFC.DLL!~R_Exception		
+1030efab	10	Unwind@1030efab	Global	0		RLMFC.DLL!~R_Exception		

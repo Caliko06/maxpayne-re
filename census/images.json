@@ -1,0 +1,126 @@
+{
+ "images": {
+  "maxpayne.exe": {
+   "file": "MaxPayne.exe",
+   "image": "build/img/MaxPayne.exe",
+   "base": "0x400000",
+   "size": "0x4d6a00",
+   "entry": "0x76fb04",
+   "dll": false,
+   "imports_guest": 787,
+   "imports_host": 67,
+   "relocated": false
+  },
+  "rlmfc.dll": {
+   "file": "rlmfc.dll",
+   "image": "build/img/rlmfc.dll",
+   "base": "0x10000000",
+   "size": "0x67000",
+   "entry": "0x100283a1",
+   "dll": true,
+   "imports_guest": 79,
+   "imports_host": 38,
+   "relocated": false
+  },
+  "e2mfc.dll": {
+   "file": "e2mfc.dll",
+   "image": "build/img/e2mfc.dll",
+   "base": "0x10100000",
+   "size": "0x6e000",
+   "entry": "0x1014580f",
+   "dll": true,
+   "imports_guest": 88,
+   "imports_host": 14,
+   "relocated": false
+  },
+  "grphmfc.dll": {
+   "file": "grphmfc.dll",
+   "image": "build/img/grphmfc.dll",
+   "base": "0x10200000",
+   "size": "0x18000",
+   "entry": "0x10211627",
+   "dll": true,
+   "imports_guest": 43,
+   "imports_host": 8,
+   "relocated": false
+  },
+  "sndmfc.dll": {
+   "file": "sndmfc.dll",
+   "image": "build/img/sndmfc.dll",
+   "base": "0x10300000",
+   "size": "0x18000",
+   "entry": "0x1030e6ea",
+   "dll": true,
+   "imports_guest": 106,
+   "imports_host": 13,
+   "relocated": false
+  },
+  "e2_d3d8_driver_mfc.dll": {
+   "file": "e2driver/e2_d3d8_driver_mfc.dll",
+   "image": "build/img/e2_d3d8_driver_mfc.dll",
+   "base": "0x10400000",
+   "size": "0x94000",
+   "entry": "0x10455a17",
+   "dll": true,
+   "imports_guest": 277,
+   "imports_host": 35,
+   "relocated": false
+  },
+  "mfc42.dll": {
+   "file": "MFC42.DLL",
+   "image": "build/img/MFC42.DLL",
+   "base": "0x10600000",
+   "size": "0xf2000",
+   "entry": "0x106065ff",
+   "dll": true,
+   "imports_guest": 86,
+   "imports_host": 426,
+   "relocated": false
+  },
+  "msvcrt.dll": {
+   "file": "MSVCRT.DLL",
+   "image": "build/img/MSVCRT.DLL",
+   "base": "0x10800000",
+   "size": "0x40000",
+   "entry": "0x10803428",
+   "dll": true,
+   "imports_guest": 0,
+   "imports_host": 144,
+   "relocated": false
+  },
+  "msvcp60.dll": {
+   "file": "MSVCP60.DLL",
+   "image": "build/img/MSVCP60.DLL",
+   "base": "0x10900000",
+   "size": "0x61000",
+   "entry": "0x10901000",
+   "dll": true,
+   "imports_guest": 77,
+   "imports_host": 11,
+   "relocated": false
+  },
+  "msvcirt.dll": {
+   "file": "MSVCIRT.DLL",
+   "image": "build/img/MSVCIRT.DLL",
+   "base": "0x10a00000",
+   "size": "0x12000",
+   "entry": "0x10a01000",
+   "dll": true,
+   "imports_guest": 43,
+   "imports_host": 5,
+   "relocated": false
+  }
+ },
+ "init_order": [
+  "msvcrt.dll",
+  "mfc42.dll",
+  "msvcirt.dll",
+  "msvcp60.dll",
+  "rlmfc.dll",
+  "grphmfc.dll",
+  "e2mfc.dll",
+  "sndmfc.dll",
+  "maxpayne.exe"
+ ],
+ "heap_lo": "0x11000000"
+}

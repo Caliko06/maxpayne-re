@@ -1,0 +1,395 @@
+addr	name	level	confidence	area	hopper_name	summary	evidence
+10201000	G_Color::G_Color_default	named	strong	image	G_Color::G_Color_default		export ??0G_Color@@QAE@XZ
+10201020	G_Color::G_Color_rgba	named	strong	image	G_Color::G_Color_rgba		export ??0G_Color@@QAE@EEEE@Z
+10201040	G_Color::G_Color_copy	named	strong	image	G_Color::G_Color_copy		export ??0G_Color@@QAE@ABV0@@Z
+10201060	G_Color::set_rgba	named	strong	image	G_Color::set_rgba		export ?set@G_Color@@QAEXEEEE@Z
+10201080	G_Color::set_rgb	named	strong	image	G_Color::set_rgb		export ?set@G_Color@@QAEXEEE@Z
+102010a0	G_Color::setAlpha	named	strong	image	G_Color::setAlpha		export ?setAlpha@G_Color@@QAEXE@Z
+102010b0	G_Color::operator=_color	named	strong	image	G_Color::operator=_color		export ??4G_Color@@QAEAAV0@ABV0@@Z
+102010d0	G_Color::operator+=	named	strong	image	G_Color::operator+=		export ??YG_Color@@QAEAAV0@ABV0@@Z
+102011a0	G_Color::operator-=	named	strong	image	G_Color::operator-=		export ??ZG_Color@@QAEAAV0@ABV0@@Z
+10201260	G_Color::operator*=_color	named	strong	image	G_Color::operator*=_color		export ??XG_Color@@QAEAAV0@ABV0@@Z
+10201310	G_Color::operator*=_scalar	named	strong	image	G_Color::operator*=_scalar		export ??XG_Color@@QAEAAV0@ABM@Z
+10201380	G_Color::operator/=_scalar	named	strong	image	G_Color::operator/=_scalar		export ??_0G_Color@@QAEAAV0@ABM@Z
+10201410	G_Color::G_Color_fcolor	named	strong	image	G_Color::G_Color_fcolor		export ??0G_Color@@QAE@ABVG_FColor@@@Z
+10201570	G_Color::G_Color_vec3	named	strong	image	G_Color::G_Color_vec3		export ??0G_Color@@QAE@ABV?$M_Vector3Template@M@@@Z
+10201680	G_Color::G_Color_vec4	named	strong	image	G_Color::G_Color_vec4		export ??0G_Color@@QAE@ABV?$M_Vector4Template@M@@@Z; same address exports operator=(Vector4) and operator=(G_FColor)
+102017e0	G_Color::operator=_vec3	named	strong	image	G_Color::operator=_vec3		export ??4G_Color@@QAEAAV0@ABV?$M_Vector3Template@M@@@Z
+102018f0	G_Color::interpolate	named	strong	image	G_Color::interpolate		export ?interpolate@G_Color@@SIXAAV1@ABV1@M1@Z
+10201ad0	G_Color::bilinear	named	strong	image	G_Color::bilinear		export ?bilinear@G_Color@@SIXAAV1@ABV1@111MM@Z
+10201d30	__ehvec_ctor	understood	weak	image	__ehvec_ctor		CRT vector-ctor loop; used for 3 x M_Vector3 (0xc) in 0x102024d0 and loadPCX
+10201d60	G_FColor_static_init	understood	weak	image	G_FColor_static_init		initterm table entry 0x10215004: ctor 0x10201d70 then atexit 0x10201d90
+10201d70	G_FColor_m_clampRange_ctor	understood	weak	image	G_FColor_m_clampRange_ctor		zero-inits static G_FColor::m_clampRange (export ?m_clampRange@G_FColor)
+10201d90	G_FColor_m_clampRange_register_atexit	understood	weak	image	G_FColor_m_clampRange_register_atexit		atexit(0x10201da0)
+10201da0	G_FColor_m_clampRange_atexit_dtor	understood	weak	image	G_FColor_m_clampRange_atexit_dtor		guarded flag byte 0x10216985
+10201dc0	G_FColor::RGBtoHSV	named	strong	image	G_FColor::RGBtoHSV		export ?RGBtoHSV@G_FColor@@QAEXXZ
+10201fb0	G_FColor::HSVtoRGB	named	strong	image	G_FColor::HSVtoRGB		export ?HSVtoRGB@G_FColor@@QAEXXZ
+102021c0	G_FColor::RGBtoYIQ	named	strong	image	G_FColor::RGBtoYIQ		export ?RGBtoYIQ@G_FColor@@QAEXXZ
+10202340	G_FColor::YIQtoRGB	named	strong	image	G_FColor::YIQtoRGB		export ?YIQtoRGB@G_FColor@@QAEXXZ
+102024c0	M_Vector3Template_float::M_Vector3Template_zero	understood	weak	image	M_Vector3Template_float::M_Vector3Template_zero		zeroes 3 floats; ctor passed to __ehvec_ctor; callers RGBtoHSV/HSVtoRGB/RGBtoYIQ/YIQtoRGB
+102024d0	M_Matrix3_transpose	understood	weak	image	M_Matrix3_transpose		swaps off-diagonal elements of a 3x3 float matrix (index 1<->3, 2<->6, 5<->7); callers RGBtoYIQ/YIQtoRGB
+102025a0	G_Image::isConstructed	named	strong	image	G_Image::isConstructed		export ?isConstructed@G_Image@@QBE_NXZ
+102025b0	G_Image::width	named	strong	image	G_Image::width		export ?width@G_Image@@QBEHXZ
+102025c0	G_Image::height	named	strong	image	G_Image::height		export ?height@G_Image@@QBEHXZ
+102025d0	G_Image::getImageData	named	strong	image	G_Image::getImageData		export ?getImageData@G_Image@@QBEPAVG_Color@@XZ; ??B (operator G_Color*) same address
+102025e0	G_Image::operator[]	named	strong	image	G_Image::operator[]		export ??AG_Image@@QBEAAVG_Color@@H@Z
+102025f0	G_Image::operator()	named	strong	image	G_Image::operator()		export ??RG_Image@@QBEAAVG_Color@@HH@Z
+10202610	G_Image::getDIB	named	strong	image	G_Image::getDIB		export ?getDIB@G_Image@@QAEPAUHBITMAP__@@XZ
+10202620	G_Image::getDdsFormatData	named	strong	image	G_Image::getDdsFormatData		export ?getDdsFormatData@G_Image@@QBEPAXXZ
+10202630	G_Image::getDdsFormatSize	named	strong	image	G_Image::getDdsFormatSize		export ?getDdsFormatSize@G_Image@@QBEIXZ
+10202640	G_Image::isDdsFormat	named	strong	image	G_Image::isDdsFormat		export ?isDdsFormat@G_Image@@QBE_NXZ
+10202650	G_Image::G_Image_default	named	strong	image	G_Image::G_Image_default		export ??0G_Image@@QAE@XZ; stores vtable 0x1021210c
+10202670	G_Image::vector_deleting_dtor	understood	strong	image	G_Image::vector_deleting_dtor		vtable slot 0 of RTTI G_Image vtable 0x1021210c; flag bit1 -> __ehvec_dtor(~G_Image) then delete
+102026d0	G_Image::G_Image_path	named	strong	image	G_Image::G_Image_path		export ??0G_Image@@QAE@PBD@Z
+102026f0	G_Image::G_Image_format_buffer	named	strong	image	G_Image::G_Image_format_buffer		export ??0G_Image@@QAE@W4Format@0@PADH@Z
+10202720	G_Image::G_Image_wh	named	strong	image	G_Image::G_Image_wh		export ??0G_Image@@QAE@II@Z
+10202750	G_Image::G_Image_hbitmap	named	strong	image	G_Image::G_Image_hbitmap		export ??0G_Image@@QAE@PAUHBITMAP__@@@Z
+10202770	G_Image::G_Image_copy	named	strong	image	G_Image::G_Image_copy		export ??0G_Image@@QAE@ABV0@@Z
+10202790	G_Image::G_Image_scaled	named	strong	image	G_Image::G_Image_scaled		export ??0G_Image@@QAE@AAV0@IIM@Z
+102027c0	G_Image::~G_Image	named	strong	image	G_Image::~G_Image		export ??1G_Image@@UAE@XZ
+102027d0	G_Image::operator=	named	strong	image	G_Image::operator=		export ??4G_Image@@QAEAAV0@ABV0@@Z
+102027f0	G_Image::construct_default	named	strong	image	G_Image::construct_default		export ?construct@G_Image@@QAEXXZ
+10202800	G_Image::construct_path	named	strong	image	G_Image::construct_path		export ?construct@G_Image@@QAEXPBD@Z
+10202893	Catch@10202893	understood	strong	image	Catch@10202893		Ghidra EH funclet label (FuncInfo table)
+102028b0	G_Image::construct_format_buffer	named	strong	image	G_Image::construct_format_buffer		export ?construct@G_Image@@QAEXW4Format@1@PADH@Z
+1020290c	Catch@1020290c	understood	strong	image	Catch@1020290c		Ghidra EH funclet label (FuncInfo table)
+10202920	G_Image::construct_wh	named	strong	image	G_Image::construct_wh		export ?construct@G_Image@@QAEXII@Z
+10202a54	Catch@10202a54	understood	strong	image	Catch@10202a54		Ghidra EH funclet label (FuncInfo table)
+10202a70	G_Image::construct_hbitmap	named	strong	image	G_Image::construct_hbitmap		export ?construct@G_Image@@QAEXPAUHBITMAP__@@@Z
+10202c3f	Catch@10202c3f	understood	strong	image	Catch@10202c3f		Ghidra EH funclet label (FuncInfo table)
+10202c60	G_Image::construct_copy	named	strong	image	G_Image::construct_copy		export ?construct@G_Image@@QAEXABV1@@Z
+10202ce0	G_Image::construct_scaled	named	strong	image	G_Image::construct_scaled		export ?construct@G_Image@@QAEXAAV1@IIM@Z
+10202d30	G_Image::destruct	named	strong	image	G_Image::destruct		export ?destruct@G_Image@@QAEXXZ
+10202d90	G_Image::initializeMembers	named	strong	image	G_Image::initializeMembers		export ?initializeMembers@G_Image@@IAEXXZ
+10202db0	G_Image::loadBuffer	named	strong	image	G_Image::loadBuffer		export ?loadBuffer@G_Image@@IAEXW4Format@1@PADH@Z
+10202f04	Catch@10202f04	understood	strong	image	Catch@10202f04		Ghidra EH funclet label (FuncInfo table)
+10202f30	R_Exception_family::scalar_deleting_dtor	understood	weak	image	R_Exception_family::scalar_deleting_dtor		vtable slot 1 shared by all 9 R_Exception-derived classes (RTTI); calls R_Exception::~R_Exception + delete
+10202f50	G_Image::save	named	strong	image	G_Image::save		export ?save@G_Image@@QBEHPBD@Z
+10202fb0	G_Image::saveBuffer	named	strong	image	G_Image::saveBuffer		export ?saveBuffer@G_Image@@QBEPADW4Format@1@AAH@Z
+10203090	G_Image::determineImageFormat	named	strong	image	G_Image::determineImageFormat		export ?determineImageFormat@G_Image@@SI?AW4Format@1@PBD@Z
+10203210	R_Exception_family::vslot3_AssertValid_nop	understood	weak	image	R_Exception_family::vslot3_AssertValid_nop		`ret`; vtable slot 3 (CObject::AssertValid position) of the 9 exception vtables (RTTI)
+10203220	R_Exception_family::vslot2_4_Serialize_Dump_nop	understood	weak	image	R_Exception_family::vslot2_4_Serialize_Dump_nop		`ret 4`; vtable slots 2 and 4 (CObject::Serialize/Dump positions)
+10203230	G_Image::makeDIB	named	strong	image	G_Image::makeDIB		export ?makeDIB@G_Image@@IAEPAUHBITMAP__@@XZ
+102032c0	G_Image::areaSample	named	strong	image	G_Image::areaSample		export ?areaSample@G_Image@@QAE?AVG_Color@@MHPAV?$M_Vector2Template@M@@@Z
+10203460	G_Image_areaSample_triangle_setup	understood	weak	image	G_Image_areaSample_triangle_setup		called from G_Image::areaSample; sorts 3 vertices, edge gradients, writes setup globals 0x102169b0-0x102169e0, then 0x10203700
+10203700	G_Image_areaSample_triangle_scan	understood	weak	image	G_Image_areaSample_triangle_scan		scanline loop with bilinear texel fetch (wrap by width/height) accumulating RGB into float[3]; called only by 0x10203460
+10203b20	G_Image::copy	named	strong	image	G_Image::copy		export ?copy@G_Image@@QAEXHHPAV1@HHHH@Z
+10203ba0	G_Image::clear	named	strong	image	G_Image::clear		export ?clear@G_Image@@QAEXXZ
+10203be0	G_Image::copyWithScale	named	strong	image	G_Image::copyWithScale		export ?copyWithScale@G_Image@@QAEXPAV1@M@Z
+10203d20	G_Image_alloc_pixels	understood	weak	image	G_Image_alloc_pixels		operator new(n*4), fills every pixel (0,0,0,255), R_Memory sm_iNewCount++, throws R_MemoryException_Allocation "Out of system memory resources"
+10203e50	G_Image_new_bytes_checked	understood	weak	image	G_Image_new_bytes_checked		operator new(n) + sm_iNewCount++ + throw R_MemoryException_Allocation; caller G_Image::construct
+10203f40	atexit_dtor_static_exception_10216a80	understood	weak	image	atexit_dtor_static_exception_10216a80		mov ecx,0x10216a80; jmp 0x10203fe0 (R_Exception::~R_Exception thunk); atexit stub of a function-local static exception
+10203f50	atexit_dtor_static_exception_10216a70	understood	weak	image	atexit_dtor_static_exception_10216a70		mov ecx,0x10216a70; jmp 0x10203fe0 (R_Exception::~R_Exception thunk); atexit stub of a function-local static exception
+10203f60	R_MemoryException::R_MemoryException	understood	strong	image	R_MemoryException::R_MemoryException		ctor: R_Exception::R_Exception then stores vtable 0x1021216c (RTTI R_MemoryException)
+10203f80	R_MemoryException_Allocation::R_MemoryException_Allocation	understood	strong	image	R_MemoryException_Allocation::R_MemoryException_Allocation		ctor: stores vtable 0x10212114 (RTTI) + setError "Out of system memory resources"
+10203fe0	RLMFC.DLL::R_Exception::~R_Exception	named	strong	image	RLMFC.DLL::R_Exception::~R_Exception		import thunk (IAT)
+10203ff0	G_Image::loadDDS	named	strong	image	G_Image::loadDDS		export ?loadDDS@G_Image@@IAEXPADH@Z
+102041d0	G_ImageException::G_ImageException	understood	strong	image	G_ImageException::G_ImageException		ctor: stores vtable 0x102121b4 (RTTI G_ImageException)
+102041f0	atexit_dtor_static_exception_10216a60	understood	weak	image	atexit_dtor_static_exception_10216a60		mov ecx,0x10216a60; jmp 0x10203fe0 (R_Exception::~R_Exception thunk); atexit stub of a function-local static exception
+10204200	G_Image::loadJPG	named	strong	image	G_Image::loadJPG		export ?loadJPG@G_Image@@IAEXPADH@Z
+102044f0	G_Image_loadJPG_error_exit	understood	weak	image	G_Image_loadJPG_error_exit		set as jerr.error_exit in loadJPG (0x10204242); format_message then throws G_ImageLoaderException_JPGDecode "Failed to decode JPG image: \"%s\""
+102045e0	G_Image_loadJPG_row_rgb24_to_bgrx	understood	weak	image	G_Image_loadJPG_row_rgb24_to_bgrx		host/fast.c rn_jpeg_row; per pixel dst=(b,g,r,0) from src r,g,b
+10204630	G_Image_loadJPG_row_gray_to_bgr24	understood	weak	image	G_Image_loadJPG_row_gray_to_bgr24		replicates a gray byte into 3 bytes per pixel; loadJPG for 1-component
+10204670	atexit_dtor_static_exception_10216a50	understood	weak	image	atexit_dtor_static_exception_10216a50		mov ecx,0x10216a50; jmp 0x10203fe0 (R_Exception::~R_Exception thunk); atexit stub of a function-local static exception
+10204680	G_Image::loadPCX	named	strong	image	G_Image::loadPCX		export ?loadPCX@G_Image@@IAEXPADH@Z
+10204b9e	Catch@10204b9e	understood	strong	image	Catch@10204b9e		Ghidra EH funclet label (FuncInfo table)
+10204c40	G_ImageLoaderException::G_ImageLoaderException	understood	strong	image	G_ImageLoaderException::G_ImageLoaderException		ctor: stores vtable 0x10212220 (RTTI G_ImageLoaderException)
+10204c60	G_ImageLoaderException_PCXDecode::G_ImageLoaderException_PCXDecode	understood	strong	image	G_ImageLoaderException_PCXDecode::G_ImageLoaderException_PCXDecode		ctor: stores vtable 0x102121fc (RTTI)
+10204c80	R_Memory_delete_inline	understood	weak	image	R_Memory_delete_inline		free(ptr) + sm_iDeleteCount++; callers loadPCX, Catch@10204b9e
+10204ca0	throw_R_MemoryException_Allocation	understood	weak	image	throw_R_MemoryException_Allocation		assigns exception to static 0x10216a80 and _CxxThrowException; callers loadTGA/loadPCX
+10204d00	atexit_dtor_static_exception_10216a40	understood	weak	image	atexit_dtor_static_exception_10216a40		mov ecx,0x10216a40; jmp 0x10203fe0 (R_Exception::~R_Exception thunk); atexit stub of a function-local static exception
+10204d10	R_Exception_derived_operator_assign	understood	weak	image	R_Exception_derived_operator_assign		R_Exception::operator=(this,src) wrapper shared by loaders (loadJPG/SCX/PCX/TGA/DDS)
+10204d30	G_Image::loadSCX	named	strong	image	G_Image::loadSCX		export ?loadSCX@G_Image@@IAEXPAD@Z
+10204f90	atexit_dtor_static_exception_10216a30	understood	weak	image	atexit_dtor_static_exception_10216a30		mov ecx,0x10216a30; jmp 0x10203fe0 (R_Exception::~R_Exception thunk); atexit stub of a function-local static exception
+10204fa0	G_Image::loadTGA	named	strong	image	G_Image::loadTGA		export ?loadTGA@G_Image@@IAEXPAD@Z
+10205656	Catch@10205656	understood	strong	jpeg	Catch@10205656		Ghidra EH funclet label (FuncInfo table)
+102056f0	G_Image_loadTGA_read_u16	understood	weak	jpeg	G_Image_loadTGA_read_u16		reads LE 16-bit from *pp and advances pp by 2; caller loadTGA
+10205710	G_Image::saveBufferTGA	named	strong	jpeg	G_Image::saveBufferTGA		export ?saveBufferTGA@G_Image@@IBEPADAAH@Z
+102057f0	G_Image_new_bytes_checked_tga	understood	weak	jpeg	G_Image_new_bytes_checked_tga		same body as 0x10203e50; caller G_Image::saveBufferTGA
+102058e0	atexit_dtor_static_exception_10216a20	understood	weak	jpeg	atexit_dtor_static_exception_10216a20		mov ecx,0x10216a20; jmp 0x10203fe0 (R_Exception::~R_Exception thunk); atexit stub of a function-local static exception
+102058f0	R_RemedyInit_static_init	understood	weak	jpeg	R_RemedyInit_static_init		initterm table entry 0x10215008: ctor thunk 0x10205900 then atexit 0x10205910
+10205900	R_RemedyInit_ctor_thunk	understood	weak	jpeg	R_RemedyInit_ctor_thunk		jmp IAT 0x102120bc (??0R_RemedyInit@@QAE@XZ) on object 0x102169f4
+10205910	R_RemedyInit_register_atexit	understood	weak	jpeg	R_RemedyInit_register_atexit		atexit(0x10205920)
+10205920	R_RemedyInit_atexit_dtor	understood	weak	jpeg	R_RemedyInit_atexit_dtor		jmp IAT 0x1021209c (??1R_RemedyInit@@QAE@XZ) on object 0x102169f4
+10205930	M_MathInit_static_init	understood	weak	jpeg	M_MathInit_static_init		initterm table entry 0x1021500c: ctor thunk 0x10205940 then atexit 0x10205950
+10205940	M_MathInit_ctor_thunk	understood	weak	jpeg	M_MathInit_ctor_thunk		jmp IAT 0x10212098 (??0M_MathInit@@QAE@XZ) on object 0x102169f5
+10205950	M_MathInit_register_atexit	understood	weak	jpeg	M_MathInit_register_atexit		atexit(0x10205960)
+10205960	M_MathInit_atexit_dtor	understood	weak	jpeg	M_MathInit_atexit_dtor		jmp IAT 0x10212094 (??1M_MathInit@@QAE@XZ) on object 0x102169f5
+10205970	jpeg_CreateDecompress	understood	strong	jpeg	jpeg_CreateDecompress		libjpeg 6a jdapimin.c; version 61 check, size 0x1c2, calls jinit_memory_mgr/marker_reader/input_controller
+10205a40	jpeg_destroy_thunk	understood	weak	jpeg	jpeg_destroy_thunk		jmp 0x10209000 (jpeg_destroy); loadJPG
+10205a50	jpeg_read_header	understood	strong	jpeg	jpeg_read_header		libjpeg 6a jdapimin.c; flow.md; calls jpeg_consume_input, jpeg_abort
+10205ac0	jpeg_consume_input	understood	strong	jpeg	jpeg_consume_input		libjpeg 6a jdapimin.c; DSTATE_START..INHEADER switch, default_decompress_parms
+10205b70	default_decompress_parms	understood	strong	jpeg	default_decompress_parms		libjpeg 6a jdapimin.c; sets out_color_space/num_components, scale 1/1, dct_method etc.
+10205d10	jpeg_finish_decompress	understood	strong	jpeg	jpeg_finish_decompress		libjpeg 6a jdapimin.c; consumes to EOI, term_source, jpeg_abort
+10205dd0	jpeg_start_decompress	understood	strong	jpeg	jpeg_start_decompress		libjpeg 6a jdapistd.c; calls jinit_master_decompress 0x10209300, output_pass_setup
+10205ea0	output_pass_setup	understood	strong	jpeg	output_pass_setup		libjpeg 6a jdapistd.c; static, called by jpeg_start_decompress
+10205f70	jpeg_read_scanlines	understood	strong	jpeg	jpeg_read_scanlines		libjpeg 6a jdapistd.c; post->post_process_data slot, progress monitor
+10206010	jpeg_memory_src	understood	weak	jpeg	jpeg_memory_src		jdatasrc.c jpeg_stdio_src variant reading a guest buffer (globals 0x102169f8 size, 0x102169fc offset); installs 0x10206090/0x102060b0/0x10206160/0x102068e0/0x102061a0
+10206090	jdatasrc_init_source	understood	strong	jpeg	jdatasrc_init_source		libjpeg 6a source-mgr slot 2 set by 0x10206010; resets offset 0x102169fc, start_of_file=1
+102060b0	jdatasrc_fill_input_buffer	understood	strong	jpeg	jdatasrc_fill_input_buffer		libjpeg 6a source-mgr slot 3; copies 0x1000 bytes, final chunk, else synthetic EOI FF D9
+10206160	jdatasrc_skip_input_data	understood	strong	jpeg	jdatasrc_skip_input_data		libjpeg 6a source-mgr slot 4 (loops fill_input_buffer)
+102061a0	jdatasrc_term_source	understood	strong	jpeg	jdatasrc_term_source		libjpeg 6a source-mgr slot 6; resets offset
+102061b0	jpeg_std_error	understood	strong	jpeg	jpeg_std_error		libjpeg 6a jerror.c; installs error_exit..reset_error_mgr, message table 0x10212288 ("Bogus message code %d"), last code 0x77
+10206200	jerror_error_exit	understood	strong	jpeg	jerror_error_exit		libjpeg 6a jerror.c error_exit: output_message then jpeg_destroy 0x10209000 (installed at slot 0 by jpeg_std_error)
+10206210	jerror_output_message	understood	strong	jpeg	jerror_output_message		libjpeg 6a jerror.c output_message; slot 2 of jpeg_error_mgr set by 0x102061b0
+10206240	jerror_emit_message	understood	strong	jpeg	jerror_emit_message		libjpeg 6a jerror.c emit_message; slot 1 set by 0x102061b0
+10206270	jerror_format_message	understood	strong	jpeg	jerror_format_message		libjpeg 6a jerror.c format_message; slot 3 set by 0x102061b0
+10206310	jerror_reset_error_mgr	understood	strong	jpeg	jerror_reset_error_mgr		libjpeg 6a jerror.c reset_error_mgr; slot 4 set by 0x102061b0
+10206320	jinit_input_controller	understood	strong	jpeg	jinit_input_controller		libjpeg 6a jdinput.c; allocs 0x1c, sets consume_input/reset/start_input_pass/finish_input_pass, has_multiple_scans=0
+10206360	jdinput_start_input_pass	understood	strong	jpeg	jdinput_start_input_pass		libjpeg 6a jdinput.c; per_scan_setup, latch_quant_tables, entropy->start_pass, coef->start_input_pass
+102063a0	per_scan_setup	understood	strong	jpeg	per_scan_setup		libjpeg 6a jdinput.c; MCU geometry, JERR too many blocks (10)
+10206540	latch_quant_tables	understood	strong	jpeg	latch_quant_tables		libjpeg 6a jdinput.c; copies 0x84-byte JQUANT_TBL per component
+102065f0	jdinput_finish_input_pass	understood	strong	jpeg	jdinput_finish_input_pass		libjpeg 6a inputctl slot 3 set by jinit_input_controller 0x10206320
+10206600	consume_markers	understood	strong	jpeg	consume_markers		libjpeg 6a jdinput.c; inputctl slot 0
+102066c0	initial_setup	understood	strong	jpeg	initial_setup		libjpeg 6a jdinput.c; image size limit 0xffdc, precision 8, max h/v samp, DCT sizes, MCU rows
+102068a0	jdinput_reset_input_controller	understood	strong	jpeg	jdinput_reset_input_controller		libjpeg 6a inputctl slot 1 set by 0x10206320
+102068e0	jpeg_resync_to_restart	understood	strong	jpeg	jpeg_resync_to_restart		libjpeg 6a jdmarker.c; source-mgr resync slot; JWRN 0x75/0x60 restart-marker logic
+102069e0	next_marker	understood	strong	jpeg	next_marker		libjpeg 6a jdmarker.c; skips bytes to next FF xx marker
+10206ae0	jinit_marker_reader	understood	strong	jpeg	jinit_marker_reader		libjpeg 6a jdmarker.c; method slots reset/read_markers/read_restart_marker, process_COM + 16 APPn = skip_variable, APP0/APP14 own handlers
+10206b60	get_app0	understood	strong	jpeg	get_app0		libjpeg 6a jdmarker.c; process_APPn[0] stored by 0x10206ae0 (JFIF)
+10206df0	get_app14	understood	strong	jpeg	get_app14		libjpeg 6a jdmarker.c; process_APPn[14] stored by 0x10206ae0 (Adobe)
+10206fc0	skip_variable	understood	strong	jpeg	skip_variable		libjpeg 6a jdmarker.c; process_COM and APPn default; length then source->skip_input_data
+10207060	read_markers	understood	strong	jpeg	read_markers		libjpeg 6a jdmarker.c; marker switch SOI/SOF/SOS/DHT/DQT/DRI/DAC/RSTn/APPn/COM/EOI
+102073e0	get_soi	understood	strong	jpeg	get_soi		libjpeg 6a jdmarker.c; read_markers case 0xD8; resets component defaults, saw_SOI
+10207490	get_sof	understood	strong	jpeg	get_sof		libjpeg 6a jdmarker.c; read_markers case 0xC0/C1/C2/C9/CA; image size, components
+102077a0	get_sos	understood	strong	jpeg	get_sos		libjpeg 6a jdmarker.c; read_markers case 0xDA
+10207ab0	get_dac	understood	strong	jpeg	get_dac		libjpeg 6a jdmarker.c; read_markers case 0xCC
+10207c20	get_dht	understood	strong	jpeg	get_dht		libjpeg 6a jdmarker.c; read_markers case 0xC4; jpeg_alloc_huff_table
+10207f60	get_dqt	understood	strong	jpeg	get_dqt		libjpeg 6a jdmarker.c; read_markers case 0xDB; jpeg_alloc_quant_table
+102081d0	get_dri	understood	strong	jpeg	get_dri		libjpeg 6a jdmarker.c; read_markers case 0xDD
+102082c0	first_marker	understood	strong	jpeg	first_marker		libjpeg 6a jdmarker.c; expects FF D8 first (JERR_NO_SOI 0x34)
+10208360	read_restart_marker	understood	strong	jpeg	read_restart_marker		libjpeg 6a jdmarker.c; marker slot 2 set by 0x10206ae0
+102083f0	reset_marker_reader	understood	strong	jpeg	reset_marker_reader		libjpeg 6a jdmarker.c; marker slot 0; also called at end of 0x10206ae0
+10208420	jinit_memory_mgr	understood	strong	jpeg	jinit_memory_mgr		libjpeg 6a jmemmgr.c; 11 method slots, JPEGMEM getenv/sscanf "%ld%c"
+10208550	alloc_small	understood	strong	jpeg	alloc_small		libjpeg 6a jmemmgr.c; mem slot 0, pool_id 0/1 check JERR 0xc
+10208680	out_of_memory	understood	strong	jpeg	out_of_memory		libjpeg 6a jmemmgr.c; ERREXIT1(JERR_OUT_OF_MEMORY 0x35, which)
+102086a0	alloc_large	understood	strong	jpeg	alloc_large		libjpeg 6a jmemmgr.c; mem slot 1
+10208740	alloc_sarray	understood	strong	jpeg	alloc_sarray		libjpeg 6a jmemmgr.c; mem slot 2
+102087f0	alloc_barray	understood	strong	jpeg	alloc_barray		libjpeg 6a jmemmgr.c; mem slot 3; 0x80 bytes per block
+102088a0	request_virt_sarray	understood	strong	jpeg	request_virt_sarray		libjpeg 6a jmemmgr.c; mem slot 4; list head +0x40
+10208910	request_virt_barray	understood	strong	jpeg	request_virt_barray		libjpeg 6a jmemmgr.c; mem slot 5; list head +0x44
+10208980	realize_virt_arrays	understood	strong	jpeg	realize_virt_arrays		libjpeg 6a jmemmgr.c; mem slot 6 (stored by 0x10208420)
+10208b00	access_virt_sarray	understood	strong	jpeg	access_virt_sarray		libjpeg 6a jmemmgr.c; mem slot 7 (stored by 0x10208420)
+10208c30	do_sarray_io	understood	strong	jpeg	do_sarray_io		libjpeg 6a jmemmgr.c; backing-store row IO (read/write method slots at +0x30/+0x34), called by access_virt_sarray
+10208cd0	access_virt_barray	understood	strong	jpeg	access_virt_barray		libjpeg 6a jmemmgr.c; mem slot 8 (stored by 0x10208420)
+10208e00	do_barray_io	understood	strong	jpeg	do_barray_io		libjpeg 6a jmemmgr.c; same as do_sarray_io with 0x80 bytes per block
+10208eb0	free_pool	understood	strong	jpeg	free_pool		libjpeg 6a jmemmgr.c; mem slot 9; pool_id 0/1, frees virt arrays + small/large lists
+10208fa0	self_destruct	understood	strong	jpeg	self_destruct		libjpeg 6a jmemmgr.c; mem slot 10; free_pool(1), free_pool(0), jpeg_free_small, jpeg_mem_term
+10208fe0	jpeg_abort	understood	strong	jpeg	jpeg_abort		libjpeg 6a jcomapi.c; mem->free_pool(JPOOL_IMAGE) then global_state = DSTART (100/200)
+10209000	jpeg_destroy	understood	strong	jpeg	jpeg_destroy		libjpeg 6a jcomapi.c; mem->self_destruct, mem=NULL, global_state=0; thunk 0x10205a40
+10209020	jpeg_alloc_quant_table	understood	strong	jpeg	jpeg_alloc_quant_table		libjpeg 6a jcomapi.c; alloc 0x84 (JQUANT_TBL), sent_table=0
+10209040	jpeg_alloc_huff_table	understood	strong	jpeg	jpeg_alloc_huff_table		libjpeg 6a jcomapi.c; alloc 0x115 (JHUFF_TBL), sent_table=0
+10209060	jpeg_calc_output_dimensions	understood	strong	jpeg	jpeg_calc_output_dimensions		libjpeg 6a jdmaster.c; scale_num/denom -> output size, DCT_scaled_size, out_color_components, rec_outbuf_height
+10209280	use_merged_upsample	understood	strong	jpeg	use_merged_upsample		libjpeg 6a jdmaster.c; merged upsample eligibility test (h2v1/h2v2 YCC->RGB)
+10209300	jinit_master_decompress	understood	strong	jpeg	jinit_master_decompress		libjpeg 6a jdmaster.c; master slots 0x10209580/0x102096d0; master_selection inlined (quantizer/upsampler/idct/huff/coef/main init chain)
+10209500	prepare_range_limit_table	understood	strong	jpeg	prepare_range_limit_table		libjpeg 6a jdmaster.c; 0x580-byte range_limit table (sample_range_limit)
+10209580	prepare_for_output_pass	understood	strong	jpeg	prepare_for_output_pass		libjpeg 6a jdmaster.c; master slot 0
+102096d0	finish_output_pass	understood	strong	jpeg	finish_output_pass		libjpeg 6a jdmaster.c; master slot 1 set by 0x10209300
+102096f0	jdiv_round_up	understood	strong	jpeg	jdiv_round_up		libjpeg 6a jutils.c; (a+b-1)/b
+10209700	jround_up	understood	strong	jpeg	jround_up		libjpeg 6a jutils.c; a+b-1 - (a+b-1)%b
+10209720	jcopy_sample_rows	understood	strong	jpeg	jcopy_sample_rows		libjpeg 6a jutils.c; row-pointer copy, 6 args, dword+byte memcpy
+10209760	jcopy_block_row	understood	strong	jpeg	jcopy_block_row		libjpeg 6a jutils.c; num_blocks*32 dwords
+10209780	jzero_far	understood	strong	jpeg	jzero_far		libjpeg 6a jutils.c; dword+byte zero fill
+102097a0	jpeg_get_small	understood	strong	jpeg	jpeg_get_small		libjpeg 6a jmemnobs.c; malloc (identical body also serves jpeg_get_large)
+102097b0	jpeg_free_small	understood	strong	jpeg	jpeg_free_small		libjpeg 6a jmemnobs.c; free (identical body also serves jpeg_free_large)
+102097c0	jpeg_mem_available	understood	strong	jpeg	jpeg_mem_available		libjpeg 6a jmemnobs.c; returns max_bytes_needed
+102097d0	jpeg_open_backing_store	understood	strong	jpeg	jpeg_open_backing_store		libjpeg 6a jmemnobs.c; ERREXIT JERR_NO_BACKING_STORE (0x30)
+102097e0	jpeg_mem_init	understood	strong	jpeg	jpeg_mem_init		libjpeg 6a jmemnobs.c; returns 0, called first by jinit_memory_mgr
+102097f0	jpeg_mem_term	understood	strong	jpeg	jpeg_mem_term		libjpeg 6a jmemnobs.c; empty, called by self_destruct
+10209800	jinit_d_main_controller	understood	strong	jpeg	jinit_d_main_controller		libjpeg 6a jdmainct.c; allocs 0x50, start_pass slot, context rows via alloc_funny_pointers
+102098e0	alloc_funny_pointers	understood	strong	jpeg	alloc_funny_pointers		libjpeg 6a jdmainct.c; called by jinit_d_main_controller when upsample needs context rows
+10209990	jdmainct_start_pass_main	understood	strong	jpeg	jdmainct_start_pass_main		libjpeg 6a jdmainct.c; main slot 0 stored by 0x10209800; PASS_THRU/CRANK_DEST, ERREXIT 4
+10209a00	make_funny_pointers	understood	strong	jpeg	make_funny_pointers		libjpeg 6a jdmainct.c; called by start_pass_main (context case)
+10209b50	process_data_simple_main	understood	strong	jpeg	process_data_simple_main		libjpeg 6a jdmainct.c; main slot 1 stored by start_pass_main (no context)
+10209bc0	process_data_context_main	understood	strong	jpeg	process_data_context_main		libjpeg 6a jdmainct.c; main slot 1 stored by start_pass_main (context case)
+10209cf0	set_wraparound_pointers	understood	strong	jpeg	set_wraparound_pointers		libjpeg 6a jdmainct.c; funny pointer rotation
+10209e00	set_bottom_pointers	understood	strong	jpeg	set_bottom_pointers		libjpeg 6a jdmainct.c; last iMCU row pointer replication
+10209eb0	process_data_crank_post	understood	strong	jpeg	process_data_crank_post		libjpeg 6a jdmainct.c; main slot 1 stored by start_pass_main case 2 (JBUF_CRANK_DEST)
+10209ed0	jinit_d_coef_controller	understood	strong	jpeg	jinit_d_coef_controller		libjpeg 6a jdcoefct.c; allocs 0x74; one-pass 10-block buffer or whole-image virtual arrays
+10209fd0	jdcoefct_start_input_pass	understood	strong	jpeg	jdcoefct_start_input_pass		libjpeg 6a jdcoefct.c; coef slot 0 stored by 0x10209ed0; input_iMCU_row=0 then start_iMCU_row
+10209fe0	start_iMCU_row	understood	strong	jpeg	start_iMCU_row		libjpeg 6a jdcoefct.c; MCU_ctr/MCU_vert_offset/MCU_rows_per_iMCU_row
+1020a030	jdcoefct_start_output_pass	understood	strong	jpeg	jdcoefct_start_output_pass		libjpeg 6a jdcoefct.c; coef slot 2 stored by 0x10209ed0; smoothing_ok -> decompress_smooth_data
+1020a080	decompress_onepass	understood	strong	jpeg	decompress_onepass		libjpeg 6a jdcoefct.c; coef slot 3 when no whole-image buffer
+1020a2e0	dummy_consume_data	understood	strong	jpeg	dummy_consume_data		libjpeg 6a jdcoefct.c; coef slot 1 when no whole-image buffer
+1020a2f0	consume_data	understood	strong	jpeg	consume_data		libjpeg 6a jdcoefct.c; coef slot 1 when buffered
+1020a500	decompress_data	understood	strong	jpeg	decompress_data		libjpeg 6a jdcoefct.c; coef slot 3 when buffered (also set by start_output_pass)
+1020a6b0	smoothing_ok	understood	strong	jpeg	smoothing_ok		libjpeg 6a jdcoefct.c; checks all quant AC coefs [1],[8],[16],[9],[2] nonzero, coef_bits
+1020a7d0	decompress_smooth_data	understood	strong	jpeg	decompress_smooth_data		libjpeg 6a jdcoefct.c; stored by start_output_pass 0x1020a030 when smoothing_ok
+1020ae30	jpeg_make_d_derived_tbl	understood	strong	jpeg	jpeg_make_d_derived_tbl		libjpeg 6a jdhuff.c; flow.md
+1020b010	jpeg_fill_bit_buffer	understood	strong	jpeg	jpeg_fill_bit_buffer		libjpeg 6a jdhuff.c; flow.md (fill_bit_buffer)
+1020b110	jpeg_huff_decode	understood	strong	jpeg	jpeg_huff_decode		libjpeg 6a jdhuff.c; flow.md
+1020b1f0	jinit_huff_decoder	understood	strong	jpeg	jinit_huff_decoder		libjpeg 6a jdhuff.c; flow.md; allocs 0x48, slots 0x1020b230/0x1020b370
+1020b230	jdhuff_start_pass	understood	strong	jpeg	jdhuff_start_pass		libjpeg 6a jdhuff.c; entropy slot 0 stored by 0x1020b1f0; flow.md start_pass
+1020b370	jdhuff_decode_mcu	understood	strong	jpeg	jdhuff_decode_mcu		libjpeg 6a jdhuff.c; entropy slot 1 stored by 0x1020b1f0; host/fast.c rn_jpeg_huff
+1020b790	jdhuff_process_restart	understood	strong	jpeg	jdhuff_process_restart		libjpeg 6a jdhuff.c; discard bits, read_restart_marker, reset last_dc_val
+1020b810	jinit_phuff_decoder	understood	strong	jpeg	jinit_phuff_decoder		libjpeg 6a jdphuff.c; allocs 0x40, coef_bits init to -1 (0x40 dwords per component)
+1020b880	jdphuff_start_pass	understood	strong	jpeg	jdphuff_start_pass		libjpeg 6a jdphuff.c; entropy slot 0 stored by 0x1020b810; selects decode_mcu by Ss/Ah
+1020bb70	decode_mcu_DC_first	understood	strong	jpeg	decode_mcu_DC_first		libjpeg 6a jdphuff.c; Al shift only, selected by start_pass 0x1020b880 (source order DC_first, AC_first, DC_refine, AC_refine)
+1020bdb0	jdphuff_process_restart	understood	strong	jpeg	jdphuff_process_restart		libjpeg 6a jdphuff.c; discard bits, resets last_dc_val and EOBRUN (+0x14)
+1020be30	decode_mcu_AC_first	understood	strong	jpeg	decode_mcu_AC_first		libjpeg 6a jdphuff.c; uses Se and Al
+1020c070	decode_mcu_DC_refine	understood	strong	jpeg	decode_mcu_DC_refine		libjpeg 6a jdphuff.c; p1 = 1<<Al, one bit per block
+1020c180	decode_mcu_AC_refine	understood	strong	jpeg	decode_mcu_AC_refine		libjpeg 6a jdphuff.c; p1 = 1<<Al, m1 = -1<<Al, 0x150-byte frame
+1020c5d0	jinit_inverse_dct	understood	strong	jpeg	jinit_inverse_dct		libjpeg 6a jddctmgr.c; allocs 0x54, per-component 0x100 multiplier table, cur_method -1
+1020c650	jddctmgr_start_pass	understood	strong	jpeg	jddctmgr_start_pass		libjpeg 6a jddctmgr.c; idct slot 0 stored by 0x1020c5d0; picks 1x1/2x2/4x4/islow/ifast/float
+1020c890	jinit_d_post_controller	understood	strong	jpeg	jinit_d_post_controller		libjpeg 6a jdpostct.c; allocs 0x1c, whole-image buffer if 2-pass quantize
+1020c920	jdpostct_start_pass_dpost	understood	strong	jpeg	jdpostct_start_pass_dpost		libjpeg 6a jdpostct.c; post slot 0 stored by 0x1020c890
+1020ca00	post_process_1pass	understood	strong	jpeg	post_process_1pass		libjpeg 6a jdpostct.c; stored by start_pass_dpost (source order 1pass, prepass, 2pass)
+1020ca80	post_process_prepass	understood	strong	jpeg	post_process_prepass		libjpeg 6a jdpostct.c; stored by start_pass_dpost JBUF_SAVE_AND_PASS
+1020cb20	post_process_2pass	understood	strong	jpeg	post_process_2pass		libjpeg 6a jdpostct.c; access_virt_sarray + cquantize->color_quantize
+1020cbc0	jinit_upsampler	understood	strong	jpeg	jinit_upsampler		libjpeg 6a jdsample.c; allocs 0xa0, per-component method selection
+1020cdb0	jdsample_start_pass_upsample	understood	strong	jpeg	jdsample_start_pass_upsample		libjpeg 6a jdsample.c; upsample slot 0 stored by 0x1020cbc0
+1020cdd0	sep_upsample	understood	strong	jpeg	sep_upsample		libjpeg 6a jdsample.c; upsample slot 1 stored by 0x1020cbc0
+1020cec0	fullsize_upsample	understood	strong	jpeg	fullsize_upsample		libjpeg 6a jdsample.c; chosen when component not downsampled
+1020ced0	noop_upsample	understood	strong	jpeg	noop_upsample		libjpeg 6a jdsample.c; chosen when component_needed==0
+1020cee0	int_upsample	understood	strong	jpeg	int_upsample		libjpeg 6a jdsample.c; integral factors (+0x8c/+0x96 expand arrays)
+1020d000	h2v1_upsample	understood	strong	jpeg	h2v1_upsample		libjpeg 6a jdsample.c; 2:1 horizontal replicate
+1020d060	h2v2_upsample	understood	strong	jpeg	h2v2_upsample		libjpeg 6a jdsample.c; horizontal replicate + jcopy_sample_rows
+1020d0f0	h2v1_fancy_upsample	understood	strong	jpeg	h2v1_fancy_upsample		libjpeg 6a jdsample.c; triangle filter, downsampled_width>2
+1020d1c0	h2v2_fancy_upsample	understood	strong	jpeg	h2v2_fancy_upsample		libjpeg 6a jdsample.c; sets need_context_rows=1
+1020d320	jinit_color_deconverter	understood	strong	jpeg	jinit_color_deconverter		libjpeg 6a jdcolor.c; allocs 0x18, switch jpeg_color_space/out_color_space
+1020d4a0	build_ycc_rgb_table	understood	strong	jpeg	build_ycc_rgb_table		libjpeg 6a jdcolor.c; constants 1.402/1.772/-0.71414/-0.34414 (0x166E9,0x1C5A2,0xB6D2,0x581A)
+1020d570	ycc_rgb_convert	understood	strong	jpeg	ycc_rgb_convert		libjpeg 6a jdcolor.c; flow.md; host/fast.c rn_jpeg_ycc
+1020d6b0	null_convert	understood	strong	jpeg	null_convert		libjpeg 6a jdcolor.c; same-colorspace copy
+1020d750	grayscale_convert	understood	strong	jpeg	grayscale_convert		libjpeg 6a jdcolor.c; gray output from Y component
+1020d770	ycck_cmyk_convert	understood	strong	jpeg	ycck_cmyk_convert		libjpeg 6a jdcolor.c; used when jpeg_color_space 5 -> out_color_space 4
+1020d8d0	jinit_merged_upsampler	understood	strong	jpeg	jinit_merged_upsampler		libjpeg 6a jdmerge.c; allocs 0x30, 2v/1v slots, build table
+1020d950	jdmerge_build_ycc_rgb_table	understood	strong	jpeg	jdmerge_build_ycc_rgb_table		libjpeg 6a jdmerge.c; same constants as jdcolor
+1020da20	jdmerge_start_pass_upsample	understood	strong	jpeg	jdmerge_start_pass_upsample		libjpeg 6a jdmerge.c; upsample slot 0
+1020da40	merged_2v_upsample	understood	strong	jpeg	merged_2v_upsample		libjpeg 6a jdmerge.c; upsample slot 1 when max_v_samp_factor==2
+1020db10	merged_1v_upsample	understood	strong	jpeg	merged_1v_upsample		libjpeg 6a jdmerge.c; upsample slot 1 otherwise
+1020db40	h2v1_merged_upsample	understood	strong	jpeg	h2v1_merged_upsample		libjpeg 6a jdmerge.c; upmethod when max_v_samp_factor==1
+1020dca0	h2v2_merged_upsample	understood	strong	jpeg	h2v2_merged_upsample		libjpeg 6a jdmerge.c; upmethod when max_v_samp_factor==2
+1020deb0	jinit_2pass_quantizer	understood	strong	jpeg	jinit_2pass_quantizer		libjpeg 6a jquant2.c; allocs 0x2c, 32 x 0x1000-byte histogram slices (HIST_C0_ELEMS 32), init_error_limit
+1020dfe0	init_error_limit	understood	strong	jpeg	init_error_limit		libjpeg 6a jquant2.c; 0x7fc table, Floyd-Steinberg limit
+1020e080	jquant2_start_pass_2_quant	understood	strong	jpeg	jquant2_start_pass_2_quant		libjpeg 6a jquant2.c; cquantize slot 0 stored by 0x1020deb0
+1020e1a0	prescan_quantize	understood	strong	jpeg	prescan_quantize		libjpeg 6a jquant2.c; histogram increment, stored by start_pass_2_quant
+1020e220	pass2_no_dither	understood	strong	jpeg	pass2_no_dither		libjpeg 6a jquant2.c; calls fill_inverse_cmap 0x1020e2f0
+1020e2f0	fill_inverse_cmap	understood	strong	jpeg	fill_inverse_cmap		libjpeg 6a jquant2.c; find_nearby_colors + find_best_colors
+1020e400	find_nearby_colors	understood	strong	jpeg	find_nearby_colors		libjpeg 6a jquant2.c
+1020e5f0	find_best_colors	understood	strong	jpeg	find_best_colors		libjpeg 6a jquant2.c
+1020e750	pass2_fs_dither	understood	strong	jpeg	pass2_fs_dither		libjpeg 6a jquant2.c; calls fill_inverse_cmap
+1020ea30	finish_pass1	understood	strong	jpeg	finish_pass1		libjpeg 6a jquant2.c; select_colors(desired) then needs_zeroed=1
+1020ea60	select_colors	understood	strong	jpeg	select_colors		libjpeg 6a jquant2.c; median_cut + compute_color per box
+1020eaf0	update_box	understood	strong	jpeg	update_box		libjpeg 6a jquant2.c; shrinks box to histogram extents
+1020ef20	median_cut	understood	strong	jpeg	median_cut		libjpeg 6a jquant2.c; find_biggest_color_pop/find_biggest_volume + update_box
+1020f060	find_biggest_color_pop	understood	strong	jpeg	find_biggest_color_pop		libjpeg 6a jquant2.c
+1020f090	find_biggest_volume	understood	strong	jpeg	find_biggest_volume		libjpeg 6a jquant2.c
+1020f0c0	compute_color	understood	strong	jpeg	compute_color		libjpeg 6a jquant2.c; mean color of a box
+1020f260	dcolor_start_pass_ret	understood	weak	jpeg	dcolor_start_pass_ret		libjpeg 6a shared empty body (`ret`): start_pass_dcolor, finish_pass_1_quant, finish_pass2; slots stored by 0x1020d320/0x1020f280/0x1020e080
+1020f270	new_color_map_2_quant	understood	strong	jpeg	new_color_map_2_quant		libjpeg 6a jquant2.c; cquantize slot 3 stored by 0x1020deb0; body sets needs_zeroed=1
+1020f280	jinit_1pass_quantizer	understood	strong	jpeg	jinit_1pass_quantizer		libjpeg 6a jquant1.c; allocs 0x58, create_colormap/colorindex
+1020f310	create_colormap	understood	strong	jpeg	create_colormap		libjpeg 6a jquant1.c
+1020f470	select_ncolors	understood	strong	jpeg	select_ncolors		libjpeg 6a jquant1.c
+1020f570	output_value	understood	strong	jpeg	output_value		libjpeg 6a jquant1.c; (j*255 + maxj/2)/maxj
+1020f590	create_colorindex	understood	strong	jpeg	create_colorindex		libjpeg 6a jquant1.c
+1020f6d0	largest_input_value	understood	strong	jpeg	largest_input_value		libjpeg 6a jquant1.c; ((2j+1)*255 + maxj)/(2 maxj)
+1020f6f0	alloc_fs_workspace	understood	strong	jpeg	alloc_fs_workspace		libjpeg 6a jquant1.c; (width+2)*2 bytes per component
+1020f730	jquant1_start_pass_1_quant	understood	strong	jpeg	jquant1_start_pass_1_quant		libjpeg 6a jquant1.c; cquantize slot 0 stored by 0x1020f280; picks color_quantize variant
+1020f870	make_odither_array	understood	strong	jpeg	make_odither_array		libjpeg 6a jquant1.c; 16x16 base_dither_matrix at 0x10212780
+1020f8e0	color_quantize	understood	strong	jpeg	color_quantize		libjpeg 6a jquant1.c; start_pass_1_quant dither NONE, ncomps!=3
+1020f990	color_quantize3	understood	strong	jpeg	color_quantize3		libjpeg 6a jquant1.c; start_pass_1_quant dither NONE, ncomps==3
+1020fa40	quantize_ord_dither	understood	strong	jpeg	quantize_ord_dither		libjpeg 6a jquant1.c; dither ORDERED, ncomps!=3
+1020fb60	quantize3_ord_dither	understood	strong	jpeg	quantize3_ord_dither		libjpeg 6a jquant1.c; dither ORDERED, ncomps==3
+1020fc90	quantize_fs_dither	understood	strong	jpeg	quantize_fs_dither		libjpeg 6a jquant1.c; dither FS
+1020fe40	new_color_map_1_quant	understood	strong	jpeg	new_color_map_1_quant		libjpeg 6a jquant1.c; cquantize slot 3 stored by 0x1020f280; body ERREXIT JERR_NOTIMPL 0x2d
+1020fe50	jpeg_idct_islow	understood	strong	jpeg	jpeg_idct_islow		libjpeg 6a jidctint.c; dct_method 0 and scaled size 8 in start_pass 0x1020c650
+102104a0	jpeg_idct_ifast	understood	strong	jpeg	jpeg_idct_ifast		libjpeg 6a jidctfst.c; dct_method 1 in start_pass 0x1020c650
+10210920	jpeg_idct_float	understood	strong	jpeg	jpeg_idct_float		libjpeg 6a jidctflt.c; dct_method 2 in start_pass 0x1020c650; flow.md; host/fast.c rn_jpeg_idct
+10210d80	jpeg_idct_4x4	understood	strong	jpeg	jpeg_idct_4x4		libjpeg 6a jidctred.c; DCT_scaled_size 4 in start_pass 0x1020c650
+10211170	jpeg_idct_2x2	understood	strong	crt	jpeg_idct_2x2		libjpeg 6a jidctred.c; DCT_scaled_size 2 in start_pass 0x1020c650
+102113a0	jpeg_idct_1x1	understood	strong	crt	jpeg_idct_1x1		libjpeg 6a jidctred.c; DCT_scaled_size 1 in start_pass 0x1020c650
+102113e0	R_Exception::getErrorMessage_thunk	understood	strong	crt	R_Exception::getErrorMessage_thunk		vtable slot 7; jmp IAT 0x102120cc ?getErrorMessage@R_Exception@@UBEPBDXZ
+102113e6	R_Exception::ReportError_thunk	understood	strong	crt	R_Exception::ReportError_thunk		vtable slot 6; jmp IAT 0x102120b4 ?ReportError@R_Exception@@UAEHII@Z
+102113ec	R_Exception::GetErrorMessage_thunk	understood	strong	crt	R_Exception::GetErrorMessage_thunk		vtable slot 5; jmp IAT 0x102120b0 ?GetErrorMessage@R_Exception@@UAEHPADIPAI@Z
+102113f2	R_Exception::GetRuntimeClass_thunk	understood	strong	crt	R_Exception::GetRuntimeClass_thunk		vtable slot 0 of exception vtables; jmp IAT 0x102120c4 ?GetRuntimeClass@R_Exception@@UBEPAUCRuntimeClass@@XZ
+102113f8	operator_delete	understood	strong	crt	operator_delete		body free(p); delete of exceptions/type_info
+10211404	MFC42.DLL::operator_new	named	strong	crt	MFC42.DLL::operator_new		import thunk (IAT)
+10211410	MSVCRT.DLL::ftol	named	strong	crt	MSVCRT.DLL::ftol		import thunk (IAT)
+10211416	_onexit	understood	strong	crt	_onexit_10011416		CRT atonexit.c shape: __dllonexit(func,&__onexitbegin,&__onexitend) or msvcrt _onexit
+10211442	atexit	understood	strong	crt	atexit		CRT shape: _onexit(f)? 0 : -1
+10211454	type_info::scalar_deleting_dtor	understood	strong	crt	type_info::scalar_deleting_dtor		vtable slot 0 of RTTI type_info vtable 0x102128a0; calls ~type_info + delete
+10211470	__ehvec_dtor	understood	weak	crt	__ehvec_dtor		CRT eh vector destructor iterator: SEH frame, loop calling dtor; used by G_Image vector deleting dtor 0x10202670 with ~G_Image
+102114d8	__ehvec_dtor_unwind_funclet	understood	weak	crt	__ehvec_dtor_unwind_funclet		unwind funclet of 0x10211470; calls 0x102114f0
+102114f0	__ehvec_dtor_cleanup_loop	understood	weak	crt	__ehvec_dtor_cleanup_loop		dtor loop under its own SEH frame
+1021154e	__CppXcptFilter	understood	strong	crt	__CppXcptFilter		CRT: exception code 0xE06D7363 -> terminate(), else continue search
+1021156a	MSVCRT.DLL::_CxxThrowException	named	strong	crt	MSVCRT.DLL::_CxxThrowException		import thunk (IAT)
+10211570	MSVCRT.DLL::setjmp3	named	strong	crt	MSVCRT.DLL::setjmp3		import thunk (IAT)
+10211576	__CxxLongjmpUnwind_thunk	named	strong	crt	__CxxLongjmpUnwind_thunk		jmp IAT 0x10212060
+1021157c	_CRT_INIT	understood	strong	crt	_CRT_INIT		CRT crtdll: malloc(0x80) onexit table, _initterm(0x10215000..0x10215010), _adjust_fdiv, refcount 0x10216a0c
+10211627	_DllMainCRTStartup	understood	strong	crt	_DllMainCRTStartup		PE entry point; CRT dllcrt0 shape calling _CRT_INIT 0x1021157c and DllMain 0x102116e8
+102116c4	MSVCRT.DLL::free	named	strong	crt	MSVCRT.DLL::free		import thunk (IAT)
+102116ca	MSVCRT.DLL::__dllonexit	named	strong	crt	MSVCRT.DLL::__dllonexit		import thunk (IAT)
+102116d0	MSVCRT.DLL::type_info::~type_info	named	strong	crt	MSVCRT.DLL::type_info::~type_info		import thunk (IAT)
+102116d6	_except_handler3_thunk	named	strong	crt	_except_handler3_thunk		jmp IAT 0x10212038
+102116dc	MSVCRT.DLL::terminate	named	strong	crt	MSVCRT.DLL::terminate		import thunk (IAT)
+102116e2	MSVCRT.DLL::initterm	named	strong	crt	MSVCRT.DLL::initterm		import thunk (IAT)
+102116e8	DllMain	understood	strong	crt	DllMain		CRT default DllMain: DisableThreadLibraryCalls on attach, returns 1
+10211730	Unwind@10211730	understood	strong	crt	Unwind@10211730		Ghidra EH funclet label (FuncInfo table)
+10211738	Unwind@10211738	understood	strong	crt	Unwind@10211738		Ghidra EH funclet label (FuncInfo table)
+10211740	Unwind@10211740	understood	strong	crt	Unwind@10211740		Ghidra EH funclet label (FuncInfo table)
+10211760	Unwind@10211760	understood	strong	crt	Unwind@10211760		Ghidra EH funclet label (FuncInfo table)
+10211768	Unwind@10211768	understood	strong	crt	Unwind@10211768		Ghidra EH funclet label (FuncInfo table)
+10211770	Unwind@10211770	understood	strong	crt	Unwind@10211770		Ghidra EH funclet label (FuncInfo table)
+10211790	Unwind@10211790	understood	strong	crt	Unwind@10211790		Ghidra EH funclet label (FuncInfo table)
+10211798	Unwind@10211798	understood	strong	crt	Unwind@10211798		Ghidra EH funclet label (FuncInfo table)
+102117b0	Unwind@102117b0	understood	strong	crt	Unwind@102117b0		Ghidra EH funclet label (FuncInfo table)
+102117b8	Unwind@102117b8	understood	strong	crt	Unwind@102117b8		Ghidra EH funclet label (FuncInfo table)
+102117d0	Unwind@102117d0	understood	strong	crt	Unwind@102117d0		Ghidra EH funclet label (FuncInfo table)
+102117d8	Unwind@102117d8	understood	strong	crt	Unwind@102117d8		Ghidra EH funclet label (FuncInfo table)
+102117f0	Unwind@102117f0	understood	strong	crt	Unwind@102117f0		Ghidra EH funclet label (FuncInfo table)
+102117f8	Unwind@102117f8	understood	strong	crt	Unwind@102117f8		Ghidra EH funclet label (FuncInfo table)
+10211800	Unwind@10211800	understood	strong	crt	Unwind@10211800		Ghidra EH funclet label (FuncInfo table)
+10211820	Unwind@10211820	understood	strong	crt	Unwind@10211820		Ghidra EH funclet label (FuncInfo table)
+10211828	Unwind@10211828	understood	strong	crt	Unwind@10211828		Ghidra EH funclet label (FuncInfo table)
+10211830	Unwind@10211830	understood	strong	crt	Unwind@10211830		Ghidra EH funclet label (FuncInfo table)
+10211850	Unwind@10211850	understood	strong	crt	Unwind@10211850		Ghidra EH funclet label (FuncInfo table)
+10211870	Unwind@10211870	understood	strong	crt	Unwind@10211870		Ghidra EH funclet label (FuncInfo table)
+10211878	Unwind@10211878	understood	strong	crt	Unwind@10211878		Ghidra EH funclet label (FuncInfo table)
+10211880	Unwind@10211880	understood	strong	crt	Unwind@10211880		Ghidra EH funclet label (FuncInfo table)
+1021188a	Unwind@1021188a	understood	strong	crt	Unwind@1021188a		Ghidra EH funclet label (FuncInfo table)
+10211892	Unwind@10211892	understood	strong	crt	Unwind@10211892		Ghidra EH funclet label (FuncInfo table)
+102118b0	Unwind@102118b0	understood	strong	crt	Unwind@102118b0		Ghidra EH funclet label (FuncInfo table)
+102118b8	Unwind@102118b8	understood	strong	crt	Unwind@102118b8		Ghidra EH funclet label (FuncInfo table)
+102118c0	Unwind@102118c0	understood	strong	crt	Unwind@102118c0		Ghidra EH funclet label (FuncInfo table)
+102118ca	Unwind@102118ca	understood	strong	crt	Unwind@102118ca		Ghidra EH funclet label (FuncInfo table)
+102118d2	Unwind@102118d2	understood	strong	crt	Unwind@102118d2		Ghidra EH funclet label (FuncInfo table)
+102118f0	Unwind@102118f0	understood	strong	crt	Unwind@102118f0		Ghidra EH funclet label (FuncInfo table)
+102118fb	Unwind@102118fb	understood	strong	crt	Unwind@102118fb		Ghidra EH funclet label (FuncInfo table)
+10211906	Unwind@10211906	understood	strong	crt	Unwind@10211906		Ghidra EH funclet label (FuncInfo table)
+10211920	Unwind@10211920	understood	strong	crt	Unwind@10211920		Ghidra EH funclet label (FuncInfo table)
+10211928	Unwind@10211928	understood	strong	crt	Unwind@10211928		Ghidra EH funclet label (FuncInfo table)
+10211930	Unwind@10211930	understood	strong	crt	Unwind@10211930		Ghidra EH funclet label (FuncInfo table)
+10211938	Unwind@10211938	understood	strong	crt	Unwind@10211938		Ghidra EH funclet label (FuncInfo table)
+10211940	Unwind@10211940	understood	strong	crt	Unwind@10211940		Ghidra EH funclet label (FuncInfo table)
+10211948	Unwind@10211948	understood	strong	crt	Unwind@10211948		Ghidra EH funclet label (FuncInfo table)
+10211950	Unwind@10211950	understood	strong	crt	Unwind@10211950		Ghidra EH funclet label (FuncInfo table)
+10211958	Unwind@10211958	understood	strong	crt	Unwind@10211958		Ghidra EH funclet label (FuncInfo table)
+10211960	Unwind@10211960	understood	strong	crt	Unwind@10211960		Ghidra EH funclet label (FuncInfo table)
+10211968	Unwind@10211968	understood	strong	crt	Unwind@10211968		Ghidra EH funclet label (FuncInfo table)
+10211970	Unwind@10211970	understood	strong	crt	Unwind@10211970		Ghidra EH funclet label (FuncInfo table)
+10211978	Unwind@10211978	understood	strong	crt	Unwind@10211978		Ghidra EH funclet label (FuncInfo table)
+10211983	Unwind@10211983	understood	strong	crt	Unwind@10211983		Ghidra EH funclet label (FuncInfo table)
+1021198b	Unwind@1021198b	understood	strong	crt	Unwind@1021198b		Ghidra EH funclet label (FuncInfo table)
+10211993	Unwind@10211993	understood	strong	crt	Unwind@10211993		Ghidra EH funclet label (FuncInfo table)
+102119b0	Unwind@102119b0	understood	strong	crt	Unwind@102119b0		Ghidra EH funclet label (FuncInfo table)
+102119b8	Unwind@102119b8	understood	strong	crt	Unwind@102119b8		Ghidra EH funclet label (FuncInfo table)
+102119c0	Unwind@102119c0	understood	strong	crt	Unwind@102119c0		Ghidra EH funclet label (FuncInfo table)
+102119ca	Unwind@102119ca	understood	strong	crt	Unwind@102119ca		Ghidra EH funclet label (FuncInfo table)
+102119d2	Unwind@102119d2	understood	strong	crt	Unwind@102119d2		Ghidra EH funclet label (FuncInfo table)
+102119f0	Unwind@102119f0	understood	strong	crt	Unwind@102119f0		Ghidra EH funclet label (FuncInfo table)
+102119f8	Unwind@102119f8	understood	strong	crt	Unwind@102119f8		Ghidra EH funclet label (FuncInfo table)
+10211a00	Unwind@10211a00	understood	strong	crt	Unwind@10211a00		Ghidra EH funclet label (FuncInfo table)
+10211a08	Unwind@10211a08	understood	strong	crt	Unwind@10211a08		Ghidra EH funclet label (FuncInfo table)
+10211a10	Unwind@10211a10	understood	strong	crt	Unwind@10211a10		Ghidra EH funclet label (FuncInfo table)
+10211a18	Unwind@10211a18	understood	strong	crt	Unwind@10211a18		Ghidra EH funclet label (FuncInfo table)
+10211a20	Unwind@10211a20	understood	strong	crt	Unwind@10211a20		Ghidra EH funclet label (FuncInfo table)
+10211a28	Unwind@10211a28	understood	strong	crt	Unwind@10211a28		Ghidra EH funclet label (FuncInfo table)
+10211a30	Unwind@10211a30	understood	strong	crt	Unwind@10211a30		Ghidra EH funclet label (FuncInfo table)
+10211a38	Unwind@10211a38	understood	strong	crt	Unwind@10211a38		Ghidra EH funclet label (FuncInfo table)
+10211a40	Unwind@10211a40	understood	strong	crt	Unwind@10211a40		Ghidra EH funclet label (FuncInfo table)
+10211a48	Unwind@10211a48	understood	strong	crt	Unwind@10211a48		Ghidra EH funclet label (FuncInfo table)
+10211a50	Unwind@10211a50	understood	strong	crt	Unwind@10211a50		Ghidra EH funclet label (FuncInfo table)
+10211a58	Unwind@10211a58	understood	strong	crt	Unwind@10211a58		Ghidra EH funclet label (FuncInfo table)
+10211a70	Unwind@10211a70	understood	strong	crt	Unwind@10211a70		Ghidra EH funclet label (FuncInfo table)
+10211a78	Unwind@10211a78	understood	strong	crt	Unwind@10211a78		Ghidra EH funclet label (FuncInfo table)
+10211a80	Unwind@10211a80	understood	strong	crt	Unwind@10211a80		Ghidra EH funclet label (FuncInfo table)

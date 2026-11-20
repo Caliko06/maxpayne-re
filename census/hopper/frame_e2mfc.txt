@@ -1,0 +1,37 @@
+# Max Payne frame chain inside the engine (e2mfc.dll): the two functions the guest stack shows below the exe at the first Present (0x10132ac0 called from 0x10132b30, which reaches rlmfc then the driver swapBuffer). What each one does and, from their callers, which exe function drives the frame.
+analysis 0 s
+
+==== 0x10132ac0 exp_?swapScreen@P_Driver@@QAEXXZ (asked 0x10132ac0)
+    var_10 = 0x0;
+    public: void __thiscall P_Driver::swapScreen(this, &var_10);
+    return;
+
+callers: 0x1013302e in 0x10133010 exp_?clearScreenBuffers@P_Driver@@QAEXABVG_Color@@@Z
+callees: 0x10132b30
+
+==== 0x10132b30 exp_?swapScreen@P_Driver@@QAEXABUtagRECT@@@Z (asked 0x10132b30)
+    var_C = *0x0;
+    *0x0 = &var_C;
+    decomp_var_1c = esi;
+    decomp_var_20 = edi;
+    esi = this;
+    esp = esp - 0x28;
+    public: __thiscall M_FPUControl::M_FPUControl(0x0, 0x0, decomp_var_20, decomp_var_1c, ebx);
+    public: float __thiscall R_Timer::sample();
+    asm { fstp       st0 };
+    esp = esp - 0x4;
+    (*(*esi + 0x58))(arg_0);
+    public: float __thiscall R_Timer::sample();
+    asm { fst        dword [ebp+arg_0] };
+    asm { fadd       dword [exp_?m_swapTime@P_Statistics@@0MA] };
+    asm { fstp       dword [exp_?m_swapTime@P_Statistics@@0MA] };
+    public: void __cdecl P_Device::runtimeVerbose(public: static class P_Device * __fastcall P_Driver::getDevice(), decomp_var_18);
+    public: __thiscall M_FPUControl::~M_FPUControl();
+    *0x0 = var_C;
+    &decomp_var_8 = ebp;
+    return;
+
+callers: 0x10132ae0 in 0x10132ac0 exp_?swapScreen@P_Driver@@QAEXXZ; 0x10132b21 in 0x10132af0 exp_?swapScreen@P_Driver@@QAEXPAVP_Camera@@@Z
+callees: 0x1012e7c0 0x10131b30 0x1016e398 0x1016e3c0 0x1016e3cc
+
+DONE 0 s, 2 procedures, 0 data

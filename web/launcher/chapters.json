@@ -1,0 +1,769 @@
+{
+ "_comment": "Pantalla de título: los 26 niveles de MPLaunch.LEVELS en orden, con portada, paneles y narración. Solo rutas y textos: ningún byte del juego vive aquí. Rutas bajo base (/gamefile/<ruta>, tools/serve.py). Portadas y paneles salen de web/launcher/assets.json (roles chapter-cover y gn-panel); donde el nivel no tenía gn-panel se usan las páginas siguientes de su capítulo (census/canon_order.tsv). Títulos: la tarjeta de cómic del capítulo y el nombre de menú (LNID_* de x_english.ras), out/bec/launcher/levels.md. Textos de voz: out/bec/launcher2/narration.md.",
+ "base": "/gamefile/",
+ "progress": {
+  "rule": "Un nivel cuenta como alcanzado si alguna partida guardada está en ese nivel o en uno posterior: reached = order(save.level) <= max(order de las partidas con level conocido).",
+  "save_level": "saves() (web/launcher-options.js:132-139) devuelve filas {id, label, level, date, when}. El nivel lo pone describe() (:120-131): lee los primeros 200 bytes del .mps, exige head[0] === 0x0c, saca el tamaño del chunk 1 en los bytes 9..12 y lee la descripción tras \\x0d\\x14; después lee 100 bytes a partir de 13 + size, justo detrás del chunk 1, donde el juego escribe el nombre del mapa, y busca ahí el id de nivel más largo de LEVELS que aparezca (\"part1_level1b\" antes que \"part1_level1\").",
+  "current": "El nivel actual es el level de la partida más reciente: la de mayor when (mtime del archivo o la fecha de la descripción), y si no hay fechas, el autoguardado (slot 0).",
+  "note": "La campaña es lineal y el juego no tiene selector de capítulos, así que una partida en un capítulo posterior prueba que se alcanzaron los anteriores. El tutorial no tiene order: no se exige ni suma."
+ },
+ "levels": [
+  {
+   "order": 1,
+   "id": "part0_level1",
+   "part": "Part I",
+   "part_title": "The American Dream",
+   "part_card": "Part I: The American Dream",
+   "chapter": "Prologue",
+   "chapter_title": null,
+   "title": "Part I: The American Dream",
+   "level_name": "Part I, Prologue",
+   "cover": {
+    "page": "P1L0a_002",
+    "path": "data/database/graphicnovelpages/part1/textures/p1l0a_002.jpg"
+   },
+   "panels": [
+    {
+     "page": "P1L0a_001",
+     "path": "data/database/graphicnovelpages/part1/textures/p1l0a_001.jpg"
+    },
+    {
+     "page": "P1L0a_010",
+     "path": "data/database/graphicnovelpages/part1/textures/p1l0a_010.jpg"
+    }
+   ],
+   "narration": {
+    "page": "P1L0a_001",
+    "path": "data/database/sounds/story/part1/P1L0a_001.wav",
+    "seconds": 6.6,
+    "text": "To make any kind of sense of it, I need to go back three years. Back to the night the pain started."
+   },
+   "part_narration": null
+  },
+  {
+   "order": 2,
+   "id": "part1_level1",
+   "part": "Part I",
+   "part_title": "The American Dream",
+   "part_card": "Part I: The American Dream",
+   "chapter": "Chapter One",
+   "chapter_title": "Roscoe Street Station",
+   "title": "Chapter One: Roscoe Street Station",
+   "level_name": "Part I, Chapter One",
+   "cover": {
+    "page": "P1L1a_001",
+    "path": "data/database/graphicnovelpages/part1/textures/p1l1a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P1L1a_002",
+     "path": "data/database/graphicnovelpages/part1/textures/p1l1a_002.jpg"
+    },
+    {
+     "page": "P1L1a_003",
+     "path": "data/database/graphicnovelpages/part1/textures/p1l1a_003.jpg"
+    }
+   ],
+   "narration": null,
+   "part_narration": {
+    "page": "P1L0a_001",
+    "path": "data/database/sounds/story/part1/P1L0a_001.wav",
+    "seconds": 6.6,
+    "text": "To make any kind of sense of it, I need to go back three years. Back to the night the pain started."
+   }
+  },
+  {
+   "order": 3,
+   "id": "part1_level1b",
+   "part": "Part I",
+   "part_title": "The American Dream",
+   "part_card": "Part I: The American Dream",
+   "chapter": "Chapter Two",
+   "chapter_title": "Live from the Crime Scene",
+   "title": "Chapter Two: Live from the Crime Scene",
+   "level_name": "Part I, Chapter Two",
+   "cover": {
+    "page": "P1L1b_001",
+    "path": "data/database/graphicnovelpages/part1/textures/p1l1b_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P1L1b_005",
+     "path": "data/database/graphicnovelpages/part1/textures/p1l1b_005.jpg"
+    }
+   ],
+   "narration": {
+    "page": "P1L1b_002_ok",
+    "path": "data/database/sounds/story/part1/P1L1b_002.wav",
+    "seconds": 15.1,
+    "text": "The rusty door led to an abandoned part of the station, closed off since the early 40s. Something big was going down at Roscoe Street. Maybe that’s why Alex had wanted to meet me here. Maybe not. One way or the other, I was going to find out."
+   },
+   "part_narration": null
+  },
+  {
+   "order": 4,
+   "id": "part1_level2",
+   "part": "Part I",
+   "part_title": "The American Dream",
+   "part_card": "Part I: The American Dream",
+   "chapter": "Chapter Three",
+   "chapter_title": "Playing It Bogart",
+   "title": "Chapter Three: Playing It Bogart",
+   "level_name": "Part I, Chapter Three",
+   "cover": {
+    "page": "P1L2a_001",
+    "path": "data/database/graphicnovelpages/part1/textures/p1l2a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P1L2a_008b",
+     "path": "data/database/graphicnovelpages/part1/textures/p1l2a_008b.jpg"
+    }
+   ],
+   "narration": {
+    "page": "P1L2a_005_ok",
+    "path": "data/database/sounds/story/part1/P1L2a_005.wav",
+    "seconds": 11.8,
+    "text": "Lupino wasn’t in his cheap hotel. Instead I ran into the Finito brothers. My cover had been blown. The doors slammed shut behind me— and then I was dodging bullets like raindrops."
+   },
+   "part_narration": null
+  },
+  {
+   "order": 5,
+   "id": "part1_level2b",
+   "part": "Part I",
+   "part_title": "The American Dream",
+   "part_card": "Part I: The American Dream",
+   "chapter": "Chapter Four",
+   "chapter_title": "The Blood Veins of New York",
+   "title": "Chapter Four: The Blood Veins of New York",
+   "level_name": "Part I, Chapter Four",
+   "cover": {
+    "page": "P1L2b_001",
+    "path": "data/database/graphicnovelpages/part1/textures/p1l2b_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P1L2b_006",
+     "path": "data/database/graphicnovelpages/part1/textures/p1l2b_006.jpg"
+    }
+   ],
+   "narration": {
+    "page": "P1L2b_002_ok",
+    "path": "data/database/sounds/story/part1/P1L2b_002.wav",
+    "seconds": 5.9,
+    "text": "The old service elevator rumbled down to the bowels of Jack Lupino’s hotel."
+   },
+   "part_narration": null
+  },
+  {
+   "order": 6,
+   "id": "part1_level3",
+   "part": "Part I",
+   "part_title": "The American Dream",
+   "part_card": "Part I: The American Dream",
+   "chapter": "Chapter Five",
+   "chapter_title": "Let the Gun Do the Talking",
+   "title": "Chapter Five: Let the Gun Do the Talking",
+   "level_name": "Part I, Chapter Five",
+   "cover": {
+    "page": "P1L3a_001",
+    "path": "data/database/graphicnovelpages/part1/textures/p1l3a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P1L3a_006",
+     "path": "data/database/graphicnovelpages/part1/textures/p1l3a_006.jpg"
+    }
+   ],
+   "narration": null,
+   "part_narration": {
+    "page": "P1L0a_001",
+    "path": "data/database/sounds/story/part1/P1L0a_001.wav",
+    "seconds": 6.6,
+    "text": "To make any kind of sense of it, I need to go back three years. Back to the night the pain started."
+   }
+  },
+  {
+   "order": 7,
+   "id": "part1_level3b",
+   "part": "Part I",
+   "part_title": "The American Dream",
+   "part_card": "Part I: The American Dream",
+   "chapter": "Chapter Six",
+   "chapter_title": "Fear That Gives Men Wings",
+   "title": "Chapter Six: Fear That Gives Men Wings",
+   "level_name": "Part I, Chapter Six",
+   "cover": {
+    "page": "P1L3b_001",
+    "path": "data/database/graphicnovelpages/part1/textures/p1l3b_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P1L3b_007",
+     "path": "data/database/graphicnovelpages/part1/textures/p1l3b_007.jpg"
+    }
+   ],
+   "narration": null,
+   "part_narration": {
+    "page": "P1L0a_001",
+    "path": "data/database/sounds/story/part1/P1L0a_001.wav",
+    "seconds": 6.6,
+    "text": "To make any kind of sense of it, I need to go back three years. Back to the night the pain started."
+   }
+  },
+  {
+   "order": 8,
+   "id": "part1_level4",
+   "part": "Part I",
+   "part_title": "The American Dream",
+   "part_card": "Part I: The American Dream",
+   "chapter": "Chapter Seven",
+   "chapter_title": "Police Brutality",
+   "title": "Chapter Seven: Police Brutality",
+   "level_name": "Part I, Chapter Seven",
+   "cover": {
+    "page": "P1L4a_001",
+    "path": "data/database/graphicnovelpages/part1/textures/p1l4a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P1L4a_002",
+     "path": "data/database/graphicnovelpages/part1/textures/p1l4a_002.jpg"
+    },
+    {
+     "page": "P1L4a_003",
+     "path": "data/database/graphicnovelpages/part1/textures/p1l4a_003.jpg"
+    }
+   ],
+   "narration": null,
+   "part_narration": {
+    "page": "P1L0a_001",
+    "path": "data/database/sounds/story/part1/P1L0a_001.wav",
+    "seconds": 6.6,
+    "text": "To make any kind of sense of it, I need to go back three years. Back to the night the pain started."
+   }
+  },
+  {
+   "order": 9,
+   "id": "part1_level5",
+   "part": "Part I",
+   "part_title": "The American Dream",
+   "part_card": "Part I: The American Dream",
+   "chapter": "Chapter Eight",
+   "chapter_title": "Ragna Rock",
+   "title": "Chapter Eight: Ragna Rock",
+   "level_name": "Part I, Chapter Eight",
+   "cover": {
+    "page": "P1L5a_001",
+    "path": "data/database/graphicnovelpages/part1/textures/p1l5a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P1L5a_002",
+     "path": "data/database/graphicnovelpages/part1/textures/p1l5a_002.jpg"
+    }
+   ],
+   "narration": null,
+   "part_narration": {
+    "page": "P1L0a_001",
+    "path": "data/database/sounds/story/part1/P1L0a_001.wav",
+    "seconds": 6.6,
+    "text": "To make any kind of sense of it, I need to go back three years. Back to the night the pain started."
+   }
+  },
+  {
+   "order": 10,
+   "id": "part1_level6",
+   "part": "Part I",
+   "part_title": "The American Dream",
+   "part_card": "Part I: The American Dream",
+   "chapter": "Chapter Nine",
+   "chapter_title": "An Empire of Evil",
+   "title": "Chapter Nine: An Empire of Evil",
+   "level_name": "Part I, Chapter Nine",
+   "cover": {
+    "page": "P1L5b_001",
+    "path": "data/database/graphicnovelpages/part1/textures/p1l5b_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P1L5b_002",
+     "path": "data/database/graphicnovelpages/part1/textures/p1l5b_002.jpg"
+    },
+    {
+     "page": "P1L5b_003",
+     "path": "data/database/graphicnovelpages/part1/textures/p1l5b_003.jpg"
+    }
+   ],
+   "narration": null,
+   "part_narration": {
+    "page": "P1L0a_001",
+    "path": "data/database/sounds/story/part1/P1L0a_001.wav",
+    "seconds": 6.6,
+    "text": "To make any kind of sense of it, I need to go back three years. Back to the night the pain started."
+   }
+  },
+  {
+   "order": 11,
+   "id": "part2_level0",
+   "part": "Part II",
+   "part_title": "A Cold Day in Hell",
+   "part_card": "Part II: A Cold Day in Hell",
+   "chapter": "Prologue",
+   "chapter_title": null,
+   "title": "Part II: A Cold Day in Hell",
+   "level_name": "Part II, Prologue",
+   "cover": {
+    "page": "P2L0a_001",
+    "path": "data/database/graphicnovelpages/part2/textures/p2l0a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P2L0a_002",
+     "path": "data/database/graphicnovelpages/part2/textures/p2l0a_002.jpg"
+    },
+    {
+     "page": "P2L0a_007",
+     "path": "data/database/graphicnovelpages/part2/textures/p2l0a_007.jpg"
+    }
+   ],
+   "narration": {
+    "page": "P2L0a_004",
+    "path": "data/database/sounds/story/part2/P2L0a_004.wav",
+    "seconds": 8.5,
+    "text": "“Why not pool our bullets for this one?” — “I thought you’d never ask. My finger was starting to twitch.” — “How do you like your whiskey?”"
+   },
+   "part_narration": null
+  },
+  {
+   "order": 12,
+   "id": "part2_level1",
+   "part": "Part II",
+   "part_title": "A Cold Day in Hell",
+   "part_card": "Part II: A Cold Day in Hell",
+   "chapter": "Chapter One",
+   "chapter_title": "The Baseball Bat",
+   "title": "Chapter One: The Baseball Bat",
+   "level_name": "Part II, Chapter One",
+   "cover": {
+    "page": "P2L1a_001",
+    "path": "data/database/graphicnovelpages/part2/textures/p2l1a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P2L1a_005",
+     "path": "data/database/graphicnovelpages/part2/textures/p2l1a_005.jpg"
+    },
+    {
+     "page": "P2L1a_010",
+     "path": "data/database/graphicnovelpages/part2/textures/p2l1a_010.jpg"
+    }
+   ],
+   "narration": {
+    "page": "P2L1a_006",
+    "path": "data/database/sounds/story/part2/P2L1a_006.wav",
+    "seconds": 15.0,
+    "text": "They had dragged me back to the basement of Lupino’s hotel. I was beaten, bruised, and blue. I felt like the chair I had broken to get free. All I had was Niagara’s bat, sticky with my own blood."
+   },
+   "part_narration": null
+  },
+  {
+   "order": 13,
+   "id": "part2_level2",
+   "part": "Part II",
+   "part_title": "A Cold Day in Hell",
+   "part_card": "Part II: A Cold Day in Hell",
+   "chapter": "Chapter Two",
+   "chapter_title": "An Offer You Can't Refuse",
+   "title": "Chapter Two: An Offer You Can't Refuse",
+   "level_name": "Part II, Chapter Two",
+   "cover": {
+    "page": "P2L2a_001",
+    "path": "data/database/graphicnovelpages/part2/textures/p2l2a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P2L2a_004",
+     "path": "data/database/graphicnovelpages/part2/textures/p2l2a_004.jpg"
+    }
+   ],
+   "narration": null,
+   "part_narration": {
+    "page": "P2L0a_004",
+    "path": "data/database/sounds/story/part2/P2L0a_004.wav",
+    "seconds": 8.5,
+    "text": "“Why not pool our bullets for this one?” — “I thought you’d never ask. My finger was starting to twitch.” — “How do you like your whiskey?”"
+   }
+  },
+  {
+   "order": 14,
+   "id": "part2_level2b",
+   "part": "Part II",
+   "part_title": "A Cold Day in Hell",
+   "part_card": "Part II: A Cold Day in Hell",
+   "chapter": "Chapter Three",
+   "chapter_title": "With Rats and Oily Water",
+   "title": "Chapter Three: With Rats and Oily Water",
+   "level_name": "Part II, Chapter Three",
+   "cover": {
+    "page": "P2L2b_001",
+    "path": "data/database/graphicnovelpages/part2/textures/p2l2b_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P2L2b_003",
+     "path": "data/database/graphicnovelpages/part2/textures/p2l2b_003.jpg"
+    }
+   ],
+   "narration": {
+    "page": "P2L2b_002",
+    "path": "data/database/sounds/story/part2/P2L2a_008.wav",
+    "seconds": 13.7,
+    "text": "Rust had crept over the sides of the cargo steamer a long time ago. Boris Dime would be on board. I’d have to smoke half of his crew to even get near the gangplank. The guns were probably being kept in the hold, buried amidst the rats and oily water.",
+    "note": "el WAV se llama P2L2a_008.wav en assets.json; suena en la página P2L2b_002"
+   },
+   "part_narration": null
+  },
+  {
+   "order": 15,
+   "id": "part2_level3",
+   "part": "Part II",
+   "part_title": "A Cold Day in Hell",
+   "part_card": "Part II: A Cold Day in Hell",
+   "chapter": "Chapter Four",
+   "chapter_title": "Put Out My Flames With Gasoline",
+   "title": "Chapter Four: Put Out My Flames With Gasoline",
+   "level_name": "Part II, Chapter Four",
+   "cover": {
+    "page": "P2L3a_001",
+    "path": "data/database/graphicnovelpages/part2/textures/p2l3a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P2L3a_005",
+     "path": "data/database/graphicnovelpages/part2/textures/p2l3a_005.jpg"
+    }
+   ],
+   "narration": {
+    "page": "P2L3a_002",
+    "path": "data/database/sounds/story/part2/P2L3a_002.wav",
+    "seconds": 14.7,
+    "text": "Even with all this firepower, I figured I couldn’t get to Punchinello at his manor. I could only hope he wouldn’t pass a chance to hear me beg, to see he’s won. — “This is Max Payne. I want to cut a deal.”"
+   },
+   "part_narration": null
+  },
+  {
+   "order": 16,
+   "id": "part2_level4",
+   "part": "Part II",
+   "part_title": "A Cold Day in Hell",
+   "part_card": "Part II: A Cold Day in Hell",
+   "chapter": "Chapter Five",
+   "chapter_title": "Angel of Death",
+   "title": "Chapter Five: Angel of Death",
+   "level_name": "Part II, Chapter Five",
+   "cover": {
+    "page": "P2L4a_001",
+    "path": "data/database/graphicnovelpages/part2/textures/p2l4a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P2L4a_006",
+     "path": "data/database/graphicnovelpages/part2/textures/p2l4a_006.jpg"
+    }
+   ],
+   "narration": null,
+   "part_narration": {
+    "page": "P2L0a_004",
+    "path": "data/database/sounds/story/part2/P2L0a_004.wav",
+    "seconds": 8.5,
+    "text": "“Why not pool our bullets for this one?” — “I thought you’d never ask. My finger was starting to twitch.” — “How do you like your whiskey?”"
+   }
+  },
+  {
+   "order": 17,
+   "id": "part3_level1",
+   "part": "Part III",
+   "part_title": "A Bit Closer to Heaven",
+   "part_card": "Part III: A Bit Closer to Heaven",
+   "chapter": "Prologue",
+   "chapter_title": null,
+   "title": "Part III: A Bit Closer to Heaven",
+   "level_name": "Part III, Prologue",
+   "cover": {
+    "page": "P3L1a_001",
+    "path": "data/database/graphicnovelpages/part3/textures/p3l1a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P3L1a_006",
+     "path": "data/database/graphicnovelpages/part3/textures/p3l1a_006.jpg"
+    }
+   ],
+   "narration": null,
+   "part_narration": {
+    "page": "P3L2a_005",
+    "path": "data/database/sounds/story/part3/P3L2a_005.wav",
+    "seconds": 14.1,
+    "text": "A half-abandoned industrial area in the middle of nowhere. The factory was a perfect front for any number of illegal activities. In the belly of the plant, molten metal boiled and bubbled, like a witch’s brew."
+   }
+  },
+  {
+   "order": 18,
+   "id": "part3_level2",
+   "part": "Part III",
+   "part_title": "A Bit Closer to Heaven",
+   "part_card": "Part III: A Bit Closer to Heaven",
+   "chapter": "Chapter One",
+   "chapter_title": "Take Me to Cold Steel",
+   "title": "Chapter One: Take Me to Cold Steel",
+   "level_name": "Part III, Chapter One",
+   "cover": {
+    "page": "P3L2a_001",
+    "path": "data/database/graphicnovelpages/part3/textures/p3l2a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P3L2a_005",
+     "path": "data/database/graphicnovelpages/part3/textures/p3l2a_005.jpg"
+    }
+   ],
+   "narration": {
+    "page": "P3L2a_005",
+    "path": "data/database/sounds/story/part3/P3L2a_005.wav",
+    "seconds": 14.1,
+    "text": "A half-abandoned industrial area in the middle of nowhere. The factory was a perfect front for any number of illegal activities. In the belly of the plant, molten metal boiled and bubbled, like a witch’s brew."
+   },
+   "part_narration": null
+  },
+  {
+   "order": 19,
+   "id": "part3_level2b",
+   "part": "Part III",
+   "part_title": "A Bit Closer to Heaven",
+   "part_card": "Part III: A Bit Closer to Heaven",
+   "chapter": "Chapter Two",
+   "chapter_title": "Hidden Truths",
+   "title": "Chapter Two: Hidden Truths",
+   "level_name": "Part III, Chapter Two",
+   "cover": {
+    "page": "P3L2a_007",
+    "path": "data/database/graphicnovelpages/part3/textures/p3l2a_007.jpg"
+   },
+   "panels": [
+    {
+     "page": "P3L2a_008",
+     "path": "data/database/graphicnovelpages/part3/textures/p3l2a_008.jpg"
+    },
+    {
+     "page": "P3L2a_009",
+     "path": "data/database/graphicnovelpages/part3/textures/p3l2a_009.jpg"
+    }
+   ],
+   "narration": null,
+   "part_narration": {
+    "page": "P3L2a_005",
+    "path": "data/database/sounds/story/part3/P3L2a_005.wav",
+    "seconds": 14.1,
+    "text": "A half-abandoned industrial area in the middle of nowhere. The factory was a perfect front for any number of illegal activities. In the belly of the plant, molten metal boiled and bubbled, like a witch’s brew."
+   }
+  },
+  {
+   "order": 20,
+   "id": "part3_level3",
+   "part": "Part III",
+   "part_title": "A Bit Closer to Heaven",
+   "part_card": "Part III: A Bit Closer to Heaven",
+   "chapter": "Chapter Three",
+   "chapter_title": "The Deep Six",
+   "title": "Chapter Three: The Deep Six",
+   "level_name": "Part III, Chapter Three",
+   "cover": {
+    "page": "P3L3a_001",
+    "path": "data/database/graphicnovelpages/part3/textures/p3l3a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P3L3a_004",
+     "path": "data/database/graphicnovelpages/part3/textures/p3l3a_004.jpg"
+    }
+   ],
+   "narration": null,
+   "part_narration": {
+    "page": "P3L2a_005",
+    "path": "data/database/sounds/story/part3/P3L2a_005.wav",
+    "seconds": 14.1,
+    "text": "A half-abandoned industrial area in the middle of nowhere. The factory was a perfect front for any number of illegal activities. In the belly of the plant, molten metal boiled and bubbled, like a witch’s brew."
+   }
+  },
+  {
+   "order": 21,
+   "id": "part3_level4",
+   "part": "Part III",
+   "part_title": "A Bit Closer to Heaven",
+   "part_card": "Part III: A Bit Closer to Heaven",
+   "chapter": "Chapter Four",
+   "chapter_title": "Backstabbing Bastard",
+   "title": "Chapter Four: Backstabbing Bastard",
+   "level_name": "Part III, Chapter Four",
+   "cover": {
+    "page": "P3L4a_001",
+    "path": "data/database/graphicnovelpages/part3/textures/p3l4a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P3L4a_005",
+     "path": "data/database/graphicnovelpages/part3/textures/p3l4a_005.jpg"
+    }
+   ],
+   "narration": {
+    "page": "P3L4a_006",
+    "path": "data/database/sounds/story/part3/P3L4a_006.wav",
+    "seconds": 13.9,
+    "text": "B.B. turned out to be another cardboard cutout bad guy. A bad cop on the take, a cowardly right-hand man fleeing from the scene, leaving his paid thugs to do his dirty work."
+   },
+   "part_narration": null
+  },
+  {
+   "order": 22,
+   "id": "part3_level5",
+   "part": "Part III",
+   "part_title": "A Bit Closer to Heaven",
+   "part_card": "Part III: A Bit Closer to Heaven",
+   "chapter": "Chapter Five",
+   "chapter_title": "In the Land of the Blind",
+   "title": "Chapter Five: In the Land of the Blind",
+   "level_name": "Part III, Chapter Five",
+   "cover": {
+    "page": "P3L5a_001",
+    "path": "data/database/graphicnovelpages/part3/textures/p3l5a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P3L5a_004",
+     "path": "data/database/graphicnovelpages/part3/textures/p3l5a_004.jpg"
+    },
+    {
+     "page": "P3L5a_010",
+     "path": "data/database/graphicnovelpages/part3/textures/p3l5a_010.jpg"
+    }
+   ],
+   "narration": {
+    "page": "P3L5a_005",
+    "path": "data/database/sounds/story/part3/P3L5a_005.wav",
+    "seconds": 13.9,
+    "text": "That was the cue for the killer suits to kick in the doors and swarm inside. It was an impressive floor show, but I decided to leave early anyway. It was only a one-story fall. Lucky me."
+   },
+   "part_narration": null
+  },
+  {
+   "order": 23,
+   "id": "part3_level5b",
+   "part": "Part III",
+   "part_title": "A Bit Closer to Heaven",
+   "part_card": "Part III: A Bit Closer to Heaven",
+   "chapter": "Chapter Six",
+   "chapter_title": "Byzantine Power Game",
+   "title": "Chapter Six: Byzantine Power Game",
+   "level_name": "Part III, Chapter Six",
+   "cover": {
+    "page": "P3L5b_001",
+    "path": "data/database/graphicnovelpages/part3/textures/p3l5b_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P3L5b_002",
+     "path": "data/database/graphicnovelpages/part3/textures/p3l5b_002.jpg"
+    },
+    {
+     "page": "P3L5b_003",
+     "path": "data/database/graphicnovelpages/part3/textures/p3l5b_003.jpg"
+    }
+   ],
+   "narration": null,
+   "part_narration": {
+    "page": "P3L2a_005",
+    "path": "data/database/sounds/story/part3/P3L2a_005.wav",
+    "seconds": 14.1,
+    "text": "A half-abandoned industrial area in the middle of nowhere. The factory was a perfect front for any number of illegal activities. In the belly of the plant, molten metal boiled and bubbled, like a witch’s brew."
+   }
+  },
+  {
+   "order": 24,
+   "id": "part3_level6",
+   "part": "Part III",
+   "part_title": "A Bit Closer to Heaven",
+   "part_card": "Part III: A Bit Closer to Heaven",
+   "chapter": "Chapter Seven",
+   "chapter_title": "Nothing to Lose",
+   "title": "Chapter Seven: Nothing to Lose",
+   "level_name": "Part III, Chapter Seven",
+   "cover": {
+    "page": "P3L6a_001",
+    "path": "data/database/graphicnovelpages/part3/textures/p3l6a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P3L6a_004",
+     "path": "data/database/graphicnovelpages/part3/textures/p3l6a_004.jpg"
+    }
+   ],
+   "narration": null,
+   "part_narration": {
+    "page": "P3L2a_005",
+    "path": "data/database/sounds/story/part3/P3L2a_005.wav",
+    "seconds": 14.1,
+    "text": "A half-abandoned industrial area in the middle of nowhere. The factory was a perfect front for any number of illegal activities. In the belly of the plant, molten metal boiled and bubbled, like a witch’s brew."
+   }
+  },
+  {
+   "order": 25,
+   "id": "part3_level7",
+   "part": "Part III",
+   "part_title": "A Bit Closer to Heaven",
+   "part_card": "Part III: A Bit Closer to Heaven",
+   "chapter": "Chapter Eight",
+   "chapter_title": "Pain and Suffering",
+   "title": "Chapter Eight: Pain and Suffering",
+   "level_name": "Part III, Chapter Eight",
+   "cover": {
+    "page": "P3L7a_001",
+    "path": "data/database/graphicnovelpages/part3/textures/p3l7a_001.jpg"
+   },
+   "panels": [
+    {
+     "page": "P3L7a_002",
+     "path": "data/database/graphicnovelpages/part3/textures/p3l7a_002.jpg"
+    },
+    {
+     "page": "P3L7a_003",
+     "path": "data/database/graphicnovelpages/part3/textures/p3l7a_003.jpg"
+    }
+   ],
+   "narration": null,
+   "part_narration": {
+    "page": "P3L2a_005",
+    "path": "data/database/sounds/story/part3/P3L2a_005.wav",
+    "seconds": 14.1,
+    "text": "A half-abandoned industrial area in the middle of nowhere. The factory was a perfect front for any number of illegal activities. In the belly of the plant, molten metal boiled and bubbled, like a witch’s brew."
+   }
+  },
+  {
+   "order": null,
+   "id": "tutorial",
+   "part": "Tutorial",
+   "part_title": null,
+   "part_card": null,
+   "chapter": "Tutorial",
+   "chapter_title": null,
+   "title": "Tutorial",
+   "level_name": "Tutorial",
+   "cover": null,
+   "panels": [],
+   "narration": null,
+   "part_narration": null,
+   "note": "no es parte de la historia: sin portada, sin paneles y sin narración; tampoco cuenta para el progreso"
+  }
+ ]
+}

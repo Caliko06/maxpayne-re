@@ -1,0 +1,17 @@
+rea/out/
+rea/c/
+__pycache__/
+build/
+web/out/
+rea/pod-old/
+save/
+rea/pod/
+.DS_Store
+.venv
+rea/c
+node_modules/
+out/*
+!out/review/
+web/launcher/art/src/
+web/launcher/art2/private/
+web/launcher/art2/src/

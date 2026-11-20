@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<title>Max Payne</title>
+<script>
+// The device picks the layout (OWNER 2026-11-19, AGENTS.md Goal): a touch screen whose short side is under 600 CSS px is a phone
+// (landscape only, the launcher's phone layout, touch controls), any other touch screen a tablet (touch controls), the rest a
+// desktop. ?device=phone|tablet|desktop forces it (tests on the Mac). CSS reads html[data-device]; scripts read MP_DEVICE.
+window.MP_DEVICE = (() => {
+  const q = new URLSearchParams(location.search).get('device');
+  if (['phone', 'tablet', 'desktop'].includes(q)) return q;
+  return matchMedia('(pointer: coarse)').matches ? (Math.min(screen.width, screen.height) < 600 ? 'phone' : 'tablet') : 'desktop';
+})();
+document.documentElement.dataset.device = MP_DEVICE;
+</script>
+<link rel="stylesheet" href="launcher.css">
+<link rel="stylesheet" href="ffwd.css">
+<style>
+  html, body { margin: 0; background: var(--bg); color: var(--fg); font: 13px/1.45 ui-monospace, Menlo, monospace; }
+  html, body { height: 100%; overflow: hidden; }
+  body.dbg { overflow: auto; }
+  #status { color: var(--dim); }
+  #status.run { color: var(--ok); }
+  #status.stop { color: var(--stop); }
+  /* The game fills the window and keeps its aspect (object-fit); the buffer has the screen's size (playSize). */
+  #screen { position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100dvh; object-fit: contain; background: #000; image-rendering: auto; outline: none; }
+  /* #boot is styled in launcher.css (same palette as the launcher): black to black after Play. */
+  /* The log is a panel: F2, or automatic at a STOP. Everything in it also goes to tools/serve.py (build/web.log). */
+  #panel { display: none; position: fixed; inset: 0; background: var(--ink); z-index: 60; overflow: auto; }
+  body.dbg #panel { display: block; }
+  #panel header { padding: 12px 16px; border-bottom: 1px solid var(--hair); display: flex; gap: 16px; align-items: baseline; flex-wrap: wrap; }
+  #log { padding: 12px 16px; white-space: pre-wrap; word-break: break-all; margin: 0; }
+  .stop { color: var(--stop); font-weight: bold; }
+  .dim { color: var(--dim); }
+</style>
+</head>
+<body>
+<canvas id="screen" width="1024" height="768"></canvas>
+<div id="rotate" aria-live="polite"><svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"><rect x="8" y="18" width="48" height="28" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="50" cy="32" r="2" fill="currentColor"/></svg>
+<b>Turn your phone sideways</b><span>Max Payne plays in landscape</span></div>
+<div id="boot" role="status" aria-live="polite"><img class="bootlogo" src="launcher/art2/private/logo.webp" alt="" onerror="this.parentNode.classList.add('nologo')"><div class="bootword">Max Payne</div>
+<span id="bootmsg">loading the engine…</span><div class="bootbar"><i id="bootbar"></i></div>
+<span class="bootnote">when it is ready, click the picture to start; F2 opens the log</span>
+<a class="bootnotice" href="/notice.html" target="_blank" rel="noopener">Fan project. Not affiliated with the rights holders.</a></div>
+<div id="panel">
+<header><b>Max Payne</b><span class="dim">MaxPayne.exe and its DLLs in WebAssembly; F2 closes the log</span><span id="status">loading…</span></header>
+<pre id="log"></pre>
+</div>
+<script src="launcher-controls.js"></script>
+<script src="launcher-options.js"></script>
+<script src="launcher-audio.js"></script>
+<script src="launcher-tear.js"></script>
+<script src="launcher.js"></script>
+<script src="input.js"></script>
+<script src="touch.js"></script>
+<script src="gamepad.js"></script>
+<script src="gpu.js"></script>
+<script src="audio.js"></script>
+<script src="telemetry.js"></script>
+<script src="ffwd.js"></script>
+<script src="opfs.js"></script>
+<script src="out/maxpayne.js"></script>
+<script>
+const log = document.getElementById('log'), status = document.getElementById('status');
+const t0 = performance.now(), secs = () => ((performance.now() - t0) / 1000).toFixed(2);
+let pending = [], allLog = [];       // allLog: the whole session, for the F10 download (telemetry.js)
+const flush = () => { if (!pending.length) return; const body = pending.join('\n') + '\n'; pending = []; fetch('/log', { method: 'POST', body, keepalive: true }).catch(() => {}); };
+fetch('/log?new', { method: 'POST', body: `page ${location.href} ${new Date().toISOString()}\n` }).catch(() => {});
+setInterval(flush, 1000);
+addEventListener('pagehide', flush);
+addEventListener('keydown', e => { if (e.code === 'F2') { document.body.classList.toggle('dbg'); e.preventDefault(); } }, true);
+addEventListener('error', e => line('JS error: ' + e.message + ' at ' + e.filename + ':' + e.lineno, 'stop'));
+addEventListener('unhandledrejection', e => line('JS rejection: ' + (e.reason && e.reason.stack || e.reason), 'stop'));
+
+function line(s, cls) {
+  pending.push(`${secs()} ${s}`); allLog.push(`${secs()} ${s}`);
+  console.log(s);
+  const d = document.createElement('div');
+  d.className = cls || (/^STOP/.test(s) ? 'stop' : '');
+  d.textContent = s;
+  log.appendChild(d);
+  if (/^STOP|abort|RuntimeError/.test(s)) {
+    status.textContent = 'detenido a los ' + secs() + ' s'; status.className = 'stop';
+    document.body.classList.add('dbg'); setTimeout(flush, 0);
+  }
+}
+
+// WebGPU renderer: web/gpu.js reads the draw packets of host/gpu.h in place in the shared heap. The CPU rasterizer
+// stays in the native bench (--shot).
+
+// Render size: the screen in landscape, in real pixels, capped. Phones render at 75% like nfsu2-web (rea/map/web-devices.md).
+function playSize(pick) {
+  const dpr = pick?.video?.hidpi === false ? 1 : devicePixelRatio || 1, coarse = MP_DEVICE !== 'desktop';
+  const long = Math.max(screen.width, screen.height) * dpr, short = Math.min(screen.width, screen.height) * dpr;
+  const k = Math.min(coarse ? 0.75 : 1, (coarse ? 960 : 2560) / long);
+  const even = v => Math.max(480, Math.round(v * k)) & ~1;
+  let w = Math.max(640, even(long)), h = even(short);
+  if (pick?.video) {
+    const scale = pick.scale;
+    h = Math.max(480, Math.round(h * scale / 2) * 2);
+    w = Math.max(640, Math.round((pick.aspect === '4:3' ? h * 4 / 3 : w * scale) / 2) * 2);
+  }
+  return `${w}x${h}`;
+}
+
+// One wasm, two profiles. Phone: 32-bit Chrome refuses 1 GB of shared memory (moto g6 plus, Chromium 159: 896 MB ok, 1024 no) and
+// iOS kills a heavy tab, and 832 MB next to the compiled wasm kills the tab, so 640 MB (25 maps peak at 388 MB of guest), the game's own texture cap and detail, and smaller host caches. ?profile=low|full overrides.
+const PROFILES = {
+  full: { mb: 1920, env: {} },
+  low: { mb: 640, env: { RN_GUEST_MB: '448', RN_TEXDETAIL: '0', RN_MAXTEX: '1024', RN_FILECACHE_MB: '32', RN_LOWMEM: '1' } },
+  // Phones and tablets: the low memory with the retail textures (web/opfs.js hdPack), small enough to keep at the game's full detail.
+  phone: { mb: 640, env: { RN_GUEST_MB: '448', RN_MAXTEX: '1024', RN_FILECACHE_MB: '32', RN_LOWMEM: '1' } },
+};
+function wantProfile(pick) {                // ?profile wins over the launcher's choice, which wins over the device default
+  const q = new URLSearchParams(location.search).get('profile');
+  return PROFILES[q] ? q : PROFILES[pick?.profile] ? pick.profile : MP_DEVICE !== 'desktop' ? 'phone' : (navigator.deviceMemory || 8) < 4 ? 'low' : 'full';
+}
+function makeMemory(name) {
+  const pages = PROFILES[name].mb * 16;
+  try { return { name, memory: new WebAssembly.Memory({ initial: pages, maximum: pages, shared: true }) }; }
+  catch (e) { if (name !== 'full') throw e; return makeMemory('low'); }   // full refused: same game, smaller
+}
+
+function dropBoot() { const b = document.getElementById('boot'); if (b) b.remove(); }
+
+// The launcher (web/launcher.js) is on screen from here; null under automation or ?env=/?go/?nolauncher (boot as before).
+// A pick handed over a reload (a boot-time option changed while the level ran behind the launcher, below) boots straight away.
+const handed = (() => { try { const v = sessionStorage.getItem('mp.pick'); sessionStorage.removeItem('mp.pick'); return v ? JSON.parse(v) : null; } catch { return null; } })();
+const launcher = handed ? null : window.MPLauncher?.open() || null;
+(async () => {
+  const refuse = (html, why) => { launcher?.fail(html); document.getElementById('bootmsg').innerHTML = html; document.getElementById('bootmsg').className = 'stop'; line(why + ' in ' + navigator.userAgent, 'stop'); };
+  // Threads and WebGPU exist only on https:// or localhost: a phone on http://192.168... gets neither.
+  if (!isSecureContext) return refuse('This address is not secure.<br>Open the game over https:// (tailscale serve) or from localhost.', 'not a secure context');
+  if (!crossOriginIsolated) { launcher?.fail('COOP/COEP missing: open the page from tools/serve.py'); line('COOP/COEP missing: open the page from tools/serve.py', 'stop'); return; }
+  const adapter = await gpuAdapter(document.getElementById('screen')).catch(() => null);
+  if (!adapter) return refuse('This browser needs WebGPU or WebGL 2 with hardware acceleration enabled.',
+      'no graphics adapter');
+  // The engine's wasm starts downloading now, in parallel with the game images below; MaxPayne() takes it through
+  // instantiateWasm (progress from a clone, the original response to the streaming compiler so Chrome can keep its compiled code).
+  const wasmFetch = fetch('out/maxpayne.wasm', { credentials: 'same-origin' });
+  wasmFetch.catch(() => {});
+  // Progress for the launcher and #bootmsg: one reader on a clone, which also keeps the download flowing while the player chooses.
+  wasmFetch.then(async r => {
+    const raw = +r.headers.get('X-Raw-Length') || 0, rd = r.clone().body.getReader();
+    for (let got = 0;;) { const { done, value } = await rd.read(); if (done) break; got += value.length;
+      const txt = `downloading the engine… ${(got / 1048576).toFixed(0)}${raw ? ' / ' + (raw / 1048576).toFixed(0) : ''} MB`;
+      launcher?.progress('wasm', raw ? got / raw : 0, txt); document.getElementById('bootmsg').textContent = txt; document.getElementById('bootbar')?.style.setProperty('--p', raw ? (got / raw).toFixed(3) : 0); }
+    launcher?.progress('wasm', 1, 'engine ready');
+  }).catch(() => {});
+  const imgData = (async () => {
+    const imgs = await (await fetch('/img-files.json')).json(); let n = 0;
+    return Promise.all(imgs.map(async ([f]) => { const d = [f, new Uint8Array(await (await fetch('/img/' + f)).arrayBuffer())]; launcher?.progress('img', ++n / imgs.length, `images ${n} / ${imgs.length}`); return d; }));
+  })();
+  imgData.catch(() => {});
+  // ?level=<id>&step=<n> enters a chapter or milestone with no menu: the same choice as the launcher's strip, for tests too.
+  // &video=rendimiento|equilibrado|calidad applies that launcher preset (web/launcher-options.js PRESETS).
+  const direct = new URLSearchParams(location.search), wantLevel = direct.get('level');
+  const directPick = wantLevel ? MPLaunch.apply({ mode: 'chapter', level: wantLevel, step: +(direct.get('step') ?? -1), opts: MPLaunch.PRESETS[direct.get('video')] }) : handed;
+  // Game files: the copy in OPFS (web/opfs.js) when there is one, else tools/serve.py's game folder, else the folder picker.
+  // ?files=opfs asks for the picker even with serve.py; ?files=server skips OPFS.
+  const want = direct.get('files') || directPick?.files || null;
+  let filesUrl = '', needPicker = false;
+  if (window.RN_PUBLIC || want !== 'server') {
+    filesUrl = await MPFiles.files().catch(e => { line('opfs: ' + e.message, 'dim'); return ''; }) || '';
+    if (window.RN_PUBLIC && !filesUrl) throw new Error('Browser local storage is required for saved games.');
+    needPicker = !filesUrl && (want === 'opfs' || !(await fetch('/game-files.json').catch(() => null))?.ok);
+  }
+  // Backdrop (OWNER 2026-11-09): with the files at hand the engine starts under the launcher, enters a real level and pauses there:
+  // the game's own pause camera (data/globalconfig.txt PauseCameraPathName "pause") shows Max live, no HUD, like Source's background
+  // maps and Max Payne 3's menu. The speed line is a no-op that waits for the level ('!': also under its intro camera, which never hands
+  // over control unattended), so host/jump.c skips the level's comic for it.
+  const BACKDROP = ['maxpayne_gamemode->gm_init(part1_level1);', 'x_modeswitch->s_modeswitch(game);', '!maxpayne_gamemode->gm_changeglobalgamespeed(1, 0);'];
+  const live = !directPick && launcher && !needPicker;
+  let pick, ctl0 = null;
+  if (live) {
+    let saved = {}; try { saved = JSON.parse(localStorage.getItem('mp.launcher.v2'))?.opts || {}; } catch { /* defaults */ }
+    pick = MPLaunch.apply({ mode: 'backdrop', opts: saved });
+    pick.env.RN_JUMP = BACKDROP.join('|');
+    ctl0 = await MPControls.load().catch(() => null);
+  } else pick = directPick || (launcher ? await launcher.chosen : null);      // the Play click; the downloads above keep running meanwhile
+  if (needPicker) { await MPFiles.pick(document.getElementById('bootmsg')); filesUrl = await MPFiles.files(); }
+  if (filesUrl) line('[boot] game files from OPFS', 'dim');
+  // The original reads its MFC input profile during startup (0x4cb3d0), before any game menu.
+  if (!live) await MPControls.write(pick?.controls);
+  document.getElementById('bootmsg').textContent = 'downloading the game images…';
+  const data = await imgData;
+  status.textContent = 'corriendo'; status.className = 'run';
+  const canvas = document.getElementById('screen');
+  const bootmsg = document.getElementById('bootmsg');
+  const profile = makeMemory(wantProfile(pick));
+  line(`[boot] profile ${profile.name}: ${PROFILES[profile.name].mb} MB`, 'dim');
+  let telem = null;
+  const M = window.RN_M = await MaxPayne({
+    arguments: ['/game'],
+    wasmMemory: profile.memory,
+    instantiateWasm: (imports, ok) => {
+      (async () => {
+        const r = await wasmFetch;
+        if (!r.ok) throw new Error('maxpayne.wasm: HTTP ' + r.status);
+        const raw = +r.headers.get('X-Raw-Length') || 0, t = performance.now();
+        const res = WebAssembly.instantiateStreaming
+          ? await WebAssembly.instantiateStreaming(r, imports)
+          : await WebAssembly.instantiate(await r.arrayBuffer(), imports);
+        const pe = performance.getEntriesByName(r.url).pop();
+        line(`[boot] wasm ${(raw / 1048576).toFixed(0)} MB, over the wire ${pe ? (pe.transferSize ? (pe.transferSize / 1048576).toFixed(1) + ' MB' : 'cache') : '?'}, ready in ${(performance.now() - t).toFixed(0)} ms`, 'dim');
+        bootmsg.textContent = 'starting the engine…';
+        ok(res.instance, res.module);
+      })().catch(e => line('STOP wasm load: ' + e.message));
+      return {};
+    },
+    rnSave: filesUrl ? MPFiles.save : undefined,          // host/files.c save_send: saves to OPFS instead of serve.py
+    // Every failed write of a save, either path: a save the player believes is written and is not costs the game's progress.
+    rnSaveFailed: what => { line('save ' + what, 'stop'); pageNote('Could not save', 8000); telem?.event('savefail', { what }); },
+    print: s => line(s), printErr: s => line(s, 'dim'),
+    onAbort: what => line('STOP wasm abort: ' + what),
+    preRun: [m => {
+      if (filesUrl) m.ENV.RN_FILES = filesUrl;
+      m.ENV.RN_SCREEN = playSize(pick);
+      Object.assign(m.ENV, PROFILES[profile.name].env, pick?.env);      // the launcher's env; ?env= below wins
+      if (MP_DEVICE !== 'desktop') m.ENV.RN_NOCURSOR = '1';
+      m.FS.mkdirTree('/build/img');
+      for (const [n, d] of data) m.FS.writeFile('/build/img/' + n, d);
+      for (const kv of (new URLSearchParams(location.search).get('env') || '').split(/,(?=RN_)/).filter(Boolean)) {   // a comma inside a value (RN_JUMP "c_pickupammo(beretta, 1000)") stays; pairs start with RN_
+        const k = kv.indexOf('=');
+        m.ENV[k < 0 ? kv : kv.slice(0, k)] = k < 0 ? '1' : kv.slice(k + 1);
+      }
+    }],
+  });
+  document.getElementById('bootmsg').textContent = 'starting the renderer…';
+  telem = startTelemetry(M, t0, s => line(s, 'dim'), allLog);     // before startInput: its keys never reach the game
+  window.MP_VIDEO = pick?.video;                   // undefined preserves the untouched renderer.
+  startGpu(M, canvas, s => line(s, 'dim'), dropBoot, telem?.packet).catch(e => { dropBoot(); line('gpu.js: ' + e.message, 'stop'); });
+  const input = startInput(M, canvas, s => line(s));
+  const PAUSE = 0xc5;                                  // DIK_PAUSE (web/input.js)
+  const tap = async d => { input.key(d, true); await new Promise(r => setTimeout(r, 120)); input.key(d, false); };
+  if (live) {
+    // host/gamestate.c (web/ffwd.js steady()): word 3 mode 3 = game, word 4 bit 1 = level up, bits 8-11 = 1 fade done. Pause after 2 s of it.
+    const g = () => M._rn_gamestate_addr() >>> 2;
+    let paused = false, upAt = 0;
+    const poll = setInterval(async () => {
+      const b = g(), f = b ? M.HEAPU32[b + 4] : 0;
+      if (paused || !b || M.HEAPU32[b + 3] !== 3 || !(f & 2) || ((f >> 8) & 15) !== 1) { upAt = 0; return; }
+      if (!upAt) upAt = performance.now();
+      if (performance.now() - upAt < 2000) return;
+      paused = true; clearInterval(poll);
+      await tap(PAUSE);
+      setTimeout(() => launcher.live(canvas), 300);             // the pause camera has cut in: the launcher clears its still
+    }, 200);
+    const choice = await launcher.chosen;
+    clearInterval(poll);
+    // Boot-time choices (memory profile, screen, texture env, renderer, input registry 0x4cb3d0) need a fresh engine: hand the pick
+    // over a reload. Everything else goes to the running engine.
+    const bootKey = p => JSON.stringify([wantProfile(p), Object.entries(p.env).filter(([k]) => k !== 'RN_JUMP').sort(), p.video ?? null, p.scale, p.aspect]);
+    const ctlChanged = ctl0 && Object.entries(choice.controls || {}).some(([k, v]) => ctl0[k] !== v);
+    const lines = (choice.env.RN_JUMP || '').split('|').filter(Boolean);
+    const replaces = /gm_init|S_Load/i.test(lines[0] || '');       // chapter / continue / save: the line itself leaves the backdrop level
+    if (bootKey(choice) !== bootKey(pick) || ctlChanged || (lines.length && !replaces) || choice.note) {
+      if (ctlChanged) await MPControls.write(choice.controls);
+      try { sessionStorage.setItem('mp.pick', JSON.stringify(choice)); } catch { /* no storage: the launcher shows again */ }
+      location.reload(); return;
+    }
+    pick = choice;
+    if (paused) await tap(PAUSE);
+    await MPFF.start(M, canvas, input);                 // after the launcher: its window capture of F never fires under the menu
+    if (lines.length) await MPFF.send(lines);
+    else await tap(1);                                 // New Game: Esc opens the game's own menu, which asks for the difficulty
+  }
+  (live ? Promise.resolve() : MPFF.start(M, canvas, input)).then(() => { if (pick?.ff) MPFF.run(pick.ff.level, pick.ff.step, true); });   // window capture: F never reaches the game; a milestone picked in the launcher      // (Play was the user gesture: audio below starts running)
+  startTouch(input, canvas);
+  startGamepad(input);
+  if (globalThis.startAudio) startAudio(M, s => line(s, 'dim')).then(a => a?.ctx.resume()).catch(e => line('audio.js: ' + e.message, 'stop'));
+  canvas.focus();
+})().catch(e => {
+  // Most often new WebAssembly.Memory refused the size (32-bit Chrome on a phone under 8 GB, nfsu2-web memory.ts).
+  launcher?.fail('The game could not start: ' + String(e.message || e));
+  const b = document.getElementById('bootmsg');
+  if (b) { b.className = 'stop'; b.textContent = 'The game could not start on this device: ' + String(e.message || e) + '. Close other tabs and reload.'; }
+  line('STOP boot: ' + (e.stack || e));
+});
+</script>
+</body>
+</html>

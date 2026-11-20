@@ -1,0 +1,18 @@
+# RN_GHOSTALL trace (rea/fights23/ghostall.patch): frame, name, room (same/diff as Max), horizontal distance to Max, pos, hp | act=AI active (ST+0xae) hit=ST+5 seen=MT+0x3ad perc=MT+0x3af f3ac/f3ae interest=MT+0x3b0 tmo=MT+0x3b4 lastseen=AP+0x5fc nonreact=AP+0x57d iues=AP+0x57e; ">> frame cmd" = RN_JUMP line sent
+## aesir1: Max at ::l2::Waypoint05, Aesir e1-e3 C_ForceUpdate + merccombat: they tick (lastseen grows) but stay in room l1 20 m away, never seen
+1920 ::l1::e1 room=diff d 17.8 pos 2.39 -13.51 17.83 hp 36.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.02 lastseen 3.02 nonreact 1 iues 0
+   >> 1935 player->c_teleport("::l2::Waypoint05");
+   >> 1966 ::l1::e1->C_ForceUpdate(120);
+   >> 1997 ::l1::e2->C_ForceUpdate(120);
+   >> 2028 ::l1::e3->C_ForceUpdate(120);
+   >> 2059 ::l1::e1->C_SetStateMachine(merccombat);
+   >> 2090 ::l1::e2->C_SetStateMachine(merccombat);
+   >> 2121 ::l1::e3->C_SetStateMachine(merccombat);
+2160 ::l1::e1 room=diff d 19.9 pos 2.39 -13.51 17.83 hp 36.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -3.38 lastseen 6.38 nonreact 0 iues 0
+## aesir2: no teleport, level's own ::start::script FSM_Send(initialize): they run into the start room, e1 seen/perceived at 4.4 m, Max hit
+   >> 1616 ::start::script->FSM_Send(initialize);
+1620 ::l1::e1 room=diff d 17.8 pos 2.39 -13.51 17.83 hp 36.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.09 lastseen 3.12 nonreact 0 iues 1
+1620 ::l1::e2 room=diff d 19.8 pos 3.64 -13.51 19.84 hp 36.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.09 lastseen 3.12 nonreact 0 iues 1
+1620 ::l1::e3 room=diff d 21.7 pos 5.07 -13.51 21.61 hp 36.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.09 lastseen 3.12 nonreact 0 iues 1
+1680 ::l1::e1 room=diff d 8.9 pos 2.01 -10.01 -8.79 hp 36.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -2.11 lastseen 5.13 nonreact 0 iues 1
+1680 ::l1::e2 room=diff d 9.8 pos 3.73 -10.01 -9.83 hp 36.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -2.11 lastseen 5.13 nonreact 0 iues 1

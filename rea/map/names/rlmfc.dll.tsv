@@ -1,0 +1,1135 @@
+addr	name	level	confidence	area	hopper_name	summary	evidence
+10001000	M_RAND_01	named	strong	math	M_RAND_01		export ?M_RAND_01@@YIMXZ
+10001020	M_RAND	named	strong	math	M_RAND		export ?M_RAND@@YIMXZ
+10001040	R_System::processorSpeedDetermined	named	strong	rl	R_System::processorSpeedDetermined		export ?processorSpeedDetermined@R_System@@AAEHXZ
+10001050	R_Mutex::operator=	named	strong	threads	R_Mutex::operator=	identical-code-folded: 2 exports share this body	export ??4R_Mutex@@QAEAAV0@ABV0@@Z; also exported at the same address (identical code folded): ??4R_MutexLock@@QAEAAV0@ABV0@@Z
+10001060	std::rs::rs	named	strong	strings	std::rs::rs_10001060		export ??0rs@std@@QAE@ABV?$R_Allocator@D@@@Z
+10001070	std::rs::rs	named	strong	strings	std::rs::rs_10001070		export ??0rs@std@@QAE@ABV01@@Z
+100011b0	std::rs::rs	named	strong	strings	std::rs::rs_100011b0		export ??0rs@std@@QAE@ABV01@IIABV?$R_Allocator@D@@@Z
+10001350	std::rs::rs	named	strong	strings	std::rs::rs_10001350		export ??0rs@std@@QAE@PBDIABV?$R_Allocator@D@@@Z
+10001440	std::rs::rs	named	strong	strings	std::rs::rs_10001440		export ??0rs@std@@QAE@PBDABV?$R_Allocator@D@@@Z
+10001520	std::rs::rs	named	strong	strings	std::rs::rs_10001520		export ??0rs@std@@QAE@IDABV?$R_Allocator@D@@@Z
+10001600	std::rs::rs	named	strong	strings	std::rs::rs_10001600		export ??0rs@std@@QAE@PBD0ABV?$R_Allocator@D@@@Z
+100016e0	std::rs::~rs	named	strong	strings	std::rs::~rs		export ??1rs@std@@QAE@XZ
+10001730	std::rs::operator=	named	strong	strings	std::rs::operator=_10001730		export ??4rs@std@@QAEAAV01@D@Z
+100017a0	std::rs::operator+=	named	strong	strings	std::rs::operator+=_100017a0	identical-code-folded: 2 exports share this body	export ??Yrs@std@@QAEAAV01@PBD@Z; also exported at the same address (identical code folded): ?append@rs@std@@QAEAAV12@PBD@Z
+10001870	std::rs::operator+=	named	strong	strings	std::rs::operator+=_10001870		export ??Yrs@std@@QAEAAV01@D@Z
+10001910	std::rs::operator+=	named	strong	strings	std::rs::operator+=_10001910	identical-code-folded: 2 exports share this body	export ??Yrs@std@@QAEAAV01@ABV01@@Z; also exported at the same address (identical code folded): ?append@rs@std@@QAEAAV12@ABV12@@Z
+100019e0	std::rs::append	named	strong	strings	std::rs::append_100019e0		export ?append@rs@std@@QAEAAV12@ABV12@II@Z
+10001ad0	std::rs::append	named	strong	strings	std::rs::append_10001ad0		export ?append@rs@std@@QAEAAV12@PBDI@Z
+10001b90	std::rs::append	named	strong	strings	std::rs::append_10001b90		export ?append@rs@std@@QAEAAV12@ID@Z
+10001c60	std::rs::append	named	strong	strings	std::rs::append_10001c60		export ?append@rs@std@@QAEAAV12@PBD0@Z
+10001e60	std::rs::operator=	named	strong	strings	std::rs::operator=_10001e60	identical-code-folded: 2 exports share this body	export ??4rs@std@@QAEAAV01@ABV01@@Z; also exported at the same address (identical code folded): ?assign@rs@std@@QAEAAV12@ABV12@@Z
+10001fa0	std::rs::assign	named	strong	strings	std::rs::assign_10001fa0		export ?assign@rs@std@@QAEAAV12@ABV12@II@Z
+100021c0	std::rs::assign	named	strong	strings	std::rs::assign_100021c0		export ?assign@rs@std@@QAEAAV12@PBDI@Z
+10002260	std::rs::operator=	named	strong	strings	std::rs::operator=_10002260	identical-code-folded: 2 exports share this body	export ??4rs@std@@QAEAAV01@PBD@Z; also exported at the same address (identical code folded): ?assign@rs@std@@QAEAAV12@PBD@Z
+10002310	std::rs::assign	named	strong	strings	std::rs::assign_10002310		export ?assign@rs@std@@QAEAAV12@ID@Z
+100023d0	std::rs::assign	named	strong	strings	std::rs::assign_100023d0		export ?assign@rs@std@@QAEAAV12@PBD0@Z
+100025b0	std::rs::insert	named	strong	strings	std::rs::insert_100025b0		export ?insert@rs@std@@QAEAAV12@IABV12@@Z
+100026b0	std::rs::insert	named	strong	strings	std::rs::insert_100026b0		export ?insert@rs@std@@QAEAAV12@IABV12@II@Z
+100027d0	std::rs::insert	named	strong	strings	std::rs::insert_100027d0		export ?insert@rs@std@@QAEAAV12@IPBDI@Z
+100028b0	std::rs::insert	named	strong	strings	std::rs::insert_100028b0		export ?insert@rs@std@@QAEAAV12@IPBD@Z
+100029a0	std::rs::insert	named	strong	strings	std::rs::insert_100029a0		export ?insert@rs@std@@QAEAAV12@IID@Z
+10002a90	std::rs::insert	named	strong	strings	std::rs::insert_10002a90		export ?insert@rs@std@@QAEPADPADD@Z
+10002bc0	std::rs::insert	named	strong	strings	std::rs::insert_10002bc0		export ?insert@rs@std@@QAEXPADID@Z
+10002ce0	std::rs::insert	named	strong	strings	std::rs::insert_10002ce0		export ?insert@rs@std@@QAEXPADPBD1@Z
+10002e80	std::rs::erase	named	strong	strings	std::rs::erase_10002e80		export ?erase@rs@std@@QAEAAV12@II@Z
+10002fa0	std::rs::erase	named	strong	strings	std::rs::erase_10002fa0		export ?erase@rs@std@@QAEPADPAD@Z
+10003080	std::rs::erase	named	strong	strings	std::rs::erase_10003080		export ?erase@rs@std@@QAEPADPAD0@Z
+10003170	std::rs::replace	named	strong	strings	std::rs::replace_10003170		export ?replace@rs@std@@QAEAAV12@IIABV12@@Z
+10003340	std::rs::replace	named	strong	strings	std::rs::replace_10003340		export ?replace@rs@std@@QAEAAV12@IIABV12@II@Z
+10003510	std::rs::replace	named	strong	strings	std::rs::replace_10003510		export ?replace@rs@std@@QAEAAV12@IIPBDI@Z
+100036a0	std::rs::replace	named	strong	strings	std::rs::replace_100036a0		export ?replace@rs@std@@QAEAAV12@IIPBD@Z
+10003860	std::rs::replace	named	strong	strings	std::rs::replace_10003860		export ?replace@rs@std@@QAEAAV12@IIID@Z
+100039f0	std::rs::replace	named	strong	strings	std::rs::replace_100039f0		export ?replace@rs@std@@QAEAAV12@PAD0ABV12@@Z
+10003bd0	std::rs::replace	named	strong	strings	std::rs::replace_10003bd0		export ?replace@rs@std@@QAEAAV12@PAD0PBDI@Z
+10003dc0	std::rs::replace	named	strong	strings	std::rs::replace_10003dc0		export ?replace@rs@std@@QAEAAV12@PAD0PBD@Z
+10003fd0	std::rs::replace	named	strong	strings	std::rs::replace_10003fd0		export ?replace@rs@std@@QAEAAV12@PAD0ID@Z
+100041c0	std::rs::replace	named	strong	strings	std::rs::replace_100041c0		export ?replace@rs@std@@QAEAAV12@PAD0PBD1@Z
+100043b0	std::rs::begin	named	strong	strings	std::rs::begin_100043b0		export ?begin@rs@std@@QAEPADXZ
+10004430	std::rs::begin	named	strong	strings	std::rs::begin_10004430		export ?begin@rs@std@@QBEPBDXZ
+10004440	std::rs::end	named	strong	strings	std::rs::end_10004440		export ?end@rs@std@@QAEPADXZ
+100044d0	std::rs::end	named	strong	strings	std::rs::end_100044d0		export ?end@rs@std@@QBEPBDXZ
+100044e0	std::rs::rbegin	named	strong	strings	std::rs::rbegin_100044e0		export ?rbegin@rs@std@@QAE?AV?$reverse_iterator@PADDAADPADH@2@XZ
+10004530	std::rs::rbegin	named	strong	strings	std::rs::rbegin_10004530		export ?rbegin@rs@std@@QBE?AV?$reverse_iterator@PBDDABDPBDH@2@XZ
+10004550	std::rs::rend	named	strong	strings	std::rs::rend_10004550		export ?rend@rs@std@@QAE?AV?$reverse_iterator@PADDAADPADH@2@XZ
+100045e0	std::rs::rend	named	strong	strings	std::rs::rend_100045e0		export ?rend@rs@std@@QBE?AV?$reverse_iterator@PBDDABDPBDH@2@XZ
+100045f0	std::rs::at	named	strong	strings	std::rs::at_100045f0		export ?at@rs@std@@QAEAADI@Z
+10004690	std::rs::at	named	strong	strings	std::rs::at_10004690		export ?at@rs@std@@QBEABDI@Z
+100046b0	std::rs::operator[]	named	strong	strings	std::rs::operator[]_100046b0		export ??Ars@std@@QAEAADI@Z
+10004750	std::rs::operator[]	named	strong	strings	std::rs::operator[]_10004750		export ??Ars@std@@QBEABDI@Z
+10004770	std::rs::c_str	named	strong	strings	std::rs::c_str	identical-code-folded: 2 exports share this body	export ?c_str@rs@std@@QBEPBDXZ; also exported at the same address (identical code folded): ?data@rs@std@@QBEPBDXZ
+10004780	std::rs::length	named	strong	strings	std::rs::length	identical-code-folded: 2 exports share this body	export ?length@rs@std@@QBEIXZ; also exported at the same address (identical code folded): ?size@rs@std@@QBEIXZ
+10004790	std::rs::max_size	named	strong	strings	std::rs::max_size		export ?max_size@rs@std@@QBEIXZ
+100047a0	std::rs::resize	named	strong	strings	std::rs::resize_100047a0		export ?resize@rs@std@@QAEXID@Z
+10004940	std::rs::resize	named	strong	strings	std::rs::resize_10004940		export ?resize@rs@std@@QAEXI@Z
+10004ae0	std::rs::capacity	named	strong	strings	std::rs::capacity		export ?capacity@rs@std@@QBEIXZ
+10004af0	std::rs::reserve	named	strong	strings	std::rs::reserve		export ?reserve@rs@std@@QAEXI@Z
+10004b60	std::rs::empty	named	strong	strings	std::rs::empty		export ?empty@rs@std@@QBE_NXZ
+10004b70	std::rs::copy	named	strong	strings	std::rs::copy		export ?copy@rs@std@@QBEIPADII@Z
+10004bc0	std::rs::swap	named	strong	strings	std::rs::swap		export ?swap@rs@std@@QAEXAAV12@@Z
+10004c10	swap	named	strong	containers	swap		export ?swap@@YIXAAVrs@std@@0@Z
+10004c20	std::rs::find	named	strong	strings	std::rs::find_10004c20		export ?find@rs@std@@QBEIABV12@I@Z
+10004ce0	std::rs::find	named	strong	strings	std::rs::find_10004ce0		export ?find@rs@std@@QBEIPBDII@Z
+10004d70	std::rs::find	named	strong	strings	std::rs::find_10004d70		export ?find@rs@std@@QBEIPBDI@Z
+10004e30	std::rs::find	named	strong	strings	std::rs::find_10004e30	identical-code-folded: 2 exports share this body	export ?find@rs@std@@QBEIDI@Z; also exported at the same address (identical code folded): ?find_first_of@rs@std@@QBEIDI@Z
+10004eb0	std::rs::rfind	named	strong	strings	std::rs::rfind_10004eb0		export ?rfind@rs@std@@QBEIABV12@I@Z
+10004f40	std::rs::rfind	named	strong	strings	std::rs::rfind_10004f40		export ?rfind@rs@std@@QBEIPBDII@Z
+10004fb0	std::rs::rfind	named	strong	strings	std::rs::rfind_10004fb0		export ?rfind@rs@std@@QBEIPBDI@Z
+10005030	std::rs::find_first_of	named	strong	strings	std::rs::find_first_of_10005030		export ?find_first_of@rs@std@@QBEIABV12@I@Z
+100050a0	std::rs::find_first_of	named	strong	strings	std::rs::find_first_of_100050a0		export ?find_first_of@rs@std@@QBEIPBDII@Z
+10005110	std::rs::find_first_of	named	strong	strings	std::rs::find_first_of_10005110		export ?find_first_of@rs@std@@QBEIPBDI@Z
+10005180	std::rs::find_last_of	named	strong	strings	std::rs::find_last_of_10005180		export ?find_last_of@rs@std@@QBEIABV12@I@Z
+10005210	std::rs::find_last_of	named	strong	strings	std::rs::find_last_of_10005210		export ?find_last_of@rs@std@@QBEIPBDII@Z
+10005290	std::rs::find_last_of	named	strong	strings	std::rs::find_last_of_10005290		export ?find_last_of@rs@std@@QBEIPBDI@Z
+10005310	std::rs::find_last_of	named	strong	strings	std::rs::find_last_of_10005310	identical-code-folded: 2 exports share this body	export ?find_last_of@rs@std@@QBEIDI@Z; also exported at the same address (identical code folded): ?rfind@rs@std@@QBEIDI@Z
+10005360	std::rs::find_first_not_of	named	strong	strings	std::rs::find_first_not_of_10005360		export ?find_first_not_of@rs@std@@QBEIABV12@I@Z
+100053e0	std::rs::find_first_not_of	named	strong	strings	std::rs::find_first_not_of_100053e0		export ?find_first_not_of@rs@std@@QBEIPBDII@Z
+10005440	std::rs::find_first_not_of	named	strong	strings	std::rs::find_first_not_of_10005440		export ?find_first_not_of@rs@std@@QBEIPBDI@Z
+100054b0	std::rs::find_first_not_of	named	strong	strings	std::rs::find_first_not_of_100054b0		export ?find_first_not_of@rs@std@@QBEIDI@Z
+10005510	std::rs::find_last_not_of	named	strong	strings	std::rs::find_last_not_of_10005510		export ?find_last_not_of@rs@std@@QBEIABV12@I@Z
+100055a0	std::rs::find_last_not_of	named	strong	strings	std::rs::find_last_not_of_100055a0		export ?find_last_not_of@rs@std@@QBEIPBDII@Z
+10005620	std::rs::find_last_not_of	named	strong	strings	std::rs::find_last_not_of_10005620		export ?find_last_not_of@rs@std@@QBEIPBDI@Z
+100056a0	std::rs::find_last_not_of	named	strong	strings	std::rs::find_last_not_of_100056a0		export ?find_last_not_of@rs@std@@QBEIDI@Z
+10005710	std::rs::substr	named	strong	strings	std::rs::substr		export ?substr@rs@std@@QBE?AV12@II@Z
+10005770	std::rs::compare	named	strong	strings	std::rs::compare_10005770		export ?compare@rs@std@@QBEHABV12@@Z
+100057c0	std::rs::compare	named	strong	strings	std::rs::compare_100057c0		export ?compare@rs@std@@QBEHIIABV12@@Z
+10005860	std::rs::compare	named	strong	strings	std::rs::compare_10005860		export ?compare@rs@std@@QBEHIIABV12@II@Z
+10005910	std::rs::compare	named	strong	strings	std::rs::compare_10005910		export ?compare@rs@std@@QBEHPBD@Z
+10005970	std::rs::compare	named	strong	strings	std::rs::compare_10005970		export ?compare@rs@std@@QBEHIIPBD@Z
+10005a00	std::rs::compare	named	strong	strings	std::rs::compare_10005a00		export ?compare@rs@std@@QBEHIIPBDI@Z
+10005a70	std::rs::get_allocator	named	strong	strings	std::rs::get_allocator		export ?get_allocator@rs@std@@QBE?AV?$R_Allocator@D@@XZ
+10005a90	std::rs::_Copy	named	strong	strings	std::rs::_Copy		export ?_Copy@rs@std@@AAEXI@Z
+10005be7	std::rs::_Copy_cont	understood	weak	strings	std::rs::_Copy_cont	catch-continuation of std::rs::_Copy	Catch@10005b6f returns 0x10005be1 area; sole caller _Copy
+10005c80	R_MemoryException::R_MemoryException	understood	strong	exceptions	R_MemoryException::R_MemoryException	R_Exception ctor + vptr 0x1002a228	RTTI vtable 0x1002a228 (R_MemoryException)
+10005ca0	R_MemoryException_Allocation::R_MemoryException_Allocation	understood	strong	exceptions	R_MemoryException_Allocation::R_MemoryException_Allocation	R_Exception ctor + vptr 0x1002a204 + setError("Out of system memory resources")	RTTI vtable 0x1002a204; string at 0x1003d17c
+10005cf0	std::rs::_Eos	named	strong	strings	std::rs::_Eos		export ?_Eos@rs@std@@AAEXI@Z
+10005d10	std::rs::_Freeze	named	strong	strings	std::rs::_Freeze		export ?_Freeze@rs@std@@AAEXXZ
+10005d90	std::rs::_Grow	named	strong	strings	std::rs::_Grow		export ?_Grow@rs@std@@AAE_NI_N@Z
+10005ed0	std::rs::_Nullstr	named	strong	strings	std::rs::_Nullstr		export ?_Nullstr@rs@std@@CAPBDXZ
+10005ee0	std::rs::_Pdif	named	strong	strings	std::rs::_Pdif		export ?_Pdif@rs@std@@CIIPBD0@Z
+10005ef0	std::rs::_Psum	named	strong	strings	std::rs::_Psum	identical-code-folded: 2 exports share this body	export ?_Psum@rs@std@@CIPADPADI@Z; also exported at the same address (identical code folded): ?_Psum@rs@std@@CIPBDPBDI@Z
+10005f00	std::rs::_Refcnt	named	strong	strings	std::rs::_Refcnt		export ?_Refcnt@rs@std@@AAEAAEPBD@Z
+10005f10	std::rs::_Split	named	strong	strings	std::rs::_Split		export ?_Split@rs@std@@AAEXXZ
+10005fe0	std::rs::`default_constructor_closure'	named	strong	strings	std::rs::`default_constructor_closure'		export ??_Frs@std@@QAEXXZ
+10005ff0	R_FileStream::operator=	named	strong	streams	R_FileStream::operator=		export ??4R_FileStream@@QAEAAV0@ABV0@@Z
+10006020	R_FileStream::`copy_constructor_closure'	named	strong	streams	R_FileStream::`copy_constructor_closure'		export ??_OR_FileStream@@QAEXABV0@@Z
+10006040	R_UnbufferedFileStream::operator=	named	strong	streams	R_UnbufferedFileStream::operator=		export ??4R_UnbufferedFileStream@@QAEAAV0@ABV0@@Z
+100060a0	R_UnbufferedFileStream::`copy_constructor_closure'	named	strong	streams	R_UnbufferedFileStream::`copy_constructor_closure'		export ??_OR_UnbufferedFileStream@@QAEXABV0@@Z
+100060c0	M_Float16::operator=	named	strong	math	M_Float16::operator=_100060c0		export ??4M_Float16@@QAEAAV0@ABV0@@Z
+100060d0	M_Float16::M_Float16	named	strong	math	M_Float16::M_Float16_100060d0		export ??0M_Float16@@QAE@XZ
+100060e0	M_Float16::M_Float16	named	strong	math	M_Float16::M_Float16_100060e0		export ??0M_Float16@@QAE@M@Z
+10006180	M_Float16::operator=	named	strong	math	M_Float16::operator=_10006180		export ??4M_Float16@@QAEAAV0@M@Z
+10006220	M_Float16::operator_float	named	strong	math	M_Float16::operator_float		export ??BM_Float16@@QBEMXZ
+100062c0	R_MemoryFile::`default_constructor_closure'	named	strong	files	R_MemoryFile::`default_constructor_closure'		export ??_FR_MemoryFile@@QAEXXZ
+100062d0	CObject::Serialize_Dump_nop	understood	weak	exceptions	CObject::Serialize_Dump_nop	ret 4 (no-op); shared by CObject vtable slots 2 (Serialize) and 4 (Dump), 108 vtable references	MFC CObject vtable layout [GetRuntimeClass,~,Serialize,AssertValid,Dump]; identical bodies folded
+100062e0	R_CPUDriver::R_CPUDriver	named	strong	math	R_CPUDriver::R_CPUDriver_100062e0		export ??0R_CPUDriver@@QAE@XZ
+100062f0	R_CPUDriver::R_CPUDriver	named	strong	math	R_CPUDriver::R_CPUDriver_100062f0		export ??0R_CPUDriver@@QAE@ABV0@@Z
+10006300	R_CPUDriver::operator=	named	strong	math	R_CPUDriver::operator=	identical-code-folded: 2 exports share this body	export ??4R_CPUDriver@@QAEAAV0@ABV0@@Z; also exported at the same address (identical code folded): ??4R_CPUReference@@QAEAAV0@ABV0@@Z
+10006310	R_CPUReference::R_CPUReference	named	strong	math	R_CPUReference::R_CPUReference_10006310		export ??0R_CPUReference@@QAE@XZ
+10006320	R_CPUReference::R_CPUReference	named	strong	math	R_CPUReference::R_CPUReference_10006320		export ??0R_CPUReference@@QAE@ABV0@@Z
+10006330	M_ScalarArray::`default_constructor_closure'	named	strong	math	M_ScalarArray::`default_constructor_closure'		export ??_FM_ScalarArray@@QAEXXZ
+10006340	M_Vector2Array::`default_constructor_closure'	named	strong	math	M_Vector2Array::`default_constructor_closure'		export ??_FM_Vector2Array@@QAEXXZ
+10006350	M_Vector3Array::`default_constructor_closure'	named	strong	math	M_Vector3Array::`default_constructor_closure'		export ??_FM_Vector3Array@@QAEXXZ
+10006360	M_Vector4Array::`default_constructor_closure'	named	strong	math	M_Vector4Array::`default_constructor_closure'		export ??_FM_Vector4Array@@QAEXXZ
+10006370	M_ScalarArray::M_ScalarArray	named	strong	math	M_ScalarArray::M_ScalarArray_10006370		export ??0M_ScalarArray@@QAE@H@Z
+10006390	M_ScalarArray::~M_ScalarArray	named	strong	math	M_ScalarArray::~M_ScalarArray	identical-code-folded: 4 exports share this body	export ??1M_ScalarArray@@QAE@XZ; also exported at the same address (identical code folded): ??1M_Vector2Array@@QAE@XZ, ??1M_Vector3Array@@QAE@XZ, ??1M_Vector4Array@@QAE@XZ
+100063d0	M_ScalarArray::M_ScalarArray	named	strong	math	M_ScalarArray::M_ScalarArray_100063d0		export ??0M_ScalarArray@@QAE@ABV0@@Z
+10006430	M_ScalarArray::allocate	named	strong	math	M_ScalarArray::allocate		export ?allocate@M_ScalarArray@@QAEXH@Z
+10006630	M_ScalarArray::resize	named	strong	math	M_ScalarArray::resize		export ?resize@M_ScalarArray@@QAEXH@Z
+10006650	M_ScalarArray::setMemory	named	strong	math	M_ScalarArray::setMemory	identical-code-folded: 4 exports share this body	export ?setMemory@M_ScalarArray@@QAEXPAMH@Z; also exported at the same address (identical code folded): ?setMemory@M_Vector2Array@@QAEXPAMH@Z, ?setMemory@M_Vector3Array@@QAEXPAMH@Z, ?setMemory@M_Vector4Array@@QAEXPAMH@Z
+100066b0	M_ScalarArray::set	named	strong	math	M_ScalarArray::set		export ?set@M_ScalarArray@@QAEXHM@Z
+100066d0	M_ScalarArray::get	named	strong	math	M_ScalarArray::get		export ?get@M_ScalarArray@@QBEMH@Z
+100066e0	M_ScalarArray::null	named	strong	math	M_ScalarArray::null		export ?null@M_ScalarArray@@QAEXXZ
+10006710	M_ScalarArray::add	named	strong	math	M_ScalarArray::add_10006710		export ?add@M_ScalarArray@@QAEXABV1@0@Z
+10006760	M_ScalarArray::subtract	named	strong	math	M_ScalarArray::subtract_10006760		export ?subtract@M_ScalarArray@@QAEXABV1@0@Z
+100067b0	M_ScalarArray::multiply	named	strong	math	M_ScalarArray::multiply_100067b0		export ?multiply@M_ScalarArray@@QAEXABV1@0@Z
+10006800	M_ScalarArray::divide	named	strong	math	M_ScalarArray::divide_10006800		export ?divide@M_ScalarArray@@QAEXABV1@0@Z
+10006850	M_ScalarArray::divide_lo	named	strong	math	M_ScalarArray::divide_lo		export ?divide_lo@M_ScalarArray@@QAEXABV1@0@Z
+100068a0	M_ScalarArray::add	named	strong	math	M_ScalarArray::add_100068a0		export ?add@M_ScalarArray@@QAEXABV1@M@Z
+100068e0	M_ScalarArray::subtract	named	strong	math	M_ScalarArray::subtract_100068e0		export ?subtract@M_ScalarArray@@QAEXABV1@M@Z
+10006920	M_ScalarArray::multiply	named	strong	math	M_ScalarArray::multiply_10006920		export ?multiply@M_ScalarArray@@QAEXABV1@M@Z
+10006970	M_ScalarArray::divide	named	strong	math	M_ScalarArray::divide_10006970	identical-code-folded: 2 exports share this body	export ?divide@M_ScalarArray@@QAEXABV1@M@Z; also exported at the same address (identical code folded): ?divide_lo@M_ScalarArray@@QAEXABV1@M@Z
+100069c0	M_ScalarArray::dotProduct	named	strong	math	M_ScalarArray::dotProduct_100069c0		export ?dotProduct@M_ScalarArray@@QAEXABVM_Vector2Array@@0@Z
+100069f0	M_ScalarArray::dotProduct	named	strong	math	M_ScalarArray::dotProduct_100069f0		export ?dotProduct@M_ScalarArray@@QAEXABVM_Vector3Array@@0@Z
+10006a20	M_ScalarArray::dotProduct	named	strong	math	M_ScalarArray::dotProduct_10006a20		export ?dotProduct@M_ScalarArray@@QAEXABVM_Vector4Array@@0@Z
+10006a50	M_ScalarArray::length	named	strong	math	M_ScalarArray::length_10006a50		export ?length@M_ScalarArray@@QAEXABVM_Vector2Array@@@Z
+10006a80	M_ScalarArray::length_lo	named	strong	math	M_ScalarArray::length_lo_10006a80		export ?length_lo@M_ScalarArray@@QAEXABVM_Vector2Array@@@Z
+10006ab0	M_ScalarArray::length_hi	named	strong	math	M_ScalarArray::length_hi_10006ab0		export ?length_hi@M_ScalarArray@@QAEXABVM_Vector2Array@@@Z
+10006ae0	M_ScalarArray::length	named	strong	math	M_ScalarArray::length_10006ae0		export ?length@M_ScalarArray@@QAEXABVM_Vector3Array@@@Z
+10006b10	M_ScalarArray::length_lo	named	strong	math	M_ScalarArray::length_lo_10006b10		export ?length_lo@M_ScalarArray@@QAEXABVM_Vector3Array@@@Z
+10006b40	M_ScalarArray::length_hi	named	strong	math	M_ScalarArray::length_hi_10006b40		export ?length_hi@M_ScalarArray@@QAEXABVM_Vector3Array@@@Z
+10006b70	M_ScalarArray::length	named	strong	math	M_ScalarArray::length_10006b70		export ?length@M_ScalarArray@@QAEXABVM_Vector4Array@@@Z
+10006ba0	M_ScalarArray::length_lo	named	strong	math	M_ScalarArray::length_lo_10006ba0		export ?length_lo@M_ScalarArray@@QAEXABVM_Vector4Array@@@Z
+10006bd0	M_ScalarArray::length_hi	named	strong	math	M_ScalarArray::length_hi_10006bd0		export ?length_hi@M_ScalarArray@@QAEXABVM_Vector4Array@@@Z
+10006c00	M_ScalarArray::reciprocal_0	named	strong	math	M_ScalarArray::reciprocal_0_10006c00		export ?reciprocal_0@M_ScalarArray@@QAEXXZ
+10006c30	M_ScalarArray::reciprocal_lo_0	named	strong	math	M_ScalarArray::reciprocal_lo_0_10006c30		export ?reciprocal_lo_0@M_ScalarArray@@QAEXXZ
+10006c60	M_ScalarArray::reciprocal_hi_0	named	strong	math	M_ScalarArray::reciprocal_hi_0_10006c60		export ?reciprocal_hi_0@M_ScalarArray@@QAEXXZ
+10006c90	M_ScalarArray::reciprocal_0	named	strong	math	M_ScalarArray::reciprocal_0_10006c90		export ?reciprocal_0@M_ScalarArray@@QAEXABV1@@Z
+10006cd0	M_ScalarArray::reciprocal_lo_0	named	strong	math	M_ScalarArray::reciprocal_lo_0_10006cd0		export ?reciprocal_lo_0@M_ScalarArray@@QAEXABV1@@Z
+10006d10	M_ScalarArray::reciprocal_hi_0	named	strong	math	M_ScalarArray::reciprocal_hi_0_10006d10		export ?reciprocal_hi_0@M_ScalarArray@@QAEXABV1@@Z
+10006d50	M_ScalarArray::sqrt	named	strong	math	M_ScalarArray::sqrt_10006d50		export ?sqrt@M_ScalarArray@@QAEXXZ
+10006d80	M_ScalarArray::sqrt_lo	named	strong	math	M_ScalarArray::sqrt_lo_10006d80		export ?sqrt_lo@M_ScalarArray@@QAEXXZ
+10006db0	M_ScalarArray::sqrt_hi	named	strong	math	M_ScalarArray::sqrt_hi_10006db0		export ?sqrt_hi@M_ScalarArray@@QAEXXZ
+10006de0	M_ScalarArray::sqrt	named	strong	math	M_ScalarArray::sqrt_10006de0		export ?sqrt@M_ScalarArray@@QAEXABV1@@Z
+10006e20	M_ScalarArray::sqrt_lo	named	strong	math	M_ScalarArray::sqrt_lo_10006e20		export ?sqrt_lo@M_ScalarArray@@QAEXABV1@@Z
+10006e60	M_ScalarArray::sqrt_hi	named	strong	math	M_ScalarArray::sqrt_hi_10006e60		export ?sqrt_hi@M_ScalarArray@@QAEXABV1@@Z
+10006ea0	M_ScalarArray::invsqrt	named	strong	math	M_ScalarArray::invsqrt_10006ea0		export ?invsqrt@M_ScalarArray@@QAEXXZ
+10006ed0	M_ScalarArray::invsqrt_lo	named	strong	math	M_ScalarArray::invsqrt_lo_10006ed0		export ?invsqrt_lo@M_ScalarArray@@QAEXXZ
+10006f00	M_ScalarArray::invsqrt_hi	named	strong	math	M_ScalarArray::invsqrt_hi_10006f00		export ?invsqrt_hi@M_ScalarArray@@QAEXXZ
+10006f30	M_ScalarArray::invsqrt	named	strong	math	M_ScalarArray::invsqrt_10006f30		export ?invsqrt@M_ScalarArray@@QAEXABV1@@Z
+10006f70	M_ScalarArray::invsqrt_lo	named	strong	math	M_ScalarArray::invsqrt_lo_10006f70		export ?invsqrt_lo@M_ScalarArray@@QAEXABV1@@Z
+10006fb0	M_ScalarArray::invsqrt_hi	named	strong	math	M_ScalarArray::invsqrt_hi_10006fb0		export ?invsqrt_hi@M_ScalarArray@@QAEXABV1@@Z
+10006ff0	M_ScalarArray::negate	named	strong	math	M_ScalarArray::negate		export ?negate@M_ScalarArray@@QAEXXZ
+10007020	M_ScalarArray::abs	named	strong	math	M_ScalarArray::abs		export ?abs@M_ScalarArray@@QAEXXZ
+10007050	M_ScalarArray::clamp	named	strong	math	M_ScalarArray::clamp		export ?clamp@M_ScalarArray@@QAEXMM@Z
+10007090	M_ScalarArray::clampMin	named	strong	math	M_ScalarArray::clampMin		export ?clampMin@M_ScalarArray@@QAEXM@Z
+100070d0	M_ScalarArray::clampMax	named	strong	math	M_ScalarArray::clampMax		export ?clampMax@M_ScalarArray@@QAEXM@Z
+10007110	M_ScalarArray::minimum	named	strong	math	M_ScalarArray::minimum_10007110		export ?minimum@M_ScalarArray@@QAEXABV1@@Z
+10007150	M_ScalarArray::minimum	named	strong	math	M_ScalarArray::minimum_10007150		export ?minimum@M_ScalarArray@@QAEXABV1@0@Z
+100071a0	M_ScalarArray::maximum	named	strong	math	M_ScalarArray::maximum_100071a0		export ?maximum@M_ScalarArray@@QAEXABV1@@Z
+100071e0	M_ScalarArray::maximum	named	strong	math	M_ScalarArray::maximum_100071e0		export ?maximum@M_ScalarArray@@QAEXABV1@0@Z
+10007230	M_ScalarArray::operator=	named	strong	math	M_ScalarArray::operator=		export ??4M_ScalarArray@@QAEAAV0@ABV0@@Z
+10007280	M_ScalarArray::operator+=	named	strong	math	M_ScalarArray::operator+=_10007280		export ??YM_ScalarArray@@QAEAAV0@ABV0@@Z
+100072c0	M_ScalarArray::operator-=	named	strong	math	M_ScalarArray::operator-=_100072c0		export ??ZM_ScalarArray@@QAEAAV0@ABV0@@Z
+10007300	M_ScalarArray::operator*=	named	strong	math	M_ScalarArray::operator*=_10007300		export ??XM_ScalarArray@@QAEAAV0@ABV0@@Z
+10007340	M_ScalarArray::operator/=	named	strong	math	M_ScalarArray::operator/=_10007340		export ??_0M_ScalarArray@@QAEAAV0@ABV0@@Z
+10007380	M_ScalarArray::operator+=	named	strong	math	M_ScalarArray::operator+=_10007380		export ??YM_ScalarArray@@QAEAAV0@M@Z
+100073c0	M_ScalarArray::operator-=	named	strong	math	M_ScalarArray::operator-=_100073c0		export ??ZM_ScalarArray@@QAEAAV0@M@Z
+10007400	M_ScalarArray::operator*=	named	strong	math	M_ScalarArray::operator*=_10007400		export ??XM_ScalarArray@@QAEAAV0@M@Z
+10007440	M_ScalarArray::operator/=	named	strong	math	M_ScalarArray::operator/=_10007440		export ??_0M_ScalarArray@@QAEAAV0@M@Z
+10007480	operator<<	named	strong	streams	operator<<_10007480		export ??6@YIAAVostream@@AAV0@ABVM_ScalarArray@@@Z
+10007530	operator<<	named	strong	streams	operator<<_10007530		export ??6@YIAAVCArchive@@AAV0@ABVM_ScalarArray@@@Z
+100075c0	operator>>	named	strong	streams	operator>>_100075c0		export ??5@YIAAVCArchive@@AAV0@AAVM_ScalarArray@@@Z
+10007650	operator<<	named	strong	streams	operator<<_10007650		export ??6@YIAAVR_MemoryFile@@AAV0@ABVM_ScalarArray@@@Z
+100076b0	M_Vector2Array::M_Vector2Array	named	strong	math	M_Vector2Array::M_Vector2Array_100076b0		export ??0M_Vector2Array@@QAE@H@Z
+100076d0	M_Vector2Array::M_Vector2Array	named	strong	math	M_Vector2Array::M_Vector2Array_100076d0		export ??0M_Vector2Array@@QAE@ABV0@@Z
+10007730	M_Vector2Array::allocate	named	strong	math	M_Vector2Array::allocate		export ?allocate@M_Vector2Array@@QAEXH@Z
+10007940	M_Vector2Array::resize	named	strong	math	M_Vector2Array::resize		export ?resize@M_Vector2Array@@QAEXH@Z
+10007960	M_Vector2Array::set	named	strong	math	M_Vector2Array::set		export ?set@M_Vector2Array@@QAEXHABV?$M_Vector2Template@M@@@Z
+10007990	M_Vector2Array::get	named	strong	math	M_Vector2Array::get_10007990		export ?get@M_Vector2Array@@QBE?AV?$M_Vector2Template@M@@H@Z
+100079f0	M_Vector2Array::get	named	strong	math	M_Vector2Array::get_100079f0		export ?get@M_Vector2Array@@QBEXAAV?$M_Vector2Template@M@@H@Z
+10007a20	M_Vector2Array::null	named	strong	math	M_Vector2Array::null		export ?null@M_Vector2Array@@QAEXXZ
+10007a60	M_Vector2Array::dotProduct	named	strong	math	M_Vector2Array::dotProduct		export ?dotProduct@M_Vector2Array@@SIXAAVM_ScalarArray@@ABV1@1@Z
+10007a90	M_Vector2Array::add	named	strong	math	M_Vector2Array::add		export ?add@M_Vector2Array@@QAEXABV1@0@Z
+10007ae0	M_Vector2Array::subtract	named	strong	math	M_Vector2Array::subtract		export ?subtract@M_Vector2Array@@QAEXABV1@0@Z
+10007b30	M_Vector2Array::multiply	named	strong	math	M_Vector2Array::multiply_10007b30		export ?multiply@M_Vector2Array@@QAEXABV1@ABVM_ScalarArray@@@Z
+10007b60	M_Vector2Array::multiply	named	strong	math	M_Vector2Array::multiply_10007b60		export ?multiply@M_Vector2Array@@QAEXABV1@M@Z
+10007bb0	M_Vector2Array::multiply	named	strong	math	M_Vector2Array::multiply_10007bb0		export ?multiply@M_Vector2Array@@QAEXABV1@ABV?$M_Matrix2Template@M@@@Z
+10007be0	M_Vector2Array::divide	named	strong	math	M_Vector2Array::divide_10007be0		export ?divide@M_Vector2Array@@QAEXABV1@ABVM_ScalarArray@@@Z
+10007c10	M_Vector2Array::divide_lo	named	strong	math	M_Vector2Array::divide_lo_10007c10		export ?divide_lo@M_Vector2Array@@QAEXABV1@ABVM_ScalarArray@@@Z
+10007c40	M_Vector2Array::divide	named	strong	math	M_Vector2Array::divide_10007c40		export ?divide@M_Vector2Array@@QAEXABV1@M@Z
+10007c90	M_Vector2Array::divide_lo	named	strong	math	M_Vector2Array::divide_lo_10007c90		export ?divide_lo@M_Vector2Array@@QAEXABV1@M@Z
+10007ce0	M_Vector2Array::normalize_0	named	strong	math	M_Vector2Array::normalize_0_10007ce0		export ?normalize_0@M_Vector2Array@@QAEXXZ
+10007d00	M_Vector2Array::normalize_lo_0	named	strong	math	M_Vector2Array::normalize_lo_0_10007d00		export ?normalize_lo_0@M_Vector2Array@@QAEXXZ
+10007d20	M_Vector2Array::normalize_hi_0	named	strong	math	M_Vector2Array::normalize_hi_0_10007d20		export ?normalize_hi_0@M_Vector2Array@@QAEXXZ
+10007d40	M_Vector2Array::normalize_0	named	strong	math	M_Vector2Array::normalize_0_10007d40		export ?normalize_0@M_Vector2Array@@QAEXABV1@@Z
+10007d70	M_Vector2Array::normalize_lo_0	named	strong	math	M_Vector2Array::normalize_lo_0_10007d70		export ?normalize_lo_0@M_Vector2Array@@QAEXABV1@@Z
+10007da0	M_Vector2Array::normalize_hi_0	named	strong	math	M_Vector2Array::normalize_hi_0_10007da0		export ?normalize_hi_0@M_Vector2Array@@QAEXABV1@@Z
+10007dd0	M_Vector2Array::length	named	strong	math	M_Vector2Array::length		export ?length@M_Vector2Array@@SIXAAVM_ScalarArray@@ABV1@@Z
+10007e00	M_Vector2Array::length_lo	named	strong	math	M_Vector2Array::length_lo		export ?length_lo@M_Vector2Array@@SIXAAVM_ScalarArray@@ABV1@@Z
+10007e30	M_Vector2Array::length_hi	named	strong	math	M_Vector2Array::length_hi		export ?length_hi@M_Vector2Array@@SIXAAVM_ScalarArray@@ABV1@@Z
+10007e60	M_Vector2Array::negate	named	strong	math	M_Vector2Array::negate		export ?negate@M_Vector2Array@@QAEXXZ
+10007ea0	M_Vector2Array::clamp	named	strong	math	M_Vector2Array::clamp		export ?clamp@M_Vector2Array@@QAEXMM@Z
+10007ee0	M_Vector2Array::clampMin	named	strong	math	M_Vector2Array::clampMin		export ?clampMin@M_Vector2Array@@QAEXM@Z
+10007f20	M_Vector2Array::clampMax	named	strong	math	M_Vector2Array::clampMax		export ?clampMax@M_Vector2Array@@QAEXM@Z
+10007f60	M_Vector2Array::minimum	named	strong	math	M_Vector2Array::minimum_10007f60		export ?minimum@M_Vector2Array@@QAEXABV1@@Z
+10007fa0	M_Vector2Array::minimum	named	strong	math	M_Vector2Array::minimum_10007fa0		export ?minimum@M_Vector2Array@@QAEXABV1@0@Z
+10007ff0	M_Vector2Array::maximum	named	strong	math	M_Vector2Array::maximum_10007ff0		export ?maximum@M_Vector2Array@@QAEXABV1@@Z
+10008030	M_Vector2Array::maximum	named	strong	math	M_Vector2Array::maximum_10008030		export ?maximum@M_Vector2Array@@QAEXABV1@0@Z
+10008080	M_Vector2Array::operator=	named	strong	math	M_Vector2Array::operator=		export ??4M_Vector2Array@@QAEAAV0@ABV0@@Z
+100080d0	M_Vector2Array::operator+=	named	strong	math	M_Vector2Array::operator+=		export ??YM_Vector2Array@@QAEAAV0@ABV0@@Z
+10008110	M_Vector2Array::operator-=	named	strong	math	M_Vector2Array::operator-=		export ??ZM_Vector2Array@@QAEAAV0@ABV0@@Z
+10008150	M_Vector2Array::operator*=	named	strong	math	M_Vector2Array::operator*=_10008150		export ??XM_Vector2Array@@QAEAAV0@ABVM_ScalarArray@@@Z
+10008180	M_Vector2Array::operator*=	named	strong	math	M_Vector2Array::operator*=_10008180		export ??XM_Vector2Array@@QAEAAV0@M@Z
+100081c0	M_Vector2Array::operator*=	named	strong	math	M_Vector2Array::operator*=_100081c0		export ??XM_Vector2Array@@QAEAAV0@ABV?$M_Matrix2Template@M@@@Z
+100081f0	M_Vector2Array::operator/=	named	strong	math	M_Vector2Array::operator/=_100081f0		export ??_0M_Vector2Array@@QAEAAV0@ABVM_ScalarArray@@@Z
+10008220	M_Vector2Array::operator/=	named	strong	math	M_Vector2Array::operator/=_10008220		export ??_0M_Vector2Array@@QAEAAV0@M@Z
+10008260	operator<<	named	strong	streams	operator<<_10008260		export ??6@YIAAVostream@@AAV0@ABVM_Vector2Array@@@Z
+100083c0	operator<<	named	strong	streams	operator<<_100083c0		export ??6@YIAAVCArchive@@AAV0@ABVM_Vector2Array@@@Z
+10008490	operator>>	named	strong	streams	operator>>_10008490		export ??5@YIAAVCArchive@@AAV0@AAVM_Vector2Array@@@Z
+10008560	operator<<	named	strong	streams	operator<<_10008560		export ??6@YIAAVR_MemoryFile@@AAV0@ABVM_Vector2Array@@@Z
+100085e0	M_Vector3Array::M_Vector3Array	named	strong	math	M_Vector3Array::M_Vector3Array_100085e0		export ??0M_Vector3Array@@QAE@H@Z
+10008600	M_Vector3Array::M_Vector3Array	named	strong	math	M_Vector3Array::M_Vector3Array_10008600		export ??0M_Vector3Array@@QAE@ABV0@@Z
+10008660	M_Vector3Array::allocate	named	strong	math	M_Vector3Array::allocate		export ?allocate@M_Vector3Array@@QAEXH@Z
+10008870	M_Vector3Array::resize	named	strong	math	M_Vector3Array::resize		export ?resize@M_Vector3Array@@QAEXH@Z
+10008890	M_Vector3Array::set	named	strong	math	M_Vector3Array::set		export ?set@M_Vector3Array@@QAEXHABV?$M_Vector3Template@M@@@Z
+100088c0	M_Vector3Array::get	named	strong	math	M_Vector3Array::get_100088c0		export ?get@M_Vector3Array@@QBE?AV?$M_Vector3Template@M@@H@Z
+10008940	M_Vector3Array::get	named	strong	math	M_Vector3Array::get_10008940		export ?get@M_Vector3Array@@QBEXAAV?$M_Vector3Template@M@@H@Z
+10008970	M_Vector3Array::null	named	strong	math	M_Vector3Array::null		export ?null@M_Vector3Array@@QAEXXZ
+100089c0	M_Vector3Array::vectorProduct	named	strong	math	M_Vector3Array::vectorProduct		export ?vectorProduct@M_Vector3Array@@QAEXABV1@0@Z
+100089f0	M_Vector3Array::dotProduct	named	strong	math	M_Vector3Array::dotProduct		export ?dotProduct@M_Vector3Array@@SIXAAVM_ScalarArray@@ABV1@1@Z
+10008a20	M_Vector3Array::add	named	strong	math	M_Vector3Array::add		export ?add@M_Vector3Array@@QAEXABV1@0@Z
+10008a70	M_Vector3Array::subtract	named	strong	math	M_Vector3Array::subtract		export ?subtract@M_Vector3Array@@QAEXABV1@0@Z
+10008ac0	M_Vector3Array::multiply	named	strong	math	M_Vector3Array::multiply_10008ac0		export ?multiply@M_Vector3Array@@QAEXABV1@ABVM_ScalarArray@@@Z
+10008af0	M_Vector3Array::multiply	named	strong	math	M_Vector3Array::multiply_10008af0		export ?multiply@M_Vector3Array@@QAEXABV1@M@Z
+10008b40	M_Vector3Array::multiply	named	strong	math	M_Vector3Array::multiply_10008b40		export ?multiply@M_Vector3Array@@QAEXABV1@ABV?$M_Matrix3Template@M@@@Z
+10008b70	M_Vector3Array::multiply	named	strong	math	M_Vector3Array::multiply_10008b70		export ?multiply@M_Vector3Array@@QAEXABV1@ABV?$M_Matrix4x3Template@M@@@Z
+10008ba0	M_Vector3Array::divide	named	strong	math	M_Vector3Array::divide_10008ba0		export ?divide@M_Vector3Array@@QAEXABV1@ABVM_ScalarArray@@@Z
+10008bd0	M_Vector3Array::divide_lo	named	strong	math	M_Vector3Array::divide_lo_10008bd0		export ?divide_lo@M_Vector3Array@@QAEXABV1@ABVM_ScalarArray@@@Z
+10008c00	M_Vector3Array::divide	named	strong	math	M_Vector3Array::divide_10008c00		export ?divide@M_Vector3Array@@QAEXABV1@M@Z
+10008c50	M_Vector3Array::divide_lo	named	strong	math	M_Vector3Array::divide_lo_10008c50		export ?divide_lo@M_Vector3Array@@QAEXABV1@M@Z
+10008ca0	M_Vector3Array::normalize_0	named	strong	math	M_Vector3Array::normalize_0_10008ca0		export ?normalize_0@M_Vector3Array@@QAEXXZ
+10008cc0	M_Vector3Array::normalize_lo_0	named	strong	math	M_Vector3Array::normalize_lo_0_10008cc0		export ?normalize_lo_0@M_Vector3Array@@QAEXXZ
+10008ce0	M_Vector3Array::normalize_hi_0	named	strong	math	M_Vector3Array::normalize_hi_0_10008ce0		export ?normalize_hi_0@M_Vector3Array@@QAEXXZ
+10008d00	M_Vector3Array::normalize_0	named	strong	math	M_Vector3Array::normalize_0_10008d00		export ?normalize_0@M_Vector3Array@@QAEXABV1@@Z
+10008d30	M_Vector3Array::normalize_lo_0	named	strong	math	M_Vector3Array::normalize_lo_0_10008d30		export ?normalize_lo_0@M_Vector3Array@@QAEXABV1@@Z
+10008d60	M_Vector3Array::normalize_hi_0	named	strong	math	M_Vector3Array::normalize_hi_0_10008d60		export ?normalize_hi_0@M_Vector3Array@@QAEXABV1@@Z
+10008d90	M_Vector3Array::length	named	strong	math	M_Vector3Array::length		export ?length@M_Vector3Array@@SIXAAVM_ScalarArray@@ABV1@@Z
+10008dc0	M_Vector3Array::length_lo	named	strong	math	M_Vector3Array::length_lo		export ?length_lo@M_Vector3Array@@SIXAAVM_ScalarArray@@ABV1@@Z
+10008df0	M_Vector3Array::length_hi	named	strong	math	M_Vector3Array::length_hi		export ?length_hi@M_Vector3Array@@SIXAAVM_ScalarArray@@ABV1@@Z
+10008e20	M_Vector3Array::negate	named	strong	math	M_Vector3Array::negate		export ?negate@M_Vector3Array@@QAEXXZ
+10008e60	M_Vector3Array::clamp	named	strong	math	M_Vector3Array::clamp		export ?clamp@M_Vector3Array@@QAEXMM@Z
+10008ea0	M_Vector3Array::clampMin	named	strong	math	M_Vector3Array::clampMin		export ?clampMin@M_Vector3Array@@QAEXM@Z
+10008ee0	M_Vector3Array::clampMax	named	strong	math	M_Vector3Array::clampMax		export ?clampMax@M_Vector3Array@@QAEXM@Z
+10008f20	M_Vector3Array::minimum	named	strong	math	M_Vector3Array::minimum_10008f20		export ?minimum@M_Vector3Array@@QAEXABV1@@Z
+10008f60	M_Vector3Array::minimum	named	strong	math	M_Vector3Array::minimum_10008f60		export ?minimum@M_Vector3Array@@QAEXABV1@0@Z
+10008fb0	M_Vector3Array::maximum	named	strong	math	M_Vector3Array::maximum_10008fb0		export ?maximum@M_Vector3Array@@QAEXABV1@@Z
+10008ff0	M_Vector3Array::maximum	named	strong	math	M_Vector3Array::maximum_10008ff0		export ?maximum@M_Vector3Array@@QAEXABV1@0@Z
+10009040	M_Vector3Array::operator=	named	strong	math	M_Vector3Array::operator=		export ??4M_Vector3Array@@QAEAAV0@ABV0@@Z
+10009090	M_Vector3Array::operator+=	named	strong	math	M_Vector3Array::operator+=		export ??YM_Vector3Array@@QAEAAV0@ABV0@@Z
+100090d0	M_Vector3Array::operator-=	named	strong	math	M_Vector3Array::operator-=		export ??ZM_Vector3Array@@QAEAAV0@ABV0@@Z
+10009110	M_Vector3Array::operator*=	named	strong	math	M_Vector3Array::operator*=_10009110		export ??XM_Vector3Array@@QAEAAV0@ABVM_ScalarArray@@@Z
+10009140	M_Vector3Array::operator*=	named	strong	math	M_Vector3Array::operator*=_10009140		export ??XM_Vector3Array@@QAEAAV0@M@Z
+10009180	M_Vector3Array::operator*=	named	strong	math	M_Vector3Array::operator*=_10009180		export ??XM_Vector3Array@@QAEAAV0@ABV?$M_Matrix3Template@M@@@Z
+100091b0	M_Vector3Array::operator*=	named	strong	math	M_Vector3Array::operator*=_100091b0		export ??XM_Vector3Array@@QAEAAV0@ABV?$M_Matrix4x3Template@M@@@Z
+100091e0	M_Vector3Array::operator/=	named	strong	math	M_Vector3Array::operator/=_100091e0		export ??_0M_Vector3Array@@QAEAAV0@ABVM_ScalarArray@@@Z
+10009210	M_Vector3Array::operator/=	named	strong	math	M_Vector3Array::operator/=_10009210		export ??_0M_Vector3Array@@QAEAAV0@M@Z
+10009250	operator<<	named	strong	streams	operator<<_10009250		export ??6@YIAAVostream@@AAV0@ABVM_Vector3Array@@@Z
+10009410	operator<<	named	strong	streams	operator<<_10009410		export ??6@YIAAVCArchive@@AAV0@ABVM_Vector3Array@@@Z
+10009520	operator>>	named	strong	streams	operator>>_10009520		export ??5@YIAAVCArchive@@AAV0@AAVM_Vector3Array@@@Z
+10009620	operator<<	named	strong	streams	operator<<_10009620		export ??6@YIAAVR_MemoryFile@@AAV0@ABVM_Vector3Array@@@Z
+100096c0	M_Vector4Array::M_Vector4Array	named	strong	math	M_Vector4Array::M_Vector4Array_100096c0		export ??0M_Vector4Array@@QAE@H@Z
+100096e0	M_Vector4Array::M_Vector4Array	named	strong	math	M_Vector4Array::M_Vector4Array_100096e0		export ??0M_Vector4Array@@QAE@ABV0@@Z
+10009740	M_Vector4Array::allocate	named	strong	math	M_Vector4Array::allocate		export ?allocate@M_Vector4Array@@QAEXH@Z
+10009960	M_Vector4Array::resize	named	strong	math	M_Vector4Array::resize		export ?resize@M_Vector4Array@@QAEXH@Z
+10009980	R_Exception::getErrorMessage	named	strong	exceptions	R_Exception::getErrorMessage	identical-code-folded: 5 exports share this body	export ?getErrorMessage@R_Exception@@UBEPBDXZ; also exported at the same address (identical code folded): ?getMemory@M_ScalarArray@@QBEPAMXZ, ?getMemory@M_Vector2Array@@QBEPAMXZ, ?getMemory@M_Vector3Array@@QBEPAMXZ (+1 more)
+10009990	M_ScalarArray::getAllocatedSize	named	strong	math	M_ScalarArray::getAllocatedSize	identical-code-folded: 5 exports share this body	export ?getAllocatedSize@M_ScalarArray@@QBEHXZ; also exported at the same address (identical code folded): ?getAllocatedSize@M_Vector2Array@@QBEHXZ, ?getAllocatedSize@M_Vector3Array@@QBEHXZ, ?getAllocatedSize@M_Vector4Array@@QBEHXZ (+1 more)
+100099a0	M_ScalarArray::getCurrentSize	named	strong	math	M_ScalarArray::getCurrentSize	identical-code-folded: 5 exports share this body	export ?getCurrentSize@M_ScalarArray@@QBEHXZ; also exported at the same address (identical code folded): ?getCurrentSize@M_Vector2Array@@QBEHXZ, ?getCurrentSize@M_Vector3Array@@QBEHXZ, ?getCurrentSize@M_Vector4Array@@QBEHXZ (+1 more)
+100099b0	M_Vector4Array::set	named	strong	math	M_Vector4Array::set		export ?set@M_Vector4Array@@QAEXHABV?$M_Vector4Template@M@@@Z
+100099e0	M_Vector4Array::get	named	strong	math	M_Vector4Array::get_100099e0		export ?get@M_Vector4Array@@QBE?AV?$M_Vector4Template@M@@H@Z
+10009a70	M_Vector4Array::get	named	strong	math	M_Vector4Array::get_10009a70		export ?get@M_Vector4Array@@QBEXAAV?$M_Vector4Template@M@@H@Z
+10009aa0	M_Vector4Array::null	named	strong	math	M_Vector4Array::null		export ?null@M_Vector4Array@@QAEXXZ
+10009af0	M_Vector4Array::dotProduct	named	strong	math	M_Vector4Array::dotProduct		export ?dotProduct@M_Vector4Array@@SIXAAVM_ScalarArray@@ABV1@1@Z
+10009b20	M_Vector4Array::add	named	strong	math	M_Vector4Array::add		export ?add@M_Vector4Array@@QAEXABV1@0@Z
+10009b70	M_Vector4Array::subtract	named	strong	math	M_Vector4Array::subtract		export ?subtract@M_Vector4Array@@QAEXABV1@0@Z
+10009bc0	M_Vector4Array::multiply	named	strong	math	M_Vector4Array::multiply_10009bc0		export ?multiply@M_Vector4Array@@QAEXABV1@ABVM_ScalarArray@@@Z
+10009bf0	M_Vector4Array::multiply	named	strong	math	M_Vector4Array::multiply_10009bf0		export ?multiply@M_Vector4Array@@QAEXABV1@M@Z
+10009c40	M_Vector4Array::multiply	named	strong	math	M_Vector4Array::multiply_10009c40		export ?multiply@M_Vector4Array@@QAEXABV1@ABV?$M_Matrix4Template@M@@@Z
+10009c70	M_Vector4Array::divide	named	strong	math	M_Vector4Array::divide_10009c70		export ?divide@M_Vector4Array@@QAEXABV1@ABVM_ScalarArray@@@Z
+10009ca0	M_Vector4Array::divide_lo	named	strong	math	M_Vector4Array::divide_lo_10009ca0		export ?divide_lo@M_Vector4Array@@QAEXABV1@ABVM_ScalarArray@@@Z
+10009cd0	M_Vector4Array::divide	named	strong	math	M_Vector4Array::divide_10009cd0		export ?divide@M_Vector4Array@@QAEXABV1@M@Z
+10009d20	M_Vector4Array::divide_lo	named	strong	math	M_Vector4Array::divide_lo_10009d20		export ?divide_lo@M_Vector4Array@@QAEXABV1@M@Z
+10009d70	M_Vector4Array::normalize_0	named	strong	math	M_Vector4Array::normalize_0_10009d70		export ?normalize_0@M_Vector4Array@@QAEXXZ
+10009d90	M_Vector4Array::normalize_lo_0	named	strong	math	M_Vector4Array::normalize_lo_0_10009d90		export ?normalize_lo_0@M_Vector4Array@@QAEXXZ
+10009db0	M_Vector4Array::normalize_hi_0	named	strong	math	M_Vector4Array::normalize_hi_0_10009db0		export ?normalize_hi_0@M_Vector4Array@@QAEXXZ
+10009dd0	M_Vector4Array::normalize_0	named	strong	math	M_Vector4Array::normalize_0_10009dd0		export ?normalize_0@M_Vector4Array@@QAEXABV1@@Z
+10009e00	M_Vector4Array::normalize_lo_0	named	strong	math	M_Vector4Array::normalize_lo_0_10009e00		export ?normalize_lo_0@M_Vector4Array@@QAEXABV1@@Z
+10009e30	M_Vector4Array::normalize_hi_0	named	strong	math	M_Vector4Array::normalize_hi_0_10009e30		export ?normalize_hi_0@M_Vector4Array@@QAEXABV1@@Z
+10009e60	M_Vector4Array::length	named	strong	math	M_Vector4Array::length		export ?length@M_Vector4Array@@SIXAAVM_ScalarArray@@ABV1@@Z
+10009e90	M_Vector4Array::length_lo	named	strong	math	M_Vector4Array::length_lo		export ?length_lo@M_Vector4Array@@SIXAAVM_ScalarArray@@ABV1@@Z
+10009ec0	M_Vector4Array::length_hi	named	strong	math	M_Vector4Array::length_hi		export ?length_hi@M_Vector4Array@@SIXAAVM_ScalarArray@@ABV1@@Z
+10009ef0	M_Vector4Array::negate	named	strong	math	M_Vector4Array::negate		export ?negate@M_Vector4Array@@QAEXXZ
+10009f30	M_Vector4Array::clamp	named	strong	math	M_Vector4Array::clamp		export ?clamp@M_Vector4Array@@QAEXMM@Z
+10009f70	M_Vector4Array::clampMin	named	strong	math	M_Vector4Array::clampMin		export ?clampMin@M_Vector4Array@@QAEXM@Z
+10009fb0	M_Vector4Array::clampMax	named	strong	math	M_Vector4Array::clampMax		export ?clampMax@M_Vector4Array@@QAEXM@Z
+10009ff0	M_Vector4Array::minimum	named	strong	math	M_Vector4Array::minimum_10009ff0		export ?minimum@M_Vector4Array@@QAEXABV1@@Z
+1000a030	M_Vector4Array::minimum	named	strong	math	M_Vector4Array::minimum_1000a030		export ?minimum@M_Vector4Array@@QAEXABV1@0@Z
+1000a080	M_Vector4Array::maximum	named	strong	math	M_Vector4Array::maximum_1000a080		export ?maximum@M_Vector4Array@@QAEXABV1@@Z
+1000a0c0	M_Vector4Array::maximum	named	strong	math	M_Vector4Array::maximum_1000a0c0		export ?maximum@M_Vector4Array@@QAEXABV1@0@Z
+1000a110	M_Vector4Array::operator=	named	strong	math	M_Vector4Array::operator=		export ??4M_Vector4Array@@QAEAAV0@ABV0@@Z
+1000a160	M_Vector4Array::operator+=	named	strong	math	M_Vector4Array::operator+=		export ??YM_Vector4Array@@QAEAAV0@ABV0@@Z
+1000a1a0	M_Vector4Array::operator-=	named	strong	math	M_Vector4Array::operator-=		export ??ZM_Vector4Array@@QAEAAV0@ABV0@@Z
+1000a1e0	M_Vector4Array::operator*=	named	strong	math	M_Vector4Array::operator*=_1000a1e0		export ??XM_Vector4Array@@QAEAAV0@ABVM_ScalarArray@@@Z
+1000a210	M_Vector4Array::operator*=	named	strong	math	M_Vector4Array::operator*=_1000a210		export ??XM_Vector4Array@@QAEAAV0@M@Z
+1000a250	M_Vector4Array::operator*=	named	strong	math	M_Vector4Array::operator*=_1000a250		export ??XM_Vector4Array@@QAEAAV0@ABV?$M_Matrix4Template@M@@@Z
+1000a280	M_Vector4Array::operator/=	named	strong	math	M_Vector4Array::operator/=_1000a280		export ??_0M_Vector4Array@@QAEAAV0@ABVM_ScalarArray@@@Z
+1000a2b0	M_Vector4Array::operator/=	named	strong	math	M_Vector4Array::operator/=_1000a2b0		export ??_0M_Vector4Array@@QAEAAV0@M@Z
+1000a2f0	operator<<	named	strong	streams	operator<<_1000a2f0		export ??6@YIAAVostream@@AAV0@ABVM_Vector4Array@@@Z
+1000a510	operator<<	named	strong	streams	operator<<_1000a510		export ??6@YIAAVCArchive@@AAV0@ABVM_Vector4Array@@@Z
+1000a650	operator>>	named	strong	streams	operator>>_1000a650		export ??5@YIAAVCArchive@@AAV0@AAVM_Vector4Array@@@Z
+1000a780	operator<<	named	strong	streams	operator<<_1000a780		export ??6@YIAAVR_MemoryFile@@AAV0@ABVM_Vector4Array@@@Z
+1000a850	R_delete_counted_cdecl	understood	weak	memory	R_delete_counted_cdecl	if ptr: operator delete + R_Memory::sm_iDeleteCount++ (stack-arg variant of 0x1001b750)	body; 9 callers
+1000a870	R_alloc_dwords(n)	understood	weak	memory	R_alloc_dwords(n)	operator new(n*4); bumps R_Memory::sm_iNewCount; on NULL throws R_MemoryException_Allocation ("Out of system memory resources")	Ghidra body read; string 0x1003d17c, vtable 0x1002a204, ThrowInfo 0x1002ce20
+1000a970	throw_R_MemoryException_Allocation	understood	strong	exceptions	throw_R_MemoryException_Allocation	copies the static R_MemoryException_Allocation 0x100626f0 into place and _CxxThrowException (ThrowInfo 0x1002ce20)	12 callers; same pattern as e2mfc 0x10102820
+1000a9d0	atexit_dtor_static_100626f0	understood	weak	exceptions	atexit_dtor_static_100626f0	mov ecx,0x100626f0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100626f0	pushed to atexit by R_alloc_dwords(n), throw_R_MemoryException_Allocation, R_alloc_chars_a(n), new_R_DLList_R_RASArchive, new_R_DLList_int, R_alloc_zeroed_vector_header, R_alloc_bytes(n), R_alloc_dwords_clamped(n), basic_string_R_CTrI_allocBuffer, R_alloc_R_PENTRY_array(n), R_ScriptLoader_parseAssignment, R_ScriptLoader_preprocess, R_alloc_chars_b(n), R_alloc_chars_c(n), R_alloc_zeroed_vector_header_b, R_CPUReference_newOrThrow, R_FileStream::R_FileStream, R_MemoryFile::construct, R_REALLOCATE_implementation, R_Script::R_Script, R_UnbufferedFileStream::R_UnbufferedFileStream, std::rs::_Copy (address 0x10005a90, 0x1000a870, 0x1000a970)
+1000a9e0	vector_ctor_iterator	understood	weak	crt	vector_ctor_iterator	__vec_ctor shape (ptr,size,count,fn): calls fn count times	body; callers R_CPUReference::multiply/invert
+1000aa10	R_Exception_assign_return_this	understood	weak	exceptions	R_Exception_assign_return_this	R_Exception::operator=(this,arg); return this; used in every throw sequence	15 callers, all throw paths
+1000aa30	M_funcMakeInverseSqrtLUT	named	strong	math	M_funcMakeInverseSqrtLUT		export ?M_funcMakeInverseSqrtLUT@@YIXXZ
+1000aa80	M_Float16::getAbsoluteMaximumValue	named	strong	math	M_Float16::getAbsoluteMaximumValue		export ?getAbsoluteMaximumValue@M_Float16@@SI?BMXZ
+1000aa90	M_FPUControl::M_FPUControl	named	strong	math	M_FPUControl::M_FPUControl_1000aa90		export ??0M_FPUControl@@QAE@XZ
+1000aaa0	M_FPUControl::M_FPUControl	named	strong	math	M_FPUControl::M_FPUControl_1000aaa0		export ??0M_FPUControl@@QAE@W4Rounding@0@@Z
+1000aac0	M_FPUControl::M_FPUControl	named	strong	math	M_FPUControl::M_FPUControl_1000aac0		export ??0M_FPUControl@@QAE@W4Precision@0@@Z
+1000aae0	M_FPUControl::M_FPUControl	named	strong	math	M_FPUControl::M_FPUControl_1000aae0		export ??0M_FPUControl@@QAE@W4Rounding@0@W4Precision@0@@Z
+1000ab10	M_FPUControl::~M_FPUControl	named	strong	math	M_FPUControl::~M_FPUControl		export ??1M_FPUControl@@QAE@XZ
+1000ab20	M_FPUControl::getRounding	named	strong	math	M_FPUControl::getRounding		export ?getRounding@M_FPUControl@@QAE?AW4Rounding@1@XZ
+1000ab40	M_FPUControl::getPrecision	named	strong	math	M_FPUControl::getPrecision		export ?getPrecision@M_FPUControl@@QAE?AW4Precision@1@XZ
+1000ab60	M_FPUControl::setRounding	named	strong	math	M_FPUControl::setRounding		export ?setRounding@M_FPUControl@@QAEXW4Rounding@1@@Z
+1000ab90	M_FPUControl::setPrecision	named	strong	math	M_FPUControl::setPrecision		export ?setPrecision@M_FPUControl@@QAEXW4Precision@1@@Z
+1000abc0	M_FPUControl::readState	named	strong	math	M_FPUControl::readState		export ?readState@M_FPUControl@@AAEHXZ
+1000abd0	M_FPUControl::storeState	named	strong	math	M_FPUControl::storeState		export ?storeState@M_FPUControl@@AAEXH@Z
+1000abe0	R_CPUReference::getName	named	strong	math	R_CPUReference::getName		export ?getName@R_CPUReference@@UBEPBDXZ
+1000abf0	R_CPUReference::getID	named	strong	math	R_CPUReference::getID	identical-code-folded: 2 exports share this body	export ?getID@R_CPUReference@@UBE?AW4CPUID@R_CPUDriver@@XZ; also exported at the same address (identical code folded): ?getPriority@R_CPUReference@@UBEHXZ
+1000ac00	R_CPUReference::getSIMDSize	named	strong	math	R_CPUReference::getSIMDSize		export ?getSIMDSize@R_CPUReference@@UBEHXZ
+1000ac10	R_CPUReference::getStructureGranularity	named	strong	math	R_CPUReference::getStructureGranularity		export ?getStructureGranularity@R_CPUReference@@UBEHXZ
+1000ac20	R_CPUReference::getMemoryAlignment	named	strong	math	R_CPUReference::getMemoryAlignment		export ?getMemoryAlignment@R_CPUReference@@UBEHXZ
+1000ac30	R_CPUReference::add	named	strong	math	R_CPUReference::add_1000ac30		export ?add@R_CPUReference@@UBEXPAMPBM1HH@Z
+1000ac90	R_CPUReference::add	named	strong	math	R_CPUReference::add_1000ac90		export ?add@R_CPUReference@@UBEXPAMPBM1H@Z
+1000acb0	R_CPUReference::add	named	strong	math	R_CPUReference::add_1000acb0		export ?add@R_CPUReference@@UBEXPAMPBMHH@Z
+1000acd0	R_CPUReference::add	named	strong	math	R_CPUReference::add_1000acd0		export ?add@R_CPUReference@@UBEXPAMPBMH@Z
+1000acf0	R_CPUReference::subtract	named	strong	math	R_CPUReference::subtract_1000acf0		export ?subtract@R_CPUReference@@UBEXPAMPBM1HH@Z
+1000ad50	R_CPUReference::subtract	named	strong	math	R_CPUReference::subtract_1000ad50		export ?subtract@R_CPUReference@@UBEXPAMPBM1H@Z
+1000ad70	R_CPUReference::subtract	named	strong	math	R_CPUReference::subtract_1000ad70		export ?subtract@R_CPUReference@@UBEXPAMPBMHH@Z
+1000ad90	R_CPUReference::subtract	named	strong	math	R_CPUReference::subtract_1000ad90		export ?subtract@R_CPUReference@@UBEXPAMPBMH@Z
+1000adb0	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000adb0		export ?multiply@R_CPUReference@@UBEXPAMPBM1HH@Z
+1000ae10	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000ae10		export ?multiply@R_CPUReference@@UBEXPAMPBM1H@Z
+1000ae40	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000ae40		export ?multiply@R_CPUReference@@UBEXPAMPBMHH@Z
+1000ae60	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000ae60		export ?multiply@R_CPUReference@@UBEXPAMPBMH@Z
+1000ae80	R_CPUReference::divide	named	strong	math	R_CPUReference::divide_1000ae80		export ?divide@R_CPUReference@@UBEXPAMPBM1HH@Z
+1000aee0	R_CPUReference::divide	named	strong	math	R_CPUReference::divide_1000aee0		export ?divide@R_CPUReference@@UBEXPAMPBM1H@Z
+1000af10	R_CPUReference::divide	named	strong	math	R_CPUReference::divide_1000af10		export ?divide@R_CPUReference@@UBEXPAMPBMHH@Z
+1000af30	R_CPUReference::divide	named	strong	math	R_CPUReference::divide_1000af30		export ?divide@R_CPUReference@@UBEXPAMPBMH@Z
+1000af50	R_CPUReference::divide_lo	named	strong	math	R_CPUReference::divide_lo_1000af50		export ?divide_lo@R_CPUReference@@UBEXPAMPBM1HH@Z
+1000af80	R_CPUReference::divide_lo	named	strong	math	R_CPUReference::divide_lo_1000af80		export ?divide_lo@R_CPUReference@@UBEXPAMPBM1H@Z
+1000afb0	R_CPUReference::divide_lo	named	strong	math	R_CPUReference::divide_lo_1000afb0		export ?divide_lo@R_CPUReference@@UBEXPAMPBMHH@Z
+1000afd0	R_CPUReference::divide_lo	named	strong	math	R_CPUReference::divide_lo_1000afd0		export ?divide_lo@R_CPUReference@@UBEXPAMPBMH@Z
+1000aff0	R_CPUReference::add	named	strong	math	R_CPUReference::add_1000aff0		export ?add@R_CPUReference@@UBEXPAMPBMMHH@Z
+1000b040	R_CPUReference::add	named	strong	math	R_CPUReference::add_1000b040		export ?add@R_CPUReference@@UBEXPAMPBMMH@Z
+1000b060	R_CPUReference::add	named	strong	math	R_CPUReference::add_1000b060		export ?add@R_CPUReference@@UBEXPAMMHH@Z
+1000b080	R_CPUReference::add	named	strong	math	R_CPUReference::add_1000b080		export ?add@R_CPUReference@@UBEXPAMMH@Z
+1000b0a0	R_CPUReference::subtract	named	strong	math	R_CPUReference::subtract_1000b0a0		export ?subtract@R_CPUReference@@UBEXPAMPBMMHH@Z
+1000b0f0	R_CPUReference::subtract	named	strong	math	R_CPUReference::subtract_1000b0f0		export ?subtract@R_CPUReference@@UBEXPAMPBMMH@Z
+1000b110	R_CPUReference::subtract	named	strong	math	R_CPUReference::subtract_1000b110		export ?subtract@R_CPUReference@@UBEXPAMMHH@Z
+1000b130	R_CPUReference::subtract	named	strong	math	R_CPUReference::subtract_1000b130		export ?subtract@R_CPUReference@@UBEXPAMMH@Z
+1000b150	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000b150		export ?multiply@R_CPUReference@@UBEXPAMPBMMHH@Z
+1000b1a0	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000b1a0		export ?multiply@R_CPUReference@@UBEXPAMPBMMH@Z
+1000b1d0	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000b1d0		export ?multiply@R_CPUReference@@UBEXPAMMHH@Z
+1000b1f0	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000b1f0		export ?multiply@R_CPUReference@@UBEXPAMMH@Z
+1000b210	R_CPUReference::divide	named	strong	math	R_CPUReference::divide_1000b210		export ?divide@R_CPUReference@@UBEXPAMPBMMHH@Z
+1000b260	R_CPUReference::divide	named	strong	math	R_CPUReference::divide_1000b260		export ?divide@R_CPUReference@@UBEXPAMPBMMH@Z
+1000b290	R_CPUReference::divide	named	strong	math	R_CPUReference::divide_1000b290		export ?divide@R_CPUReference@@UBEXPAMMHH@Z
+1000b2b0	R_CPUReference::divide	named	strong	math	R_CPUReference::divide_1000b2b0		export ?divide@R_CPUReference@@UBEXPAMMH@Z
+1000b2d0	R_CPUReference::divide_lo	named	strong	math	R_CPUReference::divide_lo_1000b2d0		export ?divide_lo@R_CPUReference@@UBEXPAMPBMMHH@Z
+1000b300	R_CPUReference::divide_lo	named	strong	math	R_CPUReference::divide_lo_1000b300		export ?divide_lo@R_CPUReference@@UBEXPAMPBMMH@Z
+1000b330	R_CPUReference::divide_lo	named	strong	math	R_CPUReference::divide_lo_1000b330		export ?divide_lo@R_CPUReference@@UBEXPAMMHH@Z
+1000b350	R_CPUReference::divide_lo	named	strong	math	R_CPUReference::divide_lo_1000b350		export ?divide_lo@R_CPUReference@@UBEXPAMMH@Z
+1000b370	R_CPUReference::multiply_then_add	named	strong	math	R_CPUReference::multiply_then_add		export ?multiply_then_add@R_CPUReference@@UBEXPAMPBM1HH@Z
+1000b3e0	R_CPUReference::multiply_then_subtract	named	strong	math	R_CPUReference::multiply_then_subtract		export ?multiply_then_subtract@R_CPUReference@@UBEXPAMPBM1HH@Z
+1000b450	R_CPUReference::reciprocal_0	named	strong	math	R_CPUReference::reciprocal_0_1000b450		export ?reciprocal_0@R_CPUReference@@UBEXPAMPBMH@Z
+1000b4b0	R_CPUReference::reciprocal_hi_0	named	strong	math	R_CPUReference::reciprocal_hi_0	identical-code-folded: 2 exports share this body	export ?reciprocal_hi_0@R_CPUReference@@UBEXPAMPBMH@Z; also exported at the same address (identical code folded): ?reciprocal_lo_0@R_CPUReference@@UBEXPAMPBMH@Z
+1000b4d0	R_CPUReference::reciprocal_0	named	strong	math	R_CPUReference::reciprocal_0_1000b4d0	identical-code-folded: 3 exports share this body	export ?reciprocal_0@R_CPUReference@@UBEXPAMH@Z; also exported at the same address (identical code folded): ?reciprocal_hi_0@R_CPUReference@@UBEXPAMH@Z, ?reciprocal_lo_0@R_CPUReference@@UBEXPAMH@Z
+1000b4f0	R_CPUReference::sqrt	named	strong	math	R_CPUReference::sqrt_1000b4f0		export ?sqrt@R_CPUReference@@UBEXPAMPBMH@Z
+1000b540	R_CPUReference::sqrt	named	strong	math	R_CPUReference::sqrt_1000b540		export ?sqrt@R_CPUReference@@UBEXPAMH@Z
+1000b560	R_CPUReference::sqrt_lo	named	strong	math	R_CPUReference::sqrt_lo		export ?sqrt_lo@R_CPUReference@@UBEXPAMH@Z
+1000b580	R_CPUReference::sqrt_hi	named	strong	math	R_CPUReference::sqrt_hi_1000b580	identical-code-folded: 2 exports share this body	export ?sqrt_hi@R_CPUReference@@UBEXPAMPBMH@Z; also exported at the same address (identical code folded): ?sqrt_lo@R_CPUReference@@UBEXPAMPBMH@Z
+1000b5a0	R_CPUReference::sqrt_hi	named	strong	math	R_CPUReference::sqrt_hi_1000b5a0		export ?sqrt_hi@R_CPUReference@@UBEXPAMH@Z
+1000b5c0	R_CPUReference::invsqrt	named	strong	math	R_CPUReference::invsqrt_1000b5c0		export ?invsqrt@R_CPUReference@@UBEXPAMPBMH@Z
+1000b610	R_CPUReference::invsqrt	named	strong	math	R_CPUReference::invsqrt_1000b610		export ?invsqrt@R_CPUReference@@UBEXPAMH@Z
+1000b630	R_CPUReference::invsqrt_lo	named	strong	math	R_CPUReference::invsqrt_lo		export ?invsqrt_lo@R_CPUReference@@UBEXPAMH@Z
+1000b650	R_CPUReference::invsqrt_hi	named	strong	math	R_CPUReference::invsqrt_hi_1000b650	identical-code-folded: 2 exports share this body	export ?invsqrt_hi@R_CPUReference@@UBEXPAMPBMH@Z; also exported at the same address (identical code folded): ?invsqrt_lo@R_CPUReference@@UBEXPAMPBMH@Z
+1000b670	R_CPUReference::invsqrt_hi	named	strong	math	R_CPUReference::invsqrt_hi_1000b670		export ?invsqrt_hi@R_CPUReference@@UBEXPAMH@Z
+1000b690	R_CPUReference::negate	named	strong	math	R_CPUReference::negate_1000b690		export ?negate@R_CPUReference@@UBEXPAMPBMH@Z
+1000b6e0	R_CPUReference::negate	named	strong	math	R_CPUReference::negate_1000b6e0		export ?negate@R_CPUReference@@UBEXPAMH@Z
+1000b700	R_CPUReference::abs	named	strong	math	R_CPUReference::abs_1000b700		export ?abs@R_CPUReference@@UBEXPAMPBMH@Z
+1000b750	R_CPUReference::abs	named	strong	math	R_CPUReference::abs_1000b750		export ?abs@R_CPUReference@@UBEXPAMH@Z
+1000b770	R_CPUReference::clamp	named	strong	math	R_CPUReference::clamp_1000b770		export ?clamp@R_CPUReference@@UBEXPAMPBMMMH@Z
+1000b7e0	R_CPUReference::clamp	named	strong	math	R_CPUReference::clamp_1000b7e0		export ?clamp@R_CPUReference@@UBEXPAMMMH@Z
+1000b800	R_CPUReference::clampMin	named	strong	math	R_CPUReference::clampMin_1000b800		export ?clampMin@R_CPUReference@@UBEXPAMPBMMH@Z
+1000b860	R_CPUReference::clampMin	named	strong	math	R_CPUReference::clampMin_1000b860		export ?clampMin@R_CPUReference@@UBEXPAMMH@Z
+1000b880	R_CPUReference::clampMax	named	strong	math	R_CPUReference::clampMax_1000b880		export ?clampMax@R_CPUReference@@UBEXPAMPBMMH@Z
+1000b8e0	R_CPUReference::clampMax	named	strong	math	R_CPUReference::clampMax_1000b8e0		export ?clampMax@R_CPUReference@@UBEXPAMMH@Z
+1000b900	R_CPUReference::minimum	named	strong	math	R_CPUReference::minimum_1000b900		export ?minimum@R_CPUReference@@UBEXPAM00H@Z
+1000b970	R_CPUReference::minimum	named	strong	math	R_CPUReference::minimum_1000b970		export ?minimum@R_CPUReference@@UBEXPAM0H@Z
+1000b990	R_CPUReference::maximum	named	strong	math	R_CPUReference::maximum_1000b990		export ?maximum@R_CPUReference@@UBEXPAM00H@Z
+1000ba00	R_CPUReference::maximum	named	strong	math	R_CPUReference::maximum_1000ba00		export ?maximum@R_CPUReference@@UBEXPAM0H@Z
+1000ba20	R_CPUReference::invert	named	strong	math	R_CPUReference::invert_1000ba20		export ?invert@R_CPUReference@@UBEXAAV?$M_Matrix2Template@M@@@Z
+1000bac0	R_CPUReference::invert	named	strong	math	R_CPUReference::invert_1000bac0		export ?invert@R_CPUReference@@UBEXAAV?$M_Matrix3Template@M@@@Z
+1000bc60	R_CPUReference::invert	named	strong	math	R_CPUReference::invert_1000bc60		export ?invert@R_CPUReference@@UBEXAAV?$M_Matrix4x3Template@M@@@Z
+1000bcc0	R_CPUReference::invert	named	strong	math	R_CPUReference::invert_1000bcc0		export ?invert@R_CPUReference@@UBEXAAV?$M_Matrix4Template@M@@@Z
+1000bda0	matrix4_adjoint	understood	weak	math	matrix4_adjoint	cofactor (adjugate) of a 4x4 via 16 3x3 determinants	calls det3x3; caller R_CPUReference::invert
+1000c110	det3x3	understood	weak	math	det3x3	3x3 determinant by 2x2 minors	calls det2x2
+1000c170	det2x2	understood	strong	math	det2x2	a*d-b*c	body
+1000c190	matrix4_determinant	understood	weak	math	matrix4_determinant	4x4 determinant	caller R_CPUReference::invert (with 0x1000bda0)
+1000c2d0	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000c2d0		export ?multiply@R_CPUReference@@UBEXAAV?$M_Matrix2Template@M@@ABV2@@Z
+1000c380	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000c380		export ?multiply@R_CPUReference@@UBEXAAV?$M_Matrix3Template@M@@ABV2@@Z
+1000c530	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000c530		export ?multiply@R_CPUReference@@UBEXAAV?$M_Matrix4x3Template@M@@ABV2@@Z
+1000c5a0	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000c5a0		export ?multiply@R_CPUReference@@UBEXAAV?$M_Matrix4Template@M@@ABV2@@Z
+1000c880	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000c880		export ?multiply@R_CPUReference@@UBEXAAV?$M_Vector2Template@M@@ABV2@ABV?$M_Matrix2Template@M@@@Z
+1000c8b0	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000c8b0		export ?multiply@R_CPUReference@@UBEXAAV?$M_Vector3Template@M@@ABV2@ABV?$M_Matrix3Template@M@@@Z
+1000c910	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000c910		export ?multiply@R_CPUReference@@UBEXAAV?$M_Vector3Template@M@@ABV2@ABV?$M_Matrix4x3Template@M@@@Z
+1000c980	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000c980		export ?multiply@R_CPUReference@@UBEXAAV?$M_Vector4Template@M@@ABV2@ABV?$M_Matrix4Template@M@@@Z
+1000ca20	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000ca20		export ?multiply@R_CPUReference@@UBEXAAVM_Vector2Array@@ABV2@ABV?$M_Matrix2Template@M@@@Z
+1000cab0	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000cab0		export ?multiply@R_CPUReference@@UBEXAAVM_Vector3Array@@ABV2@ABV?$M_Matrix3Template@M@@@Z
+1000cb90	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000cb90		export ?multiply@R_CPUReference@@UBEXAAVM_Vector3Array@@ABV2@ABV?$M_Matrix4x3Template@M@@@Z
+1000cc80	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000cc80		export ?multiply@R_CPUReference@@UBEXAAVM_Vector4Array@@ABV2@ABV?$M_Matrix4Template@M@@@Z
+1000cda0	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000cda0		export ?multiply@R_CPUReference@@UBEXAAVM_Vector2Array@@ABV2@ABVM_ScalarArray@@@Z
+1000ce40	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000ce40		export ?multiply@R_CPUReference@@UBEXAAVM_Vector3Array@@ABV2@ABVM_ScalarArray@@@Z
+1000cef0	R_CPUReference::multiply	named	strong	math	R_CPUReference::multiply_1000cef0		export ?multiply@R_CPUReference@@UBEXAAVM_Vector4Array@@ABV2@ABVM_ScalarArray@@@Z
+1000cf90	R_CPUReference::divide	named	strong	math	R_CPUReference::divide_1000cf90		export ?divide@R_CPUReference@@UBEXAAVM_Vector2Array@@ABV2@ABVM_ScalarArray@@@Z
+1000d030	R_CPUReference::divide	named	strong	math	R_CPUReference::divide_1000d030		export ?divide@R_CPUReference@@UBEXAAVM_Vector3Array@@ABV2@ABVM_ScalarArray@@@Z
+1000d0e0	R_CPUReference::divide	named	strong	math	R_CPUReference::divide_1000d0e0		export ?divide@R_CPUReference@@UBEXAAVM_Vector4Array@@ABV2@ABVM_ScalarArray@@@Z
+1000d180	R_CPUReference::divide_lo	named	strong	math	R_CPUReference::divide_lo_1000d180		export ?divide_lo@R_CPUReference@@UBEXAAVM_Vector2Array@@ABV2@ABVM_ScalarArray@@@Z
+1000d1a0	R_CPUReference::divide_lo	named	strong	math	R_CPUReference::divide_lo_1000d1a0		export ?divide_lo@R_CPUReference@@UBEXAAVM_Vector3Array@@ABV2@ABVM_ScalarArray@@@Z
+1000d1c0	R_CPUReference::divide_lo	named	strong	math	R_CPUReference::divide_lo_1000d1c0		export ?divide_lo@R_CPUReference@@UBEXAAVM_Vector4Array@@ABV2@ABVM_ScalarArray@@@Z
+1000d1e0	R_CPUReference::normalize_0	named	strong	math	R_CPUReference::normalize_0_1000d1e0		export ?normalize_0@R_CPUReference@@UBEXAAVM_Vector2Array@@ABV2@@Z
+1000d290	R_CPUReference::normalize_lo_0	named	strong	math	R_CPUReference::normalize_lo_0_1000d290		export ?normalize_lo_0@R_CPUReference@@UBEXAAVM_Vector2Array@@ABV2@@Z
+1000d390	R_CPUReference::normalize_hi_0	named	strong	math	R_CPUReference::normalize_hi_0_1000d390		export ?normalize_hi_0@R_CPUReference@@UBEXAAVM_Vector2Array@@ABV2@@Z
+1000d4c0	R_CPUReference::normalize_0	named	strong	math	R_CPUReference::normalize_0_1000d4c0		export ?normalize_0@R_CPUReference@@UBEXAAVM_Vector3Array@@ABV2@@Z
+1000d590	R_CPUReference::normalize_lo_0	named	strong	math	R_CPUReference::normalize_lo_0_1000d590		export ?normalize_lo_0@R_CPUReference@@UBEXAAVM_Vector3Array@@ABV2@@Z
+1000d6b0	R_CPUReference::normalize_hi_0	named	strong	math	R_CPUReference::normalize_hi_0_1000d6b0		export ?normalize_hi_0@R_CPUReference@@UBEXAAVM_Vector3Array@@ABV2@@Z
+1000d800	R_CPUReference::normalize_0	named	strong	math	R_CPUReference::normalize_0_1000d800		export ?normalize_0@R_CPUReference@@UBEXAAVM_Vector4Array@@ABV2@@Z
+1000d8e0	R_CPUReference::normalize_lo_0	named	strong	math	R_CPUReference::normalize_lo_0_1000d8e0		export ?normalize_lo_0@R_CPUReference@@UBEXAAVM_Vector4Array@@ABV2@@Z
+1000da10	R_CPUReference::normalize_hi_0	named	strong	math	R_CPUReference::normalize_hi_0_1000da10		export ?normalize_hi_0@R_CPUReference@@UBEXAAVM_Vector4Array@@ABV2@@Z
+1000db70	R_CPUReference::length	named	strong	math	R_CPUReference::length_1000db70		export ?length@R_CPUReference@@UBEXPAMABVM_Vector2Array@@@Z
+1000dbd0	R_CPUReference::length_lo	named	strong	math	R_CPUReference::length_lo_1000dbd0		export ?length_lo@R_CPUReference@@UBEXPAMABVM_Vector2Array@@@Z
+1000dcc0	R_CPUReference::length_hi	named	strong	math	R_CPUReference::length_hi_1000dcc0		export ?length_hi@R_CPUReference@@UBEXPAMABVM_Vector2Array@@@Z
+1000dde0	R_CPUReference::length	named	strong	math	R_CPUReference::length_1000dde0		export ?length@R_CPUReference@@UBEXPAMABVM_Vector3Array@@@Z
+1000de50	R_CPUReference::length_lo	named	strong	math	R_CPUReference::length_lo_1000de50		export ?length_lo@R_CPUReference@@UBEXPAMABVM_Vector3Array@@@Z
+1000df50	R_CPUReference::length_hi	named	strong	math	R_CPUReference::length_hi_1000df50		export ?length_hi@R_CPUReference@@UBEXPAMABVM_Vector3Array@@@Z
+1000e070	R_CPUReference::length	named	strong	math	R_CPUReference::length_1000e070		export ?length@R_CPUReference@@UBEXPAMABVM_Vector4Array@@@Z
+1000e0f0	R_CPUReference::length_lo	named	strong	math	R_CPUReference::length_lo_1000e0f0		export ?length_lo@R_CPUReference@@UBEXPAMABVM_Vector4Array@@@Z
+1000e1f0	R_CPUReference::length_hi	named	strong	math	R_CPUReference::length_hi_1000e1f0		export ?length_hi@R_CPUReference@@UBEXPAMABVM_Vector4Array@@@Z
+1000e320	R_CPUReference::vectorProduct	named	strong	math	R_CPUReference::vectorProduct		export ?vectorProduct@R_CPUReference@@UBEXAAVM_Vector3Array@@ABV2@1@Z
+1000e460	R_CPUReference::dotProduct	named	strong	math	R_CPUReference::dotProduct_1000e460		export ?dotProduct@R_CPUReference@@UBEXAAVM_ScalarArray@@ABVM_Vector2Array@@1@Z
+1000e500	R_CPUReference::dotProduct	named	strong	math	R_CPUReference::dotProduct_1000e500		export ?dotProduct@R_CPUReference@@UBEXAAVM_ScalarArray@@ABVM_Vector3Array@@1@Z
+1000e5a0	R_CPUReference::dotProduct	named	strong	math	R_CPUReference::dotProduct_1000e5a0		export ?dotProduct@R_CPUReference@@UBEXAAVM_ScalarArray@@ABVM_Vector4Array@@1@Z
+1000e640	R_CPUReference::set	named	strong	math	R_CPUReference::set_1000e640		export ?set@R_CPUReference@@UBEXAAVM_Vector2Array@@HABV?$M_Vector2Template@M@@@Z
+1000e670	R_CPUReference::set	named	strong	math	R_CPUReference::set_1000e670		export ?set@R_CPUReference@@UBEXAAVM_Vector3Array@@HABV?$M_Vector3Template@M@@@Z
+1000e6b0	R_CPUReference::set	named	strong	math	R_CPUReference::set_1000e6b0		export ?set@R_CPUReference@@UBEXAAVM_Vector4Array@@HABV?$M_Vector4Template@M@@@Z
+1000e6f0	R_CPUReference::get	named	strong	math	R_CPUReference::get_1000e6f0		export ?get@R_CPUReference@@UBEXABVM_Vector2Array@@AAV?$M_Vector2Template@M@@H@Z
+1000e720	R_CPUReference::get	named	strong	math	R_CPUReference::get_1000e720		export ?get@R_CPUReference@@UBEXABVM_Vector3Array@@AAV?$M_Vector3Template@M@@H@Z
+1000e760	R_CPUReference::get	named	strong	math	R_CPUReference::get_1000e760		export ?get@R_CPUReference@@UBEXABVM_Vector4Array@@AAV?$M_Vector4Template@M@@H@Z
+1000e7a0	R_CPUReference::memcpy	named	strong	math	R_CPUReference::memcpy		export ?memcpy@R_CPUReference@@UBEXPAXPBXH@Z
+1000e7d0	R_CPUReference::memset	named	strong	math	R_CPUReference::memset		export ?memset@R_CPUReference@@UBEXPAXDH@Z
+1000e800	R_CPUReference::convertToInt	named	strong	math	R_CPUReference::convertToInt		export ?convertToInt@R_CPUReference@@UBEXPAHPBMH@Z
+1000e860	matrix4_copy	understood	weak	math	matrix4_copy	copies 64 bytes (4x4 float matrix)	body; caller R_CPUReference::multiply
+1000e8d0	float4_copy	understood	weak	math	float4_copy	copies 16 bytes	body; callers R_CPUReference::invert/multiply
+1000e8f0	float3_zero_ctor	understood	weak	math	float3_zero_ctor	zeroes 3 floats (M_Vector3 default ctor shape)	body; callers R_CPUReference::multiply/invert
+1000e900	float4_zero_ctor	understood	weak	math	float4_zero_ctor	zeroes 4 floats	body; caller R_CPUReference::multiply
+1000e910	float2_zero_ctor	understood	weak	math	float2_zero_ctor	zeroes 2 floats	body; gap function Ghidra missed
+1000e920	matrix3_identity_static	understood	weak	math	matrix3_identity_static	function-local static 3x3 float identity, guard 0x100626a0, returns its address	body; callers R_CPUReference::multiply/invert
+1000e9c0	matrix4_identity_static	understood	weak	math	matrix4_identity_static	function-local static 4x4 identity, guard 0x10062640	body; caller R_CPUReference::multiply
+1000eb50	matrix2_identity_static	understood	weak	math	matrix2_identity_static	function-local static 2x2 identity, guard 0x1006262c	body; caller R_CPUReference::multiply
+1000ebc0	CObject::AssertValid_nop	understood	weak	exceptions	CObject::AssertValid_nop	single ret; vtable slot 3 of the CObject/exception vtables (54 references)	MFC CObject vtable layout slot 3
+1000ebd0	R_Exception::R_Exception	named	strong	exceptions	R_Exception::R_Exception_1000ebd0		export ??0R_Exception@@IAE@XZ
+1000ebf0	R_Exception::scalar_deleting_dtor	understood	strong	exceptions	R_Exception::scalar_deleting_dtor	if flag&2 runs __ehvec_dtor over the array (stride 0xc) else ~R_Exception; delete when flag&1	RTTI vtable 0x1002a6bc (R_Exception) slot 1; gap function Ghidra missed
+1000ec50	R_Exception::R_Exception	named	strong	exceptions	R_Exception::R_Exception_1000ec50		export ??0R_Exception@@QAE@ABV0@@Z
+1000eca0	R_Exception::operator=	named	strong	exceptions	R_Exception::operator=		export ??4R_Exception@@QAEAAV0@ABV0@@Z
+1000ecc0	R_Exception::~R_Exception	named	strong	exceptions	R_Exception::~R_Exception		export ??1R_Exception@@UAE@XZ
+1000ecd0	R_Exception::setError	named	strong	exceptions	R_Exception::setError		export ?setError@R_Exception@@QAAXPBDZZ
+1000ed50	R_Exception::setLocalizationCallback	named	strong	exceptions	R_Exception::setLocalizationCallback		export ?setLocalizationCallback@R_Exception@@SIXP6IXABV1@PADPBD1@Z@Z
+1000ed60	R_Exception::clearLocalizationCallback	named	strong	exceptions	R_Exception::clearLocalizationCallback		export ?clearLocalizationCallback@R_Exception@@SIXXZ
+1000ed70	R_Exception::GetErrorMessage	named	strong	exceptions	R_Exception::GetErrorMessage		export ?GetErrorMessage@R_Exception@@UAEHPADIPAI@Z
+1000eda0	R_Exception::ReportError	named	strong	exceptions	R_Exception::ReportError		export ?ReportError@R_Exception@@UAEHII@Z
+1000edc0	CObject::scalar_deleting_dtor	understood	strong	exceptions	CObject::scalar_deleting_dtor	vptr = 0x1002a6e0; delete this when flag&1	RTTI vtable 0x1002a6e0 slot 1; gap function Ghidra missed
+1000ede0	CObject::CObject	understood	strong	exceptions	CObject::CObject	sets vptr = CObject vtable 0x1002a6e0	RTTI vtable 0x1002a6e0 (.?AVCObject)
+1000edf0	R_File::xstricmp	named	strong	files	R_File::xstricmp		export ?xstricmp@R_File@@CIHPBD0@Z
+1000ee80	R_File::checkPathExistence	named	strong	files	R_File::checkPathExistence		export ?checkPathExistence@R_File@@CIXPBD@Z
+1000ef00	R_File::R_File	named	strong	files	R_File::R_File		export ??0R_File@@AAE@XZ
+1000f040	R_File::~R_File	named	strong	files	R_File::~R_File		export ??1R_File@@AAE@XZ
+1000f1c0	R_File::loadArchives	named	strong	files	R_File::loadArchives		export ?loadArchives@R_File@@AAE_NXZ
+1000f3d0	R_File::unloadArchives	named	strong	files	R_File::unloadArchives		export ?unloadArchives@R_File@@AAEXXZ
+1000f5c0	R_File::setFileSystemRoot	named	strong	files	R_File::setFileSystemRoot		export ?setFileSystemRoot@R_File@@QAEXPBD@Z
+1000f6b0	R_File::setSecondaryArchiveSearchPath	named	strong	files	R_File::setSecondaryArchiveSearchPath		export ?setSecondaryArchiveSearchPath@R_File@@QAE_NPBD@Z
+1000f740	R_File::getSecondaryArchiveSearchPath	named	strong	files	R_File::getSecondaryArchiveSearchPath		export ?getSecondaryArchiveSearchPath@R_File@@QBEPBDXZ
+1000f750	R_File::initTree	named	strong	files	R_File::initTree		export ?initTree@R_File@@AAEXXZ
+1000f770	R_File::insertNode	named	strong	files	R_File::insertNode		export ?insertNode@R_File@@AAEXH@Z
+1000f8c0	R_File::deleteNode	named	strong	files	R_File::deleteNode		export ?deleteNode@R_File@@AAEXH@Z
+1000f9b0	R_File::absolutePathToDirStructure	named	strong	files	R_File::absolutePathToDirStructure		export ?absolutePathToDirStructure@R_File@@CIXPADPBD@Z
+1000fa50	R_File::relativeToAbsolutePath	named	strong	files	R_File::relativeToAbsolutePath		export ?relativeToAbsolutePath@R_File@@CIXPADPBD@Z
+1000fc60	R_File::changeDirectory	named	strong	files	R_File::changeDirectory		export ?changeDirectory@R_File@@QAEXPBD@Z
+1000fe60	R_File::searchFile	named	strong	files	R_File::searchFile		export ?searchFile@R_File@@CIXPAUR_RASFind@1@PBD@Z
+10010210	qsort_compare_cstr_stricmp	understood	strong	files	qsort_compare_cstr_stricmp	qsort/bsearch comparator: _stricmp(*a,*b)	calls import _stricmp via [0x1002a190]; used with qsort in the archive loader
+10010230	R_File::searchDir	named	strong	files	R_File::searchDir		export ?searchDir@R_File@@CIXPAUR_RASFind@1@PBD@Z
+100103a0	R_File::loadArchiveHeader	named	strong	files	R_File::loadArchiveHeader		export ?loadArchiveHeader@R_File@@AAEXPAUR_RASArchive@1@PBD@Z
+1001088b	R_File::loadArchiveHeader_cont	understood	weak	files	R_File::loadArchiveHeader_cont	catch-continuation of R_File::loadArchiveHeader: reads archive directory entries, throws R_FileException_ArchiveCorrupted/UnableToRead/NotFound	Catch@1001084a returns 0x10010888; strings "R_File: Archive %s: Directory..." ; qsort of entries
+10011220	R_FileException::R_FileException	understood	strong	exceptions	R_FileException::R_FileException	R_Exception ctor + vptr 0x1002a7b0	RTTI vtable 0x1002a7b0 (R_FileException)
+10011240	R_File::setOverride	named	strong	files	R_File::setOverride		export ?setOverride@R_File@@QAEXH@Z
+10011250	R_File::findFirst	named	strong	files	R_File::findFirst		export ?findFirst@R_File@@QAEPBDPBD@Z
+10011420	R_File::findNext	named	strong	files	R_File::findNext		export ?findNext@R_File@@QAEPBDXZ
+100119d0	R_File::free	named	strong	files	R_File::free		export ?free@R_File@@QAEXPAD@Z
+100119f0	R_File::load	named	strong	files	R_File::load_100119f0		export ?load@R_File@@QAEPADPBDI@Z
+10011a10	R_File::load	named	strong	files	R_File::load_10011a10		export ?load@R_File@@QAEPADPBD0I@Z
+10011e20	R_File::load	named	strong	files	R_File::load_10011e20		export ?load@R_File@@QAEXPAXPBDI@Z
+10012270	R_FileException_UnableToReadData::R_FileException_UnableToReadData	understood	strong	exceptions	R_FileException_UnableToReadData::R_FileException_UnableToReadData	R_Exception ctor + vptr 0x1002a768	RTTI vtable 0x1002a768 (R_FileException_UnableToReadData)
+10012290	R_File::save	named	strong	files	R_File::save		export ?save@R_File@@QAEHPBDPBXI@Z
+10012360	R_File::append	named	strong	files	R_File::append		export ?append@R_File@@QAEHPBDPBXI@Z
+10012420	R_File::del	named	strong	files	R_File::del		export ?del@R_File@@QAEHPBD@Z
+10012460	R_File::size	named	strong	files	R_File::size		export ?size@R_File@@QAEIPBD@Z
+100125c0	R_File::timeStamp	named	strong	files	R_File::timeStamp		export ?timeStamp@R_File@@QAEIPBD@Z
+100126a0	R_File_packTimeStamp	understood	weak	files	R_File_packTimeStamp	packs a time struct (year,month,day,hour,min,sec ushorts) into seconds	sole caller R_File::timeStamp
+100126f0	R_File::where	named	strong	files	R_File::where		export ?where@R_File@@QAE?AW4Location@1@PBD@Z
+10012790	R_File::exists	named	strong	files	R_File::exists		export ?exists@R_File@@QAEHPBD@Z
+100127b0	R_File::getMethod	named	strong	files	R_File::getMethod		export ?getMethod@R_File@@QAEHPBD@Z
+10012840	R_File::getPath	named	strong	files	R_File::getPath		export ?getPath@R_File@@QBEXPBDAAVrs@std@@@Z
+10012a50	R_File::getFilename	named	strong	files	R_File::getFilename		export ?getFilename@R_File@@QBEXPBDAAVrs@std@@@Z
+10012c30	R_File::getFullPathName	named	strong	files	R_File::getFullPathName		export ?getFullPathName@R_File@@QAEPBDPBD@Z
+10012cb0	R_File::getCurrentDirectory	named	strong	files	R_File::getCurrentDirectory		export ?getCurrentDirectory@R_File@@QAEPBDXZ
+10012cc0	R_File::isDirectory	named	strong	files	R_File::isDirectory		export ?isDirectory@R_File@@QAEHPBD@Z
+10012d30	R_File::setArchiveHandling	named	strong	files	R_File::setArchiveHandling		export ?setArchiveHandling@R_File@@QAEXH@Z
+10012ed0	R_File::getArchiveHandling	named	strong	files	R_File::getArchiveHandling		export ?getArchiveHandling@R_File@@QAEHXZ
+10012ee0	R_File::enablePriorityArchive	named	strong	files	R_File::enablePriorityArchive		export ?enablePriorityArchive@R_File@@QAEXPBD@Z
+10013060	R_File::disablePriorityArchive	named	strong	files	R_File::disablePriorityArchive		export ?disablePriorityArchive@R_File@@QBEXXZ
+10013160	R_File::getPriorityArchive	named	strong	files	R_File::getPriorityArchive		export ?getPriorityArchive@R_File@@QBEPBDXZ
+10013170	R_File::isPriorityArchiveEnabled	named	strong	files	R_File::isPriorityArchiveEnabled		export ?isPriorityArchiveEnabled@R_File@@QBE_NXZ
+10013180	R_File::getStartupDirectory	named	strong	files	R_File::getStartupDirectory		export ?getStartupDirectory@R_File@@QBEPBDXZ
+10013190	R_File::verifyArchiverID	named	strong	files	R_File::verifyArchiverID		export ?verifyArchiverID@R_File@@QBEXH@Z
+10013280	R_File::tmpName	named	strong	files	R_File::tmpName		export ?tmpName@R_File@@QAEHPADPBD@Z
+10013390	R_File::encrypt	named	strong	files	R_File::encrypt_10013390		export ?encrypt@R_File@@QAEPAXPBDPBXI@Z
+10013480	R_File::encrypt	named	strong	files	R_File::encrypt_10013480		export ?encrypt@R_File@@QAEPAXPBXI@Z
+100134a0	R_File::decryptWithSeed	named	strong	files	R_File::decryptWithSeed		export ?decryptWithSeed@R_File@@AAEXPAEHH@Z
+10013540	R_File::decrypt	named	strong	files	R_File::decrypt_10013540		export ?decrypt@R_File@@QAEPAXPBDPBX@Z
+10013600	R_File::decrypt	named	strong	files	R_File::decrypt_10013600		export ?decrypt@R_File@@QAEPAXPBX@Z
+10013620	R_File::compress	named	strong	files	R_File::compress_10013620		export ?compress@R_File@@QAEPAXPBDPBXI@Z
+100138c0	R_File::compress	named	strong	files	R_File::compress_100138c0		export ?compress@R_File@@QAEPAXPBXI@Z
+100138e0	R_File::decompress	named	strong	files	R_File::decompress_100138e0		export ?decompress@R_File@@AAEPAXPAXPBX@Z
+100139f0	R_File::decompress	named	strong	files	R_File::decompress_100139f0		export ?decompress@R_File@@QAEPAXPBDPBX@Z
+10013a20	R_File::decompress	named	strong	files	R_File::decompress_10013a20		export ?decompress@R_File@@QAEPAXPBX@Z
+10013a40	R_File::CRC32	named	strong	files	R_File::CRC32		export ?CRC32@R_File@@QAEIPBXI@Z
+10013a90	R_FileStream_lzssInit	understood	weak	streams	R_FileStream_lzssInit	fills 0x1000+ ring buffer with 0x20, sets r=0xfee: LZSS decoder state init	classic LZSS constants (N=4096,r=N-F=0xfee); callers R_FileStream/R_UnbufferedFileStream ctors
+10013ad0	R_FileStream_lzssDecode	understood	weak	streams	R_FileStream_lzssDecode	LZSS decompression of the compressed R_File stream into caller buffer	callee of R_FileStream::read; ring buffer from 0x10013a90
+10013c20	R_FileStream::R_FileStream	named	strong	streams	R_FileStream::R_FileStream_10013c20		export ??0R_FileStream@@IAE@XZ
+10013c40	R_FileStream::scalar_deleting_dtor	understood	strong	streams	R_FileStream::scalar_deleting_dtor	~R_FileStream then delete when flag&1	RTTI vtable 0x1002a84c (R_FileStream) slot 0; gap function Ghidra missed
+10013ca0	R_FileStream::R_FileStream	named	strong	streams	R_FileStream::R_FileStream_10013ca0		export ??0R_FileStream@@QAE@PBDH@Z
+10014230	R_FileStream::R_FileStream	named	strong	streams	R_FileStream::R_FileStream_10014230		export ??0R_FileStream@@QAE@ABV0@HH@Z
+10014380	R_FileStream::~R_FileStream	named	strong	streams	R_FileStream::~R_FileStream		export ??1R_FileStream@@UAE@XZ
+10014430	R_FileStream::seek	named	strong	streams	R_FileStream::seek		export ?seek@R_FileStream@@UAEHIW4SeekMode@1@@Z
+10014560	R_FileStream::getPosition	named	strong	streams	R_FileStream::getPosition		export ?getPosition@R_FileStream@@UBEIXZ
+10014570	R_FileStream::size	named	strong	streams	R_FileStream::size		export ?size@R_FileStream@@UBEIXZ
+10014580	R_FileStream::getName	named	strong	streams	R_FileStream::getName		export ?getName@R_FileStream@@UBEPBDXZ
+10014590	R_FileStream::read	named	strong	streams	R_FileStream::read		export ?read@R_FileStream@@UAEIPAXI@Z
+100148f0	R_UnbufferedFileStream::R_UnbufferedFileStream	named	strong	streams	R_UnbufferedFileStream::R_UnbufferedFileStream_100148f0		export ??0R_UnbufferedFileStream@@QAE@PBDH@Z
+10015050	R_UnbufferedFileStream::scalar_deleting_dtor	understood	strong	streams	R_UnbufferedFileStream::scalar_deleting_dtor	~R_UnbufferedFileStream then delete when flag&1	RTTI vtable 0x1002a8d4 slot 0; gap function Ghidra missed
+100150b0	R_UnbufferedFileStream::R_UnbufferedFileStream	named	strong	streams	R_UnbufferedFileStream::R_UnbufferedFileStream_100150b0		export ??0R_UnbufferedFileStream@@QAE@ABV0@HH@Z
+10015300	R_UnbufferedFileStream::~R_UnbufferedFileStream	named	strong	streams	R_UnbufferedFileStream::~R_UnbufferedFileStream		export ??1R_UnbufferedFileStream@@UAE@XZ
+10015360	R_UnbufferedFileStream::seek	named	strong	streams	R_UnbufferedFileStream::seek		export ?seek@R_UnbufferedFileStream@@UAEHIW4SeekMode@R_FileStream@@@Z
+100153f0	R_UnbufferedFileStream::read	named	strong	streams	R_UnbufferedFileStream::read		export ?read@R_UnbufferedFileStream@@UAEIPAXI@Z
+10015550	R_FileDirectoryChange::R_FileDirectoryChange	named	strong	files	R_FileDirectoryChange::R_FileDirectoryChange_10015550		export ??0R_FileDirectoryChange@@QAE@XZ
+10015570	R_FileDirectoryChange::R_FileDirectoryChange	named	strong	files	R_FileDirectoryChange::R_FileDirectoryChange_10015570		export ??0R_FileDirectoryChange@@QAE@ABVrs@std@@@Z
+100155d0	R_FileDirectoryChange::~R_FileDirectoryChange	named	strong	files	R_FileDirectoryChange::~R_FileDirectoryChange		export ??1R_FileDirectoryChange@@QAE@XZ
+10015650	R_FileDirectoryChange::construct	named	strong	files	R_FileDirectoryChange::construct		export ?construct@R_FileDirectoryChange@@QAEXABVrs@std@@@Z
+10015760	R_FileDirectoryChange::destruct	named	strong	files	R_FileDirectoryChange::destruct		export ?destruct@R_FileDirectoryChange@@QAEXXZ
+10015790	R_FileDirectoryChange::isConstructed	named	strong	files	R_FileDirectoryChange::isConstructed		export ?isConstructed@R_FileDirectoryChange@@QBE_NXZ
+100157a0	R_FileDirectoryChange::initializeMembers	named	strong	files	R_FileDirectoryChange::initializeMembers		export ?initializeMembers@R_FileDirectoryChange@@AAEXXZ
+10015850	R_FileDirectoryChange::R_FileDirectoryChange	named	strong	files	R_FileDirectoryChange::R_FileDirectoryChange_10015850		export ??0R_FileDirectoryChange@@AAE@ABV0@@Z
+10015860	vector_char_insert	understood	weak	containers	vector_char_insert	insert n bytes at pos: capacity check against [0xc], shift tail, copy in	vector<char> (begin@4,end@8,cap@0xc); callers R_File::searchFile/load
+10015a30	R_alloc_chars_a(n)	understood	weak	memory	R_alloc_chars_a(n)	operator new(max(n,0)); bumps R_Memory::sm_iNewCount; on NULL throws R_MemoryException_Allocation ("Out of system memory resources")	Ghidra body read; string 0x1003d17c, vtable 0x1002a204, ThrowInfo 0x1002ce20
+10015b30	vector_char_eraseRange_copyDown	understood	weak	containers	vector_char_eraseRange_copyDown	copies [src,end) down to pos, sets end	body read; STL-instantiation shape
+10015b60	new_R_DLList_R_RASArchive	understood	strong	containers	new_R_DLList_R_RASArchive	operator new(0x28) + R_DLList<R_RASArchive> ctor (vptr 0x1002a914... sentinels) or throw	RTTI vtable 0x1002a914/0x1002a934 stored; caller R_File::R_File chain
+10015c80	new_R_DLList_int	understood	strong	containers	new_R_DLList_int	operator new(0x28) + R_DLList<int> ctor (vptr 0x1002a924) or throw	RTTI vtable 0x1002a924; caller R_File::R_File
+10015da0	R_DLListBase::allocNode_0x48	understood	strong	containers	R_DLListBase::allocNode_0x48	allocates a 0x48-byte node, zeroes links, returns node+8; slot 1 of the R_RASArchive lists	RTTI vtable 0x1002a914 (R_DLList<R_File::R_RASArchive>) slot 1; body read
+10015dc0	R_DLList_getNext	understood	weak	containers	R_DLList_getNext	item (payload ptr) -> next payload, 0 at the end sentinel	node layout prev@-8,next@-4; 13 callers
+10015de0	R_alloc_zeroed_vector_header	understood	weak	memory	R_alloc_zeroed_vector_header	new 0x10-byte header, zero [4],[8],[0xc]; bumps R_Memory::sm_iNewCount; on NULL throws R_MemoryException_Allocation ("Out of system memory resources")	Ghidra body read; string 0x1003d17c, vtable 0x1002a204, ThrowInfo 0x1002ce20
+10015ee0	R_alloc_bytes(n)	understood	weak	memory	R_alloc_bytes(n)	operator new(n); bumps R_Memory::sm_iNewCount; on NULL throws R_MemoryException_Allocation ("Out of system memory resources")	Ghidra body read; string 0x1003d17c, vtable 0x1002a204, ThrowInfo 0x1002ce20
+10015fd0	copy_bytes_forward	understood	weak	containers	copy_bytes_forward	copies [first,last) to dest	body read; STL-instantiation shape
+10015ff0	atexit_dtor_static_10062570	understood	weak	exceptions	atexit_dtor_static_10062570	mov ecx,0x10062570; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062570	pushed to atexit by R_UnbufferedFileStream::read (address 0x100153f0)
+10016000	atexit_dtor_static_10062580	understood	weak	exceptions	atexit_dtor_static_10062580	mov ecx,0x10062580; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062580	pushed to atexit by R_UnbufferedFileStream::R_UnbufferedFileStream (address 0x100148f0)
+10016010	atexit_dtor_static_10062590	understood	weak	exceptions	atexit_dtor_static_10062590	mov ecx,0x10062590; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062590	pushed to atexit by R_FileStream::seek (address 0x10014430)
+10016020	atexit_dtor_static_100625a0	understood	weak	exceptions	atexit_dtor_static_100625a0	mov ecx,0x100625a0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100625a0	pushed to atexit by R_FileStream::R_FileStream (address 0x10014230)
+10016030	atexit_dtor_static_100625b0	understood	weak	exceptions	atexit_dtor_static_100625b0	mov ecx,0x100625b0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100625b0	pushed to atexit by R_File::verifyArchiverID (address 0x10013190)
+10016040	atexit_dtor_static_100625c0	understood	weak	exceptions	atexit_dtor_static_100625c0	mov ecx,0x100625c0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100625c0	pushed to atexit by R_File::load, R_File::size, R_FileStream::R_FileStream, R_UnbufferedFileStream::R_UnbufferedFileStream (address 0x10011e20, 0x10012460, 0x10013ca0)
+10016050	atexit_dtor_static_100625d0	understood	weak	exceptions	atexit_dtor_static_100625d0	mov ecx,0x100625d0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100625d0	pushed to atexit by R_File::load (address 0x10011a10)
+10016060	atexit_dtor_static_10062610	understood	weak	exceptions	atexit_dtor_static_10062610	mov ecx,0x10062610; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062610	pushed to atexit by R_File::loadArchiveHeader (address 0x100103a0)
+10016070	atexit_dtor_static_10062600	understood	weak	exceptions	atexit_dtor_static_10062600	mov ecx,0x10062600; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062600	pushed to atexit by R_File::loadArchiveHeader_cont, R_File::loadArchiveHeader (address 0x100103a0, 0x1001088b)
+10016080	atexit_dtor_static_100625f0	understood	weak	exceptions	atexit_dtor_static_100625f0	mov ecx,0x100625f0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100625f0	pushed to atexit by R_File::loadArchiveHeader_cont, R_File::load, R_File::loadArchiveHeader, R_FileStream::read (address 0x100103a0, 0x1001088b, 0x10011e20)
+10016090	atexit_dtor_static_100625e0	understood	weak	exceptions	atexit_dtor_static_100625e0	mov ecx,0x100625e0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100625e0	pushed to atexit by R_File::loadArchiveHeader_cont, R_File::load, R_File::loadArchiveHeader, R_FileStream::R_FileStream, R_UnbufferedFileStream::R_UnbufferedFileStream (address 0x100103a0, 0x1001088b, 0x10011e20)
+100160a0	atexit_dtor_static_10062620	understood	weak	exceptions	atexit_dtor_static_10062620	mov ecx,0x10062620; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062620	pushed to atexit by R_File::changeDirectory, R_File::setFileSystemRoot (address 0x1000f5c0, 0x1000fc60)
+100160b0	R_DLList<R_File::R_RASArchive>::scalar_deleting_dtor	understood	strong	containers	R_DLList<R_File::R_RASArchive>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002a914 (R_DLList<R_File::R_RASArchive>) slot 0; body read
+100160d0	R_DLList<R_File::R_RASArchive>::~R_DLList	understood	strong	containers	R_DLList<R_File::R_RASArchive>::~R_DLList	destructor body: frees the node pools ([0x20],[0x24]) and unlinks every node through the virtual freeNode	called only by the slot-0 scalar deleting dtor 0x100160b0 of RTTI vtable R_DLList<R_File::R_RASArchive>
+100161d0	R_DLListBase<R_File::R_RASArchive>::scalar_deleting_dtor	understood	strong	containers	R_DLListBase<R_File::R_RASArchive>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002a934 (R_DLListBase<R_File::R_RASArchive>) slot 0; body read
+10016270	R_DLList<int>::scalar_deleting_dtor	understood	strong	containers	R_DLList<int>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002a924 (R_DLList<int>) slot 0; body read
+10016290	R_DLList<int>::~R_DLList	understood	strong	containers	R_DLList<int>::~R_DLList	destructor body: frees the node pools ([0x20],[0x24]) and unlinks every node through the virtual freeNode	called only by the slot-0 scalar deleting dtor 0x10016270 of RTTI vtable R_DLList<int>
+10016390	R_DLListBase<int>::scalar_deleting_dtor	understood	strong	containers	R_DLListBase<int>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002a944 (R_DLListBase<int>) slot 0; body read
+10016430	vector_freeStorage	understood	weak	containers	vector_freeStorage	delete [4]; zero begin/end/cap fields	vector<char> shaped (begin@4,end@8,cap@0xc) ; caller R_File::~R_File
+10016470	R_Memory::dump	named	strong	memory	R_Memory::dump		export ?dump@R_Memory@@SIXW4MemoryDumpDetail@1@_N1@Z
+10016490	R_Memory::operator=	named	strong	memory	R_Memory::operator=		export ??4R_Memory@@AAEXABV0@@Z
+100164a0	R_REALLOCATE_implementation	named	strong	memory	R_REALLOCATE_implementation		export ?R_REALLOCATE_implementation@@YIPAXPAXHH@Z
+100165c0	R_REALLOCATE_DELETE_implementation	named	strong	memory	R_REALLOCATE_DELETE_implementation		export ?R_REALLOCATE_DELETE_implementation@@YIXPAX@Z
+100165e0	R_Memory::getNewCount	named	strong	memory	R_Memory::getNewCount		export ?getNewCount@R_Memory@@SIHXZ
+100165f0	R_Memory::getDeleteCount	named	strong	memory	R_Memory::getDeleteCount		export ?getDeleteCount@R_Memory@@SIHXZ
+10016600	R_Memory::resetNewDeleteCounts	named	strong	memory	R_Memory::resetNewDeleteCounts		export ?resetNewDeleteCounts@R_Memory@@SIXXZ
+10016610	R_Memory::set	named	strong	memory	R_Memory::set		export ?set@R_Memory@@SIPAXPAXDI@Z
+10016730	R_Memory::copy	named	strong	memory	R_Memory::copy		export ?copy@R_Memory@@SIPAXPAXPBXI@Z
+10016840	R_Memory::compare	named	strong	memory	R_Memory::compare		export ?compare@R_Memory@@SIHPBX0I@Z
+100168a0	R_MemoryFile::R_MemoryFile	named	strong	files	R_MemoryFile::R_MemoryFile_100168a0		export ??0R_MemoryFile@@QAE@I@Z
+100168d0	R_MemoryFile::R_MemoryFile	named	strong	files	R_MemoryFile::R_MemoryFile_100168d0		export ??0R_MemoryFile@@QAE@PBDW4AccessMethod@0@@Z
+10016940	R_MemoryFile::R_MemoryFile	named	strong	files	R_MemoryFile::R_MemoryFile_10016940		export ??0R_MemoryFile@@QAE@PBXI_N@Z
+100169b0	R_MemoryFile::R_MemoryFile	named	strong	files	R_MemoryFile::R_MemoryFile_100169b0		export ??0R_MemoryFile@@QAE@ABVR_FileStream@@HH@Z
+10016a20	R_MemoryFile::~R_MemoryFile	named	strong	files	R_MemoryFile::~R_MemoryFile		export ??1R_MemoryFile@@QAE@XZ
+10016aa0	R_MemoryFile::R_MemoryFile	named	strong	files	R_MemoryFile::R_MemoryFile_10016aa0		export ??0R_MemoryFile@@QAE@ABV0@@Z
+10016b00	R_MemoryFile::operator=	named	strong	files	R_MemoryFile::operator=		export ??4R_MemoryFile@@AAEAAV0@ABV0@@Z
+10016b20	R_MemoryFile::initializeMembers	named	strong	files	R_MemoryFile::initializeMembers		export ?initializeMembers@R_MemoryFile@@IAEXXZ
+10016b90	load_byte	understood	weak	containers	load_byte	returns *p (al)	body read; STL-instantiation shape
+10016ba0	R_MemoryFile::construct	named	strong	files	R_MemoryFile::construct_10016ba0		export ?construct@R_MemoryFile@@QAEXI@Z
+10016bd0	R_MemoryFile::construct	named	strong	files	R_MemoryFile::construct_10016bd0		export ?construct@R_MemoryFile@@QAEXPBDW4AccessMethod@1@@Z
+10016d90	R_MemoryFile::construct	named	strong	files	R_MemoryFile::construct_10016d90		export ?construct@R_MemoryFile@@QAEXPBXI_N@Z
+10016e50	R_MemoryFile::construct	named	strong	files	R_MemoryFile::construct_10016e50		export ?construct@R_MemoryFile@@QAEXABVR_FileStream@@HH@Z
+10016fb0	R_MemoryFile::construct	named	strong	files	R_MemoryFile::construct_10016fb0		export ?construct@R_MemoryFile@@QAEXABV1@@Z
+10017270	R_MemoryFile::destruct	named	strong	files	R_MemoryFile::destruct		export ?destruct@R_MemoryFile@@QAEXXZ
+100172b0	R_MemoryFile::setFilename	named	strong	files	R_MemoryFile::setFilename		export ?setFilename@R_MemoryFile@@QAEXPBD@Z
+10017360	R_MemoryFile::getFilename	named	strong	files	R_MemoryFile::getFilename		export ?getFilename@R_MemoryFile@@QBEPBDXZ
+10017370	R_MemoryFile::seek	named	strong	files	R_MemoryFile::seek		export ?seek@R_MemoryFile@@QAEXHW4SeekMode@1@@Z
+10017490	R_MemoryFile::getAddress	named	strong	files	R_MemoryFile::getAddress		export ?getAddress@R_MemoryFile@@QBEPBXXZ
+100174a0	R_MemoryFile::getPosition	named	strong	files	R_MemoryFile::getPosition		export ?getPosition@R_MemoryFile@@QBEIXZ
+100174b0	R_MemoryFile::getSize	named	strong	files	R_MemoryFile::getSize		export ?getSize@R_MemoryFile@@QBEIXZ
+100174c0	R_MemoryFile::save	named	strong	files	R_MemoryFile::save_100174c0		export ?save@R_MemoryFile@@QBEHPBD@Z
+100174e0	R_MemoryFile::save	named	strong	files	R_MemoryFile::save_100174e0		export ?save@R_MemoryFile@@QBEHXZ
+10017500	R_MemoryFile::toRead	named	strong	files	R_MemoryFile::toRead		export ?toRead@R_MemoryFile@@QAEXXZ
+10017520	R_MemoryFile::read	named	strong	files	R_MemoryFile::read		export ?read@R_MemoryFile@@QAEXPAXH@Z
+10017650	R_MemoryFile::write	named	strong	files	R_MemoryFile::write		export ?write@R_MemoryFile@@QAEXPBXH@Z
+100176d0	R_MemoryFile::enableTags	named	strong	files	R_MemoryFile::enableTags		export ?enableTags@R_MemoryFile@@QAEX_N@Z
+100176e0	R_MemoryFile::disableTags	named	strong	files	R_MemoryFile::disableTags		export ?disableTags@R_MemoryFile@@QAEXXZ
+100176f0	R_MemoryFile::areTagsEnabled	named	strong	files	R_MemoryFile::areTagsEnabled		export ?areTagsEnabled@R_MemoryFile@@QBE_NXZ
+10017700	R_MemoryFile::readTag	named	strong	files	R_MemoryFile::readTag		export ?readTag@R_MemoryFile@@IAEXW4BasicType@1@@Z
+10017810	R_MemoryFile::writeTag	named	strong	files	R_MemoryFile::writeTag		export ?writeTag@R_MemoryFile@@IAEXW4BasicType@1@@Z
+10017840	R_MemoryFile::readTagged	named	strong	files	R_MemoryFile::readTagged		export ?readTagged@R_MemoryFile@@IAEXW4BasicType@1@PAXH@Z
+10017870	R_MemoryFile::writeTagged	named	strong	files	R_MemoryFile::writeTagged		export ?writeTagged@R_MemoryFile@@IAEXW4BasicType@1@PBXH@Z
+100178a0	operator<<	named	strong	streams	operator<<_100178a0		export ??6@YIAAVR_MemoryFile@@AAV0@ABJ@Z
+100178c0	operator<<	named	strong	streams	operator<<_100178c0		export ??6@YIAAVR_MemoryFile@@AAV0@ABK@Z
+100178e0	operator<<	named	strong	streams	operator<<_100178e0		export ??6@YIAAVR_MemoryFile@@AAV0@ABF@Z
+10017900	operator<<	named	strong	streams	operator<<_10017900		export ??6@YIAAVR_MemoryFile@@AAV0@ABG@Z
+10017920	operator<<	named	strong	streams	operator<<_10017920		export ??6@YIAAVR_MemoryFile@@AAV0@ABD@Z
+10017940	operator<<	named	strong	streams	operator<<_10017940		export ??6@YIAAVR_MemoryFile@@AAV0@ABC@Z
+10017960	operator<<	named	strong	streams	operator<<_10017960		export ??6@YIAAVR_MemoryFile@@AAV0@ABE@Z
+10017980	operator<<	named	strong	streams	operator<<_10017980		export ??6@YIAAVR_MemoryFile@@AAV0@ABM@Z
+100179a0	operator<<	named	strong	streams	operator<<_100179a0		export ??6@YIAAVR_MemoryFile@@AAV0@ABN@Z
+100179c0	operator<<	named	strong	streams	operator<<_100179c0		export ??6@YIAAVR_MemoryFile@@AAV0@AB_N@Z
+100179e0	operator<<	named	strong	streams	operator<<_100179e0		export ??6@YIAAVR_MemoryFile@@AAV0@ABH@Z
+10017a60	operator<<	named	strong	streams	operator<<_10017a60		export ??6@YIAAVR_MemoryFile@@AAV0@ABI@Z
+10017ae0	operator<<	named	strong	streams	operator<<_10017ae0		export ??6@YIAAVR_MemoryFile@@AAV0@ABV?$M_Vector2Template@M@@@Z
+10017b00	operator<<	named	strong	streams	operator<<_10017b00		export ??6@YIAAVR_MemoryFile@@AAV0@ABV?$M_Vector3Template@M@@@Z
+10017b20	operator<<	named	strong	streams	operator<<_10017b20		export ??6@YIAAVR_MemoryFile@@AAV0@ABV?$M_Vector4Template@M@@@Z
+10017b40	operator<<	named	strong	streams	operator<<_10017b40		export ??6@YIAAVR_MemoryFile@@AAV0@ABV?$M_Matrix2Template@M@@@Z
+10017b60	operator<<	named	strong	streams	operator<<_10017b60		export ??6@YIAAVR_MemoryFile@@AAV0@ABV?$M_Matrix3Template@M@@@Z
+10017b80	operator<<	named	strong	streams	operator<<_10017b80		export ??6@YIAAVR_MemoryFile@@AAV0@ABV?$M_Matrix4x3Template@M@@@Z
+10017ba0	operator<<	named	strong	streams	operator<<_10017ba0		export ??6@YIAAVR_MemoryFile@@AAV0@ABV?$M_Matrix4Template@M@@@Z
+10017bc0	operator<<	named	strong	streams	operator<<_10017bc0		export ??6@YIAAVR_MemoryFile@@AAV0@ABVM_Float16@@@Z
+10017be0	operator<<	named	strong	streams	operator<<_10017be0		export ??6@YIAAVR_MemoryFile@@AAV0@ABVCString@@@Z
+10017c20	operator<<	named	strong	streams	operator<<_10017c20		export ??6@YIAAVR_MemoryFile@@AAV0@ABVrs@std@@@Z
+10017c70	operator<<	named	strong	streams	operator<<_10017c70		export ??6@YIAAVR_MemoryFile@@AAV0@ABV?$basic_string@DUR_CTrI@std@@V?$R_Allocator@D@@@std@@@Z
+10017cc0	operator>>	named	strong	streams	operator>>_10017cc0		export ??5@YIAAVR_MemoryFile@@AAV0@AAJ@Z
+10017ce0	operator>>	named	strong	streams	operator>>_10017ce0		export ??5@YIAAVR_MemoryFile@@AAV0@AAK@Z
+10017d00	operator>>	named	strong	streams	operator>>_10017d00		export ??5@YIAAVR_MemoryFile@@AAV0@AAF@Z
+10017d20	operator>>	named	strong	streams	operator>>_10017d20		export ??5@YIAAVR_MemoryFile@@AAV0@AAG@Z
+10017d40	operator>>	named	strong	streams	operator>>_10017d40		export ??5@YIAAVR_MemoryFile@@AAV0@AAD@Z
+10017d60	operator>>	named	strong	streams	operator>>_10017d60		export ??5@YIAAVR_MemoryFile@@AAV0@AAC@Z
+10017d80	operator>>	named	strong	streams	operator>>_10017d80		export ??5@YIAAVR_MemoryFile@@AAV0@AAE@Z
+10017da0	operator>>	named	strong	streams	operator>>_10017da0		export ??5@YIAAVR_MemoryFile@@AAV0@AAM@Z
+10017dc0	operator>>	named	strong	streams	operator>>_10017dc0		export ??5@YIAAVR_MemoryFile@@AAV0@AAN@Z
+10017de0	operator>>	named	strong	streams	operator>>_10017de0		export ??5@YIAAVR_MemoryFile@@AAV0@AA_N@Z
+10017e00	operator>>	named	strong	streams	operator>>_10017e00		export ??5@YIAAVR_MemoryFile@@AAV0@AAH@Z
+10017fe0	operator>>	named	strong	streams	operator>>_10017fe0		export ??5@YIAAVR_MemoryFile@@AAV0@AAI@Z
+10018140	operator>>	named	strong	streams	operator>>_10018140		export ??5@YIAAVR_MemoryFile@@AAV0@AAV?$M_Vector2Template@M@@@Z
+10018250	operator>>	named	strong	streams	operator>>_10018250		export ??5@YIAAVR_MemoryFile@@AAV0@AAV?$M_Vector3Template@M@@@Z
+10018360	operator>>	named	strong	streams	operator>>_10018360		export ??5@YIAAVR_MemoryFile@@AAV0@AAV?$M_Vector4Template@M@@@Z
+10018470	operator>>	named	strong	streams	operator>>_10018470		export ??5@YIAAVR_MemoryFile@@AAV0@AAV?$M_Matrix2Template@M@@@Z
+10018580	operator>>	named	strong	streams	operator>>_10018580		export ??5@YIAAVR_MemoryFile@@AAV0@AAV?$M_Matrix3Template@M@@@Z
+10018690	operator>>	named	strong	streams	operator>>_10018690		export ??5@YIAAVR_MemoryFile@@AAV0@AAV?$M_Matrix4x3Template@M@@@Z
+100187a0	operator>>	named	strong	streams	operator>>_100187a0		export ??5@YIAAVR_MemoryFile@@AAV0@AAV?$M_Matrix4Template@M@@@Z
+100188b0	operator>>	named	strong	streams	operator>>_100188b0		export ??5@YIAAVR_MemoryFile@@AAV0@AAVM_Float16@@@Z
+100188d0	operator>>	named	strong	streams	operator>>_100188d0		export ??5@YIAAVR_MemoryFile@@AAV0@AAVCString@@@Z
+100189b0	operator>>	named	strong	streams	operator>>_100189b0		export ??5@YIAAVR_MemoryFile@@AAV0@AAVrs@std@@@Z
+10018bd0	operator>>	named	strong	streams	operator>>_10018bd0		export ??5@YIAAVR_MemoryFile@@AAV0@AAV?$basic_string@DUR_CTrI@std@@V?$R_Allocator@D@@@std@@@Z
+10018df0	operator<<	named	strong	streams	operator<<_10018df0		export ??6@YIAAVCArchive@@AAV0@ABVR_MemoryFile@@@Z
+10018e40	operator>>	named	strong	streams	operator>>_10018e40		export ??5@YIAAVCArchive@@AAV0@AAVR_MemoryFile@@@Z
+10018f70	R_MemoryFile::createChunk	named	strong	files	R_MemoryFile::createChunk		export ?createChunk@R_MemoryFile@@QAEXII@Z
+10019130	R_MemoryFile::closeChunk	named	strong	files	R_MemoryFile::closeChunk		export ?closeChunk@R_MemoryFile@@QAEXXZ
+10019190	R_MemoryFile::openChunk	named	strong	files	R_MemoryFile::openChunk_10019190		export ?openChunk@R_MemoryFile@@QAEXAAVChunk@1@I@Z
+10019250	R_MemoryFile::openChunk	named	strong	files	R_MemoryFile::openChunk_10019250		export ?openChunk@R_MemoryFile@@QAE?AVChunk@1@I@Z
+100192d0	R_MemoryFile::peekChunk	named	strong	files	R_MemoryFile::peekChunk_100192d0		export ?peekChunk@R_MemoryFile@@QAEXAAVChunk@1@@Z
+100193d0	R_MemoryFile::peekChunk	named	strong	files	R_MemoryFile::peekChunk_100193d0		export ?peekChunk@R_MemoryFile@@QAE?AVChunk@1@XZ
+10019440	R_MemoryFile::skipChunk	named	strong	files	R_MemoryFile::skipChunk		export ?skipChunk@R_MemoryFile@@QAEXXZ
+100194c0	R_MemoryFile_addressAtPlus1	understood	weak	files	R_MemoryFile_addressAtPlus1	getAddress() + offset + 1	calls R_MemoryFile::getAddress; sole caller R_MemoryFile::closeChunk
+100194d0	R_MemoryFile::Chunk::Chunk	named	strong	files	R_MemoryFile::Chunk::Chunk_100194d0		export ??0Chunk@R_MemoryFile@@QAE@XZ
+10019500	R_MemoryFile::Chunk::Chunk	named	strong	files	R_MemoryFile::Chunk::Chunk_10019500		export ??0Chunk@R_MemoryFile@@AAE@PBXIABUChunkHeader@1@@Z
+10019530	R_MemoryFile::Chunk::Chunk	named	strong	files	R_MemoryFile::Chunk::Chunk_10019530		export ??0Chunk@R_MemoryFile@@AAE@ABVR_FileStream@@HHABUChunkHeader@1@@Z
+10019570	R_MemoryFile::Chunk::Chunk	named	strong	files	R_MemoryFile::Chunk::Chunk_10019570		export ??0Chunk@R_MemoryFile@@QAE@ABV01@@Z
+100195c0	R_MemoryFile::Chunk::~Chunk	named	strong	files	R_MemoryFile::Chunk::~Chunk		export ??1Chunk@R_MemoryFile@@QAE@XZ
+100195d0	R_MemoryFile::Chunk::operator=	named	strong	files	R_MemoryFile::Chunk::operator=		export ??4Chunk@R_MemoryFile@@QAEAAV01@ABV01@@Z
+10019610	R_MemoryFile::Chunk::construct	named	strong	files	R_MemoryFile::Chunk::construct_10019610		export ?construct@Chunk@R_MemoryFile@@AAEXPBXIABUChunkHeader@2@@Z
+10019650	R_MemoryFile::Chunk::construct	named	strong	files	R_MemoryFile::Chunk::construct_10019650		export ?construct@Chunk@R_MemoryFile@@AAEXABVR_FileStream@@HHABUChunkHeader@2@@Z
+10019690	R_MemoryFile::Chunk::isValid	named	strong	files	R_MemoryFile::Chunk::isValid		export ?isValid@Chunk@R_MemoryFile@@QBE_NXZ
+100196a0	R_MemoryFile::Chunk::getSize	named	strong	files	R_MemoryFile::Chunk::getSize		export ?getSize@Chunk@R_MemoryFile@@QBEIXZ
+100196b0	R_MemoryFile::Chunk::getMemoryFile	named	strong	files	R_MemoryFile::Chunk::getMemoryFile		export ?getMemoryFile@Chunk@R_MemoryFile@@QAEAAV2@XZ
+100196c0	R_MemoryFile::Chunk::openChunk	named	strong	files	R_MemoryFile::Chunk::openChunk_100196c0		export ?openChunk@Chunk@R_MemoryFile@@QAE?AV12@I@Z
+100196f0	R_MemoryFile::Chunk::openChunk	named	strong	files	R_MemoryFile::Chunk::openChunk_100196f0		export ?openChunk@Chunk@R_MemoryFile@@QAEXAAV12@I@Z
+10019710	R_MemoryFile::Chunk::peekChunk	named	strong	files	R_MemoryFile::Chunk::peekChunk_10019710		export ?peekChunk@Chunk@R_MemoryFile@@QAE?AV12@XZ
+10019730	R_MemoryFile::Chunk::peekChunk	named	strong	files	R_MemoryFile::Chunk::peekChunk_10019730		export ?peekChunk@Chunk@R_MemoryFile@@QAEXAAV12@@Z
+10019740	R_MemoryFile::Chunk::skipChunk	named	strong	files	R_MemoryFile::Chunk::skipChunk		export ?skipChunk@Chunk@R_MemoryFile@@QAEXXZ
+10019750	R_MemoryFile::setDefaultAccessMethod	named	strong	files	R_MemoryFile::setDefaultAccessMethod		export ?setDefaultAccessMethod@R_MemoryFile@@SIXW4AccessMethod@1@@Z
+10019760	R_MemoryFile::getDefaultAccessMethod	named	strong	files	R_MemoryFile::getDefaultAccessMethod		export ?getDefaultAccessMethod@R_MemoryFile@@SI?AW4AccessMethod@1@XZ
+10019770	vector_dword_capacity	understood	weak	containers	vector_dword_capacity	(cap_end-begin)>>2, 0 if no storage	body read; STL-instantiation shape
+10019790	vector_dword_size	understood	weak	containers	vector_dword_size	(end-begin)>>2, 0 if no storage	body read; STL-instantiation shape
+100197b0	R_alloc_dwords_clamped(n)	understood	weak	memory	R_alloc_dwords_clamped(n)	operator new(max(n,0)*4); bumps R_Memory::sm_iNewCount; on NULL throws R_MemoryException_Allocation ("Out of system memory resources")	Ghidra body read; string 0x1003d17c, vtable 0x1002a204, ThrowInfo 0x1002ce20
+100198c0	uninitialized_copy_dwords	understood	weak	containers	uninitialized_copy_dwords	copy-construct dwords [first,last) into dest	body read; STL-instantiation shape
+100198f0	uninitialized_fill_dwords	understood	weak	containers	uninitialized_fill_dwords	fill n dwords	body read; STL-instantiation shape
+10019920	basic_string_R_CTrI_append_fill	understood	weak	strings	basic_string_R_CTrI_append_fill	append n copies of a char (checks _Xlen, grows buffer 0x10019c40, fills dwords)	MSVC6 basic_string shape (ptr@4,len@8,res@0xc); callers operator>>
+100199f0	basic_string_R_CTrI_Grow	understood	weak	strings	basic_string_R_CTrI_Grow	_Grow(n, trim): reallocate/unshare buffer	MSVC6 basic_string::_Grow shape; callers operator>>
+10019b30	basic_string_R_CTrI_Tidy	understood	weak	strings	basic_string_R_CTrI_Tidy	_Tidy: release refcounted buffer, zero fields	MSVC6 basic_string::_Tidy shape
+10019c00	construct_byte	understood	weak	containers	construct_byte	if p: *p=*v	body read; STL-instantiation shape
+10019c20	construct_dword	understood	weak	containers	construct_dword	if p: *p=*v	body read; STL-instantiation shape
+10019c40	basic_string_R_CTrI_allocBuffer	understood	weak	memory	basic_string_R_CTrI_allocBuffer	operator new(n+2 rounded to |0x1f): refcounted string buffer (refcount byte at ptr-1); bumps R_Memory::sm_iNewCount; on NULL throws R_MemoryException_Allocation ("Out of system memory resources")	Ghidra body read; string 0x1003d17c, vtable 0x1002a204, ThrowInfo 0x1002ce20
+10019d97	basic_string_R_CTrI_allocBuffer_cont	understood	weak	strings	basic_string_R_CTrI_allocBuffer_cont	catch-continuation of 0x10019c40	Catch@10019d1f; sole caller 0x10019c40
+10019e30	std::rs::_Tidy	named	strong	strings	std::rs::_Tidy		export ?_Tidy@rs@std@@AAEX_N@Z
+10019e90	basic_string_R_CTrI_assign	understood	weak	strings	basic_string_R_CTrI_assign	assign(ptr,n) with _Xlen check, reallocation 0x10019c40, copy	MSVC6 basic_string shape; callers operator>>
+10019f30	atexit_dtor_static_10062540	understood	weak	exceptions	atexit_dtor_static_10062540	mov ecx,0x10062540; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062540	pushed to atexit by R_MemoryFile::readTag, operator>> (address 0x10017700, 0x10017e00, 0x10017fe0)
+10019f40	atexit_dtor_static_10062550	understood	weak	exceptions	atexit_dtor_static_10062550	mov ecx,0x10062550; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062550	pushed to atexit by R_MemoryFile::read (address 0x10017520)
+10019f50	atexit_dtor_static_10062560	understood	weak	exceptions	atexit_dtor_static_10062560	mov ecx,0x10062560; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062560	pushed to atexit by R_MemoryFile::seek (address 0x10017370)
+10019f60	copy_dwords_forward	understood	weak	containers	copy_dwords_forward	copies dwords [first,last) to dest	body read; STL-instantiation shape
+10019f90	R_Profile::getFrameCount	named	strong	time	R_Profile::getFrameCount		export ?getFrameCount@R_Profile@@SIHXZ
+10019fa0	R_Profile_static_init_m_slProfiles	understood	weak	time	R_Profile_static_init_m_slProfiles	static initializer: ctor (0x10019fb0) then atexit dtor registration (0x10019fc0)	pointer in _initterm table; calls 0x10019fb0 and jmp 0x10019fc0
+10019fb0	R_Profile_static_ctor_m_slProfiles	understood	weak	time	R_Profile_static_ctor_m_slProfiles	mov ecx,0x10051dd8; jmp 0x1001af80 (list ctor)	single caller 0x10019fa0
+10019fc0	R_Profile_static_register_dtor_m_slProfiles	understood	weak	time	R_Profile_static_register_dtor_m_slProfiles	atexit(0x10019fd0)	push 0x10019fd0; call atexit
+10019fd0	R_Profile_static_dtor_m_slProfiles	understood	weak	time	R_Profile_static_dtor_m_slProfiles	guarded (byte 0x10051dd4) destructor call on m_slProfiles via 0x1001b110	atexit target
+10019ff0	R_Profile::R_Profile	named	strong	time	R_Profile::R_Profile		export ??0R_Profile@@QAE@PBD@Z
+1001a080	R_Profile::~R_Profile	named	strong	time	R_Profile::~R_Profile		export ??1R_Profile@@QAE@XZ
+1001a300	R_PENTRY_assign	understood	weak	containers	R_PENTRY_assign	copies 10 dwords	body read; STL-instantiation shape
+1001a350	R_Profile::find	named	strong	time	R_Profile::find		export ?find@R_Profile@@KIPAUR_PENTRY@1@PBD@Z
+1001a3c0	R_Profile::insert	named	strong	time	R_Profile::insert		export ?insert@R_Profile@@KIPAUR_PENTRY@1@PBD@Z
+1001a680	R_Profile::reset	named	strong	time	R_Profile::reset		export ?reset@R_Profile@@SIXXZ
+1001a720	R_Profile::deinit	named	strong	time	R_Profile::deinit		export ?deinit@R_Profile@@SIXXZ
+1001a7d0	R_Profile::calcPercentage	named	strong	time	R_Profile::calcPercentage		export ?calcPercentage@R_Profile@@KIXPAUR_PENTRY@1@@Z
+1001a900	R_Profile::request	named	strong	time	R_Profile::request_1001a900		export ?request@R_Profile@@SIPAUR_PINFO@1@XZ
+1001a950	R_Profile::request	named	strong	time	R_Profile::request_1001a950		export ?request@R_Profile@@SIPAUR_PINFO@1@PBD@Z
+1001a980	R_Profile::requestTime	named	strong	time	R_Profile::requestTime		export ?requestTime@R_Profile@@SINPBD@Z
+1001a990	R_Profile::getCycleCount	named	strong	time	R_Profile::getCycleCount		export ?getCycleCount@R_Profile@@KINPBD@Z
+1001a9a0	R_Profile::startFrame	named	strong	time	R_Profile::startFrame		export ?startFrame@R_Profile@@SIXXZ
+1001aaa0	R_Profile::endFrame	named	strong	time	R_Profile::endFrame		export ?endFrame@R_Profile@@SIXXZ
+1001ab30	R_Profile::getTotalTime	named	strong	time	R_Profile::getTotalTime		export ?getTotalTime@R_Profile@@SINXZ
+1001ab60	R_Profile::getLastFrameTime	named	strong	time	R_Profile::getLastFrameTime		export ?getLastFrameTime@R_Profile@@SINXZ
+1001ab90	R_Profile::readTickCount	named	strong	time	R_Profile::readTickCount		export ?readTickCount@R_Profile@@KIXPAUR_PTICK@1@@Z
+1001abb0	R_Profile::readCyrixCount	named	strong	time	R_Profile::readCyrixCount		export ?readCyrixCount@R_Profile@@KIXPAUR_PTICK@1@@Z
+1001abd0	R_Profile::calcCyrixDiff	named	strong	time	R_Profile::calcCyrixDiff		export ?calcCyrixDiff@R_Profile@@KIXPAUR_PTICK@1@00@Z
+1001abe0	R_Profile::calcCyrixCycles	named	strong	time	R_Profile::calcCyrixCycles		export ?calcCyrixCycles@R_Profile@@KINPAUR_PTICK@1@@Z
+1001abf0	R_Profile::calcDiff	named	strong	time	R_Profile::calcDiff		export ?calcDiff@R_Profile@@KIXPAUR_PTICK@1@00@Z
+1001ac10	R_Profile::calcCycles	named	strong	time	R_Profile::calcCycles		export ?calcCycles@R_Profile@@KINPAUR_PTICK@1@@Z
+1001ac20	R_Profile::clearEntry	named	strong	time	R_Profile::clearEntry_1001ac20		export ?clearEntry@R_Profile@@SIXPBD@Z
+1001ac40	R_Profile::clearEntry	named	strong	time	R_Profile::clearEntry_1001ac40		export ?clearEntry@R_Profile@@KIXPAUR_PENTRY@1@@Z
+1001ad40	R_Profile::enableProfiling	named	strong	time	R_Profile::enableProfiling		export ?enableProfiling@R_Profile@@SIX_N@Z
+1001ad50	R_Profile::disableProfiling	named	strong	time	R_Profile::disableProfiling		export ?disableProfiling@R_Profile@@SIXXZ
+1001ad60	R_Profile::isProfilingEnabled	named	strong	time	R_Profile::isProfilingEnabled		export ?isProfilingEnabled@R_Profile@@SI_NXZ
+1001ad70	vector_R_PENTRY_size	understood	weak	containers	vector_R_PENTRY_size	(end-begin)/0x28, 0 if no storage	body read; STL-instantiation shape
+1001ada0	nop_ret	understood	weak	containers	nop_ret	empty function (ret), 6 callers: destroy of trivial elements	body read; STL-instantiation shape
+1001adb0	uninitialized_copy_R_PENTRY	understood	weak	containers	uninitialized_copy_R_PENTRY	copy-construct 0x28-byte elements through 0x1001af30	body read; STL-instantiation shape
+1001adf0	uninitialized_fill_R_PENTRY	understood	weak	containers	uninitialized_fill_R_PENTRY	fill n elements via copy ctor	body read; STL-instantiation shape
+1001ae20	R_alloc_R_PENTRY_array(n)	understood	weak	memory	R_alloc_R_PENTRY_array(n)	operator new(max(n,0)*0x28); bumps R_Memory::sm_iNewCount; on NULL throws R_MemoryException_Allocation ("Out of system memory resources")	Ghidra body read; string 0x1003d17c, vtable 0x1002a204, ThrowInfo 0x1002ce20
+1001af30	R_PENTRY_copy_construct	understood	weak	containers	R_PENTRY_copy_construct	copies 10 dwords if dest non-null	body read; STL-instantiation shape
+1001af80	R_ReusableNodeList<R_Profile::R_PENTRY>::R_ReusableNodeList	understood	weak	containers	R_ReusableNodeList<R_Profile::R_PENTRY>::R_ReusableNodeList	zeroes the object fields (constructor of the static m_slProfiles)	called by static-init stub 0x10019fb0 with ecx=0x10051dd8 (m_slProfiles address)
+1001afe0	R_DLListInit<R_Profile::R_PENTRY>::allocNode	understood	strong	containers	R_DLListInit<R_Profile::R_PENTRY>::allocNode	allocates one node and returns payload (node+8); init variant with EH	RTTI vtable 0x1002a9d0 (R_DLListInit<R_Profile::R_PENTRY>) slot 1; body read
+1001b0e0	R_DLListInit<R_Profile::R_PENTRY>::freeNode	understood	strong	containers	R_DLListInit<R_Profile::R_PENTRY>::freeNode	destroys payload and frees node	RTTI vtable 0x1002a9d0 (R_DLListInit<R_Profile::R_PENTRY>) slot 2; body read
+1001b110	R_ReusableNodeList<R_Profile::R_PENTRY>::~R_ReusableNodeList	understood	weak	containers	R_ReusableNodeList<R_Profile::R_PENTRY>::~R_ReusableNodeList	destroys the used list, then the free list and their base lists (three nested R_DLList levels)	static R_Profile::m_slProfiles type (export ?m_slProfiles); referenced from atexit stub 0x10019fd0
+1001b2f0	R_DLListBase<R_Profile::R_PENTRY>::allocNode	understood	strong	containers	R_DLListBase<R_Profile::R_PENTRY>::allocNode	shared by R_DLListBase<R_Profile::R_PENTRY> slot 1, R_DLList<R_Profile::R_PENTRY> slot 1; allocates one node and returns payload (node+8); init variant	RTTI vtable 0x1002a9e0 (R_DLListBase<R_Profile::R_PENTRY>) slot 1; body read
+1001b310	R_DLListInit<R_Profile::R_PENTRY>::~R_DLListInit	understood	strong	containers	R_DLListInit<R_Profile::R_PENTRY>::~R_DLListInit	destructor body: frees the node pools ([0x20],[0x24]) and unlinks every node through the virtual freeNode	called only by the slot-0 scalar deleting dtor 0x1001b6f0 of RTTI vtable R_DLListInit<R_Profile::R_PENTRY>
+1001b480	fill_R_PENTRY	understood	weak	containers	fill_R_PENTRY	assigns *value to each 0x28-byte element in range	body read; STL-instantiation shape
+1001b4d0	copy_backward_R_PENTRY	understood	weak	containers	copy_backward_R_PENTRY	copies 0x28-byte elements backward	body read; STL-instantiation shape
+1001b530	R_DLListBase<R_Profile::R_PENTRY>::scalar_deleting_dtor	understood	strong	containers	R_DLListBase<R_Profile::R_PENTRY>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002a9e0 (R_DLListBase<R_Profile::R_PENTRY>) slot 0; body read
+1001b5d0	R_DLList<R_Profile::R_PENTRY>::scalar_deleting_dtor	understood	strong	containers	R_DLList<R_Profile::R_PENTRY>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002a9f0 (R_DLList<R_Profile::R_PENTRY>) slot 0; body read
+1001b5f0	R_DLList<R_Profile::R_PENTRY>::~R_DLList	understood	strong	containers	R_DLList<R_Profile::R_PENTRY>::~R_DLList	destructor body: frees the node pools ([0x20],[0x24]) and unlinks every node through the virtual freeNode	called only by the slot-0 scalar deleting dtor 0x1001b5d0 of RTTI vtable R_DLList<R_Profile::R_PENTRY>
+1001b6f0	R_DLListInit<R_Profile::R_PENTRY>::scalar_deleting_dtor	understood	strong	containers	R_DLListInit<R_Profile::R_PENTRY>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002a9d0 (R_DLListInit<R_Profile::R_PENTRY>) slot 0; body read
+1001b710	R_PENTRY_node_freeBuffer	understood	weak	time	R_PENTRY_node_freeBuffer	delete [0x24] buffer and zero [0x24..0x2c]; called by freeNode of the R_PENTRY Init list	callee of 0x1001b0e0
+1001b750	R_delete_counted	understood	weak	memory	R_delete_counted	if ptr: operator delete + R_Memory::sm_iDeleteCount++	25 byte body; 5 callers
+1001b770	R_DLList_unlink	understood	weak	containers	R_DLList_unlink	unlinks a payload node, clears its links, count--	10 callers
+1001b7a0	R_DLList_unlinkAndFree	understood	weak	containers	R_DLList_unlinkAndFree	unlink + virtual freeNode (vtable slot 2)	calls [vptr+8]
+1001b7d0	R_RemedyInit::R_RemedyInit	named	strong	rl	R_RemedyInit::R_RemedyInit		export ??0R_RemedyInit@@QAE@XZ
+1001ba70	R_RemedyInit::~R_RemedyInit	named	strong	rl	R_RemedyInit::~R_RemedyInit		export ??1R_RemedyInit@@QAE@XZ
+1001bae0	M_MathInit::M_MathInit	named	strong	math	M_MathInit::M_MathInit		export ??0M_MathInit@@QAE@XZ
+1001bb10	M_MathInit::~M_MathInit	named	strong	math	M_MathInit::~M_MathInit		export ??1M_MathInit@@QAE@XZ
+1001bb20	R_ScriptLock::R_ScriptLock	named	strong	rl	R_ScriptLock::R_ScriptLock_1001bb20		export ??0R_ScriptLock@@QAE@PAVR_Script@@I@Z
+1001bb40	R_ScriptLock::R_ScriptLock	named	strong	rl	R_ScriptLock::R_ScriptLock_1001bb40		export ??0R_ScriptLock@@QAE@PAVR_Script@@PBDI@Z
+1001bb60	R_ScriptLock::~R_ScriptLock	named	strong	rl	R_ScriptLock::~R_ScriptLock		export ??1R_ScriptLock@@QAE@XZ
+1001bb80	cstr_less_stricmp	understood	strong	strings	cstr_less_stricmp	_stricmp(a,b) < 0: comparator of the char* keyed map	calls import _stricmp
+1001bba0	R_Script::getScriptName	named	strong	rl	R_Script::getScriptName		export ?getScriptName@R_Script@@QBEPBDXZ
+1001bbc0	R_Script::staticNesting	named	strong	rl	R_Script::staticNesting		export ?staticNesting@R_Script@@QBEPBDXZ
+1001bc90	R_Script::getBlockName	named	strong	rl	R_Script::getBlockName_1001bc90		export ?getBlockName@R_Script@@QBEPBDXZ
+1001bca0	R_Script::getBlockName	named	strong	rl	R_Script::getBlockName_1001bca0		export ?getBlockName@R_Script@@QBEPBDI@Z
+1001bd90	R_Script::getIndent	named	strong	rl	R_Script::getIndent		export ?getIndent@R_Script@@QBEIXZ
+1001bda0	R_Script::isParent	named	strong	rl	R_Script::isParent_1001bda0		export ?isParent@R_Script@@QBE_NXZ
+1001bdb0	R_Script::isParent	named	strong	rl	R_Script::isParent_1001bdb0		export ?isParent@R_Script@@QBE_NI@Z
+1001bec0	R_Script::isParent	named	strong	rl	R_Script::isParent_1001bec0		export ?isParent@R_Script@@QBE_NPBDI@Z
+1001bef0	R_Script::isData	named	strong	rl	R_Script::isData_1001bef0		export ?isData@R_Script@@QBE_NXZ
+1001bf00	R_Script::isData	named	strong	rl	R_Script::isData_1001bf00		export ?isData@R_Script@@QBE_NI@Z
+1001c010	R_Script::isData	named	strong	rl	R_Script::isData_1001c010		export ?isData@R_Script@@QBE_NPBDI@Z
+1001c040	R_Script::count	named	strong	rl	R_Script::count_1001c040		export ?count@R_Script@@QBEIXZ
+1001c050	R_Script::count	named	strong	rl	R_Script::count_1001c050		export ?count@R_Script@@QBEIPBD@Z
+1001c120	R_Script::lock	named	strong	rl	R_Script::lock_1001c120		export ?lock@R_Script@@QAEXI@Z
+1001c2d0	R_Script::lock	named	strong	rl	R_Script::lock_1001c2d0		export ?lock@R_Script@@QAEXPBDI@Z
+1001c3c0	R_Script::unlock	named	strong	rl	R_Script::unlock		export ?unlock@R_Script@@QAE_NXZ
+1001c3e0	R_Script::getBlockIndex	named	strong	rl	R_Script::getBlockIndex		export ?getBlockIndex@R_Script@@QBEIPBDI@Z
+1001c5a0	R_Script::countLvalues	named	strong	rl	R_Script::countLvalues_1001c5a0		export ?countLvalues@R_Script@@QBEIXZ
+1001c5b0	R_Script::countLvalues	named	strong	rl	R_Script::countLvalues_1001c5b0		export ?countLvalues@R_Script@@QBEIPBD@Z
+1001c650	R_Script::getLvalue	named	strong	rl	R_Script::getLvalue		export ?getLvalue@R_Script@@QBEPBDI@Z
+1001c670	R_Script::getAssignment	named	strong	rl	R_Script::getAssignment_1001c670		export ?getAssignment@R_Script@@QBEPBDI@Z
+1001c690	R_Script::getAssignment	named	strong	rl	R_Script::getAssignment_1001c690		export ?getAssignment@R_Script@@QBEPBDPBDI@Z
+1001c740	R_Script::parse	named	strong	rl	R_Script::parse_1001c740		export ?parse@R_Script@@QAEXPBUVariables@1@I_N@Z
+1001c7a0	R_Script::parse	named	strong	rl	R_Script::parse_1001c7a0		export ?parse@R_Script@@QAEXPBUVariables@1@PBDI_N@Z
+1001c800	R_Script::parse	named	strong	rl	R_Script::parse_1001c800		export ?parse@R_Script@@QAEXPBUVariables@1@_N@Z
+1001d6f0	R_ScriptException::R_ScriptException	understood	strong	exceptions	R_ScriptException::R_ScriptException	R_Exception ctor + vptr 0x1002ab54	RTTI vtable 0x1002ab54 (R_ScriptException)
+1001d710	R_Script::blockCheck	named	strong	rl	R_Script::blockCheck_1001d710		export ?blockCheck@R_Script@@QAEXPBUBlocks@1@I_N@Z
+1001d770	R_Script::blockCheck	named	strong	rl	R_Script::blockCheck_1001d770		export ?blockCheck@R_Script@@QAEXPBUBlocks@1@PBDI_N@Z
+1001d7d0	R_Script::blockCheck	named	strong	rl	R_Script::blockCheck_1001d7d0		export ?blockCheck@R_Script@@QAEXPBUBlocks@1@_N@Z
+1001dbe0	R_ScriptException_UnknownBlock::R_ScriptException_UnknownBlock	understood	strong	exceptions	R_ScriptException_UnknownBlock::R_ScriptException_UnknownBlock	R_Exception ctor + vptr 0x1002ab78	RTTI vtable 0x1002ab78 (R_ScriptException_UnknownBlock)
+1001dc00	R_ScriptException_TooManyBlocks::R_ScriptException_TooManyBlocks_msg	understood	strong	exceptions	R_ScriptException_TooManyBlocks::R_ScriptException_TooManyBlocks_msg	ctor + setError("R_Script: Block "%s" has to appear at maximum %u times in %s!")	RTTI vtable 0x1002abc0; format string in body
+1001dc70	R_Script::isNumber	named	strong	rl	R_Script::isNumber		export ?isNumber@R_Script@@ABE_ND@Z
+1001dca0	R_Script::isText	named	strong	rl	R_Script::isText		export ?isText@R_Script@@ABE_ND@Z
+1001dcd0	R_Script::isFloat	named	strong	rl	R_Script::isFloat		export ?isFloat@R_Script@@ABE_ND@Z
+1001dd00	R_Script::isHex	named	strong	rl	R_Script::isHex		export ?isHex@R_Script@@ABE_ND@Z
+1001dd30	R_Script::lwrstrequal	named	strong	rl	R_Script::lwrstrequal		export ?lwrstrequal@R_Script@@ABE_NPBD0@Z
+1001dda0	R_Script::blkstrequal	named	strong	rl	R_Script::blkstrequal		export ?blkstrequal@R_Script@@ABE_NPBD0@Z
+1001de20	R_Script::findNthBlock	named	strong	rl	R_Script::findNthBlock		export ?findNthBlock@R_Script@@ABEPAUSCRIPTBLOCK@1@PBDI@Z
+1001df00	R_Script::R_Script	named	strong	rl	R_Script::R_Script		export ??0R_Script@@QAE@PBD@Z
+1001e190	R_Script::~R_Script	named	strong	rl	R_Script::~R_Script		export ??1R_Script@@QAE@XZ
+1001e1d0	R_ScriptLoader_construct	understood	weak	rl	R_ScriptLoader_construct	builds the loader state (lists, maps) and registers memory scope "RL_ScriptLoader"	string "RL_ScriptLoader" 0x1003e8a0; R_ScriptLoaderException_* RTTI
+1001e730	R_Script_SCRIPTBLOCK_destruct	understood	weak	rl	R_Script_SCRIPTBLOCK_destruct	destroys one SCRIPTBLOCK (nested R_DLListInit list)	calls Init-list freeNode 0x10023540; shape of 0x1001b310
+1001e8a0	R_DLListInit<R_Script::SCRIPTBLOCK>_destroyAll	understood	weak	rl	R_DLListInit<R_Script::SCRIPTBLOCK>_destroyAll	list destructor body inlined for R_Script::~R_Script	callers R_Script::~R_Script
+1001ea20	R_ScriptLoader_destruct	understood	weak	rl	R_ScriptLoader_destruct	tears down the loader maps and lists	calls rbtree destroys 0x10024500/0x10024600, vector_freeStorage
+1001ec00	R_ScriptLoader_formatLocation	understood	weak	rl	R_ScriptLoader_formatLocation	sprintf of the file/line context used in loader error messages	sprintf import; callers 0x1001ecc0, 0x1001f230
+1001ecc0	R_ScriptLoader_checkTags	understood	weak	rl	R_ScriptLoader_checkTags	throws DataWithoutTag, NestingWithoutTag, TagWithoutContent, EmptyTag	RTTI vtables 0x1002ac14..0x1002ac80 referenced; strings "R_ScriptLoader: Tag brackets..."
+1001f200	R_ScriptLoaderException::R_ScriptLoaderException	understood	strong	exceptions	R_ScriptLoaderException::R_ScriptLoaderException	R_Exception ctor + vptr 0x1002aca4	RTTI vtable 0x1002aca4 (R_ScriptLoaderException)
+1001f220	thunk_R_Exception::~R_Exception	named	strong	exceptions	thunk_R_Exception::~R_Exception	jmp 0x1000ecc0 (R_Exception::~R_Exception)	jmp to exported R_Exception::~R_Exception; target of every static-exception atexit stub
+1001f230	R_ScriptLoader_parseAssignment	understood	weak	rl	R_ScriptLoader_parseAssignment	statement separator / l-value / r-value checks (NoSemicolon, LValueSpaces, MultipleAssignment, RValueSpaces, NoRValue, NoLValue)	RTTI vtables 0x1002acc8..0x1002ad7c; strings "R_ScriptLoader: Left side of an assignment..."
+1001fa00	R_ScriptLoader_freeBlockTree	understood	weak	rl	R_ScriptLoader_freeBlockTree	frees [0],[4] buffers and recurses over the nested child list	self-recursive; callers loader destructor
+1001fab0	isWhitespace_char	understood	strong	strings	isWhitespace_char	true for \n \0 \r \v space \t	body
+1001fae0	isNewline_char	understood	strong	strings	isNewline_char	c == '\n'	body
+1001faf0	R_ScriptLoader_preprocess	understood	weak	rl	R_ScriptLoader_preprocess	preprocessor: #include/#define handling, brackets, block comments, string marks	RTTI vtables 0x1002ada0..0x1002af50; strings "R_ScriptLoader: Attempt to include ..."
+100215d0	R_Exception_subclass::scalar_deleting_dtor	understood	strong	exceptions	R_Exception_subclass::scalar_deleting_dtor	calls R_Exception dtor thunk 0x1001f220 then delete when flag&1; slot 1 of 52 exception vtables	RTTI vtables of every R_*Exception subclass, slot 1
+100215f0	cstr_assign	understood	weak	strings	cstr_assign	copy a C string into this (strlen, rep movs), self-assign check	body
+10021630	set_byte_zero	understood	weak	containers	set_byte_zero	mov byte [ecx],0; ret	body read; STL-instantiation shape
+10021640	bytes_clear_0_and_0x80	understood	weak	containers	bytes_clear_0_and_0x80	mov byte [ecx+0x80],0; mov byte [ecx],0: clears the first key byte and flag of a map node	4 callers in the char* map code (0x10022f10/22ad0/21ef0)
+10021650	vector_char_resize	understood	weak	containers	vector_char_resize	resize(n, value): shrinks end, or grows by insert with reallocation (0x10015a30)	vector<char> shape (begin@4,end@8,cap@0xc)
+10021850	uninitialized_copy_bytes	understood	weak	containers	uninitialized_copy_bytes	copy-construct bytes [first,last) into dest with null check	body read; STL-instantiation shape
+10021880	rbtree_A_insert	understood	weak	containers	rbtree_A_insert	descends with std::operator<(rs,rs), then _Insert; std::map keyed by rs (std::operator<), nil node 0x10052310	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10021b10	rbtree_A_clear	understood	weak	containers	rbtree_A_clear	erases all nodes via 0x10022550 / 0x10023220; std::map keyed by rs (std::operator<), nil node 0x10052310	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10021bb0	rbtree_A_lower_bound	understood	weak	containers	rbtree_A_lower_bound	descent with std::operator<(node,key); std::map keyed by rs (std::operator<), nil node 0x10052310	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10021c40	rbtree_B_insert	understood	weak	containers	rbtree_B_insert	descends with stricmp comparator, then _Insert; std::map keyed by char* (_stricmp), nil node 0x10052314	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10021ef0	rbtree_B_clear	understood	weak	containers	rbtree_B_clear	erases all nodes via 0x10022ad0 / 0x10023370; std::map keyed by char* (_stricmp), nil node 0x10052314	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10021f90	rbtree_B_lower_bound	understood	weak	containers	rbtree_B_lower_bound	descent with stricmp; std::map keyed by char* (_stricmp), nil node 0x10052314	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10022010	uninitialized_fill_bytes	understood	weak	containers	uninitialized_fill_bytes	fill n bytes with *value (null check)	body read; STL-instantiation shape
+10022040	rbtree_A__Insert	understood	weak	containers	rbtree_A__Insert	allocates node, rebalances; std::map keyed by rs (std::operator<), nil node 0x10052310	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+100222b0	rbtree_B__Insert	understood	weak	containers	rbtree_B__Insert	allocates node, rebalances; std::map keyed by char* (_stricmp), nil node 0x10052314	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10022550	rbtree_A_erase	understood	weak	containers	rbtree_A_erase	erase one node with recolor/rotations; std::map keyed by rs (std::operator<), nil node 0x10052310	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10022930	rbtree_A__Erase	understood	weak	containers	rbtree_A__Erase	recursive free of the subtree (rs dtor per node); std::map keyed by rs (std::operator<), nil node 0x10052310	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10022970	rbtree_A__Lrotate	understood	weak	containers	rbtree_A__Lrotate	left rotation; std::map keyed by rs (std::operator<), nil node 0x10052310	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+100229d0	rbtree_A__Rrotate	understood	weak	containers	rbtree_A__Rrotate	right rotation; std::map keyed by rs (std::operator<), nil node 0x10052310	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10022a30	rbtree_A__Buynode	understood	weak	containers	rbtree_A__Buynode	takes a node from the 0x20-byte node pool, allocating chunks through 0x10023120; std::map keyed by rs (std::operator<), nil node 0x10052310	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10022a70	rbtree_A_iterator_Dec	understood	weak	containers	rbtree_A_iterator_Dec	predecessor step; std::map keyed by rs (std::operator<), nil node 0x10052310	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10022ad0	rbtree_B_erase	understood	weak	containers	rbtree_B_erase	erase one node with recolor/rotations; std::map keyed by char* (_stricmp), nil node 0x10052314	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10022f10	rbtree_B__Erase	understood	weak	containers	rbtree_B__Erase	recursive free of the subtree; std::map keyed by char* (_stricmp), nil node 0x10052314	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10022f50	rbtree_B__Lrotate	understood	weak	containers	rbtree_B__Lrotate	left rotation; std::map keyed by char* (_stricmp), nil node 0x10052314	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10022fb0	rbtree_B__Rrotate	understood	weak	containers	rbtree_B__Rrotate	right rotation; std::map keyed by char* (_stricmp), nil node 0x10052314	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10023010	rbtree_B__Buynode	understood	weak	containers	rbtree_B__Buynode	takes a node from the 0x110-byte node pool, chunk alloc 0x10023270; std::map keyed by char* (_stricmp), nil node 0x10052314	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10023060	rbtree_B_iterator_Dec	understood	weak	containers	rbtree_B_iterator_Dec	predecessor step; std::map keyed by char* (_stricmp), nil node 0x10052314	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+100230c0	rbtree_A__Buynode_wrap	understood	weak	containers	rbtree_A__Buynode_wrap	forwards to 0x10023120 chunk allocation; std::map keyed by rs (std::operator<), nil node 0x10052310	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+100230f0	rbtree_B__Buynode_wrap	understood	weak	containers	rbtree_B__Buynode_wrap	forwards to 0x10023270 chunk allocation; std::map keyed by char* (_stricmp), nil node 0x10052314	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10023120	R_alloc_chars_b(n)	understood	weak	memory	R_alloc_chars_b(n)	operator new(max(n,0)); bumps R_Memory::sm_iNewCount; on NULL throws R_MemoryException_Allocation ("Out of system memory resources")	Ghidra body read; string 0x1003d17c, vtable 0x1002a204, ThrowInfo 0x1002ce20
+10023220	rbtree_A_iterator_Inc	understood	weak	containers	rbtree_A_iterator_Inc	successor step; std::map keyed by rs (std::operator<), nil node 0x10052310	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10023270	R_alloc_chars_c(n)	understood	weak	memory	R_alloc_chars_c(n)	operator new(max(n,0)); bumps R_Memory::sm_iNewCount; on NULL throws R_MemoryException_Allocation ("Out of system memory resources")	Ghidra body read; string 0x1003d17c, vtable 0x1002a204, ThrowInfo 0x1002ce20
+10023370	rbtree_B_iterator_Inc	understood	weak	containers	rbtree_B_iterator_Inc	successor step; std::map keyed by char* (_stricmp), nil node 0x10052314	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+100233c0	R_DLListBase<R_Script::SCRIPTBLOCK>::allocNode	understood	strong	containers	R_DLListBase<R_Script::SCRIPTBLOCK>::allocNode	shared by R_DLListBase<R_Script::SCRIPTBLOCK> slot 1, R_DLList<R_Script::SCRIPTBLOCK> slot 1; allocates one node and returns payload (node+8); init variant	RTTI vtable 0x1002abe4 (R_DLListBase<R_Script::SCRIPTBLOCK>) slot 1; body read
+100233e0	R_DLListInit<R_Script::SCRIPTBLOCK>::R_DLListInit	understood	strong	containers	R_DLListInit<R_Script::SCRIPTBLOCK>::R_DLListInit	zeroes the list fields, sets sentinel links ([8]=&[0xc],[0xc]=&[4]), cache index 0x7fffffff, vptr 0x1002ac04	RTTI vtable 0x1002ac04
+10023410	R_DLListInit<R_Script::SCRIPTBLOCK>::allocNode	understood	strong	containers	R_DLListInit<R_Script::SCRIPTBLOCK>::allocNode	allocates one node and returns payload (node+8); init variant with EH	RTTI vtable 0x1002ac04 (R_DLListInit<R_Script::SCRIPTBLOCK>) slot 1; body read
+10023540	R_DLListInit<R_Script::SCRIPTBLOCK>::freeNode	understood	strong	containers	R_DLListInit<R_Script::SCRIPTBLOCK>::freeNode	destroys payload and frees node	RTTI vtable 0x1002ac04 (R_DLListInit<R_Script::SCRIPTBLOCK>) slot 2; body read
+10023570	throw_R_ScriptException_TooFewBlocks	understood	strong	exceptions	throw_R_ScriptException_TooFewBlocks	builds R_ScriptException_TooFewBlocks (0x100235d0), static copy 0x10062350, throws	callers R_Script::blockCheck
+100235d0	R_ScriptException_TooFewBlocks::R_ScriptException_TooFewBlocks	understood	strong	exceptions	R_ScriptException_TooFewBlocks::R_ScriptException_TooFewBlocks	R_Exception ctor + vptr 0x1002ab9c	RTTI vtable 0x1002ab9c (R_ScriptException_TooFewBlocks)
+100235f0	throw_R_ScriptException_TooManyBlocks	understood	strong	exceptions	throw_R_ScriptException_TooManyBlocks	builds R_ScriptException_TooManyBlocks (0x10023650), static copy 0x10062340, throws	callers R_Script::blockCheck
+10023650	R_ScriptException_TooManyBlocks::R_ScriptException_TooManyBlocks	understood	strong	exceptions	R_ScriptException_TooManyBlocks::R_ScriptException_TooManyBlocks	R_Exception ctor + vptr 0x1002abc0	RTTI vtable 0x1002abc0 (R_ScriptException_TooManyBlocks)
+10023670	R_DLList<R_ScriptLoader::INCLUDEINSERT>::allocNode	understood	strong	containers	R_DLList<R_ScriptLoader::INCLUDEINSERT>::allocNode	shared by R_DLList<R_ScriptLoader::INCLUDEINSERT> slot 1, R_DLListBase<R_ScriptLoader::INCLUDEINSERT> slot 1; allocates one node and returns payload (node+8); init variant	RTTI vtable 0x1002afb4 (R_DLList<R_ScriptLoader::INCLUDEINSERT>) slot 1; body read
+10023690	R_DLList<R_ScriptLoader::INCLUDEINSERT>::R_DLList	understood	strong	containers	R_DLList<R_ScriptLoader::INCLUDEINSERT>::R_DLList	zeroes the list fields, sets sentinel links ([8]=&[0xc],[0xc]=&[4]), cache index 0x7fffffff, vptr 0x1002afb4	RTTI vtable 0x1002afb4
+100236c0	R_DLList<R_ScriptLoader::INCLUDEINSERT>::~R_DLList	understood	strong	containers	R_DLList<R_ScriptLoader::INCLUDEINSERT>::~R_DLList	destructor body: frees the node pools ([0x20],[0x24]) and unlinks every node through the virtual freeNode	called only by the slot-0 scalar deleting dtor 0x10024320 of RTTI vtable R_DLList<R_ScriptLoader::INCLUDEINSERT>
+100237c0	R_DLList<R_ScriptLoader::DEFINEINSERT>::allocNode	understood	strong	containers	R_DLList<R_ScriptLoader::DEFINEINSERT>::allocNode	shared by R_DLList<R_ScriptLoader::DEFINEINSERT> slot 1, R_DLListBase<R_ScriptLoader::DEFINEINSERT> slot 1; allocates one node and returns payload (node+8); init variant	RTTI vtable 0x1002af94 (R_DLList<R_ScriptLoader::DEFINEINSERT>) slot 1; body read
+100237e0	R_DLList<R_ScriptLoader::DEFINEINSERT>::R_DLList	understood	strong	containers	R_DLList<R_ScriptLoader::DEFINEINSERT>::R_DLList	zeroes the list fields, sets sentinel links ([8]=&[0xc],[0xc]=&[4]), cache index 0x7fffffff, vptr 0x1002af94	RTTI vtable 0x1002af94
+10023810	R_DLList<R_ScriptLoader::DEFINEINSERT>::~R_DLList	understood	strong	containers	R_DLList<R_ScriptLoader::DEFINEINSERT>::~R_DLList	destructor body: frees the node pools ([0x20],[0x24]) and unlinks every node through the virtual freeNode	called only by the slot-0 scalar deleting dtor 0x100243e0 of RTTI vtable R_DLList<R_ScriptLoader::DEFINEINSERT>
+10023910	R_DLList<R_ScriptLoader::BRACKETS>::allocNode	understood	strong	containers	R_DLList<R_ScriptLoader::BRACKETS>::allocNode	shared by R_DLList<R_ScriptLoader::BRACKETS> slot 1, R_DLListBase<R_ScriptLoader::BRACKETS> slot 1; allocates one node and returns payload (node+8); init variant	RTTI vtable 0x1002af74 (R_DLList<R_ScriptLoader::BRACKETS>) slot 1; body read
+10023930	R_DLList<R_ScriptLoader::BRACKETS>::R_DLList	understood	strong	containers	R_DLList<R_ScriptLoader::BRACKETS>::R_DLList	zeroes the list fields, sets sentinel links ([8]=&[0xc],[0xc]=&[4]), cache index 0x7fffffff, vptr 0x1002af74	RTTI vtable 0x1002af74
+10023960	R_DLList<R_ScriptLoader::BRACKETS>::~R_DLList	understood	strong	containers	R_DLList<R_ScriptLoader::BRACKETS>::~R_DLList	destructor body: frees the node pools ([0x20],[0x24]) and unlinks every node through the virtual freeNode	called only by the slot-0 scalar deleting dtor 0x100244a0 of RTTI vtable R_DLList<R_ScriptLoader::BRACKETS>
+10023a60	R_alloc_zeroed_vector_header_b	understood	weak	memory	R_alloc_zeroed_vector_header_b	new 0x10-byte header, zero [4],[8],[0xc]; bumps R_Memory::sm_iNewCount; on NULL throws R_MemoryException_Allocation ("Out of system memory resources")	Ghidra body read; string 0x1003d17c, vtable 0x1002a204, ThrowInfo 0x1002ce20
+10023b60	rs_assign_substr	understood	weak	strings	rs_assign_substr	rs construct/assign of a range with _Grow/_Split/_Eos/memmove and _Xran check	calls std::rs::_Grow/_Eos/_Split/_Tidy; callers map insert
+10023cd0	copy_cstr_to_node_key	understood	weak	strings	copy_cstr_to_node_key	strlen + copy of the key C string into a map node buffer; skips self copy	callers map _Insert B
+10023d30	atexit_dtor_static_10062420	understood	weak	exceptions	atexit_dtor_static_10062420	mov ecx,0x10062420; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062420	pushed to atexit by R_ScriptLoader_preprocess (address 0x1001faf0)
+10023d40	atexit_dtor_static_10062410	understood	weak	exceptions	atexit_dtor_static_10062410	mov ecx,0x10062410; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062410	pushed to atexit by R_ScriptLoader_preprocess (address 0x1001faf0)
+10023d50	atexit_dtor_static_100623b0	understood	weak	exceptions	atexit_dtor_static_100623b0	mov ecx,0x100623b0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100623b0	pushed to atexit by R_ScriptLoader_preprocess (address 0x1001faf0)
+10023d60	atexit_dtor_static_100623c0	understood	weak	exceptions	atexit_dtor_static_100623c0	mov ecx,0x100623c0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100623c0	pushed to atexit by R_ScriptLoader_preprocess (address 0x1001faf0)
+10023d70	atexit_dtor_static_100623d0	understood	weak	exceptions	atexit_dtor_static_100623d0	mov ecx,0x100623d0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100623d0	pushed to atexit by R_ScriptLoader_preprocess (address 0x1001faf0)
+10023d80	atexit_dtor_static_100623a0	understood	weak	exceptions	atexit_dtor_static_100623a0	mov ecx,0x100623a0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100623a0	pushed to atexit by R_ScriptLoader_preprocess (address 0x1001faf0)
+10023d90	atexit_dtor_static_100623f0	understood	weak	exceptions	atexit_dtor_static_100623f0	mov ecx,0x100623f0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100623f0	pushed to atexit by R_ScriptLoader_preprocess (address 0x1001faf0)
+10023da0	atexit_dtor_static_10062400	understood	weak	exceptions	atexit_dtor_static_10062400	mov ecx,0x10062400; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062400	pushed to atexit by R_ScriptLoader_preprocess (address 0x1001faf0)
+10023db0	atexit_dtor_static_100623e0	understood	weak	exceptions	atexit_dtor_static_100623e0	mov ecx,0x100623e0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100623e0	pushed to atexit by R_ScriptLoader_preprocess (address 0x1001faf0)
+10023dc0	atexit_dtor_static_10062370	understood	weak	exceptions	atexit_dtor_static_10062370	mov ecx,0x10062370; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062370	pushed to atexit by R_ScriptLoader_preprocess (address 0x1001faf0)
+10023dd0	atexit_dtor_static_10062380	understood	weak	exceptions	atexit_dtor_static_10062380	mov ecx,0x10062380; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062380	pushed to atexit by R_ScriptLoader_preprocess (address 0x1001faf0)
+10023de0	atexit_dtor_static_10062390	understood	weak	exceptions	atexit_dtor_static_10062390	mov ecx,0x10062390; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062390	pushed to atexit by R_ScriptLoader_preprocess (address 0x1001faf0)
+10023df0	atexit_dtor_static_10062360	understood	weak	exceptions	atexit_dtor_static_10062360	mov ecx,0x10062360; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062360	pushed to atexit by R_ScriptLoader_preprocess (address 0x1001faf0)
+10023e00	atexit_dtor_static_10062470	understood	weak	exceptions	atexit_dtor_static_10062470	mov ecx,0x10062470; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062470	pushed to atexit by R_ScriptLoader_parseAssignment (address 0x1001f230)
+10023e10	atexit_dtor_static_10062450	understood	weak	exceptions	atexit_dtor_static_10062450	mov ecx,0x10062450; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062450	pushed to atexit by R_ScriptLoader_parseAssignment (address 0x1001f230)
+10023e20	atexit_dtor_static_10062440	understood	weak	exceptions	atexit_dtor_static_10062440	mov ecx,0x10062440; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062440	pushed to atexit by R_ScriptLoader_parseAssignment (address 0x1001f230)
+10023e30	atexit_dtor_static_10062460	understood	weak	exceptions	atexit_dtor_static_10062460	mov ecx,0x10062460; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062460	pushed to atexit by R_ScriptLoader_parseAssignment (address 0x1001f230)
+10023e40	atexit_dtor_static_10062430	understood	weak	exceptions	atexit_dtor_static_10062430	mov ecx,0x10062430; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062430	pushed to atexit by R_ScriptLoader_parseAssignment (address 0x1001f230)
+10023e50	atexit_dtor_static_10062480	understood	weak	exceptions	atexit_dtor_static_10062480	mov ecx,0x10062480; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062480	pushed to atexit by R_ScriptLoader_parseAssignment (address 0x1001f230)
+10023e60	atexit_dtor_static_100624c0	understood	weak	exceptions	atexit_dtor_static_100624c0	mov ecx,0x100624c0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100624c0	pushed to atexit by R_ScriptLoader_checkTags (address 0x1001ecc0)
+10023e70	atexit_dtor_static_100624b0	understood	weak	exceptions	atexit_dtor_static_100624b0	mov ecx,0x100624b0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100624b0	pushed to atexit by R_ScriptLoader_checkTags (address 0x1001ecc0)
+10023e80	atexit_dtor_static_100624a0	understood	weak	exceptions	atexit_dtor_static_100624a0	mov ecx,0x100624a0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100624a0	pushed to atexit by R_ScriptLoader_checkTags (address 0x1001ecc0)
+10023e90	atexit_dtor_static_10062490	understood	weak	exceptions	atexit_dtor_static_10062490	mov ecx,0x10062490; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062490	pushed to atexit by R_ScriptLoader_checkTags (address 0x1001ecc0)
+10023ea0	atexit_dtor_static_10062340	understood	weak	exceptions	atexit_dtor_static_10062340	mov ecx,0x10062340; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062340	pushed to atexit by throw_R_ScriptException_TooManyBlocks (address 0x100235f0)
+10023eb0	atexit_dtor_static_10062350	understood	weak	exceptions	atexit_dtor_static_10062350	mov ecx,0x10062350; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062350	pushed to atexit by throw_R_ScriptException_TooFewBlocks (address 0x10023570)
+10023ec0	atexit_dtor_static_100624d0	understood	weak	exceptions	atexit_dtor_static_100624d0	mov ecx,0x100624d0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100624d0	pushed to atexit by R_Script::blockCheck (address 0x1001d7d0)
+10023ed0	atexit_dtor_static_10062510	understood	weak	exceptions	atexit_dtor_static_10062510	mov ecx,0x10062510; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062510	pushed to atexit by R_Script::parse (address 0x1001c800)
+10023ee0	atexit_dtor_static_10062500	understood	weak	exceptions	atexit_dtor_static_10062500	mov ecx,0x10062500; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062500	pushed to atexit by R_Script::parse (address 0x1001c800)
+10023ef0	atexit_dtor_static_100624f0	understood	weak	exceptions	atexit_dtor_static_100624f0	mov ecx,0x100624f0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100624f0	pushed to atexit by R_Script::parse (address 0x1001c800)
+10023f00	atexit_dtor_static_100624e0	understood	weak	exceptions	atexit_dtor_static_100624e0	mov ecx,0x100624e0; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x100624e0	pushed to atexit by R_Script::parse (address 0x1001c800)
+10023f10	atexit_dtor_static_10062520	understood	weak	exceptions	atexit_dtor_static_10062520	mov ecx,0x10062520; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062520	pushed to atexit by R_Script::getBlockIndex, R_Script::lock (address 0x1001c2d0, 0x1001c3e0)
+10023f20	atexit_dtor_static_10062530	understood	weak	exceptions	atexit_dtor_static_10062530	mov ecx,0x10062530; jmp 0x1001f220 (R_Exception::~R_Exception thunk): destructor of the function-local static exception at 0x10062530	pushed to atexit by R_Script::lock (address 0x1001c120)
+10023f30	R_DLListBase<R_Script::SCRIPTBLOCK>::scalar_deleting_dtor	understood	strong	containers	R_DLListBase<R_Script::SCRIPTBLOCK>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002abe4 (R_DLListBase<R_Script::SCRIPTBLOCK>) slot 0; body read
+10023fd0	R_DLList<R_Script::SCRIPTBLOCK>::scalar_deleting_dtor	understood	strong	containers	R_DLList<R_Script::SCRIPTBLOCK>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002abf4 (R_DLList<R_Script::SCRIPTBLOCK>) slot 0; body read
+10023ff0	R_DLList<R_Script::SCRIPTBLOCK>::~R_DLList	understood	strong	containers	R_DLList<R_Script::SCRIPTBLOCK>::~R_DLList	destructor body: frees the node pools ([0x20],[0x24]) and unlinks every node through the virtual freeNode	called only by the slot-0 scalar deleting dtor 0x10023fd0 of RTTI vtable R_DLList<R_Script::SCRIPTBLOCK>
+100240f0	R_DLListInit<R_Script::SCRIPTBLOCK>::scalar_deleting_dtor	understood	strong	containers	R_DLListInit<R_Script::SCRIPTBLOCK>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002ac04 (R_DLListInit<R_Script::SCRIPTBLOCK>) slot 0; body read
+10024110	R_DLListInit<R_Script::SCRIPTBLOCK>::~R_DLListInit	understood	strong	containers	R_DLListInit<R_Script::SCRIPTBLOCK>::~R_DLListInit	destructor body: frees the node pools ([0x20],[0x24]) and unlinks every node through the virtual freeNode	called only by the slot-0 scalar deleting dtor 0x100240f0 of RTTI vtable R_DLListInit<R_Script::SCRIPTBLOCK>
+10024280	R_DLListBase<R_ScriptLoader::INCLUDEINSERT>::scalar_deleting_dtor	understood	strong	containers	R_DLListBase<R_ScriptLoader::INCLUDEINSERT>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002afc4 (R_DLListBase<R_ScriptLoader::INCLUDEINSERT>) slot 0; body read
+10024320	R_DLList<R_ScriptLoader::INCLUDEINSERT>::scalar_deleting_dtor	understood	strong	containers	R_DLList<R_ScriptLoader::INCLUDEINSERT>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002afb4 (R_DLList<R_ScriptLoader::INCLUDEINSERT>) slot 0; body read
+10024340	R_DLListBase<R_ScriptLoader::DEFINEINSERT>::scalar_deleting_dtor	understood	strong	containers	R_DLListBase<R_ScriptLoader::DEFINEINSERT>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002afa4 (R_DLListBase<R_ScriptLoader::DEFINEINSERT>) slot 0; body read
+100243e0	R_DLList<R_ScriptLoader::DEFINEINSERT>::scalar_deleting_dtor	understood	strong	containers	R_DLList<R_ScriptLoader::DEFINEINSERT>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002af94 (R_DLList<R_ScriptLoader::DEFINEINSERT>) slot 0; body read
+10024400	R_DLListBase<R_ScriptLoader::BRACKETS>::scalar_deleting_dtor	understood	strong	containers	R_DLListBase<R_ScriptLoader::BRACKETS>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002af84 (R_DLListBase<R_ScriptLoader::BRACKETS>) slot 0; body read
+100244a0	R_DLList<R_ScriptLoader::BRACKETS>::scalar_deleting_dtor	understood	strong	containers	R_DLList<R_ScriptLoader::BRACKETS>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002af74 (R_DLList<R_ScriptLoader::BRACKETS>) slot 0; body read
+100244c0	vector_char_scalar_deleting_dtor	understood	weak	containers	vector_char_scalar_deleting_dtor	calls vector_freeStorage (0x10016430) then delete this	30 byte wrapper; caller 0x1001ea20
+100244e0	rs_scalar_deleting_dtor	understood	weak	strings	rs_scalar_deleting_dtor	calls std::rs::~rs then delete this	30 byte wrapper; caller 0x1001ea20
+10024500	rbtree_A_destroy	understood	weak	containers	rbtree_A_destroy	tree destructor: _Erase + header free; std::map keyed by rs (std::operator<), nil node 0x10052310	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10024600	rbtree_B_destroy	understood	weak	containers	rbtree_B_destroy	tree destructor: _Erase + header free; std::map keyed by char* (_stricmp), nil node 0x10052314	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+10024700	rbtree_A_create_header	understood	weak	containers	rbtree_A_create_header	allocates the nil/header node (chunk alloc 0x10023120); std::map keyed by rs (std::operator<), nil node 0x10052310	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+100247f0	rbtree_B_create_header	understood	weak	containers	rbtree_B_create_header	allocates the nil/header node (chunk alloc 0x10023270); std::map keyed by char* (_stricmp), nil node 0x10052314	MSVC6 std::_Tree shape; callers in R_ScriptLoader (0x1001e1d0/0x1001ea20/0x1001faf0)
+100248e0	node_pool_init	understood	weak	containers	node_pool_init	pool head=0, chunk size=-1 (lazy first chunk of 0x20/0x110 nodes)	matches _Buynode check [this+4]==-1 in rbtree_A/B
+100248f0	node_pool_freeAll	understood	weak	containers	node_pool_freeAll	pops and deletes every chunk on the singly linked pool list	callers loader destructor
+10024920	R_DLListBase_freeNodePools	understood	weak	containers	R_DLListBase_freeNodePools	delete [0x20],[0x24] node pools, then unlink all nodes	tail of the R_DLListBase dtor body shape (see 0x100160d0)
+100249a0	R_DLList_linkNodeBetween	understood	weak	containers	R_DLList_linkNodeBetween	links node between prev and next, count++ and resets cache index	callers R_Profile::insert path
+100249d0	R_DLList_getPrev	understood	weak	containers	R_DLList_getPrev	item (payload ptr) -> previous payload, 0 at the head sentinel	node layout prev@-8; mirrors 0x10015dc0
+100249f0	R_DLListBase_initFields	understood	weak	containers	R_DLListBase_initFields	same field/sentinel init as the list ctors but without vptr (embedded list inside a larger object)	body identical to 0x100233e0 minus vptr store
+10024a20	R_Exception::_GetBaseClass	named	strong	exceptions	R_Exception::_GetBaseClass		export ?_GetBaseClass@R_Exception@@KGPAUCRuntimeClass@@XZ
+10024a30	R_Exception::GetRuntimeClass	named	strong	exceptions	R_Exception::GetRuntimeClass		export ?GetRuntimeClass@R_Exception@@UBEPAUCRuntimeClass@@XZ
+10024a40	R_System::R_System	named	strong	rl	R_System::R_System_10024a40		export ??0R_System@@AAE@PBD@Z
+10024c10	R_System::~R_System	named	strong	rl	R_System::~R_System		export ??1R_System@@AAE@XZ
+10024e60	R_System::add	named	strong	rl	R_System::add		export ?add@R_System@@QAEHP6IXXZPBD@Z
+10024f30	R_System::remove	named	strong	rl	R_System::remove		export ?remove@R_System@@QAEHP6IXXZ@Z
+10024f80	R_System::dump	named	strong	rl	R_System::dump		export ?dump@R_System@@QAEXXZ
+10025060	R_System::setVerboseDoesTRACE	named	strong	rl	R_System::setVerboseDoesTRACE		export ?setVerboseDoesTRACE@R_System@@QAEX_N@Z
+10025070	R_System::setAssertionCreatesException	named	strong	rl	R_System::setAssertionCreatesException		export ?setAssertionCreatesException@R_System@@QAEX_N@Z
+10025080	R_System::verbose	named	strong	rl	R_System::verbose		export ?verbose@R_System@@QAAXPBDZZ
+10025180	R_System::ceaseVerbose	named	strong	rl	R_System::ceaseVerbose		export ?ceaseVerbose@R_System@@QAEXH@Z
+100251c0	R_System::clearVerbose	named	strong	rl	R_System::clearVerbose		export ?clearVerbose@R_System@@QAEXXZ
+10025210	R_System::terminate	named	strong	rl	R_System::terminate		export ?terminate@R_System@@AAEXXZ
+10025240	R_System::deinits	named	strong	rl	R_System::deinits		export ?deinits@R_System@@AAEXXZ
+10025280	R_System::free	named	strong	rl	R_System::free		export ?free@R_System@@AAEXPAUDEINIT@1@@Z
+100252d0	R_System::setVerboseCallback	named	strong	rl	R_System::setVerboseCallback		export ?setVerboseCallback@R_System@@QAEP6IXPBD@ZP6IX0@Z@Z
+100252f0	R_System::R_System	named	strong	rl	R_System::R_System_100252f0		export ??0R_System@@AAE@ABV0@@Z
+100253e0	R_STR	named	strong	strings	R_STR		export ?R_STR@@YAPBDPBDZZ
+10025450	R_System::processorSpeedTest	named	strong	rl	R_System::processorSpeedTest		export ?processorSpeedTest@R_System@@AAENXZ
+10025500	R_System::determineProcessorSpeed	named	strong	rl	R_System::determineProcessorSpeed		export ?determineProcessorSpeed@R_System@@AAEXXZ
+100255d0	R_System::determineProcessorCaps	named	strong	rl	R_System::determineProcessorCaps		export ?determineProcessorCaps@R_System@@AAEXXZ
+100269a0	R_System::getProcessorCaps	named	strong	rl	R_System::getProcessorCaps		export ?getProcessorCaps@R_System@@QAEIXZ
+100269b0	R_System::getProcessorVendor	named	strong	rl	R_System::getProcessorVendor		export ?getProcessorVendor@R_System@@QAE?AW4ProcessorVendor@1@XZ
+100269c0	R_System::getProcessorType	named	strong	rl	R_System::getProcessorType		export ?getProcessorType@R_System@@QAE?AW4ProcessorType@1@XZ
+100269d0	R_System::getProcessorSpeed	named	strong	rl	R_System::getProcessorSpeed		export ?getProcessorSpeed@R_System@@QAENXZ
+10026a00	R_System::getL1CodeCacheSize	named	strong	rl	R_System::getL1CodeCacheSize		export ?getL1CodeCacheSize@R_System@@QAEIXZ
+10026a10	R_System::getL1DataCacheSize	named	strong	rl	R_System::getL1DataCacheSize		export ?getL1DataCacheSize@R_System@@QAEIXZ
+10026a20	R_System::getL1CacheSize	named	strong	rl	R_System::getL1CacheSize		export ?getL1CacheSize@R_System@@QAEIXZ
+10026a30	R_System::getL2CacheSize	named	strong	rl	R_System::getL2CacheSize		export ?getL2CacheSize@R_System@@QAEIXZ
+10026a40	R_System::getL3CacheSize	named	strong	rl	R_System::getL3CacheSize		export ?getL3CacheSize@R_System@@QAEIXZ
+10026a50	R_System::getL1TraceCacheSize	named	strong	rl	R_System::getL1TraceCacheSize		export ?getL1TraceCacheSize@R_System@@QAEIXZ
+10026a60	R_System::getTLBCodeCacheSize	named	strong	rl	R_System::getTLBCodeCacheSize		export ?getTLBCodeCacheSize@R_System@@QAEIXZ
+10026a70	R_System::getTLBDataCacheSize	named	strong	rl	R_System::getTLBDataCacheSize		export ?getTLBDataCacheSize@R_System@@QAEIXZ
+10026a80	R_System::getProcessorModel	named	strong	rl	R_System::getProcessorModel		export ?getProcessorModel@R_System@@QAEPBDXZ
+10026a90	R_System::getTotalPhysicalMemory	named	strong	rl	R_System::getTotalPhysicalMemory		export ?getTotalPhysicalMemory@R_System@@QAEIXZ
+10026ab0	R_System::getAvailablePhysicalMemory	named	strong	rl	R_System::getAvailablePhysicalMemory		export ?getAvailablePhysicalMemory@R_System@@QAEIXZ
+10026ad0	R_System::getAppAge	named	strong	rl	R_System::getAppAge		export ?getAppAge@R_System@@QAENXZ
+10026b70	R_System::getPerformanceFrequency	named	strong	rl	R_System::getPerformanceFrequency		export ?getPerformanceFrequency@R_System@@QBE_JXZ
+10026b90	R_System::getPerformanceCounter	named	strong	rl	R_System::getPerformanceCounter		export ?getPerformanceCounter@R_System@@QBE_JXZ
+10026bc0	R_System::getFirstCPUDriver	named	strong	rl	R_System::getFirstCPUDriver		export ?getFirstCPUDriver@R_System@@QAEPAVR_CPUDriver@@XZ
+10026be0	R_System::getNextCPUDriver	named	strong	rl	R_System::getNextCPUDriver		export ?getNextCPUDriver@R_System@@QAEPAVR_CPUDriver@@PAV2@@Z
+10026c30	R_System::setActiveCPUDriver	named	strong	rl	R_System::setActiveCPUDriver		export ?setActiveCPUDriver@R_System@@QAEXPAVR_CPUDriver@@@Z
+10026c40	R_System::getActiveCPUDriver	named	strong	rl	R_System::getActiveCPUDriver	identical-code-folded: 2 exports share this body	export ?getActiveCPUDriver@R_System@@QAEPAVR_CPUDriver@@XZ; also exported at the same address (identical code folded): ?getCPU@R_System@@QAEPAVR_CPUDriver@@XZ
+10026c50	R_System_loadCPUDrivers	understood	weak	rl	R_System_loadCPUDrivers	creates the R_CPUReference driver, then scans RLDRIVERPATH/rldriver*/_mfcrel.dll with FindFirstFile and LoadLibrary	strings "RLDRIVERPATH", "rldriver", "_mfcrel.dll"; imports FindFirstFileA/LoadLibraryA
+10026de0	R_System_unloadCPUDrivers	understood	weak	rl	R_System_unloadCPUDrivers	FreeLibrary over the loaded driver DLL list	only caller R_RemedyInit::~R_RemedyInit; FreeLibrary import
+10026ea0	R_Mutex::R_Mutex	named	strong	threads	R_Mutex::R_Mutex		export ??0R_Mutex@@QAE@XZ
+10026ec0	R_Mutex::~R_Mutex	named	strong	threads	R_Mutex::~R_Mutex		export ??1R_Mutex@@QAE@XZ
+10026ed0	R_Mutex::lock	named	strong	threads	R_Mutex::lock		export ?lock@R_Mutex@@QAEXXZ
+10026ee0	R_Mutex::unlock	named	strong	threads	R_Mutex::unlock		export ?unlock@R_Mutex@@QAEXXZ
+10026ef0	R_MutexLock::R_MutexLock	named	strong	threads	R_MutexLock::R_MutexLock		export ??0R_MutexLock@@QAE@PAVR_Mutex@@@Z
+10026f10	R_MutexLock::~R_MutexLock	named	strong	threads	R_MutexLock::~R_MutexLock		export ??1R_MutexLock@@QAE@XZ
+10026f20	R_Memory::R_Memory	named	strong	memory	R_Memory::R_Memory	identical-code-folded: 4 exports share this body	export ??0R_Memory@@AAE@XZ; also exported at the same address (identical code folded): ??0R_MemoryScope@@AAE@XZ, ??0R_MutexLock@@AAE@XZ, ??0R_Script@@AAE@XZ
+10026f30	R_DLListBase::allocNode_0xc	understood	strong	containers	R_DLListBase::allocNode_0xc	allocates a 0xc-byte node (prev,next,payload), zeroes links, returns node+8; slot 1 of the int, HINSTANCE and R_CPUDriver* lists	RTTI vtable 0x1002a924 (R_DLList<int>) slot 1; body read
+10026f50	R_DLList<R_CPUDriver*>::~R_DLList	understood	strong	containers	R_DLList<R_CPUDriver*>::~R_DLList	destructor body: frees the node pools ([0x20],[0x24]) and unlinks every node through the virtual freeNode	called only by the slot-0 scalar deleting dtor 0x10027480 of RTTI vtable R_DLList<R_CPUDriver*>
+10027050	R_DLList_removeAll	understood	weak	containers	R_DLList_removeAll	loop: unlink each node and call virtual freeNode	callers R_System::~R_System
+10027090	R_DLList<HINSTANCE__*>::~R_DLList	understood	strong	containers	R_DLList<HINSTANCE__*>::~R_DLList	destructor body: frees the node pools ([0x20],[0x24]) and unlinks every node through the virtual freeNode	called only by the slot-0 scalar deleting dtor 0x10027540 of RTTI vtable R_DLList<HINSTANCE__*>
+10027190	R_DLList<R_System::DEINIT>::allocNode	understood	strong	containers	R_DLList<R_System::DEINIT>::allocNode	shared by R_DLList<R_System::DEINIT> slot 1, R_DLListBase<R_System::DEINIT> slot 1; allocates one node and returns payload (node+8); init variant	RTTI vtable 0x1002afec (R_DLList<R_System::DEINIT>) slot 1; body read
+100271b0	R_DLListBase::freeNode	understood	strong	containers	R_DLListBase::freeNode	frees node = payload-8 and bumps R_Memory::sm_iDeleteCount; shared (identical code folded) by 21 list vtables, slot 2	RTTI vtable 0x1002a914 (R_DLList<R_File::R_RASArchive>) slot 2; body read
+100271e0	R_DLList<R_System::DEINIT>::~R_DLList	understood	strong	containers	R_DLList<R_System::DEINIT>::~R_DLList	destructor body: frees the node pools ([0x20],[0x24]) and unlinks every node through the virtual freeNode	called only by the slot-0 scalar deleting dtor 0x10027600 of RTTI vtable R_DLList<R_System::DEINIT>
+100272e0	R_CPUReference_newOrThrow	understood	strong	math	R_CPUReference_newOrThrow	operator new(4) + vptr R_CPUReference (0x1002a470); throws R_MemoryException_Allocation on failure	RTTI vtable 0x1002a470 ref; caller 0x10026c50
+100273e0	R_DLListBase<R_CPUDriver*>::scalar_deleting_dtor	understood	strong	containers	R_DLListBase<R_CPUDriver*>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002b01c (R_DLListBase<R_CPUDriver*>) slot 0; body read
+10027480	R_DLList<R_CPUDriver*>::scalar_deleting_dtor	understood	strong	containers	R_DLList<R_CPUDriver*>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002b00c (R_DLList<R_CPUDriver*>) slot 0; body read
+100274a0	R_DLListBase<HINSTANCE__*>::scalar_deleting_dtor	understood	strong	containers	R_DLListBase<HINSTANCE__*>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002b02c (R_DLListBase<HINSTANCE__*>) slot 0; body read
+10027540	R_DLList<HINSTANCE__*>::scalar_deleting_dtor	understood	strong	containers	R_DLList<HINSTANCE__*>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002affc (R_DLList<HINSTANCE__*>) slot 0; body read
+10027560	R_DLListBase<R_System::DEINIT>::scalar_deleting_dtor	understood	strong	containers	R_DLListBase<R_System::DEINIT>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002b03c (R_DLListBase<R_System::DEINIT>) slot 0; body read
+10027600	R_DLList<R_System::DEINIT>::scalar_deleting_dtor	understood	strong	containers	R_DLList<R_System::DEINIT>::scalar_deleting_dtor	destroys the list then delete when flag&1	RTTI vtable 0x1002afec (R_DLList<R_System::DEINIT>) slot 0; body read
+10027620	R_Timer::R_Timer	named	strong	time	R_Timer::R_Timer		export ??0R_Timer@@QAE@XZ
+10027630	R_Memory::~R_Memory	named	strong	memory	R_Memory::~R_Memory	identical-code-folded: 4 exports share this body	export ??1R_Memory@@AAE@XZ; also exported at the same address (identical code folded): ??1R_MemoryScope@@QAE@XZ, ??1R_Timer@@QAE@XZ, ?cleanupAllocations@R_System@@QAEHXZ
+10027640	R_Timer::getAge	named	strong	time	R_Timer::getAge		export ?getAge@R_Timer@@QBEMXZ
+100276a0	R_Timer::setAge	named	strong	time	R_Timer::setAge		export ?setAge@R_Timer@@QAEXM@Z
+100276f0	R_Timer::sample	named	strong	time	R_Timer::sample		export ?sample@R_Timer@@QAEMXZ
+10027710	R_Timer::getDelta	named	strong	time	R_Timer::getDelta		export ?getDelta@R_Timer@@QBEMXZ
+10027720	R_Timer::reset	named	strong	time	R_Timer::reset		export ?reset@R_Timer@@QAEXXZ
+10027730	R_Timer::isPaused	named	strong	time	R_Timer::isPaused		export ?isPaused@R_Timer@@QBE_NXZ
+10027740	R_Timer::pause	named	strong	time	R_Timer::pause		export ?pause@R_Timer@@QAEXXZ
+10027760	R_Timer::resume	named	strong	time	R_Timer::resume		export ?resume@R_Timer@@QAEXXZ
+10027790	M_FPUControl::M_FPUControl	named	strong	math	M_FPUControl::M_FPUControl_10027790	identical-code-folded: 16 exports share this body	export ??0M_FPUControl@@AAE@ABV0@@Z; also exported at the same address (identical code folded): ??0R_File@@AAE@ABV0@@Z, ??0R_Memory@@AAE@ABV0@@Z, ??0R_MemoryScope@@AAE@ABV0@@Z (+12 more)
+100277a0	std::operator+	named	strong	strings	std::operator+_100277a0		export ??Hstd@@YA?AVrs@0@ABV10@0@Z
+100278d0	std::operator+	named	strong	strings	std::operator+_100278d0		export ??Hstd@@YA?AVrs@0@PBDABV10@@Z
+10027a10	std::operator+	named	strong	strings	std::operator+_10027a10		export ??Hstd@@YA?AVrs@0@DABV10@@Z
+10027b10	std::operator+	named	strong	strings	std::operator+_10027b10		export ??Hstd@@YA?AVrs@0@ABV10@PBD@Z
+10027c50	std::operator+	named	strong	strings	std::operator+_10027c50		export ??Hstd@@YA?AVrs@0@ABV10@D@Z
+10027d70	std::operator==	named	strong	strings	std::operator==_10027d70		export ??8std@@YA_NABVrs@0@0@Z
+10027dd0	std::operator==	named	strong	strings	std::operator==_10027dd0		export ??8std@@YA_NPBDABVrs@0@@Z
+10027e30	std::operator==	named	strong	strings	std::operator==_10027e30		export ??8std@@YA_NABVrs@0@PBD@Z
+10027e90	std::operator!=	named	strong	strings	std::operator!=_10027e90		export ??9std@@YA_NABVrs@0@0@Z
+10027eb0	std::operator!=	named	strong	strings	std::operator!=_10027eb0		export ??9std@@YA_NPBDABVrs@0@@Z
+10027ed0	std::operator!=	named	strong	strings	std::operator!=_10027ed0		export ??9std@@YA_NABVrs@0@PBD@Z
+10027ef0	std::operator<	named	strong	strings	std::operator<_10027ef0		export ??Mstd@@YA_NABVrs@0@0@Z
+10027f50	std::operator<	named	strong	strings	std::operator<_10027f50		export ??Mstd@@YA_NPBDABVrs@0@@Z
+10027fb0	std::operator<	named	strong	strings	std::operator<_10027fb0		export ??Mstd@@YA_NABVrs@0@PBD@Z
+10028010	std::operator>	named	strong	strings	std::operator>_10028010		export ??Ostd@@YA_NABVrs@0@0@Z
+10028030	std::operator>	named	strong	strings	std::operator>_10028030		export ??Ostd@@YA_NPBDABVrs@0@@Z
+10028050	std::operator>	named	strong	strings	std::operator>_10028050		export ??Ostd@@YA_NABVrs@0@PBD@Z
+10028070	std::operator<=	named	strong	strings	std::operator<=_10028070		export ??Nstd@@YA_NABVrs@0@0@Z
+10028090	std::operator<=	named	strong	strings	std::operator<=_10028090		export ??Nstd@@YA_NPBDABVrs@0@@Z
+100280b0	std::operator<=	named	strong	strings	std::operator<=_100280b0		export ??Nstd@@YA_NABVrs@0@PBD@Z
+100280d0	std::operator>=	named	strong	strings	std::operator>=_100280d0		export ??Pstd@@YA_NABVrs@0@0@Z
+100280f0	std::operator>=	named	strong	strings	std::operator>=_100280f0		export ??Pstd@@YA_NPBDABVrs@0@@Z
+10028110	std::operator>=	named	strong	strings	std::operator>=_10028110		export ??Pstd@@YA_NABVrs@0@PBD@Z
+10028130	operator_delete	understood	strong	memory	operator_delete	calls free (thunk 0x1002843e) with the pointer; 113 callers (every delete)	body: push arg; call free thunk; Ghidra callers 113
+1002813c	MSVCP60.DLL::std::operator+	named	strong	strings	MSVCP60.DLL::std::operator+_1002813c		import thunk: jmp [IAT] -> MSVCP60.dll!??Hstd@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@PBD@Z
+10028142	MSVCP60.DLL::std::operator+	named	strong	strings	MSVCP60.DLL::std::operator+_10028142		import thunk: jmp [IAT] -> MSVCP60.dll!??Hstd@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBDABV10@@Z
+10028148	MFC42.DLL::operator_new	named	strong	memory	MFC42.DLL::operator_new		import thunk: jmp [IAT] -> MFC42.DLL!??2@YAPAXI@Z
+1002814e	MFC42.DLL::CArchive::Flush	named	strong	streams	MFC42.DLL::CArchive::Flush		import thunk: jmp [IAT] -> MFC42.DLL!?Flush@CArchive@@QAEXXZ
+10028154	MFC42.DLL::CArchive::FillBuffer	named	strong	streams	MFC42.DLL::CArchive::FillBuffer		import thunk: jmp [IAT] -> MFC42.DLL!?FillBuffer@CArchive@@QAEXI@Z
+1002815a	MFC42.DLL::CException::CException	named	strong	exceptions	MFC42.DLL::CException::CException_1002815a		import thunk: jmp [IAT] -> MFC42.DLL!??0CException@@QAE@H@Z
+10028160	MFC42.DLL::CException::CException	named	strong	exceptions	MFC42.DLL::CException::CException_10028160		import thunk: jmp [IAT] -> MFC42.DLL!??0CException@@QAE@XZ
+10028166	MFC42.DLL::CObject::GetRuntimeClass	named	strong	crt	MFC42.DLL::CObject::GetRuntimeClass		import thunk: jmp [IAT] -> MFC42.DLL!?GetRuntimeClass@CObject@@UBEPAUCRuntimeClass@@XZ
+1002816c	MFC42.DLL::CString::operator+=	named	strong	strings	MFC42.DLL::CString::operator+=		import thunk: jmp [IAT] -> MFC42.DLL!??YCString@@QAEABV0@D@Z
+10028172	MFC42.DLL::CString::GetBufferSetLength	named	strong	strings	MFC42.DLL::CString::GetBufferSetLength		import thunk: jmp [IAT] -> MFC42.DLL!?GetBufferSetLength@CString@@QAEPADH@Z
+10028178	MFC42.DLL::CString::operator=	named	strong	strings	MFC42.DLL::CString::operator=		import thunk: jmp [IAT] -> MFC42.DLL!??4CString@@QAEABV0@PBD@Z
+1002817e	MFC42.DLL::CArchive::Write	named	strong	streams	MFC42.DLL::CArchive::Write		import thunk: jmp [IAT] -> MFC42.DLL!?Write@CArchive@@QAEXPBXI@Z
+10028184	MFC42.DLL::CArchive::Read	named	strong	streams	MFC42.DLL::CArchive::Read		import thunk: jmp [IAT] -> MFC42.DLL!?Read@CArchive@@QAEIPAXI@Z
+1002818a	MFC42.DLL::AfxAbort	named	strong	crt	MFC42.DLL::AfxAbort		import thunk: jmp [IAT] -> MFC42.DLL!?AfxAbort@@YGXXZ
+10028190	MSVCRT.DLL::__CxxFrameHandler	named	strong	crt	MSVCRT.DLL::__CxxFrameHandler		import thunk: jmp [IAT] -> MSVCRT.dll!__CxxFrameHandler
+10028196	type_info::scalar_deleting_dtor	understood	strong	crt	type_info::scalar_deleting_dtor	calls type_info::~type_info (thunk 0x10028444) then delete when flag&1	RTTI vtable 0x1002b060 (type_info) slot 0; gap function Ghidra missed
+100281b2	_onexit	understood	strong	crt	_onexit	CRT _onexit: if [0x10062708]==-1 call KERNEL32-side import else __dllonexit(fn,&0x10062708,&0x10062704)	matches MSVC CRT _onexit; calls import __dllonexit thunk 0x1002844a
+100281de	atexit	understood	strong	crt	atexit	returns _onexit(fn)==0 ? 0 : -1; 60 callers push static-destructor stubs	matches MSVC CRT atexit; calls 0x100281b2
+100281f0	MSVCRT.DLL::_CxxThrowException	named	strong	crt	MSVCRT.DLL::_CxxThrowException		import thunk: jmp [IAT] -> MSVCRT.dll!_CxxThrowException
+100281f6	MSVCRT.DLL::_purecall	named	strong	crt	MSVCRT.DLL::_purecall		import thunk: jmp [IAT] -> MSVCRT.dll!_purecall
+100281fc	MSVCRT.DLL::ftol	named	strong	crt	MSVCRT.DLL::ftol		import thunk: jmp [IAT] -> MSVCRT.dll!_ftol
+10028202	__ehvec_dtor	understood	strong	crt	__ehvec_dtor	eh vector destructor iterator (ptr,size,count,dtor): calls dtor count times from the end under SEH	matches MSVC CRT ehvecdtr; called with (obj,0xc,count,R_Exception dtor) from 0x1000ebf0
+10028282	__ArrayUnwind	understood	weak	crt	__ArrayUnwind	unwind helper of __ehvec_dtor: loops dtor downward inside try/except (filter 0x100282e0)	MSVC CRT shape; _except_handler3 frame, referenced from 0x1002826a
+100282e0	__ArrayUnwindFilter	understood	weak	crt	__ArrayUnwindFilter	except filter: returns 1 when ExceptionRecord->code == 0xe06d7363 (C++ exception) else 0	compares [eax] with 0xe06d7363; gap function Ghidra missed
+100282f6	_CRT_INIT	understood	weak	crt	_CRT_INIT	DLL CRT init/exit (reason 1: heap/initterm of the xi/xc tables; 0: tear down)	calls malloc/free/_initterm imports; called from entry 0x100283a1
+100283a1	entry	named	strong	crt	entry	DLL entry point (_DllMainCRTStartup)	PE AddressOfEntryPoint 0x283a1
+1002843e	MSVCRT.DLL::free	named	strong	memory	MSVCRT.DLL::free		import thunk: jmp [IAT] -> MSVCRT.dll!free
+10028444	MSVCRT.DLL::type_info::~type_info	named	strong	crt	MSVCRT.DLL::type_info::~type_info		import thunk: jmp [IAT] -> MSVCRT.dll!??1type_info@@UAE@XZ
+1002844a	MSVCRT.DLL::__dllonexit	named	strong	crt	MSVCRT.DLL::__dllonexit		import thunk: jmp [IAT] -> MSVCRT.dll!__dllonexit
+10028450	MSVCRT.DLL::_except_handler3	named	strong	crt	MSVCRT.DLL::_except_handler3		import thunk: jmp [IAT] -> MSVCRT.dll!_except_handler3
+10028456	MSVCRT.DLL::terminate	named	strong	crt	MSVCRT.DLL::terminate		import thunk: jmp [IAT] -> MSVCRT.dll!?terminate@@YAXXZ
+1002845c	MSVCRT.DLL::initterm	named	strong	crt	MSVCRT.DLL::initterm		import thunk: jmp [IAT] -> MSVCRT.dll!_initterm
+10028462	DllMain	understood	strong	crt	DllMain	on reason 1 (attach) calls DisableThreadLibraryCalls(hinst); returns 1	import DisableThreadLibraryCalls; called by entry

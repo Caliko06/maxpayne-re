@@ -1,0 +1,304 @@
+entry	size	name	namespace	callers	callees	imports	strings	caller_names
+10201000	17	G_Color	G_Color	1				G_Image::loadTGA
+10201020	32	G_Color	G_Color	0				
+10201040	31	G_Color	G_Color	0				
+10201060	30	set	G_Color	0				
+10201080	23	set	G_Color	0				
+102010a0	10	setAlpha	G_Color	0				
+102010b0	29	operator=	G_Color	0				
+102010d0	200	operator+=	G_Color	0				
+102011a0	179	operator-=	G_Color	0				
+10201260	172	operator*=	G_Color	0		MSVCRT.DLL!ftol		
+10201310	107	operator*=	G_Color	0		MSVCRT.DLL!ftol		
+10201380	136	operator/=	G_Color	0		MSVCRT.DLL!ftol		
+10201410	345	G_Color	G_Color	0				
+10201570	268	G_Color	G_Color	0				
+10201680	345	G_Color	G_Color	0				
+102017e0	264	operator=	G_Color	0				
+102018f0	473	interpolate	G_Color	0		MSVCRT.DLL!ftol		
+10201ad0	599	bilinear	G_Color	0		MSVCRT.DLL!ftol		
+10201d30	42	FUN_10201d30	Global	2				FUN_102024d0,G_Image::loadPCX
+10201d70	21	FUN_10201d70	Global	0				
+10201d90	12	FUN_10201d90	Global	0	FUN_10211442			
+10201dc0	490	RGBtoHSV	G_FColor	0	FUN_102024c0			
+10201fb0	500	HSVtoRGB	G_FColor	0	FUN_102024c0	MSVCRT.DLL!ftol,MSVCRT.DLL!floor		
+102021c0	364	RGBtoYIQ	G_FColor	0	FUN_102024d0,FUN_102024c0,FUN_10211442			
+10202340	364	YIQtoRGB	G_FColor	0	FUN_102024d0,FUN_102024c0,FUN_10211442			
+102024c0	13	FUN_102024c0	Global	5				G_FColor::HSVtoRGB,FUN_102024d0,G_FColor::RGBtoYIQ,G_FColor::RGBtoHSV,G_FColor::YIQtoRGB
+102024d0	194	FUN_102024d0	Global	2	FUN_10201d30,FUN_102024c0			G_FColor::RGBtoYIQ,G_FColor::YIQtoRGB
+102025a0	4	isConstructed	G_Image	0				
+102025b0	4	width	G_Image	0				
+102025c0	4	height	G_Image	0				
+102025d0	4	operator_class_G_Color*	G_Image	0				
+102025e0	13	operator[]	G_Image	0				
+102025f0	23	operator()	G_Image	0				
+10202610	13	getDIB	G_Image	0	G_Image::makeDIB			
+10202620	4	getDdsFormatData	G_Image	0				
+10202630	4	getDdsFormatSize	G_Image	0				
+10202640	9	isDdsFormat	G_Image	0				
+10202650	25	G_Image	G_Image	0	G_Image::construct,G_Image::initializeMembers			
+102026d0	32	G_Image	G_Image	0	G_Image::construct,G_Image::initializeMembers			
+102026f0	42	G_Image	G_Image	0	G_Image::initializeMembers,G_Image::construct			
+10202720	37	G_Image	G_Image	0	G_Image::initializeMembers,G_Image::construct			
+10202750	32	G_Image	G_Image	0	G_Image::construct,G_Image::initializeMembers			
+10202770	32	G_Image	G_Image	0	G_Image::initializeMembers,G_Image::construct			
+10202790	47	G_Image	G_Image	0	G_Image::construct,G_Image::initializeMembers			
+102027c0	11	~G_Image	G_Image	0	G_Image::destruct			
+102027d0	19	operator=	G_Image	0	G_Image::construct			
+102027f0	14	construct	G_Image	1	G_Image::destruct			G_Image::G_Image
+10202800	147	construct	G_Image	1	G_Image::loadBuffer,G_Image::destruct,G_Image::determineImageFormat	RLMFC.DLL!free,RLMFC.DLL!size,RLMFC.DLL!load		G_Image::G_Image
+10202893	17	Catch@10202893	Global	0	G_Image::destruct	MSVCRT.DLL!_CxxThrowException		
+102028b0	92	construct	G_Image	1	G_Image::loadBuffer,G_Image::destruct			G_Image::G_Image
+1020290c	17	Catch@1020290c	Global	0	G_Image::destruct	MSVCRT.DLL!_CxxThrowException		
+10202920	308	construct	G_Image	1	G_Image::destruct,FUN_10211442	MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!setError,RLMFC.DLL!operator=,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	G_Image::G_Image
+10202a54	17	Catch@10202a54	Global	0	G_Image::destruct	MSVCRT.DLL!_CxxThrowException		
+10202a70	463	construct	G_Image	1	G_Image::destruct,FUN_10211442	MSVCRT.DLL!_CxxThrowException,GDI32.DLL!GetDIBits,RLMFC.DLL!set,MFC42.DLL!operator_new,RLMFC.DLL!setError,RLMFC.DLL!operator=,USER32.DLL!GetDC,USER32.DLL!ReleaseDC,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	G_Image::G_Image
+10202c3f	28	Catch@10202c3f	Global	0	G_Image::destruct	MSVCRT.DLL!_CxxThrowException,USER32.DLL!ReleaseDC		
+10202c60	126	construct	G_Image	2	G_Image::destruct,FUN_10203d20,FUN_10203e50	RLMFC.DLL!copy		G_Image::G_Image,G_Image::operator=
+10202ce0	77	construct	G_Image	1	G_Image::destruct,FUN_10203d20,G_Image::copyWithScale			G_Image::G_Image
+10202d30	85	destruct	G_Image	12	FUN_102113f8,G_Image::initializeMembers	GDI32.DLL!DeleteObject		G_Image::construct,G_Image::~G_Image,Catch@1020290c,Catch@10202a54,G_Image::construct,G_Image::construct,G_Image::construct,G_Image::construct
+10202d90	27	initializeMembers	G_Image	8				G_Image::G_Image,G_Image::G_Image,G_Image::destruct,G_Image::G_Image,G_Image::G_Image,G_Image::G_Image,G_Image::G_Image,G_Image::G_Image
+10202db0	340	loadBuffer	G_Image	2	G_Image::loadSCX,G_Image::loadJPG,G_Image::loadPCX,G_Image::loadTGA,G_Image::loadDDS,FUN_10211442	MSVCRT.DLL!_CxxThrowException,RLMFC.DLL!setError,RLMFC.DLL!operator=,RLMFC.DLL!R_Exception	Unknown Image format "%s"	G_Image::construct,G_Image::construct
+10202f04	9	Catch@10202f04	Global	0		MSVCRT.DLL!_CxxThrowException		
+10202f30	30	FUN_10202f30	Global	0	FUN_102113f8	RLMFC.DLL!~R_Exception		
+10202f50	84	save	G_Image	0	G_Image::saveBuffer,FUN_102113f8,G_Image::determineImageFormat	RLMFC.DLL!save		
+10202fb0	220	saveBuffer	G_Image	1	G_Image::saveBufferTGA,FUN_10211442	MSVCRT.DLL!_CxxThrowException,RLMFC.DLL!setError,RLMFC.DLL!operator=,RLMFC.DLL!R_Exception	!=TGA(G_Image::saveBuffer()) | Unknown Image format "%s"	G_Image::save
+10203090	379	determineImageFormat	G_Image	2	FUN_10211442	MSVCRT.DLL!_CxxThrowException,MSVCRT.DLL!_stricmp,RLMFC.DLL!setError,RLMFC.DLL!operator=,RLMFC.DLL!R_Exception	Unknown Image format "%s"	G_Image::construct,G_Image::save
+10203230	133	makeDIB	G_Image	1		GDI32.DLL!CreateDIBSection,RLMFC.DLL!copy		G_Image::getDIB
+102032c0	403	areaSample	G_Image	1	FUN_10203460	MSVCRT.DLL!ftol		G_Image::copyWithScale
+10203460	662	FUN_10203460	Global	1	FUN_10203700	MSVCRT.DLL!ftol		G_Image::areaSample
+10203700	1051	FUN_10203700	Global	1		MSVCRT.DLL!ftol		FUN_10203460
+10203b20	122	copy	G_Image	0		RLMFC.DLL!copy		
+10203ba0	58	clear	G_Image	0		RLMFC.DLL!set		
+10203be0	305	copyWithScale	G_Image	1	G_Image::areaSample			G_Image::construct
+10203d20	289	FUN_10203d20	Global	2	FUN_10211442	MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!setError,RLMFC.DLL!operator=,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	G_Image::construct,G_Image::construct
+10203e50	237	FUN_10203e50	Global	1	FUN_10211442	MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!setError,RLMFC.DLL!operator=,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	G_Image::construct
+10203f60	19	FUN_10203f60	Global	1		RLMFC.DLL!R_Exception		G_Image::loadDDS
+10203f80	82	FUN_10203f80	Global	5		RLMFC.DLL!setError,RLMFC.DLL!R_Exception	Out of system memory resources	G_Image::loadJPG,G_Image::loadSCX,G_Image::loadPCX,G_Image::loadTGA,FUN_10204ca0
+10203fe0	6	~R_Exception	RLMFC.DLL::R_Exception	69				Unwind@10211790,Unwind@102118ca,Unwind@102118c0,Unwind@102119b8,Unwind@10211760,Unwind@102117f0,Unwind@10211870,Unwind@10211a38
+10203ff0	466	loadDDS	G_Image	1	FUN_10203f60,FUN_10204d10,FUN_102041d0,FUN_10211442	MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!setError,RLMFC.DLL!operator=,RLMFC.DLL!copy,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources | Not a valid DDS file | Failed to decode DDS image: "%s"	G_Image::loadBuffer
+102041d0	19	FUN_102041d0	Global	5		RLMFC.DLL!R_Exception		G_Image::loadJPG,G_Image::loadSCX,G_Image::loadPCX,G_Image::loadTGA,G_Image::loadDDS
+10204200	744	loadJPG	G_Image	1	FUN_10205970,FUN_10205a50,FUN_102045e0,FUN_10203f80,FUN_10211442,FUN_102061b0,FUN_10205f70,FUN_10206010,thunk_FUN_10209000,FUN_10204d10,FUN_10205d10,FUN_102041d0,FUN_10205dd0,FUN_10204630	MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,MSVCRT.DLL!setjmp3,RLMFC.DLL!operator=,RLMFC.DLL!R_Exception,RLMFC.DLL!setError	Failed to decode JPG image | Failed to decode JPG image | Out of system memory resources	G_Image::loadBuffer
+102044f0	223	FUN_102044f0	Global	0	FUN_10211442	MSVCRT.DLL!_CxxThrowException,RLMFC.DLL!setError,RLMFC.DLL!operator=,RLMFC.DLL!R_Exception	Failed to decode JPG image: "%s" | Failed to decode JPG image	
+102045e0	71	FUN_102045e0	Global	1				G_Image::loadJPG
+10204630	52	FUN_10204630	Global	1				G_Image::loadJPG
+10204680	1440	loadPCX	G_Image	1	FUN_10204c80,FUN_10203f80,FUN_10211442,FUN_10204ca0,FUN_10204c40,FUN_10201d30,FUN_10204d10,FUN_102041d0,FUN_10204c60	MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!~R_Exception,RLMFC.DLL!setError	Header error | Failed to decode PCX image: "%s" | Only run-length encoded files can be loaded | Failed to decode PCX image: "%s" | Image width <= 0 | Failed to decode PCX image: "%s" | Image height <= 0 | Failed to decode PCX image: "%s"	G_Image::loadBuffer
+10204b9e	17	Catch@10204b9e	Global	0	FUN_10204c80	MSVCRT.DLL!_CxxThrowException		
+10204c40	19	FUN_10204c40	Global	2		RLMFC.DLL!R_Exception		G_Image::loadPCX,G_Image::loadTGA
+10204c60	19	FUN_10204c60	Global	1		RLMFC.DLL!R_Exception		G_Image::loadPCX
+10204c80	24	FUN_10204c80	Global	2	FUN_102113f8			G_Image::loadPCX,Catch@10204b9e
+10204ca0	84	FUN_10204ca0	Global	2	FUN_10203f80,FUN_10211442	MSVCRT.DLL!_CxxThrowException,RLMFC.DLL!operator=		G_Image::loadPCX,G_Image::loadTGA
+10204d10	20	FUN_10204d10	Global	5		RLMFC.DLL!operator=		G_Image::loadJPG,G_Image::loadSCX,G_Image::loadPCX,G_Image::loadTGA,G_Image::loadDDS
+10204d30	607	loadSCX	G_Image	1	FUN_10204d10,FUN_10203f80,FUN_102041d0,FUN_10211442	MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,MSVCRT.DLL!strncmp,RLMFC.DLL!setError,RLMFC.DLL!operator=,RLMFC.DLL!R_Exception	Failed to decode SCX image | Failed to decode SCX image | Out of system memory resources	G_Image::loadBuffer
+10204fa0	1834	loadTGA	G_Image	1	FUN_10203f80,FUN_102056f0,FUN_10211442,FUN_10204ca0,FUN_10204c40,G_Color::G_Color,FUN_102113f8,FUN_10204d10,FUN_102041d0	MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!~R_Exception,RLMFC.DLL!R_Exception,RLMFC.DLL!setError,RLMFC.DLL!R_STR	colorMapOrigin in %d | Failed to decode TGA image: "%s" | colormapEntrySize %d | Failed to decode TGA image: "%s" | Unsupported format | Failed to decode TGA image: "%s" | Unsupported color depth in TGA_UNCOMPRESSEDBW | Failed to decode TGA image: "%s"	G_Image::loadBuffer
+10205656	35	Catch@10205656	Global	0	FUN_102113f8	MSVCRT.DLL!_CxxThrowException		
+102056f0	32	FUN_102056f0	Global	1				G_Image::loadTGA
+10205710	222	saveBufferTGA	G_Image	1	FUN_102057f0	RLMFC.DLL!copy		G_Image::saveBuffer
+102057f0	237	FUN_102057f0	Global	1	FUN_10211442	MSVCRT.DLL!_CxxThrowException,MFC42.DLL!operator_new,RLMFC.DLL!setError,RLMFC.DLL!operator=,RLMFC.DLL!R_Exception	Out of system memory resources | Out of system memory resources	G_Image::saveBufferTGA
+10205900	11	FUN_10205900	Global	0				
+10205910	12	FUN_10205910	Global	0	FUN_10211442			
+10205940	11	FUN_10205940	Global	0				
+10205950	12	FUN_10205950	Global	0	FUN_10211442			
+10205970	196	FUN_10205970	Global	1	FUN_10206320,FUN_10206ae0,FUN_10208420			G_Image::loadJPG
+10205a40	5	thunk_FUN_10209000	Global	1				G_Image::loadJPG
+10205a50	103	FUN_10205a50	Global	1	FUN_10208fe0,FUN_10205ac0			G_Image::loadJPG
+10205ac0	144	FUN_10205ac0	Global	1	FUN_10205b70			FUN_10205a50
+10205b70	403	FUN_10205b70	Global	1				FUN_10205ac0
+10205d10	179	FUN_10205d10	Global	1	FUN_10208fe0			G_Image::loadJPG
+10205dd0	206	FUN_10205dd0	Global	1	FUN_10205ea0,FUN_10209300			G_Image::loadJPG
+10205ea0	193	FUN_10205ea0	Global	1				FUN_10205dd0
+10205f70	158	FUN_10205f70	Global	1				G_Image::loadJPG
+10206010	113	FUN_10206010	Global	1				G_Image::loadJPG
+102060b0	163	FUN_102060b0	Global	1				FUN_10206160
+10206160	55	FUN_10206160	Global	0	FUN_102060b0			
+102061b0	74	FUN_102061b0	Global	1				G_Image::loadJPG
+10206200	16	FUN_10206200	Global	0	FUN_10209000			
+10206320	62	FUN_10206320	Global	1				FUN_10205970
+10206360	54	FUN_10206360	Global	1	FUN_10206540,FUN_102063a0			FUN_10206600
+102063a0	412	FUN_102063a0	Global	1	FUN_102096f0			FUN_10206360
+10206540	171	FUN_10206540	Global	1				FUN_10206360
+10206600	185	FUN_10206600	Global	0	FUN_102066c0,FUN_10206360			
+102066c0	469	FUN_102066c0	Global	1	FUN_102096f0			FUN_10206600
+102068a0	63	FUN_102068a0	Global	0				
+102068e0	243	FUN_102068e0	Global	0	FUN_102069e0			
+102069e0	256	FUN_102069e0	Global	3				FUN_102068e0,FUN_10207060,FUN_10208360
+10206ae0	123	FUN_10206ae0	Global	1	FUN_102083f0			FUN_10205970
+10206fc0	157	FUN_10206fc0	Global	1				FUN_10207060
+10207060	567	FUN_10207060	Global	0	FUN_102069e0,FUN_102073e0,FUN_10207f60,FUN_10207ab0,FUN_102077a0,FUN_10207490,FUN_10206fc0,FUN_102082c0,FUN_10207c20,FUN_102081d0			
+102073e0	166	FUN_102073e0	Global	1				FUN_10207060
+10207490	779	FUN_10207490	Global	1				FUN_10207060
+102077a0	770	FUN_102077a0	Global	1				FUN_10207060
+10207ab0	368	FUN_10207ab0	Global	1				FUN_10207060
+10207c20	827	FUN_10207c20	Global	1	FUN_10209040			FUN_10207060
+10207f60	609	FUN_10207f60	Global	1	FUN_10209020			FUN_10207060
+102081d0	230	FUN_102081d0	Global	1				FUN_10207060
+102082c0	149	FUN_102082c0	Global	1				FUN_10207060
+10208360	131	FUN_10208360	Global	0	FUN_102069e0			
+102083f0	48	FUN_102083f0	Global	1				FUN_10206ae0
+10208420	293	FUN_10208420	Global	1	FUN_102097f0,FUN_102097e0,FUN_102097a0	MSVCRT.DLL!sscanf,MSVCRT.DLL!getenv	JPEGMEM | %ld%c	FUN_10205970
+10208550	303	FUN_10208550	Global	4	FUN_10208680,FUN_102097a0			FUN_10208910,FUN_102088a0,FUN_102087f0,FUN_10208740
+10208680	18	FUN_10208680	Global	2				FUN_10208550,FUN_102086a0
+102086a0	157	FUN_102086a0	Global	2	FUN_10208680,FUN_102097a0			FUN_102087f0,FUN_10208740
+10208740	162	FUN_10208740	Global	0	FUN_10208550,FUN_102086a0			
+102087f0	174	FUN_102087f0	Global	0	FUN_10208550,FUN_102086a0			
+102088a0	105	FUN_102088a0	Global	0	FUN_10208550			
+10208910	105	FUN_10208910	Global	0	FUN_10208550			
+10208c30	157	FUN_10208c30	Global	0				
+10208e00	162	FUN_10208e00	Global	0				
+10208eb0	229	FUN_10208eb0	Global	1	FUN_102097b0			FUN_10208fa0
+10208fa0	49	FUN_10208fa0	Global	0	FUN_102097f0,FUN_102097b0,FUN_10208eb0			
+10208fe0	32	FUN_10208fe0	Global	2				FUN_10205a50,FUN_10205d10
+10209000	25	FUN_10209000	Global	1				FUN_10206200
+10209020	23	FUN_10209020	Global	1				FUN_10207f60
+10209040	23	FUN_10209040	Global	1				FUN_10207c20
+10209060	516	FUN_10209060	Global	1	FUN_102096f0,FUN_10209280			FUN_10209300
+10209280	125	FUN_10209280	Global	2				FUN_10209060,FUN_10209300
+10209300	482	FUN_10209300	Global	1	FUN_10209800,FUN_1020deb0,FUN_1020c5d0,FUN_1020b810,FUN_10209060,FUN_10209ed0,FUN_1020f280,FUN_1020cbc0,FUN_10209280,FUN_10209500,FUN_1020d8d0,FUN_1020c890,FUN_1020b1f0,FUN_1020d320			FUN_10205dd0
+10209500	118	FUN_10209500	Global	1				FUN_10209300
+10209580	334	FUN_10209580	Global	0				
+102096f0	12	FUN_102096f0	Global	3				FUN_102066c0,FUN_10209060,FUN_102063a0
+10209700	18	FUN_10209700	Global	3				FUN_1020cbc0,FUN_10209ed0,FUN_1020c890
+10209720	64	FUN_10209720	Global	1				FUN_1020d060
+10209760	32	FUN_10209760	Global	0				
+10209780	21	FUN_10209780	Global	1				FUN_1020f730
+102097a0	11	FUN_102097a0	Global	3		MSVCRT.DLL!malloc		FUN_10208420,FUN_10208550,FUN_102086a0
+102097b0	11	FUN_102097b0	Global	2		MSVCRT.DLL!free		FUN_10208eb0,FUN_10208fa0
+102097c0	7	FUN_102097c0	Global	0				
+102097d0	16	FUN_102097d0	Global	0				
+102097e0	3	FUN_102097e0	Global	1				FUN_10208420
+102097f0	1	FUN_102097f0	Global	2				FUN_10208fa0,FUN_10208420
+10209800	209	FUN_10209800	Global	1	FUN_102098e0			FUN_10209300
+102098e0	171	FUN_102098e0	Global	1				FUN_10209800
+10209a00	336	FUN_10209a00	Global	0				
+10209cf0	266	FUN_10209cf0	Global	0				
+10209e00	164	FUN_10209e00	Global	0				
+10209ed0	256	FUN_10209ed0	Global	1	FUN_10209700			FUN_10209300
+10209fe0	77	FUN_10209fe0	Global	0				
+1020a030	73	FUN_1020a030	Global	0	FUN_1020a6b0			
+1020a6b0	285	FUN_1020a6b0	Global	1				FUN_1020a030
+1020ae30	467	FUN_1020ae30	Global	0				
+1020b010	251	FUN_1020b010	Global	1				FUN_1020b110
+1020b110	222	FUN_1020b110	Global	0	FUN_1020b010			
+1020b1f0	57	FUN_1020b1f0	Global	1				FUN_10209300
+1020b790	120	FUN_1020b790	Global	0				
+1020b810	111	FUN_1020b810	Global	1				FUN_10209300
+1020bdb0	127	FUN_1020bdb0	Global	0				
+1020c5d0	121	FUN_1020c5d0	Global	1				FUN_10209300
+1020c890	136	FUN_1020c890	Global	1	FUN_10209700			FUN_10209300
+1020cb20	148	FUN_1020cb20	Global	0				
+1020cbc0	481	FUN_1020cbc0	Global	1	FUN_10209700			FUN_10209300
+1020d060	134	FUN_1020d060	Global	0	FUN_10209720			
+1020d320	363	FUN_1020d320	Global	1	FUN_1020d4a0			FUN_10209300
+1020d4a0	199	FUN_1020d4a0	Global	1				FUN_1020d320
+1020d770	342	FUN_1020d770	Global	0				
+1020d8d0	124	FUN_1020d8d0	Global	1	FUN_1020d950			FUN_10209300
+1020d950	199	FUN_1020d950	Global	1				FUN_1020d8d0
+1020deb0	297	FUN_1020deb0	Global	1	FUN_1020dfe0			FUN_10209300
+1020dfe0	147	FUN_1020dfe0	Global	1				FUN_1020deb0
+1020e2f0	271	FUN_1020e2f0	Global	0	FUN_1020e5f0,FUN_1020e400			
+1020e400	482	FUN_1020e400	Global	1				FUN_1020e2f0
+1020e5f0	350	FUN_1020e5f0	Global	1				FUN_1020e2f0
+1020ea60	137	FUN_1020ea60	Global	0	FUN_1020eaf0,FUN_1020f0c0,FUN_1020ef20			
+1020eaf0	1068	FUN_1020eaf0	Global	2				FUN_1020ea60,FUN_1020ef20
+1020ef20	319	FUN_1020ef20	Global	1	FUN_1020eaf0,FUN_1020f090,FUN_1020f060			FUN_1020ea60
+1020f060	44	FUN_1020f060	Global	1				FUN_1020ef20
+1020f090	35	FUN_1020f090	Global	1				FUN_1020ef20
+1020f0c0	404	FUN_1020f0c0	Global	1				FUN_1020ea60
+1020f280	142	FUN_1020f280	Global	1	FUN_1020f590,FUN_1020f6f0,FUN_1020f310			FUN_10209300
+1020f310	341	FUN_1020f310	Global	1	FUN_1020f470,FUN_1020f570			FUN_1020f280
+1020f470	243	FUN_1020f470	Global	1				FUN_1020f310
+1020f570	32	FUN_1020f570	Global	1				FUN_1020f310
+1020f590	311	FUN_1020f590	Global	2	FUN_1020f6d0			FUN_1020f280,FUN_1020f730
+1020f6d0	30	FUN_1020f6d0	Global	1				FUN_1020f590
+1020f6f0	63	FUN_1020f6f0	Global	2				FUN_1020f280,FUN_1020f730
+1020f730	302	FUN_1020f730	Global	0	FUN_1020f590,FUN_1020f6f0,FUN_10209780,FUN_1020f870			
+1020f870	97	FUN_1020f870	Global	1				FUN_1020f730
+102113f8	11	FUN_102113f8	Global	8		MSVCRT.DLL!free		FUN_10204c80,FUN_10211454,Catch@10205656,G_Image::loadTGA,G_Image::destruct,G_Image::save,FUN_10202f30,Unwind@10211978
+10211404	6	operator_new	MFC42.DLL	10				G_Image::loadJPG,G_Image::loadSCX,G_Image::loadPCX,G_Image::loadTGA,G_Image::construct,G_Image::loadDDS,G_Image::construct,FUN_10203d20
+10211410	6	ftol	MSVCRT.DLL	9				G_FColor::HSVtoRGB,G_Color::bilinear,FUN_10203460,G_Color::operator*=,G_Color::operator*=,G_Color::operator/=,G_Image::areaSample,FUN_10203700
+10211416	44	FUN_10211416	Global	1		MSVCRT.DLL!__dllonexit,MSVCRT.DLL!_onexit		FUN_10211442
+10211442	18	FUN_10211442	Global	20	FUN_10211416			G_Image::loadBuffer,G_Image::saveBuffer,G_Image::loadTGA,FUN_10205910,G_Image::loadDDS,FUN_10205950,FUN_10204ca0,G_FColor::YIQtoRGB
+10211454	28	FUN_10211454	Global	0	FUN_102113f8	MSVCRT.DLL!~type_info		
+10211470	104	FUN_10211470	Global	0	FUN_102114d8			
+102114d8	24	FUN_102114d8	Global	1	FUN_102114f0			FUN_10211470
+102114f0	81	FUN_102114f0	Global	1				FUN_102114d8
+1021154e	22	FUN_1021154e	Global	0		MSVCRT.DLL!terminate		
+1021156a	6	_CxxThrowException	MSVCRT.DLL	22				G_Image::loadJPG,Catch@10202c3f,G_Image::loadSCX,Catch@1020290c,Catch@10202a54,G_Image::loadBuffer,FUN_102057f0,Catch@10205656
+10211570	6	setjmp3	MSVCRT.DLL	1				G_Image::loadJPG
+1021157c	171	FUN_1021157c	Global	1		MSVCRT.DLL!malloc,MSVCRT.DLL!initterm,MSVCRT.DLL!free		entry
+10211627	157	entry	Global	0	FUN_102116e8,FUN_1021157c			
+102116c4	6	free	MSVCRT.DLL	1				FUN_102113f8
+102116ca	6	__dllonexit	MSVCRT.DLL	1				FUN_10211416
+102116d0	6	~type_info	MSVCRT.DLL::type_info	1				FUN_10211454
+102116dc	6	terminate	MSVCRT.DLL	1				FUN_1021154e
+102116e2	6	initterm	MSVCRT.DLL	1				FUN_1021157c
+102116e8	32	FUN_102116e8	Global	1		KERNEL32.DLL!DisableThreadLibraryCalls		entry
+10211730	8	Unwind@10211730	Global	0		RLMFC.DLL!~R_Exception		
+10211738	8	Unwind@10211738	Global	0		RLMFC.DLL!~R_Exception		
+10211740	10	Unwind@10211740	Global	0		RLMFC.DLL!~R_Exception		
+10211760	8	Unwind@10211760	Global	0		RLMFC.DLL!~R_Exception		
+10211768	8	Unwind@10211768	Global	0		RLMFC.DLL!~R_Exception		
+10211770	10	Unwind@10211770	Global	0		RLMFC.DLL!~R_Exception		
+10211790	8	Unwind@10211790	Global	0		RLMFC.DLL!~R_Exception		
+10211798	8	Unwind@10211798	Global	0		RLMFC.DLL!~R_Exception		
+102117b0	8	Unwind@102117b0	Global	0		RLMFC.DLL!~R_Exception		
+102117b8	8	Unwind@102117b8	Global	0		RLMFC.DLL!~R_Exception		
+102117d0	8	Unwind@102117d0	Global	0		RLMFC.DLL!~R_Exception		
+102117d8	8	Unwind@102117d8	Global	0		RLMFC.DLL!~R_Exception		
+102117f0	8	Unwind@102117f0	Global	0		RLMFC.DLL!~R_Exception		
+102117f8	8	Unwind@102117f8	Global	0		RLMFC.DLL!~R_Exception		
+10211800	10	Unwind@10211800	Global	0		RLMFC.DLL!~R_Exception		
+10211820	8	Unwind@10211820	Global	0		RLMFC.DLL!~R_Exception		
+10211828	8	Unwind@10211828	Global	0		RLMFC.DLL!~R_Exception		
+10211830	10	Unwind@10211830	Global	0		RLMFC.DLL!~R_Exception		
+10211850	8	Unwind@10211850	Global	0		RLMFC.DLL!~R_Exception		
+10211870	8	Unwind@10211870	Global	0		RLMFC.DLL!~R_Exception		
+10211878	8	Unwind@10211878	Global	0		RLMFC.DLL!~R_Exception		
+10211880	10	Unwind@10211880	Global	0		RLMFC.DLL!~R_Exception		
+1021188a	8	Unwind@1021188a	Global	0		RLMFC.DLL!~R_Exception		
+10211892	8	Unwind@10211892	Global	0		RLMFC.DLL!~R_Exception		
+102118b0	8	Unwind@102118b0	Global	0		RLMFC.DLL!~R_Exception		
+102118b8	8	Unwind@102118b8	Global	0		RLMFC.DLL!~R_Exception		
+102118c0	10	Unwind@102118c0	Global	0		RLMFC.DLL!~R_Exception		
+102118ca	8	Unwind@102118ca	Global	0		RLMFC.DLL!~R_Exception		
+102118d2	8	Unwind@102118d2	Global	0		RLMFC.DLL!~R_Exception		
+102118f0	11	Unwind@102118f0	Global	0		RLMFC.DLL!~R_Exception		
+102118fb	11	Unwind@102118fb	Global	0		RLMFC.DLL!~R_Exception		
+10211906	10	Unwind@10211906	Global	0		RLMFC.DLL!~R_Exception		
+10211920	8	Unwind@10211920	Global	0		RLMFC.DLL!~R_Exception		
+10211928	8	Unwind@10211928	Global	0		RLMFC.DLL!~R_Exception		
+10211930	8	Unwind@10211930	Global	0		RLMFC.DLL!~R_Exception		
+10211938	8	Unwind@10211938	Global	0		RLMFC.DLL!~R_Exception		
+10211940	8	Unwind@10211940	Global	0		RLMFC.DLL!~R_Exception		
+10211948	8	Unwind@10211948	Global	0		RLMFC.DLL!~R_Exception		
+10211950	8	Unwind@10211950	Global	0		RLMFC.DLL!~R_Exception		
+10211958	8	Unwind@10211958	Global	0		RLMFC.DLL!~R_Exception		
+10211960	8	Unwind@10211960	Global	0		RLMFC.DLL!~R_Exception		
+10211968	8	Unwind@10211968	Global	0		RLMFC.DLL!~R_Exception		
+10211970	8	Unwind@10211970	Global	0		RLMFC.DLL!~R_Exception		
+10211978	11	Unwind@10211978	Global	0	FUN_102113f8			
+10211983	8	Unwind@10211983	Global	0		RLMFC.DLL!~R_Exception		
+1021198b	8	Unwind@1021198b	Global	0		RLMFC.DLL!~R_Exception		
+10211993	8	Unwind@10211993	Global	0		RLMFC.DLL!~R_Exception		
+102119b0	8	Unwind@102119b0	Global	0		RLMFC.DLL!~R_Exception		
+102119b8	8	Unwind@102119b8	Global	0		RLMFC.DLL!~R_Exception		
+102119c0	10	Unwind@102119c0	Global	0		RLMFC.DLL!~R_Exception		
+102119ca	8	Unwind@102119ca	Global	0		RLMFC.DLL!~R_Exception		
+102119d2	8	Unwind@102119d2	Global	0		RLMFC.DLL!~R_Exception		
+102119f0	8	Unwind@102119f0	Global	0		RLMFC.DLL!~R_Exception		
+102119f8	8	Unwind@102119f8	Global	0		RLMFC.DLL!~R_Exception		
+10211a00	8	Unwind@10211a00	Global	0		RLMFC.DLL!~R_Exception		
+10211a08	8	Unwind@10211a08	Global	0		RLMFC.DLL!~R_Exception		
+10211a10	8	Unwind@10211a10	Global	0		RLMFC.DLL!~R_Exception		
+10211a18	8	Unwind@10211a18	Global	0		RLMFC.DLL!~R_Exception		
+10211a20	8	Unwind@10211a20	Global	0		RLMFC.DLL!~R_Exception		
+10211a28	8	Unwind@10211a28	Global	0		RLMFC.DLL!~R_Exception		
+10211a30	8	Unwind@10211a30	Global	0		RLMFC.DLL!~R_Exception		
+10211a38	8	Unwind@10211a38	Global	0		RLMFC.DLL!~R_Exception		
+10211a40	8	Unwind@10211a40	Global	0		RLMFC.DLL!~R_Exception		
+10211a48	8	Unwind@10211a48	Global	0		RLMFC.DLL!~R_Exception		
+10211a50	8	Unwind@10211a50	Global	0		RLMFC.DLL!~R_Exception		
+10211a58	8	Unwind@10211a58	Global	0		RLMFC.DLL!~R_Exception		
+10211a70	8	Unwind@10211a70	Global	0		RLMFC.DLL!~R_Exception		
+10211a78	8	Unwind@10211a78	Global	0		RLMFC.DLL!~R_Exception		
+10211a80	10	Unwind@10211a80	Global	0		RLMFC.DLL!~R_Exception		

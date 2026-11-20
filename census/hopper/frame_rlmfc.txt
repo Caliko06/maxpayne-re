@@ -1,0 +1,39 @@
+# Max Payne frame chain inside the runtime library (rlmfc.dll): 0x10026b90 and 0x10027640 sit between the engine's frame function and the driver's swapBuffer. What they do, what they call, and whether the update of the world happens above or below them.
+analysis 0 s
+
+==== 0x10026b90 exp_?getPerformanceCounter@R_System@@QBE_JXZ (asked 0x10026b90)
+    esp = esp - 0x8;
+    if (this[0x61b] != 0x0) {
+            QueryPerformanceCounter(&var_8);
+            eax = var_8;
+    }
+    else {
+            eax = timeGetTime();
+    }
+    return rax;
+
+callers: 0x1002765b in 0x10027640 exp_?getAge@R_Timer@@QBEMXZ; 0x100276ac in 0x100276a0 exp_?setAge@R_Timer@@QAEXM@Z
+callees: 0x10067b32 0x10067cda
+
+==== 0x10027640 exp_?getAge@R_Timer@@QBEMXZ (asked 0x10027640)
+    esp = esp - 0x14;
+    decomp_var_14 = esi;
+    esi = this;
+    if (esi[0x14] != 0x0) {
+            asm { fld        dword [esi+0x10] };
+    }
+    else {
+            eax = public: __int64 __thiscall R_System::getPerformanceCounter(*class R_System * Sys);
+            eax = eax - *esi;
+            ecx = *class R_System * Sys;
+            asm { fild       qword [esp+0x14+var_10] };
+            asm { fstp       qword [esp+0x14+var_8] };
+            asm { fild       qword [esp+0x14+var_10] };
+            asm { fdivr      qword [esp+0x10+var_8] };
+    }
+    return st0;
+
+callers: 0x100276f9 in 0x100276f0 exp_?sample@R_Timer@@QAEMXZ; 0x1002774a in 0x10027740 exp_?pause@R_Timer@@QAEXXZ
+callees: 0x10026b70 0x10026b90
+
+DONE 0 s, 2 procedures, 0 data

@@ -1,0 +1,267 @@
+{
+ "goal": "Max Payne (PC 2001, v1.05) completo en el navegador para cualquiera que abra el link: datos del juego hospedados por nosotros, Chrome y Safari de escritorio, 50+ fps sin frames de más de 33 ms (GATE50, carga incluida), como nfsu.cc. :5181 es el banco; el producto es la dirección pública. Nada se sube sin el go explícito del OWNER para esa subida (reabierto 2026-11-19: 'Va, cambiemos y modifiquemos todo para que SÍ sea publicable').",
+ "updated": "2026-11-19 19:25",
+ "rule": "state: UNVERIFIED (no evidence), FIXED (fixed in code, still to play or measure), VERIFIED (a run or a play proves it), FAILS. Changes only with evidence (commit, log, file or screenshot). Next task = the first row not VERIFIED; a row whose who names the OWNER waits for his verdict. Desde 2026-11-19 la tarea siguiente es la primera fila no VERIFIED del step 4 (Público); las filas de GATE50 siguen siendo el banco local y no bloquean publicar. `restarted` = una dirección que el OWNER reabrió, con su frase y fecha; `rejected` = una que sigue cerrada. NOCHE50 (OWNER 2026-11-19): cada hito tiene 1 métrica, archivos permitidos y 75 min (tools/rails.json); tools/audit_rails.py mide, un auditor ciego (bec) dice ACCEPT/REJECT; un reintento y se descarta.",
+ "baseline": {
+  "time": "2026-11-18",
+  "commit": "648f5059",
+  "shot": "shots/g60_1118_progress.jpg",
+  "note": "g60_1118: 1049 frames > 33.4 ms of 384847, 153 s under 50 fps (out/g60_1118/gate50_causes.txt)"
+ },
+ "steps": [
+  {
+   "n": 1,
+   "name": "NOCHE50 ronda 1 (00:45-02:15): picos de guardado, bullet time, carga y paquete local",
+   "checks": [
+    {
+     "do": "S guardado: frames > 33.4 ms al guardar ≤ 3 (base 49-50). Guardia: la miniatura sigue en el menú de carga",
+     "done": false,
+     "state": "VERIFIED",
+     "ev": "Auditor ciego ACCEPT en el reintento. Miniatura con promedio por bloques (host/fast.c, solo el llamador 0x410f13): el escalado pasó de 18.1 ms a 0.5 ms; frames de guardado 22.9/39.8 -> 7.6/7.1 ms, ninguno > 33.4 (3 guardados, evidencia delgada). No es idéntica bit a bit. Queda la escritura del save (13-25 ms, host/files.c). Se confirma en la cadena de 25 mapas. Confirmado en cadena: ver fila Cadena.",
+     "who": "bec · g50-save · 75 min (Codex sin cuota hasta 02:20)",
+     "shot": "shots/s_thumb.png"
+    },
+    {
+     "do": "B bullet time: frames > 33.4 ms al activar ≤ 3 y 0 segundos < 50 fps en juego puro (base 31-76). Guardia: el bullet time sigue frenando el mundo",
+     "done": false,
+     "state": "VERIFIED",
+     "ev": "Auditor ciego (bec) ACCEPT. host/dsound.c:595: el mezclador bloquea 256 frames de audio, no 4096 (93 ms) que SetFrequency del bullet time esperaba. part1_level1: segundos < 50 fps en juego 7 -> 0, frames lentos 'código del juego' 24 -> 0, sin cortes de audio. Se confirma en la cadena de 25 mapas. Confirmado en cadena: ver fila Cadena.",
+     "who": "cdx angel · g50-bt · 75 min desde 02:22",
+     "shot": "shots/b_after.png"
+    },
+    {
+     "do": "L1 carga: 0 frames > 250 ms (base 65-71). Guardia: la carga no tarda más de +15 %",
+     "done": false,
+     "state": "FAILS",
+     "ev": "Meta no cumplida tras el reintento (queda 1 frame de 282 ms de código del juego). Auditor ciego ACCEPT como mejora parcial, en main: congelones > 250 ms 16 -> 1, carga 11.0 -> 9.6 s, mismo trabajo subido. Frames > 33.4 en carga 51 -> 91 (la carga se parte en frames de ~100 ms): eso es L2.",
+     "who": "cdx angel · g50-load · 75 min desde 02:22",
+     "shot": "shots/l1_postfade.png"
+    },
+    {
+     "do": "W1 paquete local: build/public con piezas gzip ≤ 70 % (gzip da 65.5 % como máximo, census) del tamaño, WebGL 2 y WebGPU llegan al menú (capturas)",
+     "done": true,
+     "state": "VERIFIED",
+     "ev": "Auditor ciego ACCEPT. build/public: piezas gzip 1513 MB de 2293 MB = 0.660; WebGL 2 (ANGLE Metal) y WebGPU (Metal) llegan al menú. Merge en main.",
+     "who": "bec · live-web · 75 min (Codex sin cuota hasta 02:20)",
+     "shot": "shots/w1_webgl2.png"
+    },
+    {
+     "do": "Tabla de compresión gzip/brotli/zstd por archivo (census/compression.tsv)",
+     "done": true,
+     "state": "VERIFIED",
+     "ev": "census/compression.tsv (11d2c53): 2156 MB -> gzip 1412 / brotli 1266 / zstd19 1250 MB; x_level*.ras ya vienen comprimidos (~0.93)",
+     "who": "bec · 90 min"
+    },
+    {
+     "do": "Auditoría ciega de los 4 hitos: ACCEPT/REJECT con una línea de por qué",
+     "done": true,
+     "state": "VERIFIED",
+     "ev": "bec y Sonnet auditaron cada hito a ciegas: ACCEPT W1, W2, B, L1 (parcial), S (en reintento); C, C2, G, L2 no movieron la métrica y se soltaron.",
+     "who": "auditor ciego de otro proveedor: bec juzga lo de Codex, Claude Sonnet juzga lo de bec"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "name": "NOCHE50 ronda 2 (02:15-03:45): reintentos y siguientes causas",
+   "checks": [
+    {
+     "do": "Reintento único de cada hito rechazado, con la línea del auditor",
+     "done": true,
+     "state": "VERIFIED",
+     "ev": "S fue el único reintento (1 guardado medido no probaba nada; --savems en ghost): ACCEPT. L2 y C2 se soltaron sin reintento por ir peor o mover 0.2 ms.",
+     "who": "cdx angel · 60 min"
+    },
+    {
+     "do": "L2 carga: frames > 33.4 ms en carga ≤ 25 % de la base (789)",
+     "done": false,
+     "state": "FAILS",
+     "ev": "Codex d3c1069 (no unido): presentar más seguido durante la carga empeora: frames > 33.4 en carga 75 -> 68 (meta <= 37), > 250 ms 0 -> 4, carga 8.1 -> 12.8 s. Descartado sin reintento: el mismo camino no da. rea/map/load_checkpoint_cadence.md",
+     "who": "cdx angel · g50-load · 75 min"
+    },
+    {
+     "do": "C cómic: 0 frames > 33.4 ms por subida de texturas (base 24)",
+     "done": false,
+     "state": "FAILS",
+     "ev": "Diagnóstico (bec, 53ff5b6): subir la página cuesta 0.55-0.60 ms; el frame lento es decodificar la página en el hilo del juego (15-20 ms) + leer el archivo (2.5-7.6 ms). Base en la ventana: 3 frames. Se pasa a G2 (host/fast.c) y a la lectura anticipada (host/files.c). rea/map/comic_upload.md C2 (Codex, 9f61879 en slice/g50-comic, NO unido): el muestreo de color nativo de grphmfc 0x1020d0f0 ahorra 0.2 ms por página (0.68 -> 0.47); frames lentos del cómic 4 -> 3. No vale 76 líneas; descartado sin reintento. Lo que queda en los cómics es vsync perdido y lectura.",
+     "who": "cdx angel · g50-comic · 75 min"
+    },
+    {
+     "do": "G código del juego: las 3 funciones más caras en los frames lentos, con su arreglo (base 52-93)",
+     "done": false,
+     "state": "FAILS",
+     "ev": "Diagnóstico G1 (bec, 768bdf4): en 240 s de part1_level1 hubo 0 frames de la clase 'código del juego'; el costo extra está repartido (la función más cara suma 0.9 ms: skinmesh fill vertices 0x10401460). Sin culpable único: no se gasta Codex esta noche. rea/map/g50_game_cpu.md, tools/perf_join.py Actualización 02:50: B bajó 'código del juego' 24 -> 0 en part1_level1; buena parte de G era el candado del mezclador de sonido.",
+     "who": "cdx angel · g50-game · 75 min"
+    },
+    {
+     "do": "W2 carga en frío con 80 ms de latencia simulada + prefetch: segundos hasta el menú, antes/después",
+     "done": true,
+     "state": "VERIFIED",
+     "ev": "Auditor ciego ACCEPT. Menú en frío a 80 ms RTT: 33.4 s -> 19.2 s (0.57). Prefetch de 166 archivos chicos del arranque (2.6 MB). n=1 por corrida. Merge en main.",
+     "who": "cdx angel · live-web · 75 min",
+     "shot": "shots/w2_after.png"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "name": "NOCHE50 cierre (03:45-07:30): unir, medir todo, dejar listo",
+   "checks": [
+    {
+     "do": "Unir a main solo lo ACCEPT",
+     "done": true,
+     "state": "VERIFIED",
+     "ev": "En main: W1, W2, S, B, L1 parcial (todos con ACCEPT del auditor ciego). Fuera: C2, L2 (no movían la métrica), G (sin culpable único).",
+     "who": "orchestrator"
+    },
+    {
+     "do": "Cadena de 25 mapas con GATE50: frames > 33.4 ms y segundos < 50 fps vs base 1049 / 153",
+     "done": true,
+     "state": "PARTIAL",
+     "ev": "Corrida 2 (05:31-07:41, out/n50_chain): 21/25 mapas en 7800 s (tope; faltan part3_level3-7), 7 saltos forzados por el ghost, 0 atorones. vs base g60_1118 (25 mapas): juego lento 260 -> 149 frames (por hora de juego 178 -> 76); s<50 fps en juego puro 3 -> 0; guardado 50 -> 22; bullet time activo 76 -> 10; código del juego 67 -> 25; cómic upload 24 -> 8; carga >250 ms 65 -> 6 (L1). PEOR: frames de carga >33.4 789 -> 900 (L1 parte la carga en frames de ~100 ms). Total >33.4 1049 -> 1049 (misma cifra, menos mapas), s<50 fps 153 -> 121. GATE50 aún no pasa: la carga es lo que queda.",
+     "who": "orchestrator · ~2 h",
+     "shots": [
+      "shots/chain_part3_level2.jpg"
+     ]
+    },
+    {
+     "do": "Plan con capturas antes/después y HANDOFF",
+     "done": true,
+     "state": "VERIFIED",
+     "ev": "Capturas en web/plan/shots (w1, w2, s, b, l1, cadena).",
+     "who": "orchestrator"
+    },
+    {
+     "do": "V vsync perdido (56): solo medible en ventana real, queda para que lo veas tú",
+     "done": false,
+     "state": "UNVERIFIED",
+     "ev": "",
+     "who": "OWNER"
+    },
+    {
+     "do": "Juegas el build unido y das Va / No va",
+     "done": false,
+     "state": "UNVERIFIED",
+     "ev": "",
+     "who": "OWNER"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "name": "Público en internet (OWNER 2026-11-19: 'Va, cambiemos y modifiquemos todo para que SÍ sea publicable')",
+   "checks": [
+    {
+     "do": "Sin servidor propio: archivos estáticos más headers de respuesta (COOP/COEP/CORP y `/` -> `index.html`). Done when `curl -I` desde el dominio muestra los tres headers y `crossOriginIsolated` es true.",
+     "done": false,
+     "state": "FIXED",
+     "ev": "Local: `build/public-cdn/_headers`, `tools/static_server.py` y `tools/serve.py` mandan los mismos tres; `web/index.html` se niega a arrancar sin `crossOriginIsolated`. Reglas de zona en `docs/hosting.md`, sin aplicar todavía.",
+     "who": "orchestrator"
+    },
+    {
+     "do": "Saves en el navegador del visitante (OPFS): sobreviven recarga y nunca van al servidor.",
+     "done": false,
+     "state": "FIXED",
+     "ev": "`web/opfs.js` (save por el worker, escritura detrás del juego) y WORKLIST #21 (Load Game tras recarga, 2026-11-05) en local. Falta probarlo en el origen público.",
+     "who": "orchestrator"
+    },
+    {
+     "do": "Paquete público de datos: `game/` leído con Range, wasm en brotli, arte; un subidor por pasadas que falla si un archivo no tiene pass.",
+     "done": false,
+     "state": "FIXED",
+     "ev": "`tools/build_public.py --cdn` + `tools/upload_r2.py maxpayne --dry-run` (2026-11-19, reconstruido con web/notice.html): 833 objetos, 2,51 GB = juego 2.293 MB en 692, arte 89 MB en 114, página 0,8 MB en 26 (con notice.html), wasm 125 MB -> 14,8 MB en 1; 39 archivos se quedan locales (37 twins .gz, _headers, el .br).",
+     "who": "orchestrator"
+    },
+    {
+     "do": "Cara pública: el launcher como entrada, Controles en Opciones, aviso de fan project y respuesta a takedown.",
+     "done": false,
+     "state": "PARTIAL",
+     "ev": "Aviso en `web/notice.html`, enlazado desde el pie del launcher y la pantalla de carga (2026-11-19); los controles ya viven en Opciones > Controles (`web/launcher-controls.js`). Falta: correo de contacto para takedown y verlo en la página publicada.",
+     "who": "orchestrator"
+    },
+    {
+     "do": "Hosting live en una dirección pública: bucket R2 `maxpayne`, dominio propio, reglas de zona, sin puerta de correo.",
+     "done": true,
+     "state": "VERIFIED",
+     "ev": "2026-11-19: la app de Cloudflare Access 'Max Payne (private)' (PIN al correo del OWNER) se borró a su pedido, así que el link abre sin correo. Pasada anónima: `curl` a https://maxpayne.cc/ 200 con COOP/COEP/CORP, `/out/maxpayne.wasm` 200 `br`, Range 0-1023 de `/game/x_data.ras` 206, y `tools/webgate.mjs https://maxpayne.cc/` llega al menú con captura (build/webgate-public.png) sin credenciales. Respaldo de la app y su política en `out/access-backup/`. Sin puertas: `security_level` essentially_off, `browser_check` off, sin WAF, sin page rules; `/` y Range 206 con UA de curl, python-requests, Googlebot e iPhone. Un run con `70:Enter` entró al Tutorial y se jugó (build/webgate-public2.png).",
+     "who": "OWNER + orchestrator"
+    },
+    {
+     "do": "Primera partida rápida: medir del link al menú y del menú a jugar en una línea real.",
+     "done": false,
+     "state": "UNVERIFIED",
+     "ev": "Local frío al menú 19,2 s (W2). Público sin medir: un boot son ~339 Range más 166 prefetch (`web/prefetch.json`).",
+     "who": "orchestrator"
+    },
+    {
+     "do": "Corre en máquinas de otras personas: Windows Chrome/Edge y Safari de escritorio, con fps.",
+     "done": false,
+     "state": "UNVERIFIED",
+     "ev": "Solo medido en la Mac mini M4 (Chrome headless y Safari local). Windows, otras GPUs y Firefox: UNKNOWN.",
+     "who": "orchestrator"
+    },
+    {
+     "do": "Launch: cualquiera abre el link y juega (la forma de nfsu.cc).",
+     "done": false,
+     "state": "UNVERIFIED",
+     "ev": "",
+     "who": "OWNER + orchestrator"
+    }
+   ]
+  }
+ ],
+ "restarted": [
+  {
+   "what": "Subir el juego a la red (hosting público de datos y motor)",
+   "when": "2026-11-19",
+   "src": "OWNER: 'Va, cambiemos y modifiquemos todo para que SÍ sea publicable'",
+   "before": "Rechazado el mismo día: 'Dejamos de lado el subirlo a la red'; el paquete quedaba local, solo en esta Mac.",
+   "now": "step 4"
+  }
+ ],
+ "rejected": [
+  {
+   "what": "Escena 3D del launcher y arte generado",
+   "when": "2026-11-10",
+   "src": "d9dd67b",
+   "instead": "—"
+  },
+  {
+   "what": "Fidelidad de ghost y RE #7-#10, #12-#14; pases de cobertura y nombres",
+   "when": "2026-11-05",
+   "src": "WORKLIST H2",
+   "instead": "—"
+  },
+  {
+   "what": "Slider de FOV libre",
+   "when": "2026-11-05",
+   "src": "rea/map/look_move.md:50",
+   "instead": "—"
+  }
+ ],
+ "details": [],
+ "rounds": [
+  {
+   "n": 1,
+   "time": "2026-11-18",
+   "shot": "shots/g60_1118_progress.jpg",
+   "note": "Base g60_1118 (25 mapas)"
+  },
+  {
+   "n": 2,
+   "time": "2026-11-19 00:45",
+   "note": "NOCHE50: agentes reiniciados con rieles (1 métrica, 75 min, auditor ciego)"
+  },
+  {
+   "n": 3,
+   "time": "2026-11-19 00:50",
+   "note": "Codex angel al 94 % de su ventana de 5 h (se reinicia 02:20): S y W1 pasan a bec ya; B y L1 arrancan 02:22"
+  },
+  {
+   "n": 4,
+   "time": "2026-11-19 03:14",
+   "note": "Cadena de 25 mapas con GATE50 sobre main unido"
+  }
+ ],
+ "refs": []
+}

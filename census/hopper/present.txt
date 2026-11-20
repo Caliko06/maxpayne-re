@@ -1,0 +1,34 @@
+# What the driver does to submit one frame: 0x1042857c (the engine's EndScene entry in the last run log) and 0x1042a491 (swapBuffer). Does it present every call, does it reset or re-create the device, and what device state survives a frame.
+analysis 0 s
+
+==== 0x10428560 sub_10428560 (asked 0x1042857c)
+    esp = esp - 0x4;
+    esi = ecx;
+    if (esi[0x121] != 0x0) {
+            eax = esi[0x34];
+            esp = esp - 0x4;
+            if ((*(*eax + 0x8c))(eax) != 0x0) {
+                    (*public: void __cdecl P_Device::verbose(char const *,...))((*public: static class P_Device * __fastcall P_Driver::getDevice(void))("P_D3D::endScene - EndScene failed\n"));
+                    esp = (esp - 0x8) + 0x8;
+            }
+            esi[0x121] = 0x0;
+    }
+    eax = esi[0x47];
+    if (eax != 0x0) {
+            edx = eax[0xe];
+            ecx = eax[0xd];
+            eax = *private: static int P_Statistics::m_outputTriangleBufferCount;
+            **private: static int P_Statistics::m_outputTriangleBufferCount = edx + ecx;
+    }
+    esi = esi[0x46];
+    if (esi != 0x0) {
+            ecx = esi[0xe];
+            eax = esi[0xd];
+            **private: static int P_Statistics::m_outputVertexBufferCount = ecx + eax;
+    }
+    return eax;
+
+callers: 0x1040155a in 0x1040155a exp_?DRV_endScene@P_D3D@@UAEXXZ
+callees: 0x104946bb 0x104946bf
+
+DONE 0 s, 1 procedures, 0 data

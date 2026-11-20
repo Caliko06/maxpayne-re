@@ -1,0 +1,57 @@
+# Max Payne frame boundary: who calls the driver's P_D3D::swapBuffer (0x1042a491) and what the engine runs between the end of its update and that call. The caller it names is the engine function that closes a frame, so the whole update sits above it. This is the anchor for separating simulation from rendering.
+analysis 0 s
+
+==== 0x1042a420 sub_1042a420 (asked 0x1042a491)
+    var_C = *0x0;
+    *0x0 = &var_C;
+    esp = esp - 0x34;
+    esi = ecx;
+    if (esi[0x3d] != 0x0) {
+            var_28 = 0x0;
+            var_24 = 0x0;
+            var_20 = (*public: unsigned int __thiscall P_Driver::getWidth(void)const)();
+            (*public: unsigned int __thiscall P_Driver::getHeight(void)const)();
+            esi = esi[0x34];
+            eax = *esi;
+            esp = esp - 0x14;
+            eax = (eax[0xf])(esi, 0x0, &var_28, 0x0, 0x0);
+    }
+    else {
+            esi = esi[0x34];
+            esp = esp - 0x14;
+            eax = (*(*esi + 0x3c))(esi, 0x0, 0x0, 0x0, 0x0);
+    }
+    if (eax == 0x88760868) {
+            eax = (*public: static class P_Device * __fastcall P_Driver::getDevice(void))("P_D3D::swapBuffer - device temporarily lost\n");
+            eax = (*public: void __cdecl P_Device::verbose(char const *,...))(eax);
+            esp = (esp - 0x8) + 0x8;
+            *0x0 = var_C;
+            &var_1C = ebp;
+    }
+    else {
+            if (eax != 0x0) {
+                    esp = esp - 0x8;
+                    eax = public: __thiscall P_DriverException_DirectDrawError::P_DriverException_DirectDrawError(&var_24, "swapBuffer:Present", eax);
+                    esi = eax;
+                    if ((0x1 & *(int8_t *)byte_104884cc) == 0x0) {
+                            *(int8_t *)byte_104884cc = *(int8_t *)byte_104884cc | 0x1;
+                            (*protected: __thiscall R_Exception::R_Exception(void))();
+                            *dword_104884d0 = 0x104630b4;
+                            sub_10455942(0x104016a4);
+                            esp = (esp - 0x4) + 0x4;
+                    }
+                    (*public: class R_Exception & __thiscall R_Exception::operator=(class R_Exception const &))(esi);
+                    var_14 = dword_104884d0;
+                    eax = _CxxThrowException(&var_14, 0x10469b90);
+            }
+            else {
+                    *0x0 = var_C;
+                    &var_1C = ebp;
+            }
+    }
+    return eax;
+
+callers: 0x10401d07 in 0x10401d07 exp_?DRV_swapBuffer@P_D3D@@UAEXABUtagRECT@@@Z
+callees: 0x10401384 0x10455910 0x10455942 0x104945ff 0x10494603 0x104946bb 0x104946bf 0x104947ef 0x104947f7
+
+DONE 0 s, 1 procedures, 0 data

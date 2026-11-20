@@ -1,0 +1,158 @@
+tabla	objeto	campo	valor	src
+W	beretta	shoot	shoot_beretta	x_data/310_beretta.txt:17
+W	beretta	shoot_wav	weapons\shoot_beretta.wav	x_data/235_weapons.txt:120
+W	beretta	reload	reload_beretta	x_data/310_beretta.txt:26 x_data/235_weapons.txt:398
+W	beretta	empty	NINGUNO (SHOOTEMPTY sin mensajes)	x_data/310_beretta.txt:29
+W	beretta	shell	case_9mm f1 -> Casehit_generic	x_data/310_beretta.txt:20 x_data/63_case_9mm.txt:19 x_data/235_projectiles.txt:2073
+W	beretta	muzzle	Muzzle_Beretta -> weapons\beretta.rps	x_data/310_beretta.txt:19 x_data/38_particles.txt:3823 x_data/38_particles.txt:3834
+W	beretta	tracer	tracer_9mm_lod0/1/2.kf2 (visible >45 m/s)	x_data/63_bullet_beretta.txt:10 x_data/63_bullet_beretta.txt:36 x_data/3_projectiles.h:9
+W	beretta	decal	bullethit_generic	x_data/63_bullet_beretta.txt:20
+W	beretta	charhit	blood_bullet_small	x_data/63_bullet_beretta.txt:23
+W	berettadual	shoot	shoot_beretta (char anim x2)	x_data/161_default_skeleton.txt:1367
+W	berettadual	shoot2	shoot_beretta (left hand f8)	x_data/161_default_skeleton.txt:1369
+W	berettadual	shoot_wav	weapons\shoot_beretta.wav	x_data/235_weapons.txt:120
+W	berettadual	reload	reload_beretta f5,f15,f17	x_data/310_berettadual.txt:24 x_data/235_weapons.txt:398
+W	berettadual	empty	NINGUNO (SHOOTEMPTY sin mensajes)	x_data/310_berettadual.txt:30
+W	berettadual	shell	case_9mm f1 -> Casehit_generic	x_data/310_berettadual.txt:18 x_data/63_case_9mm.txt:19
+W	berettadual	muzzle	Muzzle_Beretta -> weapons\beretta.rps (R f0, L f8)	x_data/161_default_skeleton.txt:1368 x_data/38_particles.txt:3834
+W	berettadual	tracer	tracer_9mm_lod0/1/2.kf2	x_data/63_bullet_berettadual.txt:10
+W	berettadual	decal	bullethit_generic	x_data/63_bullet_berettadual.txt:20
+W	berettadual	charhit	blood_bullet_small	x_data/63_bullet_berettadual.txt:23
+W	deserteagle	shoot	shoot_deserteagle	x_data/310_deserteagle.txt:21
+W	deserteagle	shoot_wav	weapons\Shoot_Deserteagle.wav	x_data/235_weapons.txt:141
+W	deserteagle	reload	reload_deserteagle	x_data/310_deserteagle.txt:30 x_data/235_weapons.txt:419
+W	deserteagle	empty	NINGUNO (SHOOTEMPTY sin mensajes)	x_data/310_deserteagle.txt:34
+W	deserteagle	shell	case_50cal f1 -> Casehit_50cal	x_data/310_deserteagle.txt:24 x_data/63_case_50cal.txt:19 x_data/235_projectiles.txt:2102
+W	deserteagle	muzzle	Muzzle_Deserteagle -> weapons\deserteagle.rps	x_data/310_deserteagle.txt:23 x_data/38_particles.txt:3849
+W	deserteagle	tracer	tracer_50cal_lod0/1.kf2	x_data/63_bullet_deserteagle.txt:10
+W	deserteagle	decal	bullethit_large	x_data/63_bullet_deserteagle.txt:19
+W	deserteagle	charhit	blood_bullet	x_data/63_bullet_deserteagle.txt:22
+W	sawedshotgun	shoot	shoot_sawedshotgun	x_data/310_sawedshotgun.txt:22
+W	sawedshotgun	shoot_wav	weapons\Shoot_SawedShotgun.wav	x_data/235_weapons.txt:204
+W	sawedshotgun	reload	reload_sawedshotgun f0 + Case_12ga_sawed x2	x_data/310_sawedshotgun.txt:32 x_data/235_weapons.txt:461 x_data/310_sawedshotgun.txt:33
+W	sawedshotgun	empty	NINGUNO (SHOOTEMPTY sin mensajes)	x_data/310_sawedshotgun.txt:36
+W	sawedshotgun	shell	case_12ga_sawed -> case_12ga_ricochet (en RELOAD f0)	x_data/63_case_12ga_sawed.txt:19 x_data/235_projectiles.txt:2144
+W	sawedshotgun	muzzle	muzzle_sawedshotgun -> weapons\sawedshotgun.rps	x_data/310_sawedshotgun.txt:23 x_data/38_particles.txt:3864
+W	sawedshotgun	tracer	tracer_12ga_lod0/1.kf2	x_data/63_bullet_sawedshotgun.txt:11
+W	sawedshotgun	decal	bullethit_shotgun / bullethit_shotgun_group	x_data/63_bullet_sawedshotgun.txt:20
+W	sawedshotgun	charhit	blood_bullet_small	x_data/63_bullet_sawedshotgun.txt:23
+W	pumpshotgun	shoot	shoot_pumpshotgun	x_data/310_pumpshotgun.txt:20
+W	pumpshotgun	shoot_wav	weapons\Shoot_PumpShotgun.wav	x_data/235_weapons.txt:225
+W	pumpshotgun	shoot2	Shoot_PumpShotgun_Cock f14 (char anim)	x_data/179_max_payne.txt:1232
+W	pumpshotgun	shoot2_wav	weapons\Shoot_PumpShotgun_Cock.wav	x_data/235_weapons.txt:246
+W	pumpshotgun	reload	Reload_PumpShotgun f17 (char anim), 3 variantes	x_data/179_max_payne.txt:766 x_data/235_weapons.txt:482
+W	pumpshotgun	empty	NINGUNO (SHOOTEMPTY sin mensajes)	x_data/310_pumpshotgun.txt:30
+W	pumpshotgun	shell	Case_12ga f16 -> case_12ga_ricochet	x_data/310_pumpshotgun.txt:25 x_data/63_case_12ga.txt:19
+W	pumpshotgun	muzzle	Muzzle_pumpshotgun -> weapons\pumpshotgun.rps	x_data/310_pumpshotgun.txt:21 x_data/38_particles.txt:3879
+W	pumpshotgun	tracer	tracer_12ga_lod0/1.kf2	x_data/63_bullet_pumpshotgun.txt:10
+W	pumpshotgun	decal	bullethit_shotgun / bullethit_shotgun_group	x_data/63_bullet_pumpshotgun.txt:19
+W	pumpshotgun	charhit	blood_bullet_small	x_data/63_bullet_pumpshotgun.txt:22
+W	ingram	shoot	shoot_ingram (char anim)	x_data/161_default_skeleton.txt:1452
+W	ingram	shoot_wav	weapons\Shoot_Ingram.wav	x_data/235_weapons.txt:162
+W	ingram	reload	reload_ingram	x_data/310_ingram.txt:35 x_data/235_weapons.txt:440
+W	ingram	empty	NINGUNO (SHOOTEMPTY sin mensajes)	x_data/310_ingram.txt:39
+W	ingram	shell	case_9mm (cada disparo) -> Casehit_generic	x_data/310_ingram.txt:22 x_data/63_case_9mm.txt:19
+W	ingram	muzzle	Muzzle_ingram -> weapons\ingram.rps (char anim)	x_data/161_default_skeleton.txt:1451 x_data/38_particles.txt:3894
+W	ingram	tracer	tracer_9mm_lod0/1/2.kf2	x_data/63_bullet_ingram.txt:10
+W	ingram	decal	bullethit_generic / bullethit_noeffects	x_data/63_bullet_ingram.txt:20
+W	ingram	charhit	blood_bullet_small	x_data/63_bullet_ingram.txt:23
+W	ingramdual	shoot	shoot_ingramdual (char anim)	x_data/161_default_skeleton.txt:1476
+W	ingramdual	shoot_wav	weapons\Shoot_IngramDual.wav	x_data/235_weapons.txt:183
+W	ingramdual	reload	reload_ingram	x_data/310_ingramdual.txt:35 x_data/235_weapons.txt:440
+W	ingramdual	empty	NINGUNO (SHOOTEMPTY sin mensajes)	x_data/310_ingramdual.txt:39
+W	ingramdual	shell	case_9mm (cada disparo) -> Casehit_generic	x_data/310_ingramdual.txt:22 x_data/63_case_9mm.txt:19
+W	ingramdual	muzzle	Muzzle_ingramdual -> weapons\ingram_dual_cloned.rps (2 flashes, 1 efecto)	x_data/161_default_skeleton.txt:1475 x_data/38_particles.txt:3909
+W	ingramdual	tracer	tracer_9mm_lod0/1/2.kf2	x_data/63_bullet_ingram.txt:10
+W	ingramdual	decal	bullethit_generic / bullethit_noeffects	x_data/63_bullet_ingram.txt:20
+W	mp5	shoot	shoot_ColtCommando	x_data/310_mp5.txt:24
+W	mp5	shoot_wav	weapons\Shoot_Colt.wav	x_data/235_weapons.txt:288
+W	mp5	reload	reload_mp5 (tambien char anim 179:373/478)	x_data/310_mp5.txt:29 x_data/235_weapons.txt:531
+W	mp5	empty	NINGUNO (SHOOTEMPTY sin mensajes)	x_data/310_mp5.txt:32
+W	mp5	shell	case_300cal -> Casehit_generic	x_data/310_mp5.txt:23 x_data/63_case_300cal.txt:19
+W	mp5	muzzle	muzzle_coltCommando -> weapons\coltcommando.rps	x_data/310_mp5.txt:21 x_data/38_particles.txt:3954
+W	mp5	tracer	tracer_9mm_lod0/1/2.kf2	x_data/63_bullet_mp5.txt:10
+W	mp5	decal	bullethit_large	x_data/63_bullet_mp5.txt:20
+W	mp5	charhit	blood_bullet	x_data/63_bullet_mp5.txt:23
+W	jackhammer	shoot	shoot_jackhammer	x_data/310_jackhammer.txt:21
+W	jackhammer	shoot_wav	weapons\Shoot_Jackhammer.wav	x_data/235_weapons.txt:351
+W	jackhammer	reload	reload_jackhammer (tambien char anim 161:830)	x_data/310_jackhammer.txt:31 x_data/235_weapons.txt:573
+W	jackhammer	empty	NINGUNO (SHOOTEMPTY sin mensajes)	x_data/310_jackhammer.txt:35
+W	jackhammer	shell	NINGUNO (no crea case_*)	x_data/310_jackhammer.txt:21
+W	jackhammer	muzzle	Muzzle_Jackhammer -> weapons\jackhammer.rps	x_data/310_jackhammer.txt:22 x_data/38_particles.txt:3969
+W	jackhammer	tracer	tracer_12ga_lod0/1.kf2	x_data/63_bullet_jackhammer.txt:10
+W	jackhammer	decal	bullethit_shotgun / bullethit_shotgun_group	x_data/63_bullet_jackhammer.txt:19
+W	jackhammer	charhit	blood_bullet_small	x_data/63_bullet_jackhammer.txt:22
+W	sniper	shoot	shoot_sniper	x_data/310_sniper.txt:21
+W	sniper	shoot_wav	weapons\Shoot_Sniper.wav	x_data/235_weapons.txt:309
+W	sniper	shoot2	chamber_Sniper f17 (cerrojo)	x_data/310_sniper.txt:24
+W	sniper	shoot2_wav	weapons\chamber_Sniper.wav	x_data/235_weapons.txt:330
+W	sniper	reload	reload_sniper	x_data/310_sniper.txt:31 x_data/235_weapons.txt:552
+W	sniper	empty	NINGUNO (SHOOTEMPTY sin mensajes)	x_data/310_sniper.txt:35
+W	sniper	shell	Case_300cal f18 -> Casehit_generic	x_data/310_sniper.txt:25 x_data/63_case_300cal.txt:19
+W	sniper	muzzle	Muzzle_sniper -> weapons\sniper.rps	x_data/310_sniper.txt:22 x_data/38_particles.txt:3924
+W	sniper	tracer	bullet_7_62mm_l2.kf2 (siempre visible)	x_data/63_bullet_sniper.txt:10 x_data/63_bullet_sniper.txt:41
+W	sniper	decal	bullethit_large	x_data/63_bullet_sniper.txt:25
+W	sniper	charhit	blood_bullet_large	x_data/63_bullet_sniper.txt:28
+W	m79	shoot	shoot_m79	x_data/310_m79.txt:21
+W	m79	shoot_wav	weapons\Shoot_m79.wav	x_data/235_weapons.txt:373
+W	m79	reload	reload_m79_1 f3, _2 f24, _3 f30	x_data/310_m79.txt:28 x_data/235_weapons.txt:615
+W	m79	empty	NINGUNO (SHOOTEMPTY sin mensajes)	x_data/310_m79.txt:33
+W	m79	shell	Case_40mm f0 (en RELOAD) -> case_40mm_ricochet	x_data/310_m79.txt:31 x_data/63_case_40mm.txt:19
+W	m79	muzzle	Muzzle_m79 -> weapons\m79.rps	x_data/310_m79.txt:23 x_data/38_particles.txt:3984
+W	m79	tracer	bullet_40mm_lod0/1.kfs (granada visible)	x_data/63_bullet_m79.txt:9 x_data/63_bullet_m79.txt:45
+W	m79	decal	grenade_m79 (+ molotov_smoke f0)	x_data/63_bullet_m79.txt:25
+W	molotov	shoot	shoot_throwable	x_data/310_molotov.txt:22
+W	molotov	shoot_wav	weapons\shoot_throwable.wav	x_data/235_weapons.txt:57
+W	molotov	reload	NINGUNO (solo WS_Hide( false ))	x_data/310_molotov.txt:29
+W	molotov	empty	NINGUNO (SHOOTEMPTY sin mensajes)	x_data/310_molotov.txt:32
+W	molotov	muzzle	NINGUNO (molotov_smoke en impacto)	x_data/63_molotov.txt:16
+W	molotov	decal	molotov	x_data/63_molotov.txt:23
+W	molotov	impact_snd	explosion_molotov -> projectiles\explosion_molotov.wav	x_data/9_decals.txt:1598
+W	grenade	shoot	shoot_throwable	x_data/310_grenade.txt:21
+W	grenade	shoot_wav	weapons\shoot_throwable.wav	x_data/235_weapons.txt:57
+W	grenade	reload	NINGUNO	x_data/310_grenade.txt:25
+W	grenade	empty	NINGUNO (SHOOTEMPTY sin mensajes)	x_data/310_grenade.txt:26
+W	grenade	muzzle	ninguno (item_drop + Bullethit_Grenade al bote)	x_data/63_grenade.txt:20 x_data/63_grenade.txt:21
+W	grenade	decal	grenade	x_data/63_grenade.txt:33
+W	grenade	impact_snd	Bullethit_Grenade -> grenade_ricochet.wav	x_data/235_projectiles.txt:1404
+W	leadpipe	shoot	shoot_leadpipe (char anim f9, f29)	x_data/161_default_skeleton.txt:1295
+W	leadpipe	shoot_wav	weapons\Shoot_baseballbat.wav (mismo archivo que el bat)	x_data/235_weapons.txt:78
+W	leadpipe	muzzle	NINGUNO	x_data/310_leadpipe.txt:18
+W	leadpipe	tracer	NINGUNO (VisibilityMaximumSpeed = 0)	x_data/63_bullet_leadpipe.txt:44
+W	leadpipe	decal	bullethit_leadpipe	x_data/63_bullet_leadpipe.txt:23
+W	leadpipe	impact_snd	bullethit_leadpipe -> leadpipe_default_hit.wav	x_data/235_projectiles.txt:1790
+W	baseballbat	shoot	shoot_baseballbat (char anim f7, f30)	x_data/161_default_skeleton.txt:1319
+W	baseballbat	shoot_wav	weapons\Shoot_baseballbat.wav	x_data/235_weapons.txt:99
+W	baseballbat	muzzle	NINGUNO	x_data/310_baseballbat.txt:18
+W	baseballbat	tracer	NINGUNO (VisibilityMaximumSpeed = 0)	x_data/63_bullet_baseballbat.txt:44
+W	baseballbat	decal	bullethit_baseballbat	x_data/63_bullet_baseballbat.txt:24
+W	baseballbat	impact_snd	bullethit_baseballbat -> baseball_default_hit.wav	x_data/235_projectiles.txt:1521
+W	painkiller	shoot	NINGUNO (sin armas: solo animacion)	x_data/310_painkiller.txt:16
+W	painkiller	muzzle	NINGUNO	x_data/310_painkiller.txt:16
+W	empty	shoot	NINGUNO	x_data/310_empty.txt:12
+W	GLOBAL	empty_click	Shoot_NoBulletsLeft -> weapons\shoot_empty.wav (solo al no poder cambiar de arma)	x_data/1_globalconfig.txt:218 x_data/235_weapons.txt:15
+M	concrete	decal	Hole_Default.jpg r 0.052-0.055 (material Default; no existe [Concrete])	x_data/9_decals.txt:294
+M	concrete	decal_radius	0.052 - 0.055	x_data/9_decals.txt:298
+M	concrete	particle	bullethit\bullethit-default.rps	x_data/38_particles.txt:3290
+M	concrete	sound	default_hit_01..08.wav	x_data/235_projectiles.txt:13
+M	concrete	material_check	no hay [Concrete] en la DB de materiales; usa Stucco/Rock	x_data/3_materials.txt:810
+M	wood	decal	Hole_Wood.jpg r 0.040-0.060	x_data/9_decals.txt:484
+M	wood	decal_radius	0.040 - 0.060	x_data/9_decals.txt:488
+M	wood	particle	bullethit\bullethit-wood.rps	x_data/38_particles.txt:3454
+M	wood	sound	wood_hit_01..04.wav	x_data/235_projectiles.txt:1259
+M	metal	decal	Hole_Metal.jpg r 0.040-0.045	x_data/9_decals.txt:374
+M	metal	decal_radius	0.040 - 0.045	x_data/9_decals.txt:378
+M	metal	particle	bullethit\bullethit-metal.rps (chispas)	x_data/38_particles.txt:3359
+M	metal	sound	metal_hit_01..04.wav	x_data/235_projectiles.txt:585
+M	metal	variant	metal_hollow usa metal_hollow_hit_01..04.wav	x_data/235_projectiles.txt:647
+M	metal	variant2	metal_solid usa metal_solid_hit_01..04.wav	x_data/235_projectiles.txt:743
+M	flesh	decal	SIN decal: Character esta en NoDecalMaterial	x_data/9_decals.txt:253
+M	flesh	decal_alt	sangre: blood_small (blood.jpg r 0.25-0.30) via CharacterHit	x_data/9_decals.txt:1689
+M	flesh	particle	bullethit\bullethit-character.rps (material flesh)	x_data/38_particles.txt:3324
+M	flesh	sound	character_hit_01..03.wav	x_data/235_projectiles.txt:229
+M	flesh	sound_check	no hay [Material] Name="flesh" en el grupo de sonido, solo "character"	x_data/235_projectiles.txt:226
+M	glass	decal	Hole_Glass.jpg r 0.25-0.30	x_data/9_decals.txt:324
+M	glass	decal_radius	0.25 - 0.30	x_data/9_decals.txt:328
+M	glass	particle	bullethit\bullethit-glass.rps	x_data/38_particles.txt:3329
+M	glass	sound	glass_hit_01..03.wav	x_data/235_projectiles.txt:373
+M	glass	variant	glass_bulletproof usa los mismos 3 wavs y el mismo rps	x_data/235_projectiles.txt:421

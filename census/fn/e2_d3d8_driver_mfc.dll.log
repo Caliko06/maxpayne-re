@@ -1,0 +1,18 @@
+text_bytes: 401408
+functions: {'total': 1897, 'from_entry_and_calls': 941, 'from_data_pointers': 956}
+instructions: 90472
+distinct_mnemonics: 133
+text_coverage: 0.6828
+jump_tables: {'count': 49, 'targets': 491}
+indirect_jmp_unresolved: 0
+indirect_call: {'mem': 1035, 'reg': 652}
+import_call_sites: 852
+imports_called: 238
+x87_instructions: 4741
+decode_failures: 1
+data_pointers_into_text: 872
+data_pointers_mid_instruction: 0
+immediate_pointers_into_text: 287
+unaligned_pointers_to_code: 0
+imports by dll: {'e2mfc.dll': 218, 'grphmfc.dll': 3, 'rlmfc.dll': 24, 'mfc42.dll': 2, 'msvcrt.dll': 30, 'kernel32.dll': 22, 'user32.dll': 3, 'gdi32.dll': 10}
+groups: {'not64bitmode': 25615, 'fpu': 4452, 'mmx': 1198}

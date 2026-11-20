@@ -1,0 +1,37 @@
+# RN_GHOSTALL trace (rea/fights23/ghostall.patch): frame, name, room (same/diff as Max), horizontal distance to Max, pos, hp | act=AI active (ST+0xae) hit=ST+5 seen=MT+0x3ad perc=MT+0x3af f3ac/f3ae interest=MT+0x3b0 tmo=MT+0x3b4 lastseen=AP+0x5fc nonreact=AP+0x57d iues=AP+0x57e; ">> frame cmd" = RN_JUMP line sent
+## horst1: Max faces away, Horst moved to ::drug::w2 (6.2 m), mobstercombat, infinite ammo: AI frozen (lastseen 3.04 constant) until Max aims/fires
+1500 ::toilet_last::e_horst room=diff d 5.5 pos -1.86 -0.01 1.69 hp 16.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.02 lastseen 3.02 nonreact 1 iues 0
+   >> 1529 player->c_teleport("::drug::w1");
+1560 ::toilet_last::e_horst room=diff d 3.9 pos -1.86 -0.01 1.69 hp 16.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.02 lastseen 3.02 nonreact 1 iues 0
+   >> 1560 ::toilet_last::e_horst->C_Teleport("::drug::w2");
+   >> 1591 ::toilet_last::e_horst->C_RemoveAllWeapons(empty);
+1620 ::toilet_last::e_horst room=same d 6.2 pos -0.25 -1.51 -2.88 hp 16.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.04 lastseen 3.04 nonreact 1 iues 0
+   >> 1653 ::toilet_last::e_horst->C_SetInfiniteAmmo(sawedshotgun, true);
+1680 ::toilet_last::e_horst room=same d 6.2 pos -0.25 -1.51 -2.88 hp 16.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.04 lastseen 3.04 nonreact 1 iues 0
+   >> 1684 ::toilet_last::e_horst->C_SetStateMachine(mobstercombat);
+## horst3: same, plus @aim (camera on Horst): ticks at once, seen/perc 1, walks, hits Max 4x
+1500 ::toilet_last::e_horst room=diff d 5.5 pos -1.86 -0.01 1.69 hp 16.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.02 lastseen 3.02 nonreact 1 iues 0
+   >> 1517 player->c_teleport("::drug::w1");
+   >> 1548 ::toilet_last::e_horst->C_Teleport("::drug::w2");
+1560 ::toilet_last::e_horst room=same d 6.2 pos -0.25 -1.51 -2.88 hp 16.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.04 lastseen 3.04 nonreact 1 iues 0
+   >> 1579 ::toilet_last::e_horst->C_RemoveAllWeapons(empty);
+1620 ::toilet_last::e_horst room=same d 6.2 pos -0.25 -1.51 -2.88 hp 16.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.04 lastseen 3.04 nonreact 1 iues 0
+   >> 1641 ::toilet_last::e_horst->C_SetInfiniteAmmo(sawedshotgun, true);
+   >> 1672 ::toilet_last::e_horst->C_SetStateMachine(mobstercombat);
+1680 ::toilet_last::e_horst room=same d 6.2 pos -0.25 -1.51 -2.88 hp 16.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.10 lastseen 3.10 nonreact 0 iues 0
+1740 ::toilet_last::e_horst room=same d 4.6 pos -1.57 -1.51 -1.96 hp 16.0 | act 1 hit 0 seen 1 perc 1 f3ac 1 f3ae 0 int 30.00 tmo 30.00 lastseen 0.00 nonreact 0 iues 0
+1800 ::toilet_last::e_horst room=same d 3.9 pos -2.18 -1.51 -1.58 hp 16.0 | act 1 hit 0 seen 1 perc 1 f3ac 1 f3ae 0 int 30.00 tmo 30.00 lastseen 0.00 nonreact 0 iues 0
+1860 ::toilet_last::e_horst room=same d 4.1 pos -3.41 -1.51 -3.21 hp 16.0 | act 1 hit 0 seen 1 perc 1 f3ac 1 f3ae 0 int 30.00 tmo 30.00 lastseen 0.00 nonreact 0 iues 0
+## horst2: Max faces away, C_ForceUpdate(60): ticks at once
+1500 ::toilet_last::e_horst room=diff d 5.5 pos -1.86 -0.01 1.69 hp 16.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.02 lastseen 3.02 nonreact 1 iues 0
+   >> 1545 player->c_teleport("::drug::w1");
+1560 ::toilet_last::e_horst room=diff d 3.9 pos -1.86 -0.01 1.69 hp 16.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.02 lastseen 3.02 nonreact 1 iues 0
+   >> 1576 ::toilet_last::e_horst->C_Teleport("::drug::w2");
+   >> 1607 ::toilet_last::e_horst->C_RemoveAllWeapons(empty);
+1620 ::toilet_last::e_horst room=same d 6.2 pos -0.25 -1.51 -2.88 hp 16.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.03 lastseen 3.03 nonreact 1 iues 0
+   >> 1669 ::toilet_last::e_horst->C_SetInfiniteAmmo(sawedshotgun, true);
+1680 ::toilet_last::e_horst room=same d 6.2 pos -0.25 -1.51 -2.88 hp 16.0 | act 0 hit 0 seen 0 perc 0 f3ac 0 f3ae 0 int 0.00 tmo -0.03 lastseen 3.03 nonreact 1 iues 0
+   >> 1700 ::toilet_last::e_horst->C_ForceUpdate(60);
+   >> 1731 ::toilet_last::e_horst->C_SetStateMachine(mobstercombat);
+1740 ::toilet_last::e_horst room=same d 6.2 pos -0.25 -1.51 -2.88 hp 16.0 | act 1 hit 0 seen 1 perc 1 f3ac 1 f3ae 0 int 30.00 tmo 30.00 lastseen 0.00 nonreact 0 iues 0
+1800 ::toilet_last::e_horst room=same d 5.0 pos -1.18 -1.51 -2.19 hp 16.0 | act 1 hit 0 seen 1 perc 1 f3ac 1 f3ae 0 int 30.00 tmo 30.00 lastseen 0.00 nonreact 0 iues 0

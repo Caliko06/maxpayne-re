@@ -1,0 +1,19 @@
+# 2D -> pixels in e2mfc.dll (v1.05, corpus base 0x10100000, same as rea/c/e2mfc.dll and patches.py)
+FACT 2D renderers, each builds a quad from a virtual 640x480 unit space: P_Sprite::executeAlways 0x10108040 (corners +0x164..+0x180, "w-pivot"/"h-pivot" in [ebp-4]/[ebp-8] at 0x10108594), P_Text::executeAlways 0x10104280, P_2DLineObject::executeAlways 0x10105eb0. Only these three read the unit-scale constants; no 3D code does.
+FACT unit->world scale, sprite: 0x10108050 `fld [eax+0x110]` (camera fov, rad) + 0x1010805e `fptan` = tan(fov/2) from the RAW fov, not from +0x200; X entry of the 3x3 0x10108107 `fmul [0x101495d0]`=1/320, Y entry 0x1010813d `fmul [0x101495cc]`=-1/240 (320/240 = the half extents). Text, same: 0x1010458b, 0x10104599, 0x10104616, 0x1010464c.
+FACT aspect term in those quads: 0x10114d60 P_Camera::validate writes +0x200=tan(fov/2)*0.5f (0x101491f8) and +0x204 = (cam+0x1d0 - cam+0x1cc)*tan/(cam+0x1c8 - cam+0x1c4), the camera viewport's own dy/dx in units (640/480=0.75); sprite repeats it at 0x1010806e `add edi,0x1cc` / 0x1010807e `add eax,0x1c4`.
+FACT unit->pixel funnel, one place for all drawing: P_Camera::getScreenRect 0x101145c0 = W*cam/640 (`fmul [0x10149de8]`=1/640 at 0x10114602) and H*cam/480 (`fmul [0x10149de4]`=1/480), sub-viewport branch 0x101147d5 (cam+0x1dc..+0x1e8). P_Driver::getWidth 0x10132c90 / getHeight 0x10132ca0 = render target +0x34/+0x38 when +0x30 is set, else back buffer +0x4/+0x8.
+FACT consumers: P_Scene::render 0x10118ec0 -> P_Driver::setViewport 0x10132870 -> driver vtable +0x5c(rect,0,1.0). The camera rect is written only by 0x10113ab0 (clamped 0..640 DAT_10165604, 0..480 DAT_101655fc, clamped again by 0x10113fb0) and 0x101144a0 (from P_Map +0x74/+0x78, pixels).
+FACT the 4:3 squeeze today: 2D sizes itself from the raw fov while the projection divides by +0x200, which host/widescreen.c rn_ws_camera multiplies by scale_x at 0x10114da5. Net 2D: units*W/(640*scale_x) wide, units*H/480 tall, so 640 units cover exactly 0.75*W, the centered 4:3 column, proportions intact. 2D is under-filled, not stretched: that is why a 640-wide fade stops at the 4:3 edge and rn_ws_sprite widens it in units.
+INFERENCE that alone explains the symptom; menus, HUD and comic share this renderer and differ only in authored units.
+FACT e2mfc never draws 2D into a render target (only P_DisplayMode::setRenderTargetFormat 0x1012fcd0 exists).
+
+## HOOK
+Rule A, one hook, fills the screen, stretches: for the camera that renders the 2D scene, undo scale_x on +0x200 only. Site 0x10114da5 (after `fstp` to +0x204 at 0x10114d9f; +0x204 untouched): write cam+0x200 = tan(*(float*)(cam+0x110) * 0.5).
+Net units*W/640 wide, units*H/480 tall: 2D fills the real width, stretched horizontally by scale_x (1.33 at 16:9, 1.78 at 21:9). Fine for fades, comic panels and full-screen art; visible on text and round sprites (ellipses).
+Trade-off A: every 2D element stretches by scale_x, none moves, layout keeps its authored 640x480 proportions relative to itself.
+Rule B, data patch, keeps proportions, moves nothing: 0x101495d0 float = scale_x/320 (written from rn_ws_size). All three 2D renderers read it, no 3D code does, so each element widens by scale_x in place on the 4:3 layout; pair it with the host's hud_shift/anchoring for edge elements.
+Trade-off B: glyphs get scale_x wider, and the 2D still occupies the centered 4:3 column; only elements grow, the layout does not spread.
+
+HOOK: 0x10114da5 (rule A, the one-hook fill) or 0x101495d0 (rule B, proportions kept). UNKNOWN which P_Camera renders the 2D scene (created in MaxPayne.exe, other worker's scope) so rule A needs that id or a pass flag, rule B needs none.
+UNKNOWN whether menu/comic states reach 0x10108040/0x10104280 at all (only HUD sprites and text confirmed here). Hopper was unavailable (bridge startup timeout): the second key is disassembly of the bytes (objdump) against the Ghidra decompile, both at the addresses above.

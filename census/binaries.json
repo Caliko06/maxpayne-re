@@ -1,0 +1,582 @@
+{
+ "MaxPayne.exe": {
+  "sha256": "60bec5982b0fbdab38ec6f038b1e0daf214b41ee5c5cb91fc1ac0533d1df7a81",
+  "base": "0x400000",
+  "entry": "0x76fb04",
+  "sections": [
+   [
+    ".text",
+    4198400,
+    3969024,
+    "0xc0000040"
+   ],
+   [
+    ".rdata",
+    8167424,
+    634880,
+    "0xc0000040"
+   ],
+   [
+    ".data",
+    8802304,
+    348160,
+    "0xc0000040"
+   ],
+   [
+    ".rsrc",
+    9150464,
+    69632,
+    "0xc0000040"
+   ],
+   [
+    "stxt774",
+    9220096,
+    4096,
+    "0xc0000040"
+   ],
+   [
+    "stxt371",
+    9224192,
+    16384,
+    "0xc0000040"
+   ],
+   [
+    ".MGD32",
+    9240576,
+    27136,
+    "0xc0000040"
+   ]
+  ],
+  "instructions": 1372627,
+  "imports": 837,
+  "imports_without_site": [],
+  "isa": {
+   ".text": {
+    "int": 1332393,
+    "x87": 40234
+   }
+  },
+  "fs_refs": 13381,
+  "fs_examples": [
+   [
+    "0x401007",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x40100e",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x40113c",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x401177",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x40117e",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x401253",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x401267",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x40126e",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x401410",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x40143a",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x401441",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x401591",
+    "mov dword ptr fs:[0], ecx"
+   ]
+  ],
+  "exports": 0
+ },
+ "e2mfc.dll": {
+  "sha256": "46acb51c0e95fee670341b57332104b4f1fbd320ac2ff4e4844c76afbf86ce31",
+  "base": "0x10000000",
+  "entry": "0x1004580f",
+  "sections": [
+   [
+    ".text",
+    268439552,
+    293714,
+    "0x60000020"
+   ],
+   [
+    ".rdata",
+    268734464,
+    101969,
+    "0x40000040"
+   ],
+   [
+    ".data",
+    268836864,
+    20108,
+    "0xc0000040"
+   ],
+   [
+    ".reloc",
+    268857344,
+    25432,
+    "0x42000040"
+   ]
+  ],
+  "instructions": 105039,
+  "imports": 102,
+  "imports_without_site": [],
+  "isa": {
+   ".text": {
+    "int": 95902,
+    "x87": 9137
+   }
+  },
+  "fs_refs": 817,
+  "fs_examples": [
+   [
+    "0x10001560",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x10001572",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x10001645",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x100019e7",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x100019ee",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x10001afc",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x10001b27",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x10001b2e",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x10001d1b",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x10001d37",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x10001d3e",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x10001da0",
+    "mov dword ptr fs:[0], ecx"
+   ]
+  ],
+  "exports": 1200
+ },
+ "rlmfc.dll": {
+  "sha256": "7dc5b6dbf7e8ffb9ecd378a24f3e417b80fe77e2579da5adc52dca0dfbaab8e7",
+  "base": "0x10000000",
+  "entry": "0x100283a1",
+  "sections": [
+   [
+    ".text",
+    268439552,
+    166306,
+    "0x60000020"
+   ],
+   [
+    ".rdata",
+    268607488,
+    73740,
+    "0x40000040"
+   ],
+   [
+    ".data",
+    268685312,
+    153356,
+    "0xc0000040"
+   ],
+   [
+    ".reloc",
+    268840960,
+    15154,
+    "0x42000040"
+   ]
+  ],
+  "instructions": 63482,
+  "imports": 117,
+  "imports_without_site": [],
+  "isa": {
+   ".text": {
+    "int": 61632,
+    "x87": 1836,
+    "mmx": 13,
+    "sse": 1
+   }
+  },
+  "fs_refs": 331,
+  "fs_examples": [
+   [
+    "0x10001077",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x1000107e",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x10001196",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x100011b7",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x100011be",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x1000133f",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x10001357",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x1000135e",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x100013b9",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x100013dc",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x10001432",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x10001447",
+    "mov eax, dword ptr fs:[0]"
+   ]
+  ],
+  "exports": 980
+ },
+ "grphmfc.dll": {
+  "sha256": "8f38a7ebeb2d4be3eece73e3d9b805d863c17ed58c3b0e94a33da8297b51e5f5",
+  "base": "0x10000000",
+  "entry": "0x10011627",
+  "sections": [
+   [
+    ".text",
+    268439552,
+    68244,
+    "0x60000020"
+   ],
+   [
+    ".rdata",
+    268509184,
+    10188,
+    "0x40000040"
+   ],
+   [
+    ".data",
+    268521472,
+    6812,
+    "0xc0000040"
+   ],
+   [
+    ".reloc",
+    268529664,
+    3486,
+    "0x42000040"
+   ]
+  ],
+  "instructions": 23911,
+  "imports": 51,
+  "imports_without_site": [],
+  "isa": {
+   ".text": {
+    "int": 22988,
+    "x87": 923
+   }
+  },
+  "fs_refs": 65,
+  "fs_examples": [
+   [
+    "0x1000280a",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x10002811",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x10002885",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x100028ba",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x100028c1",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x100028fe",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x1000292a",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x10002931",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x10002a46",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x10002a7a",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x10002a81",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x10002af0",
+    "mov dword ptr fs:[0], ecx"
+   ]
+  ],
+  "exports": 70
+ },
+ "sndmfc.dll": {
+  "sha256": "49f45c8c9899ab8f31bc8efd860cd53bf18fec51d3c3449e5fbdf804a7d937d7",
+  "base": "0x10000000",
+  "entry": "0x1000e6ea",
+  "sections": [
+   [
+    ".text",
+    268439552,
+    57279,
+    "0x60000020"
+   ],
+   [
+    ".rdata",
+    268496896,
+    21685,
+    "0x40000040"
+   ],
+   [
+    ".data",
+    268521472,
+    2868,
+    "0xc0000040"
+   ],
+   [
+    ".reloc",
+    268525568,
+    5146,
+    "0x42000040"
+   ]
+  ],
+  "instructions": 19815,
+  "imports": 119,
+  "imports_without_site": [],
+  "isa": {
+   ".text": {
+    "int": 19333,
+    "x87": 482
+   }
+  },
+  "fs_refs": 138,
+  "fs_examples": [
+   [
+    "0x10001297",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x1000129e",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x1000157a",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x10001a9a",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x10001aa1",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x10001cd0",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x10001f5a",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x10001f61",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x100025ee",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x1000264a",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x10002651",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x10002807",
+    "mov dword ptr fs:[0], ecx"
+   ]
+  ],
+  "exports": 203
+ },
+ "e2_d3d8_driver_mfc.dll": {
+  "sha256": "98bc8eed84074b55f1ea356deb9c612d45d5dd2bf3c5555d26054ae753891cd3",
+  "base": "0x10000000",
+  "entry": "0x10055a17",
+  "sections": [
+   [
+    ".text",
+    268439552,
+    400673,
+    "0x60000020"
+   ],
+   [
+    ".rdata",
+    268840960,
+    60102,
+    "0x40000040"
+   ],
+   [
+    ".data",
+    268902400,
+    91416,
+    "0xc0000040"
+   ],
+   [
+    ".idata",
+    268996608,
+    18542,
+    "0xc0000040"
+   ],
+   [
+    ".reloc",
+    269017088,
+    21583,
+    "0x42000040"
+   ]
+  ],
+  "instructions": 199034,
+  "imports": 312,
+  "imports_without_site": [],
+  "isa": {
+   ".text": {
+    "int": 189787,
+    "x87": 7921,
+    "sse": 1,
+    "mmx": 1325
+   }
+  },
+  "fs_refs": 420,
+  "fs_examples": [
+   [
+    "0x10002eb7",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x10002ebe",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x10002f84",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x10003027",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x1000302e",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x100030b3",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x1000383a",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x10003841",
+    "mov dword ptr fs:[0], esp"
+   ],
+   [
+    "0x10003924",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x100039b3",
+    "mov dword ptr fs:[0], ecx"
+   ],
+   [
+    "0x10004757",
+    "mov eax, dword ptr fs:[0]"
+   ],
+   [
+    "0x1000475e",
+    "mov dword ptr fs:[0], esp"
+   ]
+  ],
+  "exports": 271
+ }
+}

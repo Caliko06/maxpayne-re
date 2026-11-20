@@ -1,0 +1,18 @@
+weapon	clip	pocket	frequency	damage_direct	blast	projectile	reload_time	sound_keys	model	source_file
+empty	1	100	1.001	NA	NA	NA	NA	NA	empty.kf2	build/data/x_data/310_empty.txt
+leadpipe	1	1	1.47	1	bullet_leadpipe 9..8.99 @ r0.8..0.801	bullet_leadpipe x2	NA	shoot_leadpipe	leadpipe_lod0.kf2	build/data/x_data/310_leadpipe.txt
+baseballbat	1	1	1.27	15	bullet_baseballbat 15.01..15 @ r1.2..1.201	bullet_baseballbat x2	NA	shoot_baseballbat	baseballbat_lod0.kf2	build/data/x_data/310_baseballbat.txt
+beretta	18	162	4.001	5	NA	bullet_beretta x1	1.300	shoot_beretta;reload_beretta	..\beretta\beretta_Lod0.kf2	build/data/x_data/310_beretta.txt
+berettadual	18	162	4.001	5	NA	bullet_berettadual x1	1.300	reload_beretta;shoot_beretta	..\beretta\beretta_lod0.kf2	build/data/x_data/310_berettadual.txt
+deserteagle	12	48	3.001	10	NA	bullet_deserteagle x1	1.300	shoot_deserteagle;reload_deserteagle	deserteagle_Lod0.kf2	build/data/x_data/310_deserteagle.txt
+sawedshotgun	2	80	2.001	5;5;5	NA	bullet_shotgun_straight x1;bullet_sawedshotgun x2;bullet_sawedshotgun_group x2	1.233	shoot_sawedshotgun;reload_sawedshotgun	sawedshotgun_Lod0.kf2	build/data/x_data/310_sawedshotgun.txt
+pumpshotgun	7	80	1.001	5;5;5	NA	bullet_shotgun_straight x1;bullet_pumpshotgun x2;bullet_pumpshotgun_group x2	0.354	shoot_pumpshotgun;Shoot_PumpShotgun_Cock;Reload_PumpShotgun	pumpshotgun_Lod0.kf2	build/data/x_data/310_pumpshotgun.txt
+ingram	50	300	8.001	5;5	NA	bullet_ingram x1;bullet_ingram_noeffects x1	0.983	reload_ingram;shoot_ingram	ingram_Lod0.kf2	build/data/x_data/310_ingram.txt
+ingramdual	50	300	8.001	5;5	NA	bullet_ingram x1;bullet_ingram_noeffects x1	1.300	reload_ingram;shoot_ingramdual	..\ingram\ingram_lod0.kf2	build/data/x_data/310_ingramdual.txt
+mp5	30	150	6.001	10	NA	bullet_mp5 x1	1.300	shoot_coltCommando;reload_mp5	..\coltCommando\coltCommando_Lod0.kf2	build/data/x_data/310_mp5.txt
+jackhammer	12	168	3.001	5;5;5	NA	bullet_shotgun_straight x1;bullet_jackhammer x2;bullet_jackhammer_group x2	0.975	shoot_jackhammer;reload_jackhammer	jackhammer_Lod0.kf2	build/data/x_data/310_jackhammer.txt
+molotov	1	10	1.001	50;0	molotov 20..1 @ r0.1..5 x13;frag_molotov 20..1 @ r0.2..1.6 x13	molotov x1;frag_molotov x5	0.467	shoot_throwable	molotov_lod0.kf2	build/data/x_data/310_molotov.txt
+grenade	1	10	1.001	1	grenade 50..5 @ r2..10 x2	grenade x1	0.467	shoot_throwable	grenade_Lod0.kf2	build/data/x_data/310_grenade.txt
+m79	1	10	1.001	10	bullet_m79 50..5 @ r1..10 x2	bullet_m79 x1	1.300	shoot_m79;reload_m79_1;reload_m79_2;reload_m79_3	m79_Lod0.kf2	build/data/x_data/310_m79.txt
+sniper	5	20	1.001	70	NA	bullet_sniper x1	1.300	shoot_sniper;chamber_Sniper;reload_sniper	sniper_Lod0.kf2	build/data/x_data/310_sniper.txt
+painkiller	1	8	0.51	NA	NA	NA	0.467	NA	painkiller_l0.kf2	build/data/x_data/310_painkiller.txt

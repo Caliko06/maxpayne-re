@@ -1,0 +1,136 @@
+{
+ "_why": "NOCHE50 (OWNER 2026-11-19): every milestone has one measurable metric, a file allowlist and a time cap; tools/audit_rails.py checks the mechanics, a blind bec auditor judges the diff. Telemetry: build/webcheck-<port>.telemetry.ndjson, copied to out/<slice>/before.ndjson and after.ndjson; numbers from tools/gate50_referee.py.",
+ "common": {
+  "minutes": 75,
+  "runs": 2,
+  "rn_secs_max": 300,
+  "always_allowed": [
+   "rea/map/",
+   "out/"
+  ]
+ },
+ "g50-save": {
+  "port": 5251,
+  "allowed": [
+   "host/d3d8.c",
+   "host/fast.c",
+   "web/gpu.js",
+   "tools/recomp/difftest_rt.c"
+  ],
+  "repro": "node tools/ghost/ghost.mjs --port 5251 --secs 240 --out build/g50-save --plan play --from part0_level1 --rescue 120 --savems 15000",
+  "metric": "save_over33",
+  "pass": "before has >= 5 save_over33 frames (the window exercised saves) and after <= 1",
+  "guard": "load-menu thumbnail screenshot out/g50-save/loadmenu.png shows the saved scene; everything committed"
+ },
+ "g50-bt": {
+  "port": 5252,
+  "allowed": [
+   "host/main.c",
+   "host/dsound.c",
+   "web/audio.js",
+   "web/gpu.js",
+   "tools/recomp/patches.py",
+   "tools/ghost/bt-report.py"
+  ],
+  "repro": "node tools/ghost/ghost.mjs --port 5252 --secs 240 --out build/g50-bt --plan play --from part1_level1 --rescue 120",
+  "metric": "bt_over33",
+  "pass": "after <= 3 and low_seconds_pure_game == 0",
+  "guard": "bt_share_pct after >= 0.7 x before (bullet time still used and still slows the world)"
+ },
+ "g50-load": {
+  "port": 5253,
+  "allowed": [
+   "host/d3d8.c",
+   "host/files.c",
+   "web/gpu.js",
+   "web/index.html",
+   "web/telemetry.js",
+   "tools/telemetry.py"
+  ],
+  "repro": "node tools/ghost/ghost.mjs --port 5253 --secs 240 --out build/g50-load --plan play --from part1_level1 --rescue 120",
+  "metric": "load_over250",
+  "pass": "after == 0",
+  "guard": "load_seconds after <= 1.15 x before; textures correct in the first game shot (out/g50-load/after.png)"
+ },
+ "live-web": {
+  "port": 5254,
+  "allowed": [
+   "tools/build_public.py",
+   "tools/static_server.py",
+   "tools/loadcap.mjs",
+   "tools/serve.py",
+   "tools/webgate.mjs",
+   "web/",
+   ".gitignore"
+  ],
+  "repro": "python3 tools/build_public.py && node tools/webgate.mjs 'http://127.0.0.1:5254/?gl=webgl2' 120 out/live-web/webgl2.png",
+  "metric": "dist",
+  "pass": "build/public exists with gzip pieces <= 0.70 x raw bytes (census/compression.tsv: gzip reaches 0.655 of 2156 MB at best), WebGL 2 reaches the main menu (screenshot), WebGPU still reaches the menu (screenshot)",
+  "guard": "no game data in git; nothing leaves the Mac"
+ },
+ "g50-load2": {
+  "port": 5253,
+  "allowed": [
+   "host/d3d8.c",
+   "host/files.c",
+   "web/gpu.js",
+   "web/index.html",
+   "web/telemetry.js",
+   "tools/telemetry.py"
+  ],
+  "repro": "node tools/ghost/ghost.mjs --port 5253 --secs 240 --out build/g50-load --plan play --from part1_level1 --rescue 120",
+  "metric": "load_over33",
+  "pass": "after load_over33 <= 0.5 x before (before = current main, ~91 in this window) and load_over250 == 0",
+  "guard": "load_seconds after <= 1.15 x before; textures correct in the first game shot"
+ },
+ "g50-comic": {
+  "port": 5256,
+  "allowed": [
+   "host/d3d8.c",
+   "web/gpu.js"
+  ],
+  "repro": "node tools/ghost/ghost.mjs --port 5256 --secs 240 --out build/g50-comic --plan play --from part0_level1 --rescue 120",
+  "metric": "causes['comic: texture upload']",
+  "pass": "after == 0",
+  "guard": "comic panels render complete and sharp (screenshot out/g50-comic/after.png vs before.png)"
+ },
+ "g50-game": {
+  "port": 5257,
+  "allowed": [
+   "tools/recomp/patches.py",
+   "host/fast.c",
+   "host/rt.h",
+   "tools/recomp/lift.py"
+  ],
+  "repro": "node tools/ghost/ghost.mjs --port 5257 --secs 240 --out build/g50-game --plan play --from part1_level1 --rescue 120 --cpuprofile 1",
+  "metric": "causes['game: game code (guest CPU)']",
+  "pass": "after <= 0.5 x before, with the 3 costliest guest functions in slow frames named with addresses",
+  "guard": "difftest passes on every function touched (RN_FUNCS)"
+ },
+ "live-web2": {
+  "port": 5254,
+  "allowed": [
+   "tools/build_public.py",
+   "tools/static_server.py",
+   "tools/loadcap.mjs",
+   "web/"
+  ],
+  "repro": "RN_RTT_MS=80 python3 tools/static_server.py build/public 5254 & node tools/loadcap.mjs http://127.0.0.1:5254/",
+  "metric": "seconds from navigation to main menu at 80 ms RTT, cold cache",
+  "pass": "after <= 0.7 x before (prefetch of the first level's pieces, like RE-NFSU entry_hint)",
+  "guard": "warm load not slower; WebGPU and WebGL 2 still reach the menu"
+ },
+ "g50-comic2": {
+  "port": 5256,
+  "allowed": [
+   "host/fast.c",
+   "host/rt.h",
+   "tools/recomp/patches.py",
+   "host/d3d8.c"
+  ],
+  "repro": "node tools/ghost/ghost.mjs --port 5256 --secs 240 --out build/g50-comic --plan play --from part0_level1 --rescue 120",
+  "metric": "comic frames > 33.4 ms (referee causes starting with 'comic:')",
+  "pass": "after == 0 and the decode function's ms per page measured before -> after",
+  "guard": "comic page pixels identical to the guest decoder (difftest or a byte compare of the decoded buffer, RN_DUMPCALL vs djpeg if JPEG)"
+ }
+}

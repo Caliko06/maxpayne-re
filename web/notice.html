@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Max Payne in the browser — notice</title>
+<meta name="robots" content="index">
+<style>
+  :root { --bg: #0b0d0e; --fg: #e8e4dc; --dim: #9a958c; --hair: #2a2d30; --red: #b3352c; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  h1 { font: 600 26px/1.2 ui-sans-serif, system-ui, sans-serif; letter-spacing: -.01em; margin: 0 0 8px; }
+  h2 { font: 600 13px/1.2 ui-monospace, Menlo, monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); margin: 36px 0 10px; }
+  p, li { margin: 0 0 12px; }
+  a { color: var(--fg); text-decoration-color: var(--red); text-underline-offset: 3px; }
+  .lead { color: var(--dim); margin-bottom: 28px; }
+  .rule { border: 0; border-top: 1px solid var(--hair); margin: 32px 0; }
+  .back { display: inline-block; margin-top: 32px; font: 13px ui-monospace, Menlo, monospace; }
+  .todo { color: var(--red); }
+</style>
+</head>
+<body>
+<main>
+<h1>Max Payne in the browser</h1>
+<p class="lead">Fan project. This page is a notice about the game running at this address.</p>
+
+<h2>What this is</h2>
+<p>Max Payne (PC, 2001, v1.05) rebuilt to run in a browser: every function of the original <code>MaxPayne.exe</code> and its
+DLLs is statically recompiled from x86 to WebAssembly, and this site stands in for Windows, Direct3D 8, DirectInput and
+DirectSound. It runs on the copy of the game the project owner bought.</p>
+<p>The game data served from this domain comes from that retail copy, so the game can be played in a browser without an
+installer. It is not sold, rented or licensed here. No game files are part of the project's source repository.</p>
+
+<h2>Not affiliated</h2>
+<p>This is not an official product and is not affiliated with, sponsored or endorsed by Remedy Entertainment, Rockstar
+Games or Take-Two Interactive. Max Payne and all related marks and assets are the property of their respective owners.
+Nothing here is a claim of ownership over them.</p>
+
+<h2>Your saves</h2>
+<p>Saved games and settings stay in your own browser (private origin storage). They are not uploaded to this server and
+they do not follow you to another device or another browser.</p>
+
+<h2>Takedown</h2>
+<p>If you hold the rights to this game and want this page or its game data offline, say so and it goes offline: the game
+data is one package, so removing it takes one action and the page stops serving the game while this notice stays up.</p>
+<p>Rights holder contact: <span class="todo" data-todo="OWNER: takedown address before the first upload">to be published with the domain</span>.</p>
+
+<hr class="rule">
+<p class="lead">Questions about how it was built, or a bug to report, go to the same address.</p>
+<a class="back" href="/">← Back to the game</a>
+</main>
+</body>
+</html>

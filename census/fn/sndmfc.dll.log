@@ -1,0 +1,18 @@
+text_bytes: 57279
+functions: {'total': 564, 'from_entry_and_calls': 304, 'from_data_pointers': 260}
+instructions: 16773
+distinct_mnemonics: 71
+text_coverage: 0.9469
+jump_tables: {'count': 0, 'targets': 0}
+indirect_jmp_unresolved: 2
+indirect_call: {'mem': 170, 'reg': 73}
+import_call_sites: 375
+imports_called: 108
+x87_instructions: 482
+decode_failures: 0
+data_pointers_into_text: 220
+data_pointers_mid_instruction: 0
+immediate_pointers_into_text: 63
+unaligned_pointers_to_code: 0
+imports by dll: {'dsound.dll': 1, 'ole32.dll': 3, 'e2mfc.dll': 25, 'rlmfc.dll': 61, 'mfc42.dll': 3, 'msvcrt.dll': 15, 'kernel32.dll': 8, 'user32.dll': 1, 'msvcp60.dll': 2}
+groups: {'not64bitmode': 5113, 'fpu': 432}
