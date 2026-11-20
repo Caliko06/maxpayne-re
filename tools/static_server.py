@@ -12,9 +12,24 @@ import os
 from pathlib import Path
 import re
 import sys
+import threading
 import time
 
 RTT = float(os.environ.get('RN_RTT_MS', 0)) / 1000
+RATE = float(os.environ.get('RN_MBIT', 0)) * 1e6 / 8     # RN_MBIT=50: one shared transfer budget for all requests
+STATS = os.environ.get('RN_STATS')                         # RN_STATS=file: one line per request: time, status, bytes, path
+rate_lock = threading.Lock()
+rate_next = 0
+T0 = time.time()
+
+
+def throttle(n):
+    global rate_next
+    if RATE:
+        with rate_lock:
+            rate_next = max(time.monotonic(), rate_next) + n / RATE
+            wait = rate_next - time.monotonic()
+        time.sleep(max(0, wait))
 BLOCK = 256 << 10            # tools/build_public.py data-chunks block: one piece per 256 KB of game bytes
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 5254
 ROOT = Path(sys.argv[2] if len(sys.argv) > 2 else Path(__file__).resolve().parents[1] / 'build/public').resolve()
@@ -105,7 +120,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_header('Content-Range', f'bytes {a}-{b}/{size}')
         self.end_headers()
         if not head:
-            self.wfile.write(body)
+            for i in range(0, len(body), 64 << 10):
+                throttle(len(body[i:i + (64 << 10)]))
+                self.wfile.write(body[i:i + (64 << 10)])
+        self.stat(len(body) if not head else 0, 206 if rng and any(rng.groups()) else 200, a, b)
+
+    def stat(self, n, status, a, b):
+        if STATS:   # line: seconds bytes path status first-byte last-byte (decoded offsets)
+            with rate_lock, open(STATS, 'a') as f:
+                f.write(f'{time.time() - T0:.2f} {n} {self.path} {status} {a} {b}\n')
 
     def serve_file(self, head=False):
         if RTT:
@@ -167,8 +190,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                     data = f.read(min(1 << 20, left))
                     if not data:
                         break
+                    throttle(len(data))
                     self.wfile.write(data)
                     left -= len(data)
+            self.stat(b - a + 1, status, a, b)
 
     def log_message(self, *args):
         if os.environ.get('RN_HTTPLOG'):

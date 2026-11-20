@@ -8,6 +8,10 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include "host.h"
+#ifdef __EMSCRIPTEN__
+#include <pthread.h>
+static void level_prefetch_start(void);
+#endif
 
 #ifdef __EMSCRIPTEN__
 void d3d_load_checkpoint(void);
@@ -32,6 +36,9 @@ static char root[1024], save_root[1024];
 void files_set_root(const char *dir) {
     snprintf(root, sizeof root, "%s", dir);
     snprintf(save_root, sizeof save_root, "%s/../save", dir);     // tools/serve.py serves the same save/
+#ifdef __EMSCRIPTEN__
+    level_prefetch_start();
+#endif
 #ifndef __EMSCRIPTEN__
     mkdir(save_root, 0755);
 #endif
@@ -106,6 +113,16 @@ EM_JS(void, web_files, (const char *opfs), {
 });
 // Every guest thread runs in its own worker with its own Module: each loads the index on its first use.
 static void files_load(void) { static const char *u; if (!u) { const char *e = getenv("RN_FILES"); u = e ? e : ""; } web_files(u); }
+// A small text file of the site into out; its length, or -1 (RE-NFSU host/files.c web_text).
+EM_JS(int, web_text, (const char *url, char *out, int cap), {
+    try {
+        var x = new XMLHttpRequest();
+        x.open('GET', UTF8ToString(url), false);
+        x.send();
+        if (x.status !== 200) { err('files: ' + UTF8ToString(url) + ': HTTP ' + x.status); return -1; }
+        return stringToUTF8(x.responseText, out, cap);
+    } catch (e) { err('files: ' + UTF8ToString(url) + ': ' + e.message); return -1; }
+});
 // Index of game/: lower-case path -> [real path, size]; directories too.
 EM_JS(double, web_lookup, (const char *rel, char *real, int realsz), {
     rel >>>= 0; real >>>= 0;
@@ -144,12 +161,24 @@ EM_JS(int, web_list, (const char *rel, char *out, int outsz), {
 // real is "game/<path>" or "save/<path>". A server that ignores Range sends the whole file (200): the part is cut from it.
 EM_JS(int, web_read, (const char *real, double off, uint8_t *dst, int n), {
     real >>>= 0; dst >>>= 0;
-    var r = UTF8ToString(real), x = new XMLHttpRequest();
-    x.open('GET', Module.rnUrls.get(r) || '/' + r.split('/').map(encodeURIComponent).join('/'), false);
-    x.responseType = 'arraybuffer';
-    x.setRequestHeader('Range', 'bytes=' + off + '-' + (off + n - 1));
-    x.send();
-    if (x.status !== 206 && !(x.status === 200 && x.response.byteLength >= off + n)) return -1;
+    // The game has no answer to a failed read (it hangs on its loading screen), and a play over the internet makes hundreds
+    // of requests: a dropped one (a phone changing cell, a 5xx at the edge) is asked again after 0.3, 1, 2, 4 s.
+    var r = UTF8ToString(real), waits = [300, 1000, 2000, 4000], x;
+    var url = Module.rnUrls.get(r) || '/' + r.split('/').map(encodeURIComponent).join('/');
+    for (var t = 0; ; t++) {
+        try {
+            x = new XMLHttpRequest();
+            x.open('GET', url, false);
+            x.responseType = 'arraybuffer';
+            x.setRequestHeader('Range', 'bytes=' + off + '-' + (off + n - 1));
+            x.send();
+            if (x.status === 206 || (x.status === 200 && x.response.byteLength >= off + n)) break;
+            err('files: ' + r + ' at ' + off + ': HTTP ' + x.status + ', try ' + (t + 1));
+        } catch (e) { err('files: ' + r + ' at ' + off + ': ' + e.message + ', try ' + (t + 1)); }
+        if (t === waits.length) return -1;
+        var end = Date.now() + waits[t];
+        while (Date.now() < end) {}      // synchronous wait: this worker has nothing else to do (the guest waits on the read)
+    }
     var a = x.status === 206 ? new Uint8Array(x.response) : new Uint8Array(x.response, off, n);
     HEAPU8.set(a, dst);
     return a.length;
@@ -354,16 +383,35 @@ static int timed_read(const char *real, uint64_t at, uint8_t *dst, uint32_t n) {
 }
 #endif
 #ifdef __EMSCRIPTEN__
-typedef struct { uint64_t key, blk, used; uint8_t *p; uint32_t len; } Block;
+typedef struct { uint64_t key, blk, used; uint8_t *p; uint32_t len; int pre; } Block;   // pre: brought by a helper, not read by the guest yet
+// Guest and helper threads (level_prefetch below) share blocks[]; a read of the cache, a copy out of a block and an insert run under
+// blk_mu, a request to the server never does (pattern of RE-NFSU host/files.c blk_mu, Blk pieces).
+static pthread_mutex_t blk_mu = PTHREAD_MUTEX_INITIALIZER;
+static int pre_count;                                  // blocks with pre set (under blk_mu)
+static struct { uint64_t key, b0, b1; int on; } inflight[5];   // requests on their way (under blk_mu): 0-3 the helpers, 4 the guest
+static int in_flight(uint64_t key, uint64_t b) {
+    for (int i = 0; i < 5; i++) if (inflight[i].on && inflight[i].key == key && b >= inflight[i].b0 && b <= inflight[i].b1) return 1;
+    return 0;
+}
 static Block blocks[NBLOCKS];
 static uint64_t block_clock;
 static uint64_t path_key(const char *s) { uint64_t h = 1469598103934665603ull; for (; *s; s++) h = (h ^ (uint8_t)*s) * 1099511628211ull; return h; }
 // One free or least recently used slot of the cache (limit: RN_FILECACHE_MB).
-static Block *block_slot(void) {
+static int cache_limit(void) {
     static int limit;
     if (!limit) { const char *s = getenv("RN_FILECACHE_MB"); limit = s && atoi(s) > 0 ? atoi(s) * 4 : NBLOCKS; if (limit > NBLOCKS) limit = NBLOCKS; }
-    Block *v = &blocks[0];
-    for (int i = 0; i < limit; i++) { Block *c = &blocks[i]; if (!c->p) return c; if (c->used < v->used) v = c; }
+    return limit;
+}
+// keep_pre: a helper never evicts a block the guest has yet to read (under blk_mu); NULL when every slot is one.
+static Block *block_slot(int keep_pre) {
+    Block *v = NULL;
+    for (int i = 0; i < cache_limit(); i++) {
+        Block *c = &blocks[i];
+        if (!c->p) return c;
+        if (keep_pre && c->pre) continue;
+        if (!v || c->used < v->used) v = c;
+    }
+    if (v && v->pre) { v->pre = 0; pre_count--; }
     return v;
 }
 static Block *block_find(uint64_t key, uint64_t b) {
@@ -378,20 +426,29 @@ static Block *block_find(uint64_t key, uint64_t b) {
 static Block *block_get(GFile *g, uint64_t b) {
     uint64_t key = path_key(g->real);
     Block *c = block_find(key, b);
-    if (c) { c->used = ++block_clock; return c; }
+    for (;;) {      // a helper has this block on its way: wait for it, not a second request
+        c = block_find(key, b);
+        if (c) { c->used = ++block_clock; if (c->pre) { c->pre = 0; pre_count--; } return c; }
+        if (!in_flight(key, b)) break;
+        pthread_mutex_unlock(&blk_mu); usleep(1000); pthread_mutex_lock(&blk_mu);
+    }
     static uint64_t last_key, last_blk, run = 1;
     run = key == last_key && b == last_blk + 1 ? (run * 2 > RA_MAX ? RA_MAX : run * 2) : 1;
     uint64_t at = b * BLOCK, nb = 1;
-    while (nb < run && (b + nb) * BLOCK < g->size && !block_find(key, b + nb)) nb++;
+    while (nb < run && (b + nb) * BLOCK < g->size && !block_find(key, b + nb) && !in_flight(key, b + nb)) nb++;   // a helper's blocks are not asked twice
     uint64_t want = g->size - at < nb * BLOCK ? g->size - at : nb * BLOCK;
     static uint8_t *buf;
     if (!buf && !(buf = malloc(RA_MAX * BLOCK))) return NULL;
+    inflight[4].key = key; inflight[4].b0 = b; inflight[4].b1 = b + nb - 1; inflight[4].on = 1;   // the helpers skip it (desk_after: 233 MB vs 137 MB unique by 70 s)
+    pthread_mutex_unlock(&blk_mu);
     int r = timed_read(g->real, at, buf, (uint32_t)want);
+    pthread_mutex_lock(&blk_mu);
+    inflight[4].on = 0;
     if (r <= 0) return NULL;
     last_key = key; last_blk = b + nb - 1;
     Block *first = NULL;
     for (uint64_t k = 0; k < nb && k * BLOCK < (uint64_t)r; k++) {
-        Block *v = block_slot();
+        Block *v = block_slot(0);
         if (!v->p && !(v->p = malloc(BLOCK))) return NULL;
         uint32_t len = (uint64_t)r - k * BLOCK < BLOCK ? (uint32_t)((uint64_t)r - k * BLOCK) : BLOCK;
         memcpy(v->p, buf + k * BLOCK, len);
@@ -400,6 +457,93 @@ static Block *block_get(GFile *g, uint64_t b) {
     }
     if (first) first->used = ++block_clock;     // the block asked for is the newest
     return first;
+}
+
+// ---- web: the chosen level's files come ahead of the game (RN_LEVELHINT=<level id>, web/index.html) ----------------------------
+// Port of RE-NFSU host/files.c pre_main/pre_spawn (NPRE helper threads on a request queue). /level_hint.tsv has lines
+// "level \t path \t offset \t length [\t phone|desktop]". Helpers fetch them in order into blocks[]; the guest's reads then hit.
+// Budget: the helpers stop while unread prefetched blocks fill half the cache, and never evict one (block_slot keep_pre), so
+// the guest's use frees room and nothing is evicted before it is read (RE-NFSU 0ab0b2d: the hint must fit the cache).
+#define NPRE 4
+#define PCHUNK 8                   // blocks per request (2 MB)
+#define NPQ 4096
+static struct { char real[256]; uint64_t b0, b1; } pq[NPQ];
+static unsigned pq_head, pq_tail;  // under blk_mu
+static char hint_text[1 << 20];
+
+static void *pre_main(void *first) {
+    files_load();                  // each worker has its own Module.rnUrls
+    uint8_t *buf = malloc(PCHUNK * BLOCK);
+    if (first) {
+        int n = web_text("/level_hint.tsv", hint_text, sizeof hint_text - 1);
+        const char *lv = getenv("RN_LEVELHINT"), *ph = getenv("RN_LOWMEM") ? "phone" : "desktop";
+        pthread_mutex_lock(&blk_mu);
+        uint64_t kb = 0;
+        for (char *l = n > 0 ? hint_text : 0; l && *l; ) {
+            char id[64], path[256], dev[16] = "", real[300]; double off, len;
+            int f = sscanf(l, "%63[^\t]\t%255[^\t]\t%lf\t%lf\t%15[^\t\n]", id, path, &off, &len, dev);
+            if (f >= 4 && !strcmp(id, lv) && (f < 5 || !strcmp(dev, ph)) && len > 0) {
+                const char *pp = path + (path[0] == '/');     // tools/level_hint.py writes URL paths ("/game/x_data.ras"); the cache keys g->real ("game/x_data.ras")
+                snprintf(real, sizeof real, "%s%s", strncmp(pp, "game/", 5) ? "game/" : "", pp);
+                if (strlen(real) < 256) {
+                    uint64_t b0 = (uint64_t)off / BLOCK, b1 = ((uint64_t)off + (uint64_t)len - 1) / BLOCK;
+                    for (uint64_t b = b0; b <= b1 && pq_tail - pq_head < NPQ; b += PCHUNK) {
+                        unsigned k = pq_tail++ % NPQ;
+                        snprintf(pq[k].real, 256, "%s", real);
+                        pq[k].b0 = b; pq[k].b1 = b + PCHUNK - 1 < b1 ? b + PCHUNK - 1 : b1;
+                        kb += (pq[k].b1 - pq[k].b0 + 1) * (BLOCK >> 10);
+                    }
+                }
+            }
+            l = strchr(l, '\n'); if (l) l++;
+        }
+        rn_log("files: level prefetch %s: %u requests, %u KB, budget %u KB", lv, pq_tail, (unsigned)kb, cache_limit() / 2 * (BLOCK >> 10));
+        pthread_mutex_unlock(&blk_mu);
+        for (int k = 1; k < NPRE && pq_tail; k++) {
+            pthread_t t; pthread_attr_t a;
+            pthread_attr_init(&a); pthread_attr_setdetachstate(&a, PTHREAD_CREATE_DETACHED); pthread_attr_setstacksize(&a, 256 << 10);   // not the 16 MB default (build.py): 4 of them on a 640 MB phone
+            pthread_create(&t, &a, pre_main, 0);
+        }
+    }
+    for (;;) {
+        pthread_mutex_lock(&blk_mu);
+        if (pq_head == pq_tail) { pthread_mutex_unlock(&blk_mu); break; }
+        if (pre_count + PCHUNK > cache_limit() / 2) { pthread_mutex_unlock(&blk_mu); usleep(20000); continue; }
+        unsigned q = pq_head++ % NPQ;
+        uint64_t key = path_key(pq[q].real), b0 = pq[q].b0, b1 = pq[q].b1;
+        while (b0 <= b1 && (block_find(key, b0) || in_flight(key, b0))) b0++;        // the guest or another helper got there first
+        while (b1 >= b0 && (block_find(key, b1) || in_flight(key, b1))) b1--;
+        int slot = -1;
+        for (int i = 0; i < 4 && b0 <= b1; i++) if (!inflight[i].on) { slot = i; break; }
+        if (b0 > b1 || slot < 0) {      // nothing to bring, or all four lanes busy (cannot happen with NPRE 4 threads)
+            pthread_mutex_unlock(&blk_mu); continue;
+        }
+        inflight[slot].key = key; inflight[slot].b0 = b0; inflight[slot].b1 = b1; inflight[slot].on = 1;
+        char real[256]; snprintf(real, sizeof real, "%s", pq[q].real);
+        pthread_mutex_unlock(&blk_mu);
+        int r = web_read(real, (double)(b0 * BLOCK), buf, (int)((b1 - b0 + 1) * BLOCK));   // not timed_read: rn_telem is the guest's
+        pthread_mutex_lock(&blk_mu);
+        for (uint64_t k = 0; r > 0 && k <= b1 - b0 && k * BLOCK < (uint64_t)r; k++) {
+            if (block_find(key, b0 + k)) continue;
+            Block *v = block_slot(1);
+            if (!v) break;
+            if (!v->p && !(v->p = malloc(BLOCK))) break;
+            uint32_t len = (uint64_t)r - k * BLOCK < BLOCK ? (uint32_t)((uint64_t)r - k * BLOCK) : BLOCK;
+            memcpy(v->p, buf + k * BLOCK, len);
+            v->key = key; v->blk = b0 + k; v->len = len; v->used = ++block_clock; v->pre = 1; pre_count++;
+        }
+        inflight[slot].on = 0;
+        pthread_mutex_unlock(&blk_mu);
+    }
+    free(buf);
+    return 0;
+}
+static void level_prefetch_start(void) {
+    const char *e = getenv("RN_LEVELHINT");
+    if (!e || !*e) return;
+    pthread_t t; pthread_attr_t a;
+    pthread_attr_init(&a); pthread_attr_setdetachstate(&a, PTHREAD_CREATE_DETACHED); pthread_attr_setstacksize(&a, 256 << 10);   // not the 16 MB default (build.py): 4 of them on a 640 MB phone
+    pthread_create(&t, &a, pre_main, (void *)e);
 }
 #endif
 int64_t gf_read(int id, uint64_t off, uint8_t *dst, uint32_t n) {
@@ -417,19 +561,28 @@ int64_t gf_read(int id, uint64_t off, uint8_t *dst, uint32_t n) {
     while (done < n) {
         uint64_t at = off + done;
         uint32_t want = n - done;
-        if (want >= BLOCK) {        // large reads go straight to the destination
+        if (want >= BLOCK) {        // large reads go straight to the destination, up to the first block a helper brought or is bringing
+            uint64_t key = path_key(g->real), b = at / BLOCK, e = (at + want - 1) / BLOCK, k = b;
+            pthread_mutex_lock(&blk_mu);
+            while (k <= e && !block_find(key, k) && !in_flight(key, k)) k++;
+            pthread_mutex_unlock(&blk_mu);
+            if (k == b) goto cached;    // without this the prefetched level came twice (desk_after2: Part1_Level1.ldb 101 MB for 51)
+            if (k <= e) want = (uint32_t)(k * BLOCK - at);
             int r = timed_read(g->real, at, dst + done, want);
             if (r <= 0) return -1;
             done += (uint32_t)r;
             continue;
         }
+    cached:
+        pthread_mutex_lock(&blk_mu);      // the copy out of the block is under the lock too: a helper may evict it
         Block *b = block_get(g, at / BLOCK);
-        if (!b) return -1;
+        if (!b) { pthread_mutex_unlock(&blk_mu); return -1; }
         uint32_t o = (uint32_t)(at - b->blk * BLOCK);
-        if (o >= b->len) return done ? (int64_t)done : -1;     // the server gave less than the file's size
+        if (o >= b->len) { pthread_mutex_unlock(&blk_mu); return done ? (int64_t)done : -1; }     // the server gave less than the file's size
         uint32_t k = b->len - o;
         if (k > want) k = want;
         memcpy(dst + done, b->p + o, k);
+        pthread_mutex_unlock(&blk_mu);
         done += k;
     }
     return done;

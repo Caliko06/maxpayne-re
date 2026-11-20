@@ -216,7 +216,8 @@ def compile_web(srcs):
                     # never grows; these two only widen the import's limits. Desktop: guest 1.25 GB + host 415 MB, under 2 GB for Firefox (host.h).
                     "-sINCOMING_MODULE_JS_API=ENVIRONMENT,arguments,canvas,dynamicLibraries,elementPointerLock,instantiateWasm,locateFile,monitorRunDependencies,noExitRuntime,noInitialRun,onAbort,onExit,onRuntimeInitialized,postRun,preInit,preRun,print,printErr,setStatus,statusMessage,stderr,stdin,stdout,thisProgram,wasm,websocket,wasmMemory",
                     "-sSTACK_SIZE=16MB", "-sDEFAULT_PTHREAD_STACK_SIZE=16MB",
-                    "-sPROXY_TO_PTHREAD=1", "-sPTHREAD_POOL_SIZE=8", "-sEXIT_RUNTIME=1",
+                    "-sPROXY_TO_PTHREAD=1", "-sPTHREAD_POOL_SIZE=12",   # +4: the level prefetch helpers (host/files.c NPRE)
+                    "-sEXIT_RUNTIME=1",
                     "-sMODULARIZE=1", "-sEXPORT_NAME=MaxPayne", "-sEXPORTED_RUNTIME_METHODS=FS,ENV,HEAPU8,HEAP32,HEAPU32,HEAPF64",
                     "-sEXPORTED_FUNCTIONS=_main,_free,_rn_gpu_mailbox,_rn_input_ring,_rn_audio_ring,_rn_telem_addr,_rn_gamestate_addr,_rn_jump_box,_rn_sound_report",
                     "-sFORCE_FILESYSTEM=1", "-sENVIRONMENT=web,worker"], check=True)

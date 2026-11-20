@@ -60,6 +60,14 @@ def build(game, dist, cdn=False):
         shutil.copy2(br, Path(str(wasm) + '.br'))
     else:
         subprocess.run(['brotli', '-q', '11', '-w', '24', '-f', '-k', str(wasm)], check=True)
+    # The page asks for the glue and the wasm with the same ?v=<hash>: a browser that kept an older maxpayne.js (Cloudflare gave
+    # max-age=14400 once) never pairs it with a newer wasm ("import function a:I must be callable", OWNER 2026-11-20).
+    v = hashlib.md5(Path(str(wasm) + '.br').read_bytes()).hexdigest()[:10]
+    page = index.read_text()
+    for ref in ('src="out/maxpayne.js"', "fetch('out/maxpayne.wasm'"):
+        assert ref in page, ref
+    index.write_text(page.replace('src="out/maxpayne.js"', f'src="out/maxpayne.js?v={v}"')
+                     .replace("fetch('out/maxpayne.wasm'", f"fetch('out/maxpayne.wasm?v={v}'"))
     (dist / 'img').mkdir()
     images = []
     for path in sorted((ROOT / 'build/img').iterdir()):

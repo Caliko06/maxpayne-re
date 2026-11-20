@@ -42,3 +42,17 @@ Prior art: nfsu2-web (github.com/th0mk/nfsu2-web, MIT): the same kind of port, p
 - Fix: web/opfs.js hdPack drops data/database from a phone's listing, so the game reads the retail files; profile `phone` (index.html)
   = low memory without RN_TEXDETAIL 0; web/gpu.js paces phones at 30 fps (the guest waits on box.shown).
 - Headless M4, part1_level1 load: HD + low 38 s -> phone 5 s, then 30 fps steady (out/phone1120). NOT VERIFIED: a real phone; sound.
+
+## Downloads (2026-11-20, OWNER: faster downloads on every device and browser, AGENTS.md Goal "short loads")
+- Cause: the guest reads game files with serial synchronous Range XHRs (host/files.c BLOCK 256 KB); part1_level1 cold was 740
+  requests on desktop, so at 80 ms each the round trips (~59 s) cost more than the bytes (175 MB at 50 Mbit, ~28 s).
+- Fix (port of RE-NFSU host/files.c pre_main, 0ab0b2d/ef0244e): the page passes the chosen level (RN_LEVELHINT, from RN_JUMP's
+  gm_init in web/index.html); 4 helper threads fetch its pieces from web/level_hint.tsv (tools/level_hint.py, from a
+  RN_STATS capture of tools/static_server.py) in 2 MB requests into the block cache while the engine boots. Unread prefetched
+  blocks are never evicted by helpers and fill at most half the cache. Guest and helper requests are tracked in inflight[] so a
+  block is not asked twice; large guest reads use the cached blocks (without that Part1_Level1.ldb came twice, 101 MB for 51).
+  web_read retries a failed request after 0.3, 1, 2, 4 s (a dropped phone request hung the loading screen).
+- Measured (headless Chrome, tools/static_server.py RN_RTT_MS=80 RN_MBIT=50, cold, ?level=part1_level1, out/load1120/):
+  desktop level playing 94.1 s -> 37.2 s (175 -> 180 MB); phone (?device=phone) 75.3 s -> 49.8 s (156 -> 179 MB by 70 s:
+  the 32 MB phone cache still evicts part of x_data.ras before use, 100 MB for 70 unique).
+- Only part1_level1 has a hint so far; other levels load as before. Safari not measured.

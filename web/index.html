@@ -226,6 +226,8 @@ const launcher = handed ? null : window.MPLauncher?.open() || null;
       m.ENV.RN_SCREEN = playSize(pick);
       Object.assign(m.ENV, PROFILES[profile.name].env, pick?.env);      // the launcher's env; ?env= below wins
       if (MP_DEVICE !== 'desktop') m.ENV.RN_NOCURSOR = '1';
+      const lv = /gm_init\((\w+)\)/.exec(m.ENV.RN_JUMP || '');   // the level about to load: host/files.c fetches its pieces (web/level_hint.tsv) while the engine boots
+      if (lv && !m.ENV.RN_LEVELHINT) m.ENV.RN_LEVELHINT = lv[1];
       m.FS.mkdirTree('/build/img');
       for (const [n, d] of data) m.FS.writeFile('/build/img/' + n, d);
       for (const kv of (new URLSearchParams(location.search).get('env') || '').split(/,(?=RN_)/).filter(Boolean)) {   // a comma inside a value (RN_JUMP "c_pickupammo(beretta, 1000)") stays; pairs start with RN_
