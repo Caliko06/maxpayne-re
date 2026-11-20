@@ -98,7 +98,7 @@
     const r = ROUTES[level] || {};
     const s = [...(r.ff || r.steps || [])];
     if (!r.ff || !r.ffEnd) {
-      const exit = { exit: true, name: 'Fin del capítulo', kill: r.kill, t: (r.exit || []).filter(n => n.endsWith('.TRIGGER')), send: r.send };
+      const exit = { exit: true, name: 'End of chapter', kill: r.kill, t: (r.exit || []).filter(n => n.endsWith('.TRIGGER')), send: r.send };
       if (s.length || exit.t.length || exit.kill?.length || exit.send?.length) s.push(exit);
     }
     return s;
@@ -144,7 +144,7 @@
     for (let i = Math.max(0, ff.level === level ? ff.step + 1 : 0); i < steps.length && i <= upto && !ff.cancel; i++) {
       if (read()?.level !== level) return;
       ff.level = level; ff.step = i;
-      hud(`${TITLES[level] || level}`, steps[i].name || `paso ${i + 1} de ${steps.length}`);
+      hud(`${TITLES[level] || level}`, steps[i].name || `step ${i + 1} of ${steps.length}`);
       await runStep(level, steps[i]);
     }
   }
@@ -169,21 +169,21 @@
     try {
       await until(s => s.mode === 1 || s.mode === 2 || steady(s), 60000);
       let s = read(), here = s?.level;
-      if (booting) { hud(TITLES[level] || level, 'cargando'); if (!await arrive(level)) return; }
+      if (booting) { hud(TITLES[level] || level, 'loading'); if (!await arrive(level)) return; }
       else if (!here || ORDER.indexOf(here) !== ORDER.indexOf(level)) {
         ff.level = ''; ff.step = -1;
-        hud(TITLES[level] || level, 'cargando');
+        hud(TITLES[level] || level, 'loading');
         if (!await send([`maxpayne_gamemode->gm_init(${level});`, 'x_modeswitch->s_modeswitch(game);'])) return;
         if (!await arrive(level)) return;
       }
       if (step >= 0) { setSpeed(TURBO); await runLevel(level, step); }
       // Arrived: what the milestone starts (the ending's cameras) plays at its own speed.
-      setSpeed(1); badge.dataset.on = ''; if (!ff.cancel) hud(TITLES[level] || level, 'llegaste', 2600);
+      setSpeed(1); badge.dataset.on = ''; if (!ff.cancel) hud(TITLES[level] || level, 'arrived', 2600);
       if (!ff.cancel) await until(inControl, 60000);
       if (!ff.cancel) await send(godCheat() ? ['player->c_setinvulnerable(false);'] : MORTAL, 20000);
     } finally {
       setSpeed(1);
-      if (ff.cancel) hud('Avance cancelado', '', 2600);
+      if (ff.cancel) hud('Skip cancelled', '', 2600);
       setState('idle');
     }
   }
@@ -200,7 +200,7 @@
         const noRoute = !(route.ff?.length || route.steps?.length);
         await runLevel(level, Infinity);
         if (ff.cancel || level === lastLevel || !nx) break;
-        hud(TITLES[nx] || nx, 'siguiente capítulo');
+        hud(TITLES[nx] || nx, 'next chapter');
         if (!ff.cancel && (noRoute && !route.send || !await until(x => x.level !== level || x.next && x.next !== level, 45000))
             && read()?.level === level)
           await send([`maxpayne_gamemode->gm_init(${nx});`, 'x_modeswitch->s_modeswitch(game);']);
@@ -209,7 +209,7 @@
       }
     } finally {
       setSpeed(1);
-      hud(ff.cancel ? 'Avance cancelado' : 'Piloto automático', ff.cancel ? '' : 'listo', 2600);
+      hud(ff.cancel ? 'Skip cancelled' : 'Autopilot', ff.cancel ? '' : 'done', 2600);
       setState('idle');
     }
   }
@@ -240,10 +240,10 @@
   function buildPanel() {
     const s = read(), level = s?.level || '', stop = nextStop();
     list = [];
-    if (stop) list.push({ kind: 'next', title: stop.step >= 0 ? stepsOf(stop.level)[stop.step].name : TITLES[stop.level] || stop.level, sub: 'Siguiente hito', cover: COVERS[stop.level], go: () => run(stop.level, stop.step) });
-    list.push({ kind: 'hito', title: 'Piloto automático', sub: 'Juega hasta los créditos. Esc para cancelar', cover: COVERS[level], go: () => autoplay() });
-    for (const m of milestones(level)) list.push({ kind: 'hito', title: m.name, sub: 'Este capítulo', cover: COVERS[level], go: () => run(level, m.i) });
-    for (const id of ORDER) if (id !== level) list.push({ kind: 'chapter', id, title: TITLES[id] || id, sub: 'Capítulo ' + (ORDER.indexOf(id) + 1) + ' de ' + ORDER.length, cover: COVERS[id], go: () => run(id) });
+    if (stop) list.push({ kind: 'next', title: stop.step >= 0 ? stepsOf(stop.level)[stop.step].name : TITLES[stop.level] || stop.level, sub: 'Next checkpoint', cover: COVERS[stop.level], go: () => run(stop.level, stop.step) });
+    list.push({ kind: 'hito', title: 'Autopilot', sub: 'Plays to the credits. Esc cancels', cover: COVERS[level], go: () => autoplay() });
+    for (const m of milestones(level)) list.push({ kind: 'hito', title: m.name, sub: 'This chapter', cover: COVERS[level], go: () => run(level, m.i) });
+    for (const id of ORDER) if (id !== level) list.push({ kind: 'chapter', id, title: TITLES[id] || id, sub: 'Chapter ' + (ORDER.indexOf(id) + 1) + ' of ' + ORDER.length, cover: COVERS[id], go: () => run(id) });
     sel = 0;
     const box = panel.querySelector('.ff-list'); box.textContent = '';
     list.forEach((it, i) => {
@@ -318,22 +318,26 @@
     if (ff.turbo) turboOn(false);
     else if (performance.now() - fDownAt < TAP_MS) openPanel();
   }
+  function onBlur() {
+    clearTimeout(holdTimer); fDownAt = 0;
+    if (ff.turbo) turboOn(false);
+  }
 
   async function start(module, cv, inp) {
     M = module; canvas = cv; input = inp;
     badge = h('div', 'ff-badge', h('i'), h('i'), h('b', '', 'x' + TURBO));
     card = h('div', 'ff-card', h('b'), h('span'));
-    const closeBtn = h('button', 'ff-btn ff-close', 'Cerrar (Esc)'); closeBtn.type = 'button';
+    const closeBtn = h('button', 'ff-btn ff-close', 'Close (Esc)'); closeBtn.type = 'button';
     closeBtn.addEventListener('click', () => closePanel());
-    const heading = h('b', '', 'Avanzar'); heading.id = 'mpff-title';
-    panel = h('div', 'ff-panel', h('header', '', heading, h('span', '', 'Elige un destino. Enter avanza; Esc o F vuelve al juego.'), closeBtn), h('div', 'ff-list'));
+    const heading = h('b', '', 'Skip Ahead'); heading.id = 'mpff-title';
+    panel = h('div', 'ff-panel', h('header', '', heading, h('span', '', 'Pick a destination. Enter skips ahead; Esc or F returns to the game.'), closeBtn), h('div', 'ff-list'));
     panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-modal', 'true'); panel.setAttribute('aria-labelledby', heading.id);
     panel.inert = true; panel.setAttribute('aria-hidden', 'true');
     card.setAttribute('role', 'status');
-    // On-screen buttons (OWNER 2026-11-07): "Avanzar" = the panel's first row (next milestone), the menu one = the panel. Shown only while playing.
-    const nextBtn = h('button', 'ff-btn ff-next', h('b', '', 'Avanzar \u25b8 (N)'), h('span')), menuBtn = h('button', 'ff-btn ff-menu', 'Hitos (F)');
-    nextBtn.type = menuBtn.type = 'button'; menuBtn.title = 'Hitos y capítulos (F)';
-    menuBtn.setAttribute('aria-label', 'Abrir hitos y capítulos (F)');
+    // On-screen buttons (OWNER 2026-11-07): "Skip Ahead" = the panel's first row (next milestone), the menu one = the panel. Shown only while playing.
+    const nextBtn = h('button', 'ff-btn ff-next', h('b', '', 'Skip Ahead \u25b8 (N)'), h('span')), menuBtn = h('button', 'ff-btn ff-menu', 'Checkpoints (F)');
+    nextBtn.type = menuBtn.type = 'button'; menuBtn.title = 'Checkpoints and chapters (F)';
+    menuBtn.setAttribute('aria-label', 'Open checkpoints and chapters (F)');
     nextBtn.addEventListener('click', e => { e.stopPropagation(); const st = ff.state === 'idle' && nextStop(); if (st) run(st.level, st.step); });
     menuBtn.addEventListener('click', e => { e.stopPropagation(); openPanel(); });
     const bar = h('div', 'ff-bar', nextBtn, menuBtn);
@@ -343,7 +347,7 @@
       // Mode 3 also hosts script cameras and the ending. Input link and camera busy are authoritative.
       // GM_SetPlayerControls /* 0x456650 */, LocalCharacterInput /* 0x5030e0 */; host/gamestate.c GSC_*.
       const s = M && read(), on = !!s && s.mode === MODE_GAME && (s.control & 7) === 1 && !!s.level && !(s.flags & 4) && ff.state === 'idle';
-      if (on) { const st = nextStop(); nextBtn.querySelector('span').textContent = !st ? 'No quedan hitos' : st.step >= 0 ? stepsOf(st.level)[st.step].name : TITLES[st.level] || st.level; nextBtn.disabled = !st; }
+      if (on) { const st = nextStop(); nextBtn.querySelector('span').textContent = !st ? 'No checkpoints left' : st.step >= 0 ? stepsOf(st.level)[st.step].name : TITLES[st.level] || st.level; nextBtn.disabled = !st; }
       if (on) bar.dataset.on = '1'; else delete bar.dataset.on;
     }, 500);
     let revealTimer;
@@ -354,6 +358,7 @@
     }, true);
     window.addEventListener('keydown', onKey, true);
     window.addEventListener('keyup', onKey, true);
+    window.addEventListener('blur', onBlur);
     await ready;
   }
   // Loaded with the script: the launcher lists the same milestones before the game exists.

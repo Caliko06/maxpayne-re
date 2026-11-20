@@ -62,7 +62,8 @@ function startTelemetry(M, t0, log, logLines) {
   let dv = null;
   const view = () => (dv && dv.buffer === M.HEAPU8.buffer) ? dv : (dv = new DataView(M.HEAPU8.buffer));
   const gbase = () => U()[W + 10];
-  const ok = a => a >= 0x10000 && a < 0xc0000000;                 // host.h GUEST_MEM on the web
+  const guestLimit = (M.ENV?.RN_GUEST_MB ? +M.ENV.RN_GUEST_MB * 1048576 : 0x50000000);
+  const ok = a => a >= 0x10000 && a < guestLimit;                 // host.h GUEST_MEM on the web
   const g32 = a => { const b = gbase(); return b && ok(a) ? view().getUint32(b + a, true) : 0; };
   const gsAddr = M._rn_gamestate_addr ? M._rn_gamestate_addr() >>> 2 : 0;
   const NONE = [-1, 0, 0, 0, -1, -1, -1, -1, -1, 0];
@@ -195,7 +196,7 @@ function startTelemetry(M, t0, log, logLines) {
     if (ev === 'keydown' && !e.repeat) fn();
   }, true);
   let marks = 0;
-  keys.F8 = () => { event('mark', { n: ++marks }); log(`telemetry: mark ${marks}`); show(`marca ${marks} guardada`, 1500); };
+  keys.F8 = () => { event('mark', { n: ++marks }); log(`telemetry: mark ${marks}`); show(`mark ${marks} saved`, 1500); };
 
   // F7: the live panel (top right). Stacked bars per frame: game code, waiting for the page (GPU), waiting for the screen
   // (vsync: the game is ahead of 60 Hz), waiting for another guest thread (GIL), file reads. Lines at 16.7 and 33 ms.
@@ -232,13 +233,13 @@ function startTelemetry(M, t0, log, logLines) {
     const rspan = (recent[recent.length - 1].t - recent[0].t) / 1000 || 1;
     const f1 = x => x.toFixed(1).padStart(5);
     text.textContent =
-      `${((last.length - 1) / span).toFixed(0)} fps   frame ${f1(avg('dt'))} ms   peor ${Math.max(...recent.map(f => f.dt)).toFixed(0)} ms   ` +
-      `lagazos ${recent.filter(f => f.dt > 50).length}\n` +
-      `juego ${f1(avg('game'))}  gpu ${f1(avg('gpuWait'))}  vsync ${f1(avg('vsync'))}  hilos ${f1(avg('gil'))}  disco ${f1(avg('read'))} ms\n` +
-      `${MODE_NAMES[mode] || mode} ${level}   draws ${Math.round(avg('draws'))}   texturas ${(sum('texKb') / 1024 / rspan).toFixed(1)} MB/s   pipelines ${sum('pipes')}\n` +
-      `disco ${(sum('readKb') / 1024 / rspan).toFixed(1)} MB/s   GIL max ${Math.max(...recent.map(f => f.hold)).toFixed(0)} ms   página ${f1(avg('run'))} ms\n` +
-      `audio ${(last[last.length - 1].behind / 44.1).toFixed(0)} ms   pico ${Math.max(...recent.map(f => f.peak))}   silencios ${underruns}   ` +
-      `recortes ${clips}   cortes ${starves}   guardados ${saves}   marcas ${marks}`;
+      `${((last.length - 1) / span).toFixed(0)} fps   frame ${f1(avg('dt'))} ms   worst ${Math.max(...recent.map(f => f.dt)).toFixed(0)} ms   ` +
+      `hitches ${recent.filter(f => f.dt > 50).length}\n` +
+      `game ${f1(avg('game'))}  gpu ${f1(avg('gpuWait'))}  vsync ${f1(avg('vsync'))}  threads ${f1(avg('gil'))}  disk ${f1(avg('read'))} ms\n` +
+      `${MODE_NAMES[mode] || mode} ${level}   draws ${Math.round(avg('draws'))}   textures ${(sum('texKb') / 1024 / rspan).toFixed(1)} MB/s   pipelines ${sum('pipes')}\n` +
+      `disk ${(sum('readKb') / 1024 / rspan).toFixed(1)} MB/s   GIL max ${Math.max(...recent.map(f => f.hold)).toFixed(0)} ms   page ${f1(avg('run'))} ms\n` +
+      `audio ${(last[last.length - 1].behind / 44.1).toFixed(0)} ms   peak ${Math.max(...recent.map(f => f.peak))}   underruns ${underruns}   ` +
+      `clips ${clips}   starves ${starves}   saves ${saves}   marks ${marks}`;
   }
   setInterval(draw, 250);
   keys.F7 = () => {
@@ -253,7 +254,7 @@ function startTelemetry(M, t0, log, logLines) {
   fetch('/telemetry?new', { method: 'POST', body: JSON.stringify(head) + '\n' }).then(r => {
     if (r.ok) return;
     log(`telemetry: the server answered ${r.status}: restart tools/serve.py`);
-    show('telemetría sin guardar: reinicia tools/serve.py', 8000);
+    show('telemetry not saved: restart tools/serve.py', 8000);
   }).catch(() => {});
   function flush() {
     if (!rows.length && !events.length) return;
@@ -274,7 +275,7 @@ function startTelemetry(M, t0, log, logLines) {
     a.href = URL.createObjectURL(blob); a.download = name; a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 10000);
     log(`telemetry: session saved as ${name} (${nAll} rows)`);
-    show(`sesión descargada: ${name}`, 3000);
+    show(`session downloaded: ${name}`, 3000);
   };
   log('telemetry: on (build/telemetry.ndjson), F8 = mark, F7 = live panel, F10 = download the session');
   return { packet: frame, event };

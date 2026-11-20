@@ -603,8 +603,8 @@
     function setDevice(d) { ui.device = d; }
     function typeahead(ch) {
       const now = performance.now(); gate.ahead = now - gate.aheadAt > 800 ? ch : gate.ahead + ch; gate.aheadAt = now;
-      const a = norm(gate.ahead), i = ui.rows.findIndex(r => r.d.id === ui.active.id), n = ui.rows.length;
-      for (let k = 1; k <= n; k++) { const r = ui.rows[(i + (gate.ahead.length > 1 ? 0 : k)) % n]; if (norm(r.d.label).startsWith(a)) { setActive(r.d.id, 'key'); return; } if (gate.ahead.length > 1 && k === n) return; }
+      const a = norm(gate.ahead), i = ui.rows.findIndex(r => r.d.id === ui.active.id), n = ui.rows.length, s = gate.ahead.length > 1 ? 0 : 1;
+      for (let k = s; k < s + n; k++) { const r = ui.rows[(i + k) % n]; if (norm(r.d.label).startsWith(a)) { setActive(r.d.id, 'key'); return; } }
     }
     function onKey(e) {
       if (closed) return;

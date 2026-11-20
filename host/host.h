@@ -23,7 +23,7 @@
 // host/d3d8.c MAXTEX) holds 741-748 MB of decoded textures at 1280x900 (fleet s1104: part1_level6-9 741 MB, part1_level4-7
 // 748, part3_level4-20 745), and at 751 MB of heap an 8 MB readback and a 16 MB copy failed inside the level teardown.
 // The 1 GB was sized on the 554 MB peak of the 25-map route at 1024x768 (2026-11-02, Pod mem1g, wasm heap 1439 MB), a
-// measurement the product resolution never reproduced. INITIAL_MEMORY 1920 MB (build.py) leaves the host heap measured at
+// measurement the product resolution never reproduced. INITIAL_MEMORY=512MB, MAXIMUM_MEMORY=1920MB (build.py) leaves the host heap measured at
 // 415 MB (wasm heap 1439 - guest block 1024) and stays under 2 GB for Firefox (bugzilla 2022805: WebGPU
 // writeBuffer/writeTexture reject views of a larger buffer); 2048 MB would sit exactly on that limit. The 3 GB of
 // 2026-10-31 (brk 0x3fde54b0 in the tutorial) came from P_Map holding every source image until its first use, which
@@ -107,6 +107,7 @@ typedef struct {
 extern Telem rn_telem;
 void dispatch_threads_report(void);                             // log what every guest thread is doing now
 void threads_init(Ctx *main_ctx);
+void threads_close_handle(uint32_t h);
 void rn_stop(Ctx *c);
 void rn_backtrace(Ctx *c);
 void rn_host_call(Ctx *c, uint32_t target);                    // run one host API for code outside the lifted code
@@ -116,6 +117,7 @@ int gf_stat(const char *gpath);                                // 0 file, 1 dire
 int gf_open(const char *gpath);                                // id, or -1 missing, -2 outside, -3 directory
 uint64_t gf_size(int id);
 int64_t gf_read(int id, uint64_t off, uint8_t *dst, uint32_t n);
+void gf_retain(int id);
 void gf_close(int id);
 // Save folder only: create/open for writing (disp = CreateFileA dwCreationDisposition). id, or -1 missing,
 // -2 outside, -3 a directory, -4 exists (CREATE_NEW), -5 read-only (game folder), -6 the folder is missing.

@@ -113,10 +113,13 @@ uint32_t *ffp_vs(const FfpVs *k, uint32_t *n, const char **why) {
                     op2(&a, OP_MUL, DR(9, MZ), sw(R(9), RZ), sw(C(b + 6), RW));
                     op2(&a, OP_MAX, DR(9, MZ), sw(R(9), RZ), k0);
                     op2(&a, OP_MIN, DR(9, MZ), sw(R(9), RZ), k1);
+                    // Outside the cone spot is 0 whatever the falloff: log(0) * falloff 0 would give exp(0) = 1.
+                    op2(&a, OP_SLT, DR(10, MY), k0, sw(R(9), RZ));        // r10.y (range mask, used above) = inside
                     op1(&a, OP_LOG, DR(9, MZ), sw(R(9), RZ));
                     op2(&a, OP_MUL, DR(9, MZ), sw(R(9), RZ), sw(C(b + 6), RZ));
                     op1(&a, OP_EXP, DR(9, MZ), sw(R(9), RZ));
                     op2(&a, OP_MUL, DR(10, MX), sw(R(10), RX), sw(R(9), RZ));
+                    op2(&a, OP_MUL, DR(10, MX), sw(R(10), RX), sw(R(10), RY));
                 }
             }
             // lit((N.L, N.H, 0, power)): y = max(N.L, 0), z = (N.H)^power when N.L > 0.

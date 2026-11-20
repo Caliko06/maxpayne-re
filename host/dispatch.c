@@ -82,13 +82,16 @@ static int traced(const char *name) {
 }
 // What each guest thread is doing (telemetry): inside an API, or running guest code after it. No clock here: this runs
 // at every API call (thousands per frame in a race).
-static struct { uint32_t tid, api, ra, in; } busy[64];
+static inline int guest_ok(Ctx *c, uint64_t p, uint64_t n) { return p >= LOW && p + n <= c->memsz; }
+static struct { uint32_t tid, api, ra, in; uint64_t seq; } busy[64];
 static int nbusy;
+static uint64_t busy_seq;
 static __thread int slot = -1;
 void dispatch_threads_report(void) {
     for (int k = 0; k < nbusy && k < 64; k++) {
+        if (!busy[k].tid) continue;
         int newer = 0;      // a thread id that came back (short-lived threads): only its newest slot
-        for (int j = k + 1; j < nbusy && j < 64; j++) newer |= busy[j].tid == busy[k].tid;
+        for (int j = 0; j < nbusy && j < 64; j++) newer |= j != k && busy[j].tid == busy[k].tid && busy[j].seq > busy[k].seq;
         if (!newer) rn_log("  thread %x: %s %s!%s (ret %08x)", busy[k].tid, busy[k].in ? "in" : "guest code after",
                hosts[busy[k].api].dll, hosts[busy[k].api].name, busy[k].ra);
     }
@@ -97,17 +100,28 @@ static void call_host(Ctx *c, uint32_t target) {
     uint32_t k = (target - HOST_BASE) / 16;
     if (k >= (uint32_t)nhosts || (target & 15)) { rn_halt(c, "jump into host space %08x", target); return; }
     HostEntry *h = &hosts[k];
+    if (!guest_ok(c, c->r[ESP], 4)) { rn_halt(c, "bad esp %08x at host call %s!%s", c->r[ESP], h->dll, h->name); return; }
     uint32_t ra = ld(c, c->r[ESP], 4);
     ring[ring_n % RING] = (int)k; ring_ret[ring_n % RING] = ra; ring_n++;
     h->calls++;
     if (!h->fn) { c->halt_at = ra; rn_halt(c, "missing API %s!%s", h->dll, h->name); return; }
     if (rn_trace() && traced(h->name)) rn_log("api %s (ret %08x)", h->name, ra);
     gil_slice();
-    if (slot < 0) slot = __atomic_fetch_add(&nbusy, 1, __ATOMIC_RELAXED);
-    if (slot < 64) { busy[slot].tid = ld(c, c->fs + 0x24, 4); busy[slot].api = k; busy[slot].ra = ra; busy[slot].in = 1; }
+    uint32_t tid = guest_ok(c, (uint64_t)c->fs + 0x24, 4) ? ld(c, c->fs + 0x24, 4) : 0;
+    if (slot < 0) {
+        for (int s = 0; s < nbusy && s < 64; s++) if (busy[s].tid == tid || !busy[s].tid) { slot = s; break; }
+        if (slot < 0 && nbusy < 64) slot = nbusy++;
+        if (slot < 0) {
+            int oldest = 0;
+            for (int s = 1; s < 64; s++)
+                if (!busy[s].in && (busy[oldest].in || busy[s].seq < busy[oldest].seq)) oldest = s;
+            if (!busy[oldest].in) slot = oldest;
+        }
+    }
+    if (slot >= 0 && slot < 64) { busy[slot].tid = tid; busy[slot].api = k; busy[slot].ra = ra; busy[slot].in = 1; busy[slot].seq = ++busy_seq; }
     c->skipped = 0;
     uint32_t v = h->fn(c);
-    if (slot < 64) busy[slot].in = 0;
+    if (slot >= 0 && slot < 64) busy[slot].in = 0;
     if (c->halt) { if (!c->halt_at) c->halt_at = ra; return; }
     if (c->skipped) return;                 // a catch continuation returned through this call
     c->ret = ra;
@@ -123,13 +137,17 @@ static void dump_call(Ctx *c, uint32_t target) {
     static uint32_t at, pa, la;
     if (dump_on < 0) { const char *e = getenv("RN_DUMPCALL"); dump_on = e && sscanf(e, "%x:%u:%u", &at, &pa, &la) == 3; }
     if (!dump_on || target != at) return;
+    if (!guest_ok(c, (uint64_t)c->r[ESP] + 4 + 4ull * pa, 4) || !guest_ok(c, (uint64_t)c->r[ESP] + 4 + 4ull * la, 4)) return;
     uint32_t p = ld(c, c->r[ESP] + 4 + 4 * pa, 4), len = ld(c, c->r[ESP] + 4 + 4 * la, 4);
+    if (!guest_ok(c, p, len) || (uint64_t)p + len > c->memsz || len >= (64u << 20)) return;
     char path[64];
-    snprintf(path, sizeof path, "/tmp/rn_dump_%d.bin", n++);
+    int id = n++;
+    snprintf(path, sizeof path, "/tmp/rn_dump_%d.bin", id);
     FILE *f = fopen(path, "wb");
-    if (f && p && len < (64u << 20)) fwrite(G(p), 1, len, f);
-    if (f) fclose(f);
-    rn_log("dumpcall %08x #%d: %u bytes at %08x -> %s", target, n - 1, len, p, path);
+    if (!f) return;
+    fwrite(G(p), 1, len, f);
+    fclose(f);
+    rn_log("dumpcall %08x #%d: %u bytes at %08x -> %s", target, id, len, p, path);
 }
 // A host API call outside the lifted code (host/difftrace.c: the reference CPU reached a host address).
 void rn_host_call(Ctx *c, uint32_t target) { call_host(c, target); }
@@ -176,8 +194,9 @@ void rn_call(Ctx *c, uint32_t target) {
     c->halt_at = target;
     // Evidence for the stop: what is at the target and who called it (the return address on the stack).
     char hex[2 * 32 + 1] = "";
-    for (uint32_t k = 0; k < 32 && target + k < c->memsz; k++) snprintf(hex + 2 * k, 3, "%02x", c->mem[target + k]);
-    rn_halt(c, "no lifted function at %08x (bytes %s, return address %08x)", target, hex, ld(c, c->r[ESP], 4));
+    for (uint32_t k = 0; k < 32 && (uint64_t)target + k < c->memsz; k++) snprintf(hex + 2 * k, 3, "%02x", c->mem[target + k]);
+    uint32_t ra = guest_ok(c, c->r[ESP], 4) ? ld(c, c->r[ESP], 4) : 0;
+    rn_halt(c, "no lifted function at %08x (bytes %s, return address %08x)", target, hex, ra);
 }
 
 void dispatch_report(void) {

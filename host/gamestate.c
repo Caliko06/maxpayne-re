@@ -4,6 +4,7 @@
 // RN_GHOST=<n>: native prints the struct every n frames (the runtime oracle for the offsets).
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
 #include <math.h>
 #include <time.h>
 #include "host.h"
@@ -312,12 +313,17 @@ static void sys_log(Ctx *c, uint32_t gm, uint32_t ch, int every) {
         last_idx = idx;
         static const uint32_t pk[] = {5, 0x41, 0x7d, 0xb9};                 /* 0x6760a0 */
         // 0x6760e0: entry = [P+0x20] + 32 * [D+0xf5], P = the mode's props (0x6760a0)
-        uint32_t E = mode >= 1 && mode <= 4 ? rd(c, D + pk[mode - 1] + 0x20) + 32 * idx : 0;
+        uint32_t eb = mode >= 1 && mode <= 4 ? rd(c, D + pk[mode - 1] + 0x20) : 0;
+        uint32_t E = eb && idx < 1024 ? eb + 32 * idx : 0;
+        if (!ok(c, E, 32)) E = 0;
         uint32_t cfg = rd(c, gm + 0x10cc);
+        if (!ok(c, cfg, 24)) cfg = 0;
         rn_log("D f%u level %s mode %u idx %u E %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f painkiller %.3f cfg %g %g %g %g %g %g fall %g %g %g %g", f, gs.level, mode, idx,
-               ldf(c, E), ldf(c, E + 4), ldf(c, E + 8), ldf(c, E + 12), ldf(c, E + 16), ldf(c, E + 20), ldf(c, E + 24), ldf(c, E + 28),
-               mode >= 1 && mode <= 4 ? ldf(c, D + pk[mode - 1] + 0xc) : 0.0f,
-               ldf(c, cfg), ldf(c, cfg + 4), ldf(c, cfg + 8), ldf(c, cfg + 12), ldf(c, cfg + 16), ldf(c, cfg + 20),
+               E ? ldf(c, E) : 0.0f, E ? ldf(c, E + 4) : 0.0f, E ? ldf(c, E + 8) : 0.0f, E ? ldf(c, E + 12) : 0.0f,
+               E ? ldf(c, E + 16) : 0.0f, E ? ldf(c, E + 20) : 0.0f, E ? ldf(c, E + 24) : 0.0f, E ? ldf(c, E + 28) : 0.0f,
+               mode >= 1 && mode <= 4 && ok(c, D, 0x100) ? ldf(c, D + pk[mode - 1] + 0xc) : 0.0f,
+               cfg ? ldf(c, cfg) : 0.0f, cfg ? ldf(c, cfg + 4) : 0.0f, cfg ? ldf(c, cfg + 8) : 0.0f,
+               cfg ? ldf(c, cfg + 12) : 0.0f, cfg ? ldf(c, cfg + 16) : 0.0f, cfg ? ldf(c, cfg + 20) : 0.0f,
                ldf(c, ch + 0x444), ldf(c, ch + 0x448), ldf(c, ch + 0x44c), ldf(c, ch + 0x450));
     }
     if (gs.weapon != last_w && A) {
@@ -430,7 +436,8 @@ void gamestate_frame(Ctx *c) {
     uint32_t seq = pub.seq;
     __atomic_store_n(&pub.seq, seq + 1, __ATOMIC_RELEASE);
     gs.seq = seq + 1;
-    memcpy(&pub, &gs, sizeof gs);
+    memcpy(&pub, &gs, offsetof(GameState, nav_req));
+    memcpy(&pub.nav_done, &gs.nav_done, sizeof gs - offsetof(GameState, nav_done));
     __atomic_store_n(&pub.seq, seq + 2, __ATOMIC_RELEASE);
 
     static int sys_every = -1;

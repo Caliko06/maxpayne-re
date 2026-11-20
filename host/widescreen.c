@@ -11,6 +11,7 @@ static float scale_x = 1.f, scale_y = 1.f;
 
 // The size of the back buffer, from CreateDevice and Reset (host/d3d8.c). A 4:3 mode leaves the game untouched.
 void rn_ws_size(uint32_t w, uint32_t h) {
+    if (!w || !h) return;
     float aspect = (float)w / (float)h;
     scale_x = aspect > 4.f / 3.f ? aspect * 3.f / 4.f : 1.f;
     scale_y = aspect < 4.f / 3.f ? 4.f / (3.f * aspect) : 1.f;

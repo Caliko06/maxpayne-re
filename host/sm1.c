@@ -362,7 +362,8 @@ char *sm1_wgsl(const Sm1 *s) {
             continue;
         }
         if (in->op == OP_TEXCOORD) { emit(&b, "  t%d = vec4f(clamp(i.t%d.xyz, vec3f(0.0), vec3f(1.0)), 1.0);\n", in->d.num, in->d.num); continue; }
-        if (in->op == OP_TEXKILL) { emit(&b, "  if (any(t%d.xyz < vec3f(0.0))) { discard; }\n", in->d.num); continue; }
+        // ps_1_1..1_3 texkill tests the texture coordinate set, not the register (ps_1_4 is refused in sm1_check).
+        if (in->op == OP_TEXKILL) { emit(&b, "  if (any(i.t%d.xyz < vec3f(0.0))) { discard; }\n", in->d.num); continue; }
         emit(&b, "  let q%d = ", i);
         op_expr(s, in, &b);
         emit(&b, ";\n");
@@ -404,14 +405,14 @@ static void read_src(St *e, const Src *a, int row, float out[4]) {
     static const float zero[4] = {0, 0, 0, 0};
     const float *p = zero;
     float tmp[4];
-    int n = a->num + row, nconst = e->s->ps ? 8 : 256;
+    int n = a->num + row, nconst = e->s->ps ? 8 : GPU_NVC;     // as the WGSL clamps: never past GpuU.vc
     switch (a->type) {
     case R_TEMP: p = e->r[n]; break;
     case R_INPUT: p = e->v[n]; break;
     case R_CONST:
         if (a->rel) { int k = e->a0 + n; k = k < 0 ? 0 : k >= nconst ? nconst - 1 : k; p = e->c[k]; }
         else if (n < 256 && e->s->defd[n]) p = e->s->defs[n];
-        else p = e->c[n];
+        else if (n < nconst) p = e->c[n];
         break;
     case 3:
         if (e->s->ps) p = e->t[n];
@@ -546,7 +547,7 @@ static int exec(St *e, const VsOut *pin, Sm1Sample sample, void *ctx) {
             continue;
         }
         if (in->op == OP_TEXKILL) {
-            const float *t = e->t[in->d.num];
+            const float *t = pin->t[in->d.num];        // the texture coordinate set, as the WGSL
             if (t[0] < 0 || t[1] < 0 || t[2] < 0) return 0;
             continue;
         }

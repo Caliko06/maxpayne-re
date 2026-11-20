@@ -11,10 +11,12 @@ from concurrent.futures import ThreadPoolExecutor
 import gzip
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import shutil
 import subprocess
+import threading
 
 ROOT = Path(__file__).resolve().parents[1]
 BLOCK = 256 << 10  # host/files.c BLOCK: normal reads fetch exactly one piece, large reads assemble adjacent pieces.
@@ -27,6 +29,46 @@ def sha(path):
 
 def write_json(path, obj):
     path.write_text(json.dumps(obj, separators=(',', ':')))
+
+
+ZPIECE = 1 << 20   # goes in game-z.json as "piece" (host/files.c web_read)
+ZKEEP = 0.85       # a file goes as pieces only if they are at most 85 % of its bytes (x_english.ras 98 %, x_level1.ras 93 % stay raw)
+
+
+def gzip_pieces(dist, files):
+    """Range answers are never compressed, so x_data.ras crossed the wire raw (100 MB of a phone's 160 MB load, 36-52 % as
+    gzip). Port of nfsu.cc's data-chunks: compressible files also go as 1 MB gzip pieces named by their sha256, served with
+    Content-Encoding: gzip (the browser decodes them) at game-z/<sha>.gz. Pieces are kept in build/game-z between builds."""
+    store = ROOT / 'build/game-z'
+    store.mkdir(parents=True, exist_ok=True)
+    (dist / 'game-z').mkdir()
+
+    def pack(row):
+        rel, path = row
+        names, zbytes = [], 0
+        with path.open('rb') as f:
+            while raw := f.read(ZPIECE):
+                name = hashlib.sha256(raw).hexdigest()
+                piece = store / (name + '.gz')
+                if not piece.exists():
+                    # Write to a unique temp file then atomically replace
+                    tmp = piece.with_name(f"{piece.name}.{threading.get_ident()}.tmp")
+                    tmp.write_bytes(gzip.compress(raw, compresslevel=9, mtime=0))
+                    os.replace(tmp, piece)
+                names.append(name)
+                zbytes += piece.stat().st_size
+        return rel, names, zbytes <= ZKEEP * path.stat().st_size
+
+    out = {}
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        for rel, names, keep in pool.map(pack, [r for r in files if r[1].stat().st_size >= ZPIECE]):
+            if keep:
+                out['game/' + rel] = names
+                for name in names:
+                    target = dist / 'game-z' / (name + '.gz')
+                    if not target.exists():
+                        target.hardlink_to(store / (name + '.gz'))
+    return {'piece': ZPIECE, 'files': out}
 
 
 def build(game, dist, cdn=False):
@@ -104,14 +146,18 @@ def build(game, dist, cdn=False):
                 while raw := f.read(BLOCK):
                     source.update(raw)
                     name = hashlib.sha256(raw).hexdigest()
-                    body = gzip.compress(raw, compresslevel=6, mtime=0)
-                    (pieces / (name + '.gz')).write_bytes(body)
+                    piece = pieces / (name + '.gz')
+                    if not piece.exists():
+                        tmp = piece.with_name(f"{piece.name}.{threading.get_ident()}.tmp")
+                        tmp.write_bytes(gzip.compress(raw, compresslevel=6, mtime=0))
+                        os.replace(tmp, piece)
                     chunks.append(name)
             return 'game/' + rel, {'size': path.stat().st_size, 'sha256': source.hexdigest(), 'chunks': chunks}
 
         with ThreadPoolExecutor(max_workers=3) as pool:
             chunks = dict(pool.map(pack, files))
         write_json(dist / 'data-chunks.json', {'block': BLOCK, 'files': chunks})
+    write_json(dist / 'game-z.json', gzip_pieces(dist, files))
     write_json(dist / 'game-files.json', [[rel, path.stat().st_size] for rel, path in files])
     write_json(dist / 'extra-files.json', [['a_cheats.ras', extra.stat().st_size]])
     write_json(dist / 'save-files.json', [])
@@ -140,7 +186,8 @@ def build(game, dist, cdn=False):
             Path(str(path) + '.gz').write_bytes(gzip.compress(path.read_bytes(), compresslevel=6, mtime=0))
     (dist / '_headers').write_text('/*\n  Cross-Origin-Opener-Policy: same-origin\n'
         '  Cross-Origin-Embedder-Policy: require-corp\n  Cross-Origin-Resource-Policy: same-origin\n'
-        '/data-chunks/*\n  Content-Encoding: gzip\n  Content-Type: application/octet-stream\n')
+        '/data-chunks/*\n  Content-Encoding: gzip\n  Content-Type: application/octet-stream\n'
+        '/game-z/*\n  Content-Encoding: gzip\n  Content-Type: application/octet-stream\n')
     manifest = [[p.relative_to(dist).as_posix(), p.stat().st_size, sha(p)] for p in sorted(dist.rglob('*')) if p.is_file()]
     write_json(dist / 'manifest.json', {'format': 'mp-cdn-1' if cdn else 'mp-local-1', 'block': BLOCK,
         'sourceBytes': sum(p.stat().st_size for _, p in files), 'files': manifest, 'bytes': sum(r[1] for r in manifest),
@@ -153,7 +200,8 @@ def build(game, dist, cdn=False):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--game', type=Path, default=Path.home() / 'Games/maxpayne')
-    parser.add_argument('--dist', type=Path, default=ROOT / 'build/public')
+    parser.add_argument('--dist', type=Path, default=None, help='output directory; defaults to build/public-cdn if --cdn, else build/public')
     parser.add_argument('--cdn', action='store_true', help='raw game/ tree for an object store (tools/upload_r2.py)')
     args = parser.parse_args()
-    build(args.game.resolve(), args.dist.resolve(), args.cdn)
+    dist = args.dist.resolve() if args.dist else (ROOT / 'build/public-cdn' if args.cdn else ROOT / 'build/public')
+    build(args.game.resolve(), dist, args.cdn)

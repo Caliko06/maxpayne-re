@@ -28,15 +28,16 @@
   const rnd = (a, b) => a + Math.random() * (b - a);   // audio variation only: the scene owns the seeded weather
   const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
 
-  let ctx = null, master, comp, analyser, bus = {}, musicLP, ambLP, userMuted = false, closed = false;
+  let ctx = null, master, comp, analyser, bus = {}, busBase = {}, duckTimer = {}, musicLP, ambLP, userMuted = false, closed = false;
   const buffers = new Map(), pending = new Map(), els = {}, trackGain = {}, live = new Set();
   let noFiles = false, humNode = null, quiet = false, moveBag = -1, lastMove = 0, emberDone = false, mood_ = 'main', voiceH = null;
   const log = [], handlers = {};
   try { userMuted = localStorage.getItem(MUTE_KEY) === '1'; } catch { /* private mode */ }
   const note = (ev, d) => { log.push({ t: Math.round(performance.now()), ev, d }); if (log.length > 400) log.shift(); (handlers[ev] || []).forEach(f => { try { f(d); } catch { /* listener */ } }); };
 
-  function setGain(g, v, tau = 0.05) { try { g.gain.cancelScheduledValues(ctx.currentTime); g.gain.setTargetAtTime(v, ctx.currentTime, tau); } catch { /* closed */ } }
+  function setGain(g, v, tau = 0.05) { for (const k in bus) if (bus[k] === g) busBase[k] = v; try { g.gain.cancelScheduledValues(ctx.currentTime); g.gain.setTargetAtTime(v, ctx.currentTime, tau); } catch { /* closed */ } }
   function curve(g, from, to, ms) {                     // equal-power fade (setValueCurveAtTime, spec 4.2)
+    for (const k in bus) if (bus[k] === g) busBase[k] = to;
     const n = 32, c = new Float32Array(n), t = ctx.currentTime;
     for (let i = 0; i < n; i++) { const x = i / (n - 1); c[i] = from + (to - from) * (to > from ? Math.sin(x * Math.PI / 2) : 1 - Math.sin((1 - x) * Math.PI / 2)); }
     try { g.gain.cancelScheduledValues(t); g.gain.setValueAtTime(from, t); g.gain.setValueCurveAtTime(c, t, Math.max(0.02, ms / 1000)); } catch { /* closed */ }
@@ -73,16 +74,22 @@
   // ---- one-shots (synth fallbacks keep the screen from being mute-by-bug) ------------------------------------------------------
   function synth(kind, opts = {}) {
     if (!ctx) return; note('synth', kind);
-    const t = ctx.currentTime + (opts.delay || 0), o = ctx.createOscillator(), g = ctx.createGain();
-    o.connect(g); g.connect(bus.sfx);
-    if (kind === 'thud') { o.frequency.value = 60; g.gain.setValueAtTime(dbv(-30), t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.08); o.start(t); o.stop(t + 0.09); }
-    else if (kind === 'break') {                         // noise burst 180 ms, bandpass sweep 3 kHz -> 600 Hz, -20 dBFS
+    const t = ctx.currentTime + (opts.delay || 0), g = ctx.createGain();
+    g.connect(bus.sfx);
+    if (kind === 'break') {                              // noise burst 180 ms, bandpass sweep 3 kHz -> 600 Hz, -20 dBFS
       const len = Math.floor(ctx.sampleRate * 0.18), nb = ctx.createBuffer(1, len, ctx.sampleRate), d = nb.getChannelData(0);
       for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / len);
       const s = ctx.createBufferSource(), f = ctx.createBiquadFilter(); s.buffer = nb; f.type = 'bandpass'; f.Q.value = 1.2;
       f.frequency.setValueAtTime(3000, t); f.frequency.exponentialRampToValueAtTime(600, t + 0.18);
-      g.gain.value = dbv(-20); s.connect(f); f.connect(g); s.start(t); o.disconnect();
-    } else { o.frequency.value = 1200; g.gain.setValueAtTime(dbv(-34), t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.02); o.start(t); o.stop(t + 0.03); }
+      g.gain.value = dbv(-20); s.connect(f); f.connect(g);
+      s.onended = () => { try { s.disconnect(); f.disconnect(); g.disconnect(); } catch { /* gone */ } };
+      s.start(t);
+    } else {
+      const o = ctx.createOscillator(); o.connect(g);
+      o.onended = () => { try { o.disconnect(); g.disconnect(); } catch { /* gone */ } };
+      if (kind === 'thud') { o.frequency.value = 60; g.gain.setValueAtTime(dbv(-30), t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.08); o.start(t); o.stop(t + 0.09); }
+      else { o.frequency.value = 1200; g.gain.setValueAtTime(dbv(-34), t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.02); o.start(t); o.stop(t + 0.03); }
+    }
   }
   // sfx(name, {db, rate, pan, delay, peak, offset, dur, to}): db is relative to the file; with `peak` it is dBFS of the file's peak.
   async function sfx(name, o = {}) {
@@ -122,7 +129,14 @@
     const A = mk(!!active), B = mk(false); let cur = A, timer = 0; A.g.gain.value = 1;
     const L = { used: false, A, B, get a() { return cur.a; },
       pause() { clearInterval(timer); timer = 0; A.a.pause(); B.a.pause(); },
-      resume(offset) { ensure(cur); if (offset) cur.a.addEventListener('loadedmetadata', () => { try { cur.a.currentTime = offset; } catch { /* not seekable */ } }, { once: true }); play(cur.a); if (!timer) timer = setInterval(tick, 250); },
+      resume(offset) {
+        ensure(cur);
+        if (offset) {
+          if (cur.a.readyState >= 1) { try { cur.a.currentTime = offset; } catch { /* not seekable */ } }
+          else cur.a.addEventListener('loadedmetadata', () => { try { cur.a.currentTime = offset; } catch { /* not seekable */ } }, { once: true });
+        }
+        play(cur.a); if (!timer) timer = setInterval(tick, 250);
+      },
       dispose() { clearInterval(timer); for (const x of [A, B]) { try { x.a.pause(); x.src.disconnect(); x.g.disconnect(); x.a.removeAttribute('src'); x.a.load(); } catch { /* gone */ } } try { ng.disconnect(); } catch { /* gone */ } } };
     function tick() {
       const d = cur.a.duration; if (!d || !isFinite(d)) return;
@@ -152,7 +166,7 @@
     comp = ctx.createDynamicsCompressor(); comp.threshold.value = -18; comp.knee.value = 12; comp.ratio.value = 3; comp.attack.value = 0.01; comp.release.value = 0.25;
     analyser = ctx.createAnalyser(); analyser.fftSize = 2048;
     master.connect(comp); comp.connect(ctx.destination); comp.connect(analyser);
-    for (const k of ['music', 'amb', 'sfx', 'voice']) { bus[k] = ctx.createGain(); bus[k].gain.value = k === 'music' || k === 'amb' ? 0 : 1; }
+    for (const k of ['music', 'amb', 'sfx', 'voice']) { bus[k] = ctx.createGain(); busBase[k] = bus[k].gain.value = k === 'music' || k === 'amb' ? 0 : 1; }
     musicLP = ctx.createBiquadFilter(); musicLP.type = 'lowpass'; musicLP.frequency.value = Math.min(20000, ctx.sampleRate * 0.45);
     ambLP = ctx.createBiquadFilter(); ambLP.type = 'lowpass'; ambLP.frequency.value = 5000;
     bus.music.connect(musicLP); musicLP.connect(master); bus.amb.connect(ambLP); ambLP.connect(master);
@@ -204,9 +218,12 @@
   }
   function duck(name, db, ms) {                          // duck a bus by db for ms (attack 120 ms, release 900 ms)
     if (!ctx || !bus[name]) return;
-    const g = bus[name].gain, base = g.value;
+    const g = bus[name].gain;
+    if (!duckTimer[name]) busBase[name] = busBase[name] ?? g.value;
+    else clearTimeout(duckTimer[name]);
+    const base = busBase[name];
     g.cancelScheduledValues(ctx.currentTime); g.setTargetAtTime(base * dbv(db), ctx.currentTime, 0.04);
-    setTimeout(() => { if (ctx) g.setTargetAtTime(base, ctx.currentTime, 0.3); }, ms);
+    duckTimer[name] = setTimeout(() => { duckTimer[name] = 0; if (ctx && bus[name]) g.setTargetAtTime(busBase[name], ctx.currentTime, 0.3); }, ms);
   }
   // UI events (4.3). `move` has the 70 ms throttle and the never-twice rate bag.
   function ui(ev, o = {}) {
@@ -271,6 +288,7 @@
   function playExit() { if (!ctx) return; ui('heartbeat'); for (const k of ['music', 'amb']) setGain(bus[k], 0, 0.18); hum(false); stopVoice(150); }
   async function stop() {
     if (!ctx || closed) return; closed = true; const c = ctx;
+    for (const k in duckTimer) { clearTimeout(duckTimer[k]); delete duckTimer[k]; }
     try { for (const k of ['music', 'amb', 'sfx', 'voice']) bus[k].gain.cancelScheduledValues(c.currentTime), bus[k].gain.value = 0; } catch { /* closed */ }
     for (const s of live) { try { s.stop(); } catch { /* gone */ } } live.clear();
     if (humNode) { try { humNode.s.stop(); } catch { /* gone */ } humNode = null; }

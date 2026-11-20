@@ -37,13 +37,14 @@ async function gpuAdapter(canvas = document.getElementById('screen')) {
 // onFirst: the first frame is on screen. onPacket(stats, t, runMs): after each packet, for web/telemetry.js (one row each).
 async function startGpu(M, canvas, report, onFirst, onPacket) {
   const video = window.MP_VIDEO;
-  // Phones and tablets pace at 30 fps unless the launcher's Frame cap says otherwise (light version, OWNER 2026-11-20; RE-NFSU's
-  // phones do the same): the game waits on box.shown, so the guest also runs half the frames and a slow phone stays steady.
-  const frameMs = video ? (video.fps === 0 ? 0 : 1000 / (video.fps === 30 ? 30 : 60)) : window.MP_DEVICE !== 'desktop' ? 1000 / 30 : FRAME_MS;
+  const nonDesktop = window.MP_DEVICE !== 'desktop';
+  // Phones and tablets always pace at 30 fps (light version, OWNER 2026-11-20; RE-NFSU's phones do the same):
+  // the game waits on box.shown, so the guest also runs half the frames and a slow phone stays steady.
+  const frameMs = nonDesktop ? 1000 / 30 : video ? (video.fps === 0 ? 0 : 1000 / (video.fps === 30 ? 30 : video.fps === 120 ? 120 : 60)) : FRAME_MS;
   const capture = new URLSearchParams(location.search).get('capture') === '1';
   let captureDraws = 0;
   const adapter = await gpuAdapter(canvas);
-  if (!adapter) throw new Error('WebGPU: sin adaptador');
+  if (!adapter) throw new Error('WebGPU: no adapter');
   // A Core adapter stays Core (the same device as before); only a phone or GPU without it runs in compatibility mode.
   // ?compat keeps a Core adapter under the compatibility rules: Chrome then validates every call as a phone's GPU would.
   const core = adapter.features.has('core-features-and-limits') && !new URLSearchParams(location.search).has('compat');
@@ -72,7 +73,7 @@ async function startGpu(M, canvas, report, onFirst, onPacket) {
     @group(0) @binding(0) var src: texture_2d<f32>;
     @group(0) @binding(1) var lut: texture_2d<f32>;
     @group(0) @binding(2) var smp: sampler;
-    const POLISH = ${new URLSearchParams(location.search).has('classic') ? 'false' : 'true'};   // ?classic: the original image
+    const POLISH = ${nonDesktop || new URLSearchParams(location.search).has('classic') ? 'false' : 'true'};   // ?classic or phone/tablet: crisp text/HUD, less bandwidth
     fn luma(c: vec3f) -> f32 { return dot(c, vec3f(0.299, 0.587, 0.114)); }
     // FXAA (Lottes, the classic low-cost form): smooths polygon edges in the finished image, with no multisampled targets.
     fn fxaa(p: vec2f) -> vec3f {
@@ -116,12 +117,15 @@ async function startGpu(M, canvas, report, onFirst, onPacket) {
   device.queue.writeTexture({ texture: lut }, lutData, { bytesPerRow: 1024 }, [256, 1]);
   const screenNear = device.createSampler({ magFilter: 'linear', minFilter: 'linear' });
   // Only opt-in output uses display pixels; the guest resolution still owns input coordinates.
+  let canvasW = 0, canvasH = 0;
+  const updateCanvasRect = () => { const r = canvas.getBoundingClientRect(); canvasW = r.width; canvasH = r.height; };
   const resizeScreen = () => {
-    const r = canvas.getBoundingClientRect(), dpr = video.hidpi ? window.devicePixelRatio || 1 : 1;
+    if (!canvasW || !canvasH) return;
+    const dpr = video.hidpi ? window.devicePixelRatio || 1 : 1;
     const limit = device.limits.maxTextureDimension2D;
     // The buffer keeps the game's aspect (object-fit letterboxes it, web/input.js and touch.js map the mouse from it).
-    const k = canvas.gameW ? Math.min(r.width / canvas.gameW, r.height / canvas.gameH) * dpr : dpr;
-    const gw = canvas.gameW || r.width, gh = canvas.gameH || r.height;
+    const k = canvas.gameW ? Math.min(canvasW / canvas.gameW, canvasH / canvas.gameH) * dpr : dpr;
+    const gw = canvas.gameW || canvasW, gh = canvas.gameH || canvasH;
     const w = Math.max(1, Math.min(limit, Math.round(gw * k))), h = Math.max(1, Math.min(limit, Math.round(gh * k)));
     if (canvas.width !== w) canvas.width = w;
     if (canvas.height !== h) canvas.height = h;
@@ -149,6 +153,15 @@ async function startGpu(M, canvas, report, onFirst, onPacket) {
     } else blitPipe = makePipe(`@fragment fn fs(@builtin(position) p: vec4f) -> @location(0) vec4f {
       return textureSampleLevel(input, sam, p.xy / outputSize.xy, 0.0);
     }`);
+    updateCanvasRect();
+    if (typeof ResizeObserver === 'function') {
+      new ResizeObserver(entries => {
+        const cr = entries[0]?.contentRect;
+        if (cr) { canvasW = cr.width; canvasH = cr.height; resizeScreen(); }
+      }).observe(canvas);
+    } else {
+      window.addEventListener('resize', () => { updateCanvasRect(); resizeScreen(); });
+    }
     resizeScreen();
   }
   const outputTex = (old, w, h) => {
@@ -186,29 +199,32 @@ async function startGpu(M, canvas, report, onFirst, onPacket) {
     if (!shownQ.length || t < nextShow - 2) return;
     nextShow = Math.max(nextShow + frameMs, t + frameMs / 2);
     const q = shownQ.shift();
-    const e = device.createCommandEncoder();
-    const view = ctx.getCurrentTexture().createView();
-    if (video) image = outputTex(image, q.w, q.h);
-    // Pass 1: the game's FXAA, ramp and grade stay at the guest resolution.
-    const p = e.beginRenderPass({ colorAttachments: [{ view: video ? image.view : view, loadOp: 'clear', storeOp: 'store' }] });
-    p.setPipeline(screenPipe); p.setBindGroup(0, q.bind); p.draw(3); p.end();
-    if (video) {
-      device.queue.writeBuffer(outputSize, 0, new Float32Array([canvas.width, canvas.height, 0, 0]));
-      let src = image;
-      // Pass 2: EASU only enlarges; RCAS also handles equal-size and smaller output.
-      if (easuPipe && (canvas.width > q.w || canvas.height > q.h)) {
-        enlarged = outputTex(enlarged, canvas.width, canvas.height);
-        outputPass(e, easuPipe, image, enlarged.view); src = enlarged;
-      } else if (enlarged) { enlarged.tex.destroy(); enlarged = null; }
-      // Pass 3: RCAS, or a single sampled blit for bilinear/nearest.
-      outputPass(e, rcasPipe || blitPipe, src, view);
+    try {
+      const e = device.createCommandEncoder();
+      const view = ctx.getCurrentTexture().createView();
+      if (video) image = outputTex(image, q.w, q.h);
+      // Pass 1: the game's FXAA, ramp and grade stay at the guest resolution.
+      const p = e.beginRenderPass({ colorAttachments: [{ view: video ? image.view : view, loadOp: 'clear', storeOp: 'store' }] });
+      p.setPipeline(screenPipe); p.setBindGroup(0, q.bind); p.draw(3); p.end();
+      if (video) {
+        device.queue.writeBuffer(outputSize, 0, new Float32Array([canvas.width, canvas.height, 0, 0]));
+        let src = image;
+        // Pass 2: EASU only enlarges; RCAS also handles equal-size and smaller output.
+        if (easuPipe && (canvas.width > q.w || canvas.height > q.h)) {
+          enlarged = outputTex(enlarged, canvas.width, canvas.height);
+          outputPass(e, easuPipe, image, enlarged.view); src = enlarged;
+        } else if (enlarged) { enlarged.tex.destroy(); enlarged = null; }
+        // Pass 3: RCAS, or a single sampled blit for bilinear/nearest.
+        outputPass(e, rcasPipe || blitPipe, src, view);
+      }
+      device.queue.submit([e.finish()]);
+      if (capture) window.RN_SCREEN_FRAME = { t: performance.now(), ...q.frame };
+      RN_PACE.shown++;
+      if (firstFrame) { firstFrame = false; onFirst(); }
+    } finally {
+      freeQ.push(q);
+      shown();
     }
-    device.queue.submit([e.finish()]);
-    if (capture) window.RN_SCREEN_FRAME = { t: performance.now(), ...q.frame };
-    freeQ.push(q);
-    RN_PACE.shown++;
-    shown();
-    if (firstFrame) { firstFrame = false; onFirst(); }
   }
   requestAnimationFrame(showQueued);
   // A hidden page has no animation frames: the game goes on, a frame every tick of this timer.
@@ -447,10 +463,10 @@ async function startGpu(M, canvas, report, onFirst, onPacket) {
     const h = M.HEAPU32, u8 = M.HEAPU8, s = box + B_SLOT + slot * B_SLOTN;
     const vtx = h[s + 2], nvtx = h[s + 3] + 3 & ~3, idx = h[s + 4], nidx = h[s + 5], uni = h[s + 6], nuni = h[s + 7];
     let b;
-    if ((b = grow(vcap, nvtx, GPUBufferUsage.VERTEX))) { vbuf = b; vcap = b.size; }
-    if ((b = grow(icap, nidx + 4, GPUBufferUsage.INDEX)) || !ibuf) { ibuf = b || device.createBuffer({ size: 1 << 20, usage: GPUBufferUsage.INDEX | GPUBufferUsage.COPY_DST }); icap = ibuf.size; }
+    if ((b = grow(vcap, nvtx, GPUBufferUsage.VERTEX))) { vbuf?.destroy(); vbuf = b; vcap = b.size; }
+    if ((b = grow(icap, nidx + 4, GPUBufferUsage.INDEX)) || !ibuf) { ibuf?.destroy(); ibuf = b || device.createBuffer({ size: 1 << 20, usage: GPUBufferUsage.INDEX | GPUBufferUsage.COPY_DST }); icap = ibuf.size; }
     if ((b = grow(ucap, nuni + GPU_USTEP, GPUBufferUsage.UNIFORM))) {
-      ubuf = b; ucap = b.size;
+      ubuf?.destroy(); ubuf = b; ucap = b.size;
       ubind = device.createBindGroup({ layout: drawBgl, entries: [{ binding: 0, resource: { buffer: ubuf, size: GPU_USTEP } }] });
     }
     pk.kb += (nvtx + nidx + nuni) >> 10;

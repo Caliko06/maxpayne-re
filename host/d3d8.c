@@ -88,6 +88,7 @@ typedef struct {
     uint32_t mem, pitch, size;              // guest memory behind Lock
     uint32_t container;                     // owning object index + 1 (surfaces of textures, back buffers)
     uint32_t gpu;                           // render target / depth id in the command list, 0 = none
+    uint32_t vram;                          // bytes charged to vram_used, given back when it is released
     int locked, lockable, dead;
     int on_gpu, evicted;                    // level: mem released, the GPU holds its texels; texture: that was done
     uint32_t levels, level0, fvf;           // textures: mip count, object index of level 0 (levels follow)
@@ -108,22 +109,26 @@ static Obj *last;                       // the object new_obj just made
 // mip levels (the full-game run halted 'too many objects' entering part3_level2). The device's bindings hold a
 // reference (bind), so a slot at refs 0 is unbound; the GPU backends free an id again on GPU_TEXTURE/GPU_TARGET.
 static uint8_t freed[MAXOBJ];
-static uint32_t dev_rt(void), dev_ds(void), live_objs(void);
+// Slots that once held a shader: web/gpu.js keys its pipelines by shader id, so a new shader in such a slot would draw
+// with the deleted one's pipeline. Other objects may take the slot (their ids live in other maps).
+static uint8_t was_shader[MAXOBJ];
+static uint32_t dev_rt(void), dev_ds(void), dev_own(uint32_t k1), live_objs(void);
 static uint32_t run_at, run_left, rover;    // a reserved run of contiguous slots: a texture and its levels follow it
+static uint32_t vram_used;
 
-static int reserve(Ctx *c, uint32_t n) {
+static int reserve(Ctx *c, uint32_t n, int shader) {
     if (nobjs + n <= MAXOBJ) { run_at = (uint32_t)nobjs; run_left = n; return 1; }
     for (uint32_t tried = 0, k = rover, len = 0; tried < 2 * MAXOBJ; tried++, k++) {
         if (k >= MAXOBJ) { k = 0; len = 0; }
         uint32_t k1 = k + 1;
-        len = freed[k] && k1 != dev_rt() && k1 != dev_ds() ? len + 1 : 0;
+        len = freed[k] && !(shader && was_shader[k]) && k1 != dev_rt() && k1 != dev_ds() ? len + 1 : 0;
         if (len == n) { run_at = k1 - n; run_left = n; rover = k1 % MAXOBJ; return 1; }
     }
     rn_halt(c, "d3d8: too many objects (%u live)", (unsigned)live_objs());
     return 0;
 }
 static uint32_t new_obj(Ctx *c, int iface) {
-    if (!run_left && !reserve(c, 1)) return 0;
+    if (!run_left && !reserve(c, 1, iface == I_VS || iface == I_PS)) return 0;
     uint32_t k = run_at++; run_left--;
     Obj *o = &objs[k];
     uint32_t old = k < (uint32_t)nobjs ? o->guest : 0;
@@ -156,18 +161,26 @@ static uint32_t unk_QueryInterface(Ctx *c) {
 }
 static uint32_t unk_AddRef(Ctx *c) { SELF(-1); if (o->container) return ++objs[o->container - 1].refs; return ++o->refs; }
 // A surface that belongs to a texture or a swap chain shares its container's count (d3d8 docs).
+static void addref_obj(Obj *o) { if (o->container) o = &objs[o->container - 1]; o->refs++; }
+static void uncharge(Obj *o) { vram_used -= o->vram < vram_used ? o->vram : vram_used; o->vram = 0; }
+static void free_target(Obj *o) { if (o->gpu) { uint32_t id = o->gpu; gpu_cmd(GPU_FREE, 1, &id); o->gpu = 0; } }
 static uint32_t release_obj(Ctx *c, Obj *o) {
     if (o->container) o = &objs[o->container - 1];
     if (!o->refs) { rn_halt(c, "d3d8: Release of a dead %s", iface_name[o->iface]); return 0; }
     if (!--o->refs) {
         TR("%s %08x freed", iface_name[o->iface], o->guest);
         guest_free(o->mem); o->mem = 0;
+        uncharge(o);
         if (o->iface == I_TEXTURE) for (uint32_t l = 0; l < o->levels; l++) {
             Obj *s = &objs[o->level0 + l];
             guest_free(s->mem); s->mem = 0; s->on_gpu = 0;
+            uncharge(s);
+            free_target(s);         // render target textures: each level is a GPU_TARGET of its own
+            freed[o->level0 + l] = 1;
         }
         if (o->iface == I_TEXTURE && !(o->usage & 1)) { uint32_t id = idx(o) + 1; gpu_cmd(GPU_FREE, 1, &id); }  // not D3DUSAGE_RENDERTARGET
-        if (o->iface == I_TEXTURE) for (uint32_t l = 0; l < o->levels; l++) freed[o->level0 + l] = 1;
+        // A render target or depth surface of its own; the swap chain's two stay with the device.
+        if (o->iface == I_SURFACE && !dev_own(idx(o) + 1)) free_target(o);
         freed[idx(o)] = 1;
     }
     return o->refs;
@@ -226,7 +239,6 @@ static int has_desk(void) { for (int k = 0; k < NSTATIC; k++) if (modes[k][0] ==
 #define NMODES (NSTATIC + !has_desk())
 static void mode_at(int k, uint32_t *w, uint32_t *h) { if (k < NSTATIC) { *w = modes[k][0]; *h = modes[k][1]; } else { *w = DESK_W; *h = DESK_H; } }
 static int display_fmt(uint32_t f) { return f == F_X8R8G8B8 || f == F_R5G6B5; }
-static uint32_t vram_used;
 
 static uint32_t d3d8_obj;
 static uint32_t Direct3DCreate8_(Ctx *c) {
@@ -399,6 +411,7 @@ static struct {
 } dev;
 static uint32_t dev_rt(void) { return dev.rt; }
 static uint32_t dev_ds(void) { return dev.ds; }
+static uint32_t dev_own(uint32_t k1) { return k1 == dev.backbuf || (dev.depth && k1 == dev.depth); }
 static uint32_t live_objs(void) { uint32_t n = 0; for (int k = 0; k < nobjs; k++) n += !freed[k]; return n; }
 
 // A recorded Set call (BeginStateBlock): handler, arguments, a host copy of what its pointer argument pointed to.
@@ -429,7 +442,7 @@ static uint32_t new_surface(Ctx *c, uint32_t w, uint32_t h, uint32_t f, uint32_t
         o->gpu = idx(o) + 1;
         uint32_t t[4] = {o->gpu, w, h, (usage & U_DEPTHSTENCIL) ? 1u : 0u};
         gpu_cmd(GPU_TARGET, 4, t);
-        if (pool == POOL_DEFAULT) vram_used += o->size;
+        if (pool == POOL_DEFAULT) { o->vram = o->size; vram_used += o->vram; }
     }
     return g;
 }
@@ -484,11 +497,14 @@ static void swap_chain(Ctx *c) {
     rn_ws_size(p[0], p[1]);
     uint32_t bb = new_surface(c, p[0], p[1], p[2], U_RENDERTARGET, POOL_DEFAULT, (p[10] & 1) != 0);  // LOCKABLE_BACKBUFFER
     Obj *b = obj_of(c, bb, I_SURFACE);
+    // The device owns one reference (backbuf, depth) and the binding another (rt, ds), as SetRenderTarget keeps them.
     dev.backbuf = dev.rt = idx(b) + 1;
+    addref_obj(b);
     dev.depth = dev.ds = 0;
     if (p[8]) {
         Obj *d = obj_of(c, new_surface(c, p[0], p[1], p[9], U_DEPTHSTENCIL, POOL_DEFAULT, p[9] == F_D16_LOCKABLE), I_SURFACE);
         dev.depth = dev.ds = idx(d) + 1;
+        addref_obj(d);
     }
     default_state();
     reset_viewport(b);
@@ -862,7 +878,7 @@ static uint32_t IDirect3DDevice8_CreateTexture(Ctx *c) {
     if (!levels) levels = full;
     if (levels > full) return D3DERR_INVALIDCALL;
     if ((!pow2(w) || !pow2(h)) && levels != 1) return D3DERR_INVALIDCALL;
-    if (!reserve(c, levels + 1)) return D3DERR_OUTOFVIDEOMEMORY;  // levels sit right after their texture (level_of)
+    if (!reserve(c, levels + 1, 0)) return D3DERR_OUTOFVIDEOMEMORY;  // levels sit right after their texture (level_of)
     uint32_t g = new_obj(c, I_TEXTURE);
     if (!g) return D3DERR_OUTOFVIDEOMEMORY;
     Obj *t = last;
@@ -873,7 +889,7 @@ static uint32_t IDirect3DDevice8_CreateTexture(Ctx *c) {
         uint32_t lw = w >> l ? w >> l : 1, lh = h >> l ? h >> l : 1;
         new_surface(c, lw, lh, f, usage, pool, !(usage & (U_RENDERTARGET | U_DEPTHSTENCIL)));
         last->container = tk;
-        if (pool != POOL_SYSTEMMEM) vram_used += last->size;
+        if (pool != POOL_SYSTEMMEM && !last->vram) { last->vram = last->size; vram_used += last->vram; }  // render target levels: new_surface did
     }
     if (!(usage & U_RENDERTARGET)) { uint32_t w4[4] = {tk, w, h, levels}; gpu_cmd(GPU_TEXTURE, 4, w4); }
     st(c, out, g, 4);
@@ -1084,7 +1100,7 @@ static uint32_t new_buffer(Ctx *c, int iface, uint32_t len, uint32_t usage, uint
     Obj *o = last;
     o->size = len; o->usage = usage; o->pool = pool;
     if (iface == I_VB) { o->fvf = f; o->fmt = F_VERTEXDATA; o->type = 6; } else { o->fmt = f; o->type = 7; }
-    if (pool == POOL_DEFAULT) vram_used += len;
+    if (pool == POOL_DEFAULT) { o->vram = len; vram_used += len; }
     st(c, out, g, 4);
     return D3D_OK;
 }
@@ -1226,14 +1242,19 @@ static uint32_t IDirect3DDevice8_UpdateTexture(Ctx *c) {
 static uint32_t IDirect3DDevice8_SetRenderTarget(Ctx *c) {
     DEV();
     uint32_t p = ARG(1), z = ARG(2);
-    if (p) {
-        Obj *s = obj_of(c, p, I_SURFACE);
-        if (!s || !(s->usage & U_RENDERTARGET)) return D3DERR_INVALIDCALL;
+    Obj *s = p ? obj_of(c, p, I_SURFACE) : NULL;
+    if (p && (!s || !(s->usage & U_RENDERTARGET))) return D3DERR_INVALIDCALL;
+    Obj *d = z ? obj_of(c, z, I_SURFACE) : NULL;
+    if (z && (!d || !(d->usage & U_DEPTHSTENCIL))) return D3DERR_INVALIDCALL;
+    // The device holds a reference to its targets (d3d8 docs): the new one first, so setting the same one is safe.
+    if (s) {
+        addref_obj(s);
+        if (dev.rt) release_obj(c, &objs[dev.rt - 1]);
         dev.rt = idx(s) + 1;
         reset_viewport(s);
     }
-    Obj *d = z ? obj_of(c, z, I_SURFACE) : NULL;
-    if (z && (!d || !(d->usage & U_DEPTHSTENCIL))) return D3DERR_INVALIDCALL;
+    if (d) addref_obj(d);
+    if (dev.ds) release_obj(c, &objs[dev.ds - 1]);
     dev.ds = d ? idx(d) + 1 : 0;
     TR("SetRenderTarget(%08x, %08x)", p, z);
     return D3D_OK;
@@ -1426,11 +1447,23 @@ static uint32_t IDirect3DDevice8_SetVertexShader(Ctx *c) {
     return D3D_OK;
 }
 static uint32_t IDirect3DDevice8_GetVertexShader(Ctx *c) { DEV(); st(c, ARG(1), dev.vs, 4); return D3D_OK; }
+// Delete of a shader or state block handle: its host memory, its recorded guest copies (record), and its slot.
+static void free_handle(Obj *o) {
+    free(o->blob); free(o->orig); free(o->vsd); free(o->cmem);
+    if (o->sm) { sm1_free(o->sm); free(o->sm); }
+    for (uint32_t k = 0; o->rec && k < o->nrec; k++) if (o->rec[k].pidx >= 0) guest_free(o->rec[k].a[o->rec[k].pidx]);
+    free(o->rec);
+    o->blob = o->orig = o->vsd = NULL; o->cmem = NULL; o->sm = NULL; o->rec = NULL;
+    o->nblob = o->norig = o->nvsd = o->ncmem = o->nrec = 0;
+    o->dead = 1; o->refs = 0;
+    if (o->iface == I_VS || o->iface == I_PS) was_shader[idx(o)] = 1;
+    freed[idx(o)] = 1;
+}
 static uint32_t IDirect3DDevice8_DeleteVertexShader(Ctx *c) {
     DEV();
     Obj *o = vs_of(ARG(1));
     if (!o) return D3DERR_INVALIDCALL;
-    o->dead = 1;
+    free_handle(o);
     if (dev.vs == ARG(1)) dev.vs = 0;
     return D3D_OK;
 }
@@ -1482,7 +1515,7 @@ static uint32_t IDirect3DDevice8_DeletePixelShader(Ctx *c) {
     DEV();
     Obj *o = ps_of(ARG(1));
     if (!o) return D3DERR_INVALIDCALL;
-    o->dead = 1;
+    free_handle(o);
     if (dev.ps == ARG(1)) dev.ps = 0;
     return D3D_OK;
 }
@@ -1783,7 +1816,7 @@ static void draw_cmd(Ctx *c, uint32_t type, uint32_t count, uint32_t vbase, uint
     memcpy(&w[D_VP + 4], &dev.vp.zmin, 4); memcpy(&w[D_VP + 5], &dev.vp.zmax, 4);
     w[D_ZEN] = dev.rs[7]; w[D_ZWRITE] = dev.rs[14]; w[D_ZFUNC] = dev.rs[23]; w[D_CULL] = dev.rs[22];
     w[D_BLEND] = dev.rs[27]; w[D_SRCB] = dev.rs[19]; w[D_DSTB] = dev.rs[20]; w[D_BOP] = dev.rs[171] ? dev.rs[171] : 1;
-    w[D_CWRITE] = dev.rs[168] ? dev.rs[168] : 0xf;
+    w[D_CWRITE] = dev.rs[168] & 0xf;           // COLORWRITEENABLE: 0 writes no color (rs_default sets 0xf)
     for (int k = 0; k < GPU_STAGES; k++) {
         if (!(b.tex_used >> k & 1)) continue;
         uint32_t *t = &w[D_TEX + D_TEXN * k];
@@ -1830,7 +1863,7 @@ static uint32_t IDirect3DDevice8_DrawPrimitiveUP(Ctx *c) {
     DEV();
     if (!prim_ok(ARG(1), ARG(2)) || !ARG(3) || !ARG(4)) return D3DERR_INVALIDCALL;
     draw_cmd(c, ARG(1), ARG(2), ARG(3), ARG(4), 0, 0, 0, 0);
-    dev.stream[0].vb = 0; dev.stream[0].stride = 0;
+    bind(c, &dev.stream[0].vb, 0, I_VB); dev.stream[0].stride = 0;     // drop the device's reference, as SetStreamSource
     return D3D_OK;
 }
 // DrawIndexedPrimitiveUP(Type, MinVertexIndex, NumVertexIndices, PrimitiveCount, pIndexData, IndexDataFormat,
@@ -1840,7 +1873,7 @@ static uint32_t IDirect3DDevice8_DrawIndexedPrimitiveUP(Ctx *c) {
     if (!prim_ok(ARG(1), ARG(4)) || !ARG(5) || !ARG(7) || !ARG(8) || (ARG(6) != F_INDEX16 && ARG(6) != F_INDEX32))
         return D3DERR_INVALIDCALL;
     draw_cmd(c, ARG(1), ARG(4), ARG(7), ARG(8), ARG(2), ARG(3), ARG(5), ARG(6) == F_INDEX32);
-    dev.stream[0].vb = 0; dev.stream[0].stride = 0; dev.ib = 0;
+    bind(c, &dev.stream[0].vb, 0, I_VB); dev.stream[0].stride = 0; bind(c, &dev.ib, 0, I_IB);
     return D3D_OK;
 }
 
@@ -1909,7 +1942,7 @@ static uint32_t IDirect3DDevice8_CaptureStateBlock(Ctx *c) {
     }
     return D3D_OK;
 }
-static uint32_t IDirect3DDevice8_DeleteStateBlock(Ctx *c) { DEV(); Obj *o = sb_of(c, ARG(1)); if (!o) return D3DERR_INVALIDCALL; o->dead = 1; return D3D_OK; }
+static uint32_t IDirect3DDevice8_DeleteStateBlock(Ctx *c) { DEV(); Obj *o = sb_of(c, ARG(1)); if (!o) return D3DERR_INVALIDCALL; free_handle(o); return D3D_OK; }
 
 #define DEV_ENTRY(name, n) {"d3d8.dll", "IDirect3DDevice8::" #name, n, IDirect3DDevice8_##name}
 #define D3D_ENTRY(name, n) {"d3d8.dll", "IDirect3D8::" #name, n, IDirect3D8_##name}

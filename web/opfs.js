@@ -49,8 +49,9 @@ if (typeof window === 'undefined') {
   globalThis.MPFiles = (() => {
     let worker, seq = 0;
     const waits = new Map();
+    const failAll = why => { for (const w of waits.values()) w.reject(new Error(why)); waits.clear(); worker = null; };   // a dead worker answers nobody
     const call = (m, onProgress) => {
-      worker ||= Object.assign(new Worker('opfs.js'), { onmessage: ({ data: r }) => {
+      worker ||= Object.assign(new Worker('opfs.js'), { onerror: e => failAll('opfs worker: ' + (e.message || 'error')), onmessageerror: () => failAll('opfs worker: bad message'), onmessage: ({ data: r }) => {
         const w = waits.get(r.id);
         if (!w) return;
         if (r.progress !== undefined) return w.onProgress?.(r.progress);
@@ -73,7 +74,7 @@ if (typeof window === 'undefined') {
     // (587 files, 1 GB; Part1_Level1 is 466 Mpx of JPEG against 3.9 in retail, decoded by the game's own lifted code), is left out of
     // the listing, and the game reads each of those files from its retail twin inside x_*.ras (all 587 have one).
     const hdPack = p => window.MP_DEVICE !== 'desktop' && /^data\/database(\/|$)/i.test(p);
-    const hasFile = async (dir, name) => { try { await dir.getFileHandle(name); return true; } catch { return false; } };
+    const hasFile = async (dir, name) => { try { await dir.getFileHandle(name); return true; } catch (e) { if (e.name !== 'NotFoundError') console.warn('opfs hasFile', name, e); return false; } };
     return {
       // The value of RN_FILES for host/files.c (a blob: URL of {game, save}), or null when OPFS holds no complete game.
       async files() {
@@ -116,9 +117,9 @@ if (typeof window === 'undefined') {
       // Asks for the game folder in el (a button and an <input webkitdirectory>), copies it to OPFS, resolves when done.
       pick(el) {
         return new Promise(resolve => {
-          el.innerHTML = 'Elige la carpeta donde está instalado tu Max Payne (la que tiene <b>MaxPayne.exe</b>).<br>' +
-            'Se copia una sola vez a este navegador (unos 2 GB) y no sale de tu Mac.<br><br>' +
-            '<button id="mp-pick">Elegir carpeta…</button> <span id="mp-pickmsg"></span>' +
+          el.innerHTML = 'Pick the folder where Max Payne is installed (the one with <b>MaxPayne.exe</b>).<br>' +
+            'It is copied once to this browser (about 2 GB) and never leaves your device.<br><br>' +
+            '<button id="mp-pick">Choose folder…</button> <span id="mp-pickmsg"></span>' +
             '<input id="mp-dir" type="file" webkitdirectory multiple hidden>';
           const input = el.querySelector('#mp-dir'), msg = el.querySelector('#mp-pickmsg');
           el.querySelector('#mp-pick').onclick = () => input.click();
@@ -126,21 +127,26 @@ if (typeof window === 'undefined') {
             // webkitRelativePath is "<folder>/<path>": the picked folder itself is dropped.
             const files = [...input.files].map(f => [f.webkitRelativePath.split('/').slice(1).join('/'), f]).filter(([p]) => p);
             const top = new Set(files.filter(([p]) => !p.includes('/')).map(([p]) => p.toLowerCase()));
-            if (!top.has('maxpayne.exe') || !top.has('x_data.ras')) { msg.textContent = 'esa carpeta no tiene MaxPayne.exe y x_data.ras'; return; }
+            if (!top.has('maxpayne.exe') || !top.has('x_data.ras')) { msg.textContent = 'that folder does not have MaxPayne.exe and x_data.ras'; return; }
             el.querySelector('#mp-pick').disabled = true;
             const total = files.reduce((a, [, f]) => a + f.size, 0), gb = n => (n / 2 ** 30).toFixed(2);
             await navigator.storage.persist?.().catch(() => {});
             try {
-              await call({ op: 'copy', files }, done => { msg.textContent = `copiando ${gb(done)} / ${gb(total)} GB`; });
+              await call({ op: 'copy', files }, done => { msg.textContent = `copying ${gb(done)} / ${gb(total)} GB`; });
               resolve();
-            } catch (e) { msg.textContent = 'no se pudo copiar: ' + e.message; el.querySelector('#mp-pick').disabled = false; }
+            } catch (e) { msg.textContent = 'could not copy: ' + e.message; el.querySelector('#mp-pick').disabled = false; }
           };
         });
       },
       // host/files.c save_send: method PUT (body: bytes) / PUT of a directory / DELETE, of a path under save/.
       save(method, rel, dir, body) {
         const op = method === 'DELETE' ? 'del' : dir ? 'mkdir' : 'put';
-        return call({ op, rel, data: body && body.buffer });
+        let data = body;
+        if (ArrayBuffer.isView(body)) {   // only this view's bytes, never the whole backing buffer (subarray / SharedArrayBuffer)
+          data = new ArrayBuffer(body.byteLength);
+          new Uint8Array(data).set(new Uint8Array(body.buffer, body.byteOffset, body.byteLength));
+        }
+        return call({ op, rel, data });
       },
     };
   })();

@@ -8,7 +8,8 @@ const WORKLET = `
 class RingPlayer extends AudioWorkletProcessor {
   constructor(o) {
     super();
-    const { sab, hdr, ring, size, target, high } = o.processorOptions;
+    const { sab, hdr, ring, size, target, high, ratio } = o.processorOptions;
+    this.ratio = ratio || 1; this.frac = 0;       // mixer frames per output frame (44100 / device rate)
     this.h = new Uint32Array(sab, hdr, 12);
     this.r = new Float32Array(sab, ring, 2 * size);
     this.size = size; this.target = target; this.high = high; this.synced = false; this.quiet = 0; this.ramp = 1;
@@ -21,12 +22,21 @@ class RingPlayer extends AudioWorkletProcessor {
     let fill = w - t;
     if (!this.synced || fill > this.high || fill < -this.size) {          // first block, or the clocks drifted apart
       if (this.synced) { Atomics.add(h, 5, 1); if (fill > this.high) Atomics.add(h, 8, fill - this.target); }
-      t = w - this.target; fill = this.target; this.synced = true;
+      t = Math.max(0, w - this.target); this.frac = 0; fill = this.target; this.synced = true;
       this.ramp = 0;                                          // 3 ms fade: the jump is a step, not a click
     }
     let peak = 0;
+    const ratio = this.ratio;
     for (let k = 0; k < n; k++, t++) {
-      if (t < w) {
+      if (ratio !== 1 && t + 1 < w) {              // device rate != 44100: linear interpolation between t and t+1
+        const i = 2 * (t % this.size), j = 2 * ((t + 1) % this.size), f = this.frac;
+        L[k] = this.r[i] + (this.r[j] - this.r[i]) * f; R[k] = this.r[i + 1] + (this.r[j + 1] - this.r[i + 1]) * f;
+        if (this.ramp < 1) { this.ramp = Math.min(1, this.ramp + 1 / 128); L[k] *= this.ramp; R[k] *= this.ramp; }
+        const m = Math.max(Math.abs(L[k]), Math.abs(R[k])) * 32767 | 0;
+        if (m > peak) peak = m;
+        const a = f + ratio, s = Math.floor(a); this.frac = a - s; t += s - 1;   // loop adds the last 1
+      }
+      else if (t < w) {
         const i = 2 * (t % this.size); L[k] = this.r[i]; R[k] = this.r[i + 1];
         if (this.ramp < 1) { this.ramp = Math.min(1, this.ramp + 1 / 128); L[k] *= this.ramp; R[k] *= this.ramp; }
         const m = Math.max(Math.abs(L[k]), Math.abs(R[k])) * 32767 | 0;
@@ -46,13 +56,15 @@ async function startAudio(M, log) {
   const say = log || (() => {});
   const hdr = M._rn_audio_ring() >>> 0;                          // byte address of the header
   const H = new Uint32Array(M.HEAPU8.buffer, hdr, 12);
+  // 44100 is a request: iOS Safari and Bluetooth outputs may keep 48000, the worklet resamples by ratio.
   const ctx = new AudioContext({ sampleRate: 44100, latencyHint: 'interactive' });
   // blob: worked in the OWNER's Safari 26.3 session (out/safari_1104); a data: URL is the fallback if a browser refuses it.
-  try { await ctx.audioWorklet.addModule(URL.createObjectURL(new Blob([WORKLET], { type: 'text/javascript' }))); }
-  catch (e) { say(`audio worklet blob: failed (${e.name}: ${e.message}), trying data:`); await ctx.audioWorklet.addModule('data:text/javascript,' + encodeURIComponent(WORKLET)); }
+  const blobUrl = URL.createObjectURL(new Blob([WORKLET], { type: 'text/javascript' }));
+  try { await ctx.audioWorklet.addModule(blobUrl); URL.revokeObjectURL(blobUrl); }
+  catch (e) { URL.revokeObjectURL(blobUrl); say(`audio worklet blob: failed (${e.name}: ${e.message}), trying data:`); await ctx.audioWorklet.addModule('data:text/javascript,' + encodeURIComponent(WORKLET)); }
   const node = new AudioWorkletNode(ctx, 'mp-ring', {
     numberOfInputs: 0, outputChannelCount: [2],
-    processorOptions: { sab: M.HEAPU8.buffer, hdr, ring: H[2], size: H[3], target: 1536, high: 6144 },
+    processorOptions: { sab: M.HEAPU8.buffer, hdr, ring: H[2], size: H[3], target: 1536, high: 6144, ratio: 44100 / ctx.sampleRate },
   });
   node.connect(ctx.destination);
   say(`audio worklet up, context ${ctx.state} at ${ctx.sampleRate} Hz, ring ${H[3]} frames`);
@@ -67,9 +79,11 @@ async function startAudio(M, log) {
       document.body.appendChild(note);
     } else if (!on && note) { note.remove(); note = null; }
   };
-  const resume = () => { if (ctx.state !== 'running') ctx.resume().then(() => { say(`audio ${ctx.state} ${ctx.sampleRate} Hz`); banner(ctx.state !== 'running'); }); };
-  ctx.onstatechange = () => banner(ctx.state !== 'running');
-  for (const ev of ['pointerdown', 'keydown']) addEventListener(ev, resume, true);
+  const resume = () => { if (ctx.state !== 'running') ctx.resume().then(() => { say(`audio ${ctx.state} ${ctx.sampleRate} Hz`); banner(ctx.state !== 'running'); unlocked(); }).catch(() => {}); };
+  const unlocked = () => { if (ctx.state === 'running') for (const ev of UNLOCK) removeEventListener(ev, resume, true); };
+  const UNLOCK = ['pointerdown', 'keydown', 'touchend'];
+  ctx.onstatechange = () => { banner(ctx.state !== 'running'); unlocked(); };
+  for (const ev of UNLOCK) addEventListener(ev, resume, true);
   resume();
   banner(ctx.state !== 'running');
   let ticks = 0, lastBad = 0;

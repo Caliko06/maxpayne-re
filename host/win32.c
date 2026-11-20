@@ -115,7 +115,7 @@ static uint32_t heap_alloc(Ctx *c, uint32_t n) {
             return b + HDR;
         }
     }
-    if (need < n || brk_ptr + need >= vtop) {   // an error like STOP: report the first few, with the heap's state
+    if (need < n || need >= vtop - brk_ptr) {   // an error like STOP: report the first few, with the heap's state
         static int fails;
         if (fails++ < 5) {
             fprintf(stderr, "heap: alloc of %u bytes failed: vtop %08x\n", n, vtop);
@@ -523,17 +523,18 @@ static uint32_t GlobalMemoryStatus_(Ctx *c) {
 
 static uint32_t VirtualAlloc_(Ctx *c) {
     uint32_t addr = ARG(0), size = ARG(1), type = ARG(2), prot = ARG(3);
+    if (!size) { set_error(c, 87); return 0; }
     if (addr) {
         Region *r = region_at(addr);
-        if (r && (type & 0x1000) && addr + size <= r->base + r->size) {   // commit inside a reservation
+        if (r && (type & 0x1000) && size <= r->size - (addr - r->base)) {   // commit inside a reservation
             r->commit = 1;
             return addr & ~0xfffu;
         }
         set_error(c, 487);
         return 0;
     }
-    uint32_t sz = (size + 0xffff) & ~0xffffu;
-    if (nregions == 4096 || vtop - sz <= brk_ptr) { set_error(c, ERROR_NOT_ENOUGH_MEMORY); return 0; }
+    uint32_t sz = (size + 0xffffu) & ~0xffffu;
+    if (!sz || nregions == 4096 || sz >= vtop - brk_ptr) { set_error(c, ERROR_NOT_ENOUGH_MEMORY); return 0; }
     vtop -= sz;
     regions[nregions++] = (Region){vtop, sz, (type & 0x1000) != 0, prot};
     heap_peak(c);
@@ -541,8 +542,9 @@ static uint32_t VirtualAlloc_(Ctx *c) {
     return vtop;
 }
 uint32_t virtual_reserve(Ctx *c, uint32_t size) {
-    uint32_t sz = (size + 0xffff) & ~0xffffu;
-    if (nregions == 4096 || vtop - sz <= brk_ptr) return 0;
+    if (!size) return 0;
+    uint32_t sz = (size + 0xffffu) & ~0xffffu;
+    if (!sz || nregions == 4096 || sz >= vtop - brk_ptr) return 0;
     vtop -= sz;
     regions[nregions++] = (Region){vtop, sz, 1, 4};
     heap_peak(c);
@@ -578,7 +580,7 @@ static uint32_t TlsAlloc_(Ctx *c) {
         if (!(bits & (1u << k))) { st(c, PEB_ADDR + 0x44, bits | (1u << k), 4); st(c, c->fs + 0xe10 + 4 * k, 0, 4); return k; }
     return 0xffffffffu;
 }
-static uint32_t TlsFree_(Ctx *c) { uint32_t k = ARG(0); st(c, PEB_ADDR + 0x44, ld(c, PEB_ADDR + 0x44, 4) & ~(1u << k), 4); return 1; }
+static uint32_t TlsFree_(Ctx *c) { uint32_t k = ARG(0); if (k >= 32) { set_error(c, 87); return 0; } st(c, PEB_ADDR + 0x44, ld(c, PEB_ADDR + 0x44, 4) & ~(1u << k), 4); return 1; }
 static uint32_t TlsGetValue_(Ctx *c) { uint32_t k = ARG(0); set_error(c, 0); return k < 64 ? ld(c, c->fs + 0xe10 + 4 * k, 4) : 0; }
 static uint32_t TlsSetValue_(Ctx *c) { uint32_t k = ARG(0); if (k >= 64) return 0; st(c, c->fs + 0xe10 + 4 * k, ARG(1), 4); return 1; }
 
@@ -1070,6 +1072,8 @@ static uint32_t CreateFileMappingA_(Ctx *c) {
     if (!f || f->kind != H_FILE) { rn_halt(c, "CreateFileMappingA without a file (%08x)", ARG(0)); return 0; }
     if (prot != 2) { rn_halt(c, "CreateFileMappingA protect %#x (only PAGE_READONLY)", prot); return 0; }
     uint32_t h = new_handle(H_MAPPING);
+    if (!h) { set_error(c, ERROR_NOT_ENOUGH_MEMORY); return 0; }
+    gf_retain(f->gf);
     get_handle(h)->gf = f->gf;
     return h;
 }
@@ -1107,9 +1111,11 @@ static uint32_t GetFileSize_(Ctx *c) {
     return (uint32_t)gf_size(h->gf);
 }
 static uint32_t CloseHandle_(Ctx *c) {
-    Handle *h = get_handle(ARG(0));
+    uint32_t hv = ARG(0);
+    Handle *h = get_handle(hv);
     if (!h) { set_error(c, ERROR_INVALID_HANDLE); return 0; }
-    if (h->kind == H_FILE) gf_close(h->gf);    // a mapping shares the file id; the file handle owns it
+    if (h->kind == H_FILE || h->kind == H_MAPPING) gf_close(h->gf);
+    if (h->kind == H_MUTEX) threads_close_handle(hv);
     if (h->dir) closedir(h->dir);
     h->kind = H_FREE;
     return 1;
@@ -1241,19 +1247,24 @@ static void reg_save(void) {
 }
 void reg_flush(void) {
     if (!reg_dirty) return;
-    reg_dirty = 0;
     size_t n = 0, cap = 4096;
     char *t = malloc(cap);
+    if (!t) { reg_dirty_us = now_us(); rn_log("registry: out of memory, save/registry.tsv not written"); return; }   // still dirty: tried again in 0.5 s
     for (int k = 0; k < nkeys + nvalues; k++) {
         size_t need = 600 + (k < nkeys ? 0 : 2 * values[k - nkeys].len);
-        if (n + need > cap) t = realloc(t, cap = 2 * (n + need));
+        if (n + need > cap) {
+            char *g = realloc(t, cap = 2 * (n + need));
+            if (!g) { free(t); reg_dirty_us = now_us(); rn_log("registry: out of memory, save/registry.tsv not written"); return; }
+            t = g;
+        }
         if (k < nkeys) { n += (size_t)snprintf(t + n, cap - n, "%s\n", keys[k]); continue; }   // a key without values
         RegValue *v = &values[k - nkeys];
         n += (size_t)snprintf(t + n, cap - n, "%s\t%s\t%u\t", v->key, v->name, v->type);
         for (uint32_t i = 0; i < v->len; i++) n += (size_t)snprintf(t + n, cap - n, "%02x", v->data[i]);
         t[n++] = '\n';
     }
-    layer_store("registry.tsv", (const uint8_t *)t, (int)n);
+    if (layer_store("registry.tsv", (const uint8_t *)t, (int)n)) { reg_dirty_us = now_us(); rn_log("registry: cannot write save/registry.tsv"); }   // 0 = written
+    else reg_dirty = 0;
     free(t);
 }
 static void reg_flush_due(uint64_t now) { if (reg_dirty && now - reg_dirty_us >= 500000) reg_flush(); }
@@ -1342,16 +1353,16 @@ static void reg_load(void) {
     int n = layer_load("registry.tsv", buf, sizeof buf - 1);
     if (n <= 0) { force_display_mode(); force_texture_detail(); return; }   // a saved registry overrides the seed values above
     buf[n] = 0;
-    for (char *l = (char *)buf, *e; *l; l = e + 1) {
-        if (!(e = strchr(l, '\n'))) break;
-        *e = 0;
+    for (char *l = (char *)buf, *next; *l; l = next) {
+        char *e = strchr(l, '\n');
+        if (e) { *e = 0; next = e + 1; } else next = l + strlen(l);     // keep a last line without its '\n'
         char *f[4] = {l, NULL, NULL, NULL};
         for (int i = 1; i < 4 && f[i - 1]; i++) { f[i] = strchr(f[i - 1], '\t'); if (f[i]) *f[i]++ = 0; }
         if (!f[1]) { key_add(l); continue; }
         if (!f[3]) continue;
         uint32_t len = (uint32_t)strlen(f[3]) / 2;
         uint8_t *d = malloc(len + 1);
-        for (uint32_t i = 0; i < len; i++) { unsigned x; sscanf(f[3] + 2 * i, "%2x", &x); d[i] = (uint8_t)x; }
+        for (uint32_t i = 0; i < len; i++) { unsigned x = 0; sscanf(f[3] + 2 * i, "%2x", &x); d[i] = (uint8_t)x; }
         value_set(f[0], f[1], (uint32_t)strtoul(f[2], NULL, 10), d, len, 0);
         free(d);
     }
@@ -1468,7 +1479,8 @@ static uint32_t RegDeleteKeyA_(Ctx *c) {
     size_t n = strlen(path);
     for (int j = 0; j < nkeys; j++) if (!strncasecmp(keys[j], path, n) && keys[j][n] == '\\') return 5;
     for (int j = nvalues - 1; j >= 0; j--) if (!strcasecmp(values[j].key, path)) { free(values[j].data); values[j] = values[--nvalues]; }
-    memcpy(keys[k], keys[--nkeys], sizeof *keys);
+    nkeys--;
+    if (k < nkeys) memcpy(keys[k], keys[nkeys], sizeof *keys);
     reg_save();
     return 0;
 }

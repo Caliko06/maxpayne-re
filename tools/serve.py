@@ -86,6 +86,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     disable_nagle_algorithm = True          # headers and body are two writes: with keep-alive, Nagle + delayed ACK cost 40 ms each
 
     def do_PUT(self):
+        self._cache = None
         p = save_path(self.path) if self.path.startswith("/save/") else None
         if not p:
             self.close_connection = True            # the unread request body would be taken for the next request
@@ -96,9 +97,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             os.makedirs(p, exist_ok=True)
         else:
             os.makedirs(os.path.dirname(p), exist_ok=True)
-            with open(p + ".tmp", "wb") as f:
+            tmp = f"{p}.{threading.get_ident()}.tmp"
+            with open(tmp, "wb") as f:
                 f.write(body)
-            os.replace(p + ".tmp", p)
+            os.replace(tmp, p)
         self.send_response(204)
         self.end_headers()
 
@@ -128,6 +130,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
 
     def do_POST(self):
+        self._cache = None
         route = self.path.split("?", 1)[0]
         if route == "/plan/verdict":
             self.plan_verdict()
@@ -154,6 +157,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
 
     def do_DELETE(self):
+        self._cache = None
         p = save_path(self.path) if self.path.startswith("/save/") else None
         if not p or not os.path.isfile(p):
             self.send_error(404)
@@ -162,7 +166,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.send_response(204)
         self.end_headers()
 
+    def do_HEAD(self):
+        self._cache = None
+        super().do_HEAD()
+
     def do_GET(self):
+        self._cache = None
         route = self.path.split("?", 1)[0]
         if route == "/extra-files.json":
             body = json.dumps([[n, os.path.getsize(p)] for n, p in EXTRA.items()]).encode()
@@ -189,11 +198,23 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         rng = self.headers.get("Range")
         path = self.translate_path(self.path)
-        if rng and rng.startswith("bytes=") and os.path.isfile(path):    # the game thread reads byte ranges
+        if rng and rng.startswith("bytes=") and "," not in rng and os.path.isfile(path):    # the game thread reads byte ranges
             size = os.path.getsize(path)
-            a, b = rng[6:].split("-")
-            a, b = int(a), min(int(b) if b else size - 1, size - 1)
-            if a >= size or b < a:
+            try:
+                x, y = rng[6:].split("-")
+                if not x and not y:
+                    raise ValueError
+                if not x:
+                    n = int(y)
+                    if n <= 0:
+                        raise ValueError
+                    a, b = max(0, size - n), size - 1
+                else:
+                    a = int(x)
+                    b = min(int(y), size - 1) if y else size - 1
+            except ValueError:
+                a, b = size, -1
+            if a < 0 or a >= size or b < a:
                 self.send_response(416)
                 self.send_header("Content-Range", f"bytes */{size}")
                 self.send_header("Content-Length", "0")
@@ -265,10 +286,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         status, a, b = 200, 0, size - 1
         rng = self.headers.get("Range")
         if rng and rng.startswith("bytes=") and "," not in rng:
-            x, y = rng[6:].split("-")
-            a = size - int(y) if not x else int(x)
-            b = min(int(y), size - 1) if x and y else size - 1 if x or not y else b
-            if a >= size or b < a:
+            try:
+                x, y = rng[6:].split("-")
+                if not x and not y:
+                    raise ValueError
+                a = max(0, size - int(y)) if not x else int(x)
+                b = min(int(y), size - 1) if x and y else size - 1 if x or not y else b
+            except ValueError:
+                a, b = size, -1
+            if a < 0 or a >= size or b < a:
                 self.send_response(416)
                 self.send_header("Content-Range", f"bytes */{size}")
                 self.send_header("Content-Length", "0")
@@ -344,7 +370,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
         self.send_header("Cross-Origin-Opener-Policy", "same-origin")
         self.send_header("Cross-Origin-Embedder-Policy", "require-corp")
-        self.send_header("Cache-Control", getattr(self, "_cache", "no-store"))
+        self.send_header("Cross-Origin-Resource-Policy", "same-origin")
+        self.send_header("Cache-Control", getattr(self, "_cache", None) or "no-store")
         super().end_headers()
 
     def log_message(self, fmt, *a):          # RN_HTTPLOG=1: one line per request (status, If-None-Match, Range) on stderr

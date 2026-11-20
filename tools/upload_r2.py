@@ -16,6 +16,7 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 DAY = 'Cache-Control: public, max-age=86400'
 NO = 'Cache-Control: no-cache'
+YEAR = 'Cache-Control: public, max-age=31536000, immutable'
 
 
 def classify(rel):
@@ -29,11 +30,15 @@ def classify(rel):
         return None, 'its bytes are uploaded as out/maxpayne.wasm'
     if rel == 'out/maxpayne.wasm':
         return 'engine', ''
+    if rel.startswith('game-z/'):
+        return 'gamez', ''
     if suffix == '.gz':
         return None, 'Content-Encoding twin for tools/static_server.py; the page never requests it (the edge compresses)'
     if rel.startswith('game/'):
         return 'game', ''
-    if suffix in ('.html', '.js', '.json', '.webmanifest'):
+    if rel == 'manifest.json':
+        return None, 'internal build inventory; the page never fetches it'
+    if suffix in ('.html', '.js', '.css', '.json', '.webmanifest'):
         return 'page', ''
     return 'assets', ''
 
@@ -45,10 +50,13 @@ def plan(dist):
         if not path.is_file():
             continue
         rel = path.relative_to(dist).as_posix()
+        if rel == 'manifest.json':
+            skipped[rel] = 'internal build inventory; the page never fetches it'
+            continue
         which, why = classify(rel)
         if which is None:
             skipped[rel] = why
-        elif which in ('game', 'assets', 'page', 'engine'):
+        elif which in ('game', 'gamez', 'assets', 'page', 'engine'):
             passes.setdefault(which, []).append((rel, path.stat().st_size))
         else:
             orphan.append(rel)
@@ -64,9 +72,10 @@ def blueprint(dist, passes, skipped):
     print('|---|---|---|---|---|')
     rules = {
         'game': ('game/**', DAY, 'changed (--checksum); first, so a boot works mid-upload'),
-        'assets': ('img, gamefile, fonts, launcher/*.json…', DAY, 'changed (--checksum)'),
-        'page': ('*.html, *.js, *.json, *.webmanifest', NO, 'every time (--ignore-times): the header must reach unchanged bytes'),
-        'engine': ('out/maxpayne.wasm ← out/maxpayne.wasm.br', NO + ', Content-Encoding: br, Content-Type: application/wasm', 'every time'),
+        'gamez': ('game-z/<sha256>.gz (gzip pieces of the compressible game files)', YEAR + ', Content-Encoding: gzip', 'new names only (content-addressed)'),
+        'assets': ('img, gamefile, fonts, launcher art…', DAY, 'changed (--checksum)'),
+        'page': ('*.html, *.js, *.css, *.json (incl. launcher/*.json), *.webmanifest', NO, 'every time (--ignore-times): the header must reach unchanged bytes'),
+        'engine': ('out/maxpayne.wasm ← out/maxpayne.wasm.br', NO + ', Content-Encoding: br, Content-Type: application/wasm, X-Raw-Length', 'every time'),
     }
     for which, (label, header, when) in rules.items():
         rows = passes.get(which, [])
@@ -98,6 +107,15 @@ def upload(bucket, dist, passes, only):
         Path(listing).unlink()
 
     copy_pass('game', DAY, fresh=False)      # 2.1 GB first: an upload cut short still boots and reaches the first level
+    # game-z/: the pieces are named by their bytes, so a name never changes meaning (immutable); stored gzip, decoded by the
+    # browser like nfsu.cc's data-chunks. Before the page pass, which carries the game-z.json that points at them.
+    if 'gamez' in only and passes.get('gamez'):
+        with tempfile.NamedTemporaryFile('w', suffix='.txt', delete=False) as f:
+            f.write('\n'.join(rel for rel, _ in passes['gamez']) + '\n')
+            listing = f.name
+        rclone('copy', str(dist), remote, '--files-from-raw', listing, '--size-only', '--header-upload', YEAR,
+               '--header-upload', 'Content-Encoding: gzip', '--header-upload', 'Content-Type: application/octet-stream', '--progress')
+        Path(listing).unlink()
     copy_pass('assets', DAY, fresh=False)
     copy_pass('page', NO, fresh=True)
     # out/maxpayne.wasm.br -> out/maxpayne.wasm: 125 MB raw, 14.8 MB brotli, fetched once whole by web/index.html:132 and
@@ -105,9 +123,16 @@ def upload(bucket, dist, passes, only):
     # bet RE-NFSU made with gzip on speed.wasm); every browser that runs this build sends br.
     if 'engine' not in only:
         return
+    wasm_raw = dist / 'out/maxpayne.wasm'
+    if wasm_raw.is_file():
+        raw_len = wasm_raw.stat().st_size
+    else:
+        m = json.loads((dist / 'manifest.json').read_text())
+        raw_len = next(r[1] for r in m['files'] if r[0] == 'out/maxpayne.wasm')
     rclone('copyto', str(dist / 'out/maxpayne.wasm.br'), f'{remote}/out/maxpayne.wasm', '--ignore-times',
            '--header-upload', NO, '--header-upload', 'Content-Encoding: br',
-           '--header-upload', 'Content-Type: application/wasm')
+           '--header-upload', 'Content-Type: application/wasm',
+           '--header-upload', f'X-Raw-Length: {raw_len}')
 
 
 def main():
@@ -116,7 +141,7 @@ def main():
     parser.add_argument('--dist', type=Path, default=ROOT / 'build/public-cdn')
     parser.add_argument('--dry-run', action='store_true', help='print the blueprint, upload nothing')
     # --only page,engine: a page or engine change re-sends 15 MB, not the 2.3 GB game pass (each go names what goes up).
-    parser.add_argument('--only', default='game,assets,page,engine', help='comma list of passes to send')
+    parser.add_argument('--only', default='game,gamez,assets,page,engine', help='comma list of passes to send')
     args = parser.parse_args()
     dist = args.dist.resolve()
     manifest = dist / 'manifest.json'

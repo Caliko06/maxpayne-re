@@ -497,7 +497,7 @@ static void mix(uint32_t n) {
             }
             uint32_t a = (uint32_t)o->pos;
             float t = (float)(o->pos - a);
-            float h0 = hermite(o, frames, a, t, 0), h1 = hermite(o, frames, a, t, 1);
+            float h0 = hermite(o, frames, a, t, 0), h1 = (o->channels == 1) ? h0 : hermite(o, frames, a, t, 1);
             float dither = 1.0f;                        // 1 except in the 128 frames on each side of a hold
             if (o->fade_in > 0) dither = 1.0f - (float)--o->fade_in / 128.0f;
             if (o->looping && o->unlocks >= 2) {         // and let the last frames before the hold die out
@@ -617,7 +617,7 @@ static void dsound_start(void) {
     open_wav();
 #endif
     pthread_t t;
-    pthread_create(&t, NULL, mixer, NULL);
+    if (pthread_create(&t, NULL, mixer, NULL)) rn_log("dsound: pthread_create for the mixer failed");
 }
 static uint32_t DirectSoundCreate_(Ctx *c) {
     uint32_t guid = ARG(0), out_p = ARG(1);
@@ -710,7 +710,7 @@ static uint32_t IDirectSound_CreateSoundBuffer(Ctx *c) {
         for (int k = 0; k < npool && !b->data; k++)
             if (pool[k].size == b->size) { b->data = pool[k].data; pool[k] = pool[--npool]; }
         if (!b->data) b->data = guest_alloc(b->size);
-        if (!b->data) { rn_halt(c, "dsound: no guest memory for a %u-byte buffer", bytes); return DSERR_INVALIDPARAM; }
+        if (!b->data) { b->iface = -1; rn_halt(c, "dsound: no guest memory for a %u-byte buffer", bytes); return DSERR_INVALIDPARAM; }
         memset(G(b->data), b->bits == 8 ? 0x80 : 0, b->size);
         b->written = 0;                 // the host's fill: a Play that mixes only this is P_NEVER_FILLED, not the game's silence
     }
@@ -730,7 +730,7 @@ static uint32_t IDirectSound_DuplicateSoundBuffer(Ctx *c) {
     Obj *b = &objs[ld(c, g + 4, 4) - 1];
     pthread_mutex_lock(&mx);
     *b = *src;                          // the data block is shared, and so it is never given back to the pool
-    b->guest = g; b->refs = 1; b->playing = 0; b->looping = 0; b->pos = 0; b->avail = 0; b->held = 0; b->has3d = 0; b->parent = -1; b->in_play = 0; b->flags |= 0x80000000u;
+    b->guest = g; b->refs = 1; b->playing = 0; b->looping = 0; b->pos = 0; b->avail = 0; b->held = 0; b->has3d = 0; b->parent = -1; b->in_play = 0; b->flags |= 0x80000000u; src->flags |= 0x80000000u;
     pthread_mutex_unlock(&mx);
     st(c, out_p, g, 4);
     return DS_OK;

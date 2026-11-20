@@ -42,7 +42,10 @@ int rn_d3dx_convert(Ctx *c) {
     static int check = -1, inside;
     if (check < 0) check = getenv("RN_FASTCHECK") != NULL;
     if (inside) return 0;
-    uint32_t ctx = c->r[ECX], src = ld(c, ctx, 4), dst = ld(c, ctx + 4, 4);
+    uint32_t ctx = c->r[ECX];
+    if (!guest_ok(c, c->r[ESP], 4) || !guest_ok(c, ctx, 8)) return 0;
+    uint32_t src = ld(c, ctx, 4), dst = ld(c, ctx + 4, 4);
+    if (!guest_ok(c, src, D_D + 4) || !guest_ok(c, dst, D_D + 4)) return 0;
     uint32_t w = ld(c, dst + D_W, 4), h = ld(c, dst + D_H, 4), d = ld(c, dst + D_D, 4);
     if (ld(c, src + D_FORMAT, 4) != FMT_A8R8G8B8 || ld(c, dst + D_FORMAT, 4) != FMT_X8R8G8B8) return 0;
     if (ld(c, src + D_COLORKEY, 4) || ld(c, dst + D_DITHER, 4) != NO_DITHER_TABLE) return 0;
@@ -58,11 +61,12 @@ int rn_d3dx_convert(Ctx *c) {
     // The store row 0x1043f137 saves the control word through FUN_1043ecc6: dword at 0x10488374 = ecx (dither table) high half + FCW.
     uint32_t saved = (ld(c, dst + D_DITHER, 4) & 0xffff0000u) | (c->fcw & 0xffffu);
     uint32_t *want = check ? malloc((size_t)need * h * d + 4) : NULL;
+    if (check && !want) return 0;
     uint32_t *out = want;
     for (uint32_t z = 0; z < d; z++)
         for (uint32_t y = 0; y < h; y++) {
-            const uint8_t *s = c->mem + sp + y * sr + z * ss;
-            uint8_t *t = c->mem + dp + y * dr + z * ds;
+            const uint8_t *s = c->mem + sp + (uint64_t)y * sr + (uint64_t)z * ss;
+            uint8_t *t = c->mem + dp + (uint64_t)y * dr + (uint64_t)z * ds;
             if (want) { memcpy(out, s, need); for (uint32_t x = 0; x < w; x++) out[x] &= 0xffffffu; out += w; continue; }
             for (uint32_t x = 0; x < w; x++) { uint32_t v; memcpy(&v, s + 4 * x, 4); v &= 0xffffffu; memcpy(t + 4 * x, &v, 4); }
         }
@@ -73,7 +77,7 @@ int rn_d3dx_convert(Ctx *c) {
         int diff = 0;
         for (uint32_t z = 0; z < d; z++)
             for (uint32_t y = 0; y < h; y++, out += w)
-                diff |= memcmp(out, c->mem + dp + y * dr + z * ds, need) != 0;
+                diff |= memcmp(out, c->mem + dp + (uint64_t)y * dr + (uint64_t)z * ds, need) != 0;
         if (w && h && d) diff |= ld(c, 0x10488374u, 4) != saved;
         calls++; bad += diff;
         if (diff || calls % 64 == 1) rn_log("fastcheck d3dx convert: %u calls, %u differ (last %ux%u)", calls, bad, w, h);
@@ -88,6 +92,7 @@ int rn_d3dx_convert(Ctx *c) {
 
 // msvcrt _ftol 0x10801f14: truncate ST0, pop, 64-bit result in edx:eax.
 int rn_ftol(Ctx *c) {
+    if (!guest_ok(c, c->r[ESP], 4)) return 0;
     int64_t v = fist(c, *fr(c, 0), 64, 1);
     fpop(c);
     uint32_t ah = ((c->fcw >> 8) & 0xffu) | 0xc;    // flags of `or ah, 0xc` 0x10801f23, the last flag writer
@@ -304,7 +309,7 @@ int rn_jpeg_idct(Ctx *c) {
     if (check < 0) check = getenv("RN_FASTCHECK") != NULL;
     if (inside) return 0;
     uint32_t sp = c->r[ESP], cinfo = c->r[ECX], comp = c->r[EDX];
-    if (!guest_ok(c, cinfo + 0x136, 4) || !guest_ok(c, comp + 0x50, 4)) return 0;
+    if (!guest_ok(c, sp, 16) || !guest_ok(c, cinfo, 0x13a) || !guest_ok(c, comp, 0x54)) return 0;
     uint32_t coef = ld(c, sp + 4, 4), obuf = ld(c, sp + 8, 4), col = ld(c, sp + 12, 4);
     uint32_t range = ld(c, cinfo + 0x136, 4) + 0x80 /* 0x1021093a */, table = ld(c, comp + 0x50, 4);
     int pc = (c->fcw >> 8) & 3, rc = (c->fcw >> 10) & 3;
@@ -344,7 +349,7 @@ int rn_jpeg_ycc(Ctx *c) {
     if (check < 0) check = getenv("RN_FASTCHECK") != NULL;
     if (inside) return 0;
     uint32_t sp = c->r[ESP], cinfo = c->r[ECX], ibuf = c->r[EDX];
-    if (!guest_ok(c, cinfo + 0x1ba, 4) || !guest_ok(c, ibuf, 12)) return 0;
+    if (!guest_ok(c, sp, 16) || !guest_ok(c, cinfo, 0x1be) || !guest_ok(c, ibuf, 12)) return 0;
     uint32_t row = ld(c, sp + 4, 4), obuf = ld(c, sp + 8, 4), nrows = ld(c, sp + 12, 4);
     uint32_t cc = ld(c, cinfo + 0x1ba, 4) /* 0x1020d573 */, range = ld(c, cinfo + 0x136, 4), cols = ld(c, cinfo + 0x6c, 4);
     if (!guest_ok(c, cc + 8, 16) || !guest_ok(c, range, 0x400)) return 0;
@@ -367,6 +372,7 @@ int rn_jpeg_ycc(Ctx *c) {
     const uint8_t *rl = c->mem + range;     // libjpeg builds these tables (build_ycc_rgb_table): indexes stay inside the range table
     size_t sz = (size_t)cols * 3 * nrows;   // checks ran first: cols fits guest memory
     uint8_t *want = check ? malloc(sz + 1) : NULL;
+    if (check && !want) return 0;
     for (uint32_t r = 0; r < nrows; r++) {
         const uint8_t *py = c->mem + ld(c, p0 + (row + r) * 4, 4), *pb = c->mem + ld(c, p1 + (row + r) * 4, 4), *pr = c->mem + ld(c, p2 + (row + r) * 4, 4);
         uint8_t *o = want ? want + (size_t)r * cols * 3 : c->mem + ld(c, obuf + r * 4, 4);
@@ -554,12 +560,16 @@ int rn_jpeg_row(Ctx *c) {
     static int check = -1, inside;
     if (check < 0) check = getenv("RN_FASTCHECK") != NULL;
     if (inside) return 0;
-    uint32_t sp = c->r[ESP], rgb = c->r[ECX], w = c->r[EDX], img = ld(c, sp + 4, 4), y = ld(c, sp + 8, 4);
+    uint32_t sp = c->r[ESP], rgb = c->r[ECX], w = c->r[EDX];
+    if (!guest_ok(c, sp, 12)) return 0;
+    uint32_t img = ld(c, sp + 4, 4), y = ld(c, sp + 8, 4);
     if ((int32_t)w <= 0 || (int32_t)y < 0) return 0;
     uint64_t d = (uint64_t)w * y * 4 + img;     // 0x102045e0: param_2 * param_4 * 4 + param_3
     if (!guest_ok(c, rgb, w * 3ull) || !guest_ok(c, d, w * 4ull) || overlap(rgb, w * 3ull, d, w * 4ull)) return 0;
     const uint8_t *s = c->mem + rgb;
-    uint8_t *want = check ? malloc((size_t)w * 4) : NULL, *o = want ? want : c->mem + (uint32_t)d;
+    uint8_t *want = check ? malloc((size_t)w * 4) : NULL;
+    if (check && !want) return 0;
+    uint8_t *o = want ? want : c->mem + (uint32_t)d;
     for (uint32_t x = 0; x < w; x++, s += 3, o += 4) { o[0] = s[2]; o[1] = s[1]; o[2] = s[0]; o[3] = 0; }
     if (want) {
         static unsigned calls, bad;
@@ -1029,7 +1039,7 @@ int rn_ldb_import(Ctx *c) {
     inside = 1; f_5dc360(c); inside = 0;
     if (c->halt || c->ret != ra || c->r[ESP] != sp + 16) return 1;      // it threw: the unwind goes on
     uint32_t map = ld(c, self + 0x2d, 4);
-    if (ld(c, self + 0x2c, 1) != 1 || !guest_ok(c, map + 8, 4) || ld(c, map + 8, 4) != 1) return 1;     // 0x5dc6f6: state 1, not validated
+    if (ld(c, self + 0x2c, 1) != 1 || !guest_ok(c, map, 12) || ld(c, map + 8, 4) != 1) return 1;     // 0x5dc6f6: state 1, not validated
     uint32_t ecx = c->r[ECX];
     c->r[ECX] = self;
     call_guest_cdecl(c, 0x5dc6f0u, 0, NULL);

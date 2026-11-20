@@ -76,9 +76,12 @@ const flush = () => { if (!pending.length) return; const body = pending.join('\n
 fetch('/log?new', { method: 'POST', body: `page ${location.href} ${new Date().toISOString()}\n` }).catch(() => {});
 setInterval(flush, 1000);
 addEventListener('pagehide', flush);
-addEventListener('keydown', e => { if (e.code === 'F2') { document.body.classList.toggle('dbg'); e.preventDefault(); } }, true);
+addEventListener('keydown', e => { if (e.code === 'F2') { document.body.classList.toggle('dbg'); e.preventDefault(); e.stopPropagation(); } }, true);
 addEventListener('error', e => line('JS error: ' + e.message + ' at ' + e.filename + ':' + e.lineno, 'stop'));
 addEventListener('unhandledrejection', e => line('JS rejection: ' + (e.reason && e.reason.stack || e.reason), 'stop'));
+
+let appPhase = 'boot';               // 'boot' | 'backdrop_loading' | 'backdrop_paused' | 'handing_off' | 'playing' | 'reloading' | 'failed'
+const setPhase = p => { appPhase = p; };
 
 function line(s, cls) {
   pending.push(`${secs()} ${s}`); allLog.push(`${secs()} ${s}`);
@@ -88,7 +91,8 @@ function line(s, cls) {
   d.textContent = s;
   log.appendChild(d);
   if (/^STOP|abort|RuntimeError/.test(s)) {
-    status.textContent = 'detenido a los ' + secs() + ' s'; status.className = 'stop';
+    setPhase('failed');
+    status.textContent = 'stopped at ' + secs() + ' s'; status.className = 'stop';
     document.body.classList.add('dbg'); setTimeout(flush, 0);
   }
 }
@@ -100,13 +104,21 @@ function line(s, cls) {
 function playSize(pick) {
   const dpr = pick?.video?.hidpi === false ? 1 : devicePixelRatio || 1, coarse = MP_DEVICE !== 'desktop';
   const long = Math.max(screen.width, screen.height) * dpr, short = Math.min(screen.width, screen.height) * dpr;
-  const k = Math.min(coarse ? 0.75 : 1, (coarse ? 960 : 2560) / long);
-  const even = v => Math.max(480, Math.round(v * k)) & ~1;
-  let w = Math.max(640, even(long)), h = even(short);
+  const aspect = short ? long / short : 16 / 9;
+  let w, h;
+  if (coarse) {
+    // Preserve the phone's true landscape aspect ratio, capped at 540p for light-version memory/GPU budget.
+    h = Math.max(480, Math.min(540, Math.round(short * 0.75))) & ~1;
+    w = Math.max(640, Math.round(h * aspect / 2) * 2);
+  } else {
+    const k = Math.min(1, 2560 / long);
+    const even = v => Math.max(480, Math.round(v * k)) & ~1;
+    w = Math.max(640, even(long)); h = even(short);
+  }
   if (pick?.video) {
     const scale = pick.scale;
     h = Math.max(480, Math.round(h * scale / 2) * 2);
-    w = Math.max(640, Math.round((pick.aspect === '4:3' ? h * 4 / 3 : w * scale) / 2) * 2);
+    w = Math.max(640, Math.round((pick.aspect === '4:3' ? h * 4 / 3 : coarse ? h * aspect : w * scale) / 2) * 2);
   }
   return `${w}x${h}`;
 }
@@ -136,10 +148,10 @@ function dropBoot() { const b = document.getElementById('boot'); if (b) b.remove
 const handed = (() => { try { const v = sessionStorage.getItem('mp.pick'); sessionStorage.removeItem('mp.pick'); return v ? JSON.parse(v) : null; } catch { return null; } })();
 const launcher = handed ? null : window.MPLauncher?.open() || null;
 (async () => {
-  const refuse = (html, why) => { launcher?.fail(html); document.getElementById('bootmsg').innerHTML = html; document.getElementById('bootmsg').className = 'stop'; line(why + ' in ' + navigator.userAgent, 'stop'); };
+  const refuse = (html, why) => { setPhase('failed'); launcher?.fail(html); document.getElementById('bootmsg').innerHTML = html; document.getElementById('bootmsg').className = 'stop'; line(why + ' in ' + navigator.userAgent, 'stop'); };
   // Threads and WebGPU exist only on https:// or localhost: a phone on http://192.168... gets neither.
   if (!isSecureContext) return refuse('This address is not secure.<br>Open the game over https:// (tailscale serve) or from localhost.', 'not a secure context');
-  if (!crossOriginIsolated) { launcher?.fail('COOP/COEP missing: open the page from tools/serve.py'); line('COOP/COEP missing: open the page from tools/serve.py', 'stop'); return; }
+  if (!crossOriginIsolated) { setPhase('failed'); launcher?.fail('COOP/COEP missing: open the page from tools/serve.py'); line('COOP/COEP missing: open the page from tools/serve.py', 'stop'); return; }
   const adapter = await gpuAdapter(document.getElementById('screen')).catch(() => null);
   if (!adapter) return refuse('This browser needs WebGPU or WebGL 2 with hardware acceleration enabled.',
       'no graphics adapter');
@@ -184,7 +196,7 @@ const launcher = handed ? null : window.MPLauncher?.open() || null;
     let saved = {}; try { saved = JSON.parse(localStorage.getItem('mp.launcher.v2'))?.opts || {}; } catch { /* defaults */ }
     pick = MPLaunch.apply({ mode: 'backdrop', opts: saved });
     pick.env.RN_JUMP = BACKDROP.join('|');
-    ctl0 = await MPControls.load().catch(() => null);
+    ctl0 = await MPControls.load().catch(e => { console.warn('MPControls.load:', e); line('controls: ' + (e?.message || e), 'dim'); return null; });
   } else pick = directPick || (launcher ? await launcher.chosen : null);      // the Play click; the downloads above keep running meanwhile
   if (needPicker) { await MPFiles.pick(document.getElementById('bootmsg')); filesUrl = await MPFiles.files(); }
   if (filesUrl) line('[boot] game files from OPFS', 'dim');
@@ -192,7 +204,7 @@ const launcher = handed ? null : window.MPLauncher?.open() || null;
   if (!live) await MPControls.write(pick?.controls);
   document.getElementById('bootmsg').textContent = 'downloading the game images…';
   const data = await imgData;
-  status.textContent = 'corriendo'; status.className = 'run';
+  status.textContent = 'running'; status.className = 'run';
   const canvas = document.getElementById('screen');
   const bootmsg = document.getElementById('bootmsg');
   const profile = makeMemory(wantProfile(pick));
@@ -244,19 +256,22 @@ const launcher = handed ? null : window.MPLauncher?.open() || null;
   const PAUSE = 0xc5;                                  // DIK_PAUSE (web/input.js)
   const tap = async d => { input.key(d, true); await new Promise(r => setTimeout(r, 120)); input.key(d, false); };
   if (live) {
-    // host/gamestate.c (web/ffwd.js steady()): word 3 mode 3 = game, word 4 bit 1 = level up, bits 8-11 = 1 fade done. Pause after 2 s of it.
+    setPhase('backdrop_loading');
+    // host/gamestate.c:97 (web/ffwd.js steady()): word 3 mode 3 = game, word 4 bit 0 = GSF_LEVEL, bit 1 = GSF_PLAYER, bits 8-11 = 1 fade done. Pause after 2 s of it.
     const g = () => M._rn_gamestate_addr() >>> 2;
-    let paused = false, upAt = 0;
-    const poll = setInterval(async () => {
+    let pausing = null, upAt = 0;
+    const poll = setInterval(() => {
       const b = g(), f = b ? M.HEAPU32[b + 4] : 0;
-      if (paused || !b || M.HEAPU32[b + 3] !== 3 || !(f & 2) || ((f >> 8) & 15) !== 1) { upAt = 0; return; }
+      if (appPhase !== 'backdrop_loading' || !b || M.HEAPU32[b + 3] !== 3 || (f & 3) !== 3 || ((f >> 8) & 15) !== 1) { upAt = 0; return; }
       if (!upAt) upAt = performance.now();
       if (performance.now() - upAt < 2000) return;
-      paused = true; clearInterval(poll);
-      await tap(PAUSE);
-      setTimeout(() => launcher.live(canvas), 300);             // the pause camera has cut in: the launcher clears its still
+      setPhase('backdrop_paused'); clearInterval(poll);
+      pausing = tap(PAUSE);
+      pausing.then(() => { if (appPhase === 'backdrop_paused') setTimeout(() => { if (appPhase === 'backdrop_paused') launcher.live(canvas); }, 300); });   // the pause camera has cut in: the launcher clears its still
     }, 200);
     const choice = await launcher.chosen;
+    const wasPaused = appPhase === 'backdrop_paused';
+    setPhase('handing_off');
     clearInterval(poll);
     // Boot-time choices (memory profile, screen, texture env, renderer, input registry 0x4cb3d0) need a fresh engine: hand the pick
     // over a reload. Everything else goes to the running engine.
@@ -265,22 +280,26 @@ const launcher = handed ? null : window.MPLauncher?.open() || null;
     const lines = (choice.env.RN_JUMP || '').split('|').filter(Boolean);
     const replaces = /gm_init|S_Load/i.test(lines[0] || '');       // chapter / continue / save: the line itself leaves the backdrop level
     if (bootKey(choice) !== bootKey(pick) || ctlChanged || (lines.length && !replaces) || choice.note) {
+      setPhase('reloading');
       if (ctlChanged) await MPControls.write(choice.controls);
       try { sessionStorage.setItem('mp.pick', JSON.stringify(choice)); } catch { /* no storage: the launcher shows again */ }
       location.reload(); return;
     }
     pick = choice;
-    if (paused) await tap(PAUSE);
+    if (pausing) await pausing;
+    if (wasPaused) await tap(PAUSE);
     await MPFF.start(M, canvas, input);                 // after the launcher: its window capture of F never fires under the menu
     if (lines.length) await MPFF.send(lines);
     else await tap(1);                                 // New Game: Esc opens the game's own menu, which asks for the difficulty
   }
+  setPhase('playing');
   (live ? Promise.resolve() : MPFF.start(M, canvas, input)).then(() => { if (pick?.ff) MPFF.run(pick.ff.level, pick.ff.step, true); });   // window capture: F never reaches the game; a milestone picked in the launcher      // (Play was the user gesture: audio below starts running)
   startTouch(input, canvas);
   startGamepad(input);
   if (globalThis.startAudio) startAudio(M, s => line(s, 'dim')).then(a => a?.ctx.resume()).catch(e => line('audio.js: ' + e.message, 'stop'));
   canvas.focus();
 })().catch(e => {
+  setPhase('failed');
   // Most often new WebAssembly.Memory refused the size (32-bit Chrome on a phone under 8 GB, nfsu2-web memory.ts).
   launcher?.fail('The game could not start: ' + String(e.message || e));
   const b = document.getElementById('bootmsg');

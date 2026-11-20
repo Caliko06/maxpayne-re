@@ -108,8 +108,10 @@ function startInput(M, canvas, steerLog) {
     const locked = document.pointerLockElement === canvas;
     // The 640x480 menus stay centered 4:3 inside the fitted buffer of any shape.
     const fit = Math.min(r.width / canvas.width, r.height / canvas.height), sh = canvas.height * fit, sw = Math.min(canvas.width * fit, sh * 4 / 3);
-    remX += e.movementX * (locked ? MOUSE : 512 / sw);
-    remY += e.movementY * (locked ? MOUSE : 384 / sh);
+    const mx = Number.isFinite(e.movementX) ? e.movementX : 0, my = Number.isFinite(e.movementY) ? e.movementY : 0;
+    const sx = locked ? MOUSE : (sw > 0 ? 512 / sw : 0), sy = locked ? MOUSE : (sh > 0 ? 384 / sh : 0);
+    remX += mx * sx;
+    remY += my * sy;
     const ix = Math.trunc(remX), iy = Math.trunc(remY);
     remX -= ix; remY -= iy;
     if (ix) Atomics.add(H(), base + 2, ix);
@@ -123,7 +125,7 @@ function startInput(M, canvas, steerLog) {
     button(btn[e.button], true);
     e.preventDefault();
   });
-  canvas.addEventListener('mouseup', e => button(btn[e.button], false));
+  window.addEventListener('mouseup', e => button(btn[e.button], false));
   canvas.addEventListener('wheel', e => { Atomics.add(H(), base + 4, e.deltaY < 0 ? 120 : -120); e.preventDefault(); }, { passive: false });
   canvas.addEventListener('contextmenu', e => e.preventDefault());
   canvas.focus();
@@ -134,7 +136,8 @@ function startInput(M, canvas, steerLog) {
     key(d, down) { if (down !== held.has(d)) { down ? held.add(d) : held.delete(d); push((down ? 0x100 : 0) | d); } },
     button,
     move(dx, dy) {
-      remX += dx; remY += dy;
+      if (Number.isFinite(dx)) remX += dx;
+      if (Number.isFinite(dy)) remY += dy;
       const ix = Math.trunc(remX), iy = Math.trunc(remY);
       remX -= ix; remY -= iy;
       if (ix) Atomics.add(H(), base + 2, ix);

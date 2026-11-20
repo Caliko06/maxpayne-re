@@ -135,7 +135,8 @@
     const kept = lines.filter(([key, name]) => (!sameKey(key) || !p.has(name)) && (!sameKey(key, OTHER) || !other.has(name))).map(l => l.join('\t'));
     const text = [...kept, ...Array.from(p, ([name, n]) => [KEY, name, '4', hex(n)].join('\t')), ...Array.from(other, ([name, n]) => [OTHER, name, '4', hex(n)].join('\t'))].join('\n') + '\n';
     if (text === before) return;
-    if (dir) { const w = await (await dir.getFileHandle('registry.tsv', { create: true })).createWritable(); await w.write(text); await w.close(); }
+    // Safari has no createWritable() on OPFS: write through the worker's sync access handle (web/opfs.js).
+    if (dir) await MPFiles.save('PUT', 'registry.tsv', false, new TextEncoder().encode(text));
     else { const r = await fetch('/save/registry.tsv', { method: 'PUT', body: text }); if (!r.ok) throw new Error('registry.tsv: HTTP ' + r.status); }
   }
   window.MPControls = { actions, init, load, write };

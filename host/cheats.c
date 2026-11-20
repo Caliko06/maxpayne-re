@@ -90,9 +90,15 @@ static void cheat_send(Ctx *c, const char *what, const char *const *l, int n) {
 void rn_cheats_game_key(Ctx *c) {
     uint32_t vk = ld(c, c->r[EBP] - 0x28, 4);
     if (vk != 0x72 && vk != 0x73 && vk != 0x75) return;
-    if (!live_player(c)) { rn_log("cheats: key %02x ignored, no player in a running level", vk); return; }   // player-> would stop the game
-    static int god, noclip;
-    if (vk == 0x72) { god = !god; if (god) cheat_send(c, "god on", GOD_ON, N(GOD_ON)); else cheat_send(c, "god off", GOD_OFF, N(GOD_OFF)); }
-    else if (vk == 0x73) cheat_send(c, "all weapons", WEAPONS, N(WEAPONS));
-    else { noclip = !noclip; if (noclip) cheat_send(c, "noclip on", NOCLIP_ON, N(NOCLIP_ON)); else cheat_send(c, "noclip off", NOCLIP_OFF, N(NOCLIP_OFF)); }
+    uint32_t ch = live_player(c);
+    if (!ch) { rn_log("cheats: key %02x ignored, no player in a running level", vk); return; }   // player-> would stop the game
+    if (vk == 0x72) {
+        if (!ld(c, ch + 0x454, 1)) cheat_send(c, "god on", GOD_ON, N(GOD_ON));
+        else cheat_send(c, "god off", GOD_OFF, N(GOD_OFF));
+    } else if (vk == 0x73) {
+        cheat_send(c, "all weapons", WEAPONS, N(WEAPONS));
+    } else {
+        if (ld(c, ch + 0x22c, 1)) cheat_send(c, "noclip on", NOCLIP_ON, N(NOCLIP_ON));
+        else cheat_send(c, "noclip off", NOCLIP_OFF, N(NOCLIP_OFF));
+    }
 }

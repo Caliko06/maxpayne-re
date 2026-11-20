@@ -79,15 +79,17 @@ void main() { gl_FragColor = transition(v); }`;
     cv.width = w; cv.height = h; cv.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;z-index:5;pointer-events:none';
     const gl = cv.getContext('webgl', { alpha: false, antialias: false }); if (!gl) return false;
     const sh = (t, s) => { const o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; };
-    const p = gl.createProgram();
-    gl.attachShader(p, sh(gl.VERTEX_SHADER, 'attribute vec2 a; varying vec2 v; void main() { v = a * .5 + .5; gl_Position = vec4(a, 0., 1.); }'));
-    gl.attachShader(p, sh(gl.FRAGMENT_SHADER, FRAG)); gl.linkProgram(p);
-    if (!gl.getProgramParameter(p, gl.LINK_STATUS)) return false;
+    const p = gl.createProgram(), vs = sh(gl.VERTEX_SHADER, 'attribute vec2 a; varying vec2 v; void main() { v = a * .5 + .5; gl_Position = vec4(a, 0., 1.); }'), fs = sh(gl.FRAGMENT_SHADER, FRAG);
+    gl.attachShader(p, vs); gl.attachShader(p, fs); gl.linkProgram(p);
+    gl.deleteShader(vs); gl.deleteShader(fs);
+    if (!gl.getProgramParameter(p, gl.LINK_STATUS)) { gl.deleteProgram(p); gl.getExtension('WEBGL_lose_context')?.loseContext(); return false; }
     gl.useProgram(p);
-    gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+    const buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
     const at = gl.getAttribLocation(p, 'a'); gl.enableVertexAttribArray(at); gl.vertexAttribPointer(at, 2, gl.FLOAT, false, 0, 0);
-    gl.bindTexture(gl.TEXTURE_2D, gl.createTexture());
+    const tex = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, tex);
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
     for (const [k, v] of [[gl.TEXTURE_MIN_FILTER, gl.LINEAR], [gl.TEXTURE_MAG_FILTER, gl.LINEAR], [gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE], [gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE]]) gl.texParameteri(gl.TEXTURE_2D, k, v);
     const ar = w / h, ir = img.naturalWidth / img.naturalHeight;     // cover, not stretch
@@ -102,6 +104,9 @@ void main() { gl_FragColor = transition(v); }`;
       const t = (performance.now() - t0 - HOLD) / (ms - HOLD);
       draw(Math.max(0, Math.min(1, t)));
       if (t < 1 && cv.isConnected) requestAnimationFrame(tick);
+      else {
+        try { gl.deleteTexture(tex); gl.deleteBuffer(buf); gl.deleteProgram(p); gl.getExtension('WEBGL_lose_context')?.loseContext(); } catch { /* gone */ }
+      }
     };
     requestAnimationFrame(tick);
     return true;

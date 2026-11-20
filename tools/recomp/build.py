@@ -4,7 +4,7 @@
 build/gen/<image>_NNN.c  lifted functions, in chunks
 build/gen/funcs.h        prototypes
 build/gen/table.c        sorted guest address -> function table for rn_call (all images in one table)
-build/gen/images.c       loader tables (tools/recomp/images.py)
+build/gen/image_tables.c loader tables (tools/recomp/images.py)
 census/lift_report.json  counts per image: functions, traps by reason
 Usage: [RN_JOBS=n] [RN_RELIFT=1] [RN_BR=11] .venv/bin/python tools/recomp/build.py [native|web|lift]   (default: native, 4 jobs; web needs emsdk). Run images.py and frontend.py first.
 """
@@ -120,7 +120,7 @@ def lift_all(force=False):
         write_if_changed(path, '#include "funcs.h"\n' + "\n".join(part))
     keep = {p for p, _ in files}
     for f in os.listdir(GEN):           # chunks of an older split
-        if f[-6:-2].startswith("_") and f.endswith(".c") and f"{GEN}/{f}" not in keep and f not in ("table.c", "image_tables.c"):
+        if re.search(r"_\d{3}\.c$", f) and f"{GEN}/{f}" not in keep and f not in ("table.c", "image_tables.c"):
             os.remove(f"{GEN}/{f}")
     write_if_changed(f"{GEN}/table.c", '#include "funcs.h"\n'
                      f"const uint32_t rn_fn_count = {len(allout)};\n"
@@ -157,10 +157,11 @@ def compile_native(srcs):
     srcs = srcs + [f"{GEN}/table.c", f"{GEN}/image_tables.c"]
     os.makedirs("build/obj", exist_ok=True)
     flags = ["-O1", "-w", "-Ihost", f"-I{GEN}", "-fno-strict-aliasing"]
+    hdr = max(os.path.getmtime(p) for p in ("host/rt.h", "host/host.h", "host/images.h", f"{GEN}/funcs.h") if os.path.exists(p))
     jobs = []
     for s in srcs:
         o = "build/obj/" + os.path.basename(s)[:-2] + ".o"
-        if not os.path.exists(o) or os.path.getmtime(o) < max(os.path.getmtime(s), os.path.getmtime("host/rt.h")):
+        if not os.path.exists(o) or os.path.getmtime(o) < max(os.path.getmtime(s), hdr):
             jobs.append(["clang", *flags, "-c", s, "-o", o])
     run_jobs(jobs)
     objs = ["build/obj/" + os.path.basename(s)[:-2] + ".o" for s in srcs]
@@ -173,8 +174,8 @@ def precompress(path):
     """<path>.br next to the wasm (tools/serve.py sends it to browsers that accept br): 146 MB -> 15 MB at quality 11
     (q9 18 MB in 8 s, q10 15.7 MB in 90 s, q11 14.9 MB in 200 s). RN_BR=<q> picks the quality; dev builds skip it
     (default 0, q11 is 196 s of every build): the build the OWNER plays and Safari/download numbers come from runs with RN_BR=11."""
-    q = os.environ.get("RN_BR", "0")
-    if q == "0":
+    q = os.environ.get("RN_BR", "0") or "0"
+    if int(q) <= 0:
         print("brotli skipped (dev build; RN_BR=11 for the build the OWNER plays)")
         return
     if shutil.which("brotli"):
@@ -183,8 +184,7 @@ def precompress(path):
         try:
             import brotli
         except ImportError:
-            print("no brotli (CLI or python module): tools/serve.py will send gzip (28 MB)")
-            return
+            sys.exit(f"RN_BR={q} requires brotli (CLI or python module)")
         open(path + ".br", "wb").write(brotli.compress(open(path, "rb").read(), quality=int(q), lgwin=24))
     os.utime(path + ".br")      # brotli copies the input's mtime truncated to seconds: older than the wasm, serve.py skips it
     print(f"{path}.br: {os.path.getsize(path + '.br') >> 10} KB from {os.path.getsize(path) >> 10} KB")
@@ -198,10 +198,11 @@ def compile_web(srcs):
     flags = [WEB_OPT, "-w", "-Ihost", f"-I{GEN}", "-fno-strict-aliasing", "-pthread"]
     stamp = "build/wobj/flags.txt"           # objects built with other flags are rebuilt
     same = os.path.exists(stamp) and open(stamp).read() == " ".join(flags)
+    hdr = max(os.path.getmtime(p) for p in ("host/rt.h", "host/host.h", "host/images.h", f"{GEN}/funcs.h") if os.path.exists(p))
     jobs = []
     for s in srcs:
         o = "build/wobj/" + os.path.basename(s)[:-2] + ".o"
-        if not same or not os.path.exists(o) or os.path.getmtime(o) < max(os.path.getmtime(s), os.path.getmtime("host/rt.h")):
+        if not same or not os.path.exists(o) or os.path.getmtime(o) < max(os.path.getmtime(s), hdr):
             jobs.append(["emcc", *flags, "-c", s, "-o", o])
     run_jobs(jobs)
     open(stamp, "w").write(" ".join(flags))

@@ -220,7 +220,7 @@ static uint32_t FindWindowA_(Ctx *c) {
     uint32_t cname = ARG(0);
     if (!cname) return 0;
     for (int k = 0; k < nwindows; k++)
-        if (windows[k].cls && !windows[k].parent &&
+        if (!windows[k].dead && windows[k].cls && !windows[k].parent &&
             (cname < 0x10000 ? windows[k].cls->atom == cname : !strcasecmp(windows[k].cls->name, G(cname)))) return hwnd_of(k);
     return 0;
 }
@@ -249,12 +249,15 @@ static uint32_t CreateWindowExA_(Ctx *c) {
     if (next_hook(5, -1) >= 0) {
         uint32_t cbt = guest_alloc(8);
         st(c, cbt, cs, 4);
-        if (call_hook(c, next_hook(5, -1), 3, hw, cbt) && !c->halt) { rn_log("WH_CBT refused the window"); return 0; }
-        if (c->halt) return 0;
+        uint32_t cancel = call_hook(c, next_hook(5, -1), 3, hw, cbt);
+        guest_free(cbt);
+        if (cancel && !c->halt) { rn_log("WH_CBT refused the window"); wd->dead = 1; guest_free(cs); return 0; }
+        if (c->halt) { wd->dead = 1; guest_free(cs); return 0; }
     }
-    if (!send(c, hw, WM_NCCREATE, 0, cs) && !c->halt) { rn_log("WM_NCCREATE refused"); return 0; }
-    if ((int32_t)send(c, hw, WM_CREATE, 0, cs) == -1 && !c->halt) { rn_log("WM_CREATE refused"); return 0; }
-    if (c->halt) return 0;
+    if (!send(c, hw, WM_NCCREATE, 0, cs) && !c->halt) { rn_log("WM_NCCREATE refused"); wd->dead = 1; guest_free(cs); return 0; }
+    if ((int32_t)send(c, hw, WM_CREATE, 0, cs) == -1 && !c->halt) { rn_log("WM_CREATE refused"); wd->dead = 1; guest_free(cs); return 0; }
+    guest_free(cs);
+    if (c->halt) { wd->dead = 1; return 0; }
     if (style & 0x10000000) {   // WS_VISIBLE
         wd->visible = 1;
         invalidate(wd, NULL, 1);
@@ -758,7 +761,7 @@ static uint32_t ToAscii_(Ctx *c) {
     return 1;
 }
 static uint32_t GetAsyncKeyState_(Ctx *c) { return input_vk_state(ARG(0)) & 0x8000u ? 0xffff8000u : 0; }
-static uint32_t GetKeyState_(Ctx *c) { uint32_t s = input_vk_state(ARG(0)); return (s & 0x8000u ? 0xffffff80u : 0) | (s & 1); }
+static uint32_t GetKeyState_(Ctx *c) { uint32_t s = input_vk_state(ARG(0)); return (s & 0x8000u ? 0xffff8000u : 0) | (s & 1); }
 // GetKeyNameTextA: lParam bits 16-23 are the scan code and bit 24 says extended (KEY_NAME, exe 0x519bf1, called when
 // the game names the keys of a binding). The names come from the same US table the DirectInput objects use.
 static uint32_t GetKeyNameTextA_(Ctx *c) {

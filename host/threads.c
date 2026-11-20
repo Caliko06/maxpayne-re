@@ -16,7 +16,7 @@ enum { T_NEW, T_RUNNING, T_PARKED, T_DONE };
 typedef struct Thread {
     Ctx ctx;
     uint32_t id, handle, start, param, exit_code;
-    int state, suspended;               // state: T_*; suspended: the SuspendThread count
+    int state, suspended, is_timer;     // state: T_*; suspended: the SuspendThread count
     pthread_t pt;
     uint32_t timer_ms, timer_flags, timer_user, timer_id, killed;   // winmm timers
     uint32_t stack_top;
@@ -177,7 +177,8 @@ static void *run_timer(void *arg) {
                 call_guest(c, t->start, 5, args);
                 if (c->halt) rn_stop(c);
             }
-        } while (t->timer_flags & 1);
+        } while (!t->killed && (t->timer_flags & 1));
+        t->timer_id = 0;
         t->state = T_PARKED;
         while (t->state == T_PARKED) wait_change(0);
     }
@@ -186,9 +187,12 @@ static void *run_timer(void *arg) {
 static void start_fn(Thread *t, void *(*fn)(void *)) {
     pthread_attr_t a;
     pthread_attr_init(&a);
-    pthread_attr_setstacksize(&a, 16u << 20);   // lifted guest calls are host calls
+    pthread_attr_setstacksize(&a, getenv("RN_LOWMEM") ? (4u << 20) : (16u << 20));   // lifted guest calls are host calls; 4 MB on phone 640 MB profile
     t->state = T_RUNNING;
-    if (pthread_create(&t->pt, &a, fn, t)) { fprintf(stderr, "pthread_create failed\n"); exit(1); }
+    int err = pthread_create(&t->pt, &a, fn, t);
+    pthread_attr_destroy(&a);
+    if (err) { fprintf(stderr, "pthread_create failed\n"); exit(1); }
+    pthread_detach(t->pt);
 }
 static void start(Thread *t) { start_fn(t, run); }
 static Thread *thread_of(uint32_t h) {
@@ -218,7 +222,7 @@ static Thread *new_thread(Ctx *c, uint32_t size) {
 static Thread *reuse_timer(void) {
     for (int k = 0; k < nthreads; k++) {
         Thread *t = threads[k];
-        if (!t->timer_id || t->state != T_PARKED) continue;
+        if (!t->is_timer || t->state != T_PARKED) continue;
         memset(t->ctx.r, 0, sizeof t->ctx.r);
         t->ctx.halt = t->ctx.uw = t->ctx.skipped = 0; t->ctx.cf = t->ctx.zf = t->ctx.sf = t->ctx.of = t->ctx.pf = t->ctx.df = t->ctx.af = 0;
         finit(&t->ctx);
@@ -270,7 +274,7 @@ static uint32_t GetExitCodeThread_(Ctx *c) {
 }
 // msvcrt _endthreadex 0x10803852 (AfxEndThread, the end of the sound thread proc 0x10303360). Lifted frames hold no state.
 static uint32_t ExitThread_(Ctx *c) {
-    if (!self || self->timer_id) { rn_halt(c, "ExitThread(%u) on the main or a timer thread", ARG(0)); return 0; }
+    if (!self || self->is_timer) { rn_halt(c, "ExitThread(%u) on the main or a timer thread", ARG(0)); return 0; }
     self->exit_code = ARG(0);
     self->state = T_DONE;
     notify();
@@ -280,6 +284,7 @@ static uint32_t ExitThread_(Ctx *c) {
 static uint32_t TerminateThread_(Ctx *c) { rn_halt(c, "TerminateThread(%08x)", ARG(0)); return 0; }
 static uint32_t GetCurrentThreadId_(Ctx *c) { return tid(c); }
 
+static uint32_t next_timer_id = 1;
 static uint32_t timeSetEvent_(Ctx *c) {
     uint32_t ms = ARG(0), cb = ARG(2), user = ARG(3), flags = ARG(4);
     if (flags & ~0x111u) { rn_halt(c, "timeSetEvent flags %08x", flags); return 0; }
@@ -287,15 +292,22 @@ static uint32_t timeSetEvent_(Ctx *c) {
     if (!t) t = new_thread(c, 0);
     if (!t) return 0;
     t->timer_ms = ms ? ms : 1; t->timer_flags = flags; t->timer_user = user; t->start = cb;
-    t->timer_id = t->id;
+    t->is_timer = 1;
+    uint32_t id = next_timer_id++;
+    if (!id) id = next_timer_id++;
+    t->timer_id = id;
     if (rn_trace()) rn_log("timeSetEvent %u ms -> %s %08x", ms, (flags & 0x10) ? "event" : "callback", cb);
     if (parked) notify();
     else start_fn(t, run_timer);
     return t->timer_id;
 }
 static uint32_t timeKillEvent_(Ctx *c) {
+    uint32_t id = ARG(0);
+    if (!id) return 97;   // TIMERR_NOCANDO
     for (int k = 0; k < nthreads; k++)
-        if (threads[k]->timer_id && threads[k]->timer_id == ARG(0)) { threads[k]->killed = 1; notify(); return 0; }
+        if (threads[k]->state != T_PARKED && threads[k]->timer_id && threads[k]->timer_id == id) {
+            threads[k]->killed = 1; threads[k]->timer_id = 0; notify(); return 0;
+        }
     return 97;   // TIMERR_NOCANDO
 }
 
@@ -364,9 +376,11 @@ static uint32_t WaitForMultipleObjects_(Ctx *c) {
 }
 static uint32_t Sleep_(Ctx *c) {
     uint32_t ms = ARG(0);
+    uint64_t t0 = is_main ? now_us() : 0;
     gil_release();
     if (ms) { struct timespec ts = {ms / 1000, (long)(ms % 1000) * 1000000L}; nanosleep(&ts, NULL); }
     else sched_yield();
+    if (is_main) rn_telem.idle_main_ms += (double)(now_us() - t0) / 1000;
     gil_acquire();
     (void)c;
     return 0;
@@ -396,6 +410,10 @@ static uint32_t ResetEvent_(Ctx *c) {
 }
 // Named mutexes live in this process only: the first CreateMutexA of a name creates it.
 static struct { char name[128]; uint32_t h; } named[16];
+void threads_close_handle(uint32_t h) {
+    for (int k = 0; k < 16; k++)
+        if (named[k].h == h) { named[k].h = 0; named[k].name[0] = 0; }
+}
 static uint32_t CreateMutexA_(Ctx *c) {
     uint32_t own = ARG(1), name = ARG(2);
     if (name)

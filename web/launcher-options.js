@@ -112,6 +112,7 @@
   const latin = u8 => Array.from(u8, c => String.fromCharCode(c)).join('');
   async function opfsDir() {
     if (!navigator.storage?.getDirectory) return null;
+    if (!globalThis.RN_PUBLIC && new URLSearchParams(location.search).get('files') === 'server') return null;
     const root = await navigator.storage.getDirectory();
     if (globalThis.RN_PUBLIC) {
       const save = await root.getDirectoryHandle('save').catch(() => null);
@@ -154,6 +155,7 @@
   }
   // The screenshot the game stores in every save, right after the description: tag 0x12, an int (the size), a TGA header (18 bytes, 24 bpp, top-left),
   // BGR pixels (read on real files, 256x192). Lazy and once: 147 KB per save. Returns a function giving a promise of an image URL, null if no picture.
+  const thumbUrls = [];
   function thumbOf(s, head, tag) {
     const tga = tag + 5;
     if (head[tag] !== 0x12 || head[tga + 2] !== 2 || head[tga + 16] !== 24) return null;
@@ -164,7 +166,9 @@
       const px = await s.read(tga + 18, tga + 18 + w * h * 3), im = new ImageData(w, h);
       for (let i = 0, o = 0; i < w * h * 3; i += 3, o += 4) { im.data[o] = px[i + 2]; im.data[o + 1] = px[i + 1]; im.data[o + 2] = px[i]; im.data[o + 3] = 255; }
       const c = document.createElement('canvas'); c.width = w; c.height = h; c.getContext('2d').putImageData(im, 0, 0);
-      return URL.createObjectURL(await new Promise(r => c.toBlob(r, 'image/png')));
+      const url = URL.createObjectURL(await new Promise(r => c.toBlob(r, 'image/png')));
+      thumbUrls.push(url);
+      return url;
     })());
   }
   async function describe(s) {
@@ -180,6 +184,7 @@
              level: lv ? lv.id : '', date, when: whenOf(s, date), thumb: at < 0 ? null : thumbOf(s, head, at + 3 + head[at + 2]) };
   }
   async function saves() {
+    while (thumbUrls.length) URL.revokeObjectURL(thumbUrls.pop());
     try {
       const dir = await opfsDir().catch(() => null);
       const slots = dir ? await slotsFromOpfs(dir) : await slotsFromServer();
@@ -195,9 +200,11 @@
     const o = Object.assign({}, ...OPTIONS.map(x => ({ [x.id]: x.def })), choice.opts || {});
     const env = {}, jump = [];
     // Untouched options keep the existing renderer path, including old automation URLs.
+    // Phones and tablets always stay on the light version (640 MB, 30 fps, RN_MAXTEX 1024 from PROFILES.phone).
+    const nonDesktop = globalThis.MP_DEVICE !== 'desktop';
     const touched = OPTIONS.some(x => x.video && Object.hasOwn(choice.opts || {}, x.id));
-    const video = touched ? { up: o.escalado, sharp: +o.nitidez / 20, aniso: +o.aniso, fps: +o.fps, gamma: +o.gamma, hidpi: o.hidpi === '1' } : undefined;
-    if (o.maxtex !== '4096') env.RN_MAXTEX = o.maxtex;
+    const video = touched ? { up: o.escalado, sharp: +o.nitidez / 20, aniso: +o.aniso, fps: nonDesktop ? 30 : +o.fps, gamma: +o.gamma, hidpi: o.hidpi === '1' } : undefined;
+    if (!nonDesktop && o.maxtex !== '4096') env.RN_MAXTEX = o.maxtex;
     // chapter: gm_init + s_modeswitch(game) is the pair runtime-proven from the menu (host/jump.c:5-9, tools/ghost/ghost.mjs:906 route()).
     if (choice.mode === 'chapter' && LEVELS.some(l => l.id === choice.level))
       jump.push(`maxpayne_gamemode->gm_init(${choice.level});`, 'x_modeswitch->s_modeswitch(game);');
@@ -212,7 +219,7 @@
     if (o.texturas !== '') env.RN_TEXDETAIL = o.texturas;
     const note = (choice.mode === 'continue' || choice.mode === 'save') && !HOST_LOADS ? 'menu' : '';   // the player picks Load in the game's menu
     const ff = choice.mode === 'chapter' && choice.step >= 0 ? { level: choice.level, step: choice.step } : null;
-    return { profile: o.perfil === 'full' || o.perfil === 'low' ? o.perfil : null, env, files: null, note, ff, video, scale: +o.escala / 100, aspect: o.proporcion, controls: Object.fromEntries(Object.entries(choice.opts || {}).filter(([id]) => MPControls.init().some(x => x.id === id))) };
+    return { profile: nonDesktop ? null : (o.perfil === 'full' || o.perfil === 'low' ? o.perfil : null), env, files: null, note, ff, video, scale: +o.escala / 100, aspect: o.proporcion, controls: Object.fromEntries(Object.entries(choice.opts || {}).filter(([id]) => MPControls.init().some(x => x.id === id))) };
   }
 
   window.MPLaunch = { OPTIONS, PRESETS, LEVELS, MILE_EN, saves, apply, HOST_LOADS };

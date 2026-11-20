@@ -90,11 +90,13 @@ def main():
         """Guest address of dll!name (or #ordinal) when dll is a guest image, else None."""
         dll = dll.lower()
         if dll not in exp or depth > 4:
-            return None, dll, name
+            return None, dll, name if name is not None else f"#{ordinal}"
         by_name, by_ord, fwd = exp[dll]
         key = name if name is not None else ordinal
         if key in fwd:
             fdll, fname = fwd[key].split(".", 1)
+            if fname.startswith("#"):
+                return resolve(fdll + ".dll", None, int(fname[1:]), depth + 1)
             return resolve(fdll + ".dll", fname, None, depth + 1)
         va = by_name.get(name) if name is not None else by_ord.get(ordinal)
         if va is None:
@@ -158,11 +160,17 @@ def main():
     nexp = 0
     for k, n in enumerate(names):
         by_name, by_ord, _ = exp[n]
-        named = {va: nm for nm, va in by_name.items()}
+        named = {}
+        for nm, va in by_name.items():
+            named.setdefault(va, []).append(nm)
         for o, va in sorted(by_ord.items()):
-            nm = named.get(va)
-            c.append(f'  {{{k}, {o}, 0x{va:x}u, {json.dumps(nm) if nm else "0"}}},')
-            nexp += 1
+            for nm in (named.pop(va, None) or [None]):
+                c.append(f'  {{{k}, {o}, 0x{va:x}u, {json.dumps(nm) if nm else "0"}}},')
+                nexp += 1
+        for va, nms in named.items():
+            for nm in nms:
+                c.append(f'  {{{k}, 0, 0x{va:x}u, {json.dumps(nm)}}},')
+                nexp += 1
     c.append("};")
     c.append(f"const uint32_t rn_export_count = {nexp};")
     open("build/gen/image_tables.c", "w").write("\n".join(c) + "\n")

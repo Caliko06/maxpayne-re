@@ -24,7 +24,7 @@ void d3d_load_checkpoint(void);
 #define NBLOCKS 640                // 160 MB; RN_FILECACHE_MB lowers it on a phone profile (web/index.html)
 // Save files live whole in memory (data): changed there, written back whole by gf_flush and gf_close.
 typedef struct {
-    int used, save, dirty, snap;      // snap: a read-only handle whose bytes were all read at open (a save)
+    int used, refs, save, dirty, snap;      // snap: a read-only handle whose bytes were all read at open (a save)
     uint64_t size, cap;
     char real[512];
     FILE *f;
@@ -102,6 +102,10 @@ EM_JS(void, web_files, (const char *opfs), {
         for (const [p, n, b] of Module.rnFiles.game) Module.rnUrls.set('game/' + p, b);
         for (const [p, n, b] of Module.rnFiles.save) if (b) Module.rnUrls.set('save/' + p, b);
     } else Module.rnFiles = { game: get('/game-files.json'), save: null };
+    // Compressible files also exist as 1 MB gzip pieces (tools/build_public.py gzip_pieces); a host without them answers 404.
+    var x = new XMLHttpRequest(); x.open('GET', '/game-z.json', false); x.send();
+    Module.rnZ = x.status === 200 ? JSON.parse(x.responseText) : { piece: 1, files: {} };
+    Module.rnZc = new Map();
     var files = new Map(), dirs = new Set();
     for (const [p, n] of Module.rnFiles.game) {
         var low = p.toLowerCase();
@@ -113,6 +117,21 @@ EM_JS(void, web_files, (const char *opfs), {
 });
 // Every guest thread runs in its own worker with its own Module: each loads the index on its first use.
 static void files_load(void) { static const char *u; if (!u) { const char *e = getenv("RN_FILES"); u = e ? e : ""; } web_files(u); }
+// A level hint's bytes of a piece-backed file (web_read): its gzip pieces are fetched and dropped, so they wait in the browser's
+// HTTP cache (immutable, on disk) instead of the phone's 32 MB block cache, which held 16 MB of a 117 MB hint and let the guest
+// wait ~200 ms per miss for 20 s of part1_level1 (out/loadz1120/phone_log). 1 if it did that, 0 if the file has no pieces.
+EM_JS(int, rn_zwarm, (const char *real), {
+    var r = UTF8ToString(real >>> 0);
+    return !Module.rnUrls.get(r) && Module.rnZ.files[r] ? 1 : 0;
+});
+EM_JS(int, web_warm, (const char *real, double off, double n), {
+    var r = UTF8ToString(real >>> 0), names = Module.rnUrls.get(r) ? null : Module.rnZ.files[r], P = Module.rnZ.piece;
+    if (!names) return 0;
+    for (var k = Math.floor(off / P); k <= Math.floor((off + n - 1) / P) && k < names.length; k++) {
+        try { var x = new XMLHttpRequest(); x.open('GET', '/game-z/' + names[k] + '.gz', false); x.responseType = 'arraybuffer'; x.send(); } catch (e) {}
+    }
+    return 1;
+});
 // A small text file of the site into out; its length, or -1 (RE-NFSU host/files.c web_text).
 EM_JS(int, web_text, (const char *url, char *out, int cap), {
     try {
@@ -163,22 +182,49 @@ EM_JS(int, web_read, (const char *real, double off, uint8_t *dst, int n), {
     real >>>= 0; dst >>>= 0;
     // The game has no answer to a failed read (it hangs on its loading screen), and a play over the internet makes hundreds
     // of requests: a dropped one (a phone changing cell, a 5xx at the edge) is asked again after 0.3, 1, 2, 4 s.
-    var r = UTF8ToString(real), waits = [300, 1000, 2000, 4000], x;
-    var url = Module.rnUrls.get(r) || '/' + r.split('/').map(encodeURIComponent).join('/');
-    for (var t = 0; ; t++) {
-        try {
-            x = new XMLHttpRequest();
-            x.open('GET', url, false);
-            x.responseType = 'arraybuffer';
-            x.setRequestHeader('Range', 'bytes=' + off + '-' + (off + n - 1));
-            x.send();
-            if (x.status === 206 || (x.status === 200 && x.response.byteLength >= off + n)) break;
-            err('files: ' + r + ' at ' + off + ': HTTP ' + x.status + ', try ' + (t + 1));
-        } catch (e) { err('files: ' + r + ' at ' + off + ': ' + e.message + ', try ' + (t + 1)); }
-        if (t === waits.length) return -1;
-        var end = Date.now() + waits[t];
-        while (Date.now() < end) {}      // synchronous wait: this worker has nothing else to do (the guest waits on the read)
+    var r = UTF8ToString(real), waits = [300, 1000, 2000, 4000];
+    var get = (url, range, ok) => {
+        for (var t = 0; ; t++) {
+            try {
+                var x = new XMLHttpRequest();
+                x.open('GET', url, false);
+                x.responseType = 'arraybuffer';
+                if (range) x.setRequestHeader('Range', range);
+                x.send();
+                if (ok(x)) return x;
+                err('files: ' + r + ' ' + url + ' ' + range + ': HTTP ' + x.status + ', try ' + (t + 1));
+            } catch (e) { err('files: ' + r + ' ' + url + ' ' + range + ': ' + e.message + ', try ' + (t + 1)); }
+            if (t === waits.length) return null;
+            try { Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, waits[t]); }
+            catch (e) { var end = Date.now() + waits[t]; while (Date.now() < end) {} }
+        }
+    };
+    var names = Module.rnUrls.get(r) ? null : Module.rnZ.files[r];     // a blob: of the page (web/opfs.js) wins
+    if (names) {
+        // Gzip pieces: the browser decodes them (Content-Encoding). This worker keeps its last 4, so the guest's 256 KB
+        // blocks of one piece cost one request.
+        var P = Module.rnZ.piece, done = 0;
+        while (done < n) {
+            var at = off + done, k = Math.floor(at / P), name = names[k], piece = Module.rnZc.get(name);
+            if (!name) break;
+            if (piece) Module.rnZc.delete(name);
+            else {
+                var x = get('/game-z/' + name + '.gz', null, x => x.status === 200);
+                if (!x) return -1;
+                piece = new Uint8Array(x.response);
+                if (Module.rnZc.size >= 4) Module.rnZc.delete(Module.rnZc.keys().next().value);
+            }
+            Module.rnZc.set(name, piece);
+            var a = piece.subarray(at - k * P, Math.min(piece.length, at - k * P + n - done));
+            if (!a.length) break;
+            HEAPU8.set(a, dst + done);
+            done += a.length;
+        }
+        return done;
     }
+    var url = Module.rnUrls.get(r) || '/' + r.split('/').map(encodeURIComponent).join('/');
+    var x = get(url, 'bytes=' + off + '-' + (off + n - 1), x => x.status === 206 || (x.status === 200 && x.response.byteLength >= off + n));
+    if (!x) return -1;
     var a = x.status === 206 ? new Uint8Array(x.response) : new Uint8Array(x.response, off, n);
     HEAPU8.set(a, dst);
     return a.length;
@@ -222,13 +268,15 @@ static void save_index(void) {
     static char list[1 << 18];
     files_load();
     if (web_save_index(list, sizeof list) < 0) { rn_log("save folder index too big"); return; }
-    for (char *l = list; *l;) {
-        char *e = strchr(l, '\n'), *t = strchr(l, '\t');
-        *e = *t = 0;
+    for (char *l = list, *next; *l; l = next) {
+        char *e = strchr(l, '\n');
+        if (e) { *e = 0; next = e + 1; } else next = l + strlen(l);     // the last line may lack its '\n'
+        char *t = strchr(l, '\t');
+        if (!t) continue;                                                // a malformed line: skip it
+        *t = 0;
         double v = atof(t + 1);
         for (char *c = strchr(l, '/'); c; c = strchr(c + 1, '/')) { *c = 0; save_add(l, 1); *c = '/'; }   // its parents
         save_add(l, v < 0)->size = v < 0 ? 0 : (uint64_t)v;
-        l = e + 1;
     }
 }
 // The bytes of a save file: read from the server once, then kept. 0 = e->data holds e->size bytes.
@@ -248,7 +296,14 @@ static int save_bytes(SaveEnt *e) {
 static void save_send(const char *rel, const uint8_t *p, uint64_t n, int dir, int del) {
     char *r = strdup(rel);
     uint8_t *b = p ? malloc(n ? n : 1) : NULL;
-    if (b && n) memcpy(b, p, n);
+    if (!r || (p && !b)) {      // out of memory: an empty PUT would truncate the player's save to 0 bytes, so send nothing
+        free(r);
+        free(b);
+        rn_log("save: out of memory, %s not written", rel);
+        MAIN_THREAD_ASYNC_EM_ASM({ if (Module.rnSaveFailed) Module.rnSaveFailed('out of memory'); });
+        return;
+    }
+    if (n) memcpy(b, p, n);
     MAIN_THREAD_ASYNC_EM_ASM({
         var r = $0 >>> 0;      // one var per statement: a top-level comma would split the macro argument
         var b = $1 >>> 0;
@@ -343,6 +398,7 @@ int gf_open(const char *gpath) {
         if (!g->f) return -1;
 #endif
         g->used = 1;
+        g->refs = 1;
         g->size = size;
         snprintf(g->real, sizeof g->real, "%s", real);
 #ifdef __EMSCRIPTEN__
@@ -352,7 +408,7 @@ int gf_open(const char *gpath) {
             SaveEnt *e = save_get(real + 5);
             g->cap = size;
             g->data = malloc(size ? size : 1);
-            if (!e || save_bytes(e) || !g->data) { free(g->data); g->data = NULL; g->used = 0; return -1; }
+            if (!e || save_bytes(e) || !g->data) { free(g->data); g->data = NULL; g->used = g->refs = 0; return -1; }
             memcpy(g->data, e->data, size);
             g->snap = 1;                                      // gf_read serves it from memory; the handle stays read-only
         }
@@ -362,10 +418,16 @@ int gf_open(const char *gpath) {
     return -1;
 }
 uint64_t gf_size(int id) { return files[id].size; }
+void gf_retain(int id) {
+    if (id >= 0 && id < MAXF && files[id].used) files[id].refs++;
+}
 void gf_close(int id) {
+    if (id < 0 || id >= MAXF || !files[id].used) return;
+    if (--files[id].refs > 0) return;
     gf_flush(id);
-    if (files[id].f) fclose(files[id].f);
+    if (files[id].f) { fclose(files[id].f); files[id].f = NULL; }
     free(files[id].data);
+    files[id].data = NULL;
     files[id].used = 0;
 }
 // Reads up to n bytes at off; returns the count (short at the end of the file), -1 on an I/O error.
@@ -508,8 +570,19 @@ static void *pre_main(void *first) {
     for (;;) {
         pthread_mutex_lock(&blk_mu);
         if (pq_head == pq_tail) { pthread_mutex_unlock(&blk_mu); break; }
-        if (pre_count + PCHUNK > cache_limit() / 2) { pthread_mutex_unlock(&blk_mu); usleep(20000); continue; }
-        unsigned q = pq_head++ % NPQ;
+        unsigned q = pq_head % NPQ;
+        if (rn_zwarm(pq[q].real)) {     // no budget: the browser's cache holds it
+            char real[256]; snprintf(real, sizeof real, "%s", pq[q].real);
+            uint64_t b0 = pq[q].b0, b1 = pq[q].b1;
+            pq_head++;
+            pthread_mutex_unlock(&blk_mu);
+            web_warm(real, (double)(b0 * BLOCK), (double)((b1 - b0 + 1) * BLOCK));
+            continue;
+        }
+        uint32_t cap = cache_limit() / 2;
+        if (cap < PCHUNK) cap = PCHUNK;     // a tiny cache: still one chunk at a time, never a wait that cannot end
+        if ((uint32_t)pre_count + PCHUNK > cap) { pthread_mutex_unlock(&blk_mu); usleep(20000); continue; }
+        pq_head++;
         uint64_t key = path_key(pq[q].real), b0 = pq[q].b0, b1 = pq[q].b1;
         while (b0 <= b1 && (block_find(key, b0) || in_flight(key, b0))) b0++;        // the guest or another helper got there first
         while (b1 >= b0 && (block_find(key, b1) || in_flight(key, b1))) b1--;
@@ -655,7 +728,7 @@ int gf_create(const char *gpath, int disp, int *existed) {
     if (k == MAXF) return -1;
     GFile *g = &files[k];
     memset(g, 0, sizeof *g);
-    g->used = g->save = 1;
+    g->used = g->refs = g->save = 1;
     snprintf(g->real, sizeof g->real, "%s", real);
     g->cap = size > 4096 ? size : 4096;
     g->data = calloc(1, g->cap);
@@ -666,7 +739,7 @@ int gf_create(const char *gpath, int disp, int *existed) {
         memcpy(g->data, e->data, size);
 #else
         FILE *f = fopen(real, "rb");
-        if (!f || fread(g->data, 1, size, f) != size) { if (f) fclose(f); free(g->data); g->used = 0; return -1; }
+        if (!f || fread(g->data, 1, size, f) != size) { if (f) fclose(f); free(g->data); g->data = NULL; g->used = g->refs = 0; return -1; }
         fclose(f);
 #endif
         g->size = size;
@@ -698,6 +771,7 @@ int gf_truncate(int id, uint64_t size) {
     GFile *g = &files[id];
     if (!g->save) return -1;
     if (size > g->size) { uint8_t z = 0; if (gf_write(id, size - 1, &z, 1) < 0) return -1; }
+    else if (g->data && size < g->size) memset(g->data + size, 0, g->size - size);
     g->size = size;
     g->dirty = 1;
     return 0;
@@ -760,6 +834,7 @@ int gf_delete(const char *gpath) {
     if (lookup(gpath, real, sizeof real, &size) != 0) return -1;
 #ifdef __EMSCRIPTEN__
     SaveEnt *e = save_get(real + 5);
+    if (!e) return -1;
     save_send(e->rel, NULL, 0, 0, 1);
     free(e->data);
     *e = saves[--nsaves];
@@ -829,14 +904,14 @@ int gf_find(const char *gpath, int k, char *name, size_t n, int *is_dir, uint64_
     uint64_t t0 = now_us();
     web_list(rel, list, sizeof list);
     slow_log("list", rel, t0);
-    for (char *l = list; *l;) {
+    for (char *l = list, *next; *l; l = next) {
         char *e = strchr(l, '\n');
-        *e = 0;
+        if (e) { *e = 0; next = e + 1; } else next = l + strlen(l);     // a truncated list: its last line has no '\n'
         char *t = strchr(l, '\t');
+        if (!t) continue;
         *t = 0;
         double v = atof(t + 1);
         if (wild(patc, l) && !k--) { snprintf(name, n, "%s", l); *is_dir = v < 0; *size = v < 0 ? 0 : (uint64_t)v; return 0; }
-        l = e + 1;
     }
     return -1;
 #else

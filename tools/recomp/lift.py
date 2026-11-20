@@ -421,8 +421,9 @@ class Lifter:
         if m in ("bt", "bts", "btr", "btc"):
             bits = 8 * sz
             if ops[0].type == x86.X86_OP_MEM and ops[1].type == x86.X86_OP_REG:
-                o.append(f"t2={self.read(ops[1])}; ea={self.ea(ops[0].mem)}+(uint32_t)(((int32_t)t2>>5)*4); CHK(ea,4,{self.at()}); t1=ld(c,ea,4); n=t2&31u;")
-                dst = f"st(c,ea,res,4);"
+                sh = 5 if sz == 4 else 4
+                o.append(f"t2={self.read(ops[1])}; ea={self.ea(ops[0].mem)}+(uint32_t)(((int{bits}_t)t2>>{sh})*{sz}); CHK(ea,{sz},{self.at()}); t1=ld(c,ea,{sz}); n=t2&{bits - 1}u;")
+                dst = f"st(c,ea,res,{sz});"
             else:
                 o.append(f"n=({self.read(ops[1])})&{bits - 1}u;")
                 o.append(f"t1={self.read(ops[0])};")
@@ -449,7 +450,7 @@ class Lifter:
                     "mul": "u=(uint64_t)eax*t1; eax=(uint32_t)u; edx=(uint32_t)(u>>32); cf=of=edx!=0;",
                     "imul": "w=(int64_t)(int32_t)eax*(int32_t)t1; eax=(uint32_t)w; edx=(uint32_t)((uint64_t)w>>32); cf=of=(w!=(int64_t)(int32_t)w);",
                     "div": f"u=((uint64_t)edx<<32)|eax; if (!t1 || u/t1>0xffffffffu) TRAP({at},\"divide error\"); eax=(uint32_t)(u/t1); edx=(uint32_t)(u%t1);",
-                    "idiv": f"w=(int64_t)(((uint64_t)edx<<32)|eax); if (!t1) TRAP({at},\"divide error\"); {{ int64_t q=w/(int32_t)t1; if (q!=(int32_t)q) TRAP({at},\"divide error\"); eax=(uint32_t)q; edx=(uint32_t)(w%(int32_t)t1); }}",
+                    "idiv": f"w=(int64_t)(((uint64_t)edx<<32)|eax); if (!t1 || (w==INT64_MIN && (int32_t)t1==-1)) TRAP({at},\"divide error\"); {{ int64_t q=w/(int32_t)t1; if (q!=(int32_t)q) TRAP({at},\"divide error\"); eax=(uint32_t)q; edx=(uint32_t)(w%(int32_t)t1); }}",
                 }[m])
             elif sz == 2:
                 o.append({
@@ -754,7 +755,7 @@ class Lifter:
                  0xf9: "fset(c,1,fx2(c,*fr(c,0),*fr(c,1),*fr(c,1)*log2(*fr(c,0)+1.0))); fpop(c);",
                  0xfa: "fset(c,0,fx1(c,*fr(c,0),FSQRT(*fr(c,0))));",
                  0xfb: "if (fabs(*fr(c,0))>=9223372036854775808.0) c->fsw|=FC2; else { double v=*fr(c,0); fset(c,0,fx1(c,v,sin(v))); fpush(c,fx1(c,v,cos(v))); c->fsw&=~FC2; }",
-                 0xfc: "fset(c,0,fx1(c,*fr(c,0),frnd(c,*fr(c,0))));", 0xfd: "fset(c,0,fx2(c,*fr(c,0),*fr(c,1),ldexp(*fr(c,0),(int)trunc(*fr(c,1)))));",
+                 0xfc: "fset(c,0,fx1(c,*fr(c,0),frnd(c,*fr(c,0))));", 0xfd: "{ double x=*fr(c,0), y=*fr(c,1); fset(c,0,fx2(c,x,y,isnan(y)||(isinf(y)&&(x==0||(isinf(x)&&y<0)))?NAN:ldexp(x,y>=2097152.0?2097152:y<=-2097152.0?-2097152:(int)trunc(y)))); }",
                  0xfe: "if (fabs(*fr(c,0))>=9223372036854775808.0) c->fsw|=FC2; else { fset(c,0,fx1(c,*fr(c,0),sin(*fr(c,0)))); c->fsw&=~FC2; }", 0xff: "if (fabs(*fr(c,0))>=9223372036854775808.0) c->fsw|=FC2; else { fset(c,0,fx1(c,*fr(c,0),cos(*fr(c,0)))); c->fsw&=~FC2; }"}.get(x)
             if s is None:
                 raise Unsupported(i.mnemonic)

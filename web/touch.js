@@ -68,7 +68,8 @@ function startTouch(input, canvas) {
     jump: '<path d="M12 19.5V5M6 11l6-6 6 6"/>',
     crouch: '<path d="M12 4v11M6.5 10l5.5 5.5 5.5-5.5M5 20h14"/>',
     reload: '<path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"/><path d="M19.5 3.5v4.2h-4.2"/>',
-    use: '<path d="M13.5 4h5.5v16h-5.5M4 12h11M11 8l4 4-4 4"/>',
+    // A hand: the glyph mobile games put on interact (OWNER 2026-11-20 did not find Use behind a door-arrow).
+    use: '<path d="M9.5 13V4.5a1.5 1.5 0 0 1 3 0V11M12.5 10.5a1.5 1.5 0 0 1 3 0V12M15.5 11.5a1.5 1.5 0 0 1 3 0v3a6.5 6.5 0 0 1-6.5 6.5h-1a5 5 0 0 1-4-2L4 15.5a1.5 1.5 0 0 1 2.4-1.8L9.5 16"/>',
     pill: '<g transform="rotate(-40 12 12)"><rect x="2.5" y="8.5" width="19" height="7" rx="3.5"/><path d="M12 8.5H6a3.5 3.5 0 0 0 0 7h6z" fill="currentColor"/></g>',
     zoom: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5M10.5 7.5v6M7.5 10.5h6"/>',
     save: '<path d="M7 3.5h10v17l-5-4-5 4z"/>',
@@ -98,11 +99,18 @@ function startTouch(input, canvas) {
   const make = (name, icon, cls, [down, up], look, after) => {
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'b ' + cls; b.setAttribute('aria-label', name); b.innerHTML = svg(ICON[icon]);
+    let upTimer = 0;
     b.addEventListener('pointerdown', e => {
-      e.preventDefault(); b.setPointerCapture(e.pointerId); b.classList.add('on'); down();
+      e.preventDefault(); b.setPointerCapture(e.pointerId); b.classList.add('on');
+      if (upTimer) { clearTimeout(upTimer); upTimer = 0; }
+      down();
       const l = look ? fingerLook() : null, t0 = performance.now(); l?.start(e);
       // The game reads keys once a frame and acts on the change: a very short tap must still span a few frames.
-      owned.set(e.pointerId, { move: ev => l?.move(ev), up() { b.classList.remove('on'); if (up) setTimeout(up, Math.max(0, MIN_PRESS - (performance.now() - t0))); after?.(); } });
+      owned.set(e.pointerId, { move: ev => l?.move(ev), up() {
+        b.classList.remove('on');
+        if (up) upTimer = setTimeout(() => { upTimer = 0; up(); }, Math.max(0, MIN_PRESS - (performance.now() - t0)));
+        after?.();
+      } });
     });
     return b;
   };
@@ -134,12 +142,13 @@ function startTouch(input, canvas) {
   const menu = bar('menu-bar', 40, [['left', 16], ['top', 12]], [make('Pause', 'pause', '', key(TK.ESC), false, close), make('More', 'more', 'play', toggle), ...tray]);
 
   // The stick: W A S D, pressed past the dead zone, as the keyboard does (the game has no analog move).
-  let wasd = 0;
+  let wasd = 0, stickId = null;
   function press(next) {
     [[1, TK.W], [2, TK.S], [4, TK.A], [8, TK.D]].forEach(([bit, k]) => { if ((next ^ wasd) & bit) input.key(k, !!(next & bit)); });
     wasd = next;
   }
   const fingerStick = e => {
+    stickId = e.pointerId;
     const ox = e.clientX, oy = e.clientY;
     stick.style.display = 'block'; stick.style.left = ox + 'px'; stick.style.top = oy + 'px';
     return { move(ev) {
@@ -150,30 +159,42 @@ function startTouch(input, canvas) {
       if (n < DEAD) return press(0);
       const a = Math.atan2(dy, dx) / Math.PI * 8;     // eight ways: each key holds 3/8 of the circle
       press((a > -7 && a < -1 ? 1 : 0) | (a > 1 && a < 7 ? 2 : 0) | (Math.abs(a) > 5 ? 4 : 0) | (Math.abs(a) < 3 ? 8 : 0));
-    }, up() { press(0); stick.style.display = 'none'; nub.style.transform = ''; } };
+    }, up() { if (stickId === e.pointerId) { stickId = null; press(0); stick.style.display = 'none'; nub.style.transform = ''; } } };
   };
 
   // A tap on a menu is a click at that place. The game keeps its cursor to itself, clamped to 640x480 at 1.25 units per
   // count (0x6313e0, rea/map/input.md 4): slam it into the corner, then move from there. The game reads the summed counts
-  // once a frame, so each step waits for one.
-  const frames = n => new Promise(r => { const f = () => n-- > 0 ? requestAnimationFrame(f) : r(); f(); });
+  // once a frame, so each step waits for real game frames (RN_PACE.shown) rather than display rAFs (120 Hz phones at 30 fps).
+  const gameFrames = (n = 2, maxMs = 120) => new Promise(r => {
+    const pace = window.RN_PACE;
+    if (!pace) { setTimeout(r, maxMs); return; }
+    const target = pace.shown + n, t0 = performance.now();
+    const poll = () => {
+      if (pace.shown >= target || performance.now() - t0 >= maxMs) return r();
+      requestAnimationFrame(poll);
+    };
+    requestAnimationFrame(poll);
+  });
   let tapping = false;
   async function tap(cx, cy) {
     if (tapping) return;
     tapping = true;
-    const r = canvas.getBoundingClientRect(), s = Math.min(r.width / canvas.width, r.height / canvas.height);
-    const w = canvas.width * s, h = canvas.height * s;
-    const portrait = r.height > r.width;       // object-position in the page: top when upright, centred when sideways
-    const w43 = Math.min(w, h * 4 / 3);        // the 640x480 menus stay centered 4:3 on a wide buffer
-    const x = (cx - r.left - (r.width - w43) / 2) / w43 * 640, y = (cy - r.top - (portrait ? 0 : (r.height - h) / 2)) / h * 480;
-    input.move(-4000, -4000);
-    await frames(3);
-    input.move(Math.max(0, Math.min(640, x)) / 1.25, Math.max(0, Math.min(480, y)) / 1.25);
-    await frames(3);
-    input.button(0, true);
-    await frames(3);
-    input.button(0, false);
-    tapping = false;
+    try {
+      const r = canvas.getBoundingClientRect(), s = Math.min(r.width / canvas.width, r.height / canvas.height);
+      const w = canvas.width * s, h = canvas.height * s;
+      const portrait = r.height > r.width;       // object-position in the page: top when upright, centred when sideways
+      const w43 = Math.min(w, h * 4 / 3);        // the 640x480 menus stay centered 4:3 on a wide buffer
+      const x = (cx - r.left - (r.width - w43) / 2) / w43 * 640, y = (cy - r.top - (portrait ? 0 : (r.height - h) / 2)) / h * 480;
+      input.move(-4000, -4000);
+      await gameFrames(2);
+      input.move(Math.max(0, Math.min(640, x)) / 1.25, Math.max(0, Math.min(480, y)) / 1.25);
+      await gameFrames(2);
+      input.button(0, true);
+      await gameFrames(2);
+      input.button(0, false);
+    } finally {
+      tapping = false;
+    }
   }
 
   canvas.addEventListener('pointerdown', e => {
@@ -184,11 +205,14 @@ function startTouch(input, canvas) {
     // do the same work: right half next page, left half previous; ESC stops, then leaves (rea/map/graphicnovel.md 3).
     if (input.mode() === 2) {
       const k = e.clientX < innerWidth / 2 ? TK.A : TK.D;
-      owned.set(e.pointerId, { move() {}, up() { input.key(k, true); frames(3).then(() => input.key(k, false)); }, cancel() {} });
+      owned.set(e.pointerId, { move() {}, up() { input.key(k, true); gameFrames(2).then(() => input.key(k, false)); }, cancel() {} });
       return;
     }
     if (!play) { const sx = e.clientX, sy = e.clientY; owned.set(e.pointerId, { move() {}, up() { tap(sx, sy); }, cancel() {} }); return; }
-    if (e.clientX < innerWidth / 2) { owned.set(e.pointerId, fingerStick(e)); owned.get(e.pointerId).move(e); return; }
+    if (e.clientX < innerWidth / 2) {
+      if (stickId !== null) return;
+      owned.set(e.pointerId, fingerStick(e)); owned.get(e.pointerId).move(e); return;
+    }
     const l = fingerLook(); l.start(e); owned.set(e.pointerId, l);
   });
   addEventListener('pointermove', e => { const o = owned.get(e.pointerId); if (o) { e.preventDefault(); o.move(e); } }, { passive: false });
@@ -201,16 +225,17 @@ function startTouch(input, canvas) {
   // The screen stays on while the game runs.
   // A touch grants the gesture when the finger lifts (pointerup), not on pointerdown, so it is asked there and on every touch
   // until it holds: a refused or abandoned fullscreen comes back with the next tap.
+  const canFullscreen = typeof document.documentElement.requestFullscreen === 'function';
   function fullscreenOnce() {
-    if (forced || document.fullscreenElement) return;
-    document.documentElement.requestFullscreen?.({ navigationUI: 'hide' }).then(() => screen.orientation?.lock?.('landscape')).catch(() => {});
+    if (forced || !canFullscreen || document.fullscreenElement) return;
+    document.documentElement.requestFullscreen({ navigationUI: 'hide' }).then(() => screen.orientation?.lock?.('landscape')).catch(() => {});
   }
-  addEventListener('pointerup', e => { if (e.pointerType === 'touch') fullscreenOnce(); }, true);
+  if (canFullscreen) addEventListener('pointerup', e => { if (e.pointerType === 'touch') fullscreenOnce(); }, true);
   let lock = null;
   const wake = () => { if (document.visibilityState === 'visible' && !lock) navigator.wakeLock?.request('screen').then(l => { lock = l; l.addEventListener('release', () => { lock = null; }); }).catch(() => {}); };
   document.addEventListener('visibilitychange', () => {
     wake();
-    if (document.visibilityState !== 'visible') { for (const [id, o] of owned) { owned.delete(id); o.up(); } }   // no finger stays pressed across an app switch
+    if (document.visibilityState !== 'visible') { for (const [id, o] of owned) { owned.delete(id); o.cancel ? o.cancel() : o.up(); } }   // no finger stays pressed across an app switch
   });
   wake();
 

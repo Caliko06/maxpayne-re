@@ -266,7 +266,7 @@ static uint32_t IDirectInputDevice8A_GetDeviceData(Ctx *c) {
     if (!o->acquired) return DIERR_NOTACQUIRED;
     if (!io || (sz != 20 && sz != 16)) return DIERR_INVALIDPARAM;
     if (!o->buffer) return 0x80040201u;                   // DIERR_NOTBUFFERED
-    uint32_t want = ld(c, io, 4), have = o->ev_tail - o->ev_head, n = want < have ? want : have;
+    uint32_t want = ld(c, io, 4), have = o->ev_tail - o->ev_head, n = want < have ? want : have, start_head = o->ev_head;
     if (have) TR("GetDeviceData(%s, size %u, out %08x, want %u, flags %x): %u queued", o->kind == KEYBOARD ? "keyboard" : "mouse", sz, out, want, flags, have);
     if (out)
         for (uint32_t k = 0; k < n; k++) {
@@ -278,7 +278,7 @@ static uint32_t IDirectInputDevice8A_GetDeviceData(Ctx *c) {
     if (!(flags & 1)) o->ev_head += n;
     st(c, io, n, 4);
     if (n) TR("GetDeviceData(%s): %u events, first ofs %u data %x app %x", o->kind == KEYBOARD ? "keyboard" : "mouse", n,
-              o->ev[(o->ev_head - n) % MAXEV].ofs, o->ev[(o->ev_head - n) % MAXEV].data, o->ev[(o->ev_head - n) % MAXEV].app);
+              o->ev[start_head % MAXEV].ofs, o->ev[start_head % MAXEV].data, o->ev[start_head % MAXEV].app);
     uint32_t r = o->overflow ? 1u : DI_OK;                // DI_BUFFEROVERFLOW
     if (!(flags & 1)) o->overflow = 0;
     return r;
@@ -370,6 +370,7 @@ static uint32_t IDirectInputDevice8A_EnumObjects(Ctx *c) {
         uint32_t args[2] = {inst, ref};
         if (!call_guest(c, cb, 2, args) || c->halt) break;
     }
+    guest_free(inst);
     return DI_OK;
 }
 
@@ -399,6 +400,7 @@ static uint32_t IDirectInput8A_EnumDevicesBySemantics(Ctx *c) {
         objs[ld(c, dev + 4, 4) - 1].refs--;
         if (c->halt || r == 0) break;                                // DIENUM_STOP
     }
+    guest_free(inst);
     return DI_OK;
 }
 
@@ -487,7 +489,7 @@ static uint32_t IDirectInputDevice8A_BuildActionMap(Ctx *c) {
     for (uint32_t k = 0; k < n; k++) {
         uint32_t a = acts + 40 * k, sem = ld(c, a + 4, 4), fl = ld(c, a + 8, 4);
         if (!sem) return DIERR_INVALIDPARAM;
-        if (flags == 1 && ld(c, a + 16, 4) | ld(c, a + 20, 4) | ld(c, a + 24, 4) | ld(c, a + 28, 4) &&
+        if (flags == 1 && (ld(c, a + 16, 4) | ld(c, a + 20, 4) | ld(c, a + 24, 4) | ld(c, a + 28, 4)) &&
             !is_this_device(c, a + 16, o->kind)) continue;          // DIDBAM_PRESERVE: another device's
         if (fl & DIA_APPMAPPED) { st(c, a + 36, DIAH_APPREQUESTED, 4); continue; }
         if ((sem & 0xf0000000u) == 0x80000000u) st(c, a + 8, fl &= ~DIA_APPNOMAP, 4);
@@ -580,6 +582,7 @@ static uint32_t IDirectInput8A_EnumDevices(Ctx *c) {
         uint32_t args[2] = {inst, ref};
         if (!call_guest(c, cb, 2, args) || c->halt) break;
     }
+    guest_free(inst);
     return DI_OK;
 }
 
