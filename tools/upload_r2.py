@@ -75,7 +75,7 @@ def blueprint(dist, passes, skipped):
         'gamez': ('game-z/<sha256>.gz (gzip pieces of the compressible game files)', YEAR + ', Content-Encoding: gzip', 'new names only (content-addressed)'),
         'assets': ('img, gamefile, fonts, launcher art…', DAY, 'changed (--checksum)'),
         'page': ('*.html, *.js, *.css, *.json (incl. launcher/*.json), *.webmanifest', NO, 'every time (--ignore-times): the header must reach unchanged bytes'),
-        'engine': ('out/maxpayne.wasm ← out/maxpayne.wasm.br', NO + ', Content-Encoding: br, Content-Type: application/wasm, X-Raw-Length', 'every time'),
+        'engine': ('out/maxpayne.wasm ← out/maxpayne.wasm.br', NO + ', Content-Encoding: br, Content-Type: application/wasm', 'every time'),
     }
     for which, (label, header, when) in rules.items():
         rows = passes.get(which, [])
@@ -123,16 +123,10 @@ def upload(bucket, dist, passes, only):
     # bet RE-NFSU made with gzip on speed.wasm); every browser that runs this build sends br.
     if 'engine' not in only:
         return
-    wasm_raw = dist / 'out/maxpayne.wasm'
-    if wasm_raw.is_file():
-        raw_len = wasm_raw.stat().st_size
-    else:
-        m = json.loads((dist / 'manifest.json').read_text())
-        raw_len = next(r[1] for r in m['files'] if r[0] == 'out/maxpayne.wasm')
+    # rclone S3/R2 only accepts standard HTTP headers in --header-upload (custom keys like X-Raw-Length fail).
     rclone('copyto', str(dist / 'out/maxpayne.wasm.br'), f'{remote}/out/maxpayne.wasm', '--ignore-times',
            '--header-upload', NO, '--header-upload', 'Content-Encoding: br',
-           '--header-upload', 'Content-Type: application/wasm',
-           '--header-upload', f'X-Raw-Length: {raw_len}')
+           '--header-upload', 'Content-Type: application/wasm')
 
 
 def main():
